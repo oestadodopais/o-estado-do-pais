@@ -155,10 +155,21 @@ def cmd_registar(a) -> int:
 
 def cmd_estado(a) -> int:
     caminho = Path(a.peca)
+    try:
+        atual = ler(caminho)
+    except (ErroDeForma, OSError) as e:
+        print(f"refused: {e}", file=sys.stderr)
+        return 1
+    if a.estado == "rascunho" and any(est.get("estado") == "publicada" for est in atual.registo.get("estado", [])):
+        print("refused: the piece was published; it can only be withdrawn (retirada) or published again, never made a draft",
+              file=sys.stderr)
+        return 1
     if a.estado == "publicada":
         # Publishing must not add a table to a piece that would fail as published.
         peca = ler(caminho)
-        peca.registo.setdefault("estado", []).append({"estado": "publicada"})
+        # The table that would be appended, whole, so that check 9 reads the record as it would be.
+        peca.registo.setdefault("estado", []).append({"estado": "publicada", "em": registo.agora(),
+                                                      "por": "python3 -m oedp estado", "razao": a.razao})
         ctx, _ = build.contexto(REPO, caminho.parents[2] if len(caminho.parents) > 2 else REPO, [peca])
         falhas = [r for r in _conferir_como_publicada(peca, ctx) if r.estado in (conf.FALHOU, conf.NAO_CORRIDO)]
         if falhas:
@@ -176,13 +187,17 @@ def cmd_estado(a) -> int:
 
 
 def _conferir_como_publicada(peca, ctx):
+    """Every check, with the piece as if published, and the same history against main
+    that conferir has; where main is not at hand, check 4 says so and the piece is refused."""
     from . import paginas
 
     pagina = paginas.pagina_da_peca(peca, ctx)
     loja = _loja()
-    return [conf.check1(peca), conf.check2(peca, loja), conf.check3(peca), conf.check4(peca, pagina),
-            conf.check5(peca), conf.check6(peca), conf.check7(peca), conf.check8_peca(peca),
-            conf.check9_peca(peca, pagina, ctx.direitos, loja)]
+    anterior = conf.anterior_em_main(REPO, peca.caminho)
+    return conf.reter_se_privado([
+        conf.check1(peca), conf.check2(peca, loja), conf.check3(peca), conf.check4(peca, pagina, anterior),
+        conf.check5(peca), conf.check6(peca), conf.check7(peca), conf.check8_peca(peca),
+        conf.check9_peca(peca, pagina, ctx.direitos, loja)])
 
 
 def conferir_tudo(alvos: list[Path], raiz: Path = REPO, imprimir=print) -> tuple[bool, list]:
@@ -205,8 +220,12 @@ def conferir_tudo(alvos: list[Path], raiz: Path = REPO, imprimir=print) -> tuple
     resultados.append(conf._r(9, "vercel.json", vercel))
     if erros_do_sitio:
         resultados.append(conf._r(9, "desk and method files", erros_do_sitio))
+    desaparecidas, havia_main = conf.pecas_desaparecidas(REPO)
+    resultados.append(conf._r(4, "pieces published on main", desaparecidas)
+                      if havia_main else conf.Resultado(4, "pieces published on main", conf.NAO_CORRIDO,
+                                                       ["main is not at hand here"], []))
     alvo = "reader's text outside pieces"
-    if any(p.publicada for p in pecas):
+    if any(p.vinculada for p in pecas):
         resultados.append(conf._r(4, alvo, ctx.julgamento))
     else:
         resultados.append(conf.Resultado(4, alvo, conf.NAO_VINCULA, [], ["no published piece, so this does not bind yet"]

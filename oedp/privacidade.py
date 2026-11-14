@@ -84,6 +84,31 @@ def _comparavel(texto: str) -> str:
     return texto.casefold()
 
 
+def _cadeias(valor) -> list[str]:
+    if isinstance(valor, str):
+        return [valor]
+    if isinstance(valor, dict):
+        return [c for k, v in valor.items() for c in [str(k)] + _cadeias(v)]
+    if isinstance(valor, list):
+        return [c for v in valor for c in _cadeias(v)]
+    return []
+
+
+def valores_toml(texto: str) -> str:
+    """The strings a TOML file, or each TOML section of a piece or page, means once parsed,
+    so that an escape such as \\u0040 is seen as the character it is."""
+    import tomllib
+
+    pedacos = [texto] if not re.search(r"^\+\+\+ ", texto, re.M) else re.split(r"^\+\+\+ [a-z]+\n", texto, flags=re.M)
+    cadeias = []
+    for pedaco in pedacos:
+        try:
+            cadeias += _cadeias(tomllib.loads(pedaco))
+        except (tomllib.TOMLDecodeError, ValueError):
+            continue
+    return "\n".join(cadeias)
+
+
 def achados_em(nome: str, dados: bytes, proibidas: list[str]) -> list[str]:
     """Reasons this file fails check 8. The forbidden strings themselves are never printed.
 
@@ -91,6 +116,8 @@ def achados_em(nome: str, dados: bytes, proibidas: list[str]) -> list[str]:
     raw text is searched too, so neither form hides from the other."""
     bruto = dados.decode("utf-8", errors="replace")
     texto = bruto + "\n" + html.unescape(bruto)
+    if nome.endswith((".toml", ".md")):
+        texto += "\n" + valores_toml(bruto)
     razoes = []
     for m in CAMINHO.finditer(texto):
         if m["nome"].casefold() not in CONTAS_GENERICAS:

@@ -36,8 +36,18 @@ that every record only grew.
 
 ## Limits
 
-The workflow that checks a commit is part of that commit, so a commit could replace
-the gate and keep the job's name `portao`, and the check `main` requires would still
-pass. That is true of any gate that lives in its own repository. The control is that
-a change to the gate is a change to code, and every change to code is read by the
-other model family before it is merged.
+The checks stop the mistakes the project's own seats can make in the ordinary course of
+work, and make sure nothing a reader was shown can change or vanish without a check
+failing. Three things are outside that line, written down rather than repaired:
+
+- Someone who can write to the repository can replace the workflow and keep the job's
+  name `portao`, change the build code together with its tests, or change the output
+  and its manifest together. The control is that every code change is read by the
+  other model family.
+- A private string placed in a piece's id or in a field's name would be echoed by a
+  diagnostic. Ids are `[a-z0-9-]` and field names are fixed by the specification, so a
+  seat cannot do this by mistake.
+- On GitHub no piece can be checked as published until the workflow can read the
+  private store of sources (a key the funder provides in the second block). Until then
+  a published piece is checked in full only on the laptop, and the workflow fails on it
+  by design.

@@ -22,7 +22,7 @@ ESCALAS = (
 )
 _ESC_RE = "|".join(re.escape(n).replace("\\ ", "[" + ESPACOS + "]+") for n, _ in ESCALAS)
 FIGURA = re.compile(
-    r"(?:(?P<sinal>[-−+])[" + ESPACOS + r"]*)?(?P<inteiro>\d{1,3}(?:[" + ESPACOS + r"]\d{3})+|\d+)(?:,(?P<decimais>\d+))?"
+    r"(?:(?P<sinal>[-−+])\s*)?(?P<inteiro>\d{1,3}(?:[" + ESPACOS + r"]\d{3})+|\d+)(?:,(?P<decimais>\d+))?"
     r"(?:[" + ESPACOS + r"]+(?P<escala>" + _ESC_RE + r")(?![\w]))?",
 )
 ESCALA_INICIAL = re.compile(r"\s*(?P<escala>" + _ESC_RE + r")(?![\w])")
@@ -104,5 +104,14 @@ NUMERO_INTEIRO = re.compile(r"(?<![\d.,])(?:\d{1,3}(?:[ .,]\d{3})+(?:[.,]\d+)?|\
 
 
 def contem_figura(excerto_normalizado: str, valor: str) -> bool:
+    """A negative valor is found only with its sign (hyphen or minus sign, a space
+    allowed after it); a positive one only without a sign before it."""
     formas = formas_impressas(valor)
-    return any(m.group(0) in formas for m in NUMERO_INTEIRO.finditer(excerto_normalizado))
+    negativo = valor.strip().startswith("-")
+    for m in NUMERO_INTEIRO.finditer(excerto_normalizado):
+        if m.group(0) not in formas:
+            continue
+        com_sinal = re.search(r"[-\u2212] ?\Z", excerto_normalizado[: m.start()]) is not None
+        if com_sinal == negativo:
+            return True
+    return False

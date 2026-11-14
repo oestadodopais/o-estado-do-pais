@@ -10,17 +10,19 @@
 
 *Edited 14 November 2026, 22:40 UTC, after the designer's second reading (`blocos/esq1/LEITURA-DESENHADOR-2.md`: eleven of its thirteen first findings fixed, eight new ones, all adopted): the record's opening sentence said the readings came before publication, which is untrue of a reading made for a correction, and is rewritten; on a phone a table becomes a list, so no figure starts out of sight; the Method page's counts are a block of their own; the reading column is centred.*
 
+*Edited 14 November 2026, 23:32 UTC, after the second code and security reading: two places where this page contradicted itself (the AI line's link on the Method page; the name on the front page) now say one thing each.*
+
 ## Rules for every page
 
 - **Computed, never listed.** Every page is built from the piece files (and one small file per desk). No page has a list that a piece must edit.
 - **Nothing without data.** A block with nothing to show is not printed: no empty table, no "coming soon", and no rule or space where the block would have been.
-- **The AI line** sits at the top of every page, above the name: the sentence `ia_linha` and the link `ia_ligacao` to `/metodo/`.
+- **The AI line** sits at the top of every page, above the name: the sentence `ia_linha` and the link `ia_ligacao` to `/metodo/` (on the Method page itself `ia_ligacao` is plain text).
 - **Portuguese only** (`lang="pt-PT"`), Acordo Ortográfico, no dashes as punctuation. Dates as «16 de novembro de 2026»; hours in Lisbon time, as `10h40`.
 - **Hidden from search engines** until the funder says otherwise: every page carries `noindex, nofollow`, and there is no sitemap. One setting turns this, and it is his.
 - **Plain pages.** Semantic HTML, one `h1`, a skip link (`saltar`), visible focus. Light and dark palettes follow the reader's system setting. **No script at all:** receipts and the record open with `<details>`.
 - **Figures.** A printed line (`{id}`) never breaks between its number and its unit. Inside tied words, a number stays with the word that follows it. Numerals are lining numerals everywhere, the title included. The figure face (Bitter) is for numeric values in the receipts only; a receipt summary that is a sentence is in the prose face.
-- **Links.** A link to a receipt has one look (the dotted underline) in the title, the lead and the text. Every other link is underlined, the titles of pieces in lists included, with one exception: the name at the top of every page is a link to the front page and is not underlined. Labels are never smaller than 12 px.
-- **The name** has one size on every page at a given width. On the front page it is not a link.
+- **Links.** A link to a receipt has one look (the dotted underline) in the title, the lead and the text. Every other link is underlined, the titles of pieces in lists included, with one exception: the name at the top is not underlined. Labels are never smaller than 12 px.
+- **The name** has one size on every page at a given width. It is a link to the front page on every page except the front page.
 - **The column.** The reading column is centred in the page at every width, and so is a box wider than it.
 - **Tables on a phone.** Below 600 px a table (the record, the team's record) is shown as a list: each row a block, each value under its column's label. Nothing a reader needs starts out of sight, and nothing is cut at the edge of a box. On a desktop, columns are at least 24 px apart.
 - **A page does not link to itself.**

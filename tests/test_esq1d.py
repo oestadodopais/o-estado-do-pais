@@ -89,9 +89,11 @@ class Item02NoAr(unittest.TestCase):
         return self.vivo[url]
 
     def test_planta_construcao_sem_paginas(self):
-        (self.est / "manifesto.json").write_text('{"ficheiros": {}}', encoding="utf-8")
-        self.vivo["https://e.invalid/manifesto.json"] = b'{"ficheiros": {}}'
-        self.assertEqual(noar.conferir("https://e.invalid", self.est, self.buscar),
+        pasta = Path(tempfile.mkdtemp(prefix="oedp-sem-paginas-"))
+        self.addCleanup(shutil.rmtree, pasta, True)
+        (pasta / "estilo.css").write_text("p {}", encoding="utf-8")
+        (pasta / "manifesto.json").write_text(json.dumps(build.manifesto(pasta)), encoding="utf-8")
+        self.assertEqual(noar.conferir("https://e.invalid", pasta, self.buscar),
                          ["the build lists no page, so nothing can be shown to be live"])
 
     def test_planta_endereco_publico_diferente(self):
@@ -192,11 +194,11 @@ class Item06Privacidade(Base):
 class Item07RegrasDoTexto(Base):
     def test_planta_citacao_escrita_a_mao(self):
         r, _ = self.plantar([("Este ensaio concede-a.", "Este ensaio concede-a: «frase de ensaio».")])
-        self.falha(r, 9, "corpo: a quotation mark (« ») outside a reference")
+        self.falha(r, 9, "corpo: a quotation mark (« ») typed in the text")
 
     def test_planta_aspas_direitas_e_codigo(self):
         r, _ = self.plantar([("Este ensaio concede-a.", 'Este ensaio diz "ensaio" e `código`.')])
-        self.falha(r, 9, 'corpo: a quotation mark (") outside a reference')
+        self.falha(r, 9, 'corpo: a quotation mark (") typed in the text')
         self.falha(r, 9, "corpo: inline code")
 
     def test_planta_html_no_titulo(self):

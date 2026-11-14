@@ -6,6 +6,7 @@ as an absent one.
 """
 from __future__ import annotations
 
+import html
 import re
 from pathlib import Path
 
@@ -112,14 +113,28 @@ def erros_do_corpo(corpo: str) -> list[str]:
 ASPAS = "«»“”„‟\"‹›"
 
 
+def _sem_impressos(texto: str) -> str:
+    """The text with printed lines ({id}) taken out and tied words kept."""
+    partes, pos = [], 0
+    for r in referencias(texto):
+        partes.append(texto[pos : r.inicio])
+        if r.forma == "ligada":
+            partes.append(r.palavras)
+        pos = r.fim
+    partes.append(texto[pos:])
+    return "".join(partes)
+
+
 def erros_do_texto(texto: str, linha_unica: bool) -> list[str]:
-    """Outside references: no quotation mark (a quotation is printed from a citacao
-    line) and no inline code; in titulo and entrada, no raw HTML either."""
+    """No quotation mark anywhere but in a printed citacao line: not in the text, not in
+    tied words, and not written as an HTML entity; no inline code; in titulo and
+    entrada, no raw HTML either."""
     resto = sem_referencias(texto)
+    escrito = html.unescape(_sem_impressos(texto))
     erros = []
-    aspas = sorted({c for c in resto if c in ASPAS})
+    aspas = sorted({c for c in escrito if c in ASPAS})
     if aspas:
-        erros.append("a quotation mark (" + " ".join(aspas) + ") outside a reference; a quotation is printed from a citacao line")
+        erros.append("a quotation mark (" + " ".join(aspas) + ") typed in the text; a quotation is printed only from a citacao line")
     if "`" in resto:
         erros.append("inline code, which the specification does not allow")
     if linha_unica and re.search(r"<[A-Za-z/!?]", texto):
@@ -136,6 +151,28 @@ def _restos_de_referencia(texto: str) -> list[str]:
     partes.append(texto[pos:])
     resto = "".join(partes)
     return [c for c in "{}" if c in resto]
+
+
+def erros_de_familia(registo: dict) -> list[str]:
+    """A reading by the family that produced what it read can only raise."""
+    produtoras = {p.get("familia") for p in registo.get("passo", []) if isinstance(p, dict)}
+    erros = []
+    for n, l in enumerate(registo.get("leitura", []), 1):
+        if isinstance(l, dict) and l.get("familia") in produtoras and l.get("veredicto") != "levanta":
+            erros.append(f"registo [[leitura]] number {n}: a reading by {l.get('familia')}, the family that produced "
+                         f"what it read, can only raise (veredicto levanta), not {l.get('veredicto')}")
+    return erros
+
+
+def erros_de_estado(registo: dict) -> list[str]:
+    """After publicada, the only states are retirada and publicada again."""
+    publicada = False
+    for n, est in enumerate(registo.get("estado", []), 1):
+        valor = est.get("estado") if isinstance(est, dict) else None
+        if publicada and valor == "rascunho":
+            return [f"registo [[estado]] number {n}: a piece that was published cannot become a draft again; it can only be withdrawn"]
+        publicada = publicada or valor == "publicada"
+    return []
 
 
 def erros(peca: Peca, ficheiro: Path | None = None) -> list[str]:
@@ -260,4 +297,6 @@ def erros(peca: Peca, ficheiro: Path | None = None) -> list[str]:
                     e.append(f"{onde}: pessoas_vistas belongs to the justica and juiz readings only")
             if k == "correcao" and t.get("especie") == "correcao" and not t.get("causa"):
                 e.append(f"{onde}: a correcao needs its causa")
+    e.extend(erros_de_familia(peca.registo))
+    e.extend(erros_de_estado(peca.registo))
     return e

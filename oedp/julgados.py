@@ -55,6 +55,58 @@ def textos(repo: Path, raiz: Path) -> tuple[dict, str, str]:
     return {}, impressao, ""
 
 
+def erros_do_registo(nome: str, registo: dict) -> list[str]:
+    """The record of a text is validated like a piece's record: passo and leitura tables
+    only, every field and value as the specification has them."""
+    from . import forma
+
+    erros = []
+    for k, tabelas in registo.items():
+        if k not in ("passo", "leitura") or not isinstance(tabelas, list):
+            erros.append(f"{nome}: [[{k}]] is not a table of this record (passo and leitura only)")
+            continue
+        exigidos, opcionais = forma.CAMPOS_REGISTO[k]
+        for n, t in enumerate(tabelas, 1):
+            onde = f"{nome} [[{k}]] number {n}"
+            forma._tabela(onde, t, exigidos, opcionais, erros)
+            for (tab, campo), permitidos in forma.VALORES.items():
+                if tab == k and isinstance(t, dict) and campo in t and t[campo] not in permitidos:
+                    erros.append(f"{onde}: {campo} {t[campo]!r} is not one of {', '.join(sorted(permitidos))}")
+    erros += [f"{nome}: {x}" for x in forma.erros_de_familia(registo)]
+    return erros
+
+
+def historia(repo: Path, caminho: Path) -> list[str]:
+    """The repository's own record only grows: what main holds is the beginning of what
+    it holds now. Only the repository's paginas/metodo.md and textos.registo.toml have
+    a history; a test record anywhere else has none."""
+    import subprocess
+
+    from . import conferir
+
+    try:
+        relativo = (Path(caminho).absolute().parent.resolve() / Path(caminho).name).relative_to(Path(repo).resolve()).as_posix()
+    except ValueError:
+        return []
+    if relativo not in ("paginas/metodo.md", "textos.registo.toml"):
+        return []
+    ref = conferir.ref_main(repo)
+    if ref is None:
+        return [f"{relativo}: main is not at hand, so its record cannot be proved to have only grown"]
+    r = subprocess.run(["git", "-C", str(repo), "show", f"{ref}:{relativo}"], capture_output=True)
+    if r.returncode != 0:
+        return []
+    antes, agora = r.stdout, Path(caminho).read_bytes()
+    if relativo == "paginas/metodo.md":
+        try:
+            antes, agora = separar(antes)[1], separar(agora)[1]
+        except ErroDoJulgado:
+            return [f"{relativo}: its record cannot be compared with main's"]
+    if not agora.startswith(antes):
+        return [f"{relativo}: the record on main is not the beginning of the record now: a table was removed or changed"]
+    return []
+
+
 def erros_de_julgamento(nome: str, registo: dict, impressao: str) -> list[str]:
     """Why this text cannot stand published; empty when its judgment is in order."""
     escrita = {p.get("familia") for p in registo.get("passo", []) if p.get("nome") == "escrita"}
@@ -65,6 +117,8 @@ def erros_de_julgamento(nome: str, registo: dict, impressao: str) -> list[str]:
         return [f"{nome}: no juiz reading on its current fingerprint ({impressao[:12]}…)"]
     l = sobre[-1]
     erros = []
+    if not l.get("familia"):
+        return [f"{nome}: the juiz reading on its current fingerprint has no familia, so it cannot be told from the writer's"]
     if l.get("veredicto") != "passa":
         erros.append(f"{nome}: the last juiz reading on its current fingerprint says {l.get('veredicto')}")
     if l.get("familia") in escrita:

@@ -78,9 +78,9 @@ class Comandos(unittest.TestCase):
                         "--achados", "1", "--adotados", "0", "--veredicto", "levanta")
         self.assertEqual(r.returncode, 0, r.stderr)
         self.assertTrue(p.peca.read_bytes().startswith(antes))
-        r = self.correr("estado", str(p.peca), "rascunho", "--razao", "Ensaio.")
+        r = self.correr("estado", str(p.peca), "retirada", "--razao", "Ensaio.")
         self.assertEqual(r.returncode, 0, r.stderr)
-        self.assertEqual(ler(p.peca).estado, "rascunho")
+        self.assertEqual(ler(p.peca).estado, "retirada")
 
     def test_texto_imprime_as_paginas(self):
         import os

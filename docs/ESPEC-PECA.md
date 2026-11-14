@@ -6,6 +6,8 @@
 
 *Edited 14 November 2026, 22:34 UTC, after the code and security reading (`blocos/esq1/leitura/LEITURA-CODEX.md`): a withdrawn piece stays bound by checks 4, 5 and 7; check 4 also proves against `main` that the record only grows, because a record that scripts only append to could still be cut by hand; and no quotation mark may be typed in the text, so that a quotation can only come from a line.*
 
+*Edited 14 November 2026, 23:13 UTC, from the pilot: a reader given planted errors cannot itself say "passa", since the plants make what it read fail. The verdict on the record is the scored one.*
+
 ## The idea in four lines
 
 1. One piece is one text file. Everything a reader sees comes from it, and nothing else is edited to publish it.
@@ -146,7 +148,7 @@ plantas_postas = 3
 plantas_apanhadas = 3
 achados = 2                     # real findings raised
 adotados = 2                    # of those, adopted
-veredicto = "passa"             # passa | nao_passa | levanta (same-family seats can only raise)
+veredicto = "passa"             # passa | nao_passa | levanta (same-family seats can only raise). This is the scored verdict, written by the script that compares the reading with the key: every plant caught and nothing else the reading raised left open
 pessoas_vistas = ["…"]          # justica and juiz only: every person the reader found in the text
 
 [[estado]]                      # the switch
@@ -170,7 +172,8 @@ impressao_depois = "…"
 
 - **The piece's fingerprint** is the SHA-256 of the file's bytes from its first byte up to, and not including, the line `+++ registo`. It is what the judge's `leitura` records, what the page carries, and what the live page is compared with.
 - **The fact sheet's fingerprint** is the SHA-256 of the bytes of the `folha` section. It is what the numbers editor's `leitura` records. A fact sheet changed after that reading must be read again.
-- **The state** of a piece is the last `[[estado]]` in its record; with none, it is a draft. Publishing and withdrawing add one table and change nothing above the record line.
+- **The state** of a piece is the last `[[estado]]` in its record; with none, it is a draft. Publishing and withdrawing add one table and change nothing above the record line. The state moves one way: once published, a piece can be withdrawn and published again, never made a draft again, and its file is never deleted or renamed (edited 14 November 2026, 23:32 UTC, after the second code and security reading).
+- **One family produces a piece, for its whole life,** and the other verifies and judges it. A reading by the producing family can only raise.
 - **A correction** changes the text or the fact sheet, so the fingerprint changes: the piece is judged again, and only then is the `[[correcao]]` added. The earlier wording stays in `antes` and in the repository's history.
 
 ## How the ten checks read this file

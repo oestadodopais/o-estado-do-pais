@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 import shutil
 import tomllib
@@ -63,10 +64,30 @@ def ler_mesas(raiz: Path) -> tuple[dict, list[str]]:
     return mesas, erros
 
 
+PASTAS_SEM_LIGACOES = ("pecas", "mesas", "paginas", "direitos")
+
+
+def ligacoes_simbolicas(raiz: Path) -> list[str]:
+    """Nothing under pecas/, mesas/, paginas/ or direitos/ may be a symbolic link."""
+    erros = []
+    for sub in PASTAS_SEM_LIGACOES:
+        pasta = Path(raiz) / sub
+        if pasta.is_symlink():
+            erros.append(f"{sub}/ is a symbolic link")
+            continue
+        for topo, dirs, ficheiros in os.walk(pasta) if pasta.is_dir() else []:
+            for nome in dirs + ficheiros:
+                p = Path(topo) / nome
+                if p.is_symlink():
+                    erros.append(f"{p.relative_to(raiz).as_posix()} is a symbolic link; nothing under {sub}/ may be one")
+    return erros
+
+
 def contexto(repo: Path, raiz: Path, pecas: list, previa: bool = False) -> tuple[Contexto, list[str]]:
     textos = tomllib.loads((Path(repo) / "textos.toml").read_text(encoding="utf-8"))
     sitio = tomllib.loads((Path(repo) / "sitio.toml").read_text(encoding="utf-8"))
     mesas, erros = ler_mesas(raiz)
+    erros += ligacoes_simbolicas(raiz)
     metodo_f = Path(raiz) / "paginas" / "metodo.md"
     metodo, julgamento = None, []
     if metodo_f.is_file():
@@ -77,9 +98,14 @@ def contexto(repo: Path, raiz: Path, pecas: list, previa: bool = False) -> tuple
         else:
             erros += [f"paginas/metodo.md: {x}" for x in erros_do_corpo(metodo + "\n## A leitura deste projeto\n## A objeção mais forte\n## O que seguir\n")]
             julgamento += julgados.erros_de_julgamento("paginas/metodo.md", registo_m, impressao_m)
+            erros += julgados.erros_do_registo("paginas/metodo.md", registo_m)
+            julgamento += julgados.historia(repo, metodo_f)
     try:
-        registo_t, impressao_t, _ = julgados.textos(repo, raiz)
+        registo_t, impressao_t, onde_t = julgados.textos(repo, raiz)
         julgamento += julgados.erros_de_julgamento("textos.toml", registo_t, impressao_t)
+        erros += julgados.erros_do_registo("textos.registo.toml", registo_t)
+        if onde_t:
+            julgamento += julgados.historia(repo, Path(onde_t))
     except julgados.ErroDoJulgado as e:
         erros.append(str(e))
     registos, erros_dos_direitos = rights.ler_pasta(Path(raiz) / "direitos")
@@ -153,6 +179,20 @@ def configuracao(repo: Path, lancamento: bool) -> dict:
     return {"version": 3, "routes": rotas}
 
 
+def manifesto_confere(estatica: Path) -> list[str]:
+    """The manifest lists every file of the output folder, with its SHA-256, and nothing else."""
+    f = Path(estatica) / "manifesto.json"
+    try:
+        escrito = json.loads(f.read_text(encoding="utf-8"))["ficheiros"]
+    except (OSError, ValueError, KeyError) as e:
+        return [f"manifesto.json cannot be read ({e})"]
+    real = manifesto(estatica)["ficheiros"]
+    erros = [f"manifesto.json does not list {n}, which is in the output folder" for n in sorted(set(real) - set(escrito))]
+    erros += [f"manifesto.json lists {n}, which is not in the output folder" for n in sorted(set(escrito) - set(real))]
+    erros += [f"manifesto.json gives {n} a SHA-256 that is not its own" for n in sorted(set(real) & set(escrito)) if real[n] != escrito[n]]
+    return erros
+
+
 def manifesto(estatica: Path) -> dict:
     ficheiros = {}
     for f in sorted(estatica.rglob("*")):
@@ -199,7 +239,7 @@ def construir(repo: Path, raiz: Path | None = None, saida: Path | None = None, c
                 c.resultados.append(r)
                 if r.estado == conf.FALHOU:
                     c.falha(r.linha())
-    if not com_rascunhos and any(p.publicada for p in incluidas):
+    if not com_rascunhos and any(p.vinculada for p in incluidas):
         for x in ctx.julgamento:
             c.falha(f"check  4 (the published text is the judged text) · reader's text outside pieces: {x}")
     if not c.ok:
@@ -251,6 +291,8 @@ def construir(repo: Path, raiz: Path | None = None, saida: Path | None = None, c
     for x in p8.razoes:
         c.falha(f"check 8: built file {x}")
     _escrever(estatica, "manifesto.json", json.dumps(manifesto(estatica), indent=1, sort_keys=True) + "\n")
+    for x in manifesto_confere(estatica):
+        c.falha(f"check 9: {x}")
     (saida / "config.json").write_text(json.dumps(configuracao(repo, ctx.lancamento), indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     if c.ok:
         onde = estatica.relative_to(repo).as_posix() if estatica.is_relative_to(repo) else estatica.name

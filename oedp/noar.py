@@ -10,7 +10,6 @@ at that address. The fetcher is a parameter, so the tests give a site held in me
 from __future__ import annotations
 
 import hashlib
-import json
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -39,10 +38,13 @@ def conferir(endereco: str, estatica: Path, buscar=buscar_na_rede) -> list[str]:
     proprio_f = Path(estatica) / "manifesto.json"
     if not proprio_f.is_file():
         return [f"there is no build to compare with ({proprio_f} is missing); run construir first"]
-    try:
-        proprio = json.loads(proprio_f.read_text(encoding="utf-8"))["ficheiros"]
-    except (ValueError, KeyError) as e:
-        return [f"the build's manifesto.json cannot be read ({e})"]
+    # The list is recomputed from the output folder, not taken from the manifest file.
+    from .construir import manifesto, manifesto_confere
+
+    proprio = manifesto(Path(estatica))["ficheiros"]
+    diferencas = manifesto_confere(Path(estatica))
+    if diferencas:
+        return ["the build's manifesto.json does not list exactly the files of the output folder: " + "; ".join(diferencas)]
     if not any(nome.endswith(".html") for nome in proprio):
         return ["the build lists no page, so nothing can be shown to be live"]
     razoes = []

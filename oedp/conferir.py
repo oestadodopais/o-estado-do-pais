@@ -167,9 +167,29 @@ def check2(peca: Peca, loja: Path | None) -> Resultado:
 # --------------------------------------------------------------------------- 3
 
 
+def circulos(peca: Peca) -> list[str]:
+    """Derived lines whose calculation leads back to themselves."""
+    derivados = {lid: derivacoes.ids_em(str(l.get("calculo", ""))) for lid, l in peca.linhas.items() if l.get("tipo") == "derivado"}
+    erros = []
+    for inicio in derivados:
+        caminho, pilha = [], [(inicio, [inicio])]
+        vistos = set()
+        while pilha:
+            atual, caminho = pilha.pop()
+            for seguinte in derivados.get(atual, []):
+                if seguinte == inicio:
+                    erros.append(f"{inicio}: its calculation depends on itself ({' -> '.join(caminho + [inicio])})")
+                    pilha = []
+                    break
+                if seguinte in derivados and seguinte not in vistos:
+                    vistos.add(seguinte)
+                    pilha.append((seguinte, caminho + [seguinte]))
+    return erros
+
+
 def check3(peca: Peca) -> Resultado:
     valores = {lid: str(l.get("valor")) for lid, l in peca.linhas.items() if l.get("tipo") in ("valor", "derivado")}
-    razoes, contadas = [], 0
+    razoes, contadas = circulos(peca), 0
     for lid, l in peca.linhas.items():
         if l.get("tipo") != "derivado":
             continue
@@ -229,8 +249,9 @@ def anterior_em_main(repo: Path, caminho: Path):
     Only the repository's own pieces, under `pecas/`, have a history to keep: a file
     anywhere else (the test pieces under `ensaios/`, a copy in a temporary folder) is
     never published, and is treated as absent from main without asking for it."""
+    # The folder is resolved, the file itself is not: a link placed under pecas/ keeps its place.
     try:
-        relativo = Path(caminho).resolve().relative_to(Path(repo).resolve())
+        relativo = (Path(caminho).absolute().parent.resolve() / Path(caminho).name).relative_to(Path(repo).resolve())
     except ValueError:
         return "absent", None
     if relativo.parts[:1] != ("pecas",):
@@ -241,6 +262,28 @@ def anterior_em_main(repo: Path, caminho: Path):
     relativo = relativo.as_posix()
     r = subprocess.run(["git", "-C", str(repo), "show", f"{ref}:{relativo}"], capture_output=True)
     return ("here", r.stdout) if r.returncode == 0 else ("absent", None)
+
+
+def pecas_desaparecidas(repo: Path) -> tuple[list[str], bool]:
+    """(reasons, whether main was at hand): a piece file that exists on main and was ever
+    published there must still exist at the same path; it can only be withdrawn."""
+    ref = ref_main(repo)
+    if ref is None:
+        return [], False
+    r = subprocess.run(["git", "-C", str(repo), "ls-tree", "-r", "--name-only", ref, "--", "pecas/"], capture_output=True)
+    razoes = []
+    for nome in r.stdout.decode().splitlines():
+        if not nome.endswith(".md") or (Path(repo) / nome).is_file():
+            continue
+        bruto = subprocess.run(["git", "-C", str(repo), "show", f"{ref}:{nome}"], capture_output=True).stdout
+        try:
+            antes = ler_bytes(bruto, Path(nome))
+            publicada = any(e.get("estado") == "publicada" for e in antes.registo.get("estado", []))
+        except ErroDeForma:
+            publicada = b'estado = "publicada"' in bruto
+        if publicada:
+            razoes.append(f"{nome} was published on main and is gone here (deleted or renamed); a published piece can only be withdrawn")
+    return razoes, True
 
 
 def historia(peca: Peca, anterior) -> tuple[list[str], bool]:
@@ -318,6 +361,10 @@ def familias(peca, nomes) -> set[str]:
 
 def check5(peca: Peca) -> Resultado:
     razoes = []
+    produtoras = sorted({str(p.get("familia")) for p in _passos(peca)})
+    if len(produtoras) > 1:
+        razoes.append(f"the production steps are by more than one family ({', '.join(produtoras)}); "
+                      "one family produces a piece for its whole life")
     da_folha = familias(peca, {"reportagem"})
     do_texto = familias(peca, {"encomenda", "nota", "reportagem", "escrita", "edicao"})
     if not da_folha:

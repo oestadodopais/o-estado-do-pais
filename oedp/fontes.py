@@ -59,9 +59,23 @@ def caminho_da_copia(raiz: Path, sha256: str) -> Path:
     return Path(raiz) / "sha256" / sha256[:2] / sha256[2:]
 
 
+def destino_confinado(raiz: Path, sha256: str) -> Path:
+    """Where a copy is written: inside the resolved store, through folders that are not
+    symbolic links. Raises ErroDaLoja otherwise."""
+    base = Path(raiz).resolve()
+    destino = caminho_da_copia(base, sha256)
+    for pasta in (base / "sha256", destino.parent):
+        if pasta.is_symlink():
+            raise ErroDaLoja(f"refused: {pasta.relative_to(base).as_posix()} in the store is a symbolic link; the store's folders may not be")
+    destino.parent.mkdir(parents=True, exist_ok=True)
+    if not destino.parent.resolve().is_relative_to(base):
+        raise ErroDaLoja("refused: the copy's folder resolves outside the store")
+    return destino
+
+
 def guardar(raiz: Path, dados: bytes) -> str:
     sha = hashlib.sha256(dados).hexdigest()
-    destino = caminho_da_copia(raiz, sha)
+    destino = destino_confinado(raiz, sha)
     if not destino.exists():
         destino.parent.mkdir(parents=True, exist_ok=True)
         temporario = destino.with_name(destino.name + ".parcial")
@@ -462,8 +476,7 @@ def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, t
         if avisos is not None:
             avisos.append("stored: " + resumo_da_copia(dados, r.tipo))
         sha = hashlib.sha256(dados).hexdigest()
-        destino = caminho_da_copia(raiz, sha)
-        destino.parent.mkdir(parents=True, exist_ok=True)
+        destino = destino_confinado(raiz, sha)
         temporario.replace(destino)
     finally:
         temporario.unlink(missing_ok=True)
