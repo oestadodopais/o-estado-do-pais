@@ -320,7 +320,7 @@ import { MEDIDAS_DO_DOMINIO_1 } from '../src/data/dominios.mjs';
 import { NOMES_DO_PROJETO } from '../src/data/nomes-das-medidas.mjs';
 import {textoDocumentalConferido,temProvaDeEfeito,nomeDoEfeitoConferido} from '../src/lib/prova-efeitos.mjs';
 import { NOMES_EO1 } from '../src/data/nomes-eo1.mjs';
-import { conferirNomeEo1 } from './nomes-eo1-do-portao.mjs';
+import { conferirNomeEo1, provasDosNomesEo1 } from './nomes-eo1-do-portao.mjs';
 import { NOMES_HB1 } from '../src/data/nomes-hb1.mjs';
 import { MUNICIPIOS_COM_PAGINA } from '../src/data/municipios.mjs';
 import { MEDIDAS_DO_CONCELHO } from '../src/data/concelhos.mjs';
@@ -6007,7 +6007,7 @@ for (const file of ficheirosHtml(DIST)) {
     const id = el.getAttribute('data-de-linha');
     if (!NOMES_EO1[id]) continue;
     const falta = conferirNomeEo1(id, rota?.lang, textoTranscrito(el),
-      registoDoPortao('orcamento-2027-o-que-muda-e-para-quem', 'pt')?.proof_rows);
+      provasDosNomesEo1(registoDoPortao('orcamento-2027-o-que-muda-e-para-quem', 'pt')?.proof_rows));
     if (falta) err(`EO1 nome ${id}: ${falta}.`);
     else aRemover.push(el);
   }
@@ -8799,7 +8799,7 @@ for (const [nomePng, registo] of REGISTOS_DOS_CARTOES) {
       }
     } else if (v.origem === 'nome-eo1') {
       const falta = conferirNomeEo1(v.linha, registo.edicao, v.texto,
-        registoDoPortao('orcamento-2027-o-que-muda-e-para-quem', 'pt')?.proof_rows);
+        provasDosNomesEo1(registoDoPortao('orcamento-2027-o-que-muda-e-para-quem', 'pt')?.proof_rows));
       if (falta) errC(`EO1 nome ${v.linha}: ${falta}.`);
     } else if (v.origem === 'nome-hb1') {
       const claim = claims.get(v.linha);
