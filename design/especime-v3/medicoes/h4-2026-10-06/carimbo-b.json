@@ -1,7 +1,0 @@
-{
-  "comando": "node scripts/stamp-version.mjs",
-  "codigo": 0,
-  "tranca_da_maquina": false,
-  "duracao_segundos": 0.038,
-  "cabeca": "b60217d65355594b9262bd11356d02754656e3bd"
-}

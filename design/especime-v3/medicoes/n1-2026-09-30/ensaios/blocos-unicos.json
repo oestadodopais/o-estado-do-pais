@@ -1,8 +1,0 @@
-{
-  "comando": "node tests/inicio/navegacao.mjs --prova",
-  "cabeca": "a5139c5535ac4232bd9025fac4c1f8acb10050f8",
-  "inicio": "2026-09-30T09:14:50.457Z",
-  "fim": "2026-09-30T09:14:51.708Z",
-  "segundos": 1.249298292,
-  "codigo": 0
-}

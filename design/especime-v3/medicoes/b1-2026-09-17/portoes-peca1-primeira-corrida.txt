@@ -1,3 +1,0 @@
-npm run build: 0
-npm run verify: 0
-npm run typecheck: 0

@@ -1,7 +1,0 @@
-{
-  "comando": "sh scripts/leituras/portoes.sh <worktree> design/especime-v3/medicoes/jd1-2026-10-06/portoes",
-  "inicio": "2026-10-06T16:48:15.157674+00:00",
-  "fim": "2026-10-06T17:12:22.507834+00:00",
-  "codigo": 0,
-  "cabeca": "73decc118ffeaf15bfc70c4d179f208725b4c26e"
-}

@@ -1,7 +1,0 @@
-{
-  "comando": "npx astro build",
-  "codigo": 0,
-  "tranca_da_maquina": true,
-  "duracao_segundos": 1467.277,
-  "cabeca": "b60217d65355594b9262bd11356d02754656e3bd"
-}

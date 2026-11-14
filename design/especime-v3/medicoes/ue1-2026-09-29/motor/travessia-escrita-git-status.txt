@@ -1,4 +1,0 @@
-# git status --porcelain -- ledger/series ledger/cruzamentos/series.json src/data/paises-da-uniao.json
-# em <worktree do sítio>, depois da travessia a escrever
-
-(nada)

@@ -1,6 +1,0 @@
-{
-  "comando": "node scripts/check-lugar.mjs",
-  "codigo": 0,
-  "duracao_segundos": 50.386,
-  "cabeca": "9d4629c48f2ffb8e8fd02e49d73c17fe399d0c67"
-}

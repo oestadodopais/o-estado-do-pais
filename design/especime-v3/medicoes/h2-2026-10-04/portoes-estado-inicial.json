@@ -1,5 +1,0 @@
-{
-  "cabeca": "f2852826d7967362c4fe1ba60264bc1bdf2aef23",
-  "estado": "",
-  "comando": "git status --porcelain --untracked-files=no"
-}

@@ -1,8 +1,0 @@
-{
-  "comando": "node tests/inicio/primeira-pagina.mjs --prova",
-  "cabeca": "a5139c5535ac4232bd9025fac4c1f8acb10050f8",
-  "inicio": "2026-09-30T09:14:49.264Z",
-  "fim": "2026-09-30T09:14:50.639Z",
-  "segundos": 1.3734365419999999,
-  "codigo": 0
-}

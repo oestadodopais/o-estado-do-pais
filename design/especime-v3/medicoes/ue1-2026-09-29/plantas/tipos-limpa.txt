@@ -1,7 +1,0 @@
-# npm run typecheck
-# código: 0
-
-
-> o-estado-do-pais@0.1.0 typecheck
-> tsc -p tsconfig.check.json
-

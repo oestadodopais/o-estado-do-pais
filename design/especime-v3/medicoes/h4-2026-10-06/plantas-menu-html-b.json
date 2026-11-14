@@ -1,7 +1,0 @@
-{
-  "comando": "node tests/pais/portoes.mjs --prefixo h4b-",
-  "codigo": 0,
-  "tranca_da_maquina": false,
-  "duracao_segundos": 18.574,
-  "cabeca": "c4d6af8ef7447055651e4c32c1d127288084eb15"
-}

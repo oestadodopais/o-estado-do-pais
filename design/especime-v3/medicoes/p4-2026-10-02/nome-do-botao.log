@@ -1,8 +1,0 @@
-hoje (o «·» no grupo):
-  - group "Tema":
-    - button "claro" [pressed]
-    - button "escuro"
-antes do P4 (o «·» dentro do segundo botão):
-  - group "Tema":
-    - button "claro" [pressed]
-    - button "· escuro"

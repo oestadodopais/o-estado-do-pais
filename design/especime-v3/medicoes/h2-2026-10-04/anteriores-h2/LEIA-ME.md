@@ -1,1 +1,0 @@
-Registos históricos da construção H2, anteriores à leitura a frio. Não são provas da cabeça H2-b. A corrida atual completa das plantas está em `../plantas-portoes-h2.json`; os portões atuais estão em `../portoes/`. As versões originais dos registos substituídos permanecem no histórico Git.

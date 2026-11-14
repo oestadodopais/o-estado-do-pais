@@ -1,9 +1,0 @@
-{
-  "comando": "python3 tests/leituras/pacote.py --json <provas>/pacote-casos-h2c.json",
-  "codigo": 0,
-  "inicio": "2026-10-05T00:25:48.595370+00:00",
-  "segundos": 0.918,
-  "cabeca": "311bcbb5dd9a24e883e975502523faa14fa350d0",
-  "estado": "",
-  "estado_fim": ""
-}
