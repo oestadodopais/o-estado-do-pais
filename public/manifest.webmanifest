@@ -1,0 +1,32 @@
+{
+  "_": [
+    "O manifesto da edição portuguesa. Ver design/marca/BRIEF-app.md.",
+    "Os campos são conferidos pelo portão de HTML (scripts/gate-html.mjs)",
+    "contra site.config.mjs, contra src/styles/tokens.css e contra os",
+    "ficheiros que os ícones nomeiam: um manifesto é datilografado, e um",
+    "ficheiro datilografado que ninguém confere fica errado em silêncio.",
+    "Os ícones geram-se com `node design/marca/exportar.mjs app`.",
+    "Sem service worker e sem pedido de instalação: quem quiser a aplicação",
+    "usa «adicionar ao ecrã principal», que é o que o BRIEF decide."
+  ],
+  "name": "O Estado do País",
+  "short_name": "O Estado",
+  "lang": "pt-PT",
+  "dir": "ltr",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f7f4",
+  "theme_color": "#f6f7f4",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    {
+      "src": "/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

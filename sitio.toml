@@ -1,0 +1,4 @@
+# Site settings. One setting exists: `lancamento`. While it is unset, every page
+# carries `noindex, nofollow` and the host sends `X-Robots-Tag: noindex, nofollow`.
+# Setting it makes the site visible to search engines, and that decision is the
+# funder's alone.

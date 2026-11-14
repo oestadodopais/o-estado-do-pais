@@ -1,0 +1,4 @@
+markdown==3.10.2
+PyMuPDF==1.26.7
+openpyxl==3.1.5
+et-xmlfile==2.0.0

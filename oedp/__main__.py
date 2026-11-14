@@ -1,0 +1,294 @@
+"""python3 -m oedp <command>: see README.md."""
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import subprocess
+import sys
+import time
+import unittest
+from pathlib import Path
+
+from . import conferir as conf
+from . import construir as build
+from . import datas, fontes, forma, noar, registo
+from .peca import ID_PECA, ErroDeForma, impressoes, ler, pecas_em
+
+REPO = Path(__file__).resolve().parent.parent
+
+MODELO = """+++ cabeca
+id = "{id}"
+tipo = "{tipo}"
+titulo = ""
+entrada = ""
+temas = []
+
+[encomenda]
+pergunta = ""
+porque_hoje = ""
+largar_se = ""
++++ corpo
+
+## A leitura deste projeto
+
+## A objeção mais forte
+
+## O que seguir
+
++++ folha
++++ registo
+"""
+
+
+def cmd_nova(a) -> int:
+    m = ID_PECA.match(a.id)
+    if not m or datas.data_real(a.id[:10]) is None:
+        print(f"refused: {a.id!r} is not a date and a short lower-case ASCII name", file=sys.stderr)
+        return 2
+    destino = REPO / "pecas" / m.group(1) / f"{a.id}.md"
+    if destino.exists():
+        print(f"refused: {destino.relative_to(REPO)} exists", file=sys.stderr)
+        return 2
+    destino.parent.mkdir(parents=True, exist_ok=True)
+    destino.write_text(MODELO.format(id=a.id, tipo=a.tipo), encoding="utf-8")
+    print(destino.relative_to(REPO))
+    return 0
+
+
+def _loja_ou_falha():
+    raiz = fontes.loja()
+    if raiz is None:
+        print("refused: OEDP_FONTES is not set; it names the private store of sources", file=sys.stderr)
+    return raiz
+
+
+def cmd_fonte(a) -> int:
+    raiz = _loja_ou_falha()
+    if raiz is None:
+        return 2
+    try:
+        print(fontes.buscar(a.url, raiz), end="")
+    except fontes.ErroDaLoja as e:
+        print(str(e), file=sys.stderr)
+        return 1
+    return 0
+
+
+def cmd_texto(a) -> int:
+    raiz = _loja_ou_falha()
+    if raiz is None:
+        return 2
+    try:
+        caminho = fontes.caminho_da_copia(raiz, a.sha256)
+    except fontes.ErroDaLoja as e:
+        print(str(e), file=sys.stderr)
+        return 2
+    if not caminho.is_file():
+        print(f"no copy in the store under {a.sha256}", file=sys.stderr)
+        return 1
+    paginas = fontes.texto_por_pagina(caminho.read_bytes())
+    for n, texto in enumerate(paginas, 1):
+        if len(paginas) > 1:
+            print(f"=== p. {n} ===")
+        print(texto)
+    return 0
+
+
+def cmd_impressao(a) -> int:
+    try:
+        peca, folha = impressoes(Path(a.peca).read_bytes())
+    except ErroDeForma as e:
+        print(str(e), file=sys.stderr)
+        return 1
+    print(f"piece      {peca}")
+    print(f"fact sheet {folha}")
+    return 0
+
+
+def cmd_registar(a) -> int:
+    if a.tabela == "passo":
+        campos = {"nome": a.nome, "lugar": a.lugar, "familia": a.familia, "modelo": a.modelo,
+                  "inicio": a.inicio, "fim": a.fim}
+    elif a.tabela == "leitura":
+        campos = {"lugar": a.lugar, "familia": a.familia, "modelo": a.modelo, "inicio": a.inicio, "fim": a.fim,
+                  "impressao": a.impressao, "plantas_postas": a.plantas_postas,
+                  "plantas_apanhadas": a.plantas_apanhadas, "achados": a.achados, "adotados": a.adotados,
+                  "veredicto": a.veredicto}
+        if a.pessoas_vistas is not None:
+            campos["pessoas_vistas"] = [x.strip() for x in a.pessoas_vistas.split(",") if x.strip()]
+    else:
+        campos = {"em": registo.agora(), "especie": a.especie, "antes": a.antes, "depois": a.depois,
+                  "razao": a.razao}
+        if a.causa is not None:
+            campos["causa"] = a.causa
+        campos.update({"impressao_antes": a.impressao_antes, "impressao_depois": a.impressao_depois})
+    faltam = [k for k, v in campos.items() if v is None]
+    if faltam:
+        print("refused: missing " + ", ".join("--" + k.replace("_", "-") for k in faltam), file=sys.stderr)
+        return 2
+    try:
+        print(registo.acrescentar(Path(a.peca), a.tabela, campos), end="")
+    except (registo.ErroDoRegisto, ErroDeForma) as e:
+        print(f"refused: {e}", file=sys.stderr)
+        return 1
+    return 0
+
+
+def cmd_estado(a) -> int:
+    caminho = Path(a.peca)
+    if a.estado == "publicada":
+        # Publishing must not add a table to a piece that would fail as published.
+        peca = ler(caminho)
+        peca.registo.setdefault("estado", []).append({"estado": "publicada"})
+        ctx, _ = build.contexto(REPO, caminho.parents[2] if len(caminho.parents) > 2 else REPO, [peca])
+        falhas = [r for r in _conferir_como_publicada(peca, ctx) if r.estado in (conf.FALHOU, conf.NAO_CORRIDO)]
+        if falhas:
+            print("refused: the piece would fail as published:", file=sys.stderr)
+            for r in falhas:
+                print("  " + r.linha(), file=sys.stderr)
+            return 1
+    campos = {"estado": a.estado, "em": registo.agora(), "por": "python3 -m oedp estado", "razao": a.razao}
+    try:
+        print(registo.acrescentar(caminho, "estado", campos), end="")
+    except (registo.ErroDoRegisto, ErroDeForma) as e:
+        print(f"refused: {e}", file=sys.stderr)
+        return 1
+    return 0
+
+
+def _conferir_como_publicada(peca, ctx):
+    from . import paginas
+
+    pagina = paginas.pagina_da_peca(peca, ctx)
+    loja = fontes.loja()
+    return [conf.check1(peca), conf.check2(peca, loja), conf.check3(peca), conf.check4(peca, pagina),
+            conf.check5(peca), conf.check6(peca), conf.check7(peca), conf.check8_peca(peca),
+            conf.check9_peca(peca, pagina)]
+
+
+def conferir_tudo(alvos: list[Path], raiz: Path = REPO, imprimir=print) -> tuple[bool, list]:
+    pecas = []
+    for c in alvos:
+        try:
+            pecas.append(ler(c))
+        except (ErroDeForma, OSError):
+            pass
+    ctx, erros_do_sitio = build.contexto(REPO, raiz, [p for p in pecas if p.estado in ("publicada", "retirada")])
+    resultados = []
+    for c in alvos:
+        resultados += conf.conferir_peca(c, ctx, fontes.loja())
+    resultados.append(conf.check8_arvore(REPO))
+    vercel = conf.check9_vercel(REPO)
+    resultados.append(conf._r(9, "vercel.json", vercel))
+    if erros_do_sitio:
+        resultados.append(conf._r(9, "desk and method files", erros_do_sitio))
+    resultados.append(conf.Resultado(10, "live site", conf.NAO_CORRIDO,
+                                     ["it needs the live address: run `python3 -m oedp no-ar <address>` after publishing"], []))
+    for r in resultados:
+        imprimir(r.linha())
+    ok = not any(r.estado == conf.FALHOU for r in resultados)
+    return ok, resultados
+
+
+def cmd_conferir(a) -> int:
+    alvos = [Path(p) for p in a.pecas] if a.pecas else pecas_em(REPO)
+    if not alvos:
+        print("no piece under pecas/; the checks of the tree and the site still run")
+    ok, _ = conferir_tudo(alvos)
+    return 0 if ok else 1
+
+
+def cmd_construir(a) -> int:
+    c = build.construir(REPO, saida=Path(a.saida) if a.saida else None, com_rascunhos=a.com_rascunhos, loja=fontes.loja())
+    for m in c.mensagens:
+        print(m)
+    print("check  9 (the site builds) · site: " + ("passed" if c.ok else "failed"))
+    return 0 if c.ok else 1
+
+
+def cmd_no_ar(a) -> int:
+    estatica = Path(a.saida or REPO / ".vercel/output") / "static"
+    razoes = noar.conferir(a.endereco, estatica)
+    if razoes:
+        print("check 10 (live is built) · " + a.endereco + ": failed: " + " | ".join(razoes))
+        return 1
+    print("check 10 (live is built) · " + a.endereco + ": passed")
+    return 0
+
+
+def cmd_tudo(a) -> int:
+    t0 = time.monotonic()
+    ok1 = cmd_conferir(argparse.Namespace(pecas=[])) == 0
+    t1 = time.monotonic()
+    ok2 = cmd_construir(argparse.Namespace(saida=None, com_rascunhos=False)) == 0
+    t2 = time.monotonic()
+    suite = unittest.defaultTestLoader.discover(str(REPO / "tests"), top_level_dir=str(REPO))
+    resultado = unittest.TextTestRunner(verbosity=1).run(suite)
+    t3 = time.monotonic()
+    print(f"seconds: conferir {t1 - t0:.2f} · construir {t2 - t1:.2f} · tests {t3 - t2:.2f}")
+    ok3 = resultado.wasSuccessful()
+    print("tudo: " + ("passed" if ok1 and ok2 and ok3 else "failed"))
+    return 0 if ok1 and ok2 and ok3 else 1
+
+
+def principal(argv=None) -> int:
+    p = argparse.ArgumentParser(prog="python3 -m oedp")
+    sub = p.add_subparsers(dest="comando", required=True)
+
+    s = sub.add_parser("nova")
+    s.add_argument("id")
+    s.add_argument("--tipo", required=True, choices=sorted(forma.TIPOS_PECA))
+    s.set_defaults(f=cmd_nova)
+
+    s = sub.add_parser("fonte")
+    s.add_argument("url")
+    s.set_defaults(f=cmd_fonte)
+
+    s = sub.add_parser("texto")
+    s.add_argument("sha256")
+    s.set_defaults(f=cmd_texto)
+
+    s = sub.add_parser("impressao")
+    s.add_argument("peca")
+    s.set_defaults(f=cmd_impressao)
+
+    s = sub.add_parser("registar")
+    s.add_argument("peca")
+    s.add_argument("tabela", choices=["passo", "leitura", "correcao"])
+    for opcao in ("nome", "lugar", "familia", "modelo", "inicio", "fim", "impressao", "veredicto",
+                  "pessoas-vistas", "especie", "antes", "depois", "razao", "causa",
+                  "impressao-antes", "impressao-depois"):
+        s.add_argument("--" + opcao)
+    for opcao in ("plantas-postas", "plantas-apanhadas", "achados", "adotados"):
+        s.add_argument("--" + opcao, type=int)
+    s.set_defaults(f=cmd_registar)
+
+    s = sub.add_parser("estado")
+    s.add_argument("peca")
+    s.add_argument("estado", choices=["publicada", "retirada", "rascunho"])
+    s.add_argument("--razao", required=True)
+    s.set_defaults(f=cmd_estado)
+
+    s = sub.add_parser("conferir")
+    s.add_argument("pecas", nargs="*")
+    s.set_defaults(f=cmd_conferir)
+
+    s = sub.add_parser("construir")
+    s.add_argument("--com-rascunhos", action="store_true")
+    s.add_argument("--saida")
+    s.set_defaults(f=cmd_construir)
+
+    s = sub.add_parser("no-ar")
+    s.add_argument("endereco")
+    s.add_argument("--saida")
+    s.set_defaults(f=cmd_no_ar)
+
+    s = sub.add_parser("tudo")
+    s.set_defaults(f=cmd_tudo)
+
+    a = p.parse_args(argv)
+    return a.f(a)
+
+
+if __name__ == "__main__":
+    sys.exit(principal())

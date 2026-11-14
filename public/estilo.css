@@ -1,0 +1,226 @@
+/* O Estado do País · the one stylesheet of the five pages.
+   Carried over from the trial edition's src/styles/tokens.css, site.css and
+   texto.css: the colour tokens, the three typefaces hosted here (licences and
+   provenance in design/especime-v3/TIPOS.md), the measure and the reading size.
+   Only what these pages use. The dark palette follows the reader's system
+   setting, as the holding page does: the theme switch has no fixed words in
+   textos.toml, so it is not built. */
+
+@font-face { font-family: 'Spectral'; src: url('/tipos/spectral/Spectral-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Spectral'; src: url('/tipos/spectral/Spectral-Italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Spectral'; src: url('/tipos/spectral/Spectral-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Spectral'; src: url('/tipos/spectral/Spectral-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Spectral'; src: url('/tipos/spectral/Spectral-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Spectral SC'; src: url('/tipos/spectral-sc/SpectralSC-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Spectral SC'; src: url('/tipos/spectral-sc/SpectralSC-SemiBold.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Bitter'; src: url('/tipos/bitter/Bitter%5Bwght%5D.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+
+/* ------------------------------------------------------------ tokens */
+:root {
+  --paper: #f6f7f4;
+  --ink: #17191b;
+  --g1: #585d5b; /* secondary text, 6.24:1 on paper */
+  --g2: #7f8681; /* borders, 3.47:1 */
+  --g3: #d9ddd8; /* rules, decoration */
+  --rule: var(--g3);
+  --rule-strong: var(--g2);
+  --muted: var(--g1);
+  --focus: var(--ink);
+  --f-prosa: 'Spectral', Georgia, 'Times New Roman', serif;
+  --f-instr: 'Bitter', 'Rockwell', 'Roboto Slab', Georgia, serif;
+  --f-versal: 'Spectral SC', 'Spectral', Georgia, 'Times New Roman', serif;
+  --t-leitura: 17.5px;
+  --lh-leitura: 1.58;
+  --measure: 66ch;
+  --gutter: clamp(18px, 4vw, 44px);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #15171a;
+    --ink: #eceeea; /* 15.38:1 on dark paper */
+    --g1: #b9beba;
+    --g2: #8e948f;
+    --g3: #3a3f3c;
+    color-scheme: dark;
+  }
+}
+
+/* ------------------------------------------------------------ base */
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--paper); }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-prosa);
+  font-size: 16px;
+  line-height: 1.6;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+a { color: inherit; text-decoration-color: var(--rule-strong); text-underline-offset: 3px; }
+a:hover { text-decoration-color: currentColor; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(30px, 4.2vw, 46px); line-height: 1.1; font-weight: 600; letter-spacing: -0.022em; }
+h2 { font-size: clamp(23px, 2.7vw, 31px); line-height: 1.15; font-weight: 600; letter-spacing: -0.018em; }
+h3 { font-size: 20px; line-height: 1.25; font-weight: 600; }
+p { margin: 0; }
+.mono, code { font-family: var(--f-instr); font-variant-numeric: tabular-nums lining-nums; }
+code { font-size: 13px; overflow-wrap: anywhere; }
+.eyebrow {
+  font-family: var(--f-versal);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  color: var(--muted);
+  display: block;
+  margin: 0;
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
+
+/* ------------------------------------------------------------ the top of every page */
+.cabecalho { padding-top: 10px; }
+.rotulo-ia-linha {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.rotulo-ia-linha a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule-strong); white-space: nowrap; }
+.rotulo-ia-linha a:hover { text-decoration-color: currentColor; }
+.masthead { padding: clamp(28px, 5vw, 56px) 0 clamp(14px, 2.2vw, 22px); }
+.masthead-compact { padding: clamp(20px, 3.2vw, 30px) 0 clamp(10px, 1.6vw, 16px); }
+.wordmark {
+  font-family: var(--f-prosa);
+  font-weight: 400;
+  font-size: clamp(34px, 7.4vw, 68px);
+  line-height: 1.04;
+  letter-spacing: -0.014em;
+  color: var(--ink);
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  margin: 0;
+}
+.masthead-compact .wordmark { font-size: clamp(24px, 3.4vw, 34px); }
+.wordmark a { text-decoration: none; }
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1px clamp(16px, 2.8vw, 34px);
+  border-bottom: 1px solid var(--rule);
+}
+.menu a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--f-versal);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: lowercase;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.menu a:hover { color: var(--ink); }
+
+main { padding-top: clamp(24px, 3.4vw, 40px); min-height: 40vh; }
+.pagina-titulo { margin-bottom: 18px; }
+.intro { font-size: var(--t-leitura); line-height: var(--lh-leitura); color: var(--muted); max-width: var(--measure); margin-bottom: 18px; }
+
+/* ------------------------------------------------------------ front page and threads */
+.dia-bloco { border-top: 1.5px solid var(--ink); padding-top: 14px; margin-bottom: clamp(28px, 4vw, 44px); }
+.dia { font-family: var(--f-versal); font-size: 15px; font-weight: 600; letter-spacing: .05em; text-transform: lowercase; color: var(--muted); margin-bottom: 8px; }
+.item { padding: 14px 0 18px; border-bottom: 1px solid var(--rule); max-width: var(--measure); }
+.item:last-child { border-bottom: 0; }
+.item-titulo { margin: 4px 0 6px; font-size: clamp(21px, 2.4vw, 26px); line-height: 1.2; }
+.item-titulo a { text-decoration: none; }
+.item-titulo a:hover { text-decoration: underline; }
+.item-entrada { font-size: var(--t-leitura); line-height: var(--lh-leitura); }
+.item-tema { margin-top: 6px; font-size: 14px; color: var(--muted); }
+.item-tema a { color: var(--muted); }
+.temas-lista { border-top: 1.5px solid var(--ink); padding-top: 14px; }
+.temas-lista h2, .seguir-bloco h2, .equipa h2, .erro h2, .recibos h2 { font-size: clamp(21px, 2.2vw, 25px); line-height: 1.24; margin-bottom: 12px; }
+.temas-lista ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 4px 24px; }
+.temas-lista a { display: inline-flex; align-items: center; min-height: 44px; font-size: 18px; }
+.seguir-bloco { margin-bottom: clamp(28px, 4vw, 44px); }
+.seguir { max-width: var(--measure); padding: 12px 0 16px; border-bottom: 1px solid var(--rule); }
+.seguir p { font-size: var(--t-leitura); line-height: var(--lh-leitura); }
+.seguir-peca { margin-top: 6px; font-size: 15px !important; color: var(--muted); }
+.tema-pecas { border-top: 1.5px solid var(--ink); padding-top: 14px; }
+
+/* ------------------------------------------------------------ piece page */
+.peca { max-width: 68ch; }
+.peca-cabeca { padding-bottom: 20px; border-bottom: 1px solid var(--rule); margin-bottom: 26px; }
+.peca-titulo { margin: 8px 0 14px; font-size: clamp(30px, 3.6vw, 40px); line-height: 1.14; letter-spacing: -0.015em; }
+.entrada { font-size: 20px; line-height: 1.5; margin-bottom: 14px; }
+.publicada, .temas { font-size: 14px; color: var(--muted); }
+.temas a { color: var(--muted); }
+.texto > * + * { margin-top: 1.1em; }
+.texto p, .texto li { font-family: var(--f-prosa); font-size: 19px; line-height: 1.6; }
+.texto h2 { margin-top: 1.9em; font-size: clamp(21px, 2.2vw, 25px); line-height: 1.24; }
+.texto h3 { margin-top: 1.6em; font-size: 18px; line-height: 1.3; }
+.texto ul { padding-left: 1.2em; }
+.texto a.ref { font-family: var(--f-instr); font-variant-numeric: tabular-nums lining-nums; font-size: 0.92em; text-decoration-style: dotted; }
+.texto a.ligada { text-decoration-style: dotted; }
+.tabela { overflow-x: auto; margin-top: 1em; }
+table { border-collapse: collapse; font-size: 15px; min-width: 100%; }
+th, td { text-align: left; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-family: var(--f-versal); font-weight: 600; letter-spacing: .04em; text-transform: lowercase; color: var(--muted); border-bottom-color: var(--rule-strong); }
+.correcoes-da-peca { margin-bottom: 26px; }
+.correcao { border-left: 2px solid var(--ink); padding: 6px 0 10px 14px; margin-bottom: 14px; max-width: var(--measure); }
+.correcao p { margin-top: 4px; }
+.rotulo { font-family: var(--f-versal); font-weight: 600; letter-spacing: .04em; text-transform: lowercase; color: var(--muted); }
+.retirada { font-size: 20px; margin-bottom: 10px; }
+
+/* ------------------------------------------------------------ receipts and the record */
+.recibos { margin-top: clamp(40px, 5vw, 64px); border-top: 1.5px solid var(--ink); padding-top: 16px; }
+.recibos > p { color: var(--muted); max-width: var(--measure); margin-bottom: 12px; }
+.recibo { border-bottom: 1px solid var(--rule); }
+.recibo > summary, .registo > summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; gap: 10px; list-style: none; }
+.recibo > summary::-webkit-details-marker, .registo > summary::-webkit-details-marker { display: none; }
+.recibo > summary::before, .registo > summary::before { content: '+'; font-family: var(--f-instr); color: var(--muted); width: 1ch; }
+.recibo[open] > summary::before, .registo[open] > summary::before { content: '\2212'; }
+.recibo > summary { font-family: var(--f-instr); font-variant-numeric: tabular-nums lining-nums; font-size: 16px; }
+.recibo:target > summary { text-decoration: underline; }
+.recibo dl { margin: 0 0 16px 2ch; display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr); gap: 6px 16px; font-size: 15px; }
+.recibo dt { font-family: var(--f-versal); font-weight: 600; letter-spacing: .04em; text-transform: lowercase; color: var(--muted); }
+.recibo dd { margin: 0; overflow-wrap: anywhere; }
+.recibo dd.abrir, .recibo dd.provisorio { grid-column: 1 / -1; }
+.recibo dd.abrir a { display: inline-flex; align-items: center; min-height: 44px; }
+.recibo dd.conta { font-family: var(--f-instr); font-variant-numeric: tabular-nums lining-nums; }
+.excerto { margin: 0; padding-left: 12px; border-left: 2px solid var(--rule-strong); font-style: italic; }
+@media (max-width: 640px) {
+  .recibo dl { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .recibo dd { margin-bottom: 8px; }
+}
+.registo { margin-top: clamp(32px, 4vw, 48px); border-top: 1.5px solid var(--ink); padding-top: 8px; }
+.registo > summary h2 { font-size: clamp(21px, 2.2vw, 25px); line-height: 1.24; }
+.registo > p { margin-top: 12px; max-width: var(--measure); }
+.impressao code { display: block; margin-top: 4px; }
+
+/* ------------------------------------------------------------ method and corrections */
+.equipa, .erro, .correcoes-lista { margin-top: clamp(28px, 4vw, 44px); max-width: 68ch; }
+.equipa > p, .erro > p { margin-top: 12px; }
+.correcao-peca { font-size: 18px; }
+
+/* ------------------------------------------------------------ footer */
+.rodape {
+  margin-top: clamp(56px, 7vw, 96px);
+  border-top: 1.5px solid var(--ink);
+  padding: 16px 0 40px;
+  font-family: var(--f-versal);
+  font-size: 13px;
+  line-height: 1.8;
+  letter-spacing: .04em;
+  color: var(--muted);
+}
+.rodape a { color: inherit; display: inline-flex; align-items: center; min-height: 44px; }

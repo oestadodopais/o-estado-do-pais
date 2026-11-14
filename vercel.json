@@ -1,0 +1,61 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "git": {
+    "deploymentEnabled": {
+      "main": false,
+      "*": false
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Strict-Transport-Security": "max-age=15552000",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+      },
+      "continue": true
+    },
+    {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.xn--oestadodopas-2fb.pt"
+        }
+      ],
+      "status": 308,
+      "headers": {
+        "Location": "https://xn--oestadodopas-2fb.pt/$1"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "oestadodopais.pt"
+        }
+      ],
+      "status": 308,
+      "headers": {
+        "Location": "https://xn--oestadodopas-2fb.pt/$1"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.oestadodopais.pt"
+        }
+      ],
+      "status": 308,
+      "headers": {
+        "Location": "https://xn--oestadodopas-2fb.pt/$1"
+      }
+    }
+  ]
+}
