@@ -277,7 +277,7 @@ export const FAMILIAS_HB1 = [
       "en": "House prices relative to income, Portugal"
     },
     "origens": [
-      "hb1c-eurostat-preco-rendimento"
+      "hb1c-eurostat-preco-rendimento-rendimento"
     ],
     "partes": [
       {
@@ -286,7 +286,7 @@ export const FAMILIAS_HB1 = [
         "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
         "apoios": [
           {
-            "origem": "hb1c-eurostat-preco-rendimento",
+            "origem": "hb1c-eurostat-preco-rendimento-rendimento",
             "campo": "excerto",
             "literal": "income is calculated as adjusted household gross disposable income (B7G) per head of population"
           }
@@ -319,7 +319,7 @@ export const FAMILIAS_HB1 = [
       "en": "House prices relative to income, European Union"
     },
     "origens": [
-      "hb1c-eurostat-preco-rendimento"
+      "hb1c-eurostat-preco-rendimento-rendimento"
     ],
     "partes": [
       {
@@ -328,7 +328,7 @@ export const FAMILIAS_HB1 = [
         "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
         "apoios": [
           {
-            "origem": "hb1c-eurostat-preco-rendimento",
+            "origem": "hb1c-eurostat-preco-rendimento-rendimento",
             "campo": "excerto",
             "literal": "income is calculated as adjusted household gross disposable income (B7G) per head of population"
           }
@@ -3009,7 +3009,7 @@ export const FAMILIAS_HB1 = [
       "en": "House prices relative to income, Romania"
     },
     "origens": [
-      "hb1c-eurostat-preco-rendimento"
+      "hb1c-eurostat-preco-rendimento-rendimento"
     ],
     "partes": [
       {
@@ -3018,7 +3018,7 @@ export const FAMILIAS_HB1 = [
         "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
         "apoios": [
           {
-            "origem": "hb1c-eurostat-preco-rendimento",
+            "origem": "hb1c-eurostat-preco-rendimento-rendimento",
             "campo": "excerto",
             "literal": "income is calculated as adjusted household gross disposable income (B7G) per head of population"
           }
@@ -3051,7 +3051,7 @@ export const FAMILIAS_HB1 = [
       "en": "House prices relative to income, Portugal"
     },
     "origens": [
-      "hb1c-eurostat-preco-rendimento"
+      "hb1c-eurostat-preco-rendimento-rendimento"
     ],
     "partes": [
       {
@@ -3060,7 +3060,7 @@ export const FAMILIAS_HB1 = [
         "en": "The ratio of house prices to adjusted gross disposable household income per head, as an index with the base year equal to one hundred",
         "apoios": [
           {
-            "origem": "hb1c-eurostat-preco-rendimento",
+            "origem": "hb1c-eurostat-preco-rendimento-rendimento",
             "campo": "excerto",
             "literal": "income is calculated as adjusted household gross disposable income (B7G) per head of population"
           }

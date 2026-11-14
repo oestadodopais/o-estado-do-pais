@@ -188,6 +188,12 @@ export function conferirAuditoriaDasFamilias({
   for (const id of linhas.keys()) {
     contas.linhas++;
     const f = ctx.familia(id);
+    const linha = linhas.get(id);
+    if (/^Price-to-income ratio(?:, index| relative to long-term average)/.test(linha?.unit ?? '')) {
+      const origem = 'hb1c-eurostat-preco-rendimento' + (linha.unit.startsWith('Price-to-income ratio, index') ? '-rendimento' : '');
+      if (JSON.stringify(familias[f.chave]?.origens) !== JSON.stringify([origem]))
+        falha(`${id}: a definição citada tem de ser a da unidade da linha (${linha.unit})`);
+    }
     if (f.tipo === 'cartao') { contas.por_cartao++; continue; }
     const k = f.tipo === 'concelho' ? `concelho:${f.chave}` : f.chave;
     if (f.tipo === 'concelho') contas.por_concelho++; else contas.por_familia++;
