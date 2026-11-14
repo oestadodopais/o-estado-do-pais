@@ -220,6 +220,7 @@ class Paginas(unittest.TestCase):
         css = (REPO / "public" / "estilo.css").read_text(encoding="utf-8")
         self.assertIn(".wrap { max-width: calc(68ch + 2 * var(--gutter)); margin: 0 auto;", css)
         self.assertIn("margin-inline: calc((100% - var(--largura)) / 2);", css)
+        self.assertIn(".equipa .tabela {\n    --largura: min(760px, calc(100vw - 2 * var(--gutter)));", css)
         self.assertIn('<h1 class="wordmark">O Estado do País</h1>', self.ler("index.html"))
         self.assertIn('<span aria-current="page">Início</span>', self.ler("index.html"))
 

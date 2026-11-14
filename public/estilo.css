@@ -237,6 +237,16 @@ td.lugar { min-width: 10.5em; }
 .contagens dt { color: var(--muted); }
 .contagens dd { margin: 0; text-align: right; }
 
+/* On a desktop the team's table may be wider than the column, so that no heading is cut at
+   the edge of its box; it is centred on the column like the record's box. */
+@media (min-width: 600px) {
+  .equipa .tabela {
+    --largura: min(760px, calc(100vw - 2 * var(--gutter)));
+    width: var(--largura);
+    margin-inline: calc((100% - var(--largura)) / 2);
+  }
+}
+
 /* On a phone a table is a list: each row a block, each value under its column's label
    (the label travels with the value in data-rotulo), so no figure starts out of sight. */
 @media (max-width: 599px) {
