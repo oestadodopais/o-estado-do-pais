@@ -1,0 +1,146 @@
+{
+  "coragua-alqueva-alta-pressao-2026.yml": {
+    "antes": "0f484bd05d39ee85109a4500f3d3387613df53656533cc6bd9737c21b518e96d",
+    "depois": "d746461c5f645df04ba4fa428603f8ef2b86b678fda0b9f8c81bfc0b1164bf3d"
+  },
+  "coragua-alqueva-baixa-pressao-2026.yml": {
+    "antes": "afbb1f585e6f4b7b8e804d90afa0338037922322f61b88e347cbcd5c0d805fb5",
+    "depois": "0ac2087820a968ba123743b4581ffa9f0b1a2349007e96b23957c68fbb046c01"
+  },
+  "coragua-dgadr-eficiencia-2024.yml": {
+    "antes": "a17d5fff0c6c17b850a0572a563ae333b1cd65a6fc43b1c23a3552155240507b",
+    "depois": "2781435b525824e95ccbb2a927dd3e10187539ea407eb5c38e5e55f8fec78ba0"
+  },
+  "coragua-ersar-encargo-mensal-2024.yml": {
+    "antes": "a945541c0a4bba780bfb57c9dec554c879dacb9411fa7d7882e5c56fa15777fa",
+    "depois": "85d98b417b68df82353eca3f7f0e52e10e3ee1f390283d439d0df51c5b84d5e2"
+  },
+  "coragua-ersar-encargo-metro-cubico-2024.yml": {
+    "antes": "b291769d5837f071736a54392d33277627546ddaffc9a0143012654c8e20ca5c",
+    "depois": "4b54ac3e5473913e016cfa35f019042f38082bcaa88717548928a51304e10700"
+  },
+  "coragua-gulbenkian-inquerito-ano.yml": {
+    "antes": "ebd2a9d5ea2d662b51cbbac4fb1fc127e45117f00d48e844b987eb263186a5ad",
+    "depois": "c52f9d34f8b2a7f7ef626f06f55d1ea9b72ce85e9d6c3a5ad93833bb9984f6d2"
+  },
+  "coragua-gulbenkian-sem-contador.yml": {
+    "antes": "f8873607b68e6ef1402edf05968094a3ebb86be95ea8e1beb4763dccb3baa8b7",
+    "depois": "a5566b5615be51860342527cadbb594dea5ec1cd6d2a44fbc887c4ca063fcba9"
+  },
+  "coragua-gulbenkian-universo-hectares.yml": {
+    "antes": "194ea80153158bc03d82a7eeddf9efa82bea732f7f3da4282bc7aeac1640613c",
+    "depois": "45e3cbb1ed43bc24ab73db3d331ef388d0358fb31aa38f019dbe8cc2e0a4db6a"
+  },
+  "coragua-historico-eficiencia-83.yml": {
+    "antes": "5bbe8dd41b2c3499c544c43ce68e1260037278dfe1f75fdc45f62da68dfc86e6",
+    "depois": "0713b755cf23ad20064a88fc0ab9a6eca490f7c09c02a47de2c89f2f8b020d47"
+  },
+  "coragua-historico-eficiencia-85.yml": {
+    "antes": "95ac6486b3554caec028ec1b1d91f73a8a54bc927dc564d0940ebf3978da1203",
+    "depois": "b42b081c0c8c9b683e6f7fb321beeb7d155f26e5914adfaa41dcddca30e7be8f"
+  },
+  "coragua-historico-eficiencia-95.yml": {
+    "antes": "4761aa91cb4683891809ad2b3cbb3d3902ef0380ac8f448c24a3a302686babf2",
+    "depois": "60263f950701e7b57a05fc21976e1a3948858e7edfb370b70de3c9cd6df606d0"
+  },
+  "coragua-historico-inquerito-2021.yml": {
+    "antes": "249018f6fd72ee2c2811992c9c39f5fb08c9bcd962a2b758a878d4b2cf55be4f",
+    "depois": "ad458ac6f6c71fe72d3de922b6f5f87b03473b200d2b4bbdd9c6e3892f72f573"
+  },
+  "coragua-historico-racio-maximo.yml": {
+    "antes": "7b385aa3520a13e5cc40fbb9d9d7022bba39744f188a0364d95e913bd8fcd74d",
+    "depois": "eab311b690bf3345078f76d4c24ed8ed2a4235d4d0a69ae037d5498a6bdfc0b9"
+  },
+  "coragua-historico-racio-minimo.yml": {
+    "antes": "0c42358652bc03c4dcaec4d83013b73b9f64fa011915a57d8bdabe73a69bfed3",
+    "depois": "215ca94874a017846df058b3e1a57b41f1d464bef351eb3b77027a059cc723af"
+  },
+  "coragua-racio-maximo-2026.yml": {
+    "antes": "bd9e0c59ace305dc3acb49c219ca018973a4be3a3a077b1ebdd74ca39bce1f33",
+    "depois": "8fd3e11c4f25451ec04e9bde5c14d7fe1dc0265e2ea03e44dcb6e9cebb9798f3"
+  },
+  "coragua-racio-minimo-2026.yml": {
+    "antes": "1bd23b673b41faa29b469675cc5348dc409557593bafd77f50ce1501afb9c2a6",
+    "depois": "382e92eec4ad746ccc8d614c0993363db7e613f34241afb16bbad25d332ab878"
+  },
+  "coragua-tc-auditoria-ano.yml": {
+    "antes": "9831fd7620abe2d6c165018140cd8d77c9a523f3bcc41f1258454cd399b46568",
+    "depois": "3c030c221832c8f6711489e88c41f5b50b78aa33cef953dd9eb71456e3c18299"
+  },
+  "evora-camara-lugares.yml": {
+    "antes": "959c87b32b5def638d2f5b7e165cdf660221e8d0e7d2b4f9d10f2e51d2589a1a",
+    "depois": "829b37b348b9f39983683ec06e8bf74a1599fbb6fc054dec788f7f7ef2e616ad"
+  },
+  "evora-camara-mandatos-cdu-2013.yml": {
+    "antes": "c108f7e51dfeb8736b44e3cd6df343e9f4a7ddf1e6e6ce632a3130d61c13e24e",
+    "depois": "ecb896ed813c29fa575eb6f3b0acc8ba1860a2c193f6012e789c11e351d1517f"
+  },
+  "evora-camara-mandatos-cdu-2017.yml": {
+    "antes": "1cf8de8a109aefa43139cbd3e17c83a8aedca9184f17218d4f84d2fb00bf02a8",
+    "depois": "d291be18d74dbb3c4af6154718e31be1c3e321cfc982f2e11e4c7da6267dd22f"
+  },
+  "evora-camara-mandatos-cdu-2021.yml": {
+    "antes": "f0dca17307d4824734560134873691231d1960eb773dc9b6f8457fef729a3061",
+    "depois": "31a61a340d410cd643a18cecd2278cffed2f245e7dc8bd1d7fad488281fec398"
+  },
+  "evora-camara-mandatos-ps-2009.yml": {
+    "antes": "3c8e6bec880e8e3f91e696f061c45b38dcab18a400b9008e01c6b111f3bb067e",
+    "depois": "286a9a94276b9ebb6abbb0ae25759502b5140d79042c5a93545897b207fcd972"
+  },
+  "evora-camara-mandatos-ps-2025.yml": {
+    "antes": "c87e5ea6916a637051732b1234690d6341e45dcad38809858f20d286583f9bfe",
+    "depois": "486ba44418e20c13c2b09d740d04ba9b646aa7223509a632fa5e4efd7367cbb5"
+  },
+  "evora-concentracao-vab4-2024.yml": {
+    "antes": "d586792cf48e77d8e38628485c8c748bb2348062ff8fd36578f920eeff8a7b1e",
+    "depois": "f1cba9ce364494eb21bc94aa47f3a924b5e56ce88404c57bd03cedfbf913788b"
+  },
+  "evora-executivo-2025-ad.yml": {
+    "antes": "d7ed3d4308bbc130fbf967e856eb9b42799c8e333ec5d5d3e4de7f34bf5aad00",
+    "depois": "be433ead4f8fdf705ed067d0d94937e6b835cd1cf694cafbbc0f9b2ebca0344d"
+  },
+  "evora-executivo-2025-cdu.yml": {
+    "antes": "532ebf293c26a4d28a03d51adf322c775872be007084f53d7cfca9b61804f614",
+    "depois": "d77a8e63ec2d7f66246f10cb8d2bf190e700c60cc960579e3f0814c1b02342dc"
+  },
+  "evora-executivo-2025-chega.yml": {
+    "antes": "3395b1a08a3a2f613c63008f911862965c4f96b1b35d33f3e3d5b1a976b7c0e9",
+    "depois": "8395c203aea61ec8146384efe2d1e46b59e7c209aae67419a8fc19e8bc36a1bf"
+  },
+  "evora-executivo-2025-ps.yml": {
+    "antes": "2ed53d87f54066f4939ad4307bdacc458a311c9491b6358726877006f6a4fd71",
+    "depois": "f56cabd241443f2c445d78c17664a3558b4cd728d64f498046b68f4682370a92"
+  },
+  "evora-pael-emprestimo.yml": {
+    "antes": "7a0f5b6d876a6a425360b6bd10290cf19ad3a3261fb470506f0bf804fec02054",
+    "depois": "66a73eb453109a1bf45cf2c5df35b6b845b4f4ce77044a66b8fbf8e88bcac0e4"
+  },
+  "evora-prr-execucao-2026.yml": {
+    "antes": "17b0492b763bbce14cc0448217ad6e561563e989c356c1d8ff71f4f00dcb3fd7",
+    "depois": "018711d47ccc516e80976e759580dd1b9e56264da5ff1eb647a8c50fc7c3257d"
+  },
+  "evora-prr-municipio-contratado.yml": {
+    "antes": "bfaa771778b47356605a92536173a732073eba13400d67b8a9c525b0e926acb5",
+    "depois": "26e28117da33bc9d342edf50777e19b94b9d8ccd4ef73ab8f7f08124f6be55eb"
+  },
+  "evora-prr-universidade-contratado.yml": {
+    "antes": "c01a36610b8f98e32453156983d034fb6dc4387507b5608032420ae29a5abf5e",
+    "depois": "edab9ae0984f7c9433bc81ce7b318db5c0a1553f2f6d09792a4aeebaa4c05abf"
+  },
+  "evora-prr-vencido-quota-2026.yml": {
+    "antes": "5a4e92e9a43a5952a347c28ce9bbb1baf8513a6572e4208739b3be3f50e31e05",
+    "depois": "b72f19430e32f69d10ba1b667035854a4c9afe171196eb6060f609281259e6a7"
+  },
+  "evora-vab-empresarial-2024.yml": {
+    "antes": "841154312e1b9563065933e25e7357eedd7830a69eee40366e81654e4b9d09ea",
+    "depois": "bba953ee5c304bce48ea5af153ed0d9e8808acb13df3db5e88e36f86e6f42da4"
+  },
+  "portugal-concentracao-vab4-2024.yml": {
+    "antes": "5971c98731d7f3feb23dc15c172736abf5e01b817d0976b3de9bb5479bbed507",
+    "depois": "130d043aa89e7452c11b3aa3285c6336762dc5e53524426fa0fe6559f238c9c2"
+  },
+  "saldo-natural-portugal-2025.yml": {
+    "antes": "586461e5d977fd201c01a81b3dbf21fca3cf16c37137510d61dd2f921b00c7ff",
+    "depois": "74add3e8469249371815d72dd05ffafdb0c82e682f1120011bd4d29bf59bd326"
+  }
+}

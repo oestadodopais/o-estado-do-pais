@@ -14,14 +14,14 @@ source: "Secretaria-Geral do Ministério da Administração Interna (SGMAI)"
 document:
   title: "Autárquicas 2025 — resultados oficiais por território"
   edition: "territory-electionId=1-territoryId=1267-organId=4.json"
-  locator: "SGMAI, autárquicas de 2025, órgão Câmara Municipal, Évora, lista «PS», mandatos no executivo"
+  locator: "SGMAI, autárquicas de 2025, órgão Câmara Municipal, Évora, lista «PS», mandatos no executivo; $.data.currentResults.resultsParty[0]"
   kind: "serie"
 source_url: "https://www.eleicoes.mai.gov.pt/autarquicas2025/assets/static/result/territory-electionId=1-territoryId=1267-organId=4.json"
 access_date: "2026-08-10"
 reference_date: "2025"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "executive_2025.seats['PS'] = 3"
+excerpt: "{ \"id\": 1758, \"typeId\": 1, \"acronym\": \"PS\", \"votes\": 8169, \"percentage\": 29.83, \"mandates\": 3, \"presidents\": 1, \"absoluteMajority\": 0 }"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -39,7 +39,14 @@ study: "evora-quem-governou-a-camara-2009-2025"
 note: "Cruzado de ResearchHub content/08 Évora Mandates · exec2025-ps-seats."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-11-14"
+    kind: "proveniencia"
+    field: "excerpt"
+    old_value: "executive_2025.seats['PS'] = 3"
+    new_value: "{ \"id\": 1758, \"typeId\": 1, \"acronym\": \"PS\", \"votes\": 8169, \"percentage\": 29.83, \"mandates\": 3, \"presidents\": 1, \"absoluteMajority\": 0 }"
+    reason: "O excerto anterior era uma composição do motor e não as palavras da fonte; o valor não muda."
+    reason_en: "The previous excerpt was composed by the engine and was not the source’s wording; the value is unchanged."
 
 # Reconferências. Escritas pelo motor (indicators/refresh.py e
 # indicators/corredor.py), nunca à mão.

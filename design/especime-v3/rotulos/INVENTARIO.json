@@ -1,8 +1,8 @@
 {
  "o_que": "O inventário declarado dos rótulos dos cartões de medida (bloco R2, 03.10.2026): por família, edição e chave, as formas distintas de cada campo e quantas vezes cada uma se rende, com os algarismos do período, do estado e da faixa apagados. Escrito por `node scripts/inventario-rotulos.mjs --escrever` sobre uma construção; a régua do `verify` compara o nome, a unidade e a dobra de cada construção com estas formas.",
- "cabeca": "fc6e27452a5c2186fc64d3404039f8bc33db08ae",
+ "cabeca": "59f6e11866b2de9064ba47030a0e7c788254401c",
  "contas": {
-  "paginas": 9881,
+  "paginas": 9845,
   "paginas_com_cartoes": 706,
   "cartoes": 5614,
   "familias": {
@@ -855,7 +855,7 @@
   },
   "nacional|en|agua-nao-faturada-portugal-2024": {
    "nome": {
-    "Unbilled water": 1
+    "Unbilled water in the retail service, mainland Portugal": 1
    },
    "periodo": {
     "in #": 1
@@ -1935,7 +1935,7 @@
   },
   "nacional|en|evora-prr-aprovado-2026": {
    "nome": {
-    "Recovery and Resilience Plan (PRR) funds contracted by intermediate and direct beneficiaries headquartered in Évora": 1
+    "Recovery and Resilience Plan (PRR) funds contracted in records of intermediate and direct beneficiaries that the PRR list of entities places in Évora": 1
    },
    "periodo": {
     "in #": 1
@@ -1957,7 +1957,7 @@
   },
   "nacional|en|evora-prr-pago-2026": {
    "nome": {
-    "Recovery and Resilience Plan (PRR) funds paid to intermediate and direct beneficiaries headquartered in Évora": 1
+    "Recovery and Resilience Plan (PRR) funds paid in records of intermediate and direct beneficiaries that the PRR list of entities places in Évora": 1
    },
    "periodo": {
     "in #": 1
@@ -1979,7 +1979,7 @@
   },
   "nacional|en|evora-prr-vencido-aprovado-2026": {
    "nome": {
-    "Funds contracted by intermediate and direct beneficiaries headquartered in Évora, in projects with a completion deadline before the snapshot date and no completion recorded, in the snapshot of 19.08.2026": 1
+    "Funds contracted in records of intermediate and direct beneficiaries that the PRR list of entities places in Évora, in projects with a completion deadline before the snapshot date and no completion recorded, in the snapshot of 19.08.2026": 1
    },
    "periodo": {
     "in #": 1
@@ -4410,7 +4410,7 @@
   },
   "nacional|pt|agua-nao-faturada-portugal-2024": {
    "nome": {
-    "Água não faturada": 1
+    "Água não faturada no serviço em baixa, em Portugal continental": 1
    },
    "periodo": {
     "em #": 1
@@ -5490,7 +5490,7 @@
   },
   "nacional|pt|evora-prr-aprovado-2026": {
    "nome": {
-    "Verbas do Plano de Recuperação e Resiliência (PRR) contratadas por beneficiários intermediários e diretos com sede em Évora": 1
+    "Verbas do Plano de Recuperação e Resiliência (PRR) contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do PRR localiza em Évora": 1
    },
    "periodo": {
     "em #": 1
@@ -5512,7 +5512,7 @@
   },
   "nacional|pt|evora-prr-pago-2026": {
    "nome": {
-    "Verbas do Plano de Recuperação e Resiliência (PRR) pagas a beneficiários intermediários e diretos com sede em Évora": 1
+    "Verbas do Plano de Recuperação e Resiliência (PRR) pagas em registos de beneficiários intermediários e diretos que a listagem de entidades do PRR localiza em Évora": 1
    },
    "periodo": {
     "em #": 1
@@ -5534,7 +5534,7 @@
   },
   "nacional|pt|evora-prr-vencido-aprovado-2026": {
    "nome": {
-    "Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo de conclusão anterior à data do instantâneo e sem conclusão registada, no instantâneo de 19.08.2026": 1
+    "Verbas contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do PRR localiza em Évora, em projetos com prazo de conclusão anterior à data do instantâneo e sem conclusão registada, no instantâneo de 19.08.2026": 1
    },
    "periodo": {
     "em #": 1

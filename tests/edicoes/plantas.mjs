@@ -1,3 +1,4 @@
+import {loadClaims} from '../../src/lib/ledger.mjs';
 import {fraseHtml} from './texto-html.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -9,7 +10,8 @@ import {parse} from 'node-html-parser';
 import {WORKS} from '../../src/data/studies.mjs';
 import {CORRECOES_TEXTO} from '../../src/data/correcoes.mjs';
 import {primeiraEdicaoServida,portasDaCorrecao,linhaDasEdicoes} from '../../src/lib/edicoes.mjs';
-import {conferirEdicoes,conferirTextoHtml,rotaPrimeira,rotaAtual} from '../../scripts/edicoes-conferir.mjs';
+import {conferirEdicoes,conferirTextoHtml as conferirTextoHtmlBase,rotaPrimeira,rotaAtual} from '../../scripts/edicoes-conferir.mjs';
+const conferirTextoHtml=(...args)=>conferirTextoHtmlBase(...args,loadClaims({includeWithdrawn:true}));
 const manifesto=load(fs.readFileSync('studies-src/manifest.yml','utf8'));
 const paginas=new Map();
 for(const e of manifesto.edicoes.filter(e=>e.primeira_edicao&&!WORKS.some(w=>w.slug===e.slug&&w.estado==='retirado'))) {

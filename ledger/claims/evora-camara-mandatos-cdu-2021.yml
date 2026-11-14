@@ -14,14 +14,14 @@ source: "Secretaria-Geral do Ministério da Administração Interna (SGMAI)"
 document:
   title: "Autárquicas 2021 — resultados oficiais por território"
   edition: "territory-results-LOCAL-070500-CM.json"
-  locator: "SGMAI, autárquicas de 2021, órgão Câmara Municipal, Évora, lista «PCP-PEV», mandatos"
+  locator: "SGMAI, autárquicas de 2021, órgão Câmara Municipal, Évora, lista «PCP-PEV», mandatos; $.currentResults.resultsParty[0]"
   kind: "serie"
 source_url: "https://www.eleicoes.mai.gov.pt/autarquicas2021/assets/static/territory-results/territory-results-LOCAL-070500-CM.json"
 access_date: "2026-08-10"
 reference_date: "2021"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "cm_lists entry list='PCP-PEV': votes=6413, pct=27.44, mandates=2"
+excerpt: "{\"absoluteMajority\":0,\"acronym\":\"PCP-PEV\",\"constituenctyCounter\":1,\"imageKey\":\"\",\"mandates\":2,\"percentage\":27.44,\"presidents\":1,\"validVotesPercentage\":28.55,\"votes\":6413}"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -39,7 +39,14 @@ study: "evora-quem-governou-a-camara-2009-2025"
 note: "Cruzado de ResearchHub content/08 Évora Mandates · el2021-pcp-pev-seats."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-11-14"
+    kind: "proveniencia"
+    field: "excerpt"
+    old_value: "cm_lists entry list='PCP-PEV': votes=6413, pct=27.44, mandates=2"
+    new_value: "{\"absoluteMajority\":0,\"acronym\":\"PCP-PEV\",\"constituenctyCounter\":1,\"imageKey\":\"\",\"mandates\":2,\"percentage\":27.44,\"presidents\":1,\"validVotesPercentage\":28.55,\"votes\":6413}"
+    reason: "O excerto anterior era uma composição do motor e não as palavras da fonte; o valor não muda."
+    reason_en: "The previous excerpt was composed by the engine and was not the source’s wording; the value is unchanged."
 
 # Reconferências. Escritas pelo motor (indicators/refresh.py e
 # indicators/corredor.py), nunca à mão.

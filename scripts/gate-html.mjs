@@ -6492,7 +6492,7 @@ for (const file of ficheirosHtml(DIST)) {
        muda para a forma da casa, reconstituída pela conferência independente;
        os outros campos continuam comparados carácter a carácter. */
     if (corr.field && (campo === 'old_value' || campo === 'new_value')) {
-      const valor = conferirValorDeProveniencia(corr, campo, renderizado);
+      const valor = conferirValorDeProveniencia(corr, campo, renderizado, linguaPagina);
       if (!valor.confere) {
         err(
           `no registo, "${campo}" da revisão de proveniência #${n + 1} de "${id}" não é o do ` +

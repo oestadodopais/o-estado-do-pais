@@ -14,7 +14,7 @@ source: "Secretaria-Geral do Ministério da Administração Interna (SGMAI)"
 document:
   title: "Autárquicas 2017 — resultados oficiais por território"
   edition: "TERRITORY-RESULTS-LOCAL-070500-CM.json"
-  locator: "SGMAI, autárquicas de 2017, órgão Câmara Municipal, Évora, lista «PCP-PEV», mandatos"
+  locator: "SGMAI, autárquicas de 2017, órgão Câmara Municipal, Évora, lista «PCP-PEV», mandatos; $.currentResults.resultsParty[0]"
   kind: "serie"
   url: "https://www.eleicoes.mai.gov.pt/autarquicas2017/territorio-nacional.html?territoryKey=LOCAL-070500"
 source_url: "https://www.eleicoes.mai.gov.pt/autarquicas2017/static-data/territory-results/TERRITORY-RESULTS-LOCAL-070500-CM.json"
@@ -22,7 +22,7 @@ access_date: "2026-08-10"
 reference_date: "2017"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "cm_lists entry list='PCP-PEV': votes=9414, pct=40.52, mandates=4"
+excerpt: "{\"absoluteMajority\":1,\"acronym\":\"PCP-PEV\",\"constituenctyCounter\":1,\"mandates\":4,\"percentage\":40.52,\"presidents\":1,\"validVotesPercentage\":42.83,\"votes\":9414}"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -40,7 +40,14 @@ study: "evora-quem-governou-a-camara-2009-2025"
 note: "Cruzado de ResearchHub content/08 Évora Mandates · el2017-pcp-pev-seats."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-11-14"
+    kind: "proveniencia"
+    field: "excerpt"
+    old_value: "cm_lists entry list='PCP-PEV': votes=9414, pct=40.52, mandates=4"
+    new_value: "{\"absoluteMajority\":1,\"acronym\":\"PCP-PEV\",\"constituenctyCounter\":1,\"mandates\":4,\"percentage\":40.52,\"presidents\":1,\"validVotesPercentage\":42.83,\"votes\":9414}"
+    reason: "O excerto anterior era uma composição do motor e não as palavras da fonte; o valor não muda."
+    reason_en: "The previous excerpt was composed by the engine and was not the source’s wording; the value is unchanged."
 
 # Reconferências. Escritas pelo motor (indicators/refresh.py e
 # indicators/corredor.py), nunca à mão.

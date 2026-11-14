@@ -17,7 +17,7 @@ export function conferirComputacaoPRR(linha) {
   const tipos = linha.id.includes('vencido') ? ['entidades', 'projetos'] : ['entidades'];
   if (tipos.some(t => !co.files.some(f => f.file === COMPUTACOES_RP4N.ficheiros[t].file))) return 'a seleção calculada perdeu um Excel necessário';
   if (co.column !== r.column || !COMPUTACOES_RP4N.ficheiros.entidades.headers.includes(co.column)) return 'a coluna calculada não está no cabeçalho selado';
-  const selecao = 'papel_entidade ∈ {Beneficiário Intermediário, Beneficiário Direto} · localizacao_sede = Évora' + (linha.id.includes('vencido') ? ' · dt_prevista_conclusao anterior à data do instantâneo · dt_efetiva_conclusao vazia' : '');
+  const selecao = r.filter ?? 'papel_entidade ∈ {Beneficiário Intermediário, Beneficiário Direto} · localizacao_sede = Évora' + (linha.id.includes('vencido') ? ' · dt_prevista_conclusao anterior à data do instantâneo · dt_efetiva_conclusao vazia' : '');
   if (co.filter !== selecao) return 'a seleção da casa difere da conta refeita nos Excel';
   const valor = String(linha.value).replace(/[\s\u202f\u00a0]/g, '').replace(',', '.');
   if (Number(valor) !== Number(r.value)) return 'o valor difere da soma conferida nos Excel selados';

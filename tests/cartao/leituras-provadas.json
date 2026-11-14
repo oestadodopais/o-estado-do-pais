@@ -11370,7 +11370,7 @@
                 {
                   "linha": "propria",
                   "campo": "excerpt",
-                  "literal": "do total de empréstimo no montante de"
+                  "literal": "empréstimo PAEL, Programa de Apoio à Economia Local"
                 },
                 {
                   "origem": "rp4n-evora-pael",
@@ -11804,31 +11804,34 @@
       "origens": [],
       "folhas": [
         {
-          "pt": "É o valor que esta entidade contratou no concelho no Plano de Recuperação e Resiliência, pela listagem de entidades do plano.",
-          "en": "It is the amount this entity contracted in the municipality under the Recovery and Resilience Plan, from the plan’s list of entities.",
+          "pt": "É a soma dos valores contratados no Plano de Recuperação e Resiliência nos registos desta entidade como beneficiário final que a listagem de entidades do plano localiza no concelho.",
+          "en": "It is the sum of the amounts contracted under the Recovery and Resilience Plan in this entity’s final-beneficiary records that the plan’s list of entities places in the municipality.",
           "partes": [
             {
-              "pt": "É o valor que esta entidade contratou no concelho no Plano de Recuperação e Resiliência",
-              "en": "It is the amount this entity contracted in the municipality under the Recovery and Resilience Plan",
+              "pt": "É a soma dos valores contratados no Plano de Recuperação e Resiliência nos registos desta entidade como beneficiário final que a listagem de entidades do plano localiza no concelho.",
+              "en": "It is the sum of the amounts contracted under the Recovery and Resilience Plan in this entity’s final-beneficiary records that the plan’s list of entities places in the municipality.",
               "classe": "diz",
               "apoios": [
                 {
                   "linha": "propria",
-                  "campo": "excerpt",
-                  "literal": "contratado_neste_concelho"
+                  "campo": "document.computed_over.column",
+                  "literal": "valor_contratado"
+                },
+                {
+                  "ficheiro": "entidades",
+                  "campo": "papel_entidade",
+                  "literal": "Beneficiário Final"
+                },
+                {
+                  "ficheiro": "entidades",
+                  "campo": "localizacao_sede",
+                  "literal": "Évora"
                 },
                 {
                   "linha": "propria",
                   "campo": "document.locator",
-                  "literal": "valor contratado neste concelho"
-                }
-              ]
-            },
-            {
-              "pt": ", pela listagem de entidades do plano.",
-              "en": ", from the plan’s list of entities.",
-              "classe": "diz",
-              "apoios": [
+                  "literal": "beneficiário final NIF"
+                },
                 {
                   "linha": "propria",
                   "campo": "document.title",

@@ -23,11 +23,17 @@ assert.equal(PUBLISHED_WORKS.length,5);
 for(const w of PUBLISHED_WORKS)for(const base of ['estudos','en/studies'])assert(fs.existsSync(`${dist}/${base}/${w.slug}/index.html`));
 console.log(`RET1: ${recibos} recibos preservam o valor e omitem o campo do estudo retirado; os cinco estudos vivos têm páginas nas duas línguas.`);
 
-const fontesRetiradas = [...loadClaims().values()].filter(c => enderecoDeEstudoRetirado(c.source_url));
+const fontesRetiradas = [...loadClaims({includeWithdrawn:true}).values()].filter(c => enderecoDeEstudoRetirado(c.source_url));
 assert(fontesRetiradas.length > 0);
 let fontesConferidas = 0;
 for (const lang of ['pt', 'en']) for (const c of fontesRetiradas) {
  const rota = `/${lang === 'pt' ? 'livro-razao' : 'en/ledger'}/${c.id}/`;
+ if(c.publication==='withdrawn') {
+  assert(!fs.existsSync(`${dist}${rota}index.html`),`${rota}: recibo retirado ainda publicado`);
+  for(const reposicao of [`<p>${c.source_url}</p>`,`<a href="${c.source_url}">Fonte</a>`])
+   assert(conferirLigacoesRetiradas(WORKS,rota,`<main>${reposicao}</main>`).length,'Repor o endereço retirado tem de recusar.');
+  fontesConferidas++;continue;
+ }
  const html = fs.readFileSync(`${dist}${rota}index.html`, 'utf8');
  const root = parse(html);
  assert(!root.textContent.includes(c.source_url), `${rota}: endereço retirado ainda impresso`);
@@ -44,4 +50,4 @@ for (const lang of ['pt', 'en']) for (const c of fontesRetiradas) {
  assert.deepEqual(conferirLigacoesRetiradas(WORKS, rota, html.replace('</main>', `<a href="${vivo}">${vivo}</a></main>`)), [], 'Um endereço de estudo publicado pode continuar impresso e ligado no recibo.');
  fontesConferidas++;
 }
-console.log(`RET1-C: ${fontesConferidas} recibos sem o endereço retirado, com título, edição e excerto intactos; repor texto ou ligação recusa; endereço publicado passa.`);
+console.log(`RET1-C: ${fontesConferidas} fontes retiradas conferidas, sem recibo quando a linha foi retirada; repor texto ou ligação recusa; endereço publicado passa.`);

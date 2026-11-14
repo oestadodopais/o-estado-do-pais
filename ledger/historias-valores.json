@@ -757,5 +757,13 @@
       "old_value": "18,6",
       "new_value": "18,5"
     }
+  ],
+  "evora-pael-emprestimo": [
+    {
+      "date": "2026-11-14",
+      "kind": "correcao",
+      "old_value": "32 166 372,20",
+      "new_value": "32 166 373,20"
+    }
   ]
 }

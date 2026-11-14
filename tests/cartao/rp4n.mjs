@@ -344,3 +344,15 @@ for (const lang of ['pt', 'en']) {
 }
 assert.deepEqual(conferirAuditoriaDasFamilias().erros, []);
 console.log(`RP4N-e: PASS, ${plantas.length} plantas e auditoria íntegra`);
+
+// ZER0: as duas somas por entidade têm o seu próprio filtro e valor selados.
+{
+ const {conferirComputacaoPRR}=await import('./computacoes-rp4n.mjs');
+ for(const id of ['evora-prr-municipio-contratado','evora-prr-universidade-contratado']) {
+  const original=loadClaims().get(id);
+  assert.equal(conferirComputacaoPRR(original),null);
+  for(const altera of [c=>c.document.computed_over.filter=c.document.computed_over.filter.replace('Beneficiário Final','Beneficiário Direto'),c=>c.value='1']) {
+   const copia=structuredClone(original);altera(copia);assert(conferirComputacaoPRR(copia),id);
+  }
+ }
+}

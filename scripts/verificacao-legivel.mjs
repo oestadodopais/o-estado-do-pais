@@ -19,13 +19,14 @@ export function conferirCampoRelido(el, linha, lang, decimal = false) {
 }
 
 /** A cópia independente da forma da data. Os restantes campos continuam literais. */
-export function conferirValorDeProveniencia(correcao, campo, renderizado) {
+export function conferirValorDeProveniencia(correcao, campo, renderizado, lang = 'pt') {
   const normal = s => String(s).replace(/\s+/g, ' ').trim();
   let esperado = normal(correcao[campo]);
   if (correcao.kind === 'proveniencia' && correcao.field === 'access_date') {
     const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(esperado);
     if (m) esperado = `${m[3]}.${m[2]}.${m[1]}`;
   }
+  if (correcao.kind === 'proveniencia' && correcao.field === 'excerpt' && esperado === '[a verificar]') esperado = lang === 'en' ? 'to be confirmed at the source' : 'por confirmar na fonte';
   return { esperado, confere: renderizado === esperado };
 }
 

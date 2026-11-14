@@ -50,6 +50,7 @@
     "entidades": {
       "papel_entidade": [
         "Beneficiário Direto",
+        "Beneficiário Final",
         "Beneficiário Intermediário"
       ],
       "localizacao_sede": [
@@ -67,6 +68,18 @@
     "conclusao": "vazia"
   },
   "resultados": {
+    "evora-prr-municipio-contratado": {
+      "column": "valor_contratado",
+      "rows": 20,
+      "value": "12069012.60",
+      "filter": "papel_entidade = Beneficiário Final · localizacao_sede = Évora · nif_entidade = 504828576"
+    },
+    "evora-prr-universidade-contratado": {
+      "column": "valor_contratado",
+      "rows": 74,
+      "value": "38596975.81",
+      "filter": "papel_entidade = Beneficiário Final · localizacao_sede = Évora · nif_entidade = 501201920"
+    },
     "evora-prr-aprovado-2026": {
       "column": "valor_contratado",
       "rows": 2311,

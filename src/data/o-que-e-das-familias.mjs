@@ -1251,10 +1251,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "evora-prr-municipio-contratado": {
     "frase": {
       "pt": [
-        "É o valor que esta entidade contratou no concelho no Plano de Recuperação e Resiliência, pela listagem de entidades do plano."
+        "É a soma dos valores contratados no Plano de Recuperação e Resiliência nos registos desta entidade como beneficiário final que a listagem de entidades do plano localiza no concelho."
       ],
       "en": [
-        "It is the amount this entity contracted in the municipality under the Recovery and Resilience Plan, from the plan’s list of entities."
+        "It is the sum of the amounts contracted under the Recovery and Resilience Plan in this entity’s final-beneficiary records that the plan’s list of entities places in the municipality."
       ]
     }
   },
@@ -1272,10 +1272,10 @@ export const FAMILIAS_DAS_LINHAS = {
   "evora-prr-universidade-contratado": {
     "frase": {
       "pt": [
-        "É o valor que esta entidade contratou no concelho no Plano de Recuperação e Resiliência, pela listagem de entidades do plano."
+        "É a soma dos valores contratados no Plano de Recuperação e Resiliência nos registos desta entidade como beneficiário final que a listagem de entidades do plano localiza no concelho."
       ],
       "en": [
-        "It is the amount this entity contracted in the municipality under the Recovery and Resilience Plan, from the plan’s list of entities."
+        "It is the sum of the amounts contracted under the Recovery and Resilience Plan in this entity’s final-beneficiary records that the plan’s list of entities places in the municipality."
       ]
     }
   },

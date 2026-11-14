@@ -14,7 +14,7 @@ source: "Secretaria-Geral do Ministério da Administração Interna (SGMAI)"
 document:
   title: "Autárquicas 2013 — resultados oficiais por território"
   edition: "TERRITORY-RESULTS-LOCAL-070500-CM.json"
-  locator: "SGMAI, autárquicas de 2013, órgão Câmara Municipal, Évora, lista «PCP - PEV», mandatos"
+  locator: "SGMAI, autárquicas de 2013, órgão Câmara Municipal, Évora, lista «PCP - PEV», mandatos; $.currentResults.resultsParty[0]"
   kind: "serie"
   url: "https://www.eleicoes.mai.gov.pt/autarquicas2013/territorio-nacional.html?territoryKey=LOCAL-070500"
 source_url: "https://www.eleicoes.mai.gov.pt/autarquicas2013/static-data/territory-results/TERRITORY-RESULTS-LOCAL-070500-CM.json"
@@ -22,7 +22,7 @@ access_date: "2026-08-10"
 reference_date: "2013"
 
 # Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.
-excerpt: "cm_lists entry list='PCP - PEV': votes=11776, pct=49.3, mandates=4"
+excerpt: "{\"absoluteMajority\":1,\"acronym\":\"PCP - PEV\",\"constituenctyCounter\":1,\"mandates\":4,\"percentage\":49.3,\"presidents\":1,\"validVotesPercentage\":52.53,\"votes\":11776}"
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
 derivation: null
@@ -40,7 +40,14 @@ study: "evora-quem-governou-a-camara-2009-2025"
 note: "Cruzado de ResearchHub content/08 Évora Mandates · el2013-pcp-pev-seats."
 
 # Correcções datadas. Nunca apagar um valor: acrescentar aqui.
-corrections: []
+corrections:
+  - date: "2026-11-14"
+    kind: "proveniencia"
+    field: "excerpt"
+    old_value: "cm_lists entry list='PCP - PEV': votes=11776, pct=49.3, mandates=4"
+    new_value: "{\"absoluteMajority\":1,\"acronym\":\"PCP - PEV\",\"constituenctyCounter\":1,\"mandates\":4,\"percentage\":49.3,\"presidents\":1,\"validVotesPercentage\":52.53,\"votes\":11776}"
+    reason: "O excerto anterior era uma composição do motor e não as palavras da fonte; o valor não muda."
+    reason_en: "The previous excerpt was composed by the engine and was not the source’s wording; the value is unchanged."
 
 # Reconferências. Escritas pelo motor (indicators/refresh.py e
 # indicators/corredor.py), nunca à mão.

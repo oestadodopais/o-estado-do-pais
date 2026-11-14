@@ -1,15 +1,15 @@
 #!/bin/sh
 # Pede ao escrivão do lançador que corra os três portões do sítio fora da sandbox e espera pelos códigos
 # (13.10.2026, §1.190, a primeira passagem com a aprovação a `never`).
-# uso: sh scripts/leituras/portoes-pelo-escrivao.sh <pasta de saída nova> [motor|build|voz1a|voz1b|v2c|v2d|fp2-base|fp2|fp2-contadores|og1-b-navegador|do3-navegador|coragua-h|do4-alvos|lar1|lar1-largura|lar1-b|pai2-d|pai2|pai2-navegador|eva-t-navegador|eva-ta-indice|rec2-navegador|ret1-moldura|rec2-a-alvos|ed3-navegador|voz2a-f|voz2a-g|cor3-b|cor3-d-verify]
+# uso: sh scripts/leituras/portoes-pelo-escrivao.sh <pasta de saída nova> [motor|build|voz1a|voz1b|v2c|v2d|fp2-base|fp2|fp2-contadores|og1-b-navegador|do3-navegador|coragua-h|do4-alvos|lar1|lar1-largura|lar1-b|pai2-d|pai2|pai2-navegador|eva-t-navegador|eva-ta-indice|rec2-navegador|ret1-moldura|rec2-a-alvos|ed3-navegador|voz2a-f|voz2a-g|cor3-b|zer0-navegador|cor3-d-verify]
 # Porquê: o navegador das conferências (Playwright) não arranca dentro da sandbox do Codex, e sete conferências
 # do `verify` fecham por isso; o `portoes.sh` corre então pelo escrivão, na worktree, com a mesma tranca e os
 # mesmos registos. A pasta de saída fica na worktree ou em /tmp. Com `motor`, corre também o `core.gate` da
 # worktree do motor que o lançador deu (OEDP_CONFERIR_MOTOR=1). Espera até cinquenta minutos numa só chamada.
 # Sai com o código do `portoes.sh` e imprime os códigos lidos dos ficheiros `*.codigo` da pasta de saída.
 set -u
-saida="${1:?uso: portoes-pelo-escrivao.sh <pasta de saída nova> [motor|build|voz1a|voz1b|v2c|v2d|fp2-base|fp2|fp2-contadores|og1-b-navegador|do3-navegador|coragua-h|do4-alvos|lar1|lar1-largura|lar1-b|pai2-d|pai2|pai2-navegador|eva-t-navegador|eva-ta-indice|rec2-navegador|ret1-moldura|rec2-a-alvos|ed3-navegador|voz2a-f|voz2a-g|cor3-b|cor3-d-verify]}"; motor="${2:-}"
-case "$motor" in ""|motor|build|voz1a|voz1b|v2c|v2d|fp2-base|fp2|fp2-contadores|og1-b-navegador|do3-navegador|coragua-h|do4-alvos|lar1|lar1-largura|lar1-b|pai2-d|pai2|pai2-navegador|eva-t-navegador|eva-ta-indice|rec2-navegador|ret1-moldura|rec2-a-alvos|ed3-navegador|voz2a-f|voz2a-g|cor3-b|cor3-d-verify) ;; *) echo "portoes-pelo-escrivao: perfil desconhecido" >&2; exit 2;; esac
+saida="${1:?uso: portoes-pelo-escrivao.sh <pasta de saída nova> [motor|build|voz1a|voz1b|v2c|v2d|fp2-base|fp2|fp2-contadores|og1-b-navegador|do3-navegador|coragua-h|do4-alvos|lar1|lar1-largura|lar1-b|pai2-d|pai2|pai2-navegador|eva-t-navegador|eva-ta-indice|rec2-navegador|ret1-moldura|rec2-a-alvos|ed3-navegador|voz2a-f|voz2a-g|cor3-b|zer0-navegador|cor3-d-verify]}"; motor="${2:-}"
+case "$motor" in ""|motor|build|voz1a|voz1b|v2c|v2d|fp2-base|fp2|fp2-contadores|og1-b-navegador|do3-navegador|coragua-h|do4-alvos|lar1|lar1-largura|lar1-b|pai2-d|pai2|pai2-navegador|eva-t-navegador|eva-ta-indice|rec2-navegador|ret1-moldura|rec2-a-alvos|ed3-navegador|voz2a-f|voz2a-g|cor3-b|zer0-navegador|cor3-d-verify) ;; *) echo "portoes-pelo-escrivao: perfil desconhecido" >&2; exit 2;; esac
 raiz=$(cd "$(git rev-parse --show-toplevel)" && pwd -P) || exit 2
 pasta=/tmp/oedp-escrivao-$(printf '%s' "$raiz" | python3 -c 'import hashlib,sys; print(hashlib.sha1(sys.stdin.read().encode()).hexdigest()[:12])')
 batimento="$pasta/batimento"
@@ -23,7 +23,7 @@ pedido="$pasta/pedido-$id.json"
 python3 - "$pedido" "$saida" "$motor" <<'PY'
 import json, os, sys
 pedido, saida, motor = sys.argv[1:4]
-if motor in ('cor3-d-verify', 'cor3-b', 'ed3-navegador', 'voz2a-f', 'voz2a-g', 'build', 'voz1a', 'voz1b', 'v2c', 'v2d', 'fp2-base', 'fp2', 'fp2-contadores', 'og1-b-navegador', 'do3-navegador', 'coragua-h', 'do4-alvos', 'lar1', 'lar1-largura', 'lar1-b', 'pai2-d', 'pai2', 'pai2-navegador', 'eva-t-navegador', 'eva-ta-indice', 'rec2-navegador', 'ret1-moldura', 'rec2-a-alvos'):
+if motor in ('zer0-navegador', 'cor3-d-verify', 'cor3-b', 'ed3-navegador', 'voz2a-f', 'voz2a-g', 'build', 'voz1a', 'voz1b', 'v2c', 'v2d', 'fp2-base', 'fp2', 'fp2-contadores', 'og1-b-navegador', 'do3-navegador', 'coragua-h', 'do4-alvos', 'lar1', 'lar1-largura', 'lar1-b', 'pai2-d', 'pai2', 'pai2-navegador', 'eva-t-navegador', 'eva-ta-indice', 'rec2-navegador', 'ret1-moldura', 'rec2-a-alvos'):
     os.makedirs(saida, exist_ok=False)
     with open(os.path.join(saida, 'selecao.json'), 'w', encoding='utf-8') as f:
         json.dump({'perfil': motor}, f)

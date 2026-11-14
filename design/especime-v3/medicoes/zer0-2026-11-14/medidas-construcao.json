@@ -1,0 +1,84 @@
+{
+  "total": {
+    "antes": 4199,
+    "depois": 4199
+  },
+  "publicadas": {
+    "antes": 4194,
+    "depois": 4176
+  },
+  "retiradas": {
+    "antes": 5,
+    "depois": 23
+  },
+  "familias": {
+    "antes": 1181,
+    "depois": 1181
+  },
+  "frasesPendentes": {
+    "antes": 905,
+    "depois": 905
+  },
+  "valoresSemEmprestimo": {
+    "antes": "95d8bcfceee988e69d36deed8f8751ad8a1216ef9af682f526c32d5ce1553eae",
+    "depois": "95d8bcfceee988e69d36deed8f8751ad8a1216ef9af682f526c32d5ce1553eae"
+  },
+  "historias": {
+    "evora-camara-lugares": {
+      "antes": 0,
+      "depois": 1
+    },
+    "evora-camara-mandatos-cdu-2013": {
+      "antes": 0,
+      "depois": 1
+    },
+    "evora-camara-mandatos-cdu-2017": {
+      "antes": 0,
+      "depois": 1
+    },
+    "evora-camara-mandatos-cdu-2021": {
+      "antes": 0,
+      "depois": 1
+    },
+    "evora-camara-mandatos-ps-2009": {
+      "antes": 0,
+      "depois": 1
+    },
+    "evora-camara-mandatos-ps-2025": {
+      "antes": 0,
+      "depois": 1
+    },
+    "evora-executivo-2025-ad": {
+      "antes": 0,
+      "depois": 1
+    },
+    "evora-executivo-2025-cdu": {
+      "antes": 0,
+      "depois": 1
+    },
+    "evora-executivo-2025-chega": {
+      "antes": 0,
+      "depois": 1
+    },
+    "evora-executivo-2025-ps": {
+      "antes": 0,
+      "depois": 1
+    },
+    "evora-pael-emprestimo": {
+      "antes": 0,
+      "depois": 1
+    },
+    "evora-prr-municipio-contratado": {
+      "antes": 7,
+      "depois": 8
+    },
+    "evora-prr-universidade-contratado": {
+      "antes": 7,
+      "depois": 8
+    }
+  },
+  "L1": {
+    "antes": 3524,
+    "depois": 3490
+  }
+}

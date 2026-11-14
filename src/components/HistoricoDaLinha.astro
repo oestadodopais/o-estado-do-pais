@@ -12,6 +12,7 @@
  * língua da edição (§1.17, §2.2). Reescrever a história de uma correção falha
  * a construção.
  */
+import Marcador from './Marcador.astro';
 import { motivoDaEntrada } from '../lib/ledger.mjs';
 import { dataDaCasa } from '../lib/datas.mjs';
 import { textoDocumentalConferido } from '../lib/prova-efeitos.mjs';
@@ -59,9 +60,9 @@ const rotulo = (kind) => KIND_LABELS[kind]?.[lang] ?? kind;
             <span class:list={['etiqueta-kind', e.kind === 'correcao' && 'etiqueta-correcao']} data-correcao-claim={claim.id} data-correcao-n={String(e.n)} data-correcao-grupo={indices} data-correcao-campo="kind">{rotulo(e.kind)}</span>
             {grupo.map((item, i) => <span class="registo-salto" id={i ? `alteracao-${item.n}` : undefined}>
               {item.field && <><span class="historico-campo" data-correcao-claim={claim.id} data-correcao-n={String(item.n)} data-correcao-campo="field">{s.livro.linha.camposHistorico[item.field]}</span>{': '}</>}
-              <span class="log-valor log-valor-antigo" lang={linguaDoValor(item, item.old_value)} data-correcao-claim={claim.id} data-correcao-n={String(item.n)} data-correcao-campo="old_value">{item.field && ['source','document.title','excerpt'].includes(item.field) ? <q>{valor(item,'old_value')}</q> : valor(item,'old_value')}</span>
+              <span class="log-valor log-valor-antigo" lang={linguaDoValor(item, item.old_value)} data-correcao-claim={claim.id} data-correcao-n={String(item.n)} data-correcao-campo="old_value">{item.field === 'excerpt' && item.old_value === '[a verificar]' ? <Marcador lang={lang} /> : item.field && ['source','document.title','excerpt'].includes(item.field) ? <q>{valor(item,'old_value')}</q> : valor(item,'old_value')}</span>
               <span aria-hidden="true"> → </span>
-              <span class="log-valor" lang={linguaDoValor(item, item.new_value)} data-correcao-claim={claim.id} data-correcao-n={String(item.n)} data-correcao-campo="new_value">{item.field && ['source','document.title','excerpt'].includes(item.field) ? <q>{valor(item,'new_value')}</q> : valor(item,'new_value')}</span>
+              <span class="log-valor" lang={linguaDoValor(item, item.new_value)} data-correcao-claim={claim.id} data-correcao-n={String(item.n)} data-correcao-campo="new_value">{item.field === 'excerpt' && item.new_value === '[a verificar]' ? <Marcador lang={lang} /> : item.field && ['source','document.title','excerpt'].includes(item.field) ? <q>{valor(item,'new_value')}</q> : valor(item,'new_value')}</span>
             </span>)}
           </div>
           <p class="log-motivo" data-correcao-claim={claim.id} data-correcao-n={String(e.n)} data-correcao-grupo={indices} data-correcao-campo="reason">{motivoDaEntrada(e, lang)}</p>

@@ -66,6 +66,15 @@ function aceite(n, {rota, claims, municipios = []}) {
       ['source','document.title','document.edition','published_at','access_date','reference_date'].includes(c.getAttribute('data-linha-campo')) &&
       falta(valor(linha, c.getAttribute('data-linha-campo'))) && texto(c).trim() === (rota.lang === 'en' ? '[to verify]' : '[a verificar]'))) return 'selo-proveniencia';
   }
+  const historico = perto(n, '[data-correcao-claim][data-correcao-n][data-correcao-campo]');
+  if (rota?.key === 'linha' && historico && perto(historico, '.historico-entrada')) {
+    const id = historico.getAttribute('data-correcao-claim');
+    const chave = historico.getAttribute('data-correcao-campo');
+    const entrada = claims?.get(id)?.corrections?.[Number(historico.getAttribute('data-correcao-n'))];
+    if (id === rota.params?.slug && ['old_value', 'new_value'].includes(chave) &&
+        entrada?.kind === 'proveniencia' && entrada.field === 'excerpt' && entrada[chave] === '[a verificar]' &&
+        texto(historico).trim() === (rota.lang === 'en' ? '[to verify]' : '[a verificar]')) return 'excerto';
+  }
   const campo = perto(n, '[data-linha-campo][data-linha-claim], [data-de-campo][data-de-linha]');
   if (campo) {
     const chave = campo.getAttribute('data-linha-campo') ?? campo.getAttribute('data-de-campo');

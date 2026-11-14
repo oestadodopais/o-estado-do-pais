@@ -1,7 +1,7 @@
 import {medirPagina as medirPosicaoDosSelos} from '../../scripts/check-selos.mjs';
 import './origens-coragua.mjs';
 import assert from 'node:assert/strict';import {parse} from 'node-html-parser';import {loadClaims} from '../../src/lib/ledger.mjs';import {CORRECOES_TEXTO} from '../../src/data/correcoes.mjs';import {partesDaCorrecao} from '../../src/lib/texto-correcao.mjs';import {textoDaMudancaGate} from '../../scripts/texto-mudanca-gate.mjs';import {conferirNumerosDaCorrecao} from '../../scripts/edicoes-conferir.mjs';import {fraseHtml} from './texto-html.mjs';
-const claims=loadClaims();let plantas=0;
+const claims=loadClaims({includeWithdrawn:true});let plantas=0;
 for(const c of CORRECOES_TEXTO)for(const lang of ['pt','en']){
  const partes=partesDaCorrecao(c,lang);assert.equal(textoDaMudancaGate(partes,claims,true),c.frase[lang]);
  assert.equal(textoDaMudancaGate([...partes,' 999'],claims,true),null);plantas++;
