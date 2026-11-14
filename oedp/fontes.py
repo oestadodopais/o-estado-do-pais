@@ -194,6 +194,8 @@ def buscar(url: str, raiz: Path, abrir=urllib.request.urlopen) -> str:
             tipo = (r.headers.get("Content-Type") or "").split(";")[0].strip()
     except urllib.error.HTTPError as e:
         raise ErroDaLoja(f"{url} answered {e.code}") from None
+    except (urllib.error.URLError, OSError) as e:
+        raise ErroDaLoja(f"{url} could not be fetched ({e})") from None
     sha = guardar(raiz, dados)
     lido = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     campos = [

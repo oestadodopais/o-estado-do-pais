@@ -9,7 +9,6 @@ import subprocess
 import sys
 import tempfile
 import unittest
-import urllib.error
 from decimal import Decimal
 from pathlib import Path
 
@@ -161,6 +160,14 @@ class Fontes(unittest.TestCase):
         with self.assertRaises(fontes.ErroDaLoja) as e:
             fontes.buscar("https://ensaio.invalid/privado/x.pdf", loja, abrir)
         self.assertIn("closes this address", str(e.exception))
+        def sem_ligacao(pedido, timeout=0):
+            if pedido.full_url.endswith("/robots.txt"):
+                return Resposta(b"", pedido.full_url)
+            raise OSError("timed out")
+
+        with self.assertRaises(fontes.ErroDaLoja) as e:
+            fontes.buscar("https://ensaio.invalid/publico/x.html", loja, sem_ligacao)
+        self.assertIn("could not be fetched", str(e.exception))
         tabela = fontes.buscar("https://ensaio.invalid/publico/x.html", loja, abrir)
         self.assertIn('sha256 = "', tabela)
         self.assertEqual(len(list(loja.rglob("*"))), 3)  # sha256/, sha256/xx/, the copy

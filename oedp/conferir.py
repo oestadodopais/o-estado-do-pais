@@ -8,11 +8,9 @@ the reason, or not binding (checks 4, 5 and 7 on a piece that is not published).
 from __future__ import annotations
 
 import hashlib
-import os
 import re
 import subprocess
 from dataclasses import dataclass
-from decimal import Decimal
 from pathlib import Path
 
 from . import datas, derivacoes, fontes, forma, numeros, privacidade

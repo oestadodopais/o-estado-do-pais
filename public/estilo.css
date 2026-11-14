@@ -217,10 +217,8 @@ th { font-family: var(--f-versal); font-weight: 600; letter-spacing: .04em; text
   margin-top: clamp(56px, 7vw, 96px);
   border-top: 1.5px solid var(--ink);
   padding: 16px 0 40px;
-  font-family: var(--f-versal);
-  font-size: 13px;
-  line-height: 1.8;
-  letter-spacing: .04em;
+  font-size: 14px;
+  line-height: 1.6;
   color: var(--muted);
 }
 .rodape a { color: inherit; display: inline-flex; align-items: center; min-height: 44px; }
