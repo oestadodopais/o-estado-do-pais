@@ -25,7 +25,7 @@ leu **só o diff do inventário**. É essa a leitura que esta tabela regista.
 
 | bloco | linhas | leitura | quem, quando |
 | --- | --- | --- | --- |
-| zer0 | 4 reclassificadas | por ler | Codex, 14.11.2026: duas frases da folha decidida e duas contagens medidas. O julgamento anterior da folha está em `design/especime-v3/medicoes/zer0-2026-11-14/JUIZO-ZER0.md`; não é uma leitura deste diff do inventário. Leitura cruzada do diff pendente antes da fusão. |
+| zer0 | 4 reclassificadas | lida | Codex, 14.11.2026: duas frases da folha decidida e duas contagens medidas. O julgamento anterior da folha está em `design/especime-v3/medicoes/zer0-2026-11-14/JUIZO-ZER0.md`; não é uma leitura deste diff do inventário. Leitura cruzada: o lugar de direção (Claude Fable 5.2), a 14.11.2026, sobre o diff do inventário da cabeça `f2f0b580b` à `5dd543a6d`: as duas frases das regiões são as da folha da adenda A, letra por letra, e estão nas duas páginas construídas; as duas contagens são as que o índice do livro construído imprime nas duas edições; as quatro entradas retiradas são as formas anteriores das mesmas quatro. |
 | rec1-a | frases prescritas, estados condicionais do registo e contagens medidas | por ler | Codex, 10.11.2026: mandato REC1 e adenda A; leitura cruzada do diff pendente antes da fusão. |
 | cr2 | 2 novas; 2 retiradas | por ler | Codex, 26.10.2026: contagem medida de 102 revisões de proveniência, após as trinta entradas das quinze releituras; leitura cruzada pendente antes da fusão. |
 | v2a | 28 novas; 2 retiradas | por ler | Codex gpt-6-astra, 13.10.2026: frases das famílias apoiadas nas fontes e contagens do índice lidas da construção. A leitura cruzada pelo Opus prevista no brief fica pendente antes da fusão. |

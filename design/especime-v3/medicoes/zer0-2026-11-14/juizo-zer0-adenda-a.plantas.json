@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-14T17:13:49+00:00",
+ "copia": "pacote",
+ "plantas": [
+  {
+   "id": "JA-P1",
+   "ficheiro": "FOLHA.md",
+   "descricao": "A2 EN novo: «the share not yet paid»; a linha mede a parte paga (valor_pago a dividir por valor_contratado)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "63170a3724ce1acd846800ef7b0219a48f6b8734fde63bcc10eca521389ae723",
+   "sha256_depois": "6c50c20c84d3273c24ad56a0c443b8b476413e618570cbd6c28fac4953097ebc",
+   "contexto_antes": "n funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality that has already been paid.»\n- Novo EN: «It is the share already paid of the Recovery and Resilience Plan funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality.»\n\n## A3 · A descrição das verbas pa",
+   "contexto_depois": "n funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality that has already been paid.»\n- Novo EN: «It is the share not yet paid of the Recovery and Resilience Plan funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality.»\n\n## A3 · A descrição das verbas pa"
+  },
+  {
+   "id": "JA-P2",
+   "ficheiro": "FOLHA.md",
+   "descricao": "A4 PT novo: prazo de conclusão «posterior ao instantâneo»; a seleção diz prazo anterior ao instantâneo",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "6c50c20c84d3273c24ad56a0c443b8b476413e618570cbd6c28fac4953097ebc",
+   "sha256_depois": "4d0cad65576deab61852c612d9297457bf8478882f75526a2eb00a6024edd126",
+   "contexto_antes": "»\n- Novo PT: «São as verbas contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do Plano de Recuperação e Resiliência localiza no concelho, em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada.»\n- Hoje EN: «These are funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality, with a completion deadline before the snapshot",
+   "contexto_depois": "»\n- Novo PT: «São as verbas contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do Plano de Recuperação e Resiliência localiza no concelho, em projetos com prazo de conclusão posterior ao instantâneo e sem conclusão registada.»\n- Hoje EN: «These are funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality, with a completion deadline before the snapshot"
+  },
+  {
+   "id": "JA-P3",
+   "ficheiro": "FOLHA.md",
+   "descricao": "A6 PT novo: «Cem é a média de Portugal»; a unidade do Eurostat é a percentagem da média da UE-27",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "4d0cad65576deab61852c612d9297457bf8478882f75526a2eb00a6024edd126",
+   "sha256_depois": "ca67d0e513a3cb54b59c29f92ea7b53e9009e3f47d067c211035746a1e9a717f",
+   "contexto_antes": " compra, com a média da UE-27.»\n- Novo PT: «O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Cem é a média da UE-27: abaixo de cem, o PIB per capita do território é menor do que essa média; acima de cem, é maior.»\n- Hoje EN: «The index compares each territory’s GDP per capita, measured in ",
+   "contexto_depois": " compra, com a média da UE-27.»\n- Novo PT: «O índice compara o PIB per capita de cada território, medido em paridades de poder de compra, com a média da UE-27. Cem é a média de Portugal: abaixo de cem, o PIB per capita do território é menor do que essa média; acima de cem, é maior.»\n- Hoje EN: «The index compares each territory’s GDP per capita, measured in "
+  },
+  {
+   "id": "JA-P4",
+   "ficheiro": "FOLHA.md",
+   "descricao": "A3 EN novo: «funds contracted»; a linha é a das verbas pagas (coluna valor_pago)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "ca67d0e513a3cb54b59c29f92ea7b53e9009e3f47d067c211035746a1e9a717f",
+   "sha256_depois": "a41f56ba58020f5ea132054e3c0e9752e0fa59f8092f44260dd72d94b2d8b03c",
+   "contexto_antes": " funds paid in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality, from the plan’s list of entities.»\n- Novo EN: «These are the Recovery and Resilience Plan funds paid in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality.»\n\n## A4 · A descrição das verbas de projetos com o prazo ",
+   "contexto_depois": " funds paid in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality, from the plan’s list of entities.»\n- Novo EN: «These are the Recovery and Resilience Plan funds contracted in records of intermediate and direct beneficiaries that the plan’s list of entities places in the municipality.»\n\n## A4 · A descrição das verbas de projetos com o prazo "
+  },
+  {
+   "id": "JA-P5",
+   "ficheiro": "FOLHA.md",
+   "descricao": "A1 PT novo: «beneficiários finais e diretos»; o filtro é Beneficiário Intermediário e Beneficiário Direto",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "a41f56ba58020f5ea132054e3c0e9752e0fa59f8092f44260dd72d94b2d8b03c",
+   "sha256_depois": "f2eb4e13923f6cdad3c613a86d286f5a5cec1f3dba83517f56c5ee5173a6820d",
+   "contexto_antes": "iliência em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho, pela listagem de entidades do plano.»\n- Novo PT: «São as verbas do Plano de Recuperação e Resiliência contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho.»\n- Hoje EN: «These are Recovery and Resilience Plan funds contracted in records of intermediate and ",
+   "contexto_depois": "iliência em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concelho, pela listagem de entidades do plano.»\n- Novo PT: «São as verbas do Plano de Recuperação e Resiliência contratadas em registos de beneficiários finais e diretos que a listagem de entidades do plano localiza no concelho.»\n- Hoje EN: «These are Recovery and Resilience Plan funds contracted in records of intermediate and "
+  }
+ ]
+}

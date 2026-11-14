@@ -1,0 +1,41 @@
+{
+ "bloco": "ZER0 (o ponto zero nas páginas de dados: sete correções julgadas ao que está no ar)",
+ "data": "2026-11-14",
+ "orcamento": {
+  "pontos_codex_por_bloco": "sem teto por bloco desde 07.11.2026 (§1.232)"
+ },
+ "passagens_codex": [
+  {
+   "nome": "o mandato (os oito pontos: as regiões, a água, as dezoito linhas, a data dos recibos, o plano de Évora, o empréstimo, os doze excertos, a prova)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-14T14:05:10Z",
+   "fim": "2026-11-14T16:13:33Z",
+   "pontos": 7.0,
+   "pontos_antes": 67.0,
+   "pontos_depois": 74.0,
+   "turnos": 243,
+   "fonte": "a linha PONTOS do registo do lançador"
+  },
+  {
+   "nome": "adenda A (cinco descrições, a frase de definição das regiões, a ligação de repetir a leitura, o guião de prova contra as folhas)",
+   "modelo": "gpt-6-astra",
+   "raciocinio": "high",
+   "inicio": "2026-11-14T17:28:19Z",
+   "fim": "2026-11-14T18:17:57Z",
+   "pontos": 2.0,
+   "pontos_antes": 74.0,
+   "pontos_depois": 76.0,
+   "turnos": 110,
+   "fonte": "a linha PONTOS do registo do lançador"
+  }
+ ],
+ "total_pontos_codex": "a soma das linhas PONTOS das passagens; o contador é o da conta e não lê os juízos nem as leituras do Codex",
+ "reflexo_dos_gargalos": "A construção fez os oito pontos numa passagem. O que custou a mais foi do portão do motor numa árvore limpa (duas corridas a mais) e de uma adenda pelas frases que a leitura a frio mandou rever. Quatro linhas novas na GARGALOS.md.",
+ "leituras": "Claude Opus 5.5: a verificação das linhas só com recibo a xhigh; a montagem da folha a high; a leitura a frio a xhigh, com um complemento; a leitura curta da adenda A. Codex Astra a xhigh: o juízo da folha, o juízo da folha da adenda e a leitura curta do commit do motor deste lugar. Cinco plantas em cinco em cada uma.",
+ "claude": "a direção, as decisões de cada correção, o mandato e a adenda, a correção do motor por guião, os portões do motor numa árvore limpa, a lista inteira por guião e a revisão pelo Fable 5.2",
+ "medida": "sete itens: uma frase apagada e uma de definição acrescentada; quatro nomes, sete descrições e duas aritméticas reescritas; um valor corrigido com a entrada datada; doze excertos; um rótulo; dezoito linhas retiradas da publicação; uma regra de data nos recibos.",
+ "lugar_de_direcao": "Claude Fable 5.2",
+ "mandato_escrito_em": "2026-11-14T14:04:00Z",
+ "nota": "O contador do Codex é o da conta inteira e anda em pontos inteiros."
+}

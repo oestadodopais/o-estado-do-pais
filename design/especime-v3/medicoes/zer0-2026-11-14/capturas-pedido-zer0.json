@@ -1,0 +1,60 @@
+{
+ "cabeca": "2a19fc5cd68de233c8ed791369602f29db98fccf",
+ "paginas": [
+  {
+   "nome": "regioes",
+   "pt": "/regioes/",
+   "en": "/en/regions/"
+  },
+  {
+   "nome": "area-ambiente",
+   "pt": "/areas/ambiente-e-energia/",
+   "en": "/en/areas/ambiente-e-energia/"
+  },
+  {
+   "nome": "area-economia",
+   "pt": "/areas/economia-e-coesao-territorial/",
+   "en": "/en/areas/economia-e-coesao-territorial/"
+  },
+  {
+   "nome": "evora",
+   "pt": "/municipios/evora/",
+   "en": "/en/municipalities/evora/"
+  },
+  {
+   "nome": "recibo-evora-pael-emprestimo",
+   "pt": "/livro-razao/evora-pael-emprestimo/",
+   "en": "/en/ledger/evora-pael-emprestimo/"
+  },
+  {
+   "nome": "recibo-evora-prr-aprovado-2026",
+   "pt": "/livro-razao/evora-prr-aprovado-2026/",
+   "en": "/en/ledger/evora-prr-aprovado-2026/"
+  },
+  {
+   "nome": "recibo-evora-prr-municipio-contratado",
+   "pt": "/livro-razao/evora-prr-municipio-contratado/",
+   "en": "/en/ledger/evora-prr-municipio-contratado/"
+  },
+  {
+   "nome": "recibo-evora-executivo-2025-chega",
+   "pt": "/livro-razao/evora-executivo-2025-chega/",
+   "en": "/en/ledger/evora-executivo-2025-chega/"
+  },
+  {
+   "nome": "recibo-agua-nao-faturada-portugal-2024",
+   "pt": "/livro-razao/agua-nao-faturada-portugal-2024/",
+   "en": "/en/ledger/agua-nao-faturada-portugal-2024/"
+  },
+  {
+   "nome": "recibo-sobrecarga-do-custo-da-habitacao-2025-ue",
+   "pt": "/livro-razao/sobrecarga-do-custo-da-habitacao-2025-ue/",
+   "en": "/en/ledger/sobrecarga-do-custo-da-habitacao-2025-ue/"
+  },
+  {
+   "nome": "recibo-evora-prr-execucao-2026",
+   "pt": "/livro-razao/evora-prr-execucao-2026/",
+   "en": "/en/ledger/evora-prr-execucao-2026/"
+  }
+ ]
+}

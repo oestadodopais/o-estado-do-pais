@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-14T16:53:05+00:00",
+ "copia": "<pasta da leitura>/pacote",
+ "plantas": [
+  {
+   "id": "CZ-P1",
+   "ficheiro": "src/data/nomes-das-medidas.mjs",
+   "descricao": "o nome inglês da linha das verbas contratadas do PRR de Évora diz «intermediate and final beneficiaries»; o filtro do ficheiro e a folha dizem beneficiários intermediários e diretos",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "8440fc67eb1f9c35770373dc7df81cf818c26e571db8d7f6a7d5b10f3f66be4f",
+   "sha256_depois": "90ed6981960c96c405caa5cf41dc8f5fec9aacf3305ec7f653a8a4be4f51dbd8",
+   "contexto_antes": "de Recuperação e Resiliência (PRR) contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do PRR localiza em Évora',\n    en: 'Recovery and Resilience Plan (PRR) funds contracted in records of intermediate and direct beneficiaries that the PRR list of entities places in Évora',\n  },\n  'evora-prr-pago-2026': {\n    pt: 'Verbas do Plano de Recuperação e Resiliência (PRR) pagas em registos d",
+   "contexto_depois": "de Recuperação e Resiliência (PRR) contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do PRR localiza em Évora',\n    en: 'Recovery and Resilience Plan (PRR) funds contracted in records of intermediate and final beneficiaries that the PRR list of entities places in Évora',\n  },\n  'evora-prr-pago-2026': {\n    pt: 'Verbas do Plano de Recuperação e Resiliência (PRR) pagas em registos d"
+  },
+  {
+   "id": "CZ-P2",
+   "ficheiro": "ledger/claims/evora-pael-emprestimo.yml",
+   "descricao": "a razão portuguesa da correção do empréstimo diz «dois euros acima»; a diferença entre 32.166.372,20 e 32.166.373,20 é um euro, e a folha diz um euro",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "66a73eb453109a1bf45cf2c5df35b6b845b4f4ce77044a66b8fbf8e88bcac0e4",
+   "sha256_depois": "14a10673a957af51fc41976c4e79c2c6b27f6ce414f7d5d55bc3afc21e4c093b",
+   "contexto_antes": "\"\n    reason: \"A página 84 do Relatório de Gestão de 2016, que a linha citava, imprime 32.166.372,20 €; a página 99 do mesmo relatório imprime 32.166.373,20 €, um euro acima, e é esse o capital contratado que o mapa dos empréstimos do município regista (Anexos ao Relatório de Gestão de 2016, página 193, a 68.ª do ficheiro). A linha",
+   "contexto_depois": "\"\n    reason: \"A página 84 do Relatório de Gestão de 2016, que a linha citava, imprime 32.166.372,20 €; a página 99 do mesmo relatório imprime 32.166.373,20 €, dois euros acima, e é esse o capital contratado que o mapa dos empréstimos do município regista (Anexos ao Relatório de Gestão de 2016, página 193, a 68.ª do ficheiro). A linha"
+  },
+  {
+   "id": "CZ-P3",
+   "ficheiro": "ledger/claims/evora-executivo-2025-ad.yml",
+   "descricao": "o excerto novo da linha do executivo de 2025 da lista PPD/PSD.CDS-PP.PPM traz 8031 votos; o ficheiro alojado diz 8013",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "be433ead4f8fdf705ed067d0d94937e6b835cd1cf694cafbbc0f9b2ebca0344d",
+   "sha256_depois": "ff835f6b42d149167e4df2d97dcbca2a8f80b5af043dd152663e860e42c02755",
+   "contexto_antes": "onId=1-territoryId=1267-organId=4.json\"\naccess_date: \"2026-08-10\"\nreference_date: \"2025\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"{ \\\"id\\\": 2037, \\\"typeId\\\": 2, \\\"acronym\\\": \\\"PPD/PSD.CDS-PP.PPM\\\", \\\"votes\\\": 8013, \\\"percentage\\\": 29.26, \\\"mandates\\\": 2, \\\"presidents\\\": 0, \\\"absoluteMajority\\\": 0 }\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calc",
+   "contexto_depois": "onId=1-territoryId=1267-organId=4.json\"\naccess_date: \"2026-08-10\"\nreference_date: \"2025\"\n\n# Excerto textual da fonte, palavra por palavra. Nunca uma paráfrase.\nexcerpt: \"{ \\\"id\\\": 2037, \\\"typeId\\\": 2, \\\"acronym\\\": \\\"PPD/PSD.CDS-PP.PPM\\\", \\\"votes\\\": 8031, \\\"percentage\\\": 29.26, \\\"mandates\\\": 2, \\\"presidents\\\": 0, \\\"absoluteMajority\\\": 0 }\"\n\n# null quando o valor é publicado; a aritmética explicada quando é calc"
+  },
+  {
+   "id": "CZ-P4",
+   "ficheiro": "src/data/nomes-das-medidas.mjs",
+   "descricao": "o rótulo português da água não faturada perde «continental»; a ERSAR avalia Portugal continental e a folha diz «em Portugal continental»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "90ed6981960c96c405caa5cf41dc8f5fec9aacf3305ec7f653a8a4be4f51dbd8",
+   "sha256_depois": "6f950de3987e66f893175bf19cc7ae8d84b38af627ea65131d3b2fa1c9180a33",
+   "contexto_antes": "ean rule (net expenditure)',\n  },\n  /* ---------------------------------------------------------- água e ambiente */\n  'agua-nao-faturada-portugal-2024': {\n    pt: 'Água não faturada no serviço em baixa, em Portugal continental',\n    en: 'Unbilled water in the retail service, mainland Portugal',\n  },\n\n  /* ------------------------------------------------------ trabalho e pensões */\n  /",
+   "contexto_depois": "ean rule (net expenditure)',\n  },\n  /* ---------------------------------------------------------- água e ambiente */\n  'agua-nao-faturada-portugal-2024': {\n    pt: 'Água não faturada no serviço em baixa, em Portugal',\n    en: 'Unbilled water in the retail service, mainland Portugal',\n  },\n\n  /* ------------------------------------------------------ trabalho e pensões */\n  /"
+  },
+  {
+   "id": "CZ-P5",
+   "ficheiro": "src/lib/releitura-posterior.mjs",
+   "descricao": "a regra da data aceita uma releitura do mesmo dia da leitura (maior ou igual); o mandato manda imprimir a linha só quando a releitura é posterior",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "83ce5bb5ceb3ce54a90f0f39fc6bf9fda3f3f8998a65608ecfb8c0c6f0c6a3ea",
+   "sha256_depois": "111be2a659eb5b5ba76b92e3b67aa5852844ee6b57557a0238f3b17a2e63b78f",
+   "contexto_antes": " valor => /^\\d{4}-\\d{2}-\\d{2}/.exec(String(valor ?? ''))?.[0];\n  const primeira = dia(leitura), ultima = dia(releitura);\n  return Boolean(primeira && ultima && ultima > primeira);\n}\n",
+   "contexto_depois": " valor => /^\\d{4}-\\d{2}-\\d{2}/.exec(String(valor ?? ''))?.[0];\n  const primeira = dia(leitura), ultima = dia(releitura);\n  return Boolean(primeira && ultima && ultima >= primeira);\n}\n"
+  }
+ ]
+}

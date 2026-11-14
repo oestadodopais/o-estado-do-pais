@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-14T18:19:42+00:00",
+ "copia": "<pasta da leitura>/pacote",
+ "plantas": [
+  {
+   "id": "SA-P1",
+   "ficheiro": "src/data/o-que-e-das-familias.mjs",
+   "descricao": "a descrição portuguesa da parte paga diz «a parte por pagar»; a linha mede a parte já paga (as verbas pagas a dividir pelas contratadas) e a folha diz «a parte já paga»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "201dcbbba8cdc26e823c2751c15a563d537a4aa40922665260ca29749e6dc832",
+   "sha256_depois": "847e52f8998e68492625db3f0c6def1174ab948b161d5caec08a393970f4cfd0",
+   "contexto_antes": "lan’s list of entities places in the municipality.\"\n      ]\n    },\n    \"instantaneo\": true\n  },\n  \"evora-prr-execucao\": {\n    \"frase\": {\n      \"pt\": [\n        \"É a parte já paga das verbas do Plano de Recuperação e Resiliência contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concel",
+   "contexto_depois": "lan’s list of entities places in the municipality.\"\n      ]\n    },\n    \"instantaneo\": true\n  },\n  \"evora-prr-execucao\": {\n    \"frase\": {\n      \"pt\": [\n        \"É a parte por pagar das verbas do Plano de Recuperação e Resiliência contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do plano localiza no concel"
+  },
+  {
+   "id": "SA-P2",
+   "ficheiro": "src/i18n/strings.mjs",
+   "descricao": "a frase inglesa das regiões troca os sentidos: abaixo de cem diz «higher» e acima «lower»; a folha e a unidade do Eurostat dizem o contrário",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "3c365e6875033074f292ac0278d7d11fe0ba93d51757845345cd5659592e612e",
+   "sha256_depois": "f8e5203cb334ab599aaa76f6b653392061ad602e1852ca7460557f48154948a5",
+   "contexto_antes": "         'The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. One hundred is the EU-27 average: below one hundred, the territory’s GDP per capita is lower than that average; above one hundred, it is higher.',\n      },\n\n\n      dadosLink: 'download the data (CSV)',\n    },\n\n    sobre: {\n      metaTitle: 'About · O Estado do País',\n      metaDescription:\n        'Wha",
+   "contexto_depois": "         'The index compares each territory’s GDP per capita, measured in purchasing power standards, with the EU-27 average. One hundred is the EU-27 average: below one hundred, the territory’s GDP per capita is higher than that average; above one hundred, it is lower.',\n      },\n\n\n      dadosLink: 'download the data (CSV)',\n    },\n\n    sobre: {\n      metaTitle: 'About · O Estado do País',\n      metaDescription:\n        'Wha"
+  },
+  {
+   "id": "SA-P3",
+   "ficheiro": "src/lib/porta-da-releitura.mjs",
+   "descricao": "a regra da ligação de repetir a leitura fica invertida: guarda a página antiga quando o documento é o mesmo e reescreve a de outro documento",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "5587e4577451c0bae8fa095ede6cee3d0da5fac7d105088130e5922058836d1c",
+   "sha256_depois": "9aba06e28a2bdcd0c5ea2acbad9d2c22fc555ac2bfcd43af3cc44a848ecb13bd",
+   "contexto_antes": "age;\n  if (!anterior || !atual || typeof pagina !== 'number' || !Number.isInteger(pagina) || pagina < 1) return anterior;\n  if (!/#page=\\d+$/.test(anterior) || anterior.split('#')[0] !== atual.split('#')[0]) return anterior;\n  return `${anterior.split('#')[0]}#page=${pagina}`;\n}\n",
+   "contexto_depois": "age;\n  if (!anterior || !atual || typeof pagina !== 'number' || !Number.isInteger(pagina) || pagina < 1) return anterior;\n  if (!/#page=\\d+$/.test(anterior) || anterior.split('#')[0] === atual.split('#')[0]) return anterior;\n  return `${anterior.split('#')[0]}#page=${pagina}`;\n}\n"
+  },
+  {
+   "id": "SA-P4",
+   "ficheiro": "src/data/o-que-e-das-familias.mjs",
+   "descricao": "a descrição inglesa das verbas de projetos com o prazo passado diz «after the snapshot»; a seleção e a folha dizem prazo anterior ao instantâneo",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "847e52f8998e68492625db3f0c6def1174ab948b161d5caec08a393970f4cfd0",
+   "sha256_depois": "9db0b92f648f8b34226afb46f14a593adde7d39eec8623699e7bd290c79deb57",
+   "contexto_antes": "e the funds contracted in records of intermediate and direct beneficiaries that the Recovery and Resilience Plan’s list of entities places in the municipality, in projects with a completion deadline before the snapshot and no completion recorded.\"\n      ]\n    },\n    \"instantaneo\": true\n  },\n  \"evora-prr-vencido-quota\": {\n    \"frase\": {\n      \"pt\": [\n        \"Do total de verbas contratadas nos registos d",
+   "contexto_depois": "e the funds contracted in records of intermediate and direct beneficiaries that the Recovery and Resilience Plan’s list of entities places in the municipality, in projects with a completion deadline after the snapshot and no completion recorded.\"\n      ]\n    },\n    \"instantaneo\": true\n  },\n  \"evora-prr-vencido-quota\": {\n    \"frase\": {\n      \"pt\": [\n        \"Do total de verbas contratadas nos registos d"
+  },
+  {
+   "id": "SA-P5",
+   "ficheiro": "design/especime-v3/medicoes/zer0-2026-11-14/conferir-zer0.mjs",
+   "descricao": "o guião de prova espera na razão portuguesa da correção «um euro abaixo»; a folha decidida diz «um euro acima»",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "c4d76cc4e11f0e2eb985c6bab9573cc79e5072e8d8165cfd8e0d7a6d480ec2b7",
+   "sha256_depois": "9a5c7902368cdd3b77659164878a892827b97f74983cf2277068a5d8b8d3ce27",
+   "contexto_antes": " no valor de 32.166.373,20 €\",\n  \"pt\": \"A página 84 do Relatório de Gestão de 2016, que a linha citava, imprime 32.166.372,20 €; a página 99 do mesmo relatório imprime 32.166.373,20 €, um euro acima, e é esse o capital contratado que o mapa dos empréstimos do município regista (Anexos ao Relatório de Gestão de 2016, página 193, a 68.ª do ficheiro). A linha passa a e",
+   "contexto_depois": " no valor de 32.166.373,20 €\",\n  \"pt\": \"A página 84 do Relatório de Gestão de 2016, que a linha citava, imprime 32.166.372,20 €; a página 99 do mesmo relatório imprime 32.166.373,20 €, um euro abaixo, e é esse o capital contratado que o mapa dos empréstimos do município regista (Anexos ao Relatório de Gestão de 2016, página 193, a 68.ª do ficheiro). A linha passa a e"
+  }
+ ]
+}

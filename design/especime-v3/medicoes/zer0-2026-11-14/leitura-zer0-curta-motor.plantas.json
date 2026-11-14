@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-14T16:54:19+00:00",
+ "copia": "<pasta da leitura>/pacote",
+ "plantas": [
+  {
+   "id": "CM-P1",
+   "ficheiro": "content/08 Évora Mandates/source/zer0/receipts.json",
+   "descricao": "o resumo registado dos anexos tem um carácter trocado; o ficheiro e o pedido dão 92ac2efd4f0a109ad8b2698590b7448abaf4ef6c21ad882d9c3a471a52d6805b",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "6583173b5572084b750266e9b54661558fc3deb34c5789786a6e5a5f90cd9da4",
+   "sha256_depois": "0eea25fd1cf66f715d27ae29bdf11fa318b3db853531b0e5ee18abe078d98d5c",
+   "contexto_antes": "anexos_demonstracoes_financeiras.pdf\",\n    \"url\": \"https://www.cm-evora.pt/wp-content/uploads/2020/06/Anexos_Demonstra%C3%A7%C3%B5es_Financeiras_2016.pdf\",\n    \"sha256\": \"92ac2efd4f0a109ad8b2698590b7448abaf4ef6c21ad882d9c3a471a52d6805b\",\n    \"bytes\": 8879193,\n    \"fetched_at\": \"2026-11-14T13:27:34+00:00\",\n    \"client\": \"curl\"\n  }\n]\n",
+   "contexto_depois": "anexos_demonstracoes_financeiras.pdf\",\n    \"url\": \"https://www.cm-evora.pt/wp-content/uploads/2020/06/Anexos_Demonstra%C3%A7%C3%B5es_Financeiras_2016.pdf\",\n    \"sha256\": \"92ac2efd4f0a109ad8b2698590b7448abaf4ef6c21ad882d9c3a471a52d6850b\",\n    \"bytes\": 8879193,\n    \"fetched_at\": \"2026-11-14T13:27:34+00:00\",\n    \"client\": \"curl\"\n  }\n]\n"
+  },
+  {
+   "id": "CM-P2",
+   "ficheiro": "content/08 Évora Mandates/source/zer0/receipts.json",
+   "descricao": "a hora registada da descarga dos anexos é de 13.11; o pedido diz 2026-11-14T13:27:34Z",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "0eea25fd1cf66f715d27ae29bdf11fa318b3db853531b0e5ee18abe078d98d5c",
+   "sha256_depois": "25745cbb81db311f5167984229747ee1ba5648b97baff8363f5761fc50447b14",
+   "contexto_antes": "exos_Demonstra%C3%A7%C3%B5es_Financeiras_2016.pdf\",\n    \"sha256\": \"92ac2efd4f0a109ad8b2698590b7448abaf4ef6c21ad882d9c3a471a52d6850b\",\n    \"bytes\": 8879193,\n    \"fetched_at\": \"2026-11-14T13:27:34+00:00\",\n    \"client\": \"curl\"\n  }\n]\n",
+   "contexto_depois": "exos_Demonstra%C3%A7%C3%B5es_Financeiras_2016.pdf\",\n    \"sha256\": \"92ac2efd4f0a109ad8b2698590b7448abaf4ef6c21ad882d9c3a471a52d6850b\",\n    \"bytes\": 8879193,\n    \"fetched_at\": \"2026-11-13T13:27:34+00:00\",\n    \"client\": \"curl\"\n  }\n]\n"
+  },
+  {
+   "id": "CM-P3",
+   "ficheiro": "content/19 Évora 2027 Capital Europeia da Cultura/ledger.json",
+   "descricao": "o livro do estudo de Évora 2027 regista para o livro do estudo 16 um resumo que não é o do ficheiro; o ledger.json do estudo 16 na cabeça tem o resumo 97782cc93bb59eb663b200f5c90a75384c5a0240a159e1f12988ebd7be99aac1",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "1c99f9b2f1292f18c7259c3ed47932720099255d0a7cf35a7b08862b3c524958",
+   "sha256_depois": "c7a0ff9dd6d111da23df7de06e1caf5be1046762f96b9bac93a90a2b76235cd3",
+   "contexto_antes": "urce/outubro-2026\",\n   \"ledger_sha256\": \"ab01a2a41409208945e012b89d9abba93c9cf34a24c1cf0acc2d8ddf0a6cd3bb\"\n  },\n  {\n   \"pasta\": \"16 Évora Contas da Câmara\",\n   \"ledger_sha256\": \"97782cc93bb59eb663b200f5c90a75384c5a0240a159e1f12988ebd7be99aac1\"\n  },\n  {\n   \"pasta\": \"19 Évora 2027 Capital Europeia da Cultura\",\n   \"ledger_sha256\": \"5b69ae460aecd627e859657f4e77d80ba0452c055ac952293cb8676f13fdda59\",\n   \"f",
+   "contexto_depois": "urce/outubro-2026\",\n   \"ledger_sha256\": \"ab01a2a41409208945e012b89d9abba93c9cf34a24c1cf0acc2d8ddf0a6cd3bb\"\n  },\n  {\n   \"pasta\": \"16 Évora Contas da Câmara\",\n   \"ledger_sha256\": \"97782cc93bb59eb663b200f5c90a75384c5a0240a159e1f12988ebd7be99aac8\"\n  },\n  {\n   \"pasta\": \"19 Évora 2027 Capital Europeia da Cultura\",\n   \"ledger_sha256\": \"5b69ae460aecd627e859657f4e77d80ba0452c055ac952293cb8676f13fdda59\",\n   \"f"
+  },
+  {
+   "id": "CM-P4",
+   "ficheiro": "content/08 Évora Mandates/source/zer0/receipts.json",
+   "descricao": "o número de bytes registado dos anexos é 8879139; o ficheiro e o pedido têm 8879193",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "25745cbb81db311f5167984229747ee1ba5648b97baff8363f5761fc50447b14",
+   "sha256_depois": "fd696f889bea3c52f5a012b29bb878e53b350fdd9b9a8ea2e5ef51b06299024a",
+   "contexto_antes": "ent/uploads/2020/06/Anexos_Demonstra%C3%A7%C3%B5es_Financeiras_2016.pdf\",\n    \"sha256\": \"92ac2efd4f0a109ad8b2698590b7448abaf4ef6c21ad882d9c3a471a52d6850b\",\n    \"bytes\": 8879193,\n    \"fetched_at\": \"2026-11-13T13:27:34+00:00\",\n    \"client\": \"curl\"\n  }\n]\n",
+   "contexto_depois": "ent/uploads/2020/06/Anexos_Demonstra%C3%A7%C3%B5es_Financeiras_2016.pdf\",\n    \"sha256\": \"92ac2efd4f0a109ad8b2698590b7448abaf4ef6c21ad882d9c3a471a52d6850b\",\n    \"bytes\": 8879139,\n    \"fetched_at\": \"2026-11-13T13:27:34+00:00\",\n    \"client\": \"curl\"\n  }\n]\n"
+  },
+  {
+   "id": "CM-P5",
+   "ficheiro": "content/16 Évora Contas da Câmara/source/MANIFEST.sha256",
+   "descricao": "o manifesto das fontes do estudo 16 volta a trazer uma linha que o master não tem (um relatório de 2020 que não existe na pasta); o commit devia deixá-lo igual ao master",
+   "alcance": "na linha de um hunk do diff",
+   "sha256_antes": "d8a43a2831b4fb5f06602133e9a03aa1d61a04f3bb8d0032cccc306dc50f2245",
+   "sha256_depois": "01259ec9530f55f755a417340ab812fd281dfcc3d70984121d97ddb34f7da778",
+   "contexto_antes": "fe4b6aba494fd83c5  Municipio-Evora-CLC-2025.pdf\n7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04  Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf\ne63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f  PRESTACAO_CONTAS_2025.pdf\n",
+   "contexto_depois": "fe4b6aba494fd83c5  Municipio-Evora-CLC-2025.pdf\n7cd1e7d0a2c69045e47d7e2285773d4ad6a3a897422e66ee5064fe5bba9fde04  Grandes-Opcoes-do-Plano-e-Orcamento-2026_.pdf\ne63102753216d573a3cd6f60a886919cd88ec53df88692c800214a546d47b13f  PRESTACAO_CONTAS_2025.pdf\n4d0c5a1e9b7f3a2c6e8d1f0b9a7c5e3d2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c  2020_relatorio_gestao.pdf\n"
+  }
+ ]
+}
