@@ -196,6 +196,27 @@ class Check9(Limpa):
         self.assertTrue(any("vercel.json is missing" in x for x in conf.check9_vercel(pasta)))
         self.assertEqual(conf.check9_vercel(REPO), [])
 
+    def test_sem_a_pagina_do_metodo_nenhuma_peca_se_publica(self):
+        p = Plantada()
+        self.addCleanup(p.apagar)
+        (p.pasta / "paginas" / "metodo.md").unlink()
+        saida = Path(tempfile.mkdtemp(prefix="oedp-saida-"))
+        self.addCleanup(shutil.rmtree, saida, True)
+        c = build.construir(REPO, raiz=p.pasta, saida=saida, loja=LOJA)
+        self.assertFalse(c.ok)
+        self.assertTrue(any("the link /metodo/ leads to no built file" in m for m in c.mensagens), c.mensagens)
+
+    def test_conferir_sai_com_um_quando_uma_conferencia_falha(self):
+        import subprocess
+        import sys
+
+        p = Plantada([('mostra = "104,7 pontos"', 'mostra = "104,8 pontos"')])
+        self.addCleanup(p.apagar)
+        env = dict(os.environ, OEDP_FONTES=str(LOJA))
+        r = subprocess.run([sys.executable, "-m", "oedp", "conferir", str(p.peca)], cwd=REPO, capture_output=True, text=True, env=env)
+        self.assertEqual(r.returncode, 1, r.stdout + r.stderr)
+        self.assertIn("check  1 (every figure resolves) · 2026-11-16-peca-de-ensaio: failed", r.stdout)
+
     def test_a_construcao_para_numa_peca_que_falha(self):
         p = Plantada([("## A objeção mais forte\n", "")])
         self.addCleanup(p.apagar)
