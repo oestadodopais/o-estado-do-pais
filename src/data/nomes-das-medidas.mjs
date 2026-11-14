@@ -132,8 +132,8 @@ export const NOMES_DO_PROJETO = {
   },
   /* ---------------------------------------------------------- água e ambiente */
   'agua-nao-faturada-portugal-2024': {
-    pt: 'Água não faturada',
-    en: 'Unbilled water',
+    pt: 'Água não faturada no serviço em baixa, em Portugal continental',
+    en: 'Unbilled water in the retail service, mainland Portugal',
   },
 
   /* ------------------------------------------------------ trabalho e pensões */
