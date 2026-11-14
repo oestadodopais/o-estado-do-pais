@@ -1,0 +1,56 @@
+{
+ "registado_em": "2026-11-14T13:46:53+00:00",
+ "copia": "pacote",
+ "plantas": [
+  {
+   "id": "JZ-P1",
+   "ficheiro": "FOLHA.md",
+   "descricao": "Z3, o excerto novo: «contraído no ano 2012»; a página 99 do relatório diz «contraído no ano 2013»",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "bd72aa85d461e6fde1b7e09cbcfca41fbbc99e7d97dcd85563468f04e2477622",
+   "sha256_depois": "4cffd2c72ead160c0ce46a3f6cb032e1e8f3512601aa7313debff067903820fc",
+   "contexto_antes": "-12-2014 31-12-2015 31-12-2016 Águas do Centro Alentejo, S.A. (AdCA)».\n\n**Novo.**\n\n- Valor: «32 166 373,20».\n- Localizador: «Relatorio_Gestão_2016.pdf, p. 99».\n- Excerto: «empréstimo PAEL, Programa de Apoio à Economia Local, contraído no ano 2013, no valor de 32.166.373,20 €»\n- A descrição («… como o relatório de gestão o apresenta.») fica como está.\n- A entrada de correção, com a data da aterragem e `k",
+   "contexto_depois": "-12-2014 31-12-2015 31-12-2016 Águas do Centro Alentejo, S.A. (AdCA)».\n\n**Novo.**\n\n- Valor: «32 166 373,20».\n- Localizador: «Relatorio_Gestão_2016.pdf, p. 99».\n- Excerto: «empréstimo PAEL, Programa de Apoio à Economia Local, contraído no ano 2012, no valor de 32.166.373,20 €»\n- A descrição («… como o relatório de gestão o apresenta.») fica como está.\n- A entrada de correção, com a data da aterragem e `k"
+  },
+  {
+   "id": "JZ-P2",
+   "ficheiro": "FOLHA.md",
+   "descricao": "Z2, o nome inglês novo da linha das verbas pagas: «final and direct beneficiaries»; o filtro é Beneficiário Intermediário e Beneficiário Direto",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "4cffd2c72ead160c0ce46a3f6cb032e1e8f3512601aa7313debff067903820fc",
+   "sha256_depois": "876d0968ce5e7823071c54c6ad3d26fe7a3bb4346b4dbe62f74500d6456d0d88",
+   "contexto_antes": "liza em Évora» |\n| `evora-prr-pago-2026` EN | «Recovery and Resilience Plan (PRR) funds paid to intermediate and direct beneficiaries headquartered in Évora» | «Recovery and Resilience Plan (PRR) funds paid in the rows of intermediate and direct beneficiaries that the PRR list of entities places in Évora» |\n| `evora-prr-vencido-aprovado-2026` PT | «Verbas contratadas por beneficiários intermediários e diretos com se",
+   "contexto_depois": "liza em Évora» |\n| `evora-prr-pago-2026` EN | «Recovery and Resilience Plan (PRR) funds paid to intermediate and direct beneficiaries headquartered in Évora» | «Recovery and Resilience Plan (PRR) funds paid in the rows of final and direct beneficiaries that the PRR list of entities places in Évora» |\n| `evora-prr-vencido-aprovado-2026` PT | «Verbas contratadas por beneficiários intermediários e diretos com se"
+  },
+  {
+   "id": "JZ-P3",
+   "ficheiro": "FOLHA.md",
+   "descricao": "Z5, o excerto novo da linha do executivo de 2025 da CDU: 4323 votos; o ficheiro diz 4332",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "876d0968ce5e7823071c54c6ad3d26fe7a3bb4346b4dbe62f74500d6456d0d88",
+   "sha256_depois": "f317756a2e9b8c44e94b73eb4955b5550ab9e6c4ebf5104c1eb1b214f439be84",
+   "contexto_antes": "bsoluteMajority\": 0 }` | idem, `resultsParty[1]` |\n| `evora-executivo-2025-cdu` | 1 | «executive_2025.seats['PCP-PEV (CDU)'] = 1» | `{ \"id\": 1760, \"typeId\": 2, \"acronym\": \"PCP-PEV\", \"votes\": 4332, \"percentage\": 15.82, \"mandates\": 1, \"presidents\": 0, \"absoluteMajority\": 0 }` | idem, `resultsParty[2]` |\n| `evora-executivo-2025-chega` | 1 | «executive_2025.",
+   "contexto_depois": "bsoluteMajority\": 0 }` | idem, `resultsParty[1]` |\n| `evora-executivo-2025-cdu` | 1 | «executive_2025.seats['PCP-PEV (CDU)'] = 1» | `{ \"id\": 1760, \"typeId\": 2, \"acronym\": \"PCP-PEV\", \"votes\": 4323, \"percentage\": 15.82, \"mandates\": 1, \"presidents\": 0, \"absoluteMajority\": 0 }` | idem, `resultsParty[2]` |\n| `evora-executivo-2025-chega` | 1 | «executive_2025."
+  },
+  {
+   "id": "JZ-P4",
+   "ficheiro": "FOLHA.md",
+   "descricao": "Z6, o rótulo português novo: «no serviço em alta»; o quadro da ERSAR é o AA08 baixa e o indicador o AA08b",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "f317756a2e9b8c44e94b73eb4955b5550ab9e6c4ebf5104c1eb1b214f439be84",
+   "sha256_depois": "0917ecaea2de739d8cd5f61b3f1a567db6f1855ac61215f40dcc191e5a4f97e2",
+   "contexto_antes": "to, nas palavras da ERSAR. O valor (26,5 %, 2024) não muda. O rótulo é também o título do recibo e a migalha, e muda nos três.\n\n- Hoje PT: «Água não faturada». Novo PT: «Água não faturada no serviço em baixa, em Portugal continental».\n- Hoje EN: «Unbilled water». Novo EN: «Unbilled water in the retail service, mainland Portugal».\n\n**Provas.** `fontes/z6/rasarp2025-volume1-p106-107.txt` (ERS",
+   "contexto_depois": "to, nas palavras da ERSAR. O valor (26,5 %, 2024) não muda. O rótulo é também o título do recibo e a migalha, e muda nos três.\n\n- Hoje PT: «Água não faturada». Novo PT: «Água não faturada no serviço em alta, em Portugal continental».\n- Hoje EN: «Unbilled water». Novo EN: «Unbilled water in the retail service, mainland Portugal».\n\n**Provas.** `fontes/z6/rasarp2025-volume1-p106-107.txt` (ERS"
+  },
+  {
+   "id": "JZ-P5",
+   "ficheiro": "FOLHA.md",
+   "descricao": "Z3, a razão inglesa da correção: os anexos na «page 139»; o mapa dos empréstimos está na página impressa 193 (e a razão portuguesa diz 193)",
+   "alcance": "fora do diff da passagem (a referência é outra)",
+   "sha256_antes": "0917ecaea2de739d8cd5f61b3f1a567db6f1855ac61215f40dcc191e5a4f97e2",
+   "sha256_depois": "0ee26c03c903b5e41ae4f92b8f2c20b45ec71c0bc466c623bc371d98ef0fefc1",
+   "contexto_antes": "6,372.20; page 99 of the same report prints €32,166,373.20, one euro more, and that is the contracted capital recorded in the municipality’s statement of loans (Annexes to the 2016 Management Report, page 193). The row now carries that figure and cites page 99.»\n\n**Provas.**\n\n1. `fontes/z3/cm-evora-Relatorio_Gestao_2016.pdf`, página 84 (impressa e do PDF): «AdCA (19.",
+   "contexto_depois": "6,372.20; page 99 of the same report prints €32,166,373.20, one euro more, and that is the contracted capital recorded in the municipality’s statement of loans (Annexes to the 2016 Management Report, page 139). The row now carries that figure and cites page 99.»\n\n**Provas.**\n\n1. `fontes/z3/cm-evora-Relatorio_Gestao_2016.pdf`, página 84 (impressa e do PDF): «AdCA (19."
+  }
+ ]
+}

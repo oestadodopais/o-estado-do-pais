@@ -1,0 +1,58 @@
+{
+ "linhas_a_retirar": {
+  "valor": "18",
+  "comando": "python3 design/especime-v3/medicoes/zer0-2026-11-14/medir_zer0.py linhas_a_retirar"
+ },
+ "linhas_a_retirar_ainda_publicadas": {
+  "valor": "18",
+  "comando": "python3 design/especime-v3/medicoes/zer0-2026-11-14/medir_zer0.py linhas_a_retirar_ainda_publicadas"
+ },
+ "ficheiros_que_nomeiam_as_linhas_a_retirar": {
+  "valor": "13",
+  "comando": "python3 design/especime-v3/medicoes/zer0-2026-11-14/medir_zer0.py ficheiros_que_nomeiam_as_linhas_a_retirar"
+ },
+ "lista_dos_ficheiros_que_nomeiam": {
+  "valor": "BRIEF-confianca.md ledger/claims/coragua-ersar-encargo-metro-cubico-2024.yml ledger/claims/coragua-racio-maximo-2026.yml ledger/claims/coragua-racio-minimo-2026.yml ledger/publicadores.json src/data/areas.mjs src/data/correcoes.mjs src/data/lugares-coragua.mjs src/data/o-que-e-das-familias.mjs src/lib/nomes.mjs tests/cartao/leituras-provadas.json tests/cartao/rp4n.mjs tests/edicoes/origens-coragua.mjs",
+  "comando": "python3 design/especime-v3/medicoes/zer0-2026-11-14/medir_zer0.py lista_dos_ficheiros_que_nomeiam"
+ },
+ "linhas_publicadas_com_releituras": {
+  "valor": "2 636",
+  "comando": "python3 design/especime-v3/medicoes/zer0-2026-11-14/medir_zer0.py linhas_publicadas_com_releituras"
+ },
+ "linhas_com_a_ultima_releitura_anterior_a_leitura": {
+  "valor": "3",
+  "comando": "python3 design/especime-v3/medicoes/zer0-2026-11-14/medir_zer0.py linhas_com_a_ultima_releitura_anterior_a_leitura"
+ },
+ "registos_do_prr_com_evora": {
+  "valor": "2 311",
+  "comando": "python3 design/especime-v3/medicoes/zer0-2026-11-14/medir_zer0.py registos_do_prr_com_evora"
+ },
+ "pares_de_entidade_e_papel_do_prr": {
+  "valor": "23",
+  "comando": "python3 design/especime-v3/medicoes/zer0-2026-11-14/medir_zer0.py pares_de_entidade_e_papel_do_prr"
+ },
+ "linhas_eleitorais_com_excerto_composto": {
+  "valor": "10",
+  "comando": "python3 design/especime-v3/medicoes/zer0-2026-11-14/medir_zer0.py linhas_eleitorais_com_excerto_composto"
+ },
+ "emprestimo_na_pagina_84": {
+  "valor": "32.166.372,20",
+  "comando": "python3 design/especime-v3/medicoes/zer0-2026-11-14/medir_zer0.py emprestimo_na_pagina_84"
+ },
+ "emprestimo_na_pagina_99": {
+  "valor": "32.166.373,20",
+  "comando": "python3 design/especime-v3/medicoes/zer0-2026-11-14/medir_zer0.py emprestimo_na_pagina_99"
+ },
+ "ocorrencias_da_frase_das_regioes": {
+  "valor": "1",
+  "comando": "python3 design/especime-v3/medicoes/zer0-2026-11-14/medir_zer0.py ocorrencias_da_frase_das_regioes"
+ },
+ "ocorrencias_de_sede_em_evora_nos_nomes": {
+  "valor": "4",
+  "comando": "python3 design/especime-v3/medicoes/zer0-2026-11-14/medir_zer0.py ocorrencias_de_sede_em_evora_nos_nomes"
+ },
+ "ocorrencias_de_sede_no_concelho_nas_descricoes": {
+  "valor": "5",
+  "comando": "python3 design/especime-v3/medicoes/zer0-2026-11-14/medir_zer0.py ocorrencias_de_sede_no_concelho_nas_descricoes"
+ }
+}
