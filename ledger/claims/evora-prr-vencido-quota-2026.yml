@@ -20,8 +20,8 @@ reference_date: null
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "As verbas contratadas por beneficiários intermediários e diretos com sede em Évora em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada, a dividir pelo total contratado pelos mesmos beneficiários no mesmo instantâneo, vezes cem."
-derivation_en: "Funds contracted by intermediate and direct beneficiaries headquartered in Évora in projects with a completion deadline before the snapshot and no completion recorded, divided by the total contracted by the same beneficiaries in the same snapshot, times one hundred."
+derivation: "As verbas contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do PRR localiza em Évora, em projetos com prazo de conclusão anterior ao instantâneo e sem conclusão registada, a dividir pelo total contratado em todos esses registos, no mesmo instantâneo, vezes cem."
+derivation_en: "Funds contracted in records of intermediate and direct beneficiaries that the PRR list of entities places in Évora, in projects with a completion deadline before the snapshot and no completion recorded, divided by the total contracted in all those records, in the same snapshot, times one hundred."
 derived_from:
   - "evora-prr-vencido-aprovado-2026"
   - "evora-prr-aprovado-2026"

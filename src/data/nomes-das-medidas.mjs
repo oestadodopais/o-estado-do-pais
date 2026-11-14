@@ -430,16 +430,16 @@ export const NOMES_DO_PROJETO = {
   /* ------------------------------ o concelho de Évora: o Plano de Recuperação */
   'evora-prr-aprovado-2026': {
     /* R2 (03.10.2026, achado 25): a sigla por extenso no nome de cada cartão, porque cada cartão se lê sozinho. */
-    pt: 'Verbas do Plano de Recuperação e Resiliência (PRR) contratadas por beneficiários intermediários e diretos com sede em Évora',
-    en: 'Recovery and Resilience Plan (PRR) funds contracted by intermediate and direct beneficiaries headquartered in Évora',
+    pt: 'Verbas do Plano de Recuperação e Resiliência (PRR) contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do PRR localiza em Évora',
+    en: 'Recovery and Resilience Plan (PRR) funds contracted in records of intermediate and direct beneficiaries that the PRR list of entities places in Évora',
   },
   'evora-prr-pago-2026': {
-    pt: 'Verbas do Plano de Recuperação e Resiliência (PRR) pagas a beneficiários intermediários e diretos com sede em Évora',
-    en: 'Recovery and Resilience Plan (PRR) funds paid to intermediate and direct beneficiaries headquartered in Évora',
+    pt: 'Verbas do Plano de Recuperação e Resiliência (PRR) pagas em registos de beneficiários intermediários e diretos que a listagem de entidades do PRR localiza em Évora',
+    en: 'Recovery and Resilience Plan (PRR) funds paid in records of intermediate and direct beneficiaries that the PRR list of entities places in Évora',
   },
   'evora-prr-vencido-aprovado-2026': {
-    get pt() { return 'Verbas contratadas por beneficiários intermediários e diretos com sede em Évora, em projetos com prazo de conclusão anterior à data do instantâneo e sem conclusão registada, no instantâneo de ' + dataDoInstantaneoPRR(); },
-    get en() { return 'Funds contracted by intermediate and direct beneficiaries headquartered in Évora, in projects with a completion deadline before the snapshot date and no completion recorded, in the snapshot of ' + dataDoInstantaneoPRR(); },
+    get pt() { return 'Verbas contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do PRR localiza em Évora, em projetos com prazo de conclusão anterior à data do instantâneo e sem conclusão registada, no instantâneo de ' + dataDoInstantaneoPRR(); },
+    get en() { return 'Funds contracted in records of intermediate and direct beneficiaries that the PRR list of entities places in Évora, in projects with a completion deadline before the snapshot date and no completion recorded, in the snapshot of ' + dataDoInstantaneoPRR(); },
   },
   'evora-prr-municipio-contratado': {
     pt: 'Verbas do Plano de Recuperação e Resiliência (PRR) contratadas pelo município de Évora',
@@ -634,8 +634,8 @@ export const NOMES_DAS_LINHAS_DERIVADAS = {
     en: 'Portfolios allocated across the executive',
   },
   'evora-prr-execucao-2026': {
-    pt: 'Parte das verbas contratadas por beneficiários intermediários e diretos com sede em Évora que já foi paga',
-    en: 'Share of funds contracted by intermediate and direct beneficiaries headquartered in Évora already paid',
+    pt: 'Parte já paga das verbas contratadas em registos de beneficiários intermediários e diretos que a listagem de entidades do PRR localiza em Évora',
+    en: 'Share already paid of the funds contracted in records of intermediate and direct beneficiaries that the PRR list of entities places in Évora',
   },
   'evora-prr-vencido-quota-2026': {
     pt: 'Parte das verbas contratadas em projetos com prazo anterior ao instantâneo e sem conclusão registada',

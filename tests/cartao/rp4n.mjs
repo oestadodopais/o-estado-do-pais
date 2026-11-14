@@ -215,7 +215,7 @@ for (const id of ['ciclo-substituicao-condutas', ...JSON.parse(fs.readFileSync('
   assert(NOMES_DO_PROJETO[l.id].pt.endsWith('02.01.2000'),'RP4N-e: o título PRR não acompanha o campo da computação');
  } finally { l.document.computed_over.files.forEach((f,i)=>f.snapshot_date=datas[i]); }
  for(const id of ['evora-prr-execucao-2026','evora-prr-vencido-quota-2026']) {
-  assert(loadClaims().get(id).derivation.includes('intermediários e diretos com sede em Évora'));
+  assert(loadClaims().get(id).derivation.includes('intermediários e diretos que a listagem de entidades do PRR localiza em Évora'));
  }
 }
 

@@ -20,8 +20,8 @@ reference_date: null
 excerpt: null
 
 # null quando o valor é publicado; a aritmética explicada quando é calculado.
-derivation: "As verbas pagas a beneficiários intermediários e diretos com sede em Évora, a dividir pelas verbas contratadas pelos mesmos beneficiários no mesmo instantâneo, vezes cem."
-derivation_en: "Funds paid to intermediate and direct beneficiaries headquartered in Évora, divided by funds contracted by the same beneficiaries in the same snapshot, times one hundred."
+derivation: "As verbas pagas em registos de beneficiários intermediários e diretos que a listagem de entidades do PRR localiza em Évora, a dividir pelas verbas contratadas nos mesmos registos, no mesmo instantâneo, vezes cem."
+derivation_en: "Funds paid in records of intermediate and direct beneficiaries that the PRR list of entities places in Évora, divided by the funds contracted in the same records, in the same snapshot, times one hundred."
 derived_from:
   - "evora-prr-pago-2026"
   - "evora-prr-aprovado-2026"
