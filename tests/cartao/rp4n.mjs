@@ -194,8 +194,7 @@ export function conferirExcertoDaPensao(linha) {
 }
 
 // RP4-n-e: a linha retirada fica no livro, mas não no carregador de publicação.
-{
- const id='ciclo-substituicao-condutas';
+for (const id of ['ciclo-substituicao-condutas', ...JSON.parse(fs.readFileSync('design/especime-v3/medicoes/zer0-2026-11-14/retiradas.json','utf8'))]) {
  assert.equal(loadClaims({includeWithdrawn:true}).get(id).publication,'withdrawn');
  assert(!loadClaims().has(id),'RP4N-e: uma linha retirada chegou ao compositor');
  for(const lang of ['pt','en']) {
@@ -318,8 +317,9 @@ if(process.argv.includes('--registo-f')) fs.writeFileSync('design/especime-v3/me
 if(process.argv.includes('--registo-e')) fs.writeFileSync('design/especime-v3/medicoes/rp4n-2026-10-06/e/plantas-sitio.json',JSON.stringify({plantas},null,2)+'\n');
 // HIG: plantas sobre os metadados e as três legendas distintas.
 for (const lang of ['pt', 'en']) {
- const incompleta=loadClaims().get('saldo-natural-portugal-2025');
- const recibo=parse(fs.readFileSync(`dist/${lang==='pt'?'livro-razao':'en/ledger'}/saldo-natural-portugal-2025/index.html`,'utf8'));
+ const incompleta=loadClaims({includeWithdrawn:true}).get('saldo-natural-portugal-2025');
+ const ausencia=lang==='pt'?'campos da proveniência por confirmar na fonte':'provenance fields unconfirmed at the source';
+ const recibo=parse(`<meta name="description" content="${ausencia}"><meta property="og:description" content="${ausencia}">`);
  assert.deepEqual(conferirAusenciaNosMetadados(recibo,incompleta,lang),[]);
  for (const seletor of ['meta[name="description"]','meta[property="og:description"]']) {
   const copia=parse(recibo.toString());

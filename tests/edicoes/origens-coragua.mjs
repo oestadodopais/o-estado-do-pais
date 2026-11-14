@@ -8,7 +8,7 @@ import {conferirAuditoriaDasFamilias} from '../cartao/familias.mjs';
 import {FAMILIAS_DAS_LINHAS} from '../../src/data/o-que-e-das-familias.mjs';
 import {lugarDaIncorporacao} from '../../src/lib/lugar-da-incorporacao.mjs';
 import {blocosDe} from '../../scripts/paridade-numeros.mjs';
-const rows=loadClaims(),sha=b=>crypto.createHash('sha256').update(b).digest('hex');
+const rows=loadClaims({includeWithdrawn:true}),sha=b=>crypto.createHash('sha256').update(b).digest('hex');
 let plantas=0;
 function historico(c,bytes){return c.document.source_sha256===sha(bytes)&&blocosDe(bytes.toString()).includes(c.excerpt);}
 for(const [sufixo,slug,valor] of [

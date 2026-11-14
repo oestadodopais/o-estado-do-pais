@@ -718,12 +718,6 @@ export const SEM_AREA = [
     motivo: 'As linhas distinguem os recebimentos declarados pela associação e o relato ao painel. Não medem a despesa total de um ministério.',
   },
   {
-    estudos: ['onde-esta-a-agua', 'agua-nao-faturada'],
-    id: /^(?:coragua-alqueva-alta-pressao-2026|coragua-alqueva-baixa-pressao-2026|coragua-dgadr-eficiencia-2024|coragua-ersar-encargo-mensal-2024|coragua-ersar-encargo-metro-cubico-2024|coragua-gulbenkian-inquerito-ano|coragua-gulbenkian-sem-contador|coragua-gulbenkian-universo-hectares|coragua-historico-eficiencia-83|coragua-historico-eficiencia-85|coragua-historico-eficiencia-95|coragua-historico-inquerito-2021|coragua-historico-racio-maximo|coragua-historico-racio-minimo|coragua-racio-maximo-2026|coragua-racio-minimo-2026|coragua-tc-auditoria-ano)$/,
-    assunto: 'Origens documentais, cálculos e valores anteriores do registo das correções da água',
-    motivo: 'Estas linhas sustentam as frases do registo de correções e permitem abrir a fonte ou a edição arquivada de cada número. Como as linhas documentais da discussão, não criam cartões ministeriais nem apresentam os valores antigos como observações atuais.',
-  },
-  {
     estudos: ['oe-2027'],
     id: /^og1-(?:utao-(?:p15|p42|pib-2026|saldo-2026|saldo-me-2027|divida-2025-revista|politicas-saldo|politicas-peso|juros-variacao|juros-montante|taxa-implicita-2026|taxa-implicita-2027|novas-saldo|brent-mf-2027|brent-diferenca|brent-contratos-2027|despesa-liquida-ce|despesa-liquida-limiar|despesa-liquida-mf-antes|despesa-liquida-mf-defesa|saude-variacao|saude-sem-prr)|ps-abstencao|pcp-comite|pcp-raimundo|be-voto|il-prioridades|livre-posicao|governo-rtp-previsoes|governo-rtp-combustiveis|governo-rtp-habitacao|governo-eco-juros|governo-observador-saldo|utao-p16|utao-p105|utao-p107|utao-p111|cfp-(?:plausivel|saldo-2027|diferenca-mf|combustiveis|ac-fss|juros|riscos|emprego)|mf-(?:juros-choque-100pb|despesa-total-efetiva-nota|ppp-encargos-receitas|ppp-receitas-portagem)|votacao-generalidade(?:-rtp|-oficial)?|guiao-votacoes-28|livre-voto|pan-abstencao|jpp-abstencao|chega-voto|il-voto)$/,
     assunto: 'Pressupostos, contas, apreciações e posições públicas sobre a proposta do Orçamento, antes e depois do voto na generalidade',
@@ -830,12 +824,6 @@ export const SEM_AREA = [
     id: /-populacao-\d{4}$/,
     motivo:
       'Uma contagem de pessoas não é uma política. Nenhum ministério tem «estatística» nas suas matérias: neste diploma a palavra só ocorre no nome de dois organismos, o Instituto Nacional de Estatística e a Direção-Geral de Estatísticas da Educação e Ciência. E «população» não ocorre uma única vez. O mais perto que a lei chega é o artigo 24.º, n.º 10, e o artigo 26.º, n.º 7, que dão a duas ministras, em conjunto, a superintendência de um conselho consultivo «no que diz respeito às matérias de demografia e desigualdade»: é o alcance de um poder sobre um conselho, e não uma matéria do ministério.',
-  },
-  {
-    assunto: 'O saldo natural do País',
-    id: /^saldo-natural-portugal-\d{4}$/,
-    motivo:
-      'Nascimentos menos óbitos é a mesma espécie de número que a população, e fica fora pela mesma razão. A lei lista a «natalidade» entre as políticas sociais que o Ministério do Trabalho coordena, e essa matéria é o apoio a quem tem filhos, e não a contagem do que a demografia fez.',
   },
   {
     assunto: 'O número de empresas de um concelho',
