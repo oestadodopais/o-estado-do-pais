@@ -132,9 +132,9 @@ class CincoPaginas(unittest.TestCase):
         html = self.ler("metodo/index.html")
         for chave in ("Lugar", "Leituras", "Erros plantados apanhados", "Achados reais adotados", "Falhas apontadas por correções"):
             self.assertIn(f'<th scope="col">{chave}</th>', html)
-        # juiz: two readings, 3 of 3 and 2 of 2, one finding adopted, one miss named by the correction's causa
-        self.assertIn('<tr><td class="lugar" data-rotulo="Lugar">Juiz</td><td class="mono" data-rotulo="Leituras">2</td>'
-                      '<td class="mono" data-rotulo="Erros plantados apanhados">5 de 5</td><td class="mono" data-rotulo="Achados reais adotados">1</td>'
+        # juiz: three readings, 3 of 3, 2 of 2 and 1 of 1, one finding adopted, one miss named by the correction's causa
+        self.assertIn('<tr><td class="lugar" data-rotulo="Lugar">Juiz</td><td class="mono" data-rotulo="Leituras">3</td>'
+                      '<td class="mono" data-rotulo="Erros plantados apanhados">6 de 6</td><td class="mono" data-rotulo="Achados reais adotados">1</td>'
                       '<td class="mono" data-rotulo="Falhas apontadas por correções">1</td></tr>', html)
         # the four counts are a block of their own, under numeros_titulo, before the team's record
         self.assertLess(html.index('<section class="numeros"><h2>Em números</h2><dl class="contagens"><dt>Peças publicadas</dt>'),
@@ -189,7 +189,7 @@ class CincoPaginas(unittest.TestCase):
         html = self.ler("pecas/2026-11-16-peca-de-ensaio/index.html")
         self.assertIn('<thead><tr><th scope="col">Quando</th><th scope="col">Leitura</th>', html)
         quando = re.findall(r'<td class="quando"[^>]*>([^<]+)<br>([^<]+)</td>', html)
-        self.assertEqual([h for _, h in quando], ["9h05", "10h10", "10h25", "11h06", "11h12"])
+        self.assertEqual([h for _, h in quando], ["9h05", "10h10", "10h25", "11h06", "11h12", "12h06", "12h10"])
         self.assertEqual(quando[0][0], "16 de novembro de 2026")
 
     def test_a_folha_de_estilo_cumpre_as_regras_do_desenho(self):

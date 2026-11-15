@@ -46,7 +46,7 @@ Markdown, limited to: paragraphs, `##` and `###` headings, lists, emphasis, and 
 
 **The digits rule, and the quotation rule.** Take the references out of `titulo`, `entrada` and `corpo`: no digit may remain, and no quotation mark of any kind («», “”, ""): a quotation reaches the page only by being printed from a `citacao` line. Every figure, year, date and ordinal a reader sees is either printed from a line or sits inside words tied to a line.
 
-**The three closing headings,** required in every piece, in this order and with these exact words: `## A leitura deste projeto` (what the project thinks), `## A objeção mais forte` (the strongest objection, answered or conceded), `## O que seguir` (what will confirm or undo the reading).
+**The three closing headings,** required in every piece, in this order and with these exact words: `## A leitura deste projeto` (what the project thinks), `## O melhor argumento contra esta leitura` (the strongest objection, answered or conceded), `## O que acompanhar` (what will confirm or undo the reading). (Edited 15 November 2026, 00:05 UTC: the second and third were «A objeção mais forte» and «O que seguir» until the ordinary reader of the pilot piece found that both read as translated.)
 
 ### `folha` (the fact sheet)
 

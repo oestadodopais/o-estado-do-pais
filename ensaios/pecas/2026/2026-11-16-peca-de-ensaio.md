@@ -22,11 +22,11 @@ A Pessoa de Ensaio, [ministra de ensaio]{declaracao}, disse {declaracao}. [O des
 
 Nesta peça de ensaio, a leitura é só uma: [o índice de ensaio subiu]{diferenca}, e só nestes números inventados.
 
-## A objeção mais forte
+## O melhor argumento contra esta leitura
 
 A objeção de ensaio diz que um trimestre não chega para ver uma tendência. Este ensaio concede-a.
 
-## O que seguir
+## O que acompanhar
 
 [A próxima edição de ensaio sai a 16 de fevereiro de 2027]{proxima}.
 +++ folha
@@ -278,3 +278,31 @@ razao = "Correção de ensaio, feita para provar a página das correções."
 causa = "juiz"
 impressao_antes = "e669aa751d4354e1018d215270eb145410cabb62107e7c932fa19a902a44212e"
 impressao_depois = "04caca8b3aad3f076a27ee754c680c97a5c401f2e21439c7b7524fa29bd27cbf"
+
+[[leitura]]
+lugar = "justica"
+familia = "openai"
+modelo = "modelo-de-ensaio"
+inicio = "2026-11-16T12:00:00Z"
+fim = "2026-11-16T12:06:00Z"
+impressao = "eb4440a8e2428baca143cc2ab8bb9eecc2f9c7aa20357c2ad519d785fd64a5a1"
+plantas_postas = 1
+plantas_apanhadas = 1
+achados = 0
+adotados = 0
+veredicto = "passa"
+pessoas_vistas = ["pessoa_de_ensaio"]
+
+[[leitura]]
+lugar = "juiz"
+familia = "openai"
+modelo = "modelo-de-ensaio"
+inicio = "2026-11-16T12:00:00Z"
+fim = "2026-11-16T12:10:00Z"
+impressao = "eb4440a8e2428baca143cc2ab8bb9eecc2f9c7aa20357c2ad519d785fd64a5a1"
+plantas_postas = 1
+plantas_apanhadas = 1
+achados = 0
+adotados = 0
+veredicto = "passa"
+pessoas_vistas = ["pessoa_de_ensaio"]

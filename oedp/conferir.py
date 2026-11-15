@@ -452,6 +452,10 @@ def check7(peca: Peca) -> Resultado:
                 razoes.append(f"the last justica reading on the current piece says {ultima.get('veredicto')}")
             if ultima.get("familia") in do_texto:
                 razoes.append(f"the justica reading is by {ultima.get('familia')}, the family that produced the text")
+            if not isinstance(ultima.get("plantas_postas"), int) or ultima.get("plantas_postas", 0) < 1:
+                razoes.append("the justica reading had no planted error")
+            elif ultima.get("plantas_apanhadas") != ultima.get("plantas_postas"):
+                razoes.append(f"the justica reading caught {ultima.get('plantas_apanhadas')} of {ultima.get('plantas_postas')} planted errors")
         for l in sobre[-1:]:
             vistas = set()
             for v in l.get("pessoas_vistas", []):

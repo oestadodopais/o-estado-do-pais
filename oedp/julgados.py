@@ -56,24 +56,11 @@ def textos(repo: Path, raiz: Path) -> tuple[dict, str, str]:
 
 
 def erros_do_registo(nome: str, registo: dict) -> list[str]:
-    """The record of a text is validated like a piece's record: passo and leitura tables
-    only, every field and value as the specification has them."""
+    """The record of a text is validated by the same code as a piece's record (passo and
+    leitura tables only), with its timestamps checked here."""
     from . import forma
 
-    erros = []
-    for k, tabelas in registo.items():
-        if k not in ("passo", "leitura") or not isinstance(tabelas, list):
-            erros.append(f"{nome}: [[{k}]] is not a table of this record (passo and leitura only)")
-            continue
-        exigidos, opcionais = forma.CAMPOS_REGISTO[k]
-        for n, t in enumerate(tabelas, 1):
-            onde = f"{nome} [[{k}]] number {n}"
-            forma._tabela(onde, t, exigidos, opcionais, erros)
-            for (tab, campo), permitidos in forma.VALORES.items():
-                if tab == k and isinstance(t, dict) and campo in t and t[campo] not in permitidos:
-                    erros.append(f"{onde}: {campo} {t[campo]!r} is not one of {', '.join(sorted(permitidos))}")
-    erros += [f"{nome}: {x}" for x in forma.erros_de_familia(registo)]
-    return erros
+    return forma.erros_do_registo(registo, nome, ("passo", "leitura"), datas_aqui=True)
 
 
 def historia(repo: Path, caminho: Path) -> list[str]:

@@ -30,9 +30,9 @@ largar_se = ""
 
 ## A leitura deste projeto
 
-## A objeção mais forte
+## O melhor argumento contra esta leitura
 
-## O que seguir
+## O que acompanhar
 
 +++ folha
 +++ registo

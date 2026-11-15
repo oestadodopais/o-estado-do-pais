@@ -52,6 +52,9 @@ def versao_anterior() -> bytes:
     """The test piece as it was before its correction: the earlier lead, the record up to publication."""
     acima, registo = PECA.read_bytes().split(b"+++ registo\n", 1)
     acima = acima.replace(b"escrita para provar o esqueleto", b"escrita para ensaiar o esqueleto")
+    # the headings it had then, before the edit of 15 November 2026
+    acima = acima.replace("## O melhor argumento contra esta leitura\n".encode(), "## A objeção mais forte\n".encode())
+    acima = acima.replace("## O que acompanhar\n".encode(), "## O que seguir\n".encode())
     j = registo.index(b"\n[[leitura]]", registo.index(b"\n[[estado]]"))
     return acima + b"+++ registo\n" + registo[: j + 1]
 
@@ -114,7 +117,12 @@ class Item02NoAr(unittest.TestCase):
 class Item03Historia(Base):
     def test_a_versao_anterior_tem_a_impressao_registada(self):
         self.assertEqual(impressoes(versao_anterior())[0], ler(PECA).registo["correcao"][0]["impressao_antes"])
-        r, _ = self.plantar(anterior=("here", versao_anterior()))
+        # A record that only grew, over the same text, passes. (The test piece changed again above
+        # its record when the closing headings were renamed on 15 November 2026, with no
+        # [[correcao]] for that change, so main holding version A would rightly fail it now.)
+        acima, registo = PECA.read_bytes().split(b"+++ registo\n", 1)
+        j = registo.index(b"\n[[leitura]]", registo.index(b"\n[[estado]]"))
+        r, _ = self.plantar(anterior=("here", acima + b"+++ registo\n" + registo[: j + 1]))
         self.assertEqual(r[4].estado, conf.PASSOU, r[4].linha())
 
     def test_planta_registo_cortado(self):

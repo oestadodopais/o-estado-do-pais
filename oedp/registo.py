@@ -37,6 +37,14 @@ class ErroDoRegisto(Exception):
     pass
 
 
+def _plantas(campos: dict) -> list[str]:
+    """A reading recorded as passing caught every plant."""
+    if campos.get("veredicto") == "passa" and campos.get("plantas_apanhadas") != campos.get("plantas_postas"):
+        return [f"a reading recorded as passing caught {campos.get('plantas_apanhadas')} of {campos.get('plantas_postas')} "
+                "planted errors; it passes only if it caught every one"]
+    return []
+
+
 def _acrescentar_a_texto(caminho: Path, antes: bytes, nome: str, campos: dict) -> str:
     """Append to the record of paginas/metodo.md or to textos.registo.toml."""
     import tomllib
@@ -57,6 +65,7 @@ def _acrescentar_a_texto(caminho: Path, antes: bytes, nome: str, campos: dict) -
     erros: list[str] = []
     novo = tomllib.loads(texto)[nome][-1]
     forma._tabela(f"[[{nome}]]", novo, exigidos, opcionais, erros)
+    erros += _plantas(campos)
     registo_atual = tomllib.loads((antes if caminho.name == "textos.registo.toml" else julgados.separar(antes)[1]).decode("utf-8"))
     juntos = {k: list(v) for k, v in registo_atual.items()}
     juntos.setdefault(nome, []).append(novo)
@@ -90,6 +99,7 @@ def acrescentar(caminho: Path, nome: str, campos: dict) -> str:
     novo = ler_bytes(antes + texto.encode("utf-8"), caminho)
     exigidos, opcionais = forma.CAMPOS_REGISTO[nome]
     erros: list[str] = [] if forma.erros_de_familia(peca.registo) else list(forma.erros_de_familia(novo.registo))
+    erros += _plantas(campos)
     forma._tabela(f"[[{nome}]]", novo.registo[nome][-1], exigidos, opcionais, erros)
     for (tab, campo), permitidos in forma.VALORES.items():
         if tab == nome and campos.get(campo) not in permitidos and campo in campos:

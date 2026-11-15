@@ -98,7 +98,7 @@ class Check3Arredondamento(Limpa):
 class Check4(Limpa):
     def test_planta_texto_mudado_depois_do_juiz(self):
         r = self.plantar([("Este ensaio concede-a.", "Este ensaio aceita-a.")])
-        self.falha(r, 4, "is not the 04caca8b3aad3f076a27ee754c680c97a5c401f2e21439c7b7524fa29bd27cbf of its last passing juiz reading")
+        self.falha(r, 4, "is not the eb4440a8e2428baca143cc2ab8bb9eecc2f9c7aa20357c2ad519d785fd64a5a1 of its last passing juiz reading")
 
     def test_num_rascunho_nao_vincula(self):
         r = self.plantar([("Este ensaio concede-a.", "Este ensaio aceita-a."), ('estado = "publicada"', 'estado = "rascunho"')])
@@ -112,9 +112,13 @@ class Check5(Limpa):
         self.falha(r, 5, "the numeros reading is by anthropic, the family that produced what it read")
 
     def test_planta_planta_por_apanhar(self):
-        r = self.plantar([("plantas_postas = 2\nplantas_apanhadas = 2\nachados = 0\nadotados = 0\nveredicto = \"passa\"\npessoas_vistas = [\"pessoa_de_ensaio\"]\n\n[[correcao]]",
-                           "plantas_postas = 2\nplantas_apanhadas = 1\nachados = 0\nadotados = 0\nveredicto = \"passa\"\npessoas_vistas = [\"pessoa_de_ensaio\"]\n\n[[correcao]]")])
-        self.falha(r, 5, "the juiz reading caught 1 of 2 planted errors")
+        p = Plantada()
+        self.addCleanup(p.apagar)
+        texto = p.peca.read_text(encoding="utf-8")
+        k = texto.rindex('lugar = "juiz"')
+        p.peca.write_text(texto[:k] + texto[k:].replace("plantas_apanhadas = 1", "plantas_apanhadas = 0", 1), encoding="utf-8")
+        r = p.resultados()
+        self.falha(r, 5, "the juiz reading caught 0 of 1 planted errors")
 
 
 class Check6(Limpa):
@@ -133,7 +137,12 @@ class Check7(Limpa):
         self.falha(r, 7, "pessoa_de_ensaio: a paragraph of corpo prints the name and references none of the person's lines")
 
     def test_planta_leitor_que_nao_viu_a_pessoa(self):
-        r = self.plantar([('veredicto = "passa"\npessoas_vistas = ["pessoa_de_ensaio"]\n\n[[leitura]]', 'veredicto = "passa"\npessoas_vistas = []\n\n[[leitura]]')])
+        p = Plantada()
+        self.addCleanup(p.apagar)
+        texto = p.peca.read_text(encoding="utf-8")
+        k = texto.rindex('lugar = "justica"')
+        p.peca.write_text(texto[:k] + texto[k:].replace('pessoas_vistas = ["pessoa_de_ensaio"]', "pessoas_vistas = []", 1), encoding="utf-8")
+        r = p.resultados()
         self.falha(r, 7, "the justica reader's pessoas_vistas do not equal the declared people")
 
 
@@ -178,7 +187,7 @@ class Check8(Limpa):
 
 class Check9(Limpa):
     def test_planta_titulo_de_fecho_em_falta(self):
-        r = self.plantar([("## A objeção mais forte\n", "")])
+        r = self.plantar([("## O melhor argumento contra esta leitura\n", "")])
         self.falha(r, 9, "the last three ## headings must be")
 
     def test_planta_campo_que_a_especificacao_nao_tem(self):
@@ -243,7 +252,7 @@ class Check9(Limpa):
         self.assertIn("check  1 (every figure resolves) · 2026-11-16-peca-de-ensaio: failed", r.stdout)
 
     def test_a_construcao_para_numa_peca_que_falha(self):
-        p = Plantada([("## A objeção mais forte\n", "")])
+        p = Plantada([("## O melhor argumento contra esta leitura\n", "")])
         self.addCleanup(p.apagar)
         saida = Path(tempfile.mkdtemp(prefix="oedp-saida-"))
         self.addCleanup(shutil.rmtree, saida, True)

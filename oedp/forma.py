@@ -14,7 +14,9 @@ from . import datas
 from .derivacoes import LITERAL
 from .peca import ID_LINHA, ID_PECA, Peca, referencias, sem_referencias
 
-FECHO = ("A leitura deste projeto", "A objeção mais forte", "O que seguir")
+# The three closing headings, in this order and these words (docs/ESPEC-PECA.md, edit of
+# 15 November 2026: the second and third were «A objeção mais forte» and «O que seguir»).
+FECHO = ("A leitura deste projeto", "O melhor argumento contra esta leitura", "O que acompanhar")
 TIPOS_PECA = {"diario", "artigo", "estudo"}
 TEMA = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 SHA = re.compile(r"[0-9a-f]{64}\Z")
@@ -110,7 +112,9 @@ def erros_do_corpo(corpo: str) -> list[str]:
     return erros
 
 
-ASPAS = "«»“”„‟\"‹›"
+ASPAS = "«»“”„‟\"‹›‘‚‛"
+# ’ (U+2019) between two letters is an apostrophe (d’água) and is allowed; anywhere else it closes a quotation.
+APOSTROFO_FORA_DE_PALAVRA = re.compile(r"(?<![^\W\d_])’|’(?![^\W\d_])")
 
 
 def _sem_impressos(texto: str) -> str:
@@ -132,7 +136,7 @@ def erros_do_texto(texto: str, linha_unica: bool) -> list[str]:
     resto = sem_referencias(texto)
     escrito = html.unescape(_sem_impressos(texto))
     erros = []
-    aspas = sorted({c for c in escrito if c in ASPAS})
+    aspas = sorted({c for c in escrito if c in ASPAS} | ({"’"} if APOSTROFO_FORA_DE_PALAVRA.search(escrito) else set()))
     if aspas:
         erros.append("a quotation mark (" + " ".join(aspas) + ") typed in the text; a quotation is printed only from a citacao line")
     if "`" in resto:
@@ -151,6 +155,55 @@ def _restos_de_referencia(texto: str) -> list[str]:
     partes.append(texto[pos:])
     resto = "".join(partes)
     return [c for c in "{}" if c in resto]
+
+
+def erros_do_registo(registo: dict, nome: str = "registo", tabelas_permitidas=None, datas_aqui: bool = False) -> list[str]:
+    """The one validation of a record, a piece's or a text's: the tables and their fields,
+    the values, the fingerprint's form, adotados not above achados, plants caught not
+    above plants put, a passing reading that caught every plant, the family rule and the
+    one-way state. With `datas_aqui`, the timestamps are checked here too (for a piece
+    they are check 6's)."""
+    e: list[str] = []
+    permitidas = tabelas_permitidas or tuple(CAMPOS_REGISTO)
+    for k in registo:
+        if k not in permitidas:
+            e.append(f"{nome}: [[{k}]] is not a table of this record")
+            continue
+        tabelas = registo[k]
+        if not isinstance(tabelas, list):
+            e.append(f"{nome}: {k} must be an array of tables [[{k}]]")
+            continue
+        exigidos, opcionais = CAMPOS_REGISTO[k]
+        for n, t in enumerate(tabelas, 1):
+            onde = f"{nome} [[{k}]] number {n}"
+            _tabela(onde, t, exigidos, opcionais, e)
+            if not isinstance(t, dict):
+                continue
+            for (tab, campo), permitidos in VALORES.items():
+                if tab == k and campo in t and t[campo] not in permitidos:
+                    e.append(f"{onde}: {campo} {t[campo]!r} is not one of {', '.join(sorted(permitidos))}")
+            if datas_aqui:
+                for campo in ("inicio", "fim", "em"):
+                    if campo in t and datas.instante_real(str(t[campo])) is None:
+                        e.append(f"{onde}: {campo} {t[campo]!r} is not a real date in the form YYYY-MM-DDTHH:MM:SSZ")
+            if k == "leitura":
+                if isinstance(t.get("impressao"), str) and not SHA.match(t["impressao"]):
+                    e.append(f"{onde}: impressao is not a SHA-256")
+                pp, pa = t.get("plantas_postas"), t.get("plantas_apanhadas")
+                if isinstance(pp, int) and isinstance(pa, int) and not (0 <= pa <= pp):
+                    e.append(f"{onde}: plantas_apanhadas must be between 0 and plantas_postas")
+                elif t.get("veredicto") == "passa" and pa != pp:
+                    e.append(f"{onde}: a reading recorded as passing caught {pa} of {pp} planted errors; it passes only if it caught every one")
+                ac, ad = t.get("achados"), t.get("adotados")
+                if isinstance(ac, int) and isinstance(ad, int) and not (0 <= ad <= ac):
+                    e.append(f"{onde}: adotados must be between 0 and achados")
+                if "pessoas_vistas" in t and t.get("lugar") not in ("justica", "juiz"):
+                    e.append(f"{onde}: pessoas_vistas belongs to the justica and juiz readings only")
+            if k == "correcao" and t.get("especie") == "correcao" and not t.get("causa"):
+                e.append(f"{onde}: a correcao needs its causa")
+    e.extend(erros_de_familia(registo))
+    e.extend(erros_de_estado(registo))
+    return e
 
 
 def erros_de_familia(registo: dict) -> list[str]:
@@ -267,36 +320,5 @@ def erros(peca: Peca, ficheiro: Path | None = None) -> list[str]:
                     if lid not in peca.linhas:
                         e.append(f"{onde}: linhas names {lid!r}, which is not a [[linha]] of this piece")
 
-    for k in peca.registo:
-        if k not in CAMPOS_REGISTO:
-            e.append(f"registo: [[{k}]] is not in the specification")
-            continue
-        tabelas = peca.registo[k]
-        if not isinstance(tabelas, list):
-            e.append(f"registo: {k} must be an array of tables [[{k}]]")
-            continue
-        exigidos, opcionais = CAMPOS_REGISTO[k]
-        for n, t in enumerate(tabelas, 1):
-            onde = f"registo [[{k}]] number {n}"
-            _tabela(onde, t, exigidos, opcionais, e)
-            if not isinstance(t, dict):
-                continue
-            for (tab, campo), permitidos in VALORES.items():
-                if tab == k and campo in t and t[campo] not in permitidos:
-                    e.append(f"{onde}: {campo} {t[campo]!r} is not one of {', '.join(sorted(permitidos))}")
-            if k == "leitura":
-                if isinstance(t.get("impressao"), str) and not SHA.match(t["impressao"]):
-                    e.append(f"{onde}: impressao is not a SHA-256")
-                pp, pa = t.get("plantas_postas"), t.get("plantas_apanhadas")
-                if isinstance(pp, int) and isinstance(pa, int) and not (0 <= pa <= pp):
-                    e.append(f"{onde}: plantas_apanhadas must be between 0 and plantas_postas")
-                ac, ad = t.get("achados"), t.get("adotados")
-                if isinstance(ac, int) and isinstance(ad, int) and not (0 <= ad <= ac):
-                    e.append(f"{onde}: adotados must be between 0 and achados")
-                if "pessoas_vistas" in t and t.get("lugar") not in ("justica", "juiz"):
-                    e.append(f"{onde}: pessoas_vistas belongs to the justica and juiz readings only")
-            if k == "correcao" and t.get("especie") == "correcao" and not t.get("causa"):
-                e.append(f"{onde}: a correcao needs its causa")
-    e.extend(erros_de_familia(peca.registo))
-    e.extend(erros_de_estado(peca.registo))
+    e.extend(erros_do_registo(peca.registo))
     return e

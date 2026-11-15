@@ -22,7 +22,7 @@ from pathlib import Path
 from . import conferir as conf
 from . import direitos as rights
 from . import julgados, privacidade
-from .forma import erros_do_corpo
+from .forma import FECHO, erros_do_corpo
 from .paginas import (
     Contexto,
     pagina_404,
@@ -96,7 +96,7 @@ def contexto(repo: Path, raiz: Path, pecas: list, previa: bool = False) -> tuple
         except julgados.ErroDoJulgado as e:
             erros.append(f"paginas/metodo.md: {e}")
         else:
-            erros += [f"paginas/metodo.md: {x}" for x in erros_do_corpo(metodo + "\n## A leitura deste projeto\n## A objeção mais forte\n## O que seguir\n")]
+            erros += [f"paginas/metodo.md: {x}" for x in erros_do_corpo(metodo + "".join(f"\n## {t}" for t in FECHO) + "\n")]
             julgamento += julgados.erros_de_julgamento("paginas/metodo.md", registo_m, impressao_m)
             erros += julgados.erros_do_registo("paginas/metodo.md", registo_m)
             julgamento += julgados.historia(repo, metodo_f)
@@ -196,7 +196,8 @@ def manifesto_confere(estatica: Path) -> list[str]:
 def manifesto(estatica: Path) -> dict:
     ficheiros = {}
     for f in sorted(estatica.rglob("*")):
-        if f.is_file() and f.name != "manifesto.json":
+        # Only the manifest at the root is left out; a file of that name deeper is listed like any other.
+        if f.is_file() and f.relative_to(estatica).as_posix() != "manifesto.json":
             ficheiros[f.relative_to(estatica).as_posix()] = hashlib.sha256(f.read_bytes()).hexdigest()
     return {"ficheiros": ficheiros}
 

@@ -16,6 +16,7 @@ from decimal import ROUND_HALF_UP, Decimal
 import markdown
 
 from . import datas, derivacoes, numeros
+from .forma import FECHO
 from .peca import Peca, ordem_de_uso, referencias, seccao_do_corpo
 
 e = html.escape
@@ -530,7 +531,7 @@ def pagina_do_tema(ctx: Contexto, tema: str) -> str:
     pecas = [p for p in publicadas(ctx) if tema in p.cabeca.get("temas", [])]
     seguir = []
     for p in pecas:
-        texto = seccao_do_corpo(p.corpo, "O que seguir")
+        texto = seccao_do_corpo(p.corpo, FECHO[2])
         if texto:
             seguir.append(
                 '<div class="seguir">'
