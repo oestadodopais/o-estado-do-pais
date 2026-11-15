@@ -1,9 +1,10 @@
 """Reading a figure as a reader sees it (`mostra`) and as a source prints it.
 
-Check 1 compares `mostra` with `valor`: the figure shown must equal `valor` times
-the scale of `unidade`, divided by the scale of `mostra`, rounded half up to the
-decimals shown. Check 2 asks that a `valor` line's excerpt hold the digits of
-`valor` in one of the ways a source prints them.
+Check 1 reads a `mostra` in its one form (`ler_forma`; docs/ESPEC-PECA.md, check 1, edit of
+15 November 2026, 17:07 UTC) and compares it with `valor`: the figure shown must equal `valor`
+divided by the scale word the `mostra` may carry, rounded half up to the decimals shown.
+Check 2 asks that a `valor` line's excerpt hold the digits of `valor` in one of the ways a
+source prints them.
 """
 from __future__ import annotations
 
@@ -21,44 +22,59 @@ ESCALAS = (
     ("mil", 10**3),
 )
 _ESC_RE = "|".join(re.escape(n).replace("\\ ", "[" + ESPACOS + "]+") for n, _ in ESCALAS)
+# Where the page finds a printed figure and the scale word read with it (`paginas.sem_quebra`).
 FIGURA = re.compile(
     r"(?:(?P<sinal>[-−+])\s*)?(?P<inteiro>\d{1,3}(?:[" + ESPACOS + r"]\d{3})+|\d+)(?:,(?P<decimais>\d+))?"
     r"(?:[" + ESPACOS + r"]+(?P<escala>" + _ESC_RE + r")(?![\w]))?",
-    re.IGNORECASE,  # a scale word whatever its case: «Mil euros» is «mil euros» (ORDEM-3e, item D)
 )
-ESCALA_INICIAL = re.compile(r"\s*(?P<escala>" + _ESC_RE + r")(?![\w])", re.IGNORECASE)
 
 
 class ErroDeFigura(Exception):
     pass
 
 
-def _escala(palavras: str | None) -> int:
-    if not palavras:
-        return 1
-    chave = re.sub("[" + ESPACOS + "]+", " ", palavras).lower()
-    return dict(ESCALAS)[chave]
+# The one form of a mostra: an optional minus sign right before the number, the number in
+# Portuguese form, a space, optionally one scale word, and the line's own unidade letter for letter.
+NUMERO_PT = re.compile(r"(?P<inteiro>\d{1,3}(?:[" + ESPACOS + r"]\d{3})+|\d+)(?:,(?P<decimais>\d+))?")
+ESCALAS_DA_MOSTRA = (("mil milhões de", 10**9), ("milhões de", 10**6), ("mil", 10**3))
 
 
-def ler_mostra(mostra: str) -> tuple[Decimal, int, int]:
-    """(figure shown with its sign, decimals shown, scale of the words after it)."""
-    achados = list(FIGURA.finditer(mostra))
-    if not achados:
-        raise ErroDeFigura(f"mostra {mostra!r} has no figure")
-    if len(achados) > 1:
-        raise ErroDeFigura(f"mostra {mostra!r} shows more than one figure, and cannot be compared with one valor")
-    m = achados[0]
-    inteiro = re.sub("[" + ESPACOS + "]", "", m["inteiro"])
+def _palavras(texto: str) -> str:
+    """Trimmed, with every run of white space (a no-break space included) taken as one space."""
+    return re.sub(r"\s+", " ", str(texto)).strip()
+
+
+def ler_forma(mostra: str, unidade: str, valor: Decimal) -> tuple[Decimal, int, int]:
+    """(the figure shown with its sign, the decimals shown, the scale of the scale word) of a mostra
+    in its one form, or ErroDeFigura saying which part is wrong. Nothing before the number but a
+    minus sign right before it, present exactly when `valor` is negative; after the number a space,
+    optionally «mil», «milhões de» or «mil milhões de», then `unidade` letter for letter, and
+    nothing after it."""
+    i = next((k for k, c in enumerate(mostra) if c.isdigit()), None)
+    if i is None:
+        raise ErroDeFigura(f"mostra {mostra!r} has no number")
+    antes = mostra[:i]
+    if antes not in ("", "-", "\u2212"):
+        raise ErroDeFigura(f"mostra {mostra!r}: {antes!r} comes before the number; nothing may, but a minus sign right before it")
+    m = NUMERO_PT.match(mostra, i)
+    resto = mostra[m.end():]
+    if resto and not resto[0].isspace():
+        raise ErroDeFigura(f"mostra {mostra!r}: the number {mostra[i:m.end()]!r} is followed by {resto[:1]!r}; in Portuguese "
+                           "form a number has a decimal comma and is followed by a space and the unit")
+    resto_p, unidade_p = _palavras(resto), _palavras(unidade)
+    escala = 1 if resto_p == unidade_p else next(
+        (e for palavra, e in ESCALAS_DA_MOSTRA if resto_p == _palavras(f"{palavra} {unidade_p}")), None)
+    if escala is None:
+        raise ErroDeFigura(f"mostra {mostra!r}: after the number comes {resto_p!r}, which is not the line's unidade "
+                           f"{unidade_p!r} letter for letter; only «mil», «milhões de» or «mil milhões de» may come before it")
+    negativo = bool(antes)
+    if negativo != (valor < 0):
+        raise ErroDeFigura(f"mostra {mostra!r}: " + (f"a minus sign, but valor {valor} is not negative" if negativo
+                                                       else f"valor {valor} is negative, and there is no minus sign right before the number"))
+    inteiro = re.sub(r"\s", "", m["inteiro"])
     decimais = m["decimais"] or ""
     figura = Decimal(inteiro + ("." + decimais if decimais else ""))
-    if m["sinal"] in ("-", "−"):
-        figura = -figura
-    return figura, len(decimais), _escala(m["escala"])
-
-
-def escala_da_unidade(unidade: str) -> int:
-    m = ESCALA_INICIAL.match(unidade or "")
-    return _escala(m["escala"]) if m else 1
+    return (-figura if negativo else figura), len(decimais), escala
 
 
 def esperado(valor: Decimal, escala_unidade: int, escala_mostra: int, casas: int) -> Decimal:
@@ -142,32 +158,3 @@ def contem_figura(excerto_normalizado: str, valor: str, quadro: bool = False) ->
     """Whether the excerpt holds the figure at least once (see `ocorrencias`)."""
     return bool(ocorrencias(excerto_normalizado, valor, quadro))
 
-
-# The units check 1 tells apart (docs/ESPEC-PECA.md, check 1, edit of 15 November 2026, 15:17 UTC):
-# per cent, per mille and percentage points are three units, and a currency is not another. A unit
-# in words that is not here is not compared by the script: it is the numbers editor's.
-UNIDADES = {
-    "%": "per cent", "por cento": "per cent",
-    "‰": "per mille", "por mil": "per mille",
-    "pontos percentuais": "percentage points", "ponto percentual": "percentage points", "p.p.": "percentage points",
-    "euros": "euro", "euro": "euro", "€": "euro", "eur": "euro",
-    "dólares": "dollar", "dólar": "dollar", "$": "dollar", "usd": "dollar",
-    "libras": "pound", "libra": "pound", "£": "pound", "gbp": "pound",
-}
-_ESCALA_OU_DE = re.compile(r"\A(?:(?:" + _ESC_RE + r")(?![\w])[" + ESPACOS + r"]*)?(?:de[" + ESPACOS + r"]+)?", re.IGNORECASE)
-
-
-def unidade_lida(texto: str) -> tuple[str, str | None]:
-    """(the unit's words, the unit it is when UNIDADES knows it). A scale word that opens it
-    («mil», «milhões de») and a «de» are left out: they belong to the number."""
-    palavras = re.sub("[" + ESPACOS + r"]+", " ", _ESCALA_OU_DE.sub("", str(texto).strip(), count=1)).strip()
-    return palavras, UNIDADES.get(palavras.lower())
-
-
-def unidades_da_mostra(mostra: str) -> list[str]:
-    """What a mostra prints around its figure, before it («$104,7», «€ 104,7») and after it («104,7 %»),
-    the parts that are there (the figure's scale word read with the figure; ORDEM-3e, item B)."""
-    m = FIGURA.search(mostra)
-    if not m:
-        return []
-    return [p for p in (mostra[: m.start()].strip(), mostra[m.end() :].strip()) if p]

@@ -144,6 +144,7 @@ QUATRO_E_QUARENTA = [
     ('valor = "104.7"', 'valor = "4.7"'), ('unidade = "pontos"\nmede = "Índice', 'unidade = "%"\nmede = "Índice'),
     ('mostra = "104,7 pontos"', 'mostra = "4,70 %"'),
     ('valor = "102.3"', 'valor = "4.4"'), ('mostra = "102,3 pontos"', 'mostra = "4,40 %"'),
+    ('unidade = "pontos"\nmede = "Índice', 'unidade = "%"\nmede = "Índice'),  # the second input's unit (ESQ3f: one form)
     ('calculo = "round ( indice - indice_anterior , 1 )"\nvalor = "2.4"\nunidade = "pontos"',
      'calculo = "round ( indice - indice_anterior , 2 )"\nvalor = "0.3"\nunidade = "pontos percentuais"'),
     ('mostra = "2,4 pontos"', 'mostra = "0,30 pontos percentuais"'),

@@ -151,7 +151,7 @@ class Item03Historia(Base):
 class Item04Numeros(Base):
     def test_planta_sinal_separado(self):
         r, _ = self.plantar([('mostra = "104,7 pontos"', 'mostra = "− 104,7 pontos"')])
-        self.falha(r, 1, "shows -104.7, but valor 104.7")
+        self.falha(r, 1, "comes before the number; nothing may, but a minus sign right before it")  # ESQ3f: one form
 
     def test_planta_figura_dentro_de_outra(self):
         r, _ = self.plantar([('valor = "104.7"', 'valor = "4.7"'), ('mostra = "104,7 pontos"', 'mostra = "4,7 pontos"')])

@@ -107,11 +107,11 @@ class B_AContaFazAsContas(unittest.TestCase):
         self.assertEqual(lista(h), [f"1{NB}500 · período de a"])
 
     def test_zeros_que_o_mostra_mostra_e_o_sinal_do_resultado(self):
-        h = conta({"a": {"valor": "3.07", "mostra": "3,07 %"}, "b": {"valor": "4.6", "mostra": "4,60 %"}}, "a - b",
-                  {"valor": "-1.53", "mostra": "-1,53 pontos percentuais"})
+        h = conta({"a": {"valor": "3.07", "mostra": "3,07 %", "unidade": "%"}, "b": {"valor": "4.6", "mostra": "4,60 %", "unidade": "%"}},
+                  "a - b", {"valor": "-1.53", "mostra": "-1,53 pontos percentuais", "unidade": "pontos percentuais"})
         self.assertEqual(aritmetica(h), f"3,07 {MENOS} 4,60{NB}= {MENOS}1,53")
         self.assertEqual(lista(h), ["3,07 · período de a", "4,60 · período de b"])
-        h = conta({"a": {"valor": "4.4", "mostra": "4,40 %"}}, "a + 0", {"valor": "4.4", "mostra": "4,4 %"})
+        h = conta({"a": {"valor": "4.4", "mostra": "4,40 %", "unidade": "%"}}, "a + 0", {"valor": "4.4", "mostra": "4,4 %", "unidade": "%"})
         self.assertEqual(aritmetica(h), f"4,40 + 0{NB}= 4,4")
 
     def test_planta_a_conta_pelo_mostra(self):
@@ -295,33 +295,28 @@ def check1_com(caso, unidade: str, mostra: str):
 
 
 class C_AUnidadeDoMostra(unittest.TestCase):
-    RECUSADOS = (("‰", "104,7 %", "per cent", "per mille"), ("%", "104,7 ‰", "per mille", "per cent"),
-                 ("%", "104,7 pontos percentuais", "percentage points", "per cent"),
-                 ("pontos percentuais", "104,7 %", "per cent", "percentage points"),
-                 ("euros", "104,7 dólares", "dollar", "euro"), ("€", "104,7 libras", "pound", "euro"))
+    """ESQ3c's pairs, under ESQ3f's rule: the unit after the number is the line's unidade, letter for letter."""
+    RECUSADOS = (("‰", "104,7 %"), ("%", "104,7 ‰"), ("%", "104,7 pontos percentuais"), ("pontos percentuais", "104,7 %"),
+                 ("euros", "104,7 dólares"), ("€", "104,7 libras"), ("euros", "104,7 €"), ("pontos", "104,7 graus"))
 
-    def test_pares_que_a_conferencia_distingue(self):
-        for unidade, mostra, tipo_m, tipo_u in self.RECUSADOS:
+    def test_pares_recusados(self):
+        for unidade, mostra in self.RECUSADOS:
             r = check1_com(self, unidade, mostra)
             self.assertEqual(r.estado, conf.FALHOU, (unidade, mostra))
-            self.assertTrue(any(f"prints a unit in {tipo_m}" in x and f"is in {tipo_u}" in x for x in r.razoes), r.razoes)
+            self.assertTrue(any("which is not the line's unidade" in x for x in r.razoes), r.razoes)
+            self.assertFalse(any("unit" in n and "mostra" in n for n in r.notas), r.notas)  # never a note
 
     def test_a_mesma_unidade_passa(self):
-        for unidade, mostra in (("%", "104,7 %"), ("‰", "104,7 ‰"), ("euros", "104,7 €"), ("mil euros", "104,7 mil euros"),
-                                ("pontos percentuais", "104,7 pontos percentuais"), ("pontos", "104,7 pontos")):
+        for unidade, mostra in (("%", "104,7 %"), ("‰", "104,7 ‰"), ("€", "104,7 €"), ("mil euros", "104,7 mil euros"),
+                                ("pontos percentuais", "104,7 pontos percentuais"), ("pontos", "104,7  pontos")):
             r = check1_com(self, unidade, mostra)
             self.assertEqual(r.estado, conf.PASSOU, (unidade, mostra, r.linha()))
-            self.assertFalse(any("unit mostra prints" in n for n in r.notas), r.notas)
 
-    def test_uma_unidade_que_nao_conhece_e_uma_nota(self):
-        r = check1_com(self, "pontos", "104,7 graus")
-        self.assertEqual(r.estado, conf.PASSOU, r.linha())
-        self.assertTrue(any("indice: the unit mostra prints ('graus') and unidade ('pontos') are not compared" in n for n in r.notas), r.notas)
-
-    def test_planta_sem_comparar_a_unidade(self):
-        with mock.patch.object(numeros, "unidade_lida", lambda texto: ("", None)):
+    def test_planta_a_unidade_por_ler(self):
+        """With the unit not read, a per mille shown as a per cent is let through: what the reader found."""
+        with mock.patch.object(numeros, "_palavras", lambda texto: ""):
             r = check1_com(self, "‰", "104,7 %")
-        self.assertEqual(r.estado, conf.PASSOU)  # a per mille shown as a per cent: what the reader found
+        self.assertFalse(any(x.startswith("indice:") for x in r.razoes), r.razoes)
 
 
 # --------------------------------------------------------------------------- G. a row of a table
