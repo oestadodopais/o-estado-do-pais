@@ -2,3 +2,48 @@
 # nome = "construcao" and [[leitura]] tables with lugar = "seguranca". Its fingerprint is
 # printed by `python3 -m oedp impressao codigo`. Appended to only by
 # `python3 -m oedp registar codigo.registo.toml ...` or `python3 -m oedp leitura registar`.
+
+[[passo]]
+nome = "construcao"
+lugar = "construtor"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-15T00:29:31Z"
+fim = "2026-11-15T00:32:10Z"
+
+[[passo]]
+nome = "construcao"
+lugar = "direcao"
+familia = "anthropic"
+modelo = "claude-fable-5-2"
+inicio = "2026-11-15T00:33:26Z"
+fim = "2026-11-15T00:33:48Z"
+
+[[passo]]
+nome = "construcao"
+lugar = "construtor"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-15T01:37:32Z"
+fim = "2026-11-15T02:30:10Z"
+
+[[passo]]
+nome = "construcao"
+lugar = "construtor"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-15T02:33:48Z"
+fim = "2026-11-15T02:44:50Z"
+
+[[leitura]]
+lugar = "seguranca"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-15T03:04:54Z"
+fim = "2026-11-15T03:27:04Z"
+impressao = "3b393dca47b56b2eecddb4a51117b1e7cfb2319f174454630d7e9f6f6e282017"
+plantas_postas = 5
+plantas_apanhadas = 5
+achados = 11
+adotados = 10
+veredicto = "nao_passa"
