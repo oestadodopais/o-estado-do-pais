@@ -1781,3 +1781,16 @@ familia = "anthropic"
 modelo = "claude-fable-5-2"
 inicio = "2026-11-15T12:58:54Z"
 fim = "2026-11-15T13:04:00Z"
+
+[[leitura]]
+lugar = "leitor"
+familia = "anthropic"
+modelo = "claude-sonnet-5-5"
+inicio = "2026-11-15T12:55:23Z"
+fim = "2026-11-15T12:58:07Z"
+impressao = "0ea3c6492663b5fe8e05e2b7d9cc34cda5b427c3906e3e03be335587ae8e6f27"
+plantas_postas = 0
+plantas_apanhadas = 0
+achados = 25
+adotados = 22
+veredicto = "levanta"
