@@ -1,0 +1,14 @@
+editor = "Instituto Nacional de Estatística"
+termos_url = "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_cont_inst&INST=3585857&xlang=pt"
+termos_sha256 = "e87ae8f26a4c1c5f237bf9af31096d167f686dacb4bff33cd06ff0befb0bf4c1"
+lido_em = "2026-11-14T22:29:27Z"
+guardar = "sim"
+excerto_max = 600
+credito = "Fonte: Instituto Nacional de Estatística, IP – Portugal (identificação da informação estatística referida, período de referência da informação)"
+duvidas = [
+  "The CC BY 4.0 licence and the leave to download or copy are given for «informação estatística»; the terms do not say whether they reach the analytical text, charts and images of publications such as the Destaques, while «todos os conteúdos» are said to be INE's property.",
+  "The terms name the licence «Creative Commons CC BY Atribuição 4.0» but do not say whether a link to the licence must go with the credit.",
+  "The terms do not say whether the credit must stand beside each figure or may be given once per piece.",
+  "«Se a informação for modificada pelo utilizador, tal facto deve ser explicitamente mencionado»: the terms do not say whether a figure the project computes from INE's figures (a difference, a ratio, a real value) counts as modified information that must be marked as such.",
+  "The terms may be changed «sem aviso prévio»; this record holds for the terms as read on lido_em.",
+]
