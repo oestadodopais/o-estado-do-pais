@@ -1388,7 +1388,7 @@ tipo = "ato"
 fonte = "ine_ipc_out2026"
 onde = "p. 3, primeiro parágrafo (sobre a Figura 3)"
 excerto = '''Em outubro, nas classes com maiores contribuições positivas para a variação homóloga do IPC (ver figura 3), destacam-se a dos Transportes (classe 7) e dos Restaurantes e serviços de alojamento (classe 11). Em sentido contrário, apenas se registou uma contribuição negativa, na classe do Vestuário e calçado (classe 3).'''
-diz = "O INE destaca os Transportes (classe 7) e os Restaurantes e serviços de alojamento (classe 11) entre as classes com maiores contribuições positivas para a taxa de variação homóloga do IPC de outubro de 2026, isto é, para o nível dessa taxa e não para a sua variação face a setembro; e escreve que só o Vestuário e calçado (classe 3) teve contribuição negativa. A Figura 3 não imprime os valores."
+diz = "O INE destaca os Transportes (classe 7) e os Restaurantes e serviços de alojamento (classe 11) entre as classes com maiores contribuições positivas para a taxa de variação homóloga do IPC de outubro de 2026, isto é, para o nível dessa taxa e não para a sua variação face a setembro; e escreve que só o Vestuário e calçado (classe 3) teve contribuição negativa."
 quem = ""
 quando = "2026-11-11"
 
@@ -1398,7 +1398,7 @@ tipo = "ato"
 fonte = "ine_ipc_out2026"
 onde = "p. 3, segundo parágrafo (sobre a Figura 4)"
 excerto = '''Comparando com o mês precedente, destaca-se o aumento da contribuição para a variação homóloga do IPC da classe do Lazer, recreação, desporto e cultura (classe 9), da Informação e comunicação (classe 8) e da Habitação, água, eletricidade, gás e outros combustíveis (classe 4). Em sentido contrário, destacam-se as classes do Vestuário e calçado (classe 3) e dos Serviços de higiene e cuidados pessoais, proteção social e bens e serviços diversos (classe 13).'''
-diz = "Comparando com setembro de 2026, o INE destaca o aumento da contribuição para a variação homóloga do IPC das classes 9 (Lazer, recreação, desporto e cultura), 8 (Informação e comunicação) e 4 (Habitação, água, eletricidade, gás e outros combustíveis) e, em sentido contrário, as classes 3 (Vestuário e calçado) e 13 (Serviços de higiene e cuidados pessoais, proteção social e bens e serviços diversos). Não diz em quanto, e a Figura 4 não imprime os valores."
+diz = "Comparando com setembro de 2026, o INE destaca o aumento da contribuição para a variação homóloga do IPC das classes 9 (Lazer, recreação, desporto e cultura), 8 (Informação e comunicação) e 4 (Habitação, água, eletricidade, gás e outros combustíveis) e, em sentido contrário, as classes 3 (Vestuário e calçado) e 13 (Serviços de higiene e cuidados pessoais, proteção social e bens e serviços diversos). Não diz em quanto."
 quem = ""
 quando = "2026-11-11"
 
@@ -1550,3 +1550,24 @@ familia = "anthropic"
 modelo = "claude-opus-5-5"
 inicio = "2026-11-15T11:43:10Z"
 fim = "2026-11-15T11:49:03Z"
+
+[[leitura]]
+lugar = "numeros"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-15T11:53:46Z"
+fim = "2026-11-15T11:59:55Z"
+impressao = "8f4b0e7588fa52afad4ae0cbfbe1169fc21d3d7cd08beea31980fd80dff1365b"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 6
+adotados = 3
+veredicto = "nao_passa"
+
+[[passo]]
+nome = "edicao"
+lugar = "direcao"
+familia = "anthropic"
+modelo = "claude-fable-5-2"
+inicio = "2026-11-15T12:01:37Z"
+fim = "2026-11-15T12:01:37Z"
