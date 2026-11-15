@@ -533,8 +533,10 @@ class Pontuar(ComLeitura):
         with self.assertRaises(leituras.Recusa) as e:  # the real finding has no decision yet
             leituras.pontuar(pasta, imprimir=linhas.append)
         self.assertIn("real findings with no decision: [2]", str(e.exception))
-        p = leituras.pontuar(pasta, self.decisoes('[[decisao]]\nachado = 2\ndecisao = "adotado"\n'), imprimir=linhas.append)
-        self.assertEqual((p["veredicto"], p["plantas_postas"], p["plantas_apanhadas"], p["achados"], p["adotados"]), ("passa", 1, 1, 1, 1))
+        # A finding adopted stops a juiz's pass (ESQ3b, item I); declined with a reason, the reading passes.
+        p = leituras.pontuar(pasta, self.decisoes('[[decisao]]\nachado = 2\ndecisao = "recusado"\nrazao = "not so"\n'),
+                             imprimir=linhas.append)
+        self.assertEqual((p["veredicto"], p["plantas_postas"], p["plantas_apanhadas"], p["achados"], p["adotados"]), ("passa", 1, 1, 1, 0))
         self.assertEqual(p["veredicto_do_leitor"], "nao_passa")
         self.assertTrue(any("the change between the two quarters is called a fall" in l and "finding 1: it rose" in l for l in linhas))
 

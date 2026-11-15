@@ -182,3 +182,33 @@ class C_OResumoNumTelefoneEAberto(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# --------------------------------------------------------------------------- I. an adopted finding stops a pass
+
+from oedp import leituras  # noqa: E402
+from tests.test_esq2a import ComLeitura, achado  # noqa: E402
+
+
+class I_UmAchadoAdotadoNaoPassa(ComLeitura):
+    """The juiz's reading of the test piece, with one plant caught and one real finding at corrigir."""
+
+    def pontuar(self, lugar, decisao):
+        pasta, _ = self.lida(lugar=lugar, achados=[achado("frase 7", problema="it rose"), achado("frase 2", "corrigir", "a real one")])
+        return leituras.pontuar(pasta, self.decisoes(decisao), imprimir=lambda *a: None)
+
+    def test_planta_um_achado_corrigir_adotado(self):
+        p = self.pontuar("juiz", '[[decisao]]\nachado = 2\ndecisao = "adotado"\n')
+        self.assertEqual((p["veredicto"], p["plantas_apanhadas"], p["plantas_postas"], p["adotados"]), ("nao_passa", 1, 1, 1))
+        self.assertIn("real findings adopted: [2] (what was read is about to change; the pass belongs to what is read after the repair)",
+                      p["razoes"])
+
+    def test_o_mesmo_recusado_passa(self):
+        p = self.pontuar("juiz", '[[decisao]]\nachado = 2\ndecisao = "recusado"\nrazao = "the text says it already"\n')
+        self.assertEqual((p["veredicto"], p["adotados"]), ("passa", 0))
+
+    def test_um_lugar_da_familia_que_produziu_continua_a_levantar(self):
+        pasta, _ = self.lida(lugar="especialista", plantas=None, achados=[achado("frase 2", "corrigir", "a real one")])
+        p = leituras.pontuar(pasta, self.decisoes('[[decisao]]\nachado = 1\ndecisao = "adotado"\n'), modelo="claude-de-ensaio",
+                             inicio="2026-11-15T01:00:00Z", fim="2026-11-15T01:10:00Z", imprimir=lambda *a: None)
+        self.assertEqual((p["veredicto"], p["adotados"]), ("levanta", 1))
