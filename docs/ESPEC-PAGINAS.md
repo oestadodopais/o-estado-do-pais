@@ -38,7 +38,7 @@
 ## 2. Topic thread · `/temas/<tema>/`
 
 - A thread exists when a desk file `mesas/<tema>.md` exists and at least one piece of that thread is published. The thread's name is the desk file's first line, `# <name>`.
-- In order: the name; the thread's indicators, if any; under `seguir_titulo`, the `O que seguir` paragraph of each published piece, most recent first, each linked to its piece (inside those paragraphs printed lines and tied words are plain text: the receipts are on the piece's page); then every published piece of the thread, most recent first.
+- In order: the name; the thread's indicators, if any; under `seguir_titulo`, the `O que acompanhar` paragraph of each published piece, most recent first, each linked to its piece (inside those paragraphs printed lines and tied words are plain text: the receipts are on the piece's page); then every published piece of the thread, most recent first.
 
 ## 3. Piece page · `/pecas/<id>/`
 

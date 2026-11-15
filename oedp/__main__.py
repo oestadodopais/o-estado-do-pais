@@ -11,6 +11,7 @@ from . import conferir as conf
 from . import construir as build
 from . import datas, fontes, forma, noar, registo
 from . import direitos as rights
+from .forma import FECHO
 from .peca import ID_PECA, ErroDeForma, impressoes, ler, pecas_em
 
 REPO = Path(__file__).resolve().parent.parent
@@ -27,13 +28,7 @@ pergunta = ""
 porque_hoje = ""
 largar_se = ""
 +++ corpo
-
-## A leitura deste projeto
-
-## O melhor argumento contra esta leitura
-
-## O que acompanhar
-
+""" + "".join("\n## " + t + "\n" for t in FECHO).replace("{", "{{").replace("}", "}}") + """
 +++ folha
 +++ registo
 """
