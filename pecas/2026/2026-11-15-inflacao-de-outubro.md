@@ -1807,3 +1807,16 @@ plantas_apanhadas = 0
 achados = 20
 adotados = 17
 veredicto = "levanta"
+
+[[leitura]]
+lugar = "numeros"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-15T13:19:59Z"
+fim = "2026-11-15T13:24:53Z"
+impressao = "c819f7725da5f4e0c899fb65c8d2f603b5f014d757c816641e808891d9b1d9ba"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 0
+adotados = 0
+veredicto = "passa"
