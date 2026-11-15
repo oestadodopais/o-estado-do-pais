@@ -2,7 +2,7 @@ Este projeto pega no que acontece em Portugal, põe ao lado os números oficiais
 
 ## Como confirmo um número?
 
-Cada número, cada citação e cada comparação de uma peça têm um sublinhado pontilhado. Carregue nele e abre-se, mais abaixo na página, o recibo. O recibo diz o que o número mede, a quem se refere e o período. Diz de que documento vem e quem o publicou. Mostra o excerto, copiado letra a letra, com o número assinalado, e a data em que foi lido. E traz uma ligação para o documento, no sítio de quem o publicou: abra-o e procure o excerto. Se não o encontrar, escreva a este projeto.
+Cada número, cada citação e cada comparação de uma peça têm um sublinhado pontilhado. Carregue nele e abre-se, mais abaixo na página, o recibo. O recibo diz o que o número mede, a quem se refere e o período. Diz de que documento vem e quem o publicou. Mostra o excerto, copiado letra a letra, com o número assinalado, e a data em que foi lido. E traz uma ligação para o documento, no sítio de quem o publicou: abra-o e procure o excerto. Se não o encontrar, escreva a este projeto (o endereço está mais abaixo).
 
 Se o número foi calculado por este projeto, o recibo mostra a conta e leva aos recibos dos números que nela entram.
 
@@ -10,9 +10,9 @@ Se o número foi calculado por este projeto, o recibo mostra a conta e leva aos 
 
 Outros modelos: quem faz uma coisa nunca a aprova.
 
-Este projeto usa modelos de duas empresas, a Anthropic e a OpenAI; os de cada uma formam uma família. Os da Anthropic escolhem os assuntos, reúnem os documentos e escrevem. Os da OpenAI verificam, e sem a aprovação deles nada é publicado. Um deles, o editor de números, vai aos documentos buscar cada número, antes de se escrever uma palavra. Outro, o juiz, compara no fim o texto com os documentos, frase a frase.
+Este projeto usa modelos de duas empresas, a Anthropic e a OpenAI; os de cada uma formam uma família. Os da Anthropic escolhem os assuntos, reúnem os documentos e escrevem. Os da OpenAI verificam, e sem a aprovação deles nada é publicado. Um deles, o editor de números, confirma nos documentos cada número que a peça vai usar, antes de se escrever uma palavra. Outro, o juiz, compara no fim o texto com os documentos, frase a frase.
 
-Quem verifica também é posto à prova. No material que recebe há erros postos de propósito, os erros plantados, sem que saiba quantos nem onde. Nunca estão na peça. Se deixar passar um, a verificação não conta e é feita de novo.
+Quem verifica também é posto à prova. Na cópia que recebe para verificar há erros postos de propósito, os erros plantados, sem que saiba quantos nem onde. Só existem nessa cópia, nunca na peça. Se deixar passar um, a verificação não conta e é feita de novo.
 
 O resultado está no fim de cada peça, na tabela «O registo desta peça»: uma linha por cada vez que um modelo a leu, com os erros plantados que apanhou, os problemas que apontou e o veredicto. No fim da tabela está a impressão digital do texto, um código que muda se mudar uma letra: liga o texto publicado ao que o juiz aprovou.
 
@@ -28,15 +28,15 @@ Sem revisão humana, o primeiro a dar por um erro pode ser um leitor. Os dois ve
 
 Para não depender só de quem lê, a regra é ir buscar de novo, todas as semanas, as fontes das peças publicadas. Se o excerto de um número já não estiver na fonte, a peça é retirada, e só volta depois de corrigida e julgada.
 
-Quantas vezes este projeto erra, só uma auditoria o mostra: tirar de novo das fontes uma amostra dos números publicados e contar os errados. Estão previstas todos os meses, pelas mesmas duas famílias. Até à primeira, a taxa de erro, no fim desta página, diz que não houve nenhuma.
+Quantas vezes este projeto erra, só uma auditoria o mostra: tirar de novo das fontes uma amostra dos números publicados e contar os errados. As auditorias estão previstas todos os meses e são feitas por modelos das mesmas duas famílias, o que é um limite. Até à primeira, no lugar da taxa de erro, no fim desta página, está escrito que ainda não houve auditoria.
 
 ## Encontrei um erro. E agora?
 
-Escreva para correcoes@oestadodopais.pt e diga qual é a peça e qual é a frase. A mensagem é recebida por uma pessoa, que a entrega ao editor de correções, um modelo; é esse modelo que trata dela. Se o erro se confirmar, a correção é publicada com data na própria peça, antes do texto, e fica na página «Correções». Quando o erro não foi deste projeto, porque foi a fonte que mudou, chama-se atualização. A peça corrigida volta a ser julgada.
+Escreva para correcoes@oestadodopais.pt e diga qual é a peça e qual é a frase. A mensagem é recebida por uma pessoa, que a entrega ao editor de correções, um modelo da OpenAI. É ele que trata dela. Se o erro se confirmar, a correção é publicada com data na própria peça, antes do texto, e fica na página «Correções». Quando o erro não foi deste projeto, porque foi a fonte que mudou, chama-se atualização. A peça corrigida volta a ser julgada.
 
 ## O que são os números abaixo?
 
-Contam as peças publicadas, as correções, as atualizações e as peças retiradas, e dão a data da última conferência completa das fontes. Depois, uma tabela dos modelos, função a função: leituras feitas, erros plantados apanhados, problemas aceites e falhas apontadas por correções. Por fim, a taxa de erro.
+Contam as peças publicadas, as correções, as atualizações e as peças retiradas, e dão a data da última conferência completa das fontes. Depois, uma tabela dos modelos, função a função: quantas leituras fizeram, quantos erros plantados apanharam, quantos dos problemas que apontaram levaram a mudar uma peça e quantos erros lhes escaparam e foram depois corrigidos. Por fim, a taxa de erro.
 
 +++ registo
 
@@ -167,3 +167,24 @@ familia = "anthropic"
 modelo = "claude-fable-5-2"
 inicio = "2026-11-15T16:12:32Z"
 fim = "2026-11-15T16:14:13Z"
+
+[[leitura]]
+lugar = "leitor"
+familia = "anthropic"
+modelo = "claude-sonnet-5-5"
+inicio = "2026-11-15T16:14:29Z"
+fim = "2026-11-15T16:17:00Z"
+impressao = "69965da1cbec9b7cebb46bb2eeca3b90c19dbc40dbdba1a66ba94e6b6f789ae7"
+plantas_postas = 0
+plantas_apanhadas = 0
+achados = 9
+adotados = 7
+veredicto = "levanta"
+
+[[passo]]
+nome = "edicao"
+lugar = "direcao"
+familia = "anthropic"
+modelo = "claude-fable-5-2"
+inicio = "2026-11-15T16:17:29Z"
+fim = "2026-11-15T16:18:07Z"
