@@ -137,6 +137,20 @@ def check2(peca: Peca, loja: Path | None) -> Resultado:
         if len(dados) != f.get("bytes"):
             razoes.append(f"fonte {fid}: the copy has {len(dados)} bytes, the table says {f.get('bytes')}")
         textos[fid] = fontes.texto_por_pagina(dados)
+    for fid, f in peca.fontes.items():
+        if "pagina_sha256" not in f:
+            continue
+        try:
+            caminho = fontes.caminho_da_copia(loja, str(f.get("pagina_sha256", "")))
+        except fontes.ErroDaLoja as e:
+            razoes.append(f"fonte {fid}: pagina_sha256: {e}")
+            continue
+        if not caminho.is_file():
+            em_falta.append(f"fonte {fid}: no copy of its pagina in the store under {f.get('pagina_sha256')}")
+            continue
+        real = hashlib.sha256(caminho.read_bytes()).hexdigest()
+        if real != f.get("pagina_sha256"):
+            razoes.append(f"fonte {fid}: the stored copy of its pagina hashes to {real}, not to its name {f.get('pagina_sha256')}")
     for lid, l in peca.linhas.items():
         fid = l.get("fonte")
         if l.get("tipo") not in ("valor", "citacao", "ato") or fid not in textos:

@@ -75,8 +75,15 @@ def cmd_fonte(a) -> int:
     pasta = Path(a.direitos) if a.direitos else REPO / "direitos"
     direitos_de = None if a.termos else rights.para_buscar(pasta)
     avisos: list[str] = []
+    if a.pagina and a.termos:
+        print("refused: --pagina goes with a source, not with --termos", file=sys.stderr)
+        return 2
     try:
         tabela = fontes.buscar(a.url, raiz, direitos_de=direitos_de, termos=a.termos, pequeno=a.pequeno, avisos=avisos)
+        if a.pagina:
+            # The publisher's own page for the document, fetched and stored under the same
+            # rules as the source; the table names the address it was finally read at.
+            tabela = fontes.com_pagina(tabela, a.pagina, raiz, direitos_de=direitos_de, avisos=avisos)
         for x in avisos:
             print(x, file=sys.stderr)
         print(tabela, end="")
@@ -333,6 +340,7 @@ def principal(argv=None) -> int:
     s.add_argument("--termos", action="store_true", help="the address is a publisher's terms page; begins a rights record")
     s.add_argument("--direitos", help="the folder of rights records (default: direitos/)")
     s.add_argument("--pequeno", action="store_true", help="store an answer smaller than 512 bytes")
+    s.add_argument("--pagina", help="the publisher's own page for the document; fetched and stored like the source")
     s.set_defaults(f=cmd_fonte)
 
     s = sub.add_parser("texto")

@@ -288,15 +288,29 @@ def _bloco_de_correcao(ctx, c, peca=None) -> str:
     )
 
 
+# A stored copy of one of these types is a web page, and its link opens it (`r_abrir`);
+# anything else (a PDF, a spreadsheet, a data file) is a file the browser downloads
+# (`r_descarregar`). docs/ESPEC-PAGINAS.md, edit of 15 November 2026.
+TIPOS_DE_PAGINA = ("text/html", "application/xhtml+xml")
+
+
+def palavras_da_ligacao(ctx, fonte: dict) -> str:
+    tipo = str(fonte.get("tipo_conteudo", "")).split(";")[0].strip().lower()
+    return ctx.t("r_abrir") if tipo in TIPOS_DE_PAGINA else ctx.t("r_descarregar")
+
+
 def _fonte_dl(ctx, peca, linha) -> str:
     f = peca.fontes.get(linha.get("fonte"), {})
     url = str(f.get("url", ""))
+    ligacoes = f'<dd class="abrir"><a href="{e(url)}" rel="noopener noreferrer">{e(palavras_da_ligacao(ctx, f))}</a></dd>'
+    if f.get("pagina"):
+        ligacoes += f'<dd class="abrir"><a href="{e(str(f["pagina"]))}" rel="noopener noreferrer">{e(ctx.t("r_pagina"))}</a></dd>'
     return (
         f'<dt>{e(ctx.t("r_fonte"))}</dt><dd>{e(str(f.get("titulo", "")))} · {e(str(f.get("editor", "")))}</dd>'
         f'<dt>{e(ctx.t("r_onde"))}</dt><dd>{e(str(linha.get("onde", "")))}</dd>'
     ), (
         f'<dt>{e(ctx.t("r_lido"))}</dt><dd>{e(_data_de(f.get("lido_em")))}</dd>'
-        f'<dd class="abrir"><a href="{e(url)}" rel="noopener noreferrer">{e(ctx.t("r_abrir"))}</a></dd>'
+        + ligacoes
     )
 
 

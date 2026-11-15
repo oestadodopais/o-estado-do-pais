@@ -153,6 +153,13 @@ def erros_da_peca(peca, registos: dict[str, dict]) -> list[str]:
             continue
         if r.get("guardar") == "nao":
             erros.append(f"fonte {fid}: the rights record of {host} says guardar = \"nao\"")
+        if "pagina" in f:
+            host_p = host_de(str(f.get("pagina", "")))
+            r_p = registos.get(host_p)
+            if r_p is None:
+                erros.append(f"fonte {fid}: the host {host_p or '(none)'} of its pagina has no rights record direitos/{host_p}.toml")
+            elif r_p.get("guardar") == "nao":
+                erros.append(f"fonte {fid}: the rights record of {host_p}, the host of its pagina, says guardar = \"nao\"")
         limite = r.get("excerto_max")
         for lid, l in peca.linhas.items():
             if l.get("fonte") == fid and "excerto" in l and tamanho(l["excerto"]) > limite:

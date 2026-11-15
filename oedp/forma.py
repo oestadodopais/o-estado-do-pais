@@ -24,6 +24,9 @@ SHA = re.compile(r"[0-9a-f]{64}\Z")
 S, I, B, L = "texto", "inteiro", "sim_nao", "lista"
 CAMPOS_FONTE = {"id": S, "titulo": S, "editor": S, "url": S, "url_final": S, "lido_em": S, "http": I,
                 "tipo_conteudo": S, "bytes": I, "sha256": S, "publicado_em": S}
+# The publisher's own page for the document, stored like a source (docs/ESPEC-PECA.md,
+# edit of 15 November 2026): optional, and the two fields go together.
+OPCIONAIS_FONTE = {"pagina": S, "pagina_sha256": S}
 CAMPOS_LINHA = {
     "valor": {"id": S, "tipo": S, "fonte": S, "onde": S, "excerto": S, "valor": S, "unidade": S, "mede": S,
               "populacao": S, "periodo": S, "provisorio": B, "mostra": S},
@@ -292,11 +295,17 @@ def erros(peca: Peca, ficheiro: Path | None = None) -> list[str]:
                 vistos.add(tid)
                 onde = f"folha [[{chave}]] {tid}"
             if chave == "fonte":
-                _tabela(onde, t, CAMPOS_FONTE, {}, e)
+                _tabela(onde, t, CAMPOS_FONTE, OPCIONAIS_FONTE, e)
                 if isinstance(t.get("sha256"), str) and not SHA.match(t["sha256"]):
                     e.append(f"{onde}: sha256 is not 64 lower-case hex characters")
                 if isinstance(t.get("url"), str) and not re.match(r"https?://", t["url"]):
                     e.append(f"{onde}: url is not a web address")
+                if isinstance(t, dict) and ("pagina" in t) != ("pagina_sha256" in t):
+                    e.append(f"{onde}: pagina and pagina_sha256 go together; it has one without the other")
+                if isinstance(t.get("pagina_sha256"), str) and not SHA.match(t["pagina_sha256"]):
+                    e.append(f"{onde}: pagina_sha256 is not 64 lower-case hex characters")
+                if isinstance(t.get("pagina"), str) and not re.match(r"https?://", t["pagina"]):
+                    e.append(f"{onde}: pagina is not a web address")
             elif chave == "linha":
                 tipo = t.get("tipo") if isinstance(t, dict) else None
                 if tipo not in CAMPOS_LINHA:

@@ -500,3 +500,16 @@ def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, t
         ("publicado_em", '""'),
     ]
     return "[[fonte]]\n" + "".join(f"{k} = {v}\n" for k, v in campos)
+
+
+def com_pagina(tabela: str, pagina: str, raiz: Path, direitos_de=None, transporte=transporte_curl,
+               resolver=resolver_dns, avisos: list | None = None) -> str:
+    """The source's table with `pagina` and `pagina_sha256` added: the publisher's own page
+    for the document, fetched and stored by `buscar` under the same rules as a source
+    (public host, robots.txt, a rights record for its host, a 2xx answer). `pagina` is the
+    address the page was finally read at, so its host is the one whose record was checked."""
+    import tomllib
+
+    lida = tomllib.loads(buscar(pagina, raiz, direitos_de=direitos_de, transporte=transporte,
+                                resolver=resolver, avisos=avisos))["fonte"][0]
+    return tabela + f"pagina = {_toml_texto(lida['url_final'])}\npagina_sha256 = {_toml_texto(lida['sha256'])}\n"
