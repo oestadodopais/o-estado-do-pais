@@ -14,6 +14,7 @@ from oedp import conferir as conf
 from oedp import construir as build
 from oedp import fontes
 from oedp.peca import ler
+from oedp.ambiente import sem_git_local
 from tests.apoio import ENSAIOS, LOJA, PECA, REPO, Plantada, sitio_de_ensaio
 from tests.test_esq1d import SitioFalso
 
@@ -97,7 +98,7 @@ class Item03Check8LeOQueAindaNaoFoiCommitado(unittest.TestCase):
     def test_planta_ficheiro_por_seguir_e_ficheiro_nomeado(self):
         repo = Path(tempfile.mkdtemp(prefix="oedp-git-"))
         self.addCleanup(shutil.rmtree, repo, True)
-        git = lambda *a: subprocess.run(["git", "-C", str(repo), *a], check=True, capture_output=True)
+        git = lambda *a: subprocess.run(["git", "-C", str(repo), *a], check=True, capture_output=True, env=sem_git_local())
         git("init", "-q")
         (repo / "limpo.txt").write_text("nada\n", encoding="utf-8")
         (repo / ".gitignore").write_text("ignorado.txt\n", encoding="utf-8")

@@ -11,6 +11,7 @@ import unittest
 from pathlib import Path
 
 from oedp import ensaio, publicar
+from oedp.ambiente import sem_git_local
 from tests.apoio import REPO
 
 PUBLICO = "https://xn--oestadodopas-2fb.pt"
@@ -21,7 +22,7 @@ ANTERIOR = "https://implantacao-anterior.invalid"
 def git(pasta, *args):
     endereco = "ensaio" + "@" + "ensaio.invalid"
     return subprocess.run(["git", "-C", str(pasta), "-c", "user.name=Ensaio", "-c", f"user.email={endereco}", *args],
-                          check=True, capture_output=True, text=True)
+                          check=True, capture_output=True, text=True, env=sem_git_local())
 
 
 class Base(unittest.TestCase):
@@ -29,8 +30,8 @@ class Base(unittest.TestCase):
         raiz = Path(tempfile.mkdtemp(prefix="oedp-publicar-"))
         self.addCleanup(shutil.rmtree, raiz, True)
         self.origem, self.repo, self.oficina = raiz / "origem.git", raiz / "repo", raiz / "oficina"
-        subprocess.run(["git", "init", "-q", "--bare", "-b", "main", str(self.origem)], check=True)
-        subprocess.run(["git", "init", "-q", "-b", "main", str(self.repo)], check=True)
+        subprocess.run(["git", "init", "-q", "--bare", "-b", "main", str(self.origem)], check=True, env=sem_git_local())
+        subprocess.run(["git", "init", "-q", "-b", "main", str(self.repo)], check=True, env=sem_git_local())
         shutil.copy2(REPO / "sitio.toml", self.repo / "sitio.toml")
         git(self.repo, "add", "sitio.toml")
         git(self.repo, "commit", "-q", "-m", "ensaio")

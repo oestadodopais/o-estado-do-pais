@@ -12,6 +12,7 @@ from pathlib import Path
 from oedp import codigo, ensaio, registo
 from oedp import construir as build
 from oedp import julgados
+from oedp.ambiente import sem_git_local
 from tests.apoio import LOJA, REPO, Plantada
 from tests.test_esq1f import commit, git_temporario
 
@@ -67,13 +68,14 @@ class Impressao(unittest.TestCase):
             destino.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(REPO / nome, destino, follow_symlinks=False)
         if com_git:
-            subprocess.run(["git", "init", "-q", str(pasta)], check=True)
-            subprocess.run(["git", "-C", str(pasta), "add", "-A"], check=True)
+            subprocess.run(["git", "init", "-q", str(pasta)], check=True, env=sem_git_local())
+            subprocess.run(["git", "-C", str(pasta), "add", "-A"], check=True, env=sem_git_local())
         return pasta
 
     def test_a_impressao_refeita_a_mao(self):
         repo = self.copia(com_git=True)
-        nomes = subprocess.run(["git", "-C", str(repo), "ls-files", "-z"], capture_output=True, check=True).stdout.decode().split("\0")
+        nomes = subprocess.run(["git", "-C", str(repo), "ls-files", "-z"], capture_output=True, check=True,
+                               env=sem_git_local()).stdout.decode().split("\0")
         linhas = sorted(n for n in nomes if n and codigo.e_codigo(n) and (repo / n).is_file())
         texto = "".join(f"{hashlib.sha256((repo / n).read_bytes()).hexdigest()}  {n}\n" for n in linhas)
         self.assertEqual(codigo.impressao(repo), hashlib.sha256(texto.encode()).hexdigest())

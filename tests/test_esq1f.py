@@ -18,6 +18,7 @@ from oedp import conferir as conf
 from oedp import construir as build
 from oedp import fontes, julgados, noar, numeros
 from oedp.peca import ler
+from oedp.ambiente import sem_git_local
 from tests.apoio import ENSAIOS, LOJA, PECA, REPO, Plantada, loja_fora_do_repositorio, sitio_de_ensaio
 
 DERIVADOS_EM_CIRCULO = '''
@@ -49,15 +50,15 @@ mostra = "1 ponto"
 def git_temporario(caso) -> Path:
     pasta = Path(tempfile.mkdtemp(prefix="oedp-git-"))
     caso.addCleanup(shutil.rmtree, pasta, True)
-    subprocess.run(["git", "init", "-q", "-b", "main", str(pasta)], check=True)
+    subprocess.run(["git", "init", "-q", "-b", "main", str(pasta)], check=True, env=sem_git_local())
     return pasta
 
 
 def commit(pasta: Path, *caminhos):
     endereco = "ensaio" + "@" + "ensaio.invalid"  # built from parts, so this file passes check 8
-    subprocess.run(["git", "-C", str(pasta), "add", *caminhos], check=True)
+    subprocess.run(["git", "-C", str(pasta), "add", *caminhos], check=True, env=sem_git_local())
     subprocess.run(["git", "-C", str(pasta), "-c", "user.name=Ensaio", "-c", f"user.email={endereco}",
-                    "commit", "-q", "-m", "ensaio"], check=True)
+                    "commit", "-q", "-m", "ensaio"], check=True, env=sem_git_local())
 
 
 class Base(unittest.TestCase):

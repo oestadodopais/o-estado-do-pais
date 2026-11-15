@@ -32,6 +32,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from . import codigo, conferir, direitos, ensaio, fontes, julgados, numerado, paginas, registo
+from .ambiente import sem_git_local
 from .peca import ErroDeForma, Peca, impressoes, ler, ler_bytes, secoes
 
 REPO = Path(__file__).resolve().parent.parent
@@ -392,7 +393,7 @@ def diff_entre(base: Path, arvore: Path) -> bytes:
         r = Path(tmp)
         ambiente = {"GIT_AUTHOR_NAME": "leitura", "GIT_AUTHOR_EMAIL": "leitura@localhost", "GIT_COMMITTER_NAME": "leitura",
                     "GIT_COMMITTER_EMAIL": "leitura@localhost", "GIT_CONFIG_GLOBAL": os.devnull, "GIT_CONFIG_SYSTEM": os.devnull}
-        env = {**os.environ, **ambiente}
+        env = {**sem_git_local(), **ambiente}
         subprocess.run(["git", "init", "-q", str(r)], check=True, env=env)
         shutil.copytree(base, r, dirs_exist_ok=True, symlinks=True)
         subprocess.run(["git", "-C", str(r), "add", "-A"], check=True, env=env)
@@ -407,7 +408,7 @@ def diff_entre(base: Path, arvore: Path) -> bytes:
 
 
 def _ambiente_limpo() -> dict:
-    return {k: v for k, v in os.environ.items() if k not in NEUTRO}
+    return {k: v for k, v in sem_git_local().items() if k not in NEUTRO}
 
 
 _CONSTRUIR = ("import sys; from pathlib import Path; from oedp import ensaio; "

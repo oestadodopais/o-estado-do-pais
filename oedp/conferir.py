@@ -334,7 +334,11 @@ def republicada_sem_juiz(peca: Peca) -> list[str]:
     15 November 2026, 03:29 and 11:09 UTC). It does not come back on its earlier approval,
     nor on one given after it came back."""
     produtoras = {p.get("familia") for p in _passos(peca)}
-    leituras = [l for l in _leituras(peca, "juiz") if l.get("veredicto") == "passa" and l.get("impressao") == peca.impressao
+    # The fingerprint the piece had at that publication: the current one, or one a later
+    # [[correcao]] of the record names as impressao_antes (edit of 15 November 2026, 11:43 UTC).
+    impressoes_da_peca = {peca.impressao} | {str(c.get("impressao_antes")) for c in peca.registo.get("correcao", [])
+                                             if isinstance(c, dict) and c.get("impressao_antes")}
+    leituras = [l for l in _leituras(peca, "juiz") if l.get("veredicto") == "passa" and l.get("impressao") in impressoes_da_peca
                 and l.get("familia") not in produtoras and isinstance(l.get("plantas_postas"), int)
                 and l.get("plantas_postas") >= 1 and l.get("plantas_apanhadas") == l.get("plantas_postas")]
     erros, retirada = [], None
@@ -352,7 +356,7 @@ def republicada_sem_juiz(peca: Peca) -> list[str]:
             if not entre:
                 erros.append(f"the piece was withdrawn at {retirada.get('em')} and published again at {est.get('em')} with no "
                              "passing juiz reading begun after that withdrawal and ended before that publication "
-                             "(on the current fingerprint, by the other family, every plant caught)")
+                             "(on a fingerprint the piece had, by the other family, every plant caught)")
             retirada = None
     return erros
 

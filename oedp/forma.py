@@ -193,6 +193,8 @@ def erros_do_registo(registo: dict, nome: str = "registo", tabelas_permitidas=No
                 for campo in ("inicio", "fim", "em"):
                     if campo in t and datas.instante_real(str(t[campo])) is None:
                         e.append(f"{onde}: {campo} {t[campo]!r} is not a real date in the form YYYY-MM-DDTHH:MM:SSZ")
+            if k in ("passo", "leitura"):
+                e.extend(erros_de_tempo(onde, t))
             if k == "leitura":
                 if isinstance(t.get("impressao"), str) and not SHA.match(t["impressao"]):
                     e.append(f"{onde}: impressao is not a SHA-256")
@@ -212,6 +214,15 @@ def erros_do_registo(registo: dict, nome: str = "registo", tabelas_permitidas=No
         e.extend(erros_de_familia(registo))
     e.extend(erros_de_estado(registo))
     return e
+
+
+def erros_de_tempo(onde: str, t: dict) -> list[str]:
+    """Nothing on a record ends before it begins: in a [[passo]] or [[leitura]], fim is not
+    before inicio (docs/ESPEC-PECA.md, edit of 15 November 2026, 11:43 UTC)."""
+    inicio, fim = datas.instante_real(str(t.get("inicio", ""))), datas.instante_real(str(t.get("fim", "")))
+    if inicio and fim and fim < inicio:
+        return [f"{onde}: fim {t.get('fim')} is before inicio {t.get('inicio')}; nothing on a record ends before it begins"]
+    return []
 
 
 def erros_de_familia(registo: dict) -> list[str]:

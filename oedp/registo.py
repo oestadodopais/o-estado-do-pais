@@ -68,6 +68,7 @@ def _acrescentar_a_texto(caminho: Path, antes: bytes, nome: str, campos: dict) -
     erros: list[str] = []
     novo = tomllib.loads(texto)[nome][-1]
     forma._tabela(f"[[{nome}]]", novo, exigidos, opcionais, erros)
+    erros += forma.erros_de_tempo(f"[[{nome}]]", novo)
     erros += _plantas(campos)
     registo_atual = tomllib.loads((antes if caminho.name == "textos.registo.toml" else julgados.separar(antes)[1]).decode("utf-8"))
     juntos = {k: list(v) for k, v in registo_atual.items()}
@@ -128,6 +129,7 @@ def acrescentar(caminho: Path, nome: str, campos: dict) -> str:
     erros: list[str] = [] if forma.erros_de_familia(peca.registo) else list(forma.erros_de_familia(novo.registo))
     erros += _plantas(campos)
     forma._tabela(f"[[{nome}]]", novo.registo[nome][-1], exigidos, opcionais, erros)
+    erros += forma.erros_de_tempo(f"[[{nome}]]", novo.registo[nome][-1])
     for (tab, campo), permitidos in forma.VALORES.items():
         if tab == nome and campos.get(campo) not in permitidos and campo in campos:
             erros.append(f"{campo} {campos[campo]!r} is not one of {', '.join(sorted(permitidos))}")

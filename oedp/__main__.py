@@ -431,6 +431,11 @@ def cmd_tudo(a) -> int:
 
 
 def principal(argv=None) -> int:
+    # No git command under this one may inherit GIT_DIR, GIT_INDEX_FILE or their kin from a
+    # hook or a tool: they would turn `git -C <temporary folder>` onto the real repository.
+    from . import ambiente
+
+    ambiente.limpar()
     p = argparse.ArgumentParser(prog="python3 -m oedp")
     sub = p.add_subparsers(dest="comando", required=True)
 

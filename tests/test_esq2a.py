@@ -21,6 +21,7 @@ from pathlib import Path
 from oedp import leituras, numerado
 from oedp.__main__ import MODELO
 from oedp.peca import ler, paragrafos
+from oedp.ambiente import sem_git_local
 from tests.apoio import ENSAIOS, PECA, REPO, Plantada, loja_fora_do_repositorio, sitio_de_ensaio
 from tests.test_esq1f import commit, git_temporario
 
@@ -280,7 +281,8 @@ class Codigo(Base):
         (repo / "oedp" / "a.py").write_text("def a():\n    return 1\n", encoding="utf-8")
         (repo / "oedp" / "b.py").write_text("def b():\n    return 2\n", encoding="utf-8")
         commit(repo, "oedp")
-        base = subprocess.run(["git", "-C", str(repo), "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip()
+        base = subprocess.run(["git", "-C", str(repo), "rev-parse", "HEAD"], capture_output=True, text=True,
+                              env=sem_git_local()).stdout.strip()
         (repo / "oedp" / "a.py").write_text("def a():\n    return 1\n\n\ndef c(x):\n    return x > 0\n", encoding="utf-8")
         commit(repo, "oedp")
         return repo, base

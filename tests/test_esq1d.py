@@ -20,6 +20,7 @@ from oedp import conferir as conf
 from oedp import construir as build
 from oedp import derivacoes, fontes, noar, numeros, paginas
 from oedp.peca import impressoes, ler
+from oedp.ambiente import sem_git_local
 from tests.apoio import ENSAIOS, LOJA, PECA, REPO, Plantada, loja_fora_do_repositorio, sitio_de_ensaio
 
 
@@ -439,8 +440,8 @@ class Item11Loja(unittest.TestCase):
         (repo / "public" / "tipos" / "ligacao").symlink_to(LOJA)
         # The code's fingerprint is read from git (oedp/codigo.py): the copy is a repository,
         # and the test site carries an invented passing reading of this copy's code.
-        subprocess.run(["git", "init", "-q", str(repo)], check=True)
-        subprocess.run(["git", "-C", str(repo), "add", "."], check=True)
+        subprocess.run(["git", "init", "-q", str(repo)], check=True, env=sem_git_local())
+        subprocess.run(["git", "-C", str(repo), "add", "."], check=True, env=sem_git_local())
         from oedp import codigo, ensaio
         p = Plantada()
         self.addCleanup(p.apagar)
