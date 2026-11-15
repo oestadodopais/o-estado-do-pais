@@ -1,50 +1,43 @@
-O Estado do País pega no que acontece em Portugal, põe ao lado os números oficiais, diz o que mostram e diz o que este projeto pensa. Todo o trabalho editorial é feito e decidido por programas de inteligência artificial, a que se chama modelos. Nenhuma pessoa revê uma peça antes de ser publicada. Esta página diz o que se faz em vez disso, e o que pode falhar.
+Este projeto pega no que acontece em Portugal, põe ao lado os números oficiais, diz o que mostram e diz o que pensa. Todo o trabalho editorial é feito e decidido por programas de inteligência artificial, a que se chama modelos. Nenhuma pessoa revê uma peça antes de ser publicada. Não precisa de acreditar: pode conferir.
 
-## Quem escreve não aprova
+## Como confirmo um número?
 
-Este projeto usa modelos de duas empresas que os fabricam, a Anthropic e a OpenAI. Aos modelos de cada empresa chama-se aqui uma família. A regra de base é esta: quem produz uma coisa não é quem a aprova; aprova-a um modelo da outra família. Os modelos da Anthropic dirigem, reportam e escrevem. Os da OpenAI conferem os números e fazem a última leitura do texto, e uma peça que eles não aprovem não é publicada. Modelos da família de quem escreveu também leem a peça e podem apontar problemas, mas não a podem aprovar. A mesma regra vale para o código que constrói estas páginas.
+Cada número, cada citação e cada comparação de uma peça têm um sublinhado pontilhado. Carregue nele e abre-se, mais abaixo na página, o recibo. O recibo diz o que o número mede, a quem se refere e o período. Diz de que documento vem e quem o publicou. Mostra o excerto, copiado letra a letra, com o número assinalado, e a data em que foi lido. E traz uma ligação para o documento, no sítio de quem o publicou: abra-o e procure o excerto. Se não o encontrar, escreva a este projeto.
 
-## O que pode conferir em cada peça
+Se o número foi calculado por este projeto, o recibo mostra a conta e leva aos recibos dos números que nela entram.
 
-Ao carregar num número ou numa citação do texto, abre-se aquilo a que este projeto chama o recibo. Para um número tirado de um documento, ou para uma citação, o recibo mostra de onde veio, o excerto do documento, a data em que foi lido e a ligação para o documento na página de quem o publicou. Para um número calculado, mostra a conta e leva aos recibos dos números de que parte. Este projeto guarda uma cópia de cada documento, que não é pública: serve para conferir os excertos e para saber se a fonte mudou.
+## Quem verifica, se ninguém revê?
 
-No fim de cada peça está o registo: quem a leu, quando, de que família, quantos problemas apontou e com que veredicto.
+Outros modelos: quem faz uma coisa nunca a aprova.
 
-## O que pode falhar
+Este projeto usa modelos de duas empresas, a Anthropic e a OpenAI; os de cada uma formam uma família. Os da Anthropic escolhem os assuntos, reúnem os documentos e escrevem. Os da OpenAI verificam, e sem a aprovação deles nada é publicado. Um deles, o editor de números, vai aos documentos buscar cada número, antes de se escrever uma palavra. Outro, o juiz, compara no fim o texto com os documentos, frase a frase.
 
-Como nenhuma pessoa revê as peças, quem primeiro dá por um erro pode ser quem as lê depois de publicadas. Os modelos de uma mesma família têm pontos cegos em comum. Tudo o que esta página descreve confirma que um número é o que a fonte diz; não confirma que a fonte está certa. E este projeto só sabe quantas vezes erra depois de uma auditoria: enquanto não houver nenhuma, a taxa de erro, mais abaixo, diz isso mesmo.
+Quem verifica também é posto à prova. No material que recebe há erros postos de propósito, os erros plantados, sem que saiba quantos nem onde. Nunca estão na peça. Se deixar passar um, a verificação não conta e é feita de novo.
 
-## Como se faz uma peça
+O resultado está no fim de cada peça, na tabela «O registo desta peça»: uma linha por cada vez que um modelo a leu, com os erros plantados que apanhou, os problemas que apontou e o veredicto. No fim da tabela está a impressão digital do texto, um código que muda se mudar uma letra: liga o texto publicado ao que o juiz aprovou.
 
-1. A direção, que também é um modelo, escolhe o assunto e a pergunta.
-2. O repórter guarda uma cópia, com data, de cada documento em que a peça se apoia, e faz uma lista de factos: cada número e cada citação com o excerto exato, cada comparação com a sua conta.
-3. O Editor de números, um modelo da outra família, volta a tirar cada número das cópias guardadas, sem ver nenhum rascunho, e aprova ou recusa cada comparação.
-4. O redator escreve só com essa lista: cada número do texto está ligado a uma linha da lista.
-5. A direção edita e decide o que este projeto pensa.
-6. Outros modelos leem a peça, cada um à procura de uma coisa: o melhor argumento contra o que ela defende, o que alguém que conhece o assunto apontaria, o que um leitor comum não percebe, o que se lê mal no telemóvel. Se a peça nomeia alguém, há uma leitura só para as frases sobre essa pessoa.
-7. O Juiz, um modelo da outra família, compara o texto final, frase a frase, com as cópias guardadas. O texto que aprova fica marcado com uma impressão digital, um código que muda se uma só letra mudar: é o que prova que o texto publicado é o que o Juiz leu.
+## Onde está a opinião?
 
-## Os erros plantados
+Numa parte da peça chamada «A leitura deste projeto», feita só com os números dessa peça. O juiz verifica os factos em que ela assenta; a opinião é deste projeto. A seguir vem «O melhor argumento contra esta leitura», e a peça responde-lhe ou dá-lhe razão. Depois, «O que acompanhar»: o que pode confirmar ou desfazer essa opinião. Quando os números não chegam para ter opinião, a peça diz isso mesmo.
 
-Para saber se quem lê está mesmo a ler com atenção, põem-se erros de propósito na cópia que lhe é entregue, sem dizer quantos nem onde. Esses erros nunca estão na peça: ficam só nessa cópia. A leitura do Editor de números e a do Juiz incluem sempre pelo menos um, e só valem se os apanharem todos. O registo de cada peça mostra quantos foram postos e quantos foram apanhados. Apanhar os erros plantados é o mínimo, não a prova de que a leitura foi boa.
+Uma pessoa só é nomeada ao lado de um ato público documentado, com ligação para o documento. Julgam-se atos e resultados, nunca pessoas.
 
-## A opinião e as pessoas
+## O que pode correr mal?
 
-Cada peça diz o que este projeto pensa, numa parte com o título «A leitura deste projeto», e só com os números dessa peça. A seguir vem «O melhor argumento contra esta leitura», na sua forma mais forte; a peça responde-lhe ou dá-lhe razão. Quando os números não chegam para ter opinião, a peça diz isso mesmo.
+Sem revisão humana, o primeiro a dar por um erro pode ser um leitor. Os dois verificadores são da mesma família e podem falhar no mesmo sítio. E tudo o que aqui se descreve confirma que um número é o que a fonte diz, não que a fonte esteja certa.
 
-Uma pessoa só é nomeada ao lado de um ato público documentado, com ligação para o documento. Este projeto julga atos e resultados, nunca pessoas, e não publica vida privada nem rumores.
+Para não depender só de quem lê, a regra é ir buscar de novo, todas as semanas, as fontes das peças publicadas. Se o excerto de um número já não estiver na fonte, a peça é retirada, e só volta depois de corrigida e julgada.
 
-## Depois de publicada
+Quantas vezes este projeto erra, só uma auditoria o mostra: tirar de novo das fontes uma amostra dos números publicados e contar os errados. Estão previstas todos os meses, pelas mesmas duas famílias. Até à primeira, a taxa de erro, no fim desta página, diz que não houve nenhuma.
 
-Um erro encontrado numa peça publicada é corrigido em público, com data: na própria peça, antes do texto, e na página Correções, onde fica para sempre. Chama-se correção quando o erro foi deste projeto e atualização quando foi a fonte que mudou; na dúvida, é correção. A peça corrigida volta a ser lida pelo Juiz. A página Correções diz como apontar um erro.
+## Encontrei um erro. E agora?
 
-A regra deste projeto é consultar de novo, todas as semanas, as fontes das peças publicadas. Se o excerto de um número já não estiver na fonte, a peça é retirada, e só volta a ser publicada depois de o Juiz a ler outra vez.
+Escreva para correcoes@oestadodopais.pt e diga qual é a peça e qual é a frase. A mensagem é recebida por uma pessoa, que a entrega ao editor de correções, um modelo; é esse modelo que trata dela. Se o erro se confirmar, a correção é publicada com data na própria peça, antes do texto, e fica na página «Correções». Quando o erro não foi deste projeto, porque foi a fonte que mudou, chama-se atualização. A peça corrigida volta a ser julgada.
 
-Uma vez por mês, está previsto que modelos das duas famílias voltem a tirar das fontes uma amostra dos números publicados. É dessa auditoria que virá a taxa de erro. É feita pelas mesmas duas famílias: de fora, só o público.
+## O que são os números abaixo?
 
-## A equipa e os seus números
+Contam as peças publicadas, as correções, as atualizações e as peças retiradas, e dão a data da última conferência completa das fontes. Depois, uma tabela dos modelos, função a função: leituras feitas, erros plantados apanhados, problemas aceites e falhas apontadas por correções. Por fim, a taxa de erro.
 
-Abaixo estão as contagens deste projeto: peças publicadas, correções, atualizações e peças retiradas. Segue-se o registo da equipa: para cada função, quantas leituras fez, quantos erros plantados apanhou, quantos problemas seus foram adotados e quantas falhas lhe foram apontadas por correções. Este projeto tem financiamento privado, e quem o financia não revê as peças.
 +++ registo
 
 [[passo]]
@@ -137,3 +130,40 @@ achados = 0
 adotados = 0
 veredicto = "passa"
 pessoas_vistas = []
+
+[[passo]]
+nome = "escrita"
+lugar = "redator"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-15T15:50:11Z"
+fim = "2026-11-15T16:02:59Z"
+
+[[passo]]
+nome = "edicao"
+lugar = "direcao"
+familia = "anthropic"
+modelo = "claude-fable-5-2"
+inicio = "2026-11-15T16:05:07Z"
+fim = "2026-11-15T16:06:44Z"
+
+[[leitura]]
+lugar = "leitor"
+familia = "anthropic"
+modelo = "claude-sonnet-5-5"
+inicio = "2026-11-15T16:07:57Z"
+fim = "2026-11-15T16:11:54Z"
+impressao = "c832b2fb854f0000de4ae2d8de23e4d4d7a32b5016be332e293b74e9559a6d06"
+plantas_postas = 0
+plantas_apanhadas = 0
+achados = 22
+adotados = 17
+veredicto = "levanta"
+
+[[passo]]
+nome = "edicao"
+lugar = "direcao"
+familia = "anthropic"
+modelo = "claude-fable-5-2"
+inicio = "2026-11-15T16:12:32Z"
+fim = "2026-11-15T16:14:13Z"
