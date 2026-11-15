@@ -1,8 +1,8 @@
 +++ cabeca
 id = "2026-11-15-inflacao-de-outubro"
 tipo = "diario"
-titulo = ""
-entrada = ""
+titulo = "Inflação [sobe]{ipc_homologa_dif_2c} para {ipc_homologa_out} em outubro; [sem a energia, sobe pouco]{sem_energia_subida}"
+entrada = "Com duas casas decimais, a taxa subiu {ipc_homologa_dif_2c} face a setembro; sem a energia, {sem_energia_subida}. A inflação subjacente, que deixa de fora a energia e os alimentos não transformados, [também subiu]{subjacente_subida} e está [acima da de janeiro]{subjacente_out_vs_jan}."
 temas = ["precos"]
 
 [encomenda]
@@ -11,11 +11,33 @@ porque_hoje = "the statistics office published October's consumer prices on 11 N
 largar_se = "the release does not let a reader tell a broad rise from a narrow one (no contributions by class of goods and services, no measure that leaves out energy and unprocessed food), so that the piece could only repeat the rate."
 +++ corpo
 
+[Em outubro de 2026]{ipc_homologa_out}, a inflação foi de {ipc_homologa_out}, segundo o Instituto Nacional de Estatística (INE). É a taxa homóloga do índice de preços no consumidor (IPC), que compara cada mês com [o mesmo mês do ano anterior]{ipc_homologa_out}. Nos quadros do INE, com duas casas decimais, subiu {ipc_homologa_dif_2c} face a setembro.
+
+[Foi o próprio mês de outubro a puxar a taxa]{ipc_mensal_vs_ano_antes}: os preços subiram {ipc_mensal_out_2c} no mês, contra {ipc_mensal_out25} um ano antes.
+
+A taxa dos produtos energéticos subiu {energeticos_subida}, para {energeticos_out_2c}. A do total sem eles subiu {sem_energia_subida}, para {sem_energia_out}. A inflação subjacente, sem a energia e sem os alimentos não transformados, subiu {subjacente_subida}, para {subjacente_out_2c}.
+
+São agregados, não preços: o destaque do INE e os seus quadros não dizem quantos preços subiram, nem quanto pesa a energia no cabaz.
+
+Por classes, [o INE destaca]{contribuicoes_variacao}, face a setembro, o aumento da contribuição do Lazer, recreação, desporto e cultura, da Informação e comunicação e da Habitação, água, eletricidade, gás e outros combustíveis; em sentido contrário, o Vestuário e calçado e os Serviços de higiene e cuidados pessoais, proteção social e bens e serviços diversos. Em parte destes movimentos pesa a base de comparação. No Lazer e na Informação e comunicação, os preços [tinham descido em outubro de 2025]{classe08_mensal_out25, classe09_mensal_out25}; no Vestuário e calçado e nos Serviços de higiene, [tinham subido mais nesse mês do que agora]{classe03_mensal_vs_ano_antes, classe13_mensal_vs_ano_antes}.
+
+No índice harmonizado (IHPC), outro índice, [usado para comparar países da União Europeia]{ihpc_nao_residentes}, Portugal ficou em {ihpc_homologa_out}; a área do euro, [numa estimativa]{area_euro_estimativa}, em {area_euro_out}.
+
 ## A leitura deste projeto
+
+Para este projeto, a maior parte da subida de outubro está na energia. O total subiu {ipc_homologa_dif_2c}; tudo o que não é energia subiu {sem_energia_subida}, e é só uma parte do cabaz. É uma leitura dos agregados, não uma conta: falta o peso da energia no cabaz para dizer quanto.
+
+Mas a inflação fora da energia não está a descer. [Subiu em outubro]{sem_energia_subida, subjacente_subida}, e desde janeiro a taxa subjacente subiu {subjacente_out_vs_jan} e a dos serviços {servicos_out_vs_jan}. No mês, a subida está sobretudo na energia; no ano, [não está só nela]{subjacente_out_vs_jan, servicos_out_vs_jan}.
 
 ## O melhor argumento contra esta leitura
 
+Uma taxa agregada é um saldo: a taxa sem a energia pode ter subido pouco porque muitas subidas foram compensadas por algumas descidas. A taxa dos serviços subiu {servicos_subida}. A subida seria então mais larga do que esta leitura admite.
+
+Este projeto reconhece que não sabe quantos preços subiram. Mas [os preços dos serviços desceram neste outubro]{servicos_mensal_out}; a sua taxa subiu porque [em outubro de 2025 tinham descido mais]{servicos_mensal_vs_ano_antes}. O argumento aponta o que os agregados não mostram, sem os desmentir.
+
 ## O que acompanhar
+
+O valor definitivo da área do euro sai [a 18 de novembro]{area_euro_estimativa}; a próxima estimativa rápida do IPC, [a 30 de novembro]{proximas_datas}; o próximo destaque, [a 14 de dezembro]{proximas_datas}. Nas datas do INE vê-se se a subjacente e a taxa sem a energia continuam a subir ou se param.
 
 +++ folha
 [[fonte]]
@@ -1584,3 +1606,19 @@ plantas_apanhadas = 3
 achados = 0
 adotados = 0
 veredicto = "passa"
+
+[[passo]]
+nome = "escrita"
+lugar = "redator"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-15T12:12:29Z"
+fim = "2026-11-15T12:29:46Z"
+
+[[passo]]
+nome = "edicao"
+lugar = "direcao"
+familia = "anthropic"
+modelo = "claude-fable-5-2"
+inicio = "2026-11-15T12:30:56Z"
+fim = "2026-11-15T12:32:28Z"
