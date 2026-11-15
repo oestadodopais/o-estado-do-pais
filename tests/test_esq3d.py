@@ -212,3 +212,42 @@ class I_UmAchadoAdotadoNaoPassa(ComLeitura):
         p = leituras.pontuar(pasta, self.decisoes('[[decisao]]\nachado = 1\ndecisao = "adotado"\n'), modelo="claude-de-ensaio",
                              inicio="2026-11-15T01:00:00Z", fim="2026-11-15T01:10:00Z", imprimir=lambda *a: None)
         self.assertEqual((p["veredicto"], p["adotados"]), ("levanta", 1))
+
+
+# --------------------------------------------------------------------------- H. custo reads the launcher's log
+
+from oedp import custo  # noqa: E402
+from oedp.peca import ler  # noqa: E402
+from tests.test_esq3b import leitura_json  # noqa: E402
+
+JUIZ = dict(lugar="juiz", inicio="2026-11-16T10:00:00Z", impressao="e669aa751d4354e1018d215270eb145410cabb62107e7c932fa19a902a44212e")
+
+
+class H_OCustoLeORegistoDoLancador(unittest.TestCase):
+    def custo(self, registo: str | None, **mais):
+        oficina = Path(tempfile.mkdtemp(prefix="oedp-oficina-"))
+        self.addCleanup(shutil.rmtree, oficina, True)
+        leitura_json(oficina, "juiz-1", **JUIZ, **mais)
+        if registo is not None:
+            (oficina / "leituras" / "2026-11-16-peca-de-ensaio" / "juiz-1" / "LEITURA.md.eventos.log").write_text(registo, encoding="utf-8")
+        p = Plantada([])
+        self.addCleanup(p.apagar)
+        dados = custo.custo(ler(p.peca), oficina)
+        return next(r for r in dados["linhas"] if r["lugar"] == "juiz" and r["inicio"] == JUIZ["inicio"]), dados
+
+    def test_do_registo_quando_o_json_nao_tem(self):
+        juiz, dados = self.custo("...\ntokens used\n60,733\n")
+        self.assertEqual((juiz["tokens"], juiz["tokens_de"]), (60733, "LEITURA.md.eventos.log"))
+        self.assertEqual(dados["totais"]["tokens_lidos_de"], {"LEITURA.md.eventos.log": 1})
+        self.assertIn("60733 (log)", custo.texto(dados))
+        self.assertIn("tokens read from: 1 readings' LEITURA.md.eventos.log", custo.texto(dados))
+
+    def test_o_json_primeiro(self):
+        juiz, _ = self.custo("tokens used\n60,733\n", tokens=100)
+        self.assertEqual((juiz["tokens"], juiz["tokens_de"]), (100, "leitura.json"))
+
+    def test_planta_um_registo_sem_numero(self):
+        for registo in ("tokens used\nnot available\n", "nothing here\n", None):
+            juiz, dados = self.custo(registo)
+            self.assertEqual((juiz["tokens"], juiz["tokens_de"]), (None, None), registo)
+            self.assertEqual(dados["totais"]["tokens_por_familia"], {})

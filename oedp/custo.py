@@ -7,8 +7,10 @@ one row per step and per reading, in the order of their start; then the totals. 
 nothing.
 
 Minutes are measured from `inicio` to `fim`, to one decimal place; a total is summed in
-seconds and rounded once. Tokens are known only for readings whose `leitura.json` holds
-them (a Codex reading through `ler.sh`); "not known" is never added as zero to a total,
+seconds and rounded once. A reading's tokens come from its `leitura.json` when it holds
+them, or else from the launcher's log beside it (`LEITURA.md.eventos.log`, the number on the
+line after the last line that is exactly `tokens used`, read by `leituras.tokens_do_registo`;
+ORDEM-3b, item H), and each row says which. "Not known" is never added as zero to a total,
 and the totals say how many readings had none.
 """
 from __future__ import annotations
@@ -19,6 +21,9 @@ from pathlib import Path
 
 from . import datas
 from .peca import Peca
+
+
+REGISTO_DO_LANCADOR = "LEITURA.md.eventos.log"
 
 
 def _instante(texto):
@@ -73,10 +78,17 @@ def custo(peca: Peca, oficina: Path | None = None) -> dict:
         if isinstance(l, dict):
             s = _segundos(l)
             d = _da_oficina(l, na_oficina)
-            tokens = d.get("tokens") if d and isinstance(d.get("tokens"), int) and not isinstance(d.get("tokens"), bool) else None
+            tokens, de = None, None
+            if d and isinstance(d.get("tokens"), int) and not isinstance(d.get("tokens"), bool):
+                tokens, de = d["tokens"], "leitura.json"
+            elif d:
+                from .leituras import tokens_do_registo
+
+                tokens = tokens_do_registo(d["_pasta"] / REGISTO_DO_LANCADOR)
+                de = REGISTO_DO_LANCADOR if tokens is not None else None
             linhas.append({"tipo": "leitura", "nome": l.get("lugar"), "inicio": l.get("inicio"), "fim": l.get("fim"),
                            "lugar": l.get("lugar"), "familia": l.get("familia"), "modelo": l.get("modelo"),
-                           "minutos": _minutos(s), "_segundos": s, "tokens": tokens,
+                           "minutos": _minutos(s), "_segundos": s, "tokens": tokens, "tokens_de": de,
                            "oficina": d["_pasta"].name if d else None,
                            "plantas": f"{l.get('plantas_apanhadas')} of {l.get('plantas_postas')}",
                            "achados": l.get("achados"), "adotados": l.get("adotados"), "veredicto": l.get("veredicto")})
@@ -95,6 +107,7 @@ def custo(peca: Peca, oficina: Path | None = None) -> dict:
 
     tokens: dict[str, int] = {}
     sem_tokens: dict[str, int] = {}
+    origens: dict[str, int] = {}
     for r in linhas:
         if r["tipo"] == "leitura":
             familia = str(r["familia"])
@@ -102,6 +115,7 @@ def custo(peca: Peca, oficina: Path | None = None) -> dict:
                 sem_tokens[familia] = sem_tokens.get(familia, 0) + 1
             else:
                 tokens[familia] = tokens.get(familia, 0) + r["tokens"]
+                origens[r["tokens_de"]] = origens.get(r["tokens_de"], 0) + 1
     totais = {
         "decorrido_minutos": _minutos(decorrido),
         "decorrido_de": encomenda["inicio"] if encomenda else None,
@@ -110,6 +124,7 @@ def custo(peca: Peca, oficina: Path | None = None) -> dict:
         "minutos_de_leituras": _minutos(sum(r["_segundos"] or 0 for r in linhas if r["tipo"] == "leitura")),
         "tokens_por_familia": tokens,
         "leituras_sem_tokens_por_familia": sem_tokens,
+        "tokens_lidos_de": origens,
         "fim_da_primeira_escrita": primeira_escrita.strftime("%Y-%m-%dT%H:%M:%SZ") if primeira_escrita else None,
         "reportagens_depois_da_escrita": sum(1 for r in linhas if r["tipo"] == "passo" and r["nome"] == "reportagem" and depois_da_escrita(r)),
         "leituras_numeros_depois_da_escrita": sum(1 for r in linhas if r["tipo"] == "leitura" and r["lugar"] == "numeros" and depois_da_escrita(r)),
@@ -128,7 +143,8 @@ def texto(dados: dict) -> str:
         filas.append((
             str(r["inicio"]), str(r["fim"]), ("reading" if leitura else f"step {r['nome']}"), str(r["lugar"]),
             str(r["familia"]), str(r["modelo"]), str(r["minutos"] if r["minutos"] is not None else "?"),
-            (str(r["tokens"]) if r.get("tokens") is not None else "not known") if leitura else "",
+            (f"{r['tokens']} ({'log' if r['tokens_de'] == REGISTO_DO_LANCADOR else 'json'})" if r.get("tokens") is not None
+             else "not known") if leitura else "",
             r.get("plantas", "") if leitura else "",
             f"{r.get('achados')}/{r.get('adotados')}" if leitura else "",
             str(r.get("veredicto", "")) if leitura else "",
@@ -148,6 +164,7 @@ def texto(dados: dict) -> str:
         f"minutes of steps: {t['minutos_de_passos']}",
         f"minutes of readings: {t['minutos_de_leituras']}",
         f"tokens by family: {tokens}",
+        "tokens read from: " + (", ".join(f"{n} readings' {o}" for o, n in sorted(t["tokens_lidos_de"].items())) or "nowhere"),
         f"after the first escrita step ended ({t['fim_da_primeira_escrita'] or 'no escrita step'}): "
         f"{t['reportagens_depois_da_escrita']} reportagem steps began, {t['leituras_numeros_depois_da_escrita']} numeros readings began",
     ]
