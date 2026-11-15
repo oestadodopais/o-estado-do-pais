@@ -12,6 +12,8 @@
 
 *Edited 14 November 2026, 23:32 UTC, after the second code and security reading: two places where this page contradicted itself (the AI line's link on the Method page; the name on the front page) now say one thing each.*
 
+*Edited 15 November 2026, 01:36 UTC, with the order of the second block (`blocos/esq2/ORDEM.md`). A link to a receipt must open the receipt: tried in Chromium and WebKit on the pilot piece's page, a click on a figure left its receipt closed, because the link pointed at the closed box itself; with the anchor inside the box's content both engines open it. The link to a source says what it does («Abrir a fonte» for a web page, «Descarregar a fonte» for a file), after the funder as a reader met a download where he expected a page, and a receipt also links the publisher's own page for the document when the source carries one. The Method page's team record gains the code and security reader, from the code's own record. Four fixed sentences are added.*
+
 ## Rules for every page
 
 - **Computed, never listed.** Every page is built from the piece files (and one small file per desk). No page has a list that a piece must edit.
@@ -20,6 +22,7 @@
 - **Portuguese only** (`lang="pt-PT"`), Acordo Ortográfico, no dashes as punctuation. Dates as «16 de novembro de 2026»; hours in Lisbon time, as `10h40`.
 - **Hidden from search engines** until the funder says otherwise: every page carries `noindex, nofollow`, and there is no sitemap. One setting turns this, and it is his.
 - **Plain pages.** Semantic HTML, one `h1`, a skip link (`saltar`), visible focus. Light and dark palettes follow the reader's system setting. **No script at all:** receipts and the record open with `<details>`.
+- **A link to a receipt opens it.** The anchor a link points to is an element inside the content of the receipt's `<details>`, never the `<details>` itself or its `<summary>`: a browser opens a closed box when the place it is sent to is inside it, and does not when it is the box. A test without a browser proves the markup keeps this form, and a test in three browser engines (Chromium, Firefox, WebKit) proves that a click on a figure, a click on an input of a calculation, and a page opened directly at a receipt's address each show the receipt open.
 - **Figures.** A printed line (`{id}`) never breaks between its number and its unit. Inside tied words, a number stays with the word that follows it. Numerals are lining numerals everywhere, the title included. The figure face (Bitter) is for numeric values in the receipts only; a receipt summary that is a sentence is in the prose face.
 - **Links.** A link to a receipt has one look (the dotted underline) in the title, the lead and the text. Every other link is underlined, the titles of pieces in lists included, with one exception: the name at the top is not underlined. Labels are never smaller than 12 px.
 - **The name** has one size on every page at a given width. It is a link to the front page on every page except the front page.
@@ -48,7 +51,8 @@ In order:
 2. Corrections and updates, if any, most recent first, before the text: the kind, the date, the reason, what it said before and what it says now.
 3. The text. A printed line and tied words are links to their receipt lower on the same page.
 4. **The receipts** (`recibos_titulo`), one per line of the fact sheet, in the order of first use in the text:
-   - `valor`: what the reader sees, then what it measures, whom it covers, the period, "provisional" when it is, the source's title and publisher, where in the document, the excerpt, the date read, and a link that opens the source.
+   - `valor`: what the reader sees, then what it measures, whom it covers, the period, "provisional" when it is, the source's title and publisher, where in the document, the excerpt, the date read, and the link to the source.
+   - **The link to the source,** in every kind of receipt that has one: its words are `r_abrir` when the stored copy is a web page (`tipo_conteudo` is `text/html` or `application/xhtml+xml`) and `r_descarregar` for anything else (a PDF, a spreadsheet, a data file). When the source carries `pagina`, a second link follows, with the words `r_pagina`, to that address.
    - `derivado`: what the reader sees; the calculation as arithmetic a reader can follow (`r_conta`): each input shown as its number in Portuguese form and linked to its own receipt, the signs + − × ÷ and parentheses, then = and the result, then in words how it was rounded (`r_arred_0`, `r_arred_1` or `r_arred_n`), for example «104,7 − 102,3 = 2,4 (arredondado a uma casa decimal)»; and why the inputs may be compared. The expression of `calculo` itself is never printed.
    - A provisional value is flagged on a line of its own, set as a label, never beside the period.
    - Every receipt ends with `r_voltar`, a link back to the place in the text where the line is first used.
@@ -63,7 +67,7 @@ A withdrawn piece keeps its address and shows only its title, the sentence `reti
 ## 4. Method · `/metodo/`
 
 - The prose comes from `paginas/metodo.md`. It is reader's text: it is written and judged like a piece, and the file carries its own record after a line `+++ registo` (its fingerprint is the SHA-256 of the bytes before that line). The fixed sentences are judged the same way, with their record in `textos.registo.toml` beside `textos.toml`. No piece is built as published unless both have a passing judge's reading on their current fingerprint. Until that file exists the Method page is not built, and because every page links to it, no piece can be published before it exists.
-- After the prose, computed: first, under `numeros_titulo`, the four counts `n_publicadas`, `n_correcoes`, `n_atualizacoes`, `n_retiradas`, as a block of their own; then under `equipa_titulo`, the team's record (one row per seat, columns `e_lugar`, `e_leituras`, `c_plantas`, `e_adotados`, `e_falhas`: readings, plants caught of plants put, real findings adopted, misses named by the `causa` of corrections); and under `taxa_titulo` the measured error rate, or `sem_auditoria`.
+- After the prose, computed: first, under `numeros_titulo`, the four counts `n_publicadas`, `n_correcoes`, `n_atualizacoes`, `n_retiradas`, as a block of their own; then under `equipa_titulo`, the team's record (one row per seat, columns `e_lugar`, `e_leituras`, `c_plantas`, `e_adotados`, `e_falhas`: readings, plants caught of plants put, real findings adopted, misses named by the `causa` of corrections); and under `taxa_titulo` the measured error rate, or `sem_auditoria`. The team's record counts the readings of every published or withdrawn piece, of this page's prose, of the fixed sentences, and of the code (`codigo.registo.toml`, whose seat is `lugar_seguranca`).
 
 ## 5. Corrections · `/correcoes/`
 
@@ -96,6 +100,7 @@ A withdrawn piece keeps its address and shows only its title, the sentence `reti
 | `recibos_intro` | Cada número e cada citação desta peça vêm de um documento de que este projeto guardou uma cópia. Aqui está, para cada um, a fonte, o excerto e a data em que foi lido. |
 | `r_mede`, `r_populacao`, `r_periodo`, `r_provisorio` | O que mede · A quem se refere · Período · Valor provisório |
 | `r_fonte`, `r_onde`, `r_excerto`, `r_lido`, `r_abrir` | Fonte · Onde está · Excerto · Lido a · Abrir a fonte |
+| `r_descarregar`, `r_pagina` | Descarregar a fonte · Ver a página onde a fonte foi publicada |
 | `r_conta`, `r_compara` | Conta · Porque se pode comparar |
 | `r_arred_0`, `r_arred_1`, `r_arred_n` | arredondado à unidade · arredondado a uma casa decimal · arredondado a {n} casas decimais |
 | `r_voltar` | Voltar ao texto |
@@ -106,6 +111,7 @@ A withdrawn piece keeps its address and shows only its title, the sentence `reti
 | `c_leitura`, `c_familia`, `c_plantas`, `c_achados`, `c_veredicto`, `c_minutos` | Leitura · Família de modelos · Erros plantados apanhados · Achados reais · Veredicto · Minutos |
 | `v_passa`, `v_nao_passa`, `v_levanta` | passa · não passa · levanta |
 | `lugar_numeros`, `lugar_oposto`, `lugar_especialista`, `lugar_leitor`, `lugar_justica`, `lugar_juiz`, `lugar_correcoes` | Editor de números · Leitor do contraditório · Especialista · Leitor comum · Defesa das pessoas nomeadas · Juiz · Editor de correções |
+| `lugar_desenhador`, `lugar_seguranca` | Desenhador · Leitor de código e segurança |
 | `familia_anthropic`, `familia_openai` | Anthropic · OpenAI |
 | `tempo` | Da encomenda à publicação: {horas} h {minutos} min. |
 | `impressao` | Impressão digital do texto julgado: |

@@ -8,6 +8,8 @@
 
 *Edited 14 November 2026, 23:13 UTC, from the pilot: a reader given planted errors cannot itself say "passa", since the plants make what it read fail. The verdict on the record is the scored one.*
 
+*Edited 15 November 2026, 01:36 UTC, with the order of the second block (`blocos/esq2/ORDEM.md`). Four things. A source may carry the address of its publisher's own page for the document, stored like any source, after the funder as a reader met a link that downloads a file where he expected a page. The record takes readings by the designer, and readings of the fact sheet made before the text exists (by the specialist and the opposite reader), because the pilot piece showed that the sheet's gaps were found only after the text was written. A piece withdrawn by the weekly re-check carries a fixed sentence as its reason, since the reason is shown to readers. And the code has a record of its own, so that the rule "code is read by the other family before anything built on it is published" is something a check enforces.*
+
 ## The idea in four lines
 
 1. One piece is one text file. Everything a reader sees comes from it, and nothing else is edited to publish it.
@@ -65,6 +67,8 @@ tipo_conteudo = "application/pdf"
 bytes = 482113
 sha256 = "…"                    # of the stored copy; the copy lives in the private store under this name
 publicado_em = "2026-11-16"     # the source's own date, when it gives one; else ""
+# pagina = "https://…"          # optional: the publisher's own page for this document (the page a reader would start from)
+# pagina_sha256 = "…"           # required with pagina: the stored copy of that page, fetched by the same command and rules as the source
 
 [[linha]]                       # a figure taken from a source
 id = "iph_homologa"
@@ -138,12 +142,12 @@ inicio = "…Z"
 fim = "…Z"
 
 [[leitura]]                     # a reading
-lugar = "juiz"                  # numeros | oposto | especialista | leitor | justica | juiz | correcoes
+lugar = "juiz"                  # numeros | oposto | especialista | leitor | justica | juiz | correcoes | desenhador
 familia = "openai"
 modelo = "…"
 inicio = "…Z"
 fim = "…Z"
-impressao = "…"                 # the fingerprint of what was read
+impressao = "…"                 # the fingerprint of what was read: the piece's, or the fact sheet's for a reading of the sheet alone (numeros always; especialista and oposto when they read the sheet before the text is written)
 plantas_postas = 3
 plantas_apanhadas = 3
 achados = 2                     # real findings raised
@@ -155,7 +159,7 @@ pessoas_vistas = ["…"]          # justica and juiz only: every person the read
 estado = "publicada"            # publicada | retirada | rascunho
 em = "…Z"
 por = "…"                       # the script that wrote it
-razao = "…"
+razao = "…"                     # shown to readers on a withdrawn piece's page. The weekly re-check writes the fixed sentence `retirada_numero` and nothing else
 
 [[correcao]]
 em = "…Z"
@@ -175,16 +179,17 @@ impressao_depois = "…"
 - **The state** of a piece is the last `[[estado]]` in its record; with none, it is a draft. Publishing and withdrawing add one table and change nothing above the record line. The state moves one way: once published, a piece can be withdrawn and published again, never made a draft again, and its file is never deleted or renamed (edited 14 November 2026, 23:32 UTC, after the second code and security reading).
 - **One family produces a piece, for its whole life,** and the other verifies and judges it. A reading by the producing family can only raise.
 - **A correction** changes the text or the fact sheet, so the fingerprint changes: the piece is judged again, and only then is the `[[correcao]]` added. The earlier wording stays in `antes` and in the repository's history.
+- **The code's fingerprint** (edited 15 November 2026, 01:36 UTC) is the SHA-256 of the list, sorted by path, of every tracked file's path and SHA-256, leaving out what is judged on its own or is not code: everything under `pecas/`, `mesas/`, `paginas/`, `direitos/`, `docs/`, `equipa/` and `design/`, and the files `textos.toml`, `textos.registo.toml`, `codigo.registo.toml`, `sitio.toml`, `README.md` and `CLAUDE.md`. The code's record is `codigo.registo.toml` at the root: `[[passo]]` tables with `nome = "construcao"` and `[[leitura]]` tables with `lugar = "seguranca"`, validated and compared with `main` like the other records. No piece is built as published, and nothing is sent to the host, unless the last `seguranca` reading on the current code fingerprint passes, caught every plant of at least one, and is of a family other than that of every `construcao` step recorded since the passing reading before it.
 
 ## How the ten checks read this file
 
 | Check | What it reads |
 |---|---|
 | 1. Every figure resolves | Every reference names a line; the digits rule holds; every `mostra` equals its `valor` at the precision shown (a `mostra` with no digit must be marked `mostra_livre` and is left to the numbers editor) |
-| 2. Every excerpt is in its stored source | Each `fonte.sha256` is in the store and the copy hashes to it; each `excerto` is found in the text of that copy; each `valor` line's excerpt holds the figure |
+| 2. Every excerpt is in its stored source | Each `fonte.sha256` is in the store and the copy hashes to it; each `excerto` is found in the text of that copy; each `valor` line's excerpt holds the figure; a `pagina` has its `pagina_sha256`, and that copy is in the store and hashes to it |
 | 3. Every derived figure recomputes | Each `calculo` gives its `valor` exactly |
 | 4. The published text is the judged text | The piece's fingerprint equals the `impressao` of its last passing `juiz` reading, and the built page carries it. The record only grows: what the record holds on `main` is the beginning of what it holds now; and a published piece changed above the record line carries a new judge's reading and a `[[correcao]]` joining the old fingerprint to the new |
-| 5. Verified and judged by the other family | A passing `numeros` reading on the current fact sheet and a passing `juiz` reading on the current piece, each of a different `familia` from the steps that produced what they read, each with at least one plant and all plants caught |
+| 5. Verified and judged by the other family | A passing `numeros` reading on the current fact sheet and a passing `juiz` reading on the current piece, each of a different `familia` from the steps that produced what they read, each with at least one plant and all plants caught. The code is held to the same rule through its own record (see "The code's fingerprint") |
 | 6. Dates and weekdays | Every weekday written beside a date, anywhere above the record line, matches the calendar; every date field is a real date |
 | 7. People | Every `[[pessoa]]` has at least one `citacao` or `ato` line with a source; every paragraph that prints a person's name references one of that person's lines; a passing `justica` reading exists whenever a person is declared; the `pessoas_vistas` of the readers equal the declared people |
 | 8. Nothing private | No secret, key, personal detail, machine path or user name in the file |
