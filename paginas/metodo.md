@@ -232,3 +232,17 @@ familia = "anthropic"
 modelo = "claude-fable-5-2"
 inicio = "2026-11-15T16:34:38Z"
 fim = "2026-11-15T16:34:39Z"
+
+[[leitura]]
+lugar = "juiz"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-15T16:37:25Z"
+fim = "2026-11-15T16:41:25Z"
+impressao = "e418e6654dd66069cea359177b2b9776920b8d32a756cbc2a6e636961edb4a55"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 0
+adotados = 0
+veredicto = "passa"
+pessoas_vistas = []
