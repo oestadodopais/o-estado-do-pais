@@ -21,6 +21,17 @@ the stored copy:
 A source's `pagina` is not re-checked: it is a way in, not a receipt. The JSON report
 goes to `reconferencias/<date>.json` in the workshop; one line per source to the screen.
 Exit 0 only when every source is `igual` or `mudou, os excertos mantêm-se`.
+
+A whole run (over every published piece, not a list of them) that reaches its end appends
+one `[[reconferencia]]` to `reconferencias.toml` at the root of the tree (ORDEM esq3, item
+H): when it ended, how many published pieces it read, how many lines with an excerpt it
+looked for in a fresh copy of their source, how many it did not find, the ids it withdrew,
+and whether it was told to report only. A run stopped by an error appends nothing. The file
+only grows, like the other records (`julgados.historia`), and is left out of the code's
+fingerprint (`codigo.EXCLUIDOS_FICHEIROS`). This module's reading of «looked for»: a line
+whose source came back byte for byte the same is counted as looked for and found, since the
+fresh copy is the copy check 2 already found it in; a line whose source could not be fetched
+is not counted.
 """
 from __future__ import annotations
 
@@ -35,6 +46,75 @@ from .peca import ErroDeForma, ler, pecas_em
 
 IGUAL, MUDOU, FALHOU, INACESSIVEL = "igual", "mudou, os excertos mantêm-se", "falhou", "inacessivel"
 POR = "python3 -m oedp reconferir"
+REGISTO = "reconferencias.toml"
+CAMPOS = {"em": str, "pecas": int, "excertos": int, "falhados": int, "retiradas": list, "so_relatar": bool}
+COM_EXCERTO = ("valor", "citacao", "ato")
+
+
+def erros_do_registo(dados: dict) -> list[str]:
+    """The shape of reconferencias.toml: only [[reconferencia]] tables, each with exactly the
+    fields of CAMPOS, counts that are whole numbers of 0 or more, falhados not above excertos,
+    a real UTC time, and the withdrawn pieces as a list of ids."""
+    from . import datas
+    from .peca import ID_PECA
+
+    erros = [f"{REGISTO}: [[{k}]] is not a table of this record" for k in dados if k != "reconferencia"]
+    tabelas = dados.get("reconferencia", [])
+    if not isinstance(tabelas, list):
+        return erros + [f"{REGISTO}: reconferencia must be an array of tables [[reconferencia]]"]
+    for n, t in enumerate(tabelas, 1):
+        onde = f"{REGISTO} [[reconferencia]] number {n}"
+        if not isinstance(t, dict):
+            erros.append(f"{onde} is not a table")
+            continue
+        for k, tipo in CAMPOS.items():
+            v = t.get(k)
+            if k not in t:
+                erros.append(f"{onde} lacks the field {k}")
+            elif not isinstance(v, tipo) or (tipo is int and isinstance(v, bool)) or (tipo is int and v < 0):
+                erros.append(f"{onde}: field {k} must be {'a whole number of 0 or more' if tipo is int else tipo.__name__}")
+        erros += [f"{onde}: field {k} is not in this record" for k in t if k not in CAMPOS]
+        if isinstance(t.get("em"), str) and datas.instante_real(t["em"]) is None:
+            erros.append(f"{onde}: em {t['em']!r} is not a real date in the form YYYY-MM-DDTHH:MM:SSZ")
+        if isinstance(t.get("retiradas"), list) and not all(isinstance(x, str) and ID_PECA.match(x) for x in t["retiradas"]):
+            erros.append(f"{onde}: retiradas must list piece ids")
+        if isinstance(t.get("falhados"), int) and isinstance(t.get("excertos"), int) and t["falhados"] > t["excertos"]:
+            erros.append(f"{onde}: falhados {t['falhados']} is above excertos {t['excertos']}")
+    return erros
+
+
+def ler_registo(raiz: Path) -> tuple[list[dict], list[str]]:
+    """(the [[reconferencia]] tables of `<raiz>/reconferencias.toml`, the errors of its shape);
+    no file is no run yet."""
+    f = Path(raiz) / REGISTO
+    if not f.is_file():
+        return [], []
+    try:
+        dados = tomllib.loads(f.read_text(encoding="utf-8"))
+    except (tomllib.TOMLDecodeError, UnicodeDecodeError) as e:
+        return [], [f"{REGISTO} is not valid TOML ({e})"]
+    erros = erros_do_registo(dados)
+    return ([] if erros else list(dados.get("reconferencia", []))), erros
+
+
+def acrescentar(raiz: Path, campos: dict) -> str:
+    """Append one [[reconferencia]] to `<raiz>/reconferencias.toml`, after checking the file
+    with it would still have the right shape; never a byte above the end."""
+    f = Path(raiz) / REGISTO
+    antes = f.read_bytes() if f.is_file() else b"# The weekly re-check of sources: one table per whole run, appended by `python3 -m oedp reconferir`.\n"
+    texto = registo.tabela("reconferencia", campos)
+    try:
+        dados = tomllib.loads((antes + texto.encode("utf-8")).decode("utf-8"))
+    except (tomllib.TOMLDecodeError, UnicodeDecodeError) as e:
+        raise registo.ErroDoRegisto(f"{REGISTO} would not be valid TOML ({e})") from None
+    erros = erros_do_registo(dados)
+    if erros:
+        raise registo.ErroDoRegisto("; ".join(erros))
+    with open(f, "ab") as saida:
+        if not f.stat().st_size:
+            saida.write(antes)
+        saida.write(texto.encode("utf-8"))
+    return texto
 
 
 def buscador_real(raiz: Path):
@@ -66,10 +146,14 @@ def linhas_que_falham(peca, fid: str, dados: bytes) -> list[str]:
 
 
 def reconferir(caminhos: list[Path], loja: Path, oficina: Path, textos: dict, retirar: bool = True,
-               buscar=None, raiz: Path | None = None, imprimir=print, hoje: str | None = None) -> tuple[int, Path]:
-    """Re-check the sources; returns (exit code, the report's path)."""
+               buscar=None, raiz: Path | None = None, imprimir=print, hoje: str | None = None,
+               registo_em: Path | None = None) -> tuple[int, Path]:
+    """Re-check the sources; returns (exit code, the report's path). With `registo_em` (a
+    whole run: the caller gave no list of pieces), the run's table is appended to
+    `<registo_em>/reconferencias.toml` once it has reached its end."""
     buscar = buscar or buscador_real(raiz or Path(caminhos[0]).resolve().parents[2])
     resultados = []
+    lidas, procurados, nao_achados, retiradas = 0, 0, 0, []
     for caminho in caminhos:
         try:
             peca = ler(caminho)
@@ -79,6 +163,7 @@ def reconferir(caminhos: list[Path], loja: Path, oficina: Path, textos: dict, re
         if not peca.publicada:
             imprimir(f"{peca.id}: {peca.estado}, not published; not re-checked")
             continue
+        lidas += 1
         falhou_aqui = []
         for fid, f in peca.fontes.items():
             antiga = str(f.get("sha256", ""))
@@ -88,12 +173,14 @@ def reconferir(caminhos: list[Path], loja: Path, oficina: Path, textos: dict, re
             except fontes.ErroDaLoja as e:
                 r.update(resultado=INACESSIVEL, razao=str(e))
             else:
+                procurados += sum(1 for l in peca.linhas.values() if l.get("fonte") == fid and l.get("tipo") in COM_EXCERTO)
                 r["sha256_novo"] = nova
                 if nova == antiga:
                     r["resultado"] = IGUAL
                 else:
                     falham = linhas_que_falham(peca, fid, fontes.caminho_da_copia(loja, nova).read_bytes())
                     r.update(resultado=FALHOU if falham else MUDOU, linhas=falham)
+                    nao_achados += len(falham)
                     if falham:
                         falhou_aqui += falham
             resultados.append(r)
@@ -107,6 +194,7 @@ def reconferir(caminhos: list[Path], loja: Path, oficina: Path, textos: dict, re
             registo.acrescentar(Path(caminho), "estado", {"estado": "retirada", "em": registo.agora(), "por": POR,
                                                           "razao": textos["retirada_numero"]})
             imprimir(f"{peca.id}: withdrawn ([[estado]] retirada appended, razao retirada_numero)")
+            retiradas.append(peca.id)
             for r in resultados:
                 if r["peca"] == peca.id and r["resultado"] == FALHOU:
                     r["retirada"] = True
@@ -122,6 +210,12 @@ def reconferir(caminhos: list[Path], loja: Path, oficina: Path, textos: dict, re
                                     ensure_ascii=False) + "\n", encoding="utf-8")
     ok = all(r["resultado"] in (IGUAL, MUDOU) for r in resultados)
     imprimir(f"re-check: {len(resultados)} sources, " + ("all stand" if ok else "not all stand") + f"; report in {relatorio}")
+    if registo_em is not None:
+        campos = {"em": registo.agora(), "pecas": lidas, "excertos": procurados, "falhados": nao_achados,
+                  "retiradas": retiradas, "so_relatar": not retirar}
+        acrescentar(registo_em, campos)
+        imprimir(f"{REGISTO}: one [[reconferencia]] appended ({lidas} pieces, {procurados} excerpts looked for, "
+                 f"{nao_achados} not found, {len(retiradas)} withdrawn)")
     return (0 if ok else 1), relatorio
 
 

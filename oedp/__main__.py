@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 import time
 import tomllib
@@ -394,8 +395,50 @@ def cmd_reconferir(a) -> int:
         print("no published piece: nothing to re-check")
         return 0
     textos = tomllib.loads((REPO / "textos.toml").read_text(encoding="utf-8"))
-    codigo_saida, _ = reconferir.reconferir(caminhos, loja, oficina, textos, retirar=not a.so_relatar, raiz=REPO)
+    # Only a whole run counts as the week's: a run given a list of pieces records nothing.
+    codigo_saida, _ = reconferir.reconferir(caminhos, loja, oficina, textos, retirar=not a.so_relatar, raiz=REPO,
+                                            registo_em=None if a.pecas else REPO)
     return codigo_saida
+
+
+def cmd_custo(a) -> int:
+    import json
+
+    from . import custo, leituras
+
+    try:
+        peca = ler(Path(a.peca))
+    except (ErroDeForma, OSError) as e:
+        print(f"refused: {e}", file=sys.stderr)
+        return 2
+    oficina = None
+    if os.environ.get("OEDP_OFICINA", "").strip():
+        try:
+            oficina = leituras.oficina()
+        except leituras.Recusa as e:
+            print(str(e), file=sys.stderr)
+            return 2
+    dados = custo.custo(peca, oficina)
+    print(json.dumps(dados, ensure_ascii=False, indent=1) if a.json else custo.texto(dados), end="\n" if a.json else "")
+    return 0
+
+
+def cmd_divulgacoes(a) -> int:
+    import datetime as dt
+
+    from . import divulgacoes
+
+    if a.dias < 1:
+        print("refused: --dias is a whole number of 1 or more", file=sys.stderr)
+        return 2
+    try:
+        # --de reads a copy of the page saved by hand, for a run that must not fetch; nothing is stored either way.
+        dados = Path(a.de).read_bytes() if a.de else divulgacoes.buscar()
+    except (divulgacoes.ErroDasDivulgacoes, OSError) as e:
+        print(f"divulgacoes: {e}", file=sys.stderr)
+        return 1
+    hoje = datas.em_lisboa(dt.datetime.now(dt.timezone.utc)).date()
+    return divulgacoes.correr(dados, a.dias, a.json, hoje)
 
 
 def cmd_publicar(a) -> int:
@@ -531,6 +574,17 @@ def principal(argv=None) -> int:
                    help="report only; by default a piece whose excerpt is no longer in its source is withdrawn")
     s.add_argument("pecas", nargs="*")
     s.set_defaults(f=cmd_reconferir)
+
+    s = sub.add_parser("custo", help="what a piece cost: its steps and readings, minutes and tokens (reads; writes nothing)")
+    s.add_argument("peca")
+    s.add_argument("--json", action="store_true")
+    s.set_defaults(f=cmd_custo)
+
+    s = sub.add_parser("divulgacoes", help="the latest releases of the statistics office (one page read; nothing stored)")
+    s.add_argument("--dias", type=int, default=7, help="keep the releases of the last N days (default 7)")
+    s.add_argument("--json", action="store_true")
+    s.add_argument("--de", help="read a copy of the page saved by hand instead of fetching it")
+    s.set_defaults(f=cmd_divulgacoes)
 
     s = sub.add_parser("navegador", help="a link to a receipt opens it, in real browsers (needs requirements-navegador.txt)")
     s.add_argument("--exigir", help="engines that must run, comma-separated: chromium,firefox,webkit")

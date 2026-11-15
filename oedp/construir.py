@@ -126,11 +126,19 @@ def contexto(repo: Path, raiz: Path, pecas: list, previa: bool = False) -> tuple
             portao_do_codigo.append(f"code: {e}")
         if onde_c:
             portao_do_codigo += codigo.historia(repo, Path(onde_c))
+    # The record of the weekly re-check: its shape is check 9's, and it only grows, checked
+    # against main where the other records are (ORDEM esq3, item H).
+    from . import reconferir
+
+    reconferencias, erros_r = reconferir.ler_registo(raiz)
+    erros += erros_r
+    if (Path(raiz) / reconferir.REGISTO).is_file():
+        julgamento += julgados.historia(repo, Path(raiz) / reconferir.REGISTO)
     registos, erros_dos_direitos = rights.ler_pasta(Path(raiz) / "direitos")
     erros += erros_dos_direitos
     ctx = Contexto(textos=textos, mesas=mesas, lancamento=bool(sitio.get("lancamento")), pecas=pecas,
                    metodo=metodo, previa=previa, direitos=registos, julgamento=julgamento,
-                   codigo=portao_do_codigo, leituras_fora=leituras_fora)
+                   codigo=portao_do_codigo, leituras_fora=leituras_fora, reconferencias=reconferencias)
     return ctx, erros
 
 

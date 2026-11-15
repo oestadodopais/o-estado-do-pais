@@ -34,6 +34,7 @@ class Contexto:
     julgamento: list = field(default_factory=list)  # why the Method prose or the fixed sentences are not judged
     codigo: list = field(default_factory=list)  # why the code has not been read as the gate asks (codigo.py)
     leituras_fora: list = field(default_factory=list)  # the readings of the Method prose, the fixed sentences and the code
+    reconferencias: list = field(default_factory=list)  # the [[reconferencia]] tables of reconferencias.toml
 
     def listada(self, peca) -> bool:
         return peca.publicada or (self.previa and peca.estado == "rascunho")

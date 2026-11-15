@@ -34,7 +34,9 @@ from pathlib import Path
 
 REGISTO = "codigo.registo.toml"
 EXCLUIDAS_PASTAS = ("pecas/", "mesas/", "paginas/", "direitos/", "docs/", "equipa/", "design/")
-EXCLUIDOS_FICHEIROS = frozenset({"textos.toml", "textos.registo.toml", REGISTO, "sitio.toml", "README.md", "CLAUDE.md"})
+# reconferencias.toml, the record of the weekly re-check, is a record like the others (ORDEM esq3, decision 7).
+EXCLUIDOS_FICHEIROS = frozenset({"textos.toml", "textos.registo.toml", REGISTO, "reconferencias.toml", "sitio.toml", "README.md",
+                                 "CLAUDE.md"})
 VALORES = {("passo", "nome"): {"construcao"}, ("leitura", "lugar"): {"seguranca"}}
 
 

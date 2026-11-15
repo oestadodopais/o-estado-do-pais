@@ -709,3 +709,33 @@ def com_pagina(tabela: str, pagina: str, raiz: Path, direitos_de=None, transport
     lida = tomllib.loads(buscar(pagina, raiz, direitos_de=direitos_de, transporte=transporte,
                                 resolver=resolver, avisos=avisos, memoria=memoria))["fonte"][0]
     return tabela + f"pagina = {_toml_texto(lida['url_final'])}\npagina_sha256 = {_toml_texto(lida['sha256'])}\n"
+
+
+def ler_pagina(url: str, transporte=transporte_curl, resolver=resolver_dns) -> tuple[Resposta, bytes]:
+    """Read one page under the fetcher's rules (a public host, its robots.txt, at most five
+    redirects, curl with the project's agent string and limits) and store nothing: the
+    bytes are returned and the temporary file is removed with its folder. Raises ErroDaLoja
+    when the page cannot be read or does not answer 200. For `divulgacoes` (ORDEM esq3, J)."""
+    import tempfile
+
+    with tempfile.TemporaryDirectory(prefix="oedp-pagina-") as pasta:
+        r_head, final, saltos = seguir(url, Path(pasta), transporte, resolver)
+        if r_head is not None and not 200 <= r_head.http <= 299:
+            raise ErroDaLoja(f"{final} answered {r_head.http}")
+        while True:
+            r, dados = _um_pedido(final, Path(pasta), transporte, resolver, "GET")
+            if r.saida != 0:
+                raise ErroDaLoja(f"{final} could not be read ({r.erro or 'curl exit ' + str(r.saida)})")
+            if r.http in REDIRECOES and r.redirecao:
+                if saltos >= MAX_SALTOS:
+                    raise ErroDaLoja(f"refused: {final} redirects more than five times")
+                saltos += 1
+                final = urllib.parse.urljoin(final, r.redirecao)
+                endereco_publico(final, resolver)
+                permite, razao = robots_permite(final, Path(pasta), transporte, resolver)
+                if not permite:
+                    raise ErroDaLoja(f"refused: {razao}")
+                continue
+            if r.http != 200:
+                raise ErroDaLoja(f"{final} answered {r.http}")
+            return r, dados
