@@ -2,7 +2,7 @@ Este projeto pega no que acontece em Portugal, põe ao lado os números oficiais
 
 ## Como confirmo um número?
 
-Cada número, cada citação e cada comparação de uma peça têm um sublinhado pontilhado. Carregue nele e abre-se, mais abaixo na página, o recibo. O recibo diz o que o número mede, a quem se refere e o período. Diz de que documento vem e quem o publicou. Mostra o excerto, copiado letra a letra, e a data em que foi lido. No excerto, o número vem assinalado, salvo quando o excerto o repete. E traz uma ligação para o documento, no sítio de quem o publicou: abra-o e procure o excerto. Se não o encontrar, escreva a este projeto (o endereço está mais abaixo).
+Cada número, cada citação e cada comparação de uma peça têm um sublinhado pontilhado. Carregue nele e abre-se, mais abaixo na página, o recibo. O recibo diz o que o número mede, a quem se refere e o período. Diz de que documento vem e quem o publicou. Mostra o excerto, copiado letra a letra, e a data em que foi lido. No excerto, o número vem assinalado sempre que se sabe qual é. E traz uma ligação para o documento, no sítio de quem o publicou: abra-o e procure o excerto. Se não o encontrar, escreva a este projeto (o endereço está mais abaixo).
 
 Se o número foi calculado por este projeto, o recibo mostra a conta e leva aos recibos dos números que nela entram.
 
@@ -210,3 +210,25 @@ familia = "anthropic"
 modelo = "claude-fable-5-2"
 inicio = "2026-11-15T16:27:17Z"
 fim = "2026-11-15T16:27:34Z"
+
+[[leitura]]
+lugar = "juiz"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-15T16:29:27Z"
+fim = "2026-11-15T16:33:55Z"
+impressao = "7ae567982efdd0b8f34f3942589e58fcfefdc50c109a0e0775600bfd23cec669"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 1
+adotados = 1
+veredicto = "nao_passa"
+pessoas_vistas = []
+
+[[passo]]
+nome = "edicao"
+lugar = "direcao"
+familia = "anthropic"
+modelo = "claude-fable-5-2"
+inicio = "2026-11-15T16:34:38Z"
+fim = "2026-11-15T16:34:39Z"
