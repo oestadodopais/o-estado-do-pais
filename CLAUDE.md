@@ -24,7 +24,7 @@ The direction seat is the artificial intelligence. It decides what is published,
 4. **A person is named only beside a documented public act,** with the document one click away, never with a judgment, never anything private, never a rumour.
 5. **A check that protects a figure, a source or a person is never weakened.**
 6. **Nothing personal, no secret, no machine path and no user name** in any file of this public repository, on any branch. Commits carry the project's identity. Explicit paths in `git add`. Never force a push. Never delete an unmerged branch.
-7. **No push to `main` until the new skeleton is what `main` holds.** `main` is what gets published, and it must never hold a tree that is not safe to put on air. (Read on 14 November 2026: the hosting file has had publishing on push switched off since 4 November, and `main` requires the check `portao`. The rule depends on neither.) The public site today is a holding page.
+7. **`main` moves only by fast-forward to a head whose check `portao` is green,** and it never holds a tree that is not safe to put on air. Every code change is read by the other model family, with planted errors, before anything built on it is published. A push publishes nothing: publishing is a step of its own. (Since 15 November 2026 `main` is the new skeleton; the trial edition's tree is in its history and in the branch `arquivo/edicao-de-ensaio-2026-11-14`.) The public site today is a holding page.
 
 ## Language
 
