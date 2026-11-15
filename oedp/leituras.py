@@ -898,7 +898,8 @@ def pontuar(pasta: Path, decisoes: Path | None = None, modelo: str | None = None
             if a["onde"] in exatos:
                 apanhadoras.setdefault(c["id"], []).append(n)
             f = _ficheiro_do_achado(a["onde"])
-            if c.get("ficheiro_codigo") and f and (f.endswith(c["ficheiro_codigo"]) or f.endswith("diff.patch")):
+            rel = c.get("ficheiro_codigo")
+            if rel and f and (f in (rel, "arvore/" + rel, "diff.patch") or f.endswith("/" + rel)):
                 candidatas.setdefault(c["id"], []).append(n)
     por_decidir = []
     resultado_plantas = []

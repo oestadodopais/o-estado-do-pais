@@ -57,6 +57,20 @@ class Impressao(unittest.TestCase):
         mudada = [(n, hashlib.sha256(bytes(dados)).hexdigest() if n == nome else s) for n, s in lista]
         self.assertNotEqual(codigo.impressao_da_lista(mudada), antes)
 
+    def test_a_impressao_de_uma_pasta_e_a_do_git(self):
+        pasta = Path(tempfile.mkdtemp(prefix="oedp-arvore-"))
+        self.addCleanup(shutil.rmtree, pasta, True)
+        arquivo = subprocess.run(["git", "-C", str(REPO), "archive", "HEAD"], capture_output=True, check=True).stdout
+        subprocess.run(["tar", "-x", "-C", str(pasta)], input=arquivo, check=True)
+        subprocess.run(["git", "init", "-q", str(pasta)], check=True)
+        subprocess.run(["git", "-C", str(pasta), "add", "-A"], check=True)
+        self.assertEqual(codigo.impressao_de_pasta(pasta), codigo.impressao(pasta))
+        antes = codigo.impressao_de_pasta(pasta)
+        (pasta / "docs" / "nota.md").write_text("not code\n", encoding="utf-8")
+        self.assertEqual(codigo.impressao_de_pasta(pasta), antes)
+        (pasta / "oedp" / "novo.py").write_text("x = 1\n", encoding="utf-8")
+        self.assertNotEqual(codigo.impressao_de_pasta(pasta), antes)
+
     def test_o_comando(self):
         r = subprocess.run([sys.executable, "-m", "oedp", "impressao", "codigo"], cwd=REPO, capture_output=True, text=True)
         self.assertEqual(r.returncode, 0, r.stderr)
