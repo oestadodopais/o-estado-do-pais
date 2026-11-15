@@ -170,3 +170,112 @@ class D_UmAchadoDecididoEReal(ComLeitura):
         with self.assertRaises(leituras.Recusa) as e:
             leituras.pontuar(pasta, self.decisoes(decisoes), imprimir=lambda *a: None)
         self.assertIn("named both as a plant's catch", str(e.exception))
+
+
+# --------------------------------------------------------------------------- F. the tests' model name counts only in a tests' tree
+
+from oedp import __main__ as cli  # noqa: E402
+from oedp import codigo, ensaio, marca, publicar, registo  # noqa: E402
+from tests.apoio import ENSAIOS  # noqa: E402
+
+RAZAO = "is signed by the tests' model name (modelo-de-ensaio), which counts only in a tree assembled for the tests"
+
+
+def arvore_do_repositorio(caso) -> Path:
+    """A copy of the repository's own site (no mark): its pages, desks, rights, pieces and records."""
+    pasta = pasta_temporaria(caso, "oedp-arvore-")
+    for sub in ("pecas", "mesas", "paginas", "direitos"):
+        if (REPO / sub).is_dir():
+            shutil.copytree(REPO / sub, pasta / sub)
+    for f in ("textos.registo.toml", "codigo.registo.toml"):
+        if (REPO / f).is_file():
+            shutil.copy2(REPO / f, pasta / f)
+    return pasta
+
+
+class F_ONomeDoModeloDeEnsaio(unittest.TestCase):
+    def test_o_registo_de_ensaio_copiado_por_cima_do_real(self):
+        """The reader's mistake: ensaios/textos.registo.toml over textos.registo.toml."""
+        arvore = arvore_do_repositorio(self)
+        shutil.copy2(ENSAIOS / "textos.registo.toml", arvore / "textos.registo.toml")
+        ctx, _ = build.contexto(REPO, arvore, [])
+        self.assertTrue(ctx.ensaio and all(RAZAO in x for x in ctx.ensaio), ctx.ensaio)
+        self.assertTrue(all(x.startswith("textos.registo.toml: [[") for x in ctx.ensaio))
+        ok, resultados = cli.conferir_tudo([], raiz=arvore, imprimir=lambda *a: None)
+        quatro = next(r for r in resultados if r.alvo == "records signed by the tests' model name")
+        self.assertEqual(quatro.estado, conf.FALHOU)
+        self.assertFalse(ok)
+        c = build.construir(REPO, raiz=arvore, saida=pasta_temporaria(self, "oedp-saida-") / "s", loja=None)
+        self.assertFalse(c.ok)
+        self.assertTrue(any(RAZAO in m for m in c.mensagens), c.mensagens)
+
+    def test_planta_sem_a_barreira_o_engano_passa(self):
+        arvore = arvore_do_repositorio(self)
+        shutil.copy2(ENSAIOS / "textos.registo.toml", arvore / "textos.registo.toml")
+        with mock.patch.object(marca, "assinadas", lambda *a: []):
+            ctx, _ = build.contexto(REPO, arvore, [])
+        self.assertEqual(ctx.ensaio, [])
+        self.assertFalse(any("textos.toml" in x for x in ctx.julgamento), ctx.julgamento)  # the invented judgment would count
+
+    def test_a_pagina_do_metodo_e_o_registo_do_codigo(self):
+        arvore = arvore_do_repositorio(self)
+        shutil.copy2(ENSAIOS / "paginas" / "metodo.md", arvore / "paginas" / "metodo.md")
+        (arvore / codigo.REGISTO).write_text(ensaio.registo_de_ensaio(), encoding="utf-8")
+        ctx, _ = build.contexto(REPO, arvore, [])
+        nomes = {x.split(":")[0] for x in ctx.ensaio}
+        self.assertEqual(nomes, {"paginas/metodo.md", "codigo.registo.toml"}, ctx.ensaio)
+
+    def test_o_registo_de_uma_peca(self):
+        p = Plantada([])
+        self.addCleanup(p.apagar)
+        (p.pasta / marca.FICHEIRO).unlink()  # the same piece, in a tree that is not marked
+        r = p.resultados()
+        for n in (4, 5):
+            self.assertEqual(r[n].estado, conf.FALHOU, r[n].linha())
+            self.assertTrue(any(RAZAO in x for x in r[n].razoes), r[n].linha())
+
+    def test_a_arvore_do_ensaio_constroi_a_sua_peca_publicada(self):
+        pasta = pasta_temporaria(self, "oedp-ensaio-")
+        c = ensaio.construir_ensaio(pasta)
+        self.assertTrue(c.ok, c.mensagens)
+        self.assertTrue((c.estatica / "pecas" / ensaio.PECA_ID / "index.html").is_file())
+        self.assertEqual((pasta / "raiz" / marca.FICHEIRO).read_text(encoding="utf-8"), marca.FRASE)
+        p = Plantada([])
+        self.addCleanup(p.apagar)
+        self.assertEqual({p_.verificacao: p_.estado for p_ in p.resultados().values()}[5], conf.PASSOU)
+
+    def test_a_marca_na_arvore_do_repositorio(self):
+        with self.assertRaises(ValueError):
+            ensaio.marcar(REPO)
+        self.assertFalse(marca.de_ensaio(REPO))
+        falsa = pasta_temporaria(self, "oedp-repo-")
+        for f in ("textos.toml", "sitio.toml", "vercel.json"):
+            shutil.copy2(REPO / f, falsa / f)
+        (falsa / marca.FICHEIRO).write_text(marca.FRASE, encoding="utf-8")
+        with mock.patch.object(cli, "REPO", falsa), mock.patch.object(conf, "REPO", falsa):
+            ok, resultados = cli.conferir_tudo([], raiz=falsa, imprimir=lambda *a: None)
+        nove = [r for r in resultados if r.alvo == "the repository's tree"]
+        self.assertEqual([r.estado for r in nove], [conf.FALHOU])
+        self.assertIn("ARVORE-DE-ENSAIO.txt is the mark of a tree assembled for the tests", nove[0].razoes[0])
+        self.assertFalse(ok)
+
+    def test_publicar_recusa_ao_lado_da_marca(self):
+        pasta = pasta_temporaria(self, "oedp-pub-")
+        (pasta / marca.FICHEIRO).write_text(marca.FRASE, encoding="utf-8")
+        razoes = publicar.condicoes(pasta, {"OEDP_FONTES": "x", "OEDP_OFICINA": "y"})
+        self.assertTrue(any("ARVORE-DE-ENSAIO.txt is here" in r for r in razoes), razoes)
+        (pasta / marca.FICHEIRO).unlink()
+        self.assertFalse(any("ARVORE-DE-ENSAIO.txt" in r for r in publicar.condicoes(pasta, {"OEDP_FONTES": "x", "OEDP_OFICINA": "y"})))
+
+    def test_registar_recusa_o_nome_sem_a_marca(self):
+        campos = {"nome": "edicao", "lugar": "direcao", "familia": "anthropic", "modelo": marca.MODELO,
+                  "inicio": "2026-11-16T13:00:00Z", "fim": "2026-11-16T13:05:00Z"}
+        p = Plantada([])
+        self.addCleanup(p.apagar)
+        registo.acrescentar(p.peca, "passo", campos)  # marked: written
+        (p.pasta / marca.FICHEIRO).unlink()
+        antes = p.peca.read_bytes()
+        with self.assertRaises(registo.ErroDoRegisto) as e:
+            registo.acrescentar(p.peca, "passo", campos)
+        self.assertIn("is the tests' own, and counts only in a tree assembled for the tests", str(e.exception))
+        self.assertEqual(p.peca.read_bytes(), antes)

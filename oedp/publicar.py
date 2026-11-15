@@ -67,6 +67,10 @@ def _git(repo: Path, *args) -> subprocess.CompletedProcess:
 def condicoes(repo: Path, ambiente: dict) -> list[str]:
     """Step 1: why publishing is refused here; empty when it may go on."""
     razoes = []
+    from . import marca
+
+    if (Path(repo) / marca.FICHEIRO).exists():
+        razoes.append(f"{marca.FICHEIRO} is here: this is a tree assembled for the tests, and nothing is published from one")
     mudancas = _git(repo, "status", "--porcelain", "--untracked-files=no")
     if mudancas.returncode != 0:
         razoes.append(f"git status failed ({mudancas.stderr.strip()})")

@@ -35,6 +35,7 @@ class Contexto:
     codigo: list = field(default_factory=list)  # why the code has not been read as the gate asks (codigo.py)
     leituras_fora: list = field(default_factory=list)  # the readings of the Method prose, the fixed sentences and the code
     reconferencias: list = field(default_factory=list)  # the [[reconferencia]] tables of reconferencias.toml
+    ensaio: list = field(default_factory=list)  # records signed by the tests' model name where they do not count (marca.py)
 
     def listada(self, peca) -> bool:
         return peca.publicada or (self.previa and peca.estado == "rascunho")

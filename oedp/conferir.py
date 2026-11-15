@@ -13,7 +13,7 @@ import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 
-from . import datas, derivacoes, direitos, fontes, forma, numeros, privacidade
+from . import datas, derivacoes, direitos, fontes, forma, marca, numeros, privacidade
 from .peca import MARCAS, ErroDeForma, Peca, impressoes, ler, ler_bytes, lido, paragrafos, referencias, sem_referencias, textos_do_leitor
 
 PASSOU, FALHOU, NAO_CORRIDO, NAO_VINCULA = "passed", "failed", "not run here", "not binding"
@@ -420,7 +420,16 @@ def republicada_sem_juiz(peca: Peca) -> list[str]:
     return erros
 
 
+def assinadas_pelo_ensaio(peca: Peca) -> list[str]:
+    """The piece's steps and readings signed by the tests' model name, when its tree is not one
+    assembled for the tests (marca.py): they never count, whatever the piece's state."""
+    return marca.assinadas(peca.registo, peca.id, marca.raiz_do_registo(peca.caminho))
+
+
 def check4(peca: Peca, pagina: str | None, anterior=("unavailable", None)) -> Resultado:
+    ensaio = assinadas_pelo_ensaio(peca)
+    if ensaio:  # binding in every state, like a cut record
+        return _r(4, peca.id, ensaio)
     razoes = republicada_sem_juiz(peca)
     passadas = [l for l in _leituras(peca, "juiz") if l.get("veredicto") == "passa"]
     if not passadas:
@@ -468,6 +477,9 @@ def familias(peca, nomes) -> set[str]:
 
 
 def check5(peca: Peca) -> Resultado:
+    ensaio = assinadas_pelo_ensaio(peca)
+    if ensaio:
+        return _r(5, peca.id, ensaio)
     razoes = []
     produtoras = sorted({str(p.get("familia")) for p in _passos(peca)})
     if len(produtoras) > 1:

@@ -39,6 +39,9 @@ class Plantada:
 
     def __init__(self, trocas: list[tuple[str, str]] = (), so_acima_do_registo: bool = False):
         self.pasta = Path(tempfile.mkdtemp(prefix="oedp-ensaio-"))
+        from oedp import ensaio as _ensaio
+
+        _ensaio.marcar(self.pasta)  # a tree assembled for the tests (oedp/marca.py)
         for sub in ("pecas", "mesas", "paginas", "direitos"):
             shutil.copytree(ENSAIOS / sub, self.pasta / sub)
         shutil.copy2(ENSAIOS / "textos.registo.toml", self.pasta / "textos.registo.toml")

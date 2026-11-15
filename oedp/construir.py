@@ -22,7 +22,7 @@ from pathlib import Path
 
 from . import conferir as conf
 from . import direitos as rights
-from . import codigo, julgados, privacidade
+from . import codigo, julgados, marca, privacidade
 from .forma import FECHO, erros_do_corpo
 from .paginas import (
     Contexto,
@@ -91,9 +91,11 @@ def contexto(repo: Path, raiz: Path, pecas: list, previa: bool = False) -> tuple
     erros += ligacoes_simbolicas(raiz)
     metodo_f = Path(raiz) / "paginas" / "metodo.md"
     metodo, julgamento, leituras_fora = None, [], []
+    ensaio: list[str] = []  # records signed by the tests' model name in a tree not assembled for the tests (marca.py)
     if metodo_f.is_file():
         try:
             metodo, registo_m, impressao_m = julgados.metodo(metodo_f)
+            ensaio += marca.assinadas(registo_m, "paginas/metodo.md", raiz)
         except julgados.ErroDoJulgado as e:
             erros.append(f"paginas/metodo.md: {e}")
         else:
@@ -104,6 +106,8 @@ def contexto(repo: Path, raiz: Path, pecas: list, previa: bool = False) -> tuple
             julgamento += julgados.historia(repo, metodo_f)
     try:
         registo_t, impressao_t, onde_t = julgados.textos(repo, raiz)
+        if onde_t:
+            ensaio += marca.assinadas(registo_t, "textos.registo.toml", Path(onde_t).parent)
         julgamento += julgados.erros_de_julgamento("textos.toml", registo_t, impressao_t)
         erros += julgados.erros_do_registo("textos.registo.toml", registo_t)
         leituras_fora += registo_t.get("leitura", [])
@@ -114,6 +118,8 @@ def contexto(repo: Path, raiz: Path, pecas: list, previa: bool = False) -> tuple
     portao_do_codigo = []
     try:
         tabelas_c, onde_c = codigo.ler(repo, raiz)
+        if onde_c:
+            ensaio += marca.assinadas(tabelas_c, codigo.REGISTO, Path(onde_c).parent)
     except codigo.ErroDoCodigo as e:  # the record cannot be read: check 9, and the gate stays closed
         erros.append(str(e))
         portao_do_codigo.append(f"code: {e}")
@@ -138,7 +144,7 @@ def contexto(repo: Path, raiz: Path, pecas: list, previa: bool = False) -> tuple
     erros += erros_dos_direitos
     ctx = Contexto(textos=textos, mesas=mesas, lancamento=bool(sitio.get("lancamento")), pecas=pecas,
                    metodo=metodo, previa=previa, direitos=registos, julgamento=julgamento,
-                   codigo=portao_do_codigo, leituras_fora=leituras_fora, reconferencias=reconferencias)
+                   codigo=portao_do_codigo, leituras_fora=leituras_fora, reconferencias=reconferencias, ensaio=ensaio)
     return ctx, erros
 
 
@@ -313,6 +319,10 @@ def construir(repo: Path, raiz: Path | None = None, saida: Path | None = None, c
                 c.resultados.append(r)
                 if r.estado == conf.FALHOU:
                     c.falha(r.linha())
+    # A record signed by the tests' model name outside a tree assembled for the tests stops every
+    # build, whatever is published (ORDEM-3c, decision 3).
+    for x in ctx.ensaio:
+        c.falha(f"check  4 (the published text is the judged text) · {x}")
     if not com_rascunhos and any(p.vinculada for p in incluidas):
         for x in ctx.julgamento:
             c.falha(f"check  4 (the published text is the judged text) · reader's text outside pieces: {x}")

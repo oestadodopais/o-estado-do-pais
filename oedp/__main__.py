@@ -11,7 +11,7 @@ from pathlib import Path
 
 from . import conferir as conf
 from . import construir as build
-from . import datas, fontes, forma, noar, registo
+from . import datas, fontes, forma, marca, noar, registo
 from . import direitos as rights
 from .forma import FECHO
 from .peca import ID_PECA, ErroDeForma, impressoes, ler, pecas_em
@@ -255,6 +255,12 @@ def conferir_tudo(alvos: list[Path], raiz: Path = REPO, imprimir=print) -> tuple
     resultados.append(conf._r(4, "pieces published on main", desaparecidas)
                       if havia_main else conf.Resultado(4, "pieces published on main", conf.NAO_CORRIDO,
                                                        ["main is not at hand here"], []))
+    # The records signed by the tests' model name outside a tree assembled for the tests, and the
+    # mark of such a tree in the repository's own tree: failures whatever is published (marca.py).
+    resultados.append(conf._r(4, "records signed by the tests' model name", ctx.ensaio))
+    if (REPO / marca.FICHEIRO).exists():
+        resultados.append(conf._r(9, "the repository's tree", [f"{marca.FICHEIRO} is the mark of a tree assembled for the "
+                                                                 "tests, and it is in the repository's own tree"]))
     alvo = "reader's text outside pieces"
     if any(p.vinculada for p in pecas):
         resultados.append(conf._r(4, alvo, ctx.julgamento))

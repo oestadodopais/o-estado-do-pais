@@ -117,6 +117,11 @@ def acrescentar(caminho: Path, nome: str, campos: dict) -> str:
     The file is a piece, paginas/metodo.md (a record after its text),
     textos.registo.toml (the record of textos.toml) or codigo.registo.toml (the code's)."""
     caminho = Path(caminho)
+    from . import marca
+
+    if campos.get("modelo") == marca.MODELO and not marca.de_ensaio(marca.raiz_do_registo(caminho)):
+        raise ErroDoRegisto(f"the model name {marca.MODELO!r} is the tests' own, and counts only in a tree assembled for "
+                            "the tests (oedp/ensaio.py); this file's tree is not one")
     antes = caminho.read_bytes()
     if caminho.name in ("textos.registo.toml", "codigo.registo.toml") or not antes.startswith(b"+++ cabeca\n"):
         return _acrescentar_a_texto(caminho, antes, nome, campos)
