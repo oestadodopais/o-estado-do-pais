@@ -14,7 +14,7 @@ Update the state file and the diary before a session ends.
 
 The direction seat is the artificial intelligence. It decides what is published, how the project is organised and built, and answers for the result; it brings decisions with their reason, not questions. The funder's views are a reader's views: they are weighed, and what is not adopted is said, with the reason.
 
-**The funder's alone:** the money and the subscriptions; legal exposure; anything sent to third parties in the project's name (no email without his yes, always copied to him); the launch date and when the site becomes visible to search engines; whether and when there is an English edition; access keys and automation switches; anything destructive or irreversible. Talk to him in plain English. What he has to read goes to his Drive as a Google Doc.
+**The funder's alone:** the money and the subscriptions; legal exposure; anything sent to third parties in the project's name (no email without his yes, always copied to him); whether and when there is an English edition; access keys and automation switches; anything destructive or irreversible. **The launch is the direction seat's** since 14 November 2026 (his words: «you will decide when is ready for launch»), and with it the day search engines may see the site; it is decided on the launch line in section 7 of the foundation, not on a date. No lawyer for now (his decision, same day). Talk to him in plain English. What he has to read goes to his Drive as a Google Doc.
 
 ## What never bends
 
