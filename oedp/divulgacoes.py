@@ -31,6 +31,7 @@ import datetime as dt
 import html.parser
 import json
 import re
+import sys
 import urllib.parse
 from dataclasses import asdict, dataclass
 
@@ -90,14 +91,24 @@ class _Lista(html.parser.HTMLParser):
             self.itens[-1][self.onde] += data
 
 
+def _erro(texto: str):
+    print(texto, file=sys.stderr)
+
+
 def ler(conteudo: bytes, base: str = ENDERECO) -> list[Divulgacao]:
-    """The releases a page holds that can be read whole (a date, a title, an address), newest
-    first; a release missing any of the three is left out."""
+    """The releases a page holds that can be read whole, newest first (see `ler_tudo`)."""
+    return ler_tudo(conteudo, base)[0]
+
+
+def ler_tudo(conteudo: bytes, base: str = ENDERECO) -> tuple[list[Divulgacao], list[str]]:
+    """(the releases read whole: a date, a title, an address, newest first; the releases that
+    could not be read whole, named). A list with a release missing is not the list (ORDEM-3c,
+    item I): the caller refuses to print it."""
     p = _Lista()
     p.feed(fontes._descodificar(conteudo))
     p.close()
-    lidas = []
-    for item in p.itens:
+    lidas, falhas = [], []
+    for n, item in enumerate(p.itens, 1):
         titulo = re.sub(r"\s+", " ", item["titulo"]).strip()
         m = DATA.search(item["data"])
         data = None
@@ -105,7 +116,10 @@ def ler(conteudo: bytes, base: str = ENDERECO) -> list[Divulgacao]:
             data = datas.data_real(f"{int(m.group(3)):04d}-{MESES[m.group(2).lower()]:02d}-{int(m.group(1)):02d}")
         if titulo and data and item["href"]:
             lidas.append(Divulgacao(data.isoformat(), titulo, urllib.parse.urljoin(base, item["href"])))
-    return sorted(lidas, key=lambda d: d.data, reverse=True)
+        else:
+            falta = [nome for nome, v in (("title", titulo), ("date", data), ("address", item["href"])) if not v]
+            falhas.append(f"release number {n} on the page ({titulo[:60] or 'no title'}) has no {' and no '.join(falta)}")
+    return sorted(lidas, key=lambda d: d.data, reverse=True), falhas
 
 
 @dataclass
@@ -122,9 +136,12 @@ class _Calendario(html.parser.HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.linhas: list[list[str]] = []
+        self.cabeca: list[str] = []  # the head's cells, in order
         self.na_tabela = 0  # depth of <table class="tb_ine">
         self.no_corpo = False
+        self.na_cabeca = False
         self.celula: list[str] | None = None
+        self.th_no_corpo = []  # body rows that hold a <th>: a cell where the head puts none
 
     def handle_starttag(self, tag, attrs):
         classes = (dict(attrs).get("class") or "").split()
@@ -133,8 +150,14 @@ class _Calendario(html.parser.HTMLParser):
                 self.na_tabela += 1
         elif self.na_tabela == 1 and tag == "tbody":
             self.no_corpo = True
+        elif self.na_tabela == 1 and tag == "thead":
+            self.na_cabeca = True
+        elif self.na_tabela == 1 and self.na_cabeca and tag == "th":
+            self.celula = []
         elif self.na_tabela == 1 and self.no_corpo and tag == "tr":
             self.linhas.append([])
+        elif self.na_tabela == 1 and self.no_corpo and tag == "th" and self.linhas:
+            self.th_no_corpo.append(len(self.linhas))
         elif self.na_tabela == 1 and self.no_corpo and tag == "td" and self.linhas:
             self.celula = []
         elif self.celula is not None and tag in ("p", "br"):
@@ -145,6 +168,11 @@ class _Calendario(html.parser.HTMLParser):
             self.na_tabela -= 1
         elif tag == "tbody" and self.na_tabela == 1:
             self.no_corpo = False
+        elif tag == "thead" and self.na_tabela == 1:
+            self.na_cabeca = False
+        elif tag == "th" and self.na_cabeca and self.celula is not None:
+            self.cabeca.append(re.sub(r"\s+", " ", "".join(self.celula)).strip())
+            self.celula = None
         elif tag == "td" and self.celula is not None:
             self.linhas[-1].append(re.sub(r"\s+", " ", "".join(self.celula)).strip())
             self.celula = None
@@ -162,23 +190,43 @@ def _data(texto: str):
 
 
 def ler_calendario(conteudo: bytes) -> list[Proxima]:
-    """The rows of the calendar that can be read whole (a title, a period, a date), oldest
-    first; the note is kept whatever it says."""
+    """The rows of the calendar read whole, oldest first (see `ler_calendario_tudo`)."""
+    return ler_calendario_tudo(conteudo)[0]
+
+
+def ler_calendario_tudo(conteudo: bytes) -> tuple[list[Proxima], list[str]]:
+    """(the rows read whole: a title, a period, a date, and the note in the cell the head puts it,
+    oldest first; the rows that could not be read whole, named). A row with fewer cells than the
+    table's head, or whose note is not where the head puts it, is not read (ORDEM-3c, item I)."""
     p = _Calendario()
     p.feed(fontes._descodificar(conteudo))
     p.close()
-    lidas = []
-    for celulas in p.linhas:
-        if len(celulas) < 3:
-            continue
-        data = _data(celulas[2])
-        if celulas[0] and data:
-            lidas.append(Proxima(data.isoformat(), celulas[0], celulas[1], celulas[3] if len(celulas) > 3 else ""))
-    return sorted(lidas, key=lambda d: d.data)
+    nota = next((i for i, c in enumerate(p.cabeca) if c.lower().startswith("observa")), None)
+    lidas, falhas = [], []
+    if p.linhas and (nota is None or len(p.cabeca) < 4):
+        return [], [f"the calendar's head ({' | '.join(p.cabeca) or 'none'}) is not the four cells this command reads "
+                    "(title, period, date, Observações)"]
+    for n, celulas in enumerate(p.linhas, 1):
+        data = _data(celulas[2]) if len(celulas) >= 3 else None
+        nome = celulas[0][:60] if celulas else "no title"
+        if n in p.th_no_corpo or len(celulas) < len(p.cabeca):
+            falhas.append(f"row number {n} of the calendar ({nome}) has {len(celulas)} cells where its head has "
+                          f"{len(p.cabeca)}, so its note is not where the head puts it")
+        elif not (celulas[0] and celulas[1] and data):
+            falta = [k for k, v in (("title", celulas[0]), ("period", celulas[1]), ("date", data)) if not v]
+            falhas.append(f"row number {n} of the calendar ({nome}) has no {' and no '.join(falta)}")
+        else:
+            lidas.append(Proxima(data.isoformat(), celulas[0], celulas[1], celulas[nota]))
+    return sorted(lidas, key=lambda d: d.data), falhas
 
 
-def correr_proximas(dados: bytes, dias: int | None, como_json: bool, hoje: dt.date, imprimir=print) -> int:
-    lidas = ler_calendario(dados)
+def correr_proximas(dados: bytes, dias: int | None, como_json: bool, hoje: dt.date, imprimir=print, erro=_erro) -> int:
+    lidas, falhas = ler_calendario_tudo(dados)
+    if falhas:  # a calendar with a row missing is not the calendar: nothing is listed
+        for f in falhas:
+            erro(f"divulgacoes --proximas: {f}")
+        erro(f"divulgacoes --proximas: {len(falhas)} row(s) of {CALENDARIO} could not be read whole; nothing is listed.")
+        return 1
     if not lidas:
         imprimir(f"divulgacoes --proximas: the page {CALENDARIO} holds no row this command can read (no row with a title, "
                  "a period and a date); its structure may have changed. Nothing is listed.")
@@ -212,9 +260,14 @@ def buscar(transporte=fontes.transporte_curl, resolver=fontes.resolver_dns, ende
     return dados
 
 
-def correr(dados: bytes, dias: int, como_json: bool, hoje: dt.date, imprimir=print) -> int:
+def correr(dados: bytes, dias: int, como_json: bool, hoje: dt.date, imprimir=print, erro=_erro) -> int:
     """Print the releases of the last `dias` days from the bytes of the page; the exit code."""
-    lidas = ler(dados)
+    lidas, falhas = ler_tudo(dados)
+    if falhas:  # a list with a release missing is not the list: nothing is listed
+        for f in falhas:
+            erro(f"divulgacoes: {f}")
+        erro(f"divulgacoes: {len(falhas)} release(s) of {ENDERECO} could not be read whole; nothing is listed.")
+        return 1
     if not lidas:
         imprimir(f"divulgacoes: the page {ENDERECO} holds no release this command can read (no item with a date, a "
                  "title and an address); its structure may have changed. Nothing is listed.")

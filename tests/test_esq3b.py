@@ -290,8 +290,9 @@ PAGINA = ("<!doctype html><html><head><title>Ensaio</title></head><body><div id=
           + item("Um índice de ensaio aumentou 1,5%", "3.º Trimestre de 2026", "12 de novembro de 2026", 111)
           + item("Outro índice de ensaio diminuiu 2,2%", "Outubro de 2026", "13 de novembro de 2026", 222)
           + item("Uma série de ensaio antiga", "2025", "1 de novembro de 2026", 333)
-          + item("Um destaque sem data", "2026", "", 444)
           + "</div></body></html>").encode("utf-8")
+# The same page with one release that cannot be read whole: no date (ESQ3c, item I).
+PAGINA_COM_FALHA = PAGINA.replace(b"</div></body></html>", item("Um destaque sem data", "2026", "", 444).encode("utf-8") + b"</div></body></html>")
 HOJE = dt.date(2026, 11, 15)
 
 
@@ -323,12 +324,24 @@ class J_AsDivulgacoes(unittest.TestCase):
                                   "2026-11-13: Outro índice de ensaio diminuiu 2,2% - Outubro de 2026"])
 
     def test_planta_uma_pagina_que_mudou_de_forma(self):
-        linhas = []
+        linhas, erros = [], []
         mudada = PAGINA.replace(b'class="datadestaques"', b'class="data-nova"')
-        self.assertEqual(divulgacoes.correr(mudada, 7, False, HOJE, linhas.append), 1)
+        self.assertEqual(divulgacoes.correr(mudada, 7, False, HOJE, linhas.append, erros.append), 1)
+        self.assertEqual(linhas, [])  # nothing listed
+        self.assertTrue(any("has no date" in e for e in erros), erros)
+        vazia = b"<html><body><div id='destaques_lista'></div></body></html>"
+        self.assertEqual(divulgacoes.correr(vazia, 7, False, HOJE, linhas.append, erros.append), 1)
         self.assertIn("holds no release this command can read", linhas[0])
+
+    def test_uma_divulgacao_que_nao_se_le_toda(self):
+        linhas, erros = [], []
+        self.assertEqual(divulgacoes.correr(PAGINA_COM_FALHA, 30, False, HOJE, linhas.append, erros.append), 1)
+        self.assertEqual(linhas, [])
+        self.assertIn("divulgacoes: release number 4 on the page (Um destaque sem data - 2026) has no date", erros)
+        self.assertEqual(divulgacoes.correr(PAGINA_COM_FALHA, 30, True, HOJE, linhas.append, erros.append), 1)
+        self.assertEqual(linhas, [])
         linhas = []
-        self.assertEqual(divulgacoes.correr(b"<html><body>Erro</body></html>", 7, True, HOJE, linhas.append), 1)
+        self.assertEqual(divulgacoes.correr(b"<html><body>Erro</body></html>", 7, True, HOJE, linhas.append, lambda e: None), 1)
         self.assertNotIn("[]", linhas[0])
 
     def transporte(self, respostas, pedidos):

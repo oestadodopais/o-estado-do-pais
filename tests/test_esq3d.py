@@ -281,7 +281,6 @@ CALENDARIO = ('<!doctype html><html><body><table class="institu"><tbody><tr><td>
               + linha_do_calendario("Um índice de ensaio", "Outubro de 2026", "17 de novembro de 2026")
               + linha_do_calendario("Umas contas de ensaio", "2025", "18 de novembro de 2026",
                                     "Adiado para 18 de dezembro, por uma razão de ensaio. (09-11-2026)")
-              + linha_do_calendario("Uma linha sem data", "2026", "")
               + "</tbody></table></body></html>").encode("utf-8")
 HOJE = dt.date(2026, 11, 15)
 
@@ -312,8 +311,17 @@ class J_AsProximas(unittest.TestCase):
         self.assertIn("holds no row this command can read", linhas[0])
 
     def test_planta_a_nota_perdida(self):
+        """ESQ3c, item I: a row whose note is not where the head puts it stops the command (the cell made a <th>,
+        or taken out), and a row with no date too."""
         sem_quarta = CALENDARIO.replace(b'<td class="caldst_texto_just">', b'<th class="caldst_texto_just">').replace(b"</p>\n<p></p>\n</td>", b"</p>\n<p></p>\n</th>")
-        self.assertEqual([d.nota for d in divulgacoes.ler_calendario(sem_quarta)], ["", "", ""])  # the checker sees the note gone
+        tirada = re.sub(rb'<td class="caldst_texto_just">.*?</td>', b"", CALENDARIO, count=1, flags=re.S)
+        sem_data = CALENDARIO.replace(b"\n20 de novembro de 2026</td>", b"\n</td>")
+        for pagina, motivo in ((sem_quarta, "has 3 cells where its head has 4"), (tirada, "has 3 cells where its head has 4"),
+                               (sem_data, "has no date")):
+            linhas, erros = [], []
+            self.assertEqual(divulgacoes.correr_proximas(pagina, None, False, HOJE, linhas.append, erros.append), 1)
+            self.assertEqual(linhas, [])
+            self.assertTrue(any(motivo in e for e in erros), erros)
 
     def test_o_comando_le_o_calendario(self):
         f = Path(tempfile.mkdtemp(prefix="oedp-calendario-"))
