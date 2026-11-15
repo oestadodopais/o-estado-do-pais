@@ -107,11 +107,7 @@ def cmd_texto(a) -> int:
     if not caminho.is_file():
         print(f"no copy in the store under {a.sha256}", file=sys.stderr)
         return 1
-    paginas = fontes.texto_por_pagina(caminho.read_bytes())
-    for n, texto in enumerate(paginas, 1):
-        if len(paginas) > 1:
-            print(f"=== p. {n} ===")
-        print(texto)
+    print(fontes.texto_impresso(caminho.read_bytes()), end="")
     return 0
 
 
@@ -326,6 +322,31 @@ def cmd_capturas(a) -> int:
     return 0
 
 
+def cmd_leitura(a) -> int:
+    from . import leituras
+
+    try:
+        if a.passo == "montar":
+            pasta = leituras.montar(a.alvo, a.lugar, folha=a.folha, seccao=a.seccao, com=a.com or [], base=a.base,
+                                    ordens=a.ordem or [], relatorios=a.relatorio or [], loja=_loja())
+            print(f"reading folder: {pasta}")
+            print(f"package: {pasta / 'pacote'} · prompt: {pasta / 'PROMPT.md'}")
+            return 0
+        if a.passo == "plantar":
+            leituras.plantar(Path(a.pasta), Path(a.lista), loja=_loja())
+            return 0
+        if a.passo == "lancar":
+            return leituras.lancar(Path(a.pasta))
+        if a.passo == "pontuar":
+            leituras.pontuar(Path(a.pasta), Path(a.decisoes) if a.decisoes else None, a.modelo, a.inicio, a.fim)
+            return 0
+        leituras.registar(Path(a.pasta))
+        return 0
+    except leituras.Recusa as e:
+        print(str(e), file=sys.stderr)
+        return 2
+
+
 def cmd_tudo(a) -> int:
     t0 = time.monotonic()
     ok1 = cmd_conferir(argparse.Namespace(pecas=[])) == 0
@@ -400,7 +421,35 @@ def principal(argv=None) -> int:
     s = sub.add_parser("tudo")
     s.set_defaults(f=cmd_tudo)
 
-    s = sub.add_parser("navegador", help="a link to a receipt opens it, in real browsers (needs requirements-navegador.txt)")
+    s = sub.add_parser("leitura", help="a reading: montar, plantar, lancar, pontuar, registar")
+    passos = s.add_subparsers(dest="passo", required=True)
+    m = passos.add_parser("montar")
+    m.add_argument("alvo", help="a piece file, paginas/metodo.md, textos.toml, or the word codigo")
+    m.add_argument("lugar")
+    m.add_argument("--folha", action="store_true", help="especialista or oposto reading the fact sheet before the text")
+    m.add_argument("--seccao", help="a file appended to the prompt after the reading's section")
+    m.add_argument("--com", action="append", help="for the Method judge: more files under referencia/")
+    m.add_argument("--base", help="for the code: the commit the diff starts from")
+    m.add_argument("--ordem", action="append", help="for the code: a work order")
+    m.add_argument("--relatorio", action="append", help="for the code: a builder's report")
+    m.set_defaults(f=cmd_leitura)
+    m = passos.add_parser("plantar")
+    m.add_argument("pasta")
+    m.add_argument("lista")
+    m.set_defaults(f=cmd_leitura)
+    for nome in ("lancar", "registar"):
+        m = passos.add_parser(nome)
+        m.add_argument("pasta")
+        m.set_defaults(f=cmd_leitura)
+    m = passos.add_parser("pontuar")
+    m.add_argument("pasta")
+    m.add_argument("--decisoes")
+    m.add_argument("--modelo")
+    m.add_argument("--inicio")
+    m.add_argument("--fim")
+    m.set_defaults(f=cmd_leitura)
+
+    s = sub.add_parser("navegador",help="a link to a receipt opens it, in real browsers (needs requirements-navegador.txt)")
     s.add_argument("--exigir", help="engines that must run, comma-separated: chromium,firefox,webkit")
     s.set_defaults(f=cmd_navegador)
 

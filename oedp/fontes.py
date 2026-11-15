@@ -165,6 +165,14 @@ def texto_por_pagina(dados: bytes) -> list[str]:
     return [normalizar(_descodificar(dados))]
 
 
+def texto_impresso(dados: bytes) -> str:
+    """A copy's text as `python3 -m oedp texto` prints it: page by page for a PDF."""
+    paginas = texto_por_pagina(dados)
+    if len(paginas) == 1:
+        return paginas[0] + "\n"
+    return "".join(f"=== p. {n} ===\n{texto}\n" for n, texto in enumerate(paginas, 1))
+
+
 def procurar(excerto: str, paginas: list[str], pagina_pedida: int | None) -> int | None:
     """The 1-based page where the normalised excerpt is found, or None."""
     alvo = normalizar(excerto)

@@ -114,14 +114,18 @@ def contexto(repo: Path, raiz: Path, pecas: list, previa: bool = False) -> tuple
     portao_do_codigo = []
     try:
         tabelas_c, onde_c = codigo.ler(repo, raiz)
-        erros += codigo.erros_do_registo(tabelas_c)
-        leituras_fora += [t for nome, t in tabelas_c if nome == "leitura"]
-        portao_do_codigo += codigo.erros_do_portao(tabelas_c, codigo.impressao(repo))
-        if onde_c:
-            portao_do_codigo += codigo.historia(repo, Path(onde_c))
-    except codigo.ErroDoCodigo as e:
+    except codigo.ErroDoCodigo as e:  # the record cannot be read: check 9, and the gate stays closed
         erros.append(str(e))
         portao_do_codigo.append(f"code: {e}")
+    else:
+        erros += codigo.erros_do_registo(tabelas_c)
+        leituras_fora += [t for nome, t in tabelas_c if nome == "leitura"]
+        try:
+            portao_do_codigo += codigo.erros_do_portao(tabelas_c, codigo.impressao(repo))
+        except codigo.ErroDoCodigo as e:  # no fingerprint (git cannot list the files): the gate stays closed
+            portao_do_codigo.append(f"code: {e}")
+        if onde_c:
+            portao_do_codigo += codigo.historia(repo, Path(onde_c))
     registos, erros_dos_direitos = rights.ler_pasta(Path(raiz) / "direitos")
     erros += erros_dos_direitos
     ctx = Contexto(textos=textos, mesas=mesas, lancamento=bool(sitio.get("lancamento")), pecas=pecas,

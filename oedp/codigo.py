@@ -78,6 +78,20 @@ def impressao(repo: Path) -> str:
     return impressao_da_lista(lista(repo))
 
 
+def impressao_de_pasta(pasta: Path) -> str:
+    """The same fingerprint of a folder that holds exactly the tracked files of a commit
+    (what `git archive` writes), read without git."""
+    pasta = Path(pasta)
+    linhas = []
+    for f in sorted(pasta.rglob("*")):
+        nome = f.relative_to(pasta).as_posix()
+        if f.is_dir() and not f.is_symlink() or not e_codigo(nome):
+            continue
+        dados = b"link:" + os.readlink(f).encode("utf-8") if f.is_symlink() else f.read_bytes()
+        linhas.append((nome, hashlib.sha256(dados).hexdigest()))
+    return impressao_da_lista(linhas)
+
+
 # --------------------------------------------------------------------------- the record
 
 _CABECA = re.compile(r"^\[\[(passo|leitura)\]\][ \t]*$", re.M)
