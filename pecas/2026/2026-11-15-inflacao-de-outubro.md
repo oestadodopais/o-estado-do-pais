@@ -29,19 +29,19 @@ Quem olhar para a taxa de outubro e concluir que tudo está a subir mais depress
 
 ## O melhor argumento contra esta leitura
 
-Uma média pode mudar pouco enquanto as suas partes mudam muito. Fora da energia há taxas que num mês mudaram mais de um ponto percentual: a da Informação e comunicação [subiu mais de dois pontos]{classe08_dif}, a dos Serviços de educação [desceu cerca de um ponto e meio]{classe10_dif}. A taxa dos serviços, todos juntos, [subiu mais do que a taxa total]{servicos_subida, ipc_homologa_dif_2c}.
+Uma média pode mudar pouco enquanto as suas partes mudam muito. Fora da energia há taxas que mudaram mais de um ponto percentual: a da Informação e comunicação [subiu mais de dois pontos]{classe08_dif}, a dos Serviços de educação [desceu cerca de um ponto e meio]{classe10_dif}. A taxa dos serviços, todos juntos, [subiu mais do que a taxa total]{servicos_subida, ipc_homologa_dif_2c}.
 
-Na comparação com a área do euro, feita com outro índice (o IHPC) e com [valores ainda estimados]{area_euro_estimativa, area_euro_subjacente_out} do lado europeu, a inflação é de {ihpc_homologa_out} em Portugal e de {area_euro_out} na área do euro. Sem energia nem alimentos não transformados, é de {ihpc_subjacente_out} e de {area_euro_subjacente_out}.
+Na comparação com a área do euro, feita com outro índice (o IHPC), a inflação é de {ihpc_homologa_out} em Portugal e de {area_euro_out} na área do euro. Sem energia nem alimentos não transformados, é de {ihpc_subjacente_out} em Portugal e de {area_euro_subjacente_out} na área do euro. [Os valores da área do euro são ainda estimativas]{area_euro_estimativa, area_euro_subjacente_out}.
 
-Pôr a energia à frente pode, por tudo isto, deixar a ideia errada de que fora dela os preços estão calmos.
+Pôr a energia à frente pode, por isso, deixar a ideia errada de que fora dela os preços estão calmos.
 
-Este projeto aceita o reparo e mantém a leitura: que a energia tenha pesado mais em outubro não diz que os outros preços estão calmos, nem que subiram poucos.
+Este projeto aceita o reparo e mantém a leitura: a energia ter pesado mais não diz que os outros preços estão calmos, nem que subiram poucos.
 
 ## O que acompanhar
 
 [A 18 de novembro]{area_euro_estimativa} sai o valor definitivo da inflação da área do euro. [A 30 de novembro]{proximas_datas}, o INE publica a próxima estimativa rápida, um primeiro valor da inflação. [A 14 de dezembro]{proximas_datas} publica o destaque seguinte àquele em que esta peça se apoia.
 
-O que interessa ver: se a taxa sem energia volta a subir menos do que a taxa total. Se subir tanto como ela, a subida já não se explica pela energia.
+A ver: se a taxa sem energia volta a subir menos do que a taxa total. Se subir tanto como ela, a subida já não se explica pela energia.
 
 +++ folha
 [[fonte]]
@@ -1850,3 +1850,11 @@ familia = "anthropic"
 modelo = "claude-fable-5-2"
 inicio = "2026-11-15T13:21:13Z"
 fim = "2026-11-15T13:28:17Z"
+
+[[passo]]
+nome = "edicao"
+lugar = "direcao"
+familia = "anthropic"
+modelo = "claude-fable-5-2"
+inicio = "2026-11-15T13:28:49Z"
+fim = "2026-11-15T13:29:08Z"
