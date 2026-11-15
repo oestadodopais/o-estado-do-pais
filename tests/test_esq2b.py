@@ -112,12 +112,25 @@ class Recusas(Base):
         self.assertTrue(any("has no line whose result is 'no ar'" in l for l in self.linhas))
         self.assertEqual(self.chamadas, [])
 
-    def test_o_portao_do_codigo_fecha_a_publicacao_real(self):
-        # the repository's own record of the code has no reading yet, so step 2 refuses
-        p = publicar.preparar(REPO, None, imprimir=lambda *a: None)
+    def test_o_portao_do_codigo_fecha_a_publicacao(self):
+        # A copy of the tree with a record of its own: the real codigo.registo.toml changes as
+        # readings are registered, and no test may depend on what it holds (ESQ2d item C6).
+        from tests.test_esq2h import copia_da_arvore, registo_que_passa
+
+        copia = copia_da_arvore(self)
+        (copia / "codigo.registo.toml").write_text("# a record of its own, with no reading\n", encoding="utf-8")
+        p = publicar.preparar(copia, None, imprimir=lambda *a: None)
         self.assertFalse(p.ok)
         self.assertTrue(any("the code's gate is closed: code: no seguranca reading on the current code fingerprint" in m
                             for m in p.mensagens), p.mensagens)
+        # With a passing reading on its own fingerprint, and a main to prove the record grew from,
+        # the gate opens.
+        (copia / "codigo.registo.toml").write_text(registo_que_passa(copia), encoding="utf-8")
+        git(copia.parent, "init", "-q", "-b", "main", str(copia))
+        git(copia, "add", "-A", "--", ".", ":!codigo.registo.toml")
+        git(copia, "commit", "-q", "-m", "main, without a record of the code")
+        p = publicar.preparar(copia, None, imprimir=lambda *a: None)
+        self.assertTrue(p.ok, p.mensagens)
 
 
 class Implantar(Base):

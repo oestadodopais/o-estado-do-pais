@@ -29,6 +29,23 @@ def leitura(impressao, familia="openai", veredicto="passa", postas=2, apanhadas=
                         "plantas_apanhadas": apanhadas, "achados": 1, "adotados": 1, "veredicto": veredicto})
 
 
+def copia_da_arvore(caso) -> Path:
+    """The tree's files in a temporary folder that is not a git repository."""
+    pasta = Path(tempfile.mkdtemp(prefix="oedp-copia-"))
+    caso.addCleanup(shutil.rmtree, pasta, True)
+    for nome in codigo.ficheiros_seguidos(REPO):
+        destino = pasta / nome
+        destino.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(REPO / nome, destino, follow_symlinks=False)
+    return pasta
+
+
+def registo_que_passa(repo: Path) -> str:
+    """A code record of its own: a construction and a passing reading on `repo`'s fingerprint."""
+    return ("# a record of its own\n" + registo.tabela("passo", passo()[1])
+            + registo.tabela("leitura", leitura(codigo.impressao(repo))[1]))
+
+
 class Impressao(unittest.TestCase):
     def test_o_que_conta_e_o_que_nao_conta(self):
         for fora in ("pecas/2026/x.md", "mesas/a.md", "paginas/metodo.md", "direitos/x.toml", "docs/ESPEC-PECA.md",
@@ -229,9 +246,14 @@ class Registo(unittest.TestCase):
         self.assertIn("is not a table of this record", str(e.exception))
 
     def test_o_registo_real_existe_e_e_valido(self):
-        # Created empty by this block; the direction seat has since appended to it (9f5030342).
+        # Only what stays true whatever readings are registered (ESQ2d item C6): valid, and a
+        # continuation of main's where main is at hand.
+        from oedp import conferir as conf
+
         tabelas = codigo.em_ordem((REPO / codigo.REGISTO).read_text(encoding="utf-8"))
         self.assertEqual(codigo.erros_do_registo(tabelas), [])
+        if conf.ref_main(REPO) is not None:
+            self.assertEqual(julgados.historia(REPO, REPO / codigo.REGISTO), [])
 
     def test_planta_registo_que_nao_continua_o_de_main(self):
         repo = git_temporario(self)
@@ -276,12 +298,29 @@ class NaConstrucao(unittest.TestCase):
         self.addCleanup(shutil.rmtree, saida, True)
         self.assertTrue(build.construir(REPO, raiz=p.pasta, saida=saida, loja=LOJA, com_rascunhos=True).ok)
 
-    def test_sem_peca_publicada_nao_vincula_e_diz_o_que_falharia(self):
+    def test_sem_peca_publicada_nao_vincula(self):
+        # On the real tree only what stays true whatever its record holds: one line, not binding.
         from oedp.__main__ import conferir_tudo
 
         linhas = []
-        ok, _ = conferir_tudo([], imprimir=linhas.append)
+        conferir_tudo([], imprimir=linhas.append)
         codigo_ = [l for l in linhas if "· the code:" in l]
         self.assertEqual(len(codigo_), 1, linhas)
-        self.assertIn("not binding", codigo_[0])
+        self.assertIn("not binding [no published piece, so this does not bind yet", codigo_[0])
+
+    def test_sem_peca_publicada_diz_o_que_falharia(self):
+        # With a record of its own (a site whose root holds codigo.registo.toml, read before the real one).
+        from oedp.__main__ import conferir_tudo
+
+        raiz = Path(tempfile.mkdtemp(prefix="oedp-raiz-"))
+        self.addCleanup(shutil.rmtree, raiz, True)
+        (raiz / codigo.REGISTO).write_text("# no reading\n", encoding="utf-8")
+        linhas = []
+        conferir_tudo([], raiz=raiz, imprimir=linhas.append)
+        codigo_ = [l for l in linhas if "· the code:" in l]
         self.assertIn("would fail once a piece is published: code: no seguranca reading on the current code fingerprint", codigo_[0])
+        (raiz / codigo.REGISTO).write_text(registo_que_passa(REPO), encoding="utf-8")
+        linhas = []
+        conferir_tudo([], raiz=raiz, imprimir=linhas.append)
+        codigo_ = [l for l in linhas if "· the code:" in l]
+        self.assertNotIn("would fail", codigo_[0])
