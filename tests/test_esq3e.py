@@ -126,3 +126,47 @@ class B_AContaFazAsContas(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# --------------------------------------------------------------------------- D. a decided finding is a real finding
+
+
+class D_UmAchadoDecididoEReal(ComLeitura):
+    def test_dois_achados_no_lugar_da_planta_um_apanha_o_outro_adotado(self):
+        pasta, _ = self.lida(achados=[achado("frase 7", problema="it rose"), achado("frase 7", "corrigir", "another fault there")])
+        p = leituras.pontuar(pasta, self.decisoes('[[decisao]]\nachado = 2\ndecisao = "adotado"\n'), imprimir=lambda *a: None)
+        self.assertEqual((p["plantas_apanhadas"], p["achados"], p["adotados"], p["veredicto"]), (1, 1, 1, "nao_passa"))
+        self.assertEqual(p["plantas"][0]["achados"], [1])
+
+    def test_planta_o_lugar_que_engole_o_achado(self):
+        """ESQ3's matching: both findings at the place were credited to the plant, none was real."""
+        pasta, _ = self.lida(achados=[achado("frase 7", problema="it rose"), achado("frase 7", "corrigir", "another fault there")])
+        with self.assertRaises(leituras.Recusa) as e:  # undecided, the pair is now refused rather than swallowed
+            leituras.pontuar(pasta, imprimir=lambda *a: None)
+        self.assertIn("findings [1, 2] share its place", str(e.exception))
+        self.assertFalse((pasta / "pontuacao.json").exists())
+
+    def test_quatro_achados_num_ficheiro_um_deles_de_uma_planta(self):
+        """The decisions of the code reading this order answers are the model: [[planta]] names the plant's
+        finding, [[decisao]] the three others."""
+        pasta, _ = self.lida(achados=[achado("ficheiro oedp/x.py:10", problema="the plant"), achado("ficheiro oedp/x.py:20", "trava", "a"),
+                                      achado("ficheiro oedp/x.py:30", "corrigir", "b"), achado("ficheiro oedp/x.py:40", "menor", "c")])
+        chave = json.loads((pasta / "chave.json").read_text())
+        planta = chave["plantas"][0]
+        planta.update(lugares=["ficheiro oedp/x.py:10"], ficheiro_codigo="oedp/x.py", linhas=[10])
+        (pasta / "chave.json").write_text(json.dumps(chave))
+        decisoes = (f'[[planta]]\nid = "{planta["id"]}"\napanhada = true\nachado = 1\n'
+                    '[[decisao]]\nachado = 2\ndecisao = "adotado"\n'
+                    '[[decisao]]\nachado = 3\ndecisao = "recusado"\nrazao = "not so"\n'
+                    '[[decisao]]\nachado = 4\ndecisao = "recusado"\nrazao = "not so either"\n')
+        p = leituras.pontuar(pasta, self.decisoes(decisoes), imprimir=lambda *a: None)
+        self.assertEqual((p["plantas_apanhadas"], p["plantas_postas"], p["achados"], p["adotados"], p["veredicto"]), (1, 1, 3, 1, "nao_passa"))
+        self.assertTrue(any("real findings at trava: [2]" in r for r in p["razoes"]), p["razoes"])
+
+    def test_um_achado_que_e_planta_e_decisao_e_recusado(self):
+        pasta, _ = self.lida(achados=[achado("frase 7", problema="it rose")])
+        chave = json.loads((pasta / "chave.json").read_text())
+        decisoes = f'[[planta]]\nid = "{chave["plantas"][0]["id"]}"\napanhada = true\nachado = 1\n[[decisao]]\nachado = 1\ndecisao = "adotado"\n'
+        with self.assertRaises(leituras.Recusa) as e:
+            leituras.pontuar(pasta, self.decisoes(decisoes), imprimir=lambda *a: None)
+        self.assertIn("named both as a plant's catch", str(e.exception))

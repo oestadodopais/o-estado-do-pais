@@ -962,13 +962,19 @@ def pontuar(pasta: Path, decisoes: Path | None = None, modelo: str | None = None
         if d.get("decisao") not in ("adotado", "recusado") or (d.get("decisao") == "recusado" and not d.get("razao")):
             raise Recusa(f"refused: the decision on finding {n} must be adotado, or recusado with its razao")
 
-    # Which finding caught which plant.
+    # Which finding caught which plant. A finding the decisions file decides ([[decisao]]) is a real
+    # finding wherever it sits: a plant's place never takes it (ORDEM-3c, item D). It may not also
+    # be named as a plant's catch.
+    duplos = sorted(n for n in d_achados if n in {d.get("achado") for d in d_plantas.values() if d.get("apanhada")})
+    if duplos:
+        raise Recusa(f"refused: finding(s) {duplos} are named both as a plant's catch ([[planta]]) and as a decided real "
+                     "finding ([[decisao]]); a finding is one or the other")
     apanhadoras: dict[str, list[int]] = {}
     candidatas: dict[str, list[int]] = {}
     for c in chave:
         exatos = set(c["lugares"]) - {l for l in c["lugares"] if l.startswith("ficheiro ")}
         for n, a in enumerate(achados, 1):
-            if a["onde"] in exatos:
+            if a["onde"] in exatos and n not in d_achados:
                 apanhadoras.setdefault(c["id"], []).append(n)
             f = _ficheiro_do_achado(a["onde"])
             rel = c.get("ficheiro_codigo")
@@ -991,13 +997,18 @@ def pontuar(pasta: Path, decisoes: Path | None = None, modelo: str | None = None
         elif cand and not auto:
             por_decidir.append(f"{c['id']} ({c['ficheiro_codigo']}, lines {c.get('linhas')}): candidate findings {cand}")
             continue
+        elif len(auto) > 1:
+            # Two or more undecided findings at a plant's place: which caught it is the decisions file's to say.
+            por_decidir.append(f"{c['id']} (at {', '.join(sorted(c['lugares']))}): findings {auto} share its place")
+            continue
         else:
             apanhada, por = bool(auto), auto
         resultado_plantas.append({"id": c["id"], "descricao": c["descricao"], "apanhada": apanhada, "achados": por,
                                   "problemas": [achados[i - 1].get("problema", "") for i in por]})
     if por_decidir:
-        raise Recusa("refused: a finding in a planted file is only a candidate; the decisions file must say for each "
-                     "[[planta]] apanhada = true or false, with the finding's number: " + "; ".join(por_decidir))
+        raise Recusa("refused: a finding in a planted file, or one of several findings at a plant's place, is only a "
+                     "candidate; the decisions file must say for each [[planta]] apanhada = true or false, with the "
+                     "finding's number: " + "; ".join(por_decidir))
     usados = {i for r in resultado_plantas for i in r["achados"]}
     reais = [(n, a) for n, a in enumerate(achados, 1) if n not in usados]
 
