@@ -394,16 +394,22 @@ _CONSTRUIR = ("import sys; from pathlib import Path; from oedp import ensaio; "
               "print('\\n'.join(c.mensagens)); sys.exit(0 if c.ok else 1)")
 
 
-def artefactos_da_arvore(arvore: Path, pacote: Path) -> int:
+_FALHOU = re.compile(r"(?m)^(?:FAIL|ERROR): \S+ \(([^)\s]+)\)")
+
+
+def testes_que_falharam(saida: str) -> list[str]:
+    """The tests unittest names as failed or in error in the output of `tudo`."""
+    return sorted(set(_FALHOU.findall(saida)))
+
+
+def artefactos_da_arvore(arvore: Path, pacote: Path) -> tuple[int, list[str]]:
     """construido/, construido-sem-pecas/ and saida-tudo.txt, made by the code in `arvore`
-    itself, run in a scratch copy that git tracks (the checks and the code's fingerprint
-    read the list of tracked files). Returns the exit code of `tudo`."""
+    itself, run in a scratch copy of it that is not a git repository, as the reader's
+    `arvore/` is not. Returns the exit code of `tudo` and the tests it names as failed."""
     with tempfile.TemporaryDirectory(prefix="oedp-arvore-") as tmp:
         copia = Path(tmp) / "arvore"
         shutil.copytree(arvore, copia, symlinks=True)
         env = _ambiente_limpo()
-        subprocess.run(["git", "init", "-q", str(copia)], check=True, capture_output=True)
-        subprocess.run(["git", "-C", str(copia), "add", "-A"], check=True, capture_output=True)
         tudo = subprocess.run([sys.executable, "-m", "oedp", "tudo"], cwd=copia, env=env, capture_output=True, text=True)
         _escrever(pacote, "saida-tudo.txt", tudo.stdout + tudo.stderr + f"\n(exit {tudo.returncode})\n")
         for nome, com in (("construido", "1"), ("construido-sem-pecas", "0")):
@@ -416,7 +422,7 @@ def artefactos_da_arvore(arvore: Path, pacote: Path) -> int:
             if destino.exists():
                 shutil.rmtree(destino)
             shutil.copytree(saida / "saida" / "static", destino)
-        return tudo.returncode
+        return tudo.returncode, testes_que_falharam(tudo.stdout + tudo.stderr)
 
 
 def pacote_do_codigo(alvo: Alvo, pacote: Path, base: str | None, ordens: list[str], relatorios: list[str],
@@ -438,7 +444,11 @@ def pacote_do_codigo(alvo: Alvo, pacote: Path, base: str | None, ordens: list[st
     arquivar(repo, cabeca, pacote / "arvore")
     arquivar(repo, base_c.stdout.strip(), pasta / "base")
     _escrever(pacote, "diff.patch", diff_entre(pasta / "base", pacote / "arvore"))
-    saida = artefactos(pacote / "arvore", pacote)
+    saida, falhados = artefactos(pacote / "arvore", pacote)
+    if saida != 0:
+        # A tree whose own gate fails would make every plant pass "the same exit as before".
+        raise Recusa(f"refused: tudo exits {saida} in the unpacked tree, and the reader must be given a tree whose gate "
+                     f"passes; failing: {', '.join(falhados) or '(no test named; the output is in the scratch copy)'}")
     return codigo.impressao_de_pasta(pacote / "arvore"), {"base": base_c.stdout.strip(), "cabeca": cabeca, "saida_tudo": saida}
 
 
@@ -596,7 +606,7 @@ class Plantador:
             construir_com_textos(textos_de_numerados(_texto(self.pacote / ficheiro)), self.pacote / "construido", self.repo)
         elif ficheiro.startswith("arvore/"):
             self._escrever("diff.patch", diff_entre(self.pasta / "base", self.pacote / "arvore"))
-            self.saida_tudo = self.artefactos(self.pacote / "arvore", self.pacote)
+            self.saida_tudo, self.falhados = self.artefactos(self.pacote / "arvore", self.pacote)
         elif ficheiro in ("folha.toml",):
             pass
         else:
@@ -628,7 +638,11 @@ def plantar(pasta: Path, lista: Path, loja: Path | None = None, repo: Path = REP
     if (pasta / "chave.json").exists():
         raise Recusa("refused: this package was already planted (chave.json exists); build a new one")
     plantas = _ler_lista(lista)
-    if ler_json(pasta / "leitura.json")["alvo"]["tipo"] == "peca" and (loja is None or not Path(loja).is_dir()):
+    leitura_ = ler_json(pasta / "leitura.json")
+    if leitura_["alvo"]["tipo"] == "codigo" and leitura_.get("codigo", {}).get("saida_tudo") != 0:
+        raise Recusa(f"refused: tudo did not exit 0 in the unplanted tree (exit {leitura_.get('codigo', {}).get('saida_tudo')}), "
+                     "so no plant could be shown to pass the checks and the tests; build the package again from a sound tree")
+    if leitura_["alvo"]["tipo"] == "peca" and (loja is None or not Path(loja).is_dir()):
         raise Recusa("refused: OEDP_FONTES is not set or does not exist here, and check 2 must run on the planted piece "
                      "to prove that no check catches the plant by itself")
     pacote = pasta / "pacote"
@@ -693,11 +707,10 @@ def _uma_planta(p: Plantador, planta: dict) -> dict:
         relativo = ficheiro[len("arvore/"):]
         lugares = [f"ficheiro {relativo}"]
         extra = {"ficheiro_codigo": relativo, "linhas": linhas}
-        # 4. tudo exits in the planted tree as it did before
-        antes_saida = p.leitura.get("codigo", {}).get("saida_tudo")
-        if antes_saida is not None and p.saida_tudo != antes_saida:
-            raise Recusa(f"refused: {pid}: tudo exits {p.saida_tudo} in the planted tree and {antes_saida} before; "
-                         "a plant a check or a test catches measures the check, not the reader")
+        # 4. tudo exits 0 in the planted tree (it did in the unplanted one, or plantar refused)
+        if p.saida_tudo != 0:
+            raise Recusa(f"refused: {pid}: tudo exits {p.saida_tudo} in the planted tree (failing: "
+                         f"{', '.join(p.falhados) or 'no test named'}); a plant a check or a test catches measures the check, not the reader")
     else:
         extra = {}
         for nome, antes_n in numerado_antes.items():

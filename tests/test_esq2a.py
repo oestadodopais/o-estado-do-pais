@@ -12,6 +12,7 @@ import os
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 import tomllib
 import unittest
@@ -269,7 +270,7 @@ def falsos_artefactos(arvore: Path, pacote: Path) -> int:
     (pacote / "construido-sem-pecas").mkdir(exist_ok=True)
     quebrado = any(b"QUEBRA" in f.read_bytes() for f in arvore.rglob("*.py"))
     (pacote / "saida-tudo.txt").write_text("tudo: " + ("failed" if quebrado else "passed") + "\n", encoding="utf-8")
-    return 1 if quebrado else 0
+    return (1, ["tests.test_a.A.test_quebra"]) if quebrado else (0, [])
 
 
 class Codigo(Base):
@@ -332,7 +333,45 @@ desmente_em = "lista.toml"
             self.plantar(pasta, '[[planta]]\nid = "Q9"\nficheiro = "arvore/oedp/a.py"\nantes = "return x > 0"\n'
                                 'depois = "return x > 0  # QUEBRA"\ndescricao = "d"\ndesmente = "c(x) is true only"\ndesmente_em = "lista.toml"\n',
                          artefactos=falsos_artefactos)
-        self.assertIn("tudo exits 1 in the planted tree and 0 before", str(e.exception))
+        self.assertIn("tudo exits 1 in the planted tree (failing: tests.test_a.A.test_quebra)", str(e.exception))
+
+    def test_planta_arvore_com_um_teste_que_falha_recusa_o_pacote(self):
+        repo, base = self.repo_com_dois_commits()
+        (repo / "oedp" / "b.py").write_text("def b():\n    return 2  # QUEBRA\n", encoding="utf-8")
+        commit(repo, "oedp")
+        ordem = self.lista("# The order\n")
+        with self.assertRaises(leituras.Recusa) as e:
+            self.montar("seguranca", alvo="codigo", repo=repo, base=base, ordens=[str(ordem)], artefactos=falsos_artefactos)
+        self.assertIn("refused: tudo exits 1 in the unpacked tree", str(e.exception))
+        self.assertIn("failing: tests.test_a.A.test_quebra", str(e.exception))
+        self.assertEqual(list((self.oficina / "leituras" / "codigo").iterdir()), [])
+
+    def test_planta_pacote_feito_a_mao_a_volta_de_uma_arvore_que_falha(self):
+        repo, base = self.repo_com_dois_commits()
+        ordem = self.lista("# The order\n\nc(x) is true only for a positive x.\n")
+        pasta = self.montar("seguranca", alvo="codigo", repo=repo, base=base, ordens=[str(ordem)], artefactos=falsos_artefactos)
+        dados = json.loads((pasta / "leitura.json").read_text())
+        self.assertEqual(dados["codigo"]["saida_tudo"], 0)
+        dados["codigo"]["saida_tudo"] = 1  # as a package made by hand around a failing tree would say
+        (pasta / "leitura.json").write_text(json.dumps(dados))
+        antes = self.todos(pasta / "pacote")
+        with self.assertRaises(leituras.Recusa) as e:
+            self.plantar(pasta, '[[planta]]\nid = "Q9"\nficheiro = "arvore/oedp/a.py"\nantes = "return x > 0"\n'
+                                'depois = "return x >= 0"\ndescricao = "d"\ndesmente = "c(x) is true only"\ndesmente_em = "lista.toml"\n',
+                         artefactos=falsos_artefactos)
+        self.assertIn("refused: tudo did not exit 0 in the unplanted tree (exit 1)", str(e.exception))
+        self.assertEqual(self.todos(pasta / "pacote"), antes)
+
+    def test_os_testes_que_falharam_lidos_da_saida_real(self):
+        pasta = Path(tempfile.mkdtemp(prefix="oedp-unittest-"))
+        self.addCleanup(shutil.rmtree, pasta, True)
+        (pasta / "test_x.py").write_text(
+            "import unittest\n\nclass T(unittest.TestCase):\n    def test_bom(self):\n        pass\n"
+            "    def test_mau(self):\n        self.assertEqual(1, 2)\n    def test_erro(self):\n        raise RuntimeError('x')\n",
+            encoding="utf-8")
+        r = subprocess.run([sys.executable, "-m", "unittest", "test_x"], cwd=pasta, capture_output=True, text=True)
+        self.assertNotEqual(r.returncode, 0)
+        self.assertEqual(leituras.testes_que_falharam(r.stdout + r.stderr), ["test_x.T.test_erro", "test_x.T.test_mau"])
 
 
 # --------------------------------------------------------------------------- A2
@@ -449,7 +488,9 @@ class Lancar(Base):
         self.assertRegex(dados["inicio"], r"\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ")
 
 
-class Pontuar(Base):
+class ComLeitura(Base):
+    """A scored reading's folder for the tests of pontuar and registar; no test of its own."""
+
     def lida(self, lugar="juiz", plantas=PLANTA_BOA, achados=(), veredicto="nao_passa", **kw):
         p = Plantada()
         self.addCleanup(p.apagar)
@@ -465,6 +506,8 @@ class Pontuar(Base):
     def decisoes(self, texto):
         return self.lista(texto)
 
+
+class Pontuar(ComLeitura):
     def test_planta_sem_bloco_e_onde_fora_das_formas(self):
         pasta, _ = self.lida()
         (pasta / "LEITURA.md").write_text("no block\n", encoding="utf-8")
@@ -554,7 +597,7 @@ def codigo_registo():
     return codigo.REGISTO
 
 
-class Registar(Pontuar):
+class Registar(ComLeitura):
     def test_regista_na_peca_e_so_uma_vez(self):
         pasta, p = self.lida(achados=[achado("frase 8")], extra='pessoas_vistas = ["pessoa_de_ensaio"]\n')
         with self.assertRaises(leituras.Recusa) as e:

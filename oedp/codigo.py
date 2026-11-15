@@ -24,6 +24,7 @@ read table by table, in the order of the file (`em_ordem`).
 """
 from __future__ import annotations
 
+import fnmatch
 import hashlib
 import os
 import re
@@ -46,7 +47,68 @@ def e_codigo(caminho: str) -> bool:
     return caminho not in EXCLUIDOS_FICHEIROS and not caminho.startswith(EXCLUIDAS_PASTAS)
 
 
+def e_repositorio(pasta: Path) -> bool:
+    """Whether `pasta` is the top of a git working tree (not merely inside another one)."""
+    try:
+        r = subprocess.run(["git", "-C", str(pasta), "rev-parse", "--show-toplevel"], capture_output=True, text=True)
+    except FileNotFoundError:
+        return False
+    return r.returncode == 0 and Path(r.stdout.strip()).resolve() == Path(pasta).resolve()
+
+
+def padroes_ignorados(pasta: Path) -> list[str]:
+    """The patterns of the tree's `.gitignore`, in the simple forms this reading supports:
+    a name or a glob (matched against every part of a path), `name/` (a folder anywhere),
+    and a pattern holding `/` (matched against the whole path from the root)."""
+    f = Path(pasta) / ".gitignore"
+    padroes = []
+    for linha in (f.read_text(encoding="utf-8").splitlines() if f.is_file() else []):
+        linha = linha.strip()
+        if not linha or linha.startswith("#"):
+            continue
+        if linha.startswith("!") or "**" in linha:
+            raise ErroDoCodigo(f".gitignore: the pattern {linha!r} is not one this reading of a tree without git supports")
+        padroes.append(linha)
+    return padroes
+
+
+def ignorado(relativo: str, padroes: list[str]) -> bool:
+    partes = relativo.split("/")
+    for p in padroes:
+        so_pasta = p.endswith("/")
+        q = p.strip("/")
+        if "/" in q:  # anchored at the root
+            if fnmatch.fnmatchcase(relativo, q) or fnmatch.fnmatchcase(relativo, q + "/*") or relativo.startswith(q + "/"):
+                return True
+            continue
+        candidatas = partes[:-1] if so_pasta else partes
+        if any(fnmatch.fnmatchcase(parte, q) for parte in candidatas):
+            return True
+    return False
+
+
+def ficheiros_da_pasta(pasta: Path) -> list[str]:
+    """Every file of a tree that is not a git repository (an unpacked `git archive`, the
+    reader's `arvore/`), except `.git/` and what its `.gitignore` excludes: in such a tree
+    every file was tracked, and what the commands make there (`.vercel/`, `__pycache__/`)
+    is what `.gitignore` names."""
+    pasta = Path(pasta)
+    padroes = padroes_ignorados(pasta)
+    nomes = []
+    for f in sorted(pasta.rglob("*")):
+        relativo = f.relative_to(pasta).as_posix()
+        if f.relative_to(pasta).parts[0] == ".git" or (f.is_dir() and not f.is_symlink()):
+            continue
+        if not ignorado(relativo, padroes):
+            nomes.append(relativo)
+    return sorted(nomes)
+
+
 def ficheiros_seguidos(repo: Path) -> list[str]:
+    """The tracked files: `git ls-files` in a repository; in a tree that is not one, every
+    file `ficheiros_da_pasta` lists."""
+    if not e_repositorio(repo):
+        return ficheiros_da_pasta(repo)
     r = subprocess.run(["git", "-C", str(repo), "ls-files", "-z"], capture_output=True)
     if r.returncode != 0:
         raise ErroDoCodigo(f"git could not list the tracked files ({r.stderr.decode(errors='replace').strip()})")

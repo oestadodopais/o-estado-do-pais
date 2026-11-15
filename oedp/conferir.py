@@ -494,9 +494,13 @@ def check8_peca(peca: Peca) -> Resultado:
 
 def ficheiros_seguidos(repo: Path, extras=()) -> list[tuple[str, bytes]]:
     """Tracked files, untracked files that git does not ignore (a new piece or record is
-    read before it is committed), and any file named on the command line."""
-    nomes = set()
-    for args in (["ls-files", "-z"], ["ls-files", "-z", "--others", "--exclude-standard"]):
+    read before it is committed), and any file named on the command line. In a tree that
+    is not a git repository, every file its .gitignore does not exclude (codigo.py)."""
+    from . import codigo
+
+    repositorio = codigo.e_repositorio(repo)
+    nomes = set() if repositorio else set(codigo.ficheiros_da_pasta(repo))
+    for args in (["ls-files", "-z"], ["ls-files", "-z", "--others", "--exclude-standard"]) if repositorio else ():
         saida = subprocess.run(["git", "-C", str(repo), *args], check=True, capture_output=True).stdout
         nomes |= {n for n in saida.decode().split("\0") if n}
     lista = []
@@ -573,6 +577,8 @@ def check8_arvore(repo: Path, ambiente: dict | None = None, extras=()) -> Result
         ficheiros = ficheiros_seguidos(repo, extras)
     except (subprocess.CalledProcessError, FileNotFoundError) as e:
         return _r(8, "tracked files", [f"git could not list the tracked files ({e})"])
+    except Exception as e:  # codigo.ErroDoCodigo: a .gitignore this reading cannot follow
+        return _r(8, "tracked files", [str(e)])
     r = privacidade.conferir(ficheiros, ambiente)
     razoes = list(r.razoes) + ([r.falha_da_lista] if r.falha_da_lista else [])
     fluxo = Path(repo) / ".github" / "workflows" / "portao.yml"

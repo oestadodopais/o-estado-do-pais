@@ -331,6 +331,9 @@ def cmd_leitura(a) -> int:
             pasta = leituras.montar(a.alvo, a.lugar, folha=a.folha, seccao=a.seccao, com=a.com or [], base=a.base,
                                     ordens=a.ordem or [], relatorios=a.relatorio or [], loja=_loja())
             print(f"reading folder: {pasta}")
+            dados = leituras.ler_json(pasta / "leitura.json")
+            if "codigo" in dados:
+                print(f"tudo in the unpacked tree: exit {dados['codigo']['saida_tudo']}")
             print(f"package: {pasta / 'pacote'} · prompt: {pasta / 'PROMPT.md'}")
             return 0
         if a.passo == "plantar":

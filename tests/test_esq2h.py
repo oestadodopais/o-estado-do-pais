@@ -40,11 +40,27 @@ class Impressao(unittest.TestCase):
                        "docs.txt", "pecas.md"):
             self.assertTrue(codigo.e_codigo(dentro), dentro)
 
+    def copia(self, com_git: bool) -> Path:
+        """The tree's files in a temporary folder, made a git repository when asked: these
+        tests never depend on whether the tree they run in is one (ESQ2b item 1)."""
+        pasta = Path(tempfile.mkdtemp(prefix="oedp-copia-"))
+        self.addCleanup(shutil.rmtree, pasta, True)
+        for nome in codigo.ficheiros_seguidos(REPO):
+            destino = pasta / nome
+            destino.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(REPO / nome, destino, follow_symlinks=False)
+        if com_git:
+            subprocess.run(["git", "init", "-q", str(pasta)], check=True)
+            subprocess.run(["git", "-C", str(pasta), "add", "-A"], check=True)
+        return pasta
+
     def test_a_impressao_refeita_a_mao(self):
-        nomes = subprocess.run(["git", "-C", str(REPO), "ls-files", "-z"], capture_output=True, check=True).stdout.decode().split("\0")
-        linhas = sorted(n for n in nomes if n and codigo.e_codigo(n) and (REPO / n).is_file())
-        texto = "".join(f"{hashlib.sha256((REPO / n).read_bytes()).hexdigest()}  {n}\n" for n in linhas)
-        self.assertEqual(codigo.impressao(REPO), hashlib.sha256(texto.encode()).hexdigest())
+        repo = self.copia(com_git=True)
+        nomes = subprocess.run(["git", "-C", str(repo), "ls-files", "-z"], capture_output=True, check=True).stdout.decode().split("\0")
+        linhas = sorted(n for n in nomes if n and codigo.e_codigo(n) and (repo / n).is_file())
+        texto = "".join(f"{hashlib.sha256((repo / n).read_bytes()).hexdigest()}  {n}\n" for n in linhas)
+        self.assertEqual(codigo.impressao(repo), hashlib.sha256(texto.encode()).hexdigest())
+        self.assertEqual(codigo.impressao(REPO), codigo.impressao(repo))
         self.assertIn("oedp/peca.py", linhas)
         self.assertNotIn("README.md", linhas)
 
@@ -58,18 +74,47 @@ class Impressao(unittest.TestCase):
         self.assertNotEqual(codigo.impressao_da_lista(mudada), antes)
 
     def test_a_impressao_de_uma_pasta_e_a_do_git(self):
-        pasta = Path(tempfile.mkdtemp(prefix="oedp-arvore-"))
-        self.addCleanup(shutil.rmtree, pasta, True)
-        arquivo = subprocess.run(["git", "-C", str(REPO), "archive", "HEAD"], capture_output=True, check=True).stdout
-        subprocess.run(["tar", "-x", "-C", str(pasta)], input=arquivo, check=True)
-        subprocess.run(["git", "init", "-q", str(pasta)], check=True)
-        subprocess.run(["git", "-C", str(pasta), "add", "-A"], check=True)
-        self.assertEqual(codigo.impressao_de_pasta(pasta), codigo.impressao(pasta))
+        pasta, repo = self.copia(com_git=False), self.copia(com_git=True)
+        self.assertFalse(codigo.e_repositorio(pasta))
+        self.assertTrue(codigo.e_repositorio(repo))
+        self.assertEqual(codigo.ficheiros_da_pasta(pasta), sorted(codigo.ficheiros_seguidos(repo)))
+        self.assertEqual(codigo.impressao_de_pasta(pasta), codigo.impressao(repo))
+        self.assertEqual(codigo.impressao(pasta), codigo.impressao(repo))
+        self.assertEqual(codigo.impressao_de_pasta(repo), codigo.impressao(repo))  # its .git/ left out
         antes = codigo.impressao_de_pasta(pasta)
         (pasta / "docs" / "nota.md").write_text("not code\n", encoding="utf-8")
         self.assertEqual(codigo.impressao_de_pasta(pasta), antes)
         (pasta / "oedp" / "novo.py").write_text("x = 1\n", encoding="utf-8")
         self.assertNotEqual(codigo.impressao_de_pasta(pasta), antes)
+
+    def test_sem_git_o_que_o_gitignore_exclui_fica_de_fora(self):
+        pasta = self.copia(com_git=False)
+        antes = codigo.impressao(pasta)
+        for nome in (".vercel/output/static/index.html", "oedp/__pycache__/peca.cpython-312.pyc", "x/.DS_Store", ".venv/bin/python"):
+            (pasta / nome).parent.mkdir(parents=True, exist_ok=True)
+            (pasta / nome).write_text("made by running the commands\n", encoding="utf-8")
+        self.assertEqual(codigo.impressao(pasta), antes)
+        (pasta / "oedp" / "intruso.py").write_text("x = 1\n", encoding="utf-8")  # the plant: a file that is not ignored
+        self.assertNotEqual(codigo.impressao(pasta), antes)
+        self.assertIn("oedp/intruso.py", codigo.ficheiros_seguidos(pasta))
+
+    def test_planta_gitignore_que_esta_leitura_nao_segue(self):
+        pasta = self.copia(com_git=False)
+        with open(pasta / ".gitignore", "a", encoding="utf-8") as f:
+            f.write("!.vercel/manter\n")
+        with self.assertRaises(codigo.ErroDoCodigo) as e:
+            codigo.impressao(pasta)
+        self.assertIn("is not one this reading of a tree without git supports", str(e.exception))
+
+    def test_planta_caminho_privado_numa_arvore_sem_git(self):
+        from oedp import conferir as conf
+
+        pasta = self.copia(com_git=False)
+        self.assertEqual(conf.check8_arvore(pasta, ambiente={}).estado, conf.PASSOU)
+        (pasta / "oedp" / "nota.txt").write_text("/" + "Users/alguem/segredo\n", encoding="utf-8")
+        r = conf.check8_arvore(pasta, ambiente={})
+        self.assertEqual(r.estado, conf.FALHOU)
+        self.assertIn("oedp/nota.txt: a machine path", " ".join(r.razoes))
 
     def test_o_comando(self):
         r = subprocess.run([sys.executable, "-m", "oedp", "impressao", "codigo"], cwd=REPO, capture_output=True, text=True)
