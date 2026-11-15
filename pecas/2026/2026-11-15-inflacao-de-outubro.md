@@ -1794,3 +1794,16 @@ plantas_apanhadas = 0
 achados = 26
 adotados = 23
 veredicto = "levanta"
+
+[[leitura]]
+lugar = "leitor"
+familia = "anthropic"
+modelo = "claude-sonnet-5-5"
+inicio = "2026-11-15T13:16:04Z"
+fim = "2026-11-15T13:18:55Z"
+impressao = "4308a731348fecef6517ace9f91d6fa6021c759dbb7b063b042415fd5e959ddc"
+plantas_postas = 0
+plantas_apanhadas = 0
+achados = 20
+adotados = 17
+veredicto = "levanta"
