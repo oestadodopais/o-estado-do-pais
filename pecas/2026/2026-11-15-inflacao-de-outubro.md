@@ -1773,3 +1773,11 @@ familia = "anthropic"
 modelo = "claude-fable-5-2"
 inicio = "2026-11-15T12:49:42Z"
 fim = "2026-11-15T12:49:42Z"
+
+[[passo]]
+nome = "edicao"
+lugar = "direcao"
+familia = "anthropic"
+modelo = "claude-fable-5-2"
+inicio = "2026-11-15T12:58:54Z"
+fim = "2026-11-15T13:04:00Z"
