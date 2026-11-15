@@ -65,7 +65,8 @@ def _vinculo(n, peca: Peca, razoes, notas=None):
 # --------------------------------------------------------------------------- 1
 
 
-PALAVRAS_DO_DIARIO, FIGURAS_DO_DIARIO = 500, 12
+# docs/ESPEC-PECA.md, edit of 15 November 2026, 13:44 UTC: twenty figures, not twelve, which fired on every real piece.
+PALAVRAS_DO_DIARIO, FIGURAS_DO_DIARIO = 500, 20
 
 
 def tamanho(peca: Peca) -> tuple[int, int]:
@@ -91,15 +92,15 @@ def tamanho(peca: Peca) -> tuple[int, int]:
 
 def nota_de_tamanho(peca: Peca) -> list[str]:
     """The size of a kind is said, not enforced: a note when a diario passes 500 words of text
-    or prints more than twelve figures."""
+    or prints more than twenty figures."""
     if peca.cabeca.get("tipo") != "diario":
         return []
     palavras, figuras = tamanho(peca)
     if palavras <= PALAVRAS_DO_DIARIO and figuras <= FIGURAS_DO_DIARIO:
         return []
-    return [f"a diario of {palavras} words of text and {figuras} printed figures; the foundation gives a daily item "
-            f"200 to {PALAVRAS_DO_DIARIO} words and about eight figures (said, not enforced: {PALAVRAS_DO_DIARIO} words "
-            f"and {FIGURAS_DO_DIARIO} figures are where this note starts)"]
+    return [f"a diario of {palavras} words of text and {figuras} printed figures, past the size of a daily item "
+            f"({PALAVRAS_DO_DIARIO} words, {FIGURAS_DO_DIARIO} figures); said, not enforced: cutting it or making it an "
+            "article is the direction seat's, at the edit"]
 
 
 def check1(peca: Peca) -> Resultado:

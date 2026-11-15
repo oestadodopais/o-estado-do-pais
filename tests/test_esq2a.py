@@ -183,7 +183,8 @@ class TextoNumerado(Base):
         pagina = (c.estatica / "pecas" / ensaio.PECA_ID / "index.html").read_text(encoding="utf-8")
 
         class Texto(html.parser.HTMLParser):
-            """The words of the kind, the title, the lead and the text of the built page."""
+            """The words of the title, the lead and the text of the built page (the kind's label is
+            said in the copy's first line, unnumbered: ESQ3, item K)."""
             def __init__(self):
                 super().__init__(convert_charrefs=True)
                 self.dentro, self.partes, self.profundidade = None, [], 0
@@ -191,7 +192,7 @@ class TextoNumerado(Base):
                 classe = dict(attrs).get("class", "")
                 if self.dentro:
                     self.profundidade += 1
-                elif classe in ("eyebrow", "peca-titulo", "entrada", "texto") and not (classe == "eyebrow" and self.partes):
+                elif classe in ("peca-titulo", "entrada", "texto"):
                     self.dentro, self.profundidade = classe, 1
                     self.partes.append(" ")
             def partes_fechadas(self):
@@ -211,7 +212,11 @@ class TextoNumerado(Base):
         numerado_ = leituras.texto_numerado_da_peca(PECA.read_bytes())
         do_numerado = numerado.limpar(" ".join(numerado.lista(numerado_)))
         self.assertEqual(do_numerado, da_pagina)
-        self.assertIn("[8] No trimestre anterior ficara em 102,3 pontos, uma subida de 2,4 pontos.", numerado_)
+        self.assertIn("[7] No trimestre anterior ficara em 102,3 pontos, uma subida de 2,4 pontos.", numerado_)
+        rotulo = re.search(r'<p class="eyebrow">([^<]+)</p>', pagina).group(1)
+        self.assertTrue(numerado_.startswith(f"(Above the title the page prints the label of the kind of piece, «{rotulo}». "
+                                             "It is not a sentence of the text, and is not numbered.)\n\n[1] Peça de ensaio"))
+        self.assertNotIn(f"] {rotulo}\n", numerado_)
 
     def test_a_regra_das_frases(self):
         self.assertEqual(numerado.frases("Diz a p. 2 que sim. E depois? «Não.» Fim 3. 4 pessoas… Mais"),
@@ -384,9 +389,9 @@ class Plantar(Base):
         pasta = self.montar("juiz")
         self.plantar(pasta, PLANTA_BOA)
         numerado_ = (pasta / "pacote" / "TEXTO-NUMERADO.md").read_text(encoding="utf-8")
-        self.assertIn("[8] No trimestre anterior ficara em 102,3 pontos, uma descida de 2,4 pontos.", numerado_)
+        self.assertIn("[7] No trimestre anterior ficara em 102,3 pontos, uma descida de 2,4 pontos.", numerado_)
         chave = json.loads((pasta / "chave.json").read_text(encoding="utf-8"))["plantas"]
-        self.assertEqual(chave[0]["lugares"], ["frase 8"])
+        self.assertEqual(chave[0]["lugares"], ["frase 7"])
         self.assertEqual(chave[0]["sha256_antes"], ler(PECA).impressao)
         self.assertFalse((pasta / "pacote" / "chave.json").exists())
         horas = {f.stat().st_mtime for f in (pasta / "pacote").rglob("*")}
@@ -523,7 +528,7 @@ class Pontuar(ComLeitura):
         self.assertFalse((pasta / "pontuacao.json").exists())
 
     def test_apanhada_e_decidida_passa(self):
-        pasta, _ = self.lida(achados=[achado("frase 8", problema="it rose"), achado("frase 2", "menor", "a real one")])
+        pasta, _ = self.lida(achados=[achado("frase 7", problema="it rose"), achado("frase 2", "menor", "a real one")])
         linhas = []
         with self.assertRaises(leituras.Recusa) as e:  # the real finding has no decision yet
             leituras.pontuar(pasta, imprimir=linhas.append)
@@ -540,7 +545,7 @@ class Pontuar(ComLeitura):
         self.assertIn("caught 0 of 1 plants", p["razoes"])
 
     def test_planta_achado_real_a_trava(self):
-        pasta, _ = self.lida(achados=[achado("frase 8"), achado("linha total", "trava")])
+        pasta, _ = self.lida(achados=[achado("frase 7"), achado("linha total", "trava")])
         p = leituras.pontuar(pasta, self.decisoes('[[decisao]]\nachado = 2\ndecisao = "recusado"\nrazao = "no"\n'), imprimir=lambda *a: None)
         self.assertEqual(p["veredicto"], "nao_passa")
         self.assertIn("real findings at trava: [2] (closed only by a repair read again)", p["razoes"])
@@ -560,11 +565,11 @@ class Pontuar(ComLeitura):
         self.assertEqual(p["veredicto"], "levanta")
 
     def test_decisoes_sobre_plantas(self):
-        pasta, _ = self.lida(achados=[achado("frase 8")])
+        pasta, _ = self.lida(achados=[achado("frase 7")])
         p = leituras.pontuar(pasta, self.decisoes('[[planta]]\nid = "Q7"\napanhada = false\nachado = 1\nrazao = "a false match"\n'),
                              imprimir=lambda *a: None)
         self.assertEqual((p["plantas_apanhadas"], p["veredicto"]), (0, "nao_passa"))
-        pasta, _ = self.lida(achados=[achado("frase 9")])
+        pasta, _ = self.lida(achados=[achado("frase 8")])
         with self.assertRaises(leituras.Recusa) as e:
             leituras.pontuar(pasta, self.decisoes('[[planta]]\nid = "Q7"\napanhada = true\nachado = 1\nrazao = "close"\n'),
                              imprimir=lambda *a: None)
@@ -601,7 +606,7 @@ def codigo_registo():
 
 class Registar(ComLeitura):
     def test_regista_na_peca_e_so_uma_vez(self):
-        pasta, p = self.lida(achados=[achado("frase 8")], extra='pessoas_vistas = ["pessoa_de_ensaio"]\n')
+        pasta, p = self.lida(achados=[achado("frase 7")], extra='pessoas_vistas = ["pessoa_de_ensaio"]\n')
         with self.assertRaises(leituras.Recusa) as e:
             leituras.registar(pasta, imprimir=lambda *a: None)
         self.assertIn("there is no pontuacao.json", str(e.exception))
@@ -618,7 +623,7 @@ class Registar(ComLeitura):
         self.assertIn("registered already", str(e.exception))
 
     def test_planta_pontuacao_mais_velha_que_a_leitura(self):
-        pasta, _ = self.lida(achados=[achado("frase 8")])
+        pasta, _ = self.lida(achados=[achado("frase 7")])
         leituras.pontuar(pasta, imprimir=lambda *a: None)
         os.utime(pasta / "pontuacao.json", (1_000_000_000, 1_000_000_000))
         with self.assertRaises(leituras.Recusa) as e:

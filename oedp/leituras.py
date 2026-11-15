@@ -200,7 +200,7 @@ def texto_numerado_da_peca(bruto: bytes, repo: Path = REPO) -> str:
     """TEXTO-NUMERADO.md from the bytes of a piece (its record may be cut off)."""
     if not re.search(rb"(?m)^\+\+\+ registo$", bruto):
         bruto = bruto + (b"" if bruto.endswith(b"\n") else b"\n") + b"+++ registo\n"
-    return numerado.numerar(numerado.blocos_da_peca(ler_bytes(bruto, Path("peca.md")), contexto_de_textos(repo)))
+    return numerado.numerado_da_peca(ler_bytes(bruto, Path("peca.md")), contexto_de_textos(repo))
 
 
 def acima_do_registo(bruto: bytes) -> bytes:

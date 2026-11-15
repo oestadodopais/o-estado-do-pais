@@ -3,13 +3,20 @@
 It is made by the code that builds the page's text, not by patterns run over a built
 page: the title and the lead through `paginas.texto_simples`, the text through
 `paginas.markdown_com_referencias` (in the mode that prints a reference's words without
-its link), and the kind through the fixed sentence `tipo_<kind>`. The HTML that code
-returns is read with an HTML parser, block by block, so the numbered text holds the
-same words as the page, in the same order. A test compares the two on the test piece.
+its link). The HTML that code returns is read with an HTML parser, block by block, so the
+numbered text holds the same words as the page, in the same order. A test compares the
+two on the test piece.
+
+The label of the kind of piece (the fixed sentence `tipo_<kind>`, «Diário»), which the page
+prints above the title, is not a sentence of the text: three ordinary readers in three
+readings could not place it when it was sentence 1. The copy of a piece opens with one
+unnumbered line, in English, for the reader of the copy, that says so and gives the label;
+the title is sentence 1 (ORDEM esq3, item K). `lista` reads only the numbered lines, so a
+finding's `frase N` is counted as before.
 
 The rule that splits sentences, deterministic, and this module's own reading:
 
-* Each block is split on its own: the kind, the title, the lead, then each paragraph,
+* Each block is split on its own: the title, the lead, then each paragraph,
   heading and list item of the text, and each row of a table (its cells joined by
   " | ").
 * Inside a block, a sentence ends at `.`, `!`, `?` or `…` (with any `»`, `”`, `)` or
@@ -105,9 +112,21 @@ def frases(bloco: str) -> list[str]:
     return [p for p in partes if p]
 
 
+def rotulo_do_tipo(peca: Peca, ctx: paginas.Contexto) -> str:
+    """The line that opens a piece's numbered copy: the label above the title, said, not numbered."""
+    rotulo = ctx.t("tipo_" + str(peca.cabeca.get("tipo")))
+    return (f"(Above the title the page prints the label of the kind of piece, «{rotulo}». "
+            "It is not a sentence of the text, and is not numbered.)")
+
+
+def numerado_da_peca(peca: Peca, ctx: paginas.Contexto) -> str:
+    """TEXTO-NUMERADO.md of a piece: the label's line, then the title as sentence 1."""
+    return rotulo_do_tipo(peca, ctx) + "\n\n" + numerar(blocos_da_peca(peca, ctx))
+
+
 def blocos_da_peca(peca: Peca, ctx: paginas.Contexto) -> list[str]:
-    """The kind, the title, the lead and the blocks of the text, as the page prints them."""
-    blocos = [ctx.t("tipo_" + str(peca.cabeca.get("tipo")))]
+    """The title, the lead and the blocks of the text, as the page prints them."""
+    blocos = []
     for campo in ("titulo", "entrada"):
         blocos.append(limpar(paginas.texto_simples(peca, str(peca.cabeca.get(campo, "")))))
     blocos += blocos_de_html(paginas.markdown_com_referencias(peca, peca.corpo, modo="texto"))

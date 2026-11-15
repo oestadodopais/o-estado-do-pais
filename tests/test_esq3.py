@@ -575,9 +575,12 @@ class G_OQueOConferirDiz(unittest.TestCase):
         r = self.resultados([("Esta é uma peça de ensaio.", "Esta é uma peça de ensaio. " + longo)])
         self.assertTrue(any(f"a diario of {palavras + 500} words of text and 6 printed figures" in n for n in r[1].notas), r[1].notas)
         self.assertEqual(r[1].estado, conf.PASSOU)
-        muitas = " ".join(["{indice}"] * 7)
-        r = self.resultados([("Esta é uma peça de ensaio.", "Esta é uma peça de ensaio. " + muitas)])
-        self.assertTrue(any(f"and 13 printed figures" in n for n in r[1].notas), r[1].notas)
+        # twenty figures is the size (edit of 13:44 UTC): 20 says nothing, 21 is a note
+        for extra, nota in ((14, False), (15, True)):
+            muitas = " ".join(["{indice}"] * extra)
+            r = self.resultados([("Esta é uma peça de ensaio.", "Esta é uma peça de ensaio. " + muitas)])
+            self.assertEqual(any(f"and {6 + extra} printed figures, past the size of a daily item (500 words, 20 figures)" in n
+                                 for n in r[1].notas), nota, r[1].notas)
 
     def test_planta_os_titulos_de_fecho_contados(self):
         peca = ler(Plantada([]).peca)
