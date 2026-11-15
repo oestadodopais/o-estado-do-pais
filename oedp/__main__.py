@@ -185,6 +185,14 @@ def cmd_estado(a) -> int:
             for r in falhas:
                 print("  " + r.linha(), file=sys.stderr)
             return 1
+        # Whatever the build would refuse, refused here with the same reasons: the Method
+        # prose's and the fixed sentences' judgment, the code's gate, the site's own files.
+        recusas = _o_que_a_construcao_recusaria(caminho, peca.registo["estado"][-1])
+        if recusas:
+            print("refused: the site would not build with the piece published:", file=sys.stderr)
+            for m in recusas:
+                print("  " + m, file=sys.stderr)
+            return 1
     campos = {"estado": a.estado, "em": registo.agora(), "por": "python3 -m oedp estado", "razao": a.razao}
     try:
         print(registo.acrescentar(caminho, "estado", campos), end="")
@@ -192,6 +200,20 @@ def cmd_estado(a) -> int:
         print(f"refused: {e}", file=sys.stderr)
         return 1
     return 0
+
+
+def _o_que_a_construcao_recusaria(caminho: Path, estado: dict) -> list[str]:
+    """Build, into a temporary folder, the site the piece belongs to with the piece as it
+    would be after the new [[estado]]; the build's messages when it refuses, else []."""
+    import tempfile
+
+    bruto = caminho.read_bytes()
+    texto = registo.tabela("estado", estado)
+    novo = bruto + (b"" if bruto.endswith(b"\n") else b"\n") + texto.encode("utf-8")
+    raiz = caminho.resolve().parents[2]
+    with tempfile.TemporaryDirectory(prefix="oedp-como-publicada-") as tmp:
+        c = build.construir(REPO, raiz=raiz, saida=Path(tmp) / "saida", loja=_loja(), como_seria={caminho: novo})
+    return [] if c.ok else c.mensagens
 
 
 def _conferir_como_publicada(peca, ctx):

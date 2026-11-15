@@ -33,7 +33,7 @@ from .paginas import (
     pagina_do_tema,
     pagina_inicial,
 )
-from .peca import ErroDeForma, ler, pecas_em
+from .peca import ErroDeForma, ler, ler_bytes, pecas_em
 
 PACOTE = Path(__file__).resolve().parent
 ESPERA = PACOTE / "espera.html"
@@ -268,7 +268,10 @@ def _escrever(estatica: Path, relativo: str, texto: str | bytes):
 
 
 def construir(repo: Path, raiz: Path | None = None, saida: Path | None = None, com_rascunhos: bool = False,
-              loja: Path | None = None, conferir_antes: bool = True) -> Construcao:
+              loja: Path | None = None, conferir_antes: bool = True, como_seria: dict | None = None) -> Construcao:
+    """`como_seria` maps a piece file to the bytes it would have (its path resolved): the
+    build reads those instead of the file, so that `estado … publicada` can learn whether
+    the site would build before it appends a table that can never be taken back."""
     repo = Path(repo).resolve()
     raiz = Path(raiz or repo).resolve()
     saida = Path(saida or (repo / (".previa" if com_rascunhos else ".vercel/output"))).resolve()
@@ -278,9 +281,11 @@ def construir(repo: Path, raiz: Path | None = None, saida: Path | None = None, c
         return c
 
     pecas = []
+    como_seria = {Path(k).resolve(): v for k, v in (como_seria or {}).items()}
     for caminho in pecas_em(raiz):
         try:
-            pecas.append(ler(caminho))
+            novo = como_seria.get(Path(caminho).resolve())
+            pecas.append(ler(caminho) if novo is None else ler_bytes(novo, caminho))
         except (ErroDeForma, OSError) as e:
             c.falha(f"check 9: {caminho.relative_to(raiz)}: {e}")
     if not c.ok:
@@ -292,7 +297,7 @@ def construir(repo: Path, raiz: Path | None = None, saida: Path | None = None, c
 
     if conferir_antes:
         for p in incluidas:
-            for r in conf.conferir_peca(p.caminho, ctx, loja):
+            for r in conf.conferir_peca(p.caminho, ctx, loja, bruto=como_seria.get(Path(p.caminho).resolve())):
                 c.resultados.append(r)
                 if r.estado == conf.FALHOU:
                     c.falha(r.linha())

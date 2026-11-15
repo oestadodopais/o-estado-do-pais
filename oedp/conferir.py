@@ -640,19 +640,21 @@ def reter_se_privado(resultados: list) -> list:
     return resultados
 
 
-def conferir_peca(caminho: Path, contexto, loja: Path | None, anterior=None) -> list[Resultado]:
+def conferir_peca(caminho: Path, contexto, loja: Path | None, anterior=None, bruto: bytes | None = None) -> list[Resultado]:
     """Every check for one piece file. `contexto` is the site context for rendering;
-    `anterior` is the file on main as anterior_em_main gives it (looked up when None)."""
+    `anterior` is the file on main as anterior_em_main gives it (looked up when None);
+    `bruto`, when given, is the file's bytes as they would be (`estado … publicada` checks
+    the piece with its new table before writing it)."""
     from . import paginas
 
     caminho = Path(caminho)
     try:
-        peca = ler(caminho)
+        peca = ler(caminho) if bruto is None else ler_bytes(bruto, caminho)
     except (ErroDeForma, OSError) as e:
         alvo = caminho.stem
         r = [_r(9, alvo, [str(e)])]
         if isinstance(e, ErroDeForma):
-            dados = caminho.read_bytes()
+            dados = caminho.read_bytes() if bruto is None else bruto
             p8 = privacidade.conferir([(caminho.name, dados)])
             r.append(_r(8, alvo, p8.razoes + ([p8.falha_da_lista] if p8.falha_da_lista else []), [p8.nota] if p8.nota else []))
         return reter_se_privado(r)
