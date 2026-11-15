@@ -1571,3 +1571,16 @@ familia = "anthropic"
 modelo = "claude-fable-5-2"
 inicio = "2026-11-15T12:01:37Z"
 fim = "2026-11-15T12:01:37Z"
+
+[[leitura]]
+lugar = "numeros"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-15T12:07:19Z"
+fim = "2026-11-15T12:11:41Z"
+impressao = "aaada62656d02ad6163cd7883d8487459d379a14c5f69cb0e84943fdc2a7fdc9"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 0
+adotados = 0
+veredicto = "passa"
