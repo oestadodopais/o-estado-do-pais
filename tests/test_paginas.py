@@ -134,11 +134,11 @@ class CincoPaginas(unittest.TestCase):
         for chave in ("Lugar", "Leituras", "Erros plantados apanhados", "Achados reais adotados", "Falhas apontadas por correções"):
             self.assertIn(f'<th scope="col">{chave}</th>', html)
         # juiz (ESQ2: the readings of the Method prose and of the fixed sentences count too): three readings
-        # of the piece (3 of 3, 2 of 2, 1 of 1), one of the Method prose (2 of 2) and four of the fixed
-        # sentences (2 of 2, 1 of 1, 1 of 1, 1 of 1: ESQ2b changed five of them); one finding adopted;
-        # one miss named by the correction's causa
-        self.assertIn('<tr><td class="lugar" data-rotulo="Lugar">Juiz</td><td class="mono" data-rotulo="Leituras">8</td>'
-                      '<td class="mono" data-rotulo="Erros plantados apanhados">13 de 13</td><td class="mono" data-rotulo="Achados reais adotados">1</td>'
+        # of the piece (3 of 3, 2 of 2, 1 of 1), one of the Method prose (2 of 2) and one of the test site's
+        # own fixed sentences (2 of 2, the record oedp/ensaio.py writes when it assembles the tree: ESQ3d);
+        # one finding adopted; one miss named by the correction's causa
+        self.assertIn('<tr><td class="lugar" data-rotulo="Lugar">Juiz</td><td class="mono" data-rotulo="Leituras">5</td>'
+                      '<td class="mono" data-rotulo="Erros plantados apanhados">10 de 10</td><td class="mono" data-rotulo="Achados reais adotados">1</td>'
                       '<td class="mono" data-rotulo="Falhas apontadas por correções">1</td></tr>', html)
         # the code's reader, from the test site's record of the code (oedp/ensaio.py)
         self.assertIn('<tr><td class="lugar" data-rotulo="Lugar">Leitor de código e segurança</td><td class="mono" data-rotulo="Leituras">1</td>'

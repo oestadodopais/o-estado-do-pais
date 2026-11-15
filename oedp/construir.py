@@ -85,9 +85,14 @@ def ligacoes_simbolicas(raiz: Path) -> list[str]:
 
 
 def contexto(repo: Path, raiz: Path, pecas: list, previa: bool = False) -> tuple[Contexto, list[str]]:
-    textos = tomllib.loads((Path(repo) / "textos.toml").read_text(encoding="utf-8"))
+    f_textos = julgados.ficheiro_dos_textos(repo, raiz)
+    textos = tomllib.loads(f_textos.read_text(encoding="utf-8"))
     sitio = tomllib.loads((Path(repo) / "sitio.toml").read_text(encoding="utf-8"))
     mesas, erros = ler_mesas(raiz)
+    # The key that marks the tests' own sentences may never be in a real textos.toml (ORDEM-3d, decision 1).
+    if "arvore_de_ensaio" in textos and not marca.de_ensaio(f_textos.parent):
+        erros.append(f"textos.toml holds the key arvore_de_ensaio, which marks the tests' own fixed sentences; "
+                     "the real file may never hold it")
     erros += ligacoes_simbolicas(raiz)
     metodo_f = Path(raiz) / "paginas" / "metodo.md"
     metodo, julgamento, leituras_fora = None, [], []

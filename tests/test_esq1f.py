@@ -174,7 +174,9 @@ class Item05TextosJulgados(unittest.TestCase):
     def test_planta_registo_de_texto_cortado_face_a_main(self):
         repo = git_temporario(self)
         alvo = repo / "textos.registo.toml"
-        shutil.copy2(ENSAIOS / "textos.registo.toml", alvo)
+        from oedp import ensaio  # the record a tests' tree is given (ESQ3d: no record of the sentences is stored)
+
+        alvo.write_text(ensaio.registo_dos_textos(ensaio.TEXTOS.read_bytes()), encoding="utf-8")
         commit(repo, "textos.registo.toml")
         self.assertEqual(julgados.historia(repo, alvo), [])
         texto = alvo.read_text(encoding="utf-8")

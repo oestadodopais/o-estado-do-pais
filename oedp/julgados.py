@@ -42,10 +42,20 @@ def metodo(caminho: Path) -> tuple[str, dict, str]:
     return texto.decode("utf-8"), tabelas, hashlib.sha256(texto).hexdigest()
 
 
+def ficheiro_dos_textos(repo: Path, raiz: Path) -> Path:
+    """The fixed sentences a site is built with: its own textos.toml when the site's root has one
+    (a tree the tests assembled, ORDEM-3d), else the repository's."""
+    proprio = Path(raiz) / "textos.toml"
+    return proprio if proprio.is_file() else Path(repo) / "textos.toml"
+
+
 def textos(repo: Path, raiz: Path) -> tuple[dict, str, str]:
-    """(record, fingerprint, where the record was read) for textos.toml."""
-    impressao = hashlib.sha256((Path(repo) / "textos.toml").read_bytes()).hexdigest()
-    for pasta in (Path(raiz), Path(repo)):
+    """(record, fingerprint, where the record was read) for the textos.toml the site is built with.
+    A site with its own textos.toml has its record beside it, and only there."""
+    f_textos = ficheiro_dos_textos(repo, raiz)
+    impressao = hashlib.sha256(f_textos.read_bytes()).hexdigest()
+    pastas = (f_textos.parent,) if f_textos.parent.resolve() != Path(repo).resolve() else (Path(raiz), Path(repo))
+    for pasta in pastas:
         f = pasta / "textos.registo.toml"
         if f.is_file():
             try:

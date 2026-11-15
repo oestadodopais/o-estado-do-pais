@@ -349,6 +349,8 @@ def construir_com_textos(textos: dict, destino: Path, repo: Path = REPO):
         shutil.copytree(Path(repo) / "public", copia / "public")
         (copia / "textos.toml").write_text(_toml_de_textos(textos), encoding="utf-8")
         raiz = ensaio.copiar_sitio(Path(tmp) / "raiz", repo=repo)
+        # The tree's own sentences are the ones read here, planted or not (a preview: not judged).
+        (raiz / "textos.toml").write_text(_toml_de_textos(textos), encoding="utf-8")
         from . import construir as build
 
         c = build.construir(copia, raiz=raiz, saida=Path(tmp) / "saida", com_rascunhos=True, loja=ensaio.LOJA)

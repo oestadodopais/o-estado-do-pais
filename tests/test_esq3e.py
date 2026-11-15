@@ -195,9 +195,10 @@ def arvore_do_repositorio(caso) -> Path:
 
 class F_ONomeDoModeloDeEnsaio(unittest.TestCase):
     def test_o_registo_de_ensaio_copiado_por_cima_do_real(self):
-        """The reader's mistake: ensaios/textos.registo.toml over textos.registo.toml."""
+        """The reader's mistake: the tests' record of the sentences over textos.registo.toml (ESQ3d: the record a
+        tests' tree is given at assembly; none is stored)."""
         arvore = arvore_do_repositorio(self)
-        shutil.copy2(ENSAIOS / "textos.registo.toml", arvore / "textos.registo.toml")
+        (arvore / "textos.registo.toml").write_text(ensaio.registo_dos_textos(ensaio.TEXTOS.read_bytes()), encoding="utf-8")
         ctx, _ = build.contexto(REPO, arvore, [])
         self.assertTrue(ctx.ensaio and all(RAZAO in x for x in ctx.ensaio), ctx.ensaio)
         self.assertTrue(all(x.startswith("textos.registo.toml: [[") for x in ctx.ensaio))
@@ -210,8 +211,9 @@ class F_ONomeDoModeloDeEnsaio(unittest.TestCase):
         self.assertTrue(any(RAZAO in m for m in c.mensagens), c.mensagens)
 
     def test_planta_sem_a_barreira_o_engano_passa(self):
+        """Without the barrier, a tests' record made on the real file's fingerprint would count."""
         arvore = arvore_do_repositorio(self)
-        shutil.copy2(ENSAIOS / "textos.registo.toml", arvore / "textos.registo.toml")
+        (arvore / "textos.registo.toml").write_text(ensaio.registo_dos_textos((REPO / "textos.toml").read_bytes()), encoding="utf-8")
         with mock.patch.object(marca, "assinadas", lambda *a: []):
             ctx, _ = build.contexto(REPO, arvore, [])
         self.assertEqual(ctx.ensaio, [])

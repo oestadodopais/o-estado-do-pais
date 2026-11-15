@@ -7,6 +7,7 @@ real piece being published. Nothing here is ever deployed.
 """
 from __future__ import annotations
 
+import hashlib
 import shutil
 from pathlib import Path
 
@@ -17,6 +18,7 @@ from . import marca
 REPO = Path(__file__).resolve().parent.parent
 ENSAIOS = REPO / "ensaios"
 LOJA = ENSAIOS / "fontes"
+TEXTOS = ENSAIOS / "textos.toml"  # the test site's own fixed sentences (ORDEM-3d, decision 1)
 PECA_ID = "2026-11-16-peca-de-ensaio"
 
 
@@ -31,13 +33,39 @@ def marcar(raiz: Path) -> Path:
     return raiz
 
 
+def registo_dos_textos(textos: bytes) -> str:
+    """The test site's record of its own fixed sentences (ensaios/textos.toml): one invented writing
+    step and one invented passing judgment, signed by the tests' model name, on the fingerprint of
+    the file given. Written into each tree the tests assemble, never stored (ORDEM-3d, decision 2):
+    the file it judges has a key the real textos.toml may never hold, so it never fits the real one."""
+    impressao = hashlib.sha256(textos).hexdigest()
+    return (
+        "# The record of this tests' tree's textos.toml, written when the tree was assembled. Invented for the tests.\n"
+        f'\n[[passo]]\nnome = "escrita"\nlugar = "redator"\nfamilia = "anthropic"\nmodelo = "{marca.MODELO}"\n'
+        'inicio = "2026-11-15T09:00:00Z"\nfim = "2026-11-15T09:30:00Z"\n'
+        f'\n[[leitura]]\nlugar = "juiz"\nfamilia = "openai"\nmodelo = "{marca.MODELO}"\n'
+        'inicio = "2026-11-15T10:00:00Z"\nfim = "2026-11-15T10:20:00Z"\n'
+        f'impressao = "{impressao}"\n'
+        'plantas_postas = 2\nplantas_apanhadas = 2\nachados = 0\nadotados = 0\nveredicto = "passa"\n'
+    )
+
+
+def copiar_textos(raiz: Path) -> Path:
+    """The test site's own fixed sentences as `raiz`'s textos.toml, and their record written beside them."""
+    dados = TEXTOS.read_bytes()
+    (Path(raiz) / "textos.toml").write_bytes(dados)
+    (Path(raiz) / "textos.registo.toml").write_text(registo_dos_textos(dados), encoding="utf-8")
+    return Path(raiz)
+
+
 def copiar_sitio(raiz: Path, com_pecas: bool = True, repo: Path = REPO) -> Path:
-    """Copy the test site's pieces, desk, Method page, rights records and records into `raiz`,
-    and mark it as a tree assembled for the tests."""
+    """Copy the test site's pieces, desk, Method page and rights records into `raiz`, with its own
+    fixed sentences; write the records of its sentences and of the code; and mark it as a tree
+    assembled for the tests."""
     raiz = marcar(Path(raiz))
     for sub in ("mesas", "paginas", "direitos") + (("pecas",) if com_pecas else ()):
         shutil.copytree(ENSAIOS / sub, raiz / sub, dirs_exist_ok=True)
-    shutil.copy2(ENSAIOS / "textos.registo.toml", raiz / "textos.registo.toml")
+    copiar_textos(raiz)
     (raiz / codigo.REGISTO).write_text(registo_de_ensaio(repo), encoding="utf-8")
     return raiz
 

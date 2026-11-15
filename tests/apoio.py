@@ -44,7 +44,7 @@ class Plantada:
         _ensaio.marcar(self.pasta)  # a tree assembled for the tests (oedp/marca.py)
         for sub in ("pecas", "mesas", "paginas", "direitos"):
             shutil.copytree(ENSAIOS / sub, self.pasta / sub)
-        shutil.copy2(ENSAIOS / "textos.registo.toml", self.pasta / "textos.registo.toml")
+        _ensaio.copiar_textos(self.pasta)  # its own sentences and their record, written here (ORDEM-3d)
         from oedp import codigo, ensaio
 
         (self.pasta / codigo.REGISTO).write_text(ensaio.registo_de_ensaio(), encoding="utf-8")
