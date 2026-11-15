@@ -140,7 +140,8 @@ def linhas_que_falham(peca, fid: str, dados: bytes) -> list[str]:
         m = re.search(r"\bp\.\s*(\d+)", str(l.get("onde", "")))
         if fontes.procurar(str(l.get("excerto", "")), paginas, int(m.group(1)) if m else None) is None:
             falham.append(lid)
-        elif l.get("tipo") == "valor" and not numeros.contem_figura(fontes.normalizar(str(l.get("excerto", ""))), str(l.get("valor", ""))):
+        elif l.get("tipo") == "valor" and not numeros.contem_figura(fontes.normalizar(str(l.get("excerto", ""))), str(l.get("valor", "")),
+                                                                  quadro=l.get("linha_de_quadro") is True):
             falham.append(lid)
     return falham
 

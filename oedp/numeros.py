@@ -103,20 +103,26 @@ def formas_impressas(valor: str) -> set[str]:
 NUMERO_INTEIRO = re.compile(r"(?<![\d.,])(?:\d{1,3}(?:[ .,]\d{3})+(?:[.,]\d+)?|\d+(?:[.,]\d+)?)(?![\d])")
 
 
+# A row of a table (`linha_de_quadro = true`): every space separates two numbers, so only a point
+# or a comma groups thousands (docs/ESPEC-PECA.md, check 2, edit of 15 November 2026, 15:17 UTC).
+NUMERO_DE_QUADRO = re.compile(r"(?<![\d.,])(?:\d{1,3}(?:[.,]\d{3})+(?:[.,]\d+)?|\d+(?:[.,]\d+)?)(?![\d])")
+
+
 MENOS_SEM_SINAL = {"pelo", "ao", "ou", "nada", "não", "nem"}  # pelo menos, ao menos, mais ou menos, nada menos, não menos, nem menos
 
 
-def ocorrencias(excerto_normalizado: str, valor: str) -> list[tuple[int, int]]:
+def ocorrencias(excerto_normalizado: str, valor: str, quadro: bool = False) -> list[tuple[int, int]]:
     """The places (start, end) in the normalised excerpt where it holds the figure, in order.
 
     A negative valor is found only with its sign (hyphen or minus sign, a space allowed
     after it) or the word «menos» before it; a positive one only without. The place is the
     number itself, its sign left out. Check 2 counts these (`ocorrencia`), and the page
-    marks one of them (docs/ESPEC-PECA.md, edit of 15 November 2026, 13:17 UTC)."""
+    marks one of them (docs/ESPEC-PECA.md, edit of 15 November 2026, 13:17 UTC). With `quadro`
+    (the line's `linha_de_quadro`), a space always separates two numbers."""
     formas = formas_impressas(valor)
     negativo = valor.strip().startswith("-")
     lugares = []
-    for m in NUMERO_INTEIRO.finditer(excerto_normalizado):
+    for m in (NUMERO_DE_QUADRO if quadro else NUMERO_INTEIRO).finditer(excerto_normalizado):
         if m.group(0) not in formas:
             continue
         antes = excerto_normalizado[: m.start()]
@@ -131,9 +137,9 @@ def ocorrencias(excerto_normalizado: str, valor: str) -> list[tuple[int, int]]:
     return lugares
 
 
-def contem_figura(excerto_normalizado: str, valor: str) -> bool:
+def contem_figura(excerto_normalizado: str, valor: str, quadro: bool = False) -> bool:
     """Whether the excerpt holds the figure at least once (see `ocorrencias`)."""
-    return bool(ocorrencias(excerto_normalizado, valor))
+    return bool(ocorrencias(excerto_normalizado, valor, quadro))
 
 
 # The units check 1 tells apart (docs/ESPEC-PECA.md, check 1, edit of 15 November 2026, 15:17 UTC):

@@ -342,7 +342,7 @@ class D_AFiguraMarcadaNoExcerto(SitioDeEnsaio):
     def test_planta_marcar_a_primeira_quando_ha_duas(self):
         excerto = "De 1 a 4 trabalhadores 2,6 2,9 2,6 3,1"
         original = numeros.ocorrencias
-        primeira = lambda texto, valor: original(texto, valor)[:1]
+        primeira = lambda texto, valor, quadro=False: original(texto, valor, quadro)[:1]
         with mock.patch.object(numeros, "ocorrencias", primeira):
             self.assertIsNotNone(marcado(linha_valor(excerto, "2.6")))  # the rule broken: one marked though two exist
 

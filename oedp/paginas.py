@@ -403,7 +403,7 @@ def lugar_da_figura(linha: dict) -> tuple[int, int] | None:
     if par is None:
         return None
     normalizado, mapa = par
-    lugares = numeros.ocorrencias(normalizado, str(linha.get("valor", "")))
+    lugares = numeros.ocorrencias(normalizado, str(linha.get("valor", "")), quadro=linha.get("linha_de_quadro") is True)
     n = linha.get("ocorrencia")
     if isinstance(n, int) and not isinstance(n, bool):
         if not 1 <= n <= len(lugares):

@@ -37,7 +37,9 @@ CAMPOS_LINHA = {
 }
 # `ocorrencia`: which occurrence of the figure in the excerpt the line means (docs/ESPEC-PECA.md,
 # edit of 15 November 2026, 13:17 UTC); a valor line's only.
-OPCIONAIS_LINHA = {"valor": {"mostra_livre": B, "ocorrencia": I}, "derivado": {"mostra_livre": B}, "citacao": {}, "ato": {}}
+# `linha_de_quadro`: the excerpt is a row of a table, where a space separates two numbers (edit of 15:17 UTC).
+OPCIONAIS_LINHA = {"valor": {"mostra_livre": B, "ocorrencia": I, "linha_de_quadro": B}, "derivado": {"mostra_livre": B},
+                   "citacao": {}, "ato": {}}
 # The fields a reader sees in a receipt, which never hold an internal name (check 9).
 CAMPOS_DO_LEITOR = ("mede", "populacao", "periodo", "compara", "diz", "onde")
 CAMPOS_PESSOA = {"id": S, "nome": S, "nome_curto": S, "cargo": S, "linhas": L}
@@ -362,6 +364,8 @@ def erros(peca: Peca, ficheiro: Path | None = None) -> list[str]:
                 for k in ("excerto", "mostra", "onde", "calculo", "diz"):
                     if k in CAMPOS_LINHA[tipo] and isinstance(t.get(k), str) and not t[k].strip():
                         e.append(f"{onde}: {k} is empty")
+                if "linha_de_quadro" in t and tipo != "valor":
+                    e.append(f"{onde}: linha_de_quadro belongs to a valor line only, and this line is {tipo}")
                 if "ocorrencia" in t and tipo != "valor":
                     e.append(f"{onde}: ocorrencia belongs to a valor line only, and this line is {tipo}")
                 elif _tipo_ok(t.get("ocorrencia"), I) and t["ocorrencia"] < 1:

@@ -226,7 +226,8 @@ def check2(peca: Peca, loja: Path | None) -> Resultado:
             notas.append(f"{lid}: found on p. {achada}")
         if l.get("tipo") != "valor":
             continue
-        lugares = numeros.ocorrencias(fontes.normalizar(str(l.get("excerto", ""))), str(l.get("valor", "")))
+        lugares = numeros.ocorrencias(fontes.normalizar(str(l.get("excerto", ""))), str(l.get("valor", "")),
+                                      quadro=l.get("linha_de_quadro") is True)
         n = l.get("ocorrencia")
         if not lugares:
             razoes.append(f"{lid}: the excerpt does not hold valor {l.get('valor')} as a source would print it")

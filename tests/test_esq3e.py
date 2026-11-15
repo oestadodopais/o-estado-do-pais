@@ -320,3 +320,60 @@ class C_AUnidadeDoMostra(unittest.TestCase):
         with mock.patch.object(numeros, "unidade_lida", lambda texto: ("", None)):
             r = check1_com(self, "‰", "104,7 %")
         self.assertEqual(r.estado, conf.PASSOU)  # a per mille shown as a per cent: what the reader found
+
+
+# --------------------------------------------------------------------------- G. a row of a table
+
+
+from oedp import fontes  # noqa: E402
+from tests.apoio import loja_fora_do_repositorio  # noqa: E402
+
+HTML_ANTIGO = "29503ef83196bddecc5c55648890d537fb94747865f8c07997ef8c996e39739b"
+
+
+class G_UmaLinhaDeQuadro(unittest.TestCase):
+    def setUp(self):
+        self.loja = loja_fora_do_repositorio(self)
+        dados = fontes.caminho_da_copia(self.loja, HTML_ANTIGO).read_bytes() + "\n100\n200\n98 102 105\n1 617 Euros\n".encode()
+        self.sha = fontes.guardar(self.loja, dados)
+        self.base = [(f'bytes = 564\nsha256 = "{HTML_ANTIGO}"', f'bytes = {len(dados)}\nsha256 = "{self.sha}"')]
+
+    def linha(self, excerto, valor, quadro=None):
+        mais = "" if quadro is None else f"linha_de_quadro = {quadro}\n"
+        p = Plantada(self.base + [("excerto = '''Total de ensaio: 1 234 567 euros'''\nvalor = \"1234567\"",
+                                   f"excerto = '''{excerto}'''\nvalor = \"{valor}\"\n{mais}".rstrip("\n"))])
+        self.addCleanup(p.apagar)
+        peca = ler(p.peca)
+        return conf.check2(peca, self.loja), peca.linhas["total"], p
+
+    def test_cem_e_duzentos_em_duas_linhas(self):
+        r, _, _ = self.linha("100\n200", "100")
+        self.assertTrue(any("total: the excerpt does not hold valor 100" in x for x in r.razoes), r.linha())
+        r, l, _ = self.linha("100\n200", "100", "true")
+        self.assertEqual(r.estado, conf.PASSOU, r.linha())
+        self.assertEqual(paginas.lugar_da_figura(l), (0, 3))
+
+    def test_noventa_e_oito_cento_e_dois_cento_e_cinco(self):
+        r, _, _ = self.linha("98 102 105", "102")
+        self.assertTrue(any("total: the excerpt does not hold valor 102" in x for x in r.razoes), r.linha())
+        r, l, _ = self.linha("98 102 105", "102", "true")
+        self.assertEqual(r.estado, conf.PASSOU, r.linha())
+        self.assertEqual(l["excerto"][slice(*paginas.lugar_da_figura(l))], "102")
+
+    def test_mil_seiscentos_e_dezassete(self):
+        r, _, _ = self.linha("1 617 Euros", "1617")
+        self.assertEqual(r.estado, conf.PASSOU, r.linha())
+        r, _, _ = self.linha("1 617 Euros", "1617", "true")
+        self.assertTrue(any("total: the excerpt does not hold valor 1617" in x for x in r.razoes), r.linha())
+
+    def test_a_forma_do_campo(self):
+        _, _, p = self.linha("98 102 105", "102", '"sim"')
+        self.assertTrue(any("field linha_de_quadro must be sim_nao" in x for x in p.resultados()[9].razoes))
+        p2 = Plantada([('mostra = "2,4 pontos"\n', 'mostra = "2,4 pontos"\nlinha_de_quadro = true\n')])
+        self.addCleanup(p2.apagar)
+        self.assertTrue(any("diferenca: linha_de_quadro belongs to a valor line only" in x for x in p2.resultados()[9].razoes))
+
+    def test_planta_o_campo_ignorado(self):
+        with mock.patch.object(numeros, "NUMERO_DE_QUADRO", numeros.NUMERO_INTEIRO):
+            r, _, _ = self.linha("98 102 105", "102", "true")
+        self.assertEqual(r.estado, conf.FALHOU)  # the row read as one number, 98102105
