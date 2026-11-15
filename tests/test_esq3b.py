@@ -10,6 +10,7 @@ import datetime as dt
 import io
 import json
 import os
+import re
 import shutil
 import tempfile
 import tomllib
@@ -18,7 +19,7 @@ from pathlib import Path
 from unittest import mock
 
 from oedp import __main__ as cli
-from oedp import codigo, custo, datas, divulgacoes, fontes, julgados, leituras, numerado, reconferir
+from oedp import codigo, custo, datas, divulgacoes, ensaio, fontes, julgados, leituras, numerado, reconferir
 from oedp import construir as build
 from oedp.peca import ler
 from tests.apoio import REPO, Plantada, loja_fora_do_repositorio
@@ -172,6 +173,30 @@ class H_ORegistoSoCresce(unittest.TestCase):
         self.assertIn(reconferir.REGISTO, chamadas)
         self.assertIn("reconferencias.toml: the record on main is not the beginning of the record now: a table was removed or changed",
                       ctx.julgamento)
+
+
+# --------------------------------------------------------------------------- C. the browser test's input-only page
+
+
+class C_APaginaSoDeEntrada(unittest.TestCase):
+    """The second page of the browser test (navegador, proof 5), built without a browser."""
+
+    def test_a_linha_so_de_entrada_vem_depois_e_volta_a_conta(self):
+        c = ensaio.construir_ensaio_so_entrada(pasta_temporaria(self, "oedp-so-entrada-"))
+        self.assertTrue(c.ok, c.mensagens)
+        html = (c.estatica / "pecas" / ensaio.PECA_ID / "index.html").read_text(encoding="utf-8")
+        texto = re.search(r'<div class="texto">.*?</div>', html, re.S).group(0)
+        self.assertNotIn("#r-indice_anterior", texto)
+        ordem = re.findall(r'<span class="ancora" id="r-([a-z_]+)"></span>', html)
+        self.assertEqual(ordem[-1], "indice_anterior")
+        self.assertIn('<a href="#r-indice_anterior">102,3</a>', html)
+        self.assertIn('<p class="voltar"><a href="#r-diferenca">Voltar ao texto</a></p></details>', html)
+        self.assertEqual(build.ligacoes_partidas(c.estatica), [])
+
+    def test_planta_uma_peca_de_ensaio_que_mudou(self):
+        with mock.patch.object(ensaio, "SO_ENTRADA", ("uma frase que a peça não tem", "")):
+            with self.assertRaises(ValueError):
+                ensaio.construir_ensaio_so_entrada(pasta_temporaria(self, "oedp-so-entrada-"))
 
 
 # --------------------------------------------------------------------------- I. what a piece cost

@@ -53,6 +53,24 @@ def registo_de_ensaio(repo: Path = REPO) -> str:
     )
 
 
+# The browser test's second page (ORDEM esq3, item C): the test piece with its text no longer
+# printing the previous quarter's figure, so that line is only an input of the calculation the
+# text shows, and its receipt sits after those the text uses. Built only with the checks off,
+# into a folder of its own, for the browser to click; it is not a piece anything judges.
+SO_ENTRADA = ("No trimestre anterior ficara em {indice_anterior}, [uma subida de]", "No trimestre anterior, [uma subida de]")
+
+
+def construir_ensaio_so_entrada(pasta: Path, repo: Path = REPO) -> build.Construcao:
+    pasta = Path(pasta)
+    raiz = copiar_sitio(pasta / "raiz", True, repo)
+    peca = raiz / "pecas" / "2026" / f"{PECA_ID}.md"
+    texto = peca.read_text(encoding="utf-8")
+    if SO_ENTRADA[0] not in texto:
+        raise ValueError("the test piece no longer holds the sentence the input-only page is made from")
+    peca.write_text(texto.replace(SO_ENTRADA[0], SO_ENTRADA[1], 1), encoding="utf-8")
+    return build.construir(repo, raiz=raiz, saida=pasta / "saida", loja=LOJA, conferir_antes=False)
+
+
 def construir_ensaio(pasta: Path, com_pecas: bool = True, repo: Path = REPO, conferir_antes: bool = True) -> build.Construcao:
     """Build the test site into `<pasta>/saida/static`, from a copy of it in `<pasta>/raiz`.
 

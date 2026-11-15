@@ -12,7 +12,11 @@ network.
 2. follows that receipt's link back to the text and requires the figure in the window;
 3. opens a computed figure's receipt, clicks the first input of its calculation, and
    requires that input's receipt, closed before the click, to be open after it;
-4. opens the page directly at a receipt's address and requires that receipt open.
+4. opens the page directly at a receipt's address and requires that receipt open;
+5. on a second build of the test piece whose text no longer prints one input of its
+   calculation (`ensaio.construir_ensaio_so_entrada`), requires that input's receipt to
+   come after every receipt of a line the text uses, and a click on that input in the
+   arithmetic to open it (ORDEM esq3, item C: a line that is only an input).
 An engine that is not installed is "not run here", never "passed"; one named by
 `--exigir` that is not installed is a failure.
 """
@@ -188,6 +192,30 @@ def provas(pagina, base: str, peca_id: str) -> list[str]:
     return falhas
 
 
+def prova_so_entrada(pagina, base: str, peca_id: str) -> list[str]:
+    """Proof 5, on the page whose text does not print `indice_anterior`."""
+    pagina.goto(f"{base}/pecas/{peca_id}/")
+    ordem = pagina.eval_on_selector_all("details.recibo > .ancora", "els => els.map(a => a.id)")
+    usadas = set(pagina.eval_on_selector_all(".texto a.ref, .texto a.ligada, h1 a, .entrada a",
+                                             "els => els.map(a => a.getAttribute('href').slice(1))"))
+    entrada = "r-indice_anterior"
+    falhas = []
+    if entrada in usadas:
+        return ["5. the text of the second page still prints or ties indice_anterior"]
+    if entrada not in ordem or any(i in usadas for i in ordem[ordem.index(entrada):]):
+        falhas.append(f"5. the receipt of the input-only line is not after every receipt of a line the text uses ({ordem})")
+    conta = pagina.query_selector("details:has(dd.conta a[href='#r-indice_anterior'])")
+    if conta is None:
+        return falhas + ["5. no calculation's receipt has the input-only line as an input"]
+    conta.evaluate("d => { d.open = true; }")
+    if pagina.evaluate("([x]) => document.getElementById(x).closest('details').open", [entrada]):
+        return falhas + ["5. the input-only line's receipt was open before the click, so the click proves nothing"]
+    pagina.click("dd.conta a[href='#r-indice_anterior'] >> nth=0")
+    if not _aberto(pagina, entrada):
+        falhas.append("5. a click on the input-only line in the arithmetic left its receipt closed")
+    return falhas
+
+
 def correr(exigir: list[str], imprimir=print, pasta: Path | None = None) -> int:
     """Run the four proofs in each engine; 0 only when every engine that ran passed and
     every engine named in `exigir` ran."""
@@ -205,11 +233,12 @@ def correr(exigir: list[str], imprimir=print, pasta: Path | None = None) -> int:
         return 0
     with tempfile.TemporaryDirectory(prefix="oedp-navegador-") as tmp:
         c = ensaio.construir_ensaio(Path(pasta or tmp), conferir_antes=False)
-        if not c.ok:
-            imprimir("navegador: failed: the test piece's pages do not build: " + " | ".join(c.mensagens))
+        c5 = ensaio.construir_ensaio_so_entrada(Path(pasta or tmp) / "so-entrada")
+        if not c.ok or not c5.ok:
+            imprimir("navegador: failed: the test piece's pages do not build: " + " | ".join(c.mensagens + c5.mensagens))
             return 1
         falhou = False
-        with servir(c.estatica) as base, sync_playwright() as p:
+        with servir(c.estatica) as base, servir(c5.estatica) as base5, sync_playwright() as p:
             for nome in MOTORES:
                 motor = getattr(p, nome)
                 if not Path(motor.executable_path).exists():
@@ -223,7 +252,7 @@ def correr(exigir: list[str], imprimir=print, pasta: Path | None = None) -> int:
                 try:
                     pagina = navegador.new_page(viewport={"width": LARGURA, "height": ALTURA})
                     pagina.set_default_timeout(10000)
-                    falhas = provas(pagina, base, ensaio.PECA_ID)
+                    falhas = provas(pagina, base, ensaio.PECA_ID) + prova_so_entrada(pagina, base5, ensaio.PECA_ID)
                 finally:
                     versao = navegador.version
                     navegador.close()
@@ -231,7 +260,8 @@ def correr(exigir: list[str], imprimir=print, pasta: Path | None = None) -> int:
                     falhou = True
                     imprimir(f"navegador · {nome} {versao} at {LARGURA} px: failed: " + " | ".join(falhas))
                 else:
-                    imprimir(f"navegador · {nome} {versao} at {LARGURA} px: passed (figure, back to the text, input of a calculation, direct address)")
+                    imprimir(f"navegador · {nome} {versao} at {LARGURA} px: passed (figure, back to the text, input of a calculation, "
+                             "direct address, input-only line)")
     return 1 if falhou else 0
 
 
