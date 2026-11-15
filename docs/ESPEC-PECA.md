@@ -14,6 +14,8 @@
 
 *Edited 15 November 2026, 11:09 UTC, after the second code and security reading of the second block. The judgment that lets a withdrawn piece come back lies between the withdrawal and the publication: the reader showed a judgment made an hour after a publication being accepted for it. And check 6 leaves out the words printed from a quotation as well, which are the speaker's and not the project's.*
 
+*Edited 15 November 2026, 11:43 UTC, after the third code and security reading of the second block. The judgment that lets a withdrawn piece come back is on the fingerprint the piece had when it came back, not on today's: the reader showed that a later, legitimate correction would have condemned an earlier publication that had been properly judged. And no step or reading may end before it began.*
+
 ## The idea in four lines
 
 1. One piece is one text file. Everything a reader sees comes from it, and nothing else is edited to publish it.
@@ -134,7 +136,7 @@ A verbal comparison ("more than", "the highest since") is a comparison: it needs
 
 ### `registo` (the record)
 
-Written only by scripts, only by appending tables at the end of the file. The team's models never edit it.
+Written only by scripts, only by appending tables at the end of the file. The team's models never edit it. In every `[[passo]]` and `[[leitura]]`, `fim` is not before `inicio`.
 
 ```toml
 [[passo]]                       # a step of production
@@ -180,7 +182,7 @@ impressao_depois = "…"
 
 - **The piece's fingerprint** is the SHA-256 of the file's bytes from its first byte up to, and not including, the line `+++ registo`. It is what the judge's `leitura` records, what the page carries, and what the live page is compared with.
 - **The fact sheet's fingerprint** is the SHA-256 of the bytes of the `folha` section. It is what the numbers editor's `leitura` records. A fact sheet changed after that reading must be read again.
-- **The state** of a piece is the last `[[estado]]` in its record; with none, it is a draft. Publishing and withdrawing add one table and change nothing above the record line. The state moves one way: once published, a piece can be withdrawn and published again, never made a draft again, and its file is never deleted or renamed (edited 14 November 2026, 23:32 UTC, after the second code and security reading). **A withdrawn piece is published again only when its record holds a passing `juiz` reading made between the withdrawal and that publication** (it began after the withdrawal and ended before the publication; on the current fingerprint, by the other family, with every plant caught): a piece does not come back on the approval it had before it was withdrawn, nor on one given after it came back.
+- **The state** of a piece is the last `[[estado]]` in its record; with none, it is a draft. Publishing and withdrawing add one table and change nothing above the record line. The state moves one way: once published, a piece can be withdrawn and published again, never made a draft again, and its file is never deleted or renamed (edited 14 November 2026, 23:32 UTC, after the second code and security reading). **A withdrawn piece is published again only when its record holds a passing `juiz` reading made between the withdrawal and that publication** (it began after the withdrawal and ended before the publication; on the fingerprint the piece had at that publication, which is the current one or one that a later `[[correcao]]` names as its `impressao_antes`; by the other family, with every plant caught): a piece does not come back on the approval it had before it was withdrawn, nor on one given after it came back.
 - **One family produces a piece, for its whole life,** and the other verifies and judges it. A reading by the producing family can only raise.
 - **A correction** changes the text or the fact sheet, so the fingerprint changes: the piece is judged again, and only then is the `[[correcao]]` added. The earlier wording stays in `antes` and in the repository's history.
 - **The code's fingerprint** (edited 15 November 2026, 01:36 UTC) is the SHA-256 of the list, sorted by path, of every tracked file's path and SHA-256, leaving out what is judged on its own or is not code: everything under `pecas/`, `mesas/`, `paginas/`, `direitos/`, `docs/`, `equipa/` and `design/`, and the files `textos.toml`, `textos.registo.toml`, `codigo.registo.toml`, `sitio.toml`, `README.md` and `CLAUDE.md`. The code's record is `codigo.registo.toml` at the root: `[[passo]]` tables with `nome = "construcao"` and `[[leitura]]` tables with `lugar = "seguranca"`, validated and compared with `main` like the other records. No piece is built as published, and nothing is sent to the host, unless the last `seguranca` reading on the current code fingerprint passes, caught every plant of at least one, and is of a family other than that of every `construcao` step recorded since the passing reading before it.
