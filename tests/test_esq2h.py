@@ -228,8 +228,10 @@ class Registo(unittest.TestCase):
             codigo.em_ordem('[[passo]]\nnome = "construcao"\n\n[[estado]]\nestado = "publicada"\n')
         self.assertIn("is not a table of this record", str(e.exception))
 
-    def test_o_registo_real_existe_vazio(self):
-        self.assertEqual(codigo.em_ordem((REPO / codigo.REGISTO).read_text(encoding="utf-8")), [])
+    def test_o_registo_real_existe_e_e_valido(self):
+        # Created empty by this block; the direction seat has since appended to it (9f5030342).
+        tabelas = codigo.em_ordem((REPO / codigo.REGISTO).read_text(encoding="utf-8"))
+        self.assertEqual(codigo.erros_do_registo(tabelas), [])
 
     def test_planta_registo_que_nao_continua_o_de_main(self):
         repo = git_temporario(self)
