@@ -76,12 +76,24 @@ def _minutos(inicio, fim) -> int | None:
 _MARCA = "zzoedpref{}zz"
 
 
+# A hyphen that opens a mostra before its number is the sign of a negative figure.
+_HIFEN_INICIAL = re.compile(r"\A(\s*)-(?=\s?\d)")
+
+
+def mostra_impressa(linha: dict) -> str:
+    """A line's mostra as the page prints it, wherever it prints it: a leading hyphen before
+    the number becomes a true minus sign (U+2212). The piece file keeps what it has; a
+    hyphen inside words is left alone (docs/ESPEC-PAGINAS.md, Figures, edit of 15 November
+    2026, 14:27 UTC)."""
+    return _HIFEN_INICIAL.sub("\\1\u2212", str(linha.get("mostra", "")))
+
+
 def _impressa(peca: Peca, lid: str) -> str:
     """What `{id}` prints: the mostra, or the words of a citacao between «»."""
     linha = peca.linhas[lid]
     if linha.get("tipo") == "citacao":
         return "«" + str(linha.get("excerto", "")).strip() + "»"
-    return str(linha.get("mostra", ""))
+    return mostra_impressa(linha)
 
 
 def _ligacao(peca: Peca, lid: str, modo: str) -> str | None:
@@ -130,15 +142,21 @@ def sem_quebra(texto: str, linha_impressa: bool) -> str:
     return _INTERVALO.sub(NBSP + "a" + NBSP, texto)
 
 
-# In an excerpt and in `onde`: a space between two digits («1 617») and the space after «p.»
-# before a number are not places to break. Each is one character replaced by one, so a place
-# found in the excerpt (the mark, `_excerto`) is the same place after it.
-_ENTRE_DIGITOS = re.compile(r"(?<=\d) (?=\d)")
+# In every field a receipt prints, «p.» stays with the number after it. Nothing else is glued:
+# a space between two digits is a place to break like any other (docs/ESPEC-PAGINAS.md, edit of
+# 15 November 2026, 14:27 UTC: glued, a table's row became one string that the browser cut
+# inside its numbers). One character is replaced by one, so a place found in an excerpt (the
+# mark, `_excerto`) is the same place after it.
 _PAGINA = re.compile(r"(?<![^\W\d_])(p\.) (?=\d)")
 
 
 def sem_quebra_na_fonte(texto: str) -> str:
-    return _PAGINA.sub(r"\1" + NBSP, _ENTRE_DIGITOS.sub(NBSP, texto))
+    return _PAGINA.sub(r"\1" + NBSP, texto)
+
+
+def _campo(texto) -> str:
+    """A reader's field as a receipt prints it, escaped: «p.» kept with its number."""
+    return e(sem_quebra_na_fonte(str(texto)))
 
 
 # Two links to receipts with nothing, or only white space (or the empty anchor of a first
@@ -362,8 +380,8 @@ def _fonte_dl(ctx, peca, linha) -> str:
     if f.get("pagina"):
         ligacoes += f'<dd class="abrir"><a href="{e(str(f["pagina"]))}" rel="noopener noreferrer">{e(ctx.t("r_pagina"))}</a></dd>'
     return (
-        f'<dt>{e(ctx.t("r_fonte"))}</dt><dd>{e(str(f.get("titulo", "")))} · {e(str(f.get("editor", "")))}</dd>'
-        f'<dt>{e(ctx.t("r_onde"))}</dt><dd>{e(sem_quebra_na_fonte(str(linha.get("onde", ""))))}</dd>'
+        f'<dt>{e(ctx.t("r_fonte"))}</dt><dd>{_campo(f.get("titulo", ""))} · {_campo(f.get("editor", ""))}</dd>'
+        f'<dt>{e(ctx.t("r_onde"))}</dt><dd>{_campo(linha.get("onde", ""))}</dd>'
     ), (
         f'<dt>{e(ctx.t("r_lido"))}</dt><dd>{e(_data_de(f.get("lido_em")))}</dd>'
         + ligacoes
@@ -394,6 +412,12 @@ def lugar_da_figura(linha: dict) -> tuple[int, int] | None:
         a, b = lugares[0]
     else:
         return None
+    # A negative figure is marked with its sign (a hyphen or minus sign, and the space after it
+    # when the source has one) or the word «menos», as check 2 reads it.
+    if str(linha.get("valor", "")).strip().startswith("-"):
+        sinal = re.search(r"(?:[-\u2212] ?|(?<![^\W\d_])menos\s+)\Z", normalizado[:a], re.IGNORECASE)
+        if sinal:
+            a = sinal.start()
     return mapa[a][0], mapa[b - 1][1]
 
 
@@ -490,7 +514,7 @@ def _conta(ctx, peca, linha) -> str:
             continue  # an input that is itself a calculation has its own receipt and its own list
         numero, negativo = numero_mostrado(peca.linhas[i])
         itens.append(f'<li><a href="#r-{e(i)}">{MENOS if negativo else ""}{e(numero)}</a> · '
-                     f'<span class="periodo">{e(str(peca.linhas[i].get("periodo", "")))}</span></li>')
+                     f'<span class="periodo">{_campo(peca.linhas[i].get("periodo", ""))}</span></li>')
     if itens:
         resultado += f'<ul class="entradas-da-conta">{"".join(itens)}</ul>'
     return resultado
@@ -539,15 +563,17 @@ def _recibo(ctx, peca, lid, usadas=(), na_pagina=()) -> str:
             sinal = f'<p class="sinal">{e(ctx.t("r_provisorio"))}</p>'
         antes_excerto, depois_excerto = _fonte_dl(ctx, peca, l)
         dl = (
-            f'<dt>{e(ctx.t("r_mede"))}</dt><dd>{e(str(l.get("mede", "")))}</dd>'
-            f'<dt>{e(ctx.t("r_populacao"))}</dt><dd>{e(str(l.get("populacao", "")))}</dd>'
-            f'<dt>{e(ctx.t("r_periodo"))}</dt><dd>{e(str(l.get("periodo", "")))}</dd>'
+            f'<dt>{e(ctx.t("r_mede"))}</dt><dd>{_campo(l.get("mede", ""))}</dd>'
+            f'<dt>{e(ctx.t("r_populacao"))}</dt><dd>{_campo(l.get("populacao", ""))}</dd>'
+            f'<dt>{e(ctx.t("r_periodo"))}</dt><dd>{_campo(l.get("periodo", ""))}</dd>'
             + antes_excerto + _excerto(ctx, l) + depois_excerto
         )
     elif tipo == "derivado":
+        mede = f'<dt>{e(ctx.t("r_mede"))}</dt><dd>{_campo(l.get("mede", ""))}</dd>' if str(l.get("mede", "")).strip() else ""
         dl = (
-            f'<dt>{e(ctx.t("r_conta"))}</dt><dd class="conta">{_conta(ctx, peca, l)}</dd>'
-            f'<dt>{e(ctx.t("r_compara"))}</dt><dd>{e(str(l.get("compara", "")))}</dd>'
+            mede
+            + f'<dt>{e(ctx.t("r_conta"))}</dt><dd class="conta">{_conta(ctx, peca, l)}</dd>'
+            f'<dt>{e(ctx.t("r_compara"))}</dt><dd>{_campo(l.get("compara", ""))}</dd>'
         )
     elif tipo == "citacao":
         pessoa = peca.pessoas.get(l.get("quem"))
@@ -555,7 +581,7 @@ def _recibo(ctx, peca, lid, usadas=(), na_pagina=()) -> str:
         antes_excerto, depois_excerto = _fonte_dl(ctx, peca, l)
         quando = datas.data_real(str(l.get("quando", "")))
         dl = (
-            f'<dt>{e(ctx.t("r_quem"))}</dt><dd>{e(quem)}</dd>'
+            f'<dt>{e(ctx.t("r_quem"))}</dt><dd>{_campo(quem)}</dd>'
             f'<dt>{e(ctx.t("r_quando"))}</dt><dd>{e(datas.por_extenso(quando) if quando else "")}</dd>'
             + antes_excerto + depois_excerto
         )
@@ -573,12 +599,12 @@ def _recibo(ctx, peca, lid, usadas=(), na_pagina=()) -> str:
     # that the stylesheet cuts; a quotation's words; an act's sentence.
     if tipo in ("valor", "derivado"):
         mede = str(l.get("mede", ""))
-        resumo = (f'<span class="figura">{e(sem_quebra(str(l.get("mostra", "")), True))}</span>'
-                  + (f' <span class="mede">{e(mede)}</span>' if mede.strip() else ""))
+        resumo = (f'<span class="figura">{e(sem_quebra(mostra_impressa(l), True))}</span>'
+                  + (f' <span class="mede">{_campo(mede)}</span>' if mede.strip() else ""))
     elif tipo == "citacao":
         resumo = f"<span>{e(_impressa(peca, lid))}</span>"
     else:
-        resumo = f'<span>{e(str(l.get("diz", "")))}</span>'
+        resumo = f'<span>{_campo(l.get("diz", ""))}</span>'
     voltar = f'<p class="voltar"><a href="{_volta(peca, lid, usadas, na_pagina)}">{e(ctx.t("r_voltar"))}</a></p>'
     # The anchor a link leads to is inside the box's content, never the box or its summary:
     # a browser opens a closed <details> when the place it is sent to is inside its content,

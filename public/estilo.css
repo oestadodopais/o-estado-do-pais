@@ -221,6 +221,27 @@ th { font-family: var(--f-versal); font-weight: 600; letter-spacing: .04em; text
    cut with an ellipsis where it does not fit. */
 .recibo > summary > .figura { flex: none; }
 .recibo > summary > .mede { flex: 1 1 auto; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: var(--muted); }
+/* Open, the summary is the figure alone: what it measures is in the receipt, in full. */
+.recibo[open] > summary > .mede { display: none; }
+/* On a phone, closed: the figure and the chevron on the first line, what it measures under
+   them on up to two lines, then cut. */
+@media (max-width: 599px) {
+  .recibo > summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 10px; row-gap: 2px; align-items: baseline; }
+  .recibo > summary > .figura { grid-column: 1; grid-row: 1; }
+  .recibo > summary::after { grid-column: 2; grid-row: 1; margin-left: 0; }
+  .recibo > summary > .mede {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+  }
+}
+/* The inputs of a calculation are links to receipts, with their one look. */
+.recibo dd.conta a { text-decoration-line: underline; text-decoration-style: dotted; text-decoration-color: currentColor; }
 .registo > summary { padding: 6px 0; }
 .recibo:has(> .ancora:target) > summary { text-decoration: underline; }
 .recibo dl { margin: 0 0 0 2ch; display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr); gap: 6px 16px; font-size: 15px; }
@@ -233,7 +254,7 @@ th { font-family: var(--f-versal); font-weight: 600; letter-spacing: .04em; text
 .recibo dd.conta { font-family: var(--f-instr); font-variant-numeric: tabular-nums lining-nums; }
 .excerto { margin: 0; padding-left: 12px; border-left: 2px solid var(--rule-strong); font-style: italic; white-space: pre-line; }
 /* The figure inside its excerpt: a tint, and a weight and an underline that do not rely on colour. */
-.excerto mark { background: var(--marca); color: inherit; font-weight: 600; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.excerto mark { background: var(--marca); color: inherit; font-weight: 600; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; white-space: nowrap; }
 /* Under a calculation, which input is which: the number, then its period. */
 .entradas-da-conta { list-style: none; margin: 6px 0 0; padding: 0; }
 .entradas-da-conta .periodo { font-family: var(--f-prosa); }

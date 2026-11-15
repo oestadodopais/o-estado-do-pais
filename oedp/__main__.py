@@ -305,7 +305,7 @@ def cmd_navegador(a) -> int:
     from . import navegador
 
     exigir = [m.strip() for m in (a.exigir or "").split(",") if m.strip()]
-    return navegador.correr(exigir)
+    return navegador.correr(exigir, peca=Path(a.peca) if a.peca else None)
 
 
 def construir_previa(peca: Path, saida: Path) -> build.Construcao:
@@ -588,6 +588,7 @@ def principal(argv=None) -> int:
 
     s = sub.add_parser("navegador", help="a link to a receipt opens it, in real browsers (needs requirements-navegador.txt)")
     s.add_argument("--exigir", help="engines that must run, comma-separated: chromium,firefox,webkit")
+    s.add_argument("--peca", help="a piece file whose page gets proofs 6 and 7 instead of the test site's proofs")
     s.set_defaults(f=cmd_navegador)
 
     s = sub.add_parser("capturas", help="screenshots of the built pages with Chromium (needs requirements-navegador.txt)")

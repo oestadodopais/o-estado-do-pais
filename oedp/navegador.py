@@ -16,7 +16,15 @@ network.
 5. on a second build of the test piece whose text no longer prints one input of its
    calculation (`ensaio.construir_ensaio_so_entrada`), requires that input's receipt to
    come after every receipt of a line the text uses, and a click on that input in the
-   arithmetic to open it (ORDEM esq3, item C: a line that is only an input).
+   arithmetic to open it (ORDEM esq3, item C: a line that is only an input);
+6. with every receipt open, at 390 and at 1280 pixels, requires every marked figure in an
+   excerpt to lie on one line (its `getClientRects()` has length 1), and every number of an
+   excerpt too, measured on a range over its characters (ORDEM-3b, item A: a row of numbers
+   glued into one string was cut by the browser inside its numbers);
+7. at 390 pixels, requires a closed figure receipt's summary to put what the figure measures
+   under the figure, on at most two lines, and an open one to show the figure alone (item C).
+`--peca <file>` runs proofs 6 and 7 on that piece's page instead, built with drafts from the
+site its file belongs to (for a real piece in a scratch tree; the store is read only to build).
 An engine that is not installed is "not run here", never "passed"; one named by
 `--exigir` that is not installed is a failure.
 """
@@ -216,7 +224,67 @@ def prova_so_entrada(pagina, base: str, peca_id: str) -> list[str]:
     return falhas
 
 
-def correr(exigir: list[str], imprimir=print, pasta: Path | None = None) -> int:
+_MARCAS_PARTIDAS = """() => [...document.querySelectorAll('.excerto mark')]
+  .filter(m => m.getClientRects().length !== 1)
+  .map(m => { const a = m.closest('details').querySelector('.ancora'); return (a ? a.id : '?') + ' «' + m.textContent + '» in '
+             + m.getClientRects().length + ' pieces'; })"""
+
+
+_NUMEROS_PARTIDOS = r"""() => { const fora = [];
+  document.querySelectorAll('.excerto').forEach(b => {
+    const a = b.closest('details').querySelector('.ancora'), w = document.createTreeWalker(b, NodeFilter.SHOW_TEXT);
+    let n; while ((n = w.nextNode())) { const re = /[-\u2212]?\d+(?:[.,]\d+)*/g; let m;
+      while ((m = re.exec(n.data))) { const r = document.createRange(); r.setStart(n, m.index); r.setEnd(n, m.index + m[0].length);
+        if ([...r.getClientRects()].filter(x => x.width > 0).length > 1) fora.push((a ? a.id : '?') + ' «' + m[0] + '»'); } } });
+  return fora; }"""
+
+
+def prova_marcas(pagina, endereco: str) -> list[str]:
+    """Proof 6: with every receipt open, every mark and every number in an excerpt is on one
+    line, at both widths."""
+    falhas = []
+    for largura in (LARGURA, 1280):
+        pagina.set_viewport_size({"width": largura, "height": ALTURA})
+        pagina.goto(endereco)
+        pagina.evaluate("() => document.querySelectorAll('details').forEach(d => { d.open = true; })")
+        if not pagina.evaluate("() => document.querySelectorAll('.excerto mark').length"):
+            falhas.append(f"6. at {largura} px the page has no marked figure to measure")
+        falhas += [f"6. at {largura} px a marked figure breaks over lines: {x}" for x in pagina.evaluate(_MARCAS_PARTIDAS)]
+        partidos = pagina.evaluate(_NUMEROS_PARTIDOS)
+        if partidos:
+            falhas.append(f"6. at {largura} px {len(partidos)} numbers of excerpts break over lines: " + ", ".join(partidos[:12]))
+    pagina.set_viewport_size({"width": LARGURA, "height": ALTURA})
+    return falhas
+
+
+_RESUMO = """() => { const d = [...document.querySelectorAll('details.recibo')].find(x => x.querySelector(':scope > summary > .mede'));
+  if (!d) return null; d.open = false;
+  const s = d.querySelector(':scope > summary'), f = s.querySelector('.figura'), m = s.querySelector('.mede');
+  const linha = parseFloat(getComputedStyle(m).lineHeight), rf = f.getBoundingClientRect(), rm = m.getBoundingClientRect();
+  const fechado = {linhas: Math.round(rm.height / linha), por_baixo: rm.top >= rf.bottom - 1, figura_inteira: f.scrollWidth <= f.clientWidth + 1};
+  d.open = true;
+  return {...fechado, aberto_sem_mede: m.getClientRects().length === 0}; }"""
+
+
+def prova_resumo_no_telefone(pagina, endereco: str) -> list[str]:
+    """Proof 7, at 390 pixels."""
+    pagina.goto(endereco)
+    r = pagina.evaluate(_RESUMO)
+    if r is None:
+        return ["7. no receipt has what its figure measures in its summary"]
+    falhas = []
+    if not r["por_baixo"]:
+        falhas.append("7. closed, what the figure measures is not under the figure")
+    if not 1 <= r["linhas"] <= 2:
+        falhas.append(f"7. closed, what the figure measures takes {r['linhas']} lines, not one or two")
+    if not r["figura_inteira"]:
+        falhas.append("7. closed, the figure is cut")
+    if not r["aberto_sem_mede"]:
+        falhas.append("7. open, the summary still shows what the figure measures")
+    return falhas
+
+
+def correr(exigir: list[str], imprimir=print, pasta: Path | None = None, peca: Path | None = None) -> int:
     """Run the four proofs in each engine; 0 only when every engine that ran passed and
     every engine named in `exigir` ran."""
     desconhecidos = [m for m in exigir if m not in MOTORES]
@@ -232,8 +300,19 @@ def correr(exigir: list[str], imprimir=print, pasta: Path | None = None) -> int:
         imprimir(f"navegador: not run here: {e}")
         return 0
     with tempfile.TemporaryDirectory(prefix="oedp-navegador-") as tmp:
-        c = ensaio.construir_ensaio(Path(pasta or tmp), conferir_antes=False)
-        c5 = ensaio.construir_ensaio_so_entrada(Path(pasta or tmp) / "so-entrada")
+        if peca is not None:
+            from . import construir as build
+            from . import fontes
+            from .peca import ler
+
+            peca_id = ler(Path(peca)).id
+            c = build.construir(ensaio.REPO, raiz=Path(peca).resolve().parents[2], saida=Path(pasta or tmp) / "peca",
+                                com_rascunhos=True, loja=fontes.loja(), conferir_antes=False)
+            c5 = c
+        else:
+            peca_id = ensaio.PECA_ID
+            c = ensaio.construir_ensaio(Path(pasta or tmp), conferir_antes=False)
+            c5 = ensaio.construir_ensaio_so_entrada(Path(pasta or tmp) / "so-entrada")
         if not c.ok or not c5.ok:
             imprimir("navegador: failed: the test piece's pages do not build: " + " | ".join(c.mensagens + c5.mensagens))
             return 1
@@ -252,7 +331,12 @@ def correr(exigir: list[str], imprimir=print, pasta: Path | None = None) -> int:
                 try:
                     pagina = navegador.new_page(viewport={"width": LARGURA, "height": ALTURA})
                     pagina.set_default_timeout(10000)
-                    falhas = provas(pagina, base, ensaio.PECA_ID) + prova_so_entrada(pagina, base5, ensaio.PECA_ID)
+                    endereco = f"{base}/pecas/{peca_id}/"
+                    if peca is None:
+                        falhas = provas(pagina, base, peca_id) + prova_so_entrada(pagina, base5, peca_id)
+                    else:
+                        falhas = []
+                    falhas += prova_marcas(pagina, endereco) + prova_resumo_no_telefone(pagina, endereco)
                 finally:
                     versao = navegador.version
                     navegador.close()
@@ -260,8 +344,10 @@ def correr(exigir: list[str], imprimir=print, pasta: Path | None = None) -> int:
                     falhou = True
                     imprimir(f"navegador · {nome} {versao} at {LARGURA} px: failed: " + " | ".join(falhas))
                 else:
-                    imprimir(f"navegador · {nome} {versao} at {LARGURA} px: passed (figure, back to the text, input of a calculation, "
-                             "direct address, input-only line)")
+                    feitas = ("marks and numbers of excerpts on one line at 390 and 1280 px, the summary on a phone" if peca is not None else
+                              "figure, back to the text, input of a calculation, direct address, input-only line, "
+                              "marks and numbers of excerpts on one line at 390 and 1280 px, the summary on a phone")
+                    imprimir(f"navegador · {nome} {versao} at {LARGURA} px{' · ' + peca_id if peca is not None else ''}: passed ({feitas})")
     return 1 if falhou else 0
 
 

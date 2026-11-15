@@ -271,10 +271,10 @@ class C_RecibosDoQueOTextoUsa(SitioDeEnsaio):
         self.assertIn(f'<summary><span class="figura">2,4{NB}pontos</span> <span class="mede">Diferença do índice de ensaio entre '
                       'dois trimestres</span></summary>', html)
         self.assertIn('<summary><span>«As contas de ensaio estão certas»</span></summary>', html)
-        regra = dict(regras(CSS))[".recibo > summary > .mede"]
+        regra = next(d for s, d in regras(CSS) if s == ".recibo > summary > .mede")  # the rule outside the phone's
         for d in ("overflow: hidden", "white-space: nowrap", "text-overflow: ellipsis", "min-width: 0"):
             self.assertIn(d, regra)
-        self.assertIn("flex: none", dict(regras(CSS))[".recibo > summary > .figura"])
+        self.assertIn("flex: none", next(d for s, d in regras(CSS) if s == ".recibo > summary > .figura"))
 
     def test_um_ato_diz_a_sua_frase_uma_vez(self):
         html = self.ler("pecas/2026-11-16-peca-de-ensaio/index.html")
@@ -320,7 +320,7 @@ class D_AFiguraMarcadaNoExcerto(SitioDeEnsaio):
         linha = linha_valor("Total de ensaio:\n  1 234 567 euros", "1234567")
         self.assertEqual(marcado(linha), "1 234 567")
         html = paginas._excerto(paginas.Contexto(textos={"r_excerto": "Excerto"}), linha)
-        self.assertIn(f"Total de ensaio:\n  <mark>1{NB}234{NB}567</mark> euros", html)
+        self.assertIn("Total de ensaio:\n  <mark>1 234 567</mark> euros", html)
 
     def test_planta_o_lugar_do_texto_normalizado_usado_no_impresso(self):
         """Without carrying the place back, the line break and the indent shift the mark."""
@@ -349,7 +349,7 @@ class D_AFiguraMarcadaNoExcerto(SitioDeEnsaio):
     def test_o_excerto_marcado_na_pagina_e_a_folha_de_estilo(self):
         html = self.ler("pecas/2026-11-16-peca-de-ensaio/index.html")
         self.assertIn("contra <mark>102,3</mark> pontos no segundo trimestre", recibo(html, "indice_anterior"))
-        self.assertIn(f"Total de ensaio: <mark>1{NB}234{NB}567</mark> euros", recibo(html, "total"))
+        self.assertIn("Total de ensaio: <mark>1 234 567</mark> euros", recibo(html, "total"))  # the mark keeps it whole (ESQ3b A)
         self.assertEqual(html.count("<mark>"), 4)  # indice, indice_anterior, total, terco
         excerto = dict(regras(CSS))[".excerto"]
         self.assertIn("white-space: pre-line", excerto)
@@ -443,18 +443,20 @@ class E_OndeUmaLinhaPodePartir(SitioDeEnsaio):
             self.assertIn("a 4", paginas.sem_quebra("de 1 a 4 trabalhadores", False))
 
     def test_no_excerto_e_no_onde(self):
-        self.assertEqual(paginas.sem_quebra_na_fonte("p. 12, passando de 1 617 euros"), f"p.{NB}12, passando de 1{NB}617 euros")
+        # ESQ3b, item A: only «p.» is glued; a space between two digits is an ordinary space,
+        # and the figure the receipt marks is kept whole by the stylesheet.
+        self.assertEqual(paginas.sem_quebra_na_fonte("p. 12, passando de 1 617 euros"), f"p.{NB}12, passando de 1 617 euros")
         self.assertEqual(paginas.sem_quebra_na_fonte("cap. 3"), "cap. 3")
         linha = linha_valor("passando de 1 617 euros", "1617")
         html = paginas._excerto(paginas.Contexto(textos={"r_excerto": "Excerto"}), linha)
-        self.assertIn(f"passando de <mark>1{NB}617</mark> euros", html)
+        self.assertIn("passando de <mark>1 617</mark> euros", html)
         pagina = self.ler("pecas/2026-11-16-peca-de-ensaio/index.html")
         self.assertIn(f"<dt>Onde está</dt><dd>p.{NB}2, primeiro parágrafo</dd>", recibo(pagina, "indice"))
 
-    def test_planta_o_excerto_sem_a_regra(self):
+    def test_planta_o_p_sem_a_regra(self):
         with mock.patch.object(paginas, "sem_quebra_na_fonte", lambda t: t):
-            html = paginas._excerto(paginas.Contexto(textos={"r_excerto": "Excerto"}), linha_valor("de 1 617 euros", "1617"))
-        self.assertIn("<mark>1 617</mark>", html)
+            html = paginas._excerto(paginas.Contexto(textos={"r_excerto": "Excerto"}), linha_valor("p. 3: de 1 617 euros", "1617"))
+        self.assertIn("p. 3", html)
         self.assertNotIn(NB, html)
 
     def test_ligacoes_que_se_tocam(self):
