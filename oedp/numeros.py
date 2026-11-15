@@ -24,8 +24,9 @@ _ESC_RE = "|".join(re.escape(n).replace("\\ ", "[" + ESPACOS + "]+") for n, _ in
 FIGURA = re.compile(
     r"(?:(?P<sinal>[-−+])\s*)?(?P<inteiro>\d{1,3}(?:[" + ESPACOS + r"]\d{3})+|\d+)(?:,(?P<decimais>\d+))?"
     r"(?:[" + ESPACOS + r"]+(?P<escala>" + _ESC_RE + r")(?![\w]))?",
+    re.IGNORECASE,  # a scale word whatever its case: «Mil euros» is «mil euros» (ORDEM-3e, item D)
 )
-ESCALA_INICIAL = re.compile(r"\s*(?P<escala>" + _ESC_RE + r")(?![\w])")
+ESCALA_INICIAL = re.compile(r"\s*(?P<escala>" + _ESC_RE + r")(?![\w])", re.IGNORECASE)
 
 
 class ErroDeFigura(Exception):
@@ -35,7 +36,7 @@ class ErroDeFigura(Exception):
 def _escala(palavras: str | None) -> int:
     if not palavras:
         return 1
-    chave = re.sub("[" + ESPACOS + "]+", " ", palavras)
+    chave = re.sub("[" + ESPACOS + "]+", " ", palavras).lower()
     return dict(ESCALAS)[chave]
 
 
@@ -163,7 +164,10 @@ def unidade_lida(texto: str) -> tuple[str, str | None]:
     return palavras, UNIDADES.get(palavras.lower())
 
 
-def unidade_da_mostra(mostra: str) -> str:
-    """What a mostra prints after its figure (the figure's scale word read with the figure)."""
+def unidades_da_mostra(mostra: str) -> list[str]:
+    """What a mostra prints around its figure, before it («$104,7», «€ 104,7») and after it («104,7 %»),
+    the parts that are there (the figure's scale word read with the figure; ORDEM-3e, item B)."""
     m = FIGURA.search(mostra)
-    return mostra[m.end():].strip() if m else ""
+    if not m:
+        return []
+    return [p for p in (mostra[: m.start()].strip(), mostra[m.end() :].strip()) if p]

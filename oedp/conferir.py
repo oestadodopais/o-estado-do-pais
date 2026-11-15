@@ -145,12 +145,16 @@ def check1(peca: Peca) -> Resultado:
                 f"{l.get('unidade')!r} at the precision shown is {quer}"
             )
         # The unit the mostra prints is the line's own (edit of 15 November 2026, 15:17 UTC).
-        palavras_m, tipo_m = numeros.unidade_lida(numeros.unidade_da_mostra(mostra))
+        # Read wherever the mostra prints it, before the number or after it (edit of ORDEM-3e, item B).
+        lidas = [numeros.unidade_lida(parte) for parte in numeros.unidades_da_mostra(mostra)]
+        palavras_m = " ".join(p for p, _ in lidas)
+        tipos_m = {t for _, t in lidas if t}
         palavras_u, tipo_u = numeros.unidade_lida(str(l.get("unidade", "")))
-        if tipo_m and tipo_u and tipo_m != tipo_u:
-            razoes.append(f"{lid}: mostra {mostra!r} prints a unit in {tipo_m} ({palavras_m!r}), but the line's unidade "
+        errado = sorted(t for t in tipos_m if tipo_u and t != tipo_u)
+        if errado:
+            razoes.append(f"{lid}: mostra {mostra!r} prints a unit in {errado[0]} ({palavras_m!r}), but the line's unidade "
                           f"{l.get('unidade')!r} is in {tipo_u}")
-        elif not (tipo_m and tipo_u) and palavras_m.lower() != palavras_u.lower():
+        elif not (tipos_m and tipo_u) and palavras_m.lower() != palavras_u.lower():
             notas.append(f"{lid}: the unit mostra prints ({palavras_m!r}) and unidade ({palavras_u!r}) are not compared by "
                          "the script, which does not know them both; left to the numbers editor")
     return _r(1, peca.id, razoes, notas)

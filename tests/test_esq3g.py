@@ -178,3 +178,47 @@ class C_TodosOsLugaresQuePodemPassar(ComLeitura):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+# --------------------------------------------------------------------------- B. a unit before the number
+
+
+class B_UmaUnidadeAntesDoNumero(unittest.TestCase):
+    def test_antes_ou_depois(self):
+        for unidade, mostra in (("euros", "$104,7"), ("euros", "$ 104,7"), ("dólares", "€ 104,7"), ("euros", "104,7 $"), ("%", "‰ 104,7")):
+            r = check1_com(self, unidade, mostra)
+            self.assertEqual(r.estado, conf.FALHOU, (unidade, mostra, r.linha()))
+            self.assertTrue(any("prints a unit in" in x for x in r.razoes), r.razoes)
+        for unidade, mostra in (("euros", "€ 104,7"), ("euros", "104,7 €"), ("dólares", "$104,7")):
+            r = check1_com(self, unidade, mostra)
+            self.assertEqual(r.estado, conf.PASSOU, (unidade, mostra, r.linha()))
+            self.assertFalse(any("unit mostra prints" in n for n in r.notas), r.notas)
+
+    def test_planta_so_depois_do_numero(self):
+        """The reader's case: only the words after the figure were read, so «$104,7» on a line in euros passed."""
+        def so_depois(mostra):
+            m = numeros.FIGURA.search(mostra)
+            return [mostra[m.end():].strip()] if m and mostra[m.end():].strip() else []
+        with mock.patch.object(numeros, "unidades_da_mostra", so_depois):
+            r = check1_com(self, "euros", "$104,7")
+        self.assertEqual(r.estado, conf.PASSOU)
+
+
+# --------------------------------------------------------------------------- D. a scale word, whatever its case
+
+
+class D_UmaPalavraDeEscalaEmQualquerCaixa(unittest.TestCase):
+    def test_mil_e_mil(self):
+        for unidade, mostra in (("Mil euros", "104,7 mil euros"), ("mil euros", "104,7 Mil euros"), ("MIL euros", "104,7 mil euros")):
+            r = check1_com(self, unidade, mostra)
+            self.assertEqual(r.estado, conf.PASSOU, (unidade, mostra, r.linha()))
+        from oedp import paginas
+        self.assertEqual(paginas.numero_mostrado({"valor": "104.7", "unidade": "Mil euros", "mostra": "104,7 mil euros"}), ("104,7", False))
+        self.assertEqual(paginas.sem_quebra("104,7 Mil euros", True), "104,7 Mil euros")
+
+    def test_planta_a_escala_so_em_minusculas(self):
+        import re as re_
+        caso = re_.compile(numeros.ESCALA_INICIAL.pattern)  # without re.IGNORECASE
+        with mock.patch.object(numeros, "ESCALA_INICIAL", caso):
+            r = check1_com(self, "Mil euros", "104,7 mil euros")
+        self.assertEqual(r.estado, conf.FALHOU)  # the reader's case: 0.1 expected
