@@ -209,7 +209,7 @@ def ler_calendario_tudo(conteudo: bytes) -> tuple[list[Proxima], list[str]]:
     for n, celulas in enumerate(p.linhas, 1):
         data = _data(celulas[2]) if len(celulas) >= 3 else None
         nome = celulas[0][:60] if celulas else "no title"
-        if n in p.th_no_corpo or len(celulas) < len(p.cabeca):
+        if n in p.th_no_corpo or len(celulas) != len(p.cabeca):  # fewer or more (ORDEM-3e, item E)
             falhas.append(f"row number {n} of the calendar ({nome}) has {len(celulas)} cells where its head has "
                           f"{len(p.cabeca)}, so its note is not where the head puts it")
         elif not (celulas[0] and celulas[1] and data):

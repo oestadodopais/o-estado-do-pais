@@ -888,7 +888,7 @@ def tokens_do_registo(registo_f: Path) -> int | None:
         return None
     linhas = registo_f.read_text(encoding="utf-8", errors="replace").splitlines()
     for i in range(len(linhas) - 1, -1, -1):
-        if linhas[i].strip() == "tokens used":
+        if linhas[i] == "tokens used":  # exactly: a line with a space around the words is not the marker (ORDEM-3e, G)
             numero = linhas[i + 1].strip().replace(",", "").replace(" ", "").replace("\u202f", "") if i + 1 < len(linhas) else ""
             return int(numero) if numero.isdigit() else None
     return None

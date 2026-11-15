@@ -252,3 +252,59 @@ class F_AsLinhasDasPlantasNoCodigo(unittest.TestCase):
         with self.assertRaises(leituras.Recusa) as e:
             leituras._lugares_no_fim(p, plantas, chave)
         self.assertIn("P1: its new text is not found exactly once in arvore/oedp/x.py", str(e.exception))
+
+
+# --------------------------------------------------------------------------- E. a calendar row with too many cells
+
+
+import re  # noqa: E402
+
+from oedp import divulgacoes  # noqa: E402
+from tests.test_esq3d import CALENDARIO, HOJE  # noqa: E402
+
+
+class E_UmaLinhaComCelulasAMais(unittest.TestCase):
+    def test_recusada_e_nomeada(self):
+        # the reader's case: an empty fourth cell, and the note «Adiado» in a fifth
+        a_mais = re.sub(rb'(<td class="caldst_texto_just">\n<p style="text-align: left;">)', rb'<td class="caldst_texto_just">\n</td>\1',
+                        CALENDARIO, count=1)
+        self.assertNotEqual(a_mais, CALENDARIO)
+        linhas, erros = [], []
+        self.assertEqual(divulgacoes.correr_proximas(a_mais, None, False, HOJE, linhas.append, erros.append), 1)
+        self.assertEqual(linhas, [])
+        self.assertTrue(any("has 5 cells where its head has 4" in e for e in erros), erros)
+
+    def test_planta_so_as_que_tem_menos(self):
+        a_mais = re.sub(rb'(<td class="caldst_texto_just">\n<p style="text-align: left;">)', rb'<td class="caldst_texto_just">\n</td>\1',
+                        CALENDARIO, count=1)
+        p = divulgacoes._Calendario()
+        p.feed(a_mais.decode("utf-8"))
+        p.close()
+        cinco = [c for c in p.linhas if len(c) == 5]
+        self.assertEqual(len(cinco), 1)
+        self.assertEqual(cinco[0][3], "")  # read as the note, the fourth cell would print the row without «Adiado»
+        self.assertTrue(cinco[0][4].startswith("Adiado"))
+
+
+# --------------------------------------------------------------------------- G. the token marker, exactly
+
+
+class G_OMarcadorExato(unittest.TestCase):
+    def tokens(self, texto):
+        f = pasta_temporaria(self, "oedp-log-") / "LEITURA.md.eventos.log"
+        f.write_text(texto, encoding="utf-8")
+        return leituras.tokens_do_registo(f)
+
+    def test_so_a_linha_exata(self):
+        self.assertEqual(self.tokens("tokens used\n100\n tokens used \n999\n"), 100)
+        self.assertEqual(self.tokens("tokens used\n100\ntokens used  \n999\n"), 100)
+        self.assertEqual(self.tokens("tokens used\n60,733\n"), 60733)
+
+    def test_planta_o_marcador_com_espacos(self):
+        """The reader's case: a padded line taken for the marker gave 999."""
+        f = pasta_temporaria(self, "oedp-log-") / "x.log"
+        f.write_text("tokens used\n100\n tokens used \n999\n", encoding="utf-8")
+        linhas = f.read_text(encoding="utf-8").splitlines()
+        com_espacos = next(int(linhas[i + 1]) for i in range(len(linhas) - 1, -1, -1) if linhas[i].strip() == "tokens used")
+        self.assertEqual(com_espacos, 999)
+        self.assertNotEqual(com_espacos, leituras.tokens_do_registo(f))
