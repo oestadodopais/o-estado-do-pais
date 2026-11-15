@@ -78,4 +78,7 @@ failing. Three things are outside that line, written down rather than repaired:
   within about two minutes, during which the new deployment is public.
 - The test site's record of the code (`oedp/ensaio.py`) is invented and written at test
   time on the code as it is, so that the test piece builds as published; the real record
-  is never written by it.
+  is never written by it. Every invented record the tests use is signed by one model name
+  (`modelo-de-ensaio`), and no gate counts a step or a reading signed by it outside a tree
+  that `oedp/ensaio.py` assembled and marked with `ARVORE-DE-ENSAIO.txt` (`oedp/marca.py`);
+  the mark is refused in the repository's own tree.

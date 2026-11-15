@@ -279,3 +279,44 @@ class F_ONomeDoModeloDeEnsaio(unittest.TestCase):
             registo.acrescentar(p.peca, "passo", campos)
         self.assertIn("is the tests' own, and counts only in a tree assembled for the tests", str(e.exception))
         self.assertEqual(p.peca.read_bytes(), antes)
+
+
+# --------------------------------------------------------------------------- C. check 1 holds a mostra to its line's unit
+
+
+def check1_com(caso, unidade: str, mostra: str):
+    p = Plantada([('unidade = "pontos"\nmede = "Índice de ensaio, inventado para os ensaios"\npopulacao = "Nenhuma: é um índice de ensaio"\nperiodo = "Terceiro',
+                   f'unidade = "{unidade}"\nmede = "Índice de ensaio, inventado para os ensaios"\npopulacao = "Nenhuma: é um índice de ensaio"\nperiodo = "Terceiro'),
+                  ('mostra = "104,7 pontos"', f'mostra = "{mostra}"')])
+    caso.addCleanup(p.apagar)
+    return conf.check1(ler(p.peca))
+
+
+class C_AUnidadeDoMostra(unittest.TestCase):
+    RECUSADOS = (("‰", "104,7 %", "per cent", "per mille"), ("%", "104,7 ‰", "per mille", "per cent"),
+                 ("%", "104,7 pontos percentuais", "percentage points", "per cent"),
+                 ("pontos percentuais", "104,7 %", "per cent", "percentage points"),
+                 ("euros", "104,7 dólares", "dollar", "euro"), ("€", "104,7 libras", "pound", "euro"))
+
+    def test_pares_que_a_conferencia_distingue(self):
+        for unidade, mostra, tipo_m, tipo_u in self.RECUSADOS:
+            r = check1_com(self, unidade, mostra)
+            self.assertEqual(r.estado, conf.FALHOU, (unidade, mostra))
+            self.assertTrue(any(f"prints a unit in {tipo_m}" in x and f"is in {tipo_u}" in x for x in r.razoes), r.razoes)
+
+    def test_a_mesma_unidade_passa(self):
+        for unidade, mostra in (("%", "104,7 %"), ("‰", "104,7 ‰"), ("euros", "104,7 €"), ("mil euros", "104,7 mil euros"),
+                                ("pontos percentuais", "104,7 pontos percentuais"), ("pontos", "104,7 pontos")):
+            r = check1_com(self, unidade, mostra)
+            self.assertEqual(r.estado, conf.PASSOU, (unidade, mostra, r.linha()))
+            self.assertFalse(any("unit mostra prints" in n for n in r.notas), r.notas)
+
+    def test_uma_unidade_que_nao_conhece_e_uma_nota(self):
+        r = check1_com(self, "pontos", "104,7 graus")
+        self.assertEqual(r.estado, conf.PASSOU, r.linha())
+        self.assertTrue(any("indice: the unit mostra prints ('graus') and unidade ('pontos') are not compared" in n for n in r.notas), r.notas)
+
+    def test_planta_sem_comparar_a_unidade(self):
+        with mock.patch.object(numeros, "unidade_lida", lambda texto: ("", None)):
+            r = check1_com(self, "‰", "104,7 %")
+        self.assertEqual(r.estado, conf.PASSOU)  # a per mille shown as a per cent: what the reader found

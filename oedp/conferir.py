@@ -144,6 +144,15 @@ def check1(peca: Peca) -> Resultado:
                 f"{lid}: mostra {mostra!r} shows {figura}, but valor {l.get('valor')} in "
                 f"{l.get('unidade')!r} at the precision shown is {quer}"
             )
+        # The unit the mostra prints is the line's own (edit of 15 November 2026, 15:17 UTC).
+        palavras_m, tipo_m = numeros.unidade_lida(numeros.unidade_da_mostra(mostra))
+        palavras_u, tipo_u = numeros.unidade_lida(str(l.get("unidade", "")))
+        if tipo_m and tipo_u and tipo_m != tipo_u:
+            razoes.append(f"{lid}: mostra {mostra!r} prints a unit in {tipo_m} ({palavras_m!r}), but the line's unidade "
+                          f"{l.get('unidade')!r} is in {tipo_u}")
+        elif not (tipo_m and tipo_u) and palavras_m.lower() != palavras_u.lower():
+            notas.append(f"{lid}: the unit mostra prints ({palavras_m!r}) and unidade ({palavras_u!r}) are not compared by "
+                         "the script, which does not know them both; left to the numbers editor")
     return _r(1, peca.id, razoes, notas)
 
 

@@ -134,3 +134,30 @@ def ocorrencias(excerto_normalizado: str, valor: str) -> list[tuple[int, int]]:
 def contem_figura(excerto_normalizado: str, valor: str) -> bool:
     """Whether the excerpt holds the figure at least once (see `ocorrencias`)."""
     return bool(ocorrencias(excerto_normalizado, valor))
+
+
+# The units check 1 tells apart (docs/ESPEC-PECA.md, check 1, edit of 15 November 2026, 15:17 UTC):
+# per cent, per mille and percentage points are three units, and a currency is not another. A unit
+# in words that is not here is not compared by the script: it is the numbers editor's.
+UNIDADES = {
+    "%": "per cent", "por cento": "per cent",
+    "‰": "per mille", "por mil": "per mille",
+    "pontos percentuais": "percentage points", "ponto percentual": "percentage points", "p.p.": "percentage points",
+    "euros": "euro", "euro": "euro", "€": "euro", "eur": "euro",
+    "dólares": "dollar", "dólar": "dollar", "$": "dollar", "usd": "dollar",
+    "libras": "pound", "libra": "pound", "£": "pound", "gbp": "pound",
+}
+_ESCALA_OU_DE = re.compile(r"\A(?:(?:" + _ESC_RE + r")(?![\w])[" + ESPACOS + r"]*)?(?:de[" + ESPACOS + r"]+)?", re.IGNORECASE)
+
+
+def unidade_lida(texto: str) -> tuple[str, str | None]:
+    """(the unit's words, the unit it is when UNIDADES knows it). A scale word that opens it
+    («mil», «milhões de») and a «de» are left out: they belong to the number."""
+    palavras = re.sub("[" + ESPACOS + r"]+", " ", _ESCALA_OU_DE.sub("", str(texto).strip(), count=1)).strip()
+    return palavras, UNIDADES.get(palavras.lower())
+
+
+def unidade_da_mostra(mostra: str) -> str:
+    """What a mostra prints after its figure (the figure's scale word read with the figure)."""
+    m = FIGURA.search(mostra)
+    return mostra[m.end():].strip() if m else ""
