@@ -2,7 +2,7 @@ Este projeto pega no que acontece em Portugal, põe ao lado os números oficiais
 
 ## Como confirmo um número?
 
-Cada número, cada citação e cada comparação de uma peça têm um sublinhado pontilhado. Carregue nele e abre-se, mais abaixo na página, o recibo. O recibo diz o que o número mede, a quem se refere e o período. Diz de que documento vem e quem o publicou. Mostra o excerto, copiado letra a letra, com o número assinalado, e a data em que foi lido. E traz uma ligação para o documento, no sítio de quem o publicou: abra-o e procure o excerto. Se não o encontrar, escreva a este projeto (o endereço está mais abaixo).
+Cada número, cada citação e cada comparação de uma peça têm um sublinhado pontilhado. Carregue nele e abre-se, mais abaixo na página, o recibo. O recibo diz o que o número mede, a quem se refere e o período. Diz de que documento vem e quem o publicou. Mostra o excerto, copiado letra a letra, e a data em que foi lido. No excerto, o número vem assinalado, salvo quando o excerto o repete. E traz uma ligação para o documento, no sítio de quem o publicou: abra-o e procure o excerto. Se não o encontrar, escreva a este projeto (o endereço está mais abaixo).
 
 Se o número foi calculado por este projeto, o recibo mostra a conta e leva aos recibos dos números que nela entram.
 
@@ -14,7 +14,7 @@ Este projeto usa modelos de duas empresas, a Anthropic e a OpenAI; os de cada um
 
 Quem verifica também é posto à prova. Na cópia que recebe para verificar há erros postos de propósito, os erros plantados, sem que saiba quantos nem onde. Só existem nessa cópia, nunca na peça. Se deixar passar um, a verificação não conta e é feita de novo.
 
-O resultado está no fim de cada peça, na tabela «O registo desta peça»: uma linha por cada vez que um modelo a leu, com os erros plantados que apanhou, os problemas que apontou e o veredicto. No fim da tabela está a impressão digital do texto, um código que muda se mudar uma letra: liga o texto publicado ao que o juiz aprovou.
+O resultado está no fim de cada peça, na tabela «O registo desta peça»: uma linha por cada vez que um modelo a leu, com quantos erros plantados apanhou, quantos problemas apontou e o veredicto. No fim da tabela está a impressão digital do texto, um código que muda se mudar uma letra: liga o texto publicado ao que o juiz aprovou.
 
 ## Onde está a opinião?
 
@@ -36,7 +36,7 @@ Escreva para correcoes@oestadodopais.pt e diga qual é a peça e qual é a frase
 
 ## O que são os números abaixo?
 
-Contam as peças publicadas, as correções, as atualizações e as peças retiradas, e dão a data da última conferência completa das fontes. Depois, uma tabela dos modelos, função a função: quantas leituras fizeram, quantos erros plantados apanharam, quantos dos problemas que apontaram levaram a mudar uma peça e quantos erros lhes escaparam e foram depois corrigidos. Por fim, a taxa de erro.
+Contam as peças publicadas, as correções, as atualizações e as peças retiradas, e dão a data da última conferência completa das fontes, ou dizem que ainda não houve nenhuma. Depois, uma tabela dos modelos, função a função: quantas leituras fizeram, quantos erros plantados apanharam, quantos dos problemas que apontaram foram aceites e quantos erros lhes escaparam e foram depois corrigidos. Por fim, a taxa de erro.
 
 +++ registo
 
@@ -188,3 +188,25 @@ familia = "anthropic"
 modelo = "claude-fable-5-2"
 inicio = "2026-11-15T16:17:29Z"
 fim = "2026-11-15T16:18:07Z"
+
+[[leitura]]
+lugar = "juiz"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-15T16:21:05Z"
+fim = "2026-11-15T16:26:42Z"
+impressao = "26f8765d1576e7557d7769f4a645f76d5f30588aa9277763b30fde2788132f88"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 4
+adotados = 4
+veredicto = "nao_passa"
+pessoas_vistas = []
+
+[[passo]]
+nome = "edicao"
+lugar = "direcao"
+familia = "anthropic"
+modelo = "claude-fable-5-2"
+inicio = "2026-11-15T16:27:17Z"
+fim = "2026-11-15T16:27:34Z"
