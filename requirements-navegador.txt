@@ -1,0 +1,4 @@
+# For `python3 -m oedp navegador` and `python3 -m oedp capturas` only: the checks and
+# `tudo` never import it. Then: python3 -m playwright install chromium firefox webkit
+playwright==1.65.2
+greenlet==3.5.6

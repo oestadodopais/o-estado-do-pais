@@ -124,7 +124,7 @@ class CincoPaginas(unittest.TestCase):
         self.assertIn("Da encomenda à publicação: 2 h 40 min.", html)
         self.assertIn('<td class="mono" data-rotulo="Erros plantados apanhados">3 de 3</td>', html)
         self.assertNotRegex(html, r">\d+/\d+<")
-        ordem = re.findall(r'<details class="recibo" id="r-([a-z_]+)"', html)
+        ordem = re.findall(r'<details class="recibo"><summary>.*?</summary><span class="ancora" id="r-([a-z_]+)"', html)
         self.assertEqual(ordem, ["indice", "diferenca", "indice_anterior", "total", "terco", "declaracao", "despacho", "proxima"])
         self.assertLess(html.index('class="correcoes-da-peca"'), html.index('class="texto"'))
 
@@ -175,10 +175,10 @@ class CincoPaginas(unittest.TestCase):
 
     def test_o_sinal_de_provisorio_e_o_regresso_ao_texto(self):
         html = self.ler("pecas/2026-11-16-peca-de-ensaio/index.html")
-        self.assertIn('<summary><span class="figura">104,7\u00a0pontos</span></summary><p class="sinal">Valor provisório</p><dl>', html)
+        self.assertIn('<summary><span class="figura">104,7\u00a0pontos</span></summary><span class="ancora" id="r-indice"></span><p class="sinal">Valor provisório</p><dl>', html)
         self.assertNotIn('class="provisorio"', html)
         self.assertIn('<summary><span>O despacho de ensaio foi assinado pela ministra de ensaio.</span></summary>', html)
-        recibos = re.findall(r'<details class="recibo" id="r-([a-z_]+)">.*?</details>', html, re.S)
+        recibos = re.findall(r'<details class="recibo"><summary>.*?</summary><span class="ancora" id="r-([a-z_]+)"></span>.*?</details>', html, re.S)
         self.assertEqual(len(recibos), 8)
         for lid in recibos:
             self.assertIn(f'<p class="voltar"><a href="#u-{lid}">Voltar ao texto</a></p></details>', html)

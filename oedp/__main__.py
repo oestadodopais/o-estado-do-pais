@@ -259,6 +259,51 @@ def cmd_no_ar(a) -> int:
     return 0
 
 
+def cmd_navegador(a) -> int:
+    from . import navegador
+
+    exigir = [m.strip() for m in (a.exigir or "").split(",") if m.strip()]
+    return navegador.correr(exigir)
+
+
+def construir_previa(peca: Path, saida: Path) -> build.Construcao:
+    """A preview, drafts included, of the site the piece file belongs to (its folder
+    `pecas/<year>/` sits under the site's root), built into `saida`. Never deployed."""
+    raiz = peca.resolve().parents[2]
+    return build.construir(REPO, raiz=raiz, saida=saida, com_rascunhos=True, loja=_loja())
+
+
+def cmd_capturas(a) -> int:
+    import tempfile
+
+    from . import ensaio, navegador
+
+    try:
+        navegador.playwright()
+    except navegador.SemPlaywright as e:
+        print(f"refused: {e}", file=sys.stderr)
+        return 2
+    with tempfile.TemporaryDirectory(prefix="oedp-capturas-") as tmp:
+        if a.peca:
+            peca = ler(Path(a.peca))
+            c = construir_previa(Path(a.peca), Path(tmp) / "saida")
+            enderecos, abrir = [f"/pecas/{peca.id}/"], True
+        else:
+            c = ensaio.construir_ensaio(Path(tmp))
+            enderecos, abrir = None, False
+        if not c.ok:
+            print("refused: the pages do not build: " + " | ".join(c.mensagens), file=sys.stderr)
+            return 1
+        try:
+            feitas = navegador.capturar(c.estatica, Path(a.pasta), enderecos or navegador.paginas_construidas(c.estatica), abrir)
+        except navegador.SemPlaywright as e:
+            print(f"refused: {e}", file=sys.stderr)
+            return 2
+    for f in feitas:
+        print(f)
+    return 0
+
+
 def cmd_tudo(a) -> int:
     t0 = time.monotonic()
     ok1 = cmd_conferir(argparse.Namespace(pecas=[])) == 0
@@ -331,6 +376,15 @@ def principal(argv=None) -> int:
 
     s = sub.add_parser("tudo")
     s.set_defaults(f=cmd_tudo)
+
+    s = sub.add_parser("navegador", help="a link to a receipt opens it, in real browsers (needs requirements-navegador.txt)")
+    s.add_argument("--exigir", help="engines that must run, comma-separated: chromium,firefox,webkit")
+    s.set_defaults(f=cmd_navegador)
+
+    s = sub.add_parser("capturas", help="screenshots of the built pages with Chromium (needs requirements-navegador.txt)")
+    s.add_argument("pasta")
+    s.add_argument("peca", nargs="?")
+    s.set_defaults(f=cmd_capturas)
 
     a = p.parse_args(argv)
     try:

@@ -456,7 +456,7 @@ class Item12Segredo(unittest.TestCase):
     def test_planta_segredo_ao_trabalho_inteiro(self):
         texto = (REPO / ".github/workflows/portao.yml").read_text(encoding="utf-8")
         texto = texto.replace("        env:\n          PRIVACIDADE_PROIBIDOS: ${{ secrets.PRIVACIDADE_PROIBIDOS }}\n", "")
-        texto = texto.replace("    timeout-minutes: 10\n", "    timeout-minutes: 10\n    env:\n      PRIVACIDADE_PROIBIDOS: ${{ secrets.PRIVACIDADE_PROIBIDOS }}\n")
+        texto = texto.replace("    timeout-minutes: 20\n", "    timeout-minutes: 20\n    env:\n      PRIVACIDADE_PROIBIDOS: ${{ secrets.PRIVACIDADE_PROIBIDOS }}\n")
         self.assertEqual(len(conf.segredo_so_no_passo(texto)), 1)
         self.assertIn("the secret is given outside a step", conf.segredo_so_no_passo(texto)[0])
 

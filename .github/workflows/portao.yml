@@ -17,7 +17,7 @@ concurrency:
 jobs:
   portao:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -35,3 +35,11 @@ jobs:
         env:
           PRIVACIDADE_PROIBIDOS: ${{ secrets.PRIVACIDADE_PROIBIDOS }}
         run: python3 -m oedp tudo
+      # A link to a receipt opens it, proven in three browser engines. These are steps of
+      # this job, not a job of their own, so the required check cannot go green around them.
+      - name: Browsers, for the browser test
+        run: |
+          python3 -m pip install -r requirements-navegador.txt
+          python3 -m playwright install --with-deps chromium firefox webkit
+      - name: A link to a receipt opens it, in three engines
+        run: python3 -m oedp navegador --exigir chromium,firefox,webkit

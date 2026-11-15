@@ -11,3 +11,4 @@ dist/
 design-system/
 .astro/
 .sinais/
+.venv/

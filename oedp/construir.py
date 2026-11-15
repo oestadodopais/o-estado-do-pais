@@ -11,6 +11,7 @@ With no published piece, `index.html` and `404.html` are the holding page,
 from __future__ import annotations
 
 import hashlib
+import html.parser
 import json
 import os
 import re
@@ -130,12 +131,46 @@ def _alvo(estatica: Path, caminho: str) -> Path | None:
     return destino if destino.is_file() else None
 
 
+class _Caixas(html.parser.HTMLParser):
+    """The ids that a link must not lead to: a <details>, a <summary>, or anything inside
+    a <summary>. A browser opens a closed <details> when the place a link sends it to is
+    inside the box's content, and leaves it closed when it is the box or its summary."""
+
+    VAZIOS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.pilha: list[str] = []
+        self.fechadas: set[str] = set()
+
+    def handle_starttag(self, tag, attrs):
+        ident = dict(attrs).get("id")
+        if ident and (tag in ("details", "summary") or "summary" in self.pilha):
+            self.fechadas.add(ident)
+        if tag not in self.VAZIOS:
+            self.pilha.append(tag)
+
+    def handle_endtag(self, tag):
+        if tag in self.pilha:
+            while self.pilha and self.pilha.pop() != tag:
+                pass
+
+
+def ancoras_fechadas(texto_html: str) -> set[str]:
+    p = _Caixas()
+    p.feed(texto_html)
+    p.close()
+    return p.fechadas
+
+
 def ligacoes_partidas(estatica: Path) -> list[str]:
     erros = []
-    ids = {}
+    ids, fechadas = {}, {}
     paginas = sorted(estatica.rglob("*.html"))
     for p in paginas:
-        ids[p] = set(_ID.findall(p.read_text(encoding="utf-8")))
+        texto = p.read_text(encoding="utf-8")
+        ids[p] = set(_ID.findall(texto))
+        fechadas[p] = ancoras_fechadas(texto)
     for p in paginas:
         nome = p.relative_to(estatica).as_posix()
         for href in _HREF.findall(p.read_text(encoding="utf-8")):
@@ -155,6 +190,9 @@ def ligacoes_partidas(estatica: Path) -> list[str]:
                 erros.append(f"{nome}: the link {href} leads to the page itself; a page does not link to itself")
             elif ancora and alvo.suffix == ".html" and ancora not in ids.get(alvo, set()):
                 erros.append(f"{nome}: the anchor #{ancora} of {href} is not on that page")
+            elif ancora and ancora in fechadas.get(alvo, set()):
+                erros.append(f"{nome}: the link {href} leads to a <details>, a <summary> or inside a <summary>; "
+                             "a browser leaves a closed box closed unless the anchor is inside its content")
         for tabela in re.findall(r'<div class="tabela">.*?</div>', p.read_text(encoding="utf-8"), re.S):
             if re.search(r"<td(?![^>]*\bdata-rotulo=)", tabela):
                 erros.append(f"{nome}: a value of a table carries no data-rotulo, so on a phone it would sit under no label")

@@ -398,8 +398,12 @@ def _recibo(ctx, peca, lid, usadas=()) -> str:
         )
     classe = ' class="figura"' if figura else ""
     voltar = f'<p class="voltar"><a href="{_volta(peca, lid, usadas)}">{e(ctx.t("r_voltar"))}</a></p>'
-    return (f'<details class="recibo" id="r-{e(lid)}"><summary><span{classe}>{resumo}</span></summary>'
-            f'{sinal}<dl>{dl}</dl>{voltar}</details>')
+    # The anchor a link leads to is inside the box's content, never the box or its summary:
+    # a browser opens a closed <details> when the place it is sent to is inside its content,
+    # and does not when it is the box itself (docs/ESPEC-PAGINAS.md, edit of 15 November
+    # 2026). The stylesheet places the anchor at the box's top, so the summary shows.
+    return (f'<details class="recibo"><summary><span{classe}>{resumo}</span></summary>'
+            f'<span class="ancora" id="r-{e(lid)}"></span>{sinal}<dl>{dl}</dl>{voltar}</details>')
 
 
 def _r(ctx, chave: str) -> str:

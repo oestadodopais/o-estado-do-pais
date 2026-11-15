@@ -191,14 +191,16 @@ th { font-family: var(--f-versal); font-weight: 600; letter-spacing: .04em; text
 /* ------------------------------------------------------------ receipts and the record */
 .recibos { margin-top: clamp(40px, 5vw, 64px); border-top: 1.5px solid var(--ink); padding-top: 16px; }
 .recibos > p { color: var(--muted); max-width: var(--measure); margin-bottom: 12px; }
-.recibo { border-bottom: 1px solid var(--rule); }
+.recibo { border-bottom: 1px solid var(--rule); position: relative; }
+/* A receipt's anchor is inside its content (so a link opens it) and sits at its top (so the summary shows). */
+.recibo > .ancora { position: absolute; top: 0; left: 0; scroll-margin-top: 8px; }
 .recibo > summary, .registo > summary { cursor: pointer; min-height: 44px; display: flex; align-items: baseline; gap: 10px; padding: 11px 0; list-style: none; }
 .recibo > summary::-webkit-details-marker, .registo > summary::-webkit-details-marker { display: none; }
 .recibo > summary::before, .registo > summary::before { content: '+'; font-family: var(--f-instr); color: var(--muted); width: 1ch; }
 .recibo[open] > summary::before, .registo[open] > summary::before { content: '\2212'; }
 .recibo > summary { font-size: 16px; line-height: 1.4; }
 .registo > summary { padding: 6px 0; }
-.recibo:target > summary { text-decoration: underline; }
+.recibo:has(> .ancora:target) > summary { text-decoration: underline; }
 .recibo dl { margin: 0 0 0 2ch; display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr); gap: 6px 16px; font-size: 15px; }
 .recibo dt { font-family: var(--f-versal); font-weight: 600; letter-spacing: .04em; text-transform: lowercase; color: var(--muted); }
 .recibo dd { margin: 0; overflow-wrap: anywhere; }
