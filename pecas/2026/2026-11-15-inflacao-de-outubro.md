@@ -1,8 +1,8 @@
 +++ cabeca
 id = "2026-11-15-inflacao-de-outubro"
 tipo = "diario"
-titulo = "Inflação [sobe]{ipc_homologa_dif_2c} para {ipc_homologa_out} em outubro; [sem a energia, sobe pouco]{sem_energia_subida}"
-entrada = "Com duas casas decimais, a taxa subiu {ipc_homologa_dif_2c} face a setembro; sem a energia, {sem_energia_subida}. A inflação subjacente, que deixa de fora a energia e os alimentos não transformados, [também subiu]{subjacente_subida} e está [acima da de janeiro]{subjacente_out_vs_jan}."
+titulo = "Inflação [sobe]{ipc_homologa_dif_2c} para {ipc_homologa_out_2c} em outubro; sem a energia, fica em {sem_energia_out}"
+entrada = "A taxa subiu {ipc_homologa_dif_2c} face a setembro. Tudo o que não é energia explica, no máximo, cerca de {fora_energia_maximo_out} dessa subida. Quantos preços subiram, os números do INE não dizem."
 temas = ["precos"]
 
 [encomenda]
@@ -11,33 +11,35 @@ porque_hoje = "the statistics office published October's consumer prices on 11 N
 largar_se = "the release does not let a reader tell a broad rise from a narrow one (no contributions by class of goods and services, no measure that leaves out energy and unprocessed food), so that the piece could only repeat the rate."
 +++ corpo
 
-[Em outubro de 2026]{ipc_homologa_out}, a inflação foi de {ipc_homologa_out}, segundo o Instituto Nacional de Estatística (INE). É a taxa homóloga do índice de preços no consumidor (IPC), que compara cada mês com [o mesmo mês do ano anterior]{ipc_homologa_out}. Nos quadros do INE, com duas casas decimais, subiu {ipc_homologa_dif_2c} face a setembro.
+[Em outubro de 2026]{ipc_homologa_out}, a inflação foi de {ipc_homologa_out}, segundo o Instituto Nacional de Estatística (INE). É a taxa homóloga do índice de preços no consumidor (IPC): compara os preços de cada mês com os [do mesmo mês do ano anterior]{ipc_homologa_out}. Nos quadros do INE, com duas casas decimais, a taxa passou de {ipc_homologa_set} em setembro para {ipc_homologa_out_2c}.
 
-[Foi o próprio mês de outubro a puxar a taxa]{ipc_mensal_vs_ano_antes}: os preços subiram {ipc_mensal_out_2c} no mês, contra {ipc_mensal_out25} um ano antes.
+[Foi o próprio mês de outubro a puxar a taxa]{ipc_mensal_vs_ano_antes}: os preços subiram {ipc_mensal_out_2c} no mês e, [em outubro de 2025]{ipc_mensal_out25}, o mês que saiu da comparação, tinham subido {ipc_mensal_out25}.
 
-A taxa dos produtos energéticos subiu {energeticos_subida}, para {energeticos_out_2c}. A do total sem eles subiu {sem_energia_subida}, para {sem_energia_out}. A inflação subjacente, sem a energia e sem os alimentos não transformados, subiu {subjacente_subida}, para {subjacente_out_2c}.
+A taxa dos produtos energéticos passou de {energeticos_set_2c} para {energeticos_out_2c}. A de tudo o resto, o total sem energia, passou de {sem_energia_set} para {sem_energia_out}: subiu {sem_energia_subida}, quando a do total subiu {ipc_homologa_dif_2c}. Como esse resto não é o cabaz inteiro, explica, no máximo, cerca de {fora_energia_maximo_out} da subida do total. É uma conta aproximada, que os arredondamentos podem desviar alguns pontos.
 
-São agregados, não preços: o destaque do INE e os seus quadros não dizem quantos preços subiram, nem quanto pesa a energia no cabaz.
+Estes números são médias, e uma média pode mexer pouco com muitos preços a mexer. Fora da energia há taxas que variaram bastante: a da Informação e comunicação {classe08_dif}, a do Lazer, recreação, desporto e cultura {classe09_dif}, a dos Serviços de educação {classe10_dif}, a do Vestuário e calçado {classe03_dif}.
 
-Por classes, [o INE destaca]{contribuicoes_variacao}, face a setembro, o aumento da contribuição do Lazer, recreação, desporto e cultura, da Informação e comunicação e da Habitação, água, eletricidade, gás e outros combustíveis; em sentido contrário, o Vestuário e calçado e os Serviços de higiene e cuidados pessoais, proteção social e bens e serviços diversos. Em parte destes movimentos pesa a base de comparação. No Lazer e na Informação e comunicação, os preços [tinham descido em outubro de 2025]{classe08_mensal_out25, classe09_mensal_out25}; no Vestuário e calçado e nos Serviços de higiene, [tinham subido mais nesse mês do que agora]{classe03_mensal_vs_ano_antes, classe13_mensal_vs_ano_antes}.
+Parte destes movimentos vem do mês que saiu da comparação. No Lazer e na Informação e comunicação, a variação mensal de outubro foi de {classe09_mensal_out} e {classe08_mensal_out}; [um ano antes tinha sido negativa]{classe09_mensal_out25, classe08_mensal_out25}. No Vestuário e calçado e nos Serviços de educação foi positiva, mas [menor do que um ano antes]{classe03_mensal_vs_ano_antes, classe10_mensal_vs_ano_antes}. Cada mês tem as suas épocas: estes números não as separam.
 
-No índice harmonizado (IHPC), outro índice, [usado para comparar países da União Europeia]{ihpc_nao_residentes}, Portugal ficou em {ihpc_homologa_out}; a área do euro, [numa estimativa]{area_euro_estimativa}, em {area_euro_out}.
+No índice harmonizado (IHPC), [usado para comparar países]{ihpc_nao_residentes}, Portugal ficou em {ihpc_homologa_out} e a área do euro, [numa estimativa]{area_euro_estimativa}, em {area_euro_out}. Sem energia nem alimentos não transformados, Portugal ficou em {ihpc_subjacente_out} e a área do euro, também estimada, em {area_euro_subjacente_out}.
 
 ## A leitura deste projeto
 
-Para este projeto, a maior parte da subida de outubro está na energia. O total subiu {ipc_homologa_dif_2c}; tudo o que não é energia subiu {sem_energia_subida}, e é só uma parte do cabaz. É uma leitura dos agregados, não uma conta: falta o peso da energia no cabaz para dizer quanto.
+Este projeto lê assim os números: a maior parte da subida de outubro veio da energia. Tudo o resto explica, no máximo, cerca de {fora_energia_maximo_out}.
 
-Mas a inflação fora da energia não está a descer. [Subiu em outubro]{sem_energia_subida, subjacente_subida}, e desde janeiro a taxa subjacente subiu {subjacente_out_vs_jan} e a dos serviços {servicos_out_vs_jan}. No mês, a subida está sobretudo na energia; no ano, [não está só nela]{subjacente_out_vs_jan, servicos_out_vs_jan}.
+Não é sinal de que a inflação fora da energia esteja parada. Desde janeiro, a taxa sem energia passou de {sem_energia_jan} para {sem_energia_out}, e a do total de {ipc_homologa_jan} para {ipc_homologa_out_2c}; também aí o que não é energia explica, no máximo, cerca de {fora_energia_maximo_jan} da subida.
+
+À pergunta sobre se subiram poucos preços ou quase todos, estes números não respondem.
 
 ## O melhor argumento contra esta leitura
 
-Uma taxa agregada é um saldo: a taxa sem a energia pode ter subido pouco porque muitas subidas foram compensadas por algumas descidas. A taxa dos serviços subiu {servicos_subida}. A subida seria então mais larga do que esta leitura admite.
+Um saldo pequeno pode esconder muito. Fora da energia há taxas a variar, para cima e para baixo, [mais de um ponto percentual]{classe08_dif, classe09_dif, classe10_dif, classe03_dif}, e a dos serviços passou de {servicos_set} para {servicos_out}. A subida pode ser generalizada, e a energia dominar o saldo só porque o resto se anula.
 
-Este projeto reconhece que não sabe quantos preços subiram. Mas [os preços dos serviços desceram neste outubro]{servicos_mensal_out}; a sua taxa subiu porque [em outubro de 2025 tinham descido mais]{servicos_mensal_vs_ano_antes}. O argumento aponta o que os agregados não mostram, sem os desmentir.
+Este projeto dá razão ao argumento: os números não mostram quantos preços subiram. O que mantém é mais estreito: no saldo, a maior parte da subida de outubro veio da energia.
 
 ## O que acompanhar
 
-O valor definitivo da área do euro sai [a 18 de novembro]{area_euro_estimativa}; a próxima estimativa rápida do IPC, [a 30 de novembro]{proximas_datas}; o próximo destaque, [a 14 de dezembro]{proximas_datas}. Nas datas do INE vê-se se a subjacente e a taxa sem a energia continuam a subir ou se param.
+O valor definitivo da inflação da área do euro é divulgado [a 18 de novembro]{area_euro_estimativa}. O INE publica a próxima estimativa rápida [a 30 de novembro]{proximas_datas} e o destaque seguinte [a 14 de dezembro]{proximas_datas}. Aí se vê se a taxa sem energia continua a subir.
 
 +++ folha
 [[fonte]]
@@ -162,7 +164,7 @@ mostra = "1,88 pontos percentuais"
 id = "ipc_mensal_out"
 tipo = "valor"
 fonte = "ine_ipc_out2026"
-onde = "p. 1, primeiro parágrafo"
+onde = "p. 1, segundo parágrafo"
 excerto = '''A variação mensal do IPC foi 0,2% (1,2% no mês precedente e nula em outubro de 2025).'''
 valor = "0.2"
 unidade = "%"
@@ -1513,6 +1515,81 @@ diz = "O INE anuncia a próxima estimativa rápida do IPC para 30 de novembro de
 quem = ""
 quando = "2026-11-11"
 
+[[linha]]
+id = "ihpc_subjacente_out"
+tipo = "valor"
+fonte = "ine_ipc_out2026"
+onde = "p. 1, quarto parágrafo"
+excerto = '''Excluindo produtos alimentares não transformados e energéticos, o IHPC em Portugal atingiu uma variação homóloga de 2,9% em outubro (2,7% em setembro), taxa superior à da área do Euro (estimada em 2,2%).'''
+valor = "2.9"
+unidade = "%"
+mede = "Taxa de variação homóloga do IHPC português excluindo produtos alimentares não transformados e energéticos"
+populacao = "IHPC, Portugal: inclui na estrutura de ponderação a despesa realizada pelos não residentes, excluída do âmbito do IPC"
+periodo = "outubro de 2026, face a outubro de 2025"
+provisorio = false
+mostra = "2,9 %"
+
+[[linha]]
+id = "area_euro_subjacente_out"
+tipo = "valor"
+fonte = "ine_ipc_out2026"
+onde = "p. 1, quarto parágrafo"
+excerto = '''Excluindo produtos alimentares não transformados e energéticos, o IHPC em Portugal atingiu uma variação homóloga de 2,9% em outubro (2,7% em setembro), taxa superior à da área do Euro (estimada em 2,2%).'''
+valor = "2.2"
+unidade = "%"
+mede = "Taxa de variação homóloga do IHPC da área do euro excluindo produtos alimentares não transformados e energéticos, estimada (o destaque escreve estimada em 2,2%)"
+populacao = "IHPC, área do euro"
+periodo = "outubro de 2026, face a outubro de 2025"
+provisorio = true
+mostra = "2,2 %"
+
+[[linha]]
+id = "sem_energia_jan"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TII-PT (quadro II, taxas de variação homóloga, no original «Annual rates (%)»), linha «Total excluding energy», coluna de janeiro de 2026, o primeiro número a seguir a 2026"
+excerto = '''Total excluding energy 2025 2.55 2.44 1.99 2.28 2.46 2.68 2.93 3 2.58 2.64 2.45 2.55 2026 2.26 2.46 2.53 2.81 2.62 2.83 2.68 2.72 2.84 2.91'''
+valor = "2.26"
+unidade = "%"
+mede = "Taxa de variação homóloga do IPC total excluindo os produtos energéticos (no original, «Total excluding energy»), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "janeiro de 2026, face a janeiro de 2025"
+provisorio = false
+mostra = "2,26 %"
+
+[[linha]]
+id = "sem_energia_out_vs_jan"
+tipo = "derivado"
+calculo = "sem_energia_out - sem_energia_jan"
+valor = "0.65"
+unidade = "pontos percentuais"
+mede = "Taxa de variação homóloga do IPC total excluindo os produtos energéticos em outubro de 2026 menos a de janeiro de 2026"
+periodo = "janeiro e outubro de 2026 (taxas homólogas)"
+compara = "As duas taxas estão na mesma linha do mesmo quadro dos quadros do destaque: a mesma medida (taxa de variação homóloga), o mesmo agregado e a mesma população, e a mesma estrutura de ponderação de 2026. Cada taxa compara o seu mês com o mesmo mês de 2025, pelo que a diferença mostra quanto a taxa homóloga se moveu entre janeiro e outubro, não quanto subiram os preços nesse período. Duas casas decimais, como nos quadros; a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais)."
+mostra = "0,65 pontos percentuais"
+
+[[linha]]
+id = "fora_energia_maximo_out"
+tipo = "derivado"
+calculo = "round ( sem_energia_subida / ipc_homologa_dif_2c * 100 , 0 )"
+valor = "37"
+unidade = "%"
+mede = "A subida da taxa de variação homóloga do IPC total sem os produtos energéticos entre setembro e outubro de 2026, em percentagem da subida da taxa de variação homóloga do IPC total nos mesmos dois meses. Como o total sem energia é só uma parte do cabaz, a sua subida só entra na subida do total na medida do peso dessa parte; por isso este número é, aproximadamente, o máximo que tudo o que não é energia pode ter acrescentado à subida do total"
+periodo = "setembro e outubro de 2026 (taxas homólogas)"
+compara = "As duas subidas são diferenças entre os mesmos dois meses de taxas de variação homóloga do IPC, tiradas da mesma folha dos quadros do destaque, com duas casas decimais, e o total sem energia é uma parte do total. A relação é aproximada: a taxa do total só é aproximadamente uma média ponderada das taxas das suas partes, porque os pesos mudam todos os anos (o destaque, na p. 10, notas explicativas, primeiro parágrafo, diz que a estrutura de ponderação é «atualizada anualmente tendo em conta a informação disponível, sendo valorizada a preços médios de dezembro do ano anterior»). Cada uma das duas subidas herda o arredondamento das taxas de onde vem (até 0,01 pontos percentuais cada); como a subida do total sem energia é pequena, a percentagem pode afastar-se vários pontos do valor mostrado. O peso da energia no cabaz não está em nenhuma das fontes guardadas e não entra na conta."
+mostra = "37 %"
+
+[[linha]]
+id = "fora_energia_maximo_jan"
+tipo = "derivado"
+calculo = "round ( sem_energia_out_vs_jan / ipc_homologa_out_vs_jan * 100 , 0 )"
+valor = "35"
+unidade = "%"
+mede = "A subida da taxa de variação homóloga do IPC total sem os produtos energéticos entre janeiro e outubro de 2026, em percentagem da subida da taxa de variação homóloga do IPC total nos mesmos dois meses. Como o total sem energia é só uma parte do cabaz, a sua subida só entra na subida do total na medida do peso dessa parte; por isso este número é, aproximadamente, o máximo que tudo o que não é energia pode ter acrescentado à subida do total"
+periodo = "janeiro e outubro de 2026 (taxas homólogas)"
+compara = "As duas subidas são diferenças entre os mesmos dois meses de taxas de variação homóloga do IPC, tiradas da mesma folha dos quadros do destaque, com duas casas decimais, e o total sem energia é uma parte do total. A relação é aproximada: a taxa do total só é aproximadamente uma média ponderada das taxas das suas partes, porque os pesos mudam todos os anos (o destaque, na p. 10, notas explicativas, primeiro parágrafo, diz que a estrutura de ponderação é «atualizada anualmente tendo em conta a informação disponível, sendo valorizada a preços médios de dezembro do ano anterior»). Cada uma das duas subidas herda o arredondamento das taxas de onde vem (até 0,01 pontos percentuais cada), o que aqui pesa pouco na percentagem. O peso da energia no cabaz não está em nenhuma das fontes guardadas e não entra na conta."
+mostra = "35 %"
+
 +++ registo
 
 [[passo]]
@@ -1622,3 +1699,71 @@ familia = "anthropic"
 modelo = "claude-fable-5-2"
 inicio = "2026-11-15T12:30:56Z"
 fim = "2026-11-15T12:32:28Z"
+
+[[leitura]]
+lugar = "oposto"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-15T12:33:01Z"
+fim = "2026-11-15T12:39:23Z"
+impressao = "956f8d25ba7d7dfb2adce2e2c40634f3d9d8cf0c9dde0dafce89824eebd43342"
+plantas_postas = 0
+plantas_apanhadas = 0
+achados = 3
+adotados = 3
+veredicto = "nao_passa"
+
+[[leitura]]
+lugar = "especialista"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-15T12:33:03Z"
+fim = "2026-11-15T12:43:21Z"
+impressao = "956f8d25ba7d7dfb2adce2e2c40634f3d9d8cf0c9dde0dafce89824eebd43342"
+plantas_postas = 0
+plantas_apanhadas = 0
+achados = 6
+adotados = 6
+veredicto = "levanta"
+
+[[leitura]]
+lugar = "leitor"
+familia = "anthropic"
+modelo = "claude-sonnet-5-5"
+inicio = "2026-11-15T12:33:03Z"
+fim = "2026-11-15T12:35:02Z"
+impressao = "956f8d25ba7d7dfb2adce2e2c40634f3d9d8cf0c9dde0dafce89824eebd43342"
+plantas_postas = 0
+plantas_apanhadas = 0
+achados = 14
+adotados = 11
+veredicto = "levanta"
+
+[[leitura]]
+lugar = "desenhador"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-15T12:33:43Z"
+fim = "2026-11-15T12:41:24Z"
+impressao = "956f8d25ba7d7dfb2adce2e2c40634f3d9d8cf0c9dde0dafce89824eebd43342"
+plantas_postas = 0
+plantas_apanhadas = 0
+achados = 9
+adotados = 9
+veredicto = "levanta"
+
+[[passo]]
+nome = "reportagem"
+lugar = "reporter"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-15T12:45:42Z"
+fim = "2026-11-15T12:49:03Z"
+
+[[passo]]
+nome = "edicao"
+lugar = "direcao"
+familia = "anthropic"
+modelo = "claude-fable-5-2"
+inicio = "2026-11-15T12:49:42Z"
+fim = "2026-11-15T12:49:42Z"
