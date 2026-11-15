@@ -208,6 +208,7 @@ class Resposta:
     redirecao: str = ""  # where a 3xx answer points, as curl reads it
     nota: str = ""  # said to the caller, e.g. that the request was tried again over HTTP/1.1
     http11: bool = False  # the default protocol failed and HTTP/1.1 answered: the host is remembered for it
+    sem_ligacao: bool = False  # the host did not connect within LIGACAO_S seconds, twice
 
 
 class Memoria:
@@ -253,16 +254,36 @@ def memoria_da_loja(raiz: Path) -> Memoria:
     return Memoria(Path(raiz) / "hosts.json")
 
 
+LIGACAO_S = 10  # seconds a host is given to connect, per attempt (ESQ2b item 4)
+
+
+def nao_ligou(r: subprocess.CompletedProcess) -> bool:
+    """Whether curl gave up because the host did not connect (its connect timeout), and not
+    for another reason: exit 28 with no connection made."""
+    if r.returncode != 28:
+        return False
+    try:
+        dados = json.loads(r.stdout) if (r.stdout or "").strip() else {}
+    except json.JSONDecodeError:
+        dados = {}
+    if "time_connect" in dados:
+        return not float(dados.get("time_connect") or 0)
+    return re.search(r"Failed to connect|Connection timed out", r.stderr or "") is not None
+
+
 def transporte_curl(url: str, destino: Path, metodo: str = "GET", endereco: str | None = None,
                     primeiro_http11: bool = False) -> Resposta:
     """One request, redirects off. `endereco` pins the address curl connects to. With
     `primeiro_http11` (a host remembered for it) HTTP/1.1 is asked first, and the default
-    protocol is the one tried again."""
+    protocol is the one tried again. A host has LIGACAO_S seconds to connect; one that does
+    not is tried once more, and twice is a failure that says so (measured on 15 November
+    2026: a statistics office host once held a connection 67 seconds before refusing it).
+    The total `--max-time` of each attempt is unchanged."""
     curl = shutil.which("curl")
     if curl is None:
         raise ErroDaLoja("curl is not installed here, and fonte fetches only through curl")
     args = [
-        curl, "--silent", "--show-error", "--max-time", "120", "--max-filesize", "104857600",
+        curl, "--silent", "--show-error", "--max-time", "120", "--connect-timeout", str(LIGACAO_S), "--max-filesize", "104857600",
         "--proto", "=https,http", "--user-agent", AGENTE, "--output", str(destino), "--write-out", "%{json}",
     ]
     if metodo == "HEAD":
@@ -278,15 +299,22 @@ def transporte_curl(url: str, destino: Path, metodo: str = "GET", endereco: str 
         except subprocess.TimeoutExpired:
             raise ErroDaLoja(f"{url}: curl did not finish in 180 seconds") from None
 
-    r = correr(args + (["--http1.1"] if primeiro_http11 else []))
-    nota, http11 = "", False
+    host = urllib.parse.urlsplit(url).hostname or url
+    primeiros = args + (["--http1.1"] if primeiro_http11 else [])
+    r = correr(primeiros)
+    nota, http11, sem_ligacao = "", False, False
+    if nao_ligou(r):
+        r = correr(primeiros)
+        sem_ligacao = nao_ligou(r)
+        nota = (f"{url}: {host} did not connect within {LIGACAO_S} seconds; tried once more, which "
+                + ("did not connect either" if sem_ligacao else "succeeded" if r.returncode == 0 else f"connected and then failed (curl exit {r.returncode})"))
     # A failure of transport (not a bad address, not a size limit) is tried once more over
     # HTTP/1.1: some hosts fail over HTTP/2 ("Invalid HTTP header field was received").
-    if r.returncode not in (0, 1, 3, 6, 47, 63):
+    if not sem_ligacao and r.returncode not in (0, 1, 3, 6, 47, 63):
         primeiro = (r.stderr or "").strip() or f"curl exit {r.returncode}"
         r = correr(args + ([] if primeiro_http11 else ["--http1.1"]))
         outro = "without --http1.1" if primeiro_http11 else "with --http1.1"
-        nota = f"{url}: curl failed ({primeiro}); tried once more {outro}, which " + (
+        nota = (nota + "; " if nota else "") + f"{url}: curl failed ({primeiro}); tried once more {outro}, which " + (
             "succeeded" if r.returncode == 0 else f"failed too (curl exit {r.returncode})")
         http11 = r.returncode == 0 and not primeiro_http11
     try:
@@ -300,10 +328,12 @@ def transporte_curl(url: str, destino: Path, metodo: str = "GET", endereco: str 
         final=str(dados.get("url_effective") or url),
         tipo=str(dados.get("content_type") or "").split(";")[0].strip(),
         tamanho=int(dados.get("size_download") or tamanho),
-        erro=(r.stderr or str(dados.get("errormsg") or "")).strip(),
+        erro=(f"{host} did not connect within {LIGACAO_S} seconds, twice" if sem_ligacao
+              else (r.stderr or str(dados.get("errormsg") or "")).strip()),
         redirecao=str(dados.get("redirect_url") or ""),
         nota=nota,
         http11=http11,
+        sem_ligacao=sem_ligacao,
     )
 
 
@@ -463,6 +493,8 @@ def seguir(url: str, raiz: Path, transporte=transporte_curl, resolver=resolver_d
         if memoria is not None and memoria.sabe(host, "sem_head"):
             return None, url, salto
         r, _ = _um_pedido(url, raiz, transporte, resolver, "HEAD", memoria=memoria)
+        if getattr(r, "sem_ligacao", False):
+            raise ErroDaLoja(f"refused: {url} could not be fetched ({r.erro})")
         if r.saida != 0 or r.http in (405, 501):
             if memoria is not None:
                 memoria.marcar(host, "sem_head")
