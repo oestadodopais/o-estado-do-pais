@@ -439,20 +439,39 @@ SINAIS = {"+": "+", "-": "−", "*": "×", "/": "÷"}
 MENOS = "−"
 
 
+def _agrupado(inteiro: str) -> str:
+    """The digits of a whole number with its thousands grouped by no-break spaces: «1\u00a0500»."""
+    grupos = []
+    while len(inteiro) > 3:
+        grupos.insert(0, inteiro[-3:])
+        inteiro = inteiro[:-3]
+    return NBSP.join([inteiro] + grupos)
+
+
 def numero_mostrado(linha: dict) -> tuple[str, bool]:
-    """The number of a line as its `mostra` shows it, without the unit, and whether it is
-    negative: «4,40 %» gives ("4,40", False), «−0,11 pontos percentuais» ("0,11", True).
-    A scale word the figure is read with stays («602,5 mil»): without it the number would
-    be another. A line marked `mostra_livre`, or whose mostra holds no single figure, falls
-    back to its valor in Portuguese form (docs/ESPEC-PAGINAS.md, section 3, `derivado`)."""
+    """The number a calculation prints for a line, without the sign, and whether it is negative.
+
+    The arithmetic prints numbers that compute (docs/ESPEC-PAGINAS.md, section 3, `derivado`,
+    edit of 15 November 2026, 15:17 UTC): the line's `valor` in Portuguese form, with final zeros
+    added up to the decimals its `mostra` shows when, and only when, the number of the `mostra`
+    read back is exactly the `valor` in the same scale («4,4» shown «4,40 %» prints «4,40»);
+    where the `mostra` rounds the `valor` or gives it in another scale («1,5 mil» for 1500), it is
+    the `valor` as it is («1\u00a0500»). The sign comes from the `valor`. A `mostra_livre` line,
+    or one whose `mostra` holds no single figure, prints its `valor` as it is."""
+    valor = derivacoes.numero(str(linha.get("valor", "")).strip())
+    casas = None
     if linha.get("mostra_livre") is not True:
-        achados = list(numeros.FIGURA.finditer(str(linha.get("mostra", ""))))
-        if len(achados) == 1:
-            m = achados[0]
-            texto = m["inteiro"] + ("," + m["decimais"] if m["decimais"] else "") + (" " + m["escala"] if m["escala"] else "")
-            return _juntar(texto), m["sinal"] in ("-", MENOS)
-    valor = str(linha.get("valor", "")).strip()
-    return numeros.portugues(valor.lstrip("-")), valor.startswith("-")
+        try:
+            figura, casas_m, escala_m = numeros.ler_mostra(str(linha.get("mostra", "")))
+        except numeros.ErroDeFigura:
+            figura = None
+        if (figura is not None and escala_m == numeros.escala_da_unidade(str(linha.get("unidade", "")))
+                and abs(figura) == abs(valor) and -valor.as_tuple().exponent <= casas_m):
+            casas = casas_m
+    absoluto = abs(valor)
+    texto = format(absoluto.quantize(Decimal(1).scaleb(-casas)) if casas is not None else absoluto, "f")
+    inteiro, _, decimais = texto.partition(".")
+    return _agrupado(inteiro) + ("," + decimais if decimais else ""), valor < 0
 
 
 def _entradas(peca, lid) -> list[str]:
@@ -495,7 +514,8 @@ def _conta(ctx, peca, linha) -> str:
             ligado = f'<a href="#r-{e(t)}">{MENOS if negativo else ""}{e(numero)}</a>'
             parte = f"({ligado})" if negativo else ligado
         elif derivacoes.LITERAL.match(t):
-            numero = e(numeros.portugues(t.lstrip("-")))
+            inteiro, _, decimais = t.lstrip("-").partition(".")
+            numero = e(_agrupado(inteiro) + ("," + decimais if decimais else ""))
             parte = f"({MENOS}{numero})" if t.startswith("-") else numero
         elif unario:
             parte = MENOS
