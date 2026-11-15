@@ -1,8 +1,8 @@
 +++ cabeca
 id = "2026-11-15-inflacao-de-outubro"
 tipo = "diario"
-titulo = "Inflação [sobe]{ipc_homologa_dif_2c} para {ipc_homologa_out_2c} em outubro; sem a energia, fica em {sem_energia_out}"
-entrada = "A taxa subiu {ipc_homologa_dif_2c} face a setembro. Tudo o que não é energia explica, no máximo, cerca de {fora_energia_maximo_out} dessa subida. Quantos preços subiram, os números do INE não dizem."
+titulo = "Inflação sobe para {ipc_homologa_out} em outubro; [mais de metade]{sem_energia_subida, ipc_homologa_dif_2c} da subida vem da energia"
+entrada = "A taxa subiu {ipc_homologa_dif_2c} face a setembro. Sem os produtos energéticos, subiu {sem_energia_subida}. Quantos preços subiram, os números do INE não dizem."
 temas = ["precos"]
 
 [encomenda]
@@ -11,35 +11,41 @@ porque_hoje = "the statistics office published October's consumer prices on 11 N
 largar_se = "the release does not let a reader tell a broad rise from a narrow one (no contributions by class of goods and services, no measure that leaves out energy and unprocessed food), so that the piece could only repeat the rate."
 +++ corpo
 
-[Em outubro de 2026]{ipc_homologa_out}, a inflação foi de {ipc_homologa_out}, segundo o Instituto Nacional de Estatística (INE). É a taxa homóloga do índice de preços no consumidor (IPC): compara os preços de cada mês com os [do mesmo mês do ano anterior]{ipc_homologa_out}. Nos quadros do INE, com duas casas decimais, a taxa passou de {ipc_homologa_set} em setembro para {ipc_homologa_out_2c}.
+[Em outubro de 2026]{ipc_homologa_out}, a inflação foi de {ipc_homologa_out}, segundo o Instituto Nacional de Estatística (INE). O número é a taxa homóloga do índice de preços no consumidor (IPC): diz quanto os preços subiram [face ao mesmo mês do ano anterior]{ipc_homologa_out}.
 
-[Foi o próprio mês de outubro a puxar a taxa]{ipc_mensal_vs_ano_antes}: os preços subiram {ipc_mensal_out_2c} no mês e, [em outubro de 2025]{ipc_mensal_out25}, o mês que saiu da comparação, tinham subido {ipc_mensal_out25}.
+As diferenças de que esta peça trata são pequenas. Por isso usa as taxas com duas casas decimais, que estão nos quadros do INE: {ipc_homologa_set} em setembro, {ipc_homologa_out_2c} em outubro. A taxa subiu {ipc_homologa_dif_2c}. A diferença entre duas taxas mede-se em pontos percentuais.
 
-A taxa dos produtos energéticos passou de {energeticos_set_2c} para {energeticos_out_2c}. A de tudo o resto, o total sem energia, passou de {sem_energia_set} para {sem_energia_out}: subiu {sem_energia_subida}, quando a do total subiu {ipc_homologa_dif_2c}. Como esse resto não é o cabaz inteiro, explica, no máximo, cerca de {fora_energia_maximo_out} da subida do total. É uma conta aproximada, que os arredondamentos podem desviar alguns pontos.
+Uma taxa homóloga muda de um mês para o outro por duas razões: o que os preços fazem no mês que entra na conta e o que fizeram, um ano antes, no mês que sai dela. [Desta vez foi o mês que entrou a fazer a diferença]{ipc_mensal_vs_ano_antes}: [em outubro de 2026]{ipc_mensal_out_2c} os preços subiram {ipc_mensal_out_2c} face a setembro, e [em outubro de 2025]{ipc_mensal_out25} tinham subido {ipc_mensal_out25}.
 
-Estes números são médias, e uma média pode mexer pouco com muitos preços a mexer. Fora da energia há taxas que variaram bastante: a da Informação e comunicação {classe08_dif}, a do Lazer, recreação, desporto e cultura {classe09_dif}, a dos Serviços de educação {classe10_dif}, a do Vestuário e calçado {classe03_dif}.
+A taxa homóloga dos produtos energéticos passou de {energeticos_set_2c} para {energeticos_out_2c}.
 
-Parte destes movimentos vem do mês que saiu da comparação. No Lazer e na Informação e comunicação, a variação mensal de outubro foi de {classe09_mensal_out} e {classe08_mensal_out}; [um ano antes tinha sido negativa]{classe09_mensal_out25, classe08_mensal_out25}. No Vestuário e calçado e nos Serviços de educação foi positiva, mas [menor do que um ano antes]{classe03_mensal_vs_ano_antes, classe10_mensal_vs_ano_antes}. Cada mês tem as suas épocas: estes números não as separam.
+Tirando a energia, fica tudo o resto. A taxa desse resto, o total sem os produtos energéticos, passou de {sem_energia_set} para {sem_energia_out}: subiu {sem_energia_subida}. A do total subiu {ipc_homologa_dif_2c}.
 
-No índice harmonizado (IHPC), [usado para comparar países]{ihpc_nao_residentes}, Portugal ficou em {ihpc_homologa_out} e a área do euro, [numa estimativa]{area_euro_estimativa}, em {area_euro_out}. Sem energia nem alimentos não transformados, Portugal ficou em {ihpc_subjacente_out} e a área do euro, também estimada, em {area_euro_subjacente_out}.
+Esse resto é só uma parte do cabaz. Por isso, não pode ter acrescentado à subida do total mais do que a sua própria taxa subiu: [menos de metade]{fora_energia_maximo_out}. A maior parte veio da energia. A conta é aproximada, porque as taxas estão arredondadas e os pesos do cabaz mudam todos os anos; mesmo com os arredondamentos no pior caso, continua abaixo de metade.
+
+Estes números são médias de muitos preços, e uma média pode mudar pouco enquanto uns preços sobem e outros descem. Fora da energia há taxas que mudaram muito mais do que a do total. A do Lazer, recreação, desporto e cultura passou de {classe09_set} para {classe09_out}. A dos Serviços de educação passou de {classe10_set} para {classe10_out}.
+
+Parte destas mudanças vem do mês que saiu da conta, e não de outubro deste ano. No Lazer, os preços subiram {classe09_mensal_out} em outubro; [um ano antes tinham descido]{classe09_mensal_out25}. Nos Serviços de educação subiram {classe10_mensal_out}, [menos do que um ano antes]{classe10_mensal_vs_ano_antes}: a taxa desceu apesar de os preços terem subido. As variações de um mês para o outro [dependem também da época do ano]{ipc_mensal_out}, e estes números não separam esse efeito.
+
+Para comparar países usa-se outro índice, o harmonizado (IHPC), [que conta também o que os não residentes gastam]{ihpc_nao_residentes}. Por esse índice, a inflação de outubro foi de {ihpc_homologa_out} em Portugal e de {area_euro_out} na área do euro, [numa estimativa]{area_euro_estimativa}. Sem energia nem alimentos não transformados, a ordem inverte-se: {ihpc_subjacente_out} em Portugal e {area_euro_subjacente_out} na área do euro, valor também estimado.
 
 ## A leitura deste projeto
 
-Este projeto lê assim os números: a maior parte da subida de outubro veio da energia. Tudo o resto explica, no máximo, cerca de {fora_energia_maximo_out}.
+Este projeto lê assim os números: [mais de metade]{sem_energia_subida, ipc_homologa_dif_2c} da subida da inflação em outubro veio da energia.
 
-Não é sinal de que a inflação fora da energia esteja parada. Desde janeiro, a taxa sem energia passou de {sem_energia_jan} para {sem_energia_out}, e a do total de {ipc_homologa_jan} para {ipc_homologa_out_2c}; também aí o que não é energia explica, no máximo, cerca de {fora_energia_maximo_jan} da subida.
+Isso não quer dizer que o resto esteja parado. Desde janeiro, a taxa sem energia passou de {sem_energia_jan} para {sem_energia_out}. A do total subiu mais, de {ipc_homologa_jan} para {ipc_homologa_out_2c}, mas as duas subiram.
 
-À pergunta sobre se subiram poucos preços ou quase todos, estes números não respondem.
+Quem olhar para a taxa de outubro e concluir que os preços estão todos a subir mais depressa conclui mais do que estes números permitem. Quem concluir que foi só a energia, também. Se subiram poucos preços ou quase todos, estes números não dizem: são médias, não contam preços.
 
 ## O melhor argumento contra esta leitura
 
-Um saldo pequeno pode esconder muito. Fora da energia há taxas a variar, para cima e para baixo, [mais de um ponto percentual]{classe08_dif, classe09_dif, classe10_dif, classe03_dif}, e a dos serviços passou de {servicos_set} para {servicos_out}. A subida pode ser generalizada, e a energia dominar o saldo só porque o resto se anula.
+Dizer que a subida veio sobretudo da energia pode deixar a ideia de que, fora dela, os preços estão calmos. Os números não mostram isso. Fora da energia há taxas que num só mês mudaram [mais de um ponto percentual]{classe09_dif, classe10_dif}, umas para cima e outras para baixo, e na média umas compensam as outras. A taxa de todos os serviços juntos passou de {servicos_set} para {servicos_out}. E, sem energia nem alimentos não transformados, [a inflação em Portugal está acima da da área do euro]{ihpc_subjacente_out, area_euro_subjacente_out}.
 
-Este projeto dá razão ao argumento: os números não mostram quantos preços subiram. O que mantém é mais estreito: no saldo, a maior parte da subida de outubro veio da energia.
+Este projeto dá razão ao argumento. O que afirma é mais estreito: da subida da taxa em outubro, mais de metade veio da energia. Não afirma que os outros preços estão calmos, nem que subiram poucos.
 
 ## O que acompanhar
 
-O valor definitivo da inflação da área do euro é divulgado [a 18 de novembro]{area_euro_estimativa}. O INE publica a próxima estimativa rápida [a 30 de novembro]{proximas_datas} e o destaque seguinte [a 14 de dezembro]{proximas_datas}. Aí se vê se a taxa sem energia continua a subir.
+O valor da área do euro é ainda uma estimativa; o definitivo é divulgado [a 18 de novembro]{area_euro_estimativa}. O INE tem duas datas marcadas: [30 de novembro]{proximas_datas}, para a próxima estimativa rápida, que dá um primeiro valor da taxa, e [14 de dezembro]{proximas_datas}, para o próximo destaque, o documento de onde saem os números desta peça. O que interessa ver nessas datas: se a taxa sem energia continua a subir, como tem subido desde janeiro, e se a energia continua a pesar mais do que tudo o resto na subida.
 
 +++ folha
 [[fonte]]
