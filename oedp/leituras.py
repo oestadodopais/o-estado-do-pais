@@ -738,10 +738,7 @@ def _uma_planta(p: Plantador, planta: dict) -> dict:
     if ficheiro.startswith("arvore/"):
         # the whole lines of the planted file that hold the new text, each as an added line of the diff
         plantado = _texto(alvo_f)
-        inicio = plantado.index(planta["depois"])
-        fim = inicio + len(planta["depois"].rstrip("\n"))
-        primeira = plantado.count("\n", 0, inicio) + 1
-        linhas = list(range(primeira, plantado.count("\n", 0, fim) + 2))
+        primeira, linhas = _linhas_da_planta(plantado, planta["depois"])
         inteiras = plantado.split("\n")[primeira - 1 : linhas[-1]]
         diff = (pacote / "diff.patch").read_text(encoding="utf-8", errors="replace").splitlines()
         if not any(l.strip() for l in inteiras) or not all(("+" + l) in diff for l in inteiras if l.strip()):
@@ -795,6 +792,14 @@ def _num(lugar: str):
     return int(m.group(1)) if m else 0
 
 
+def _linhas_da_planta(plantado: str, depois: str) -> tuple[int, list[int]]:
+    """(the first line, every line) of the planted text `depois` in the planted file's text."""
+    inicio = plantado.index(depois)
+    fim = inicio + len(depois.rstrip("\n"))
+    primeira = plantado.count("\n", 0, inicio) + 1
+    return primeira, list(range(primeira, plantado.count("\n", 0, fim) + 2))
+
+
 def _numerado_de(p: "Plantador", ficheiro: str, texto: str) -> str | None:
     """The numbered text a reader is given when the planted file `ficheiro` holds `texto`."""
     if ficheiro == "peca.md":
@@ -813,6 +818,14 @@ def _lugares_no_fim(p: "Plantador", plantas: list[dict], chave: list[dict]):
     numbers. Each plant's sentences are found by comparing the final numbered text with the same
     package in which that plant alone is undone; its other places (`linha`, `fonte`) stand."""
     for planta, c in zip(plantas, chave):
+        if c["ficheiro"].startswith("arvore/"):
+            # A plant in code: its lines in the file as the last plant left it (ORDEM-3e, item F).
+            texto = _texto(p.pacote / c["ficheiro"])
+            if texto.count(planta["depois"]) != 1:
+                raise Recusa(f"refused: {planta['id']}: its new text is not found exactly once in {c['ficheiro']} after the "
+                             "last plant, so its lines cannot be worked out again")
+            c["linhas"] = _linhas_da_planta(texto, planta["depois"])[1]
+            continue
         if not any(l.startswith("frase ") for l in c["lugares"]):
             continue
         nome = "TEXTOS-NUMERADOS.md" if c["ficheiro"] == "TEXTOS-NUMERADOS.md" else "TEXTO-NUMERADO.md"

@@ -222,3 +222,33 @@ class D_UmaPalavraDeEscalaEmQualquerCaixa(unittest.TestCase):
         with mock.patch.object(numeros, "ESCALA_INICIAL", caso):
             r = check1_com(self, "Mil euros", "104,7 mil euros")
         self.assertEqual(r.estado, conf.FALHOU)  # the reader's case: 0.1 expected
+
+
+# --------------------------------------------------------------------------- F. the places of plants in code
+
+
+from types import SimpleNamespace  # noqa: E402
+
+
+class F_AsLinhasDasPlantasNoCodigo(unittest.TestCase):
+    def chave_no_fim(self):
+        pacote = pasta_temporaria(self, "oedp-pacote-")
+        (pacote / "arvore" / "oedp").mkdir(parents=True)
+        # the first plant went in at line 2; a later plant put a line before it
+        (pacote / "arvore" / "oedp" / "x.py").write_text("um = 1\nnovo = 0\ndois = 3\ntres = 3\n", encoding="utf-8")
+        plantas = [{"id": "P1", "antes": "dois = 2\n", "depois": "dois = 3\n"}, {"id": "P2", "antes": "um = 1\n", "depois": "um = 1\nnovo = 0\n"}]
+        chave = [{"id": "P1", "ficheiro": "arvore/oedp/x.py", "lugares": ["ficheiro oedp/x.py"], "ficheiro_codigo": "oedp/x.py", "linhas": [2]},
+                 {"id": "P2", "ficheiro": "arvore/oedp/x.py", "lugares": ["ficheiro oedp/x.py"], "ficheiro_codigo": "oedp/x.py", "linhas": [1, 2]}]
+        return SimpleNamespace(pacote=pacote), plantas, chave
+
+    def test_as_linhas_no_pacote_final(self):
+        p, plantas, chave = self.chave_no_fim()
+        leituras._lugares_no_fim(p, plantas, chave)
+        self.assertEqual([c["linhas"] for c in chave], [[3], [1, 2]])
+
+    def test_um_texto_que_ja_nao_esta_la_e_recusado(self):
+        p, plantas, chave = self.chave_no_fim()
+        plantas[0]["depois"] = "dois = 4\n"
+        with self.assertRaises(leituras.Recusa) as e:
+            leituras._lugares_no_fim(p, plantas, chave)
+        self.assertIn("P1: its new text is not found exactly once in arvore/oedp/x.py", str(e.exception))
