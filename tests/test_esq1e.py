@@ -14,7 +14,7 @@ from oedp import conferir as conf
 from oedp import construir as build
 from oedp import fontes
 from oedp.peca import ler
-from tests.apoio import ENSAIOS, LOJA, PECA, REPO, Plantada
+from tests.apoio import ENSAIOS, LOJA, PECA, REPO, Plantada, sitio_de_ensaio
 from tests.test_esq1d import SitioFalso
 
 PUBLICO = ["93.184.216.34"]
@@ -172,7 +172,7 @@ class Paginas(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.saida = Path(tempfile.mkdtemp(prefix="oedp-1e-"))
-        assert build.construir(REPO, raiz=ENSAIOS, saida=cls.saida, loja=LOJA).ok
+        assert build.construir(REPO, raiz=sitio_de_ensaio(cls), saida=cls.saida, loja=LOJA).ok
         cls.est = cls.saida / "static"
 
     @classmethod

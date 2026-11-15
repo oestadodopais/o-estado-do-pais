@@ -65,8 +65,8 @@ def erros_do_registo(nome: str, registo: dict) -> list[str]:
 
 def historia(repo: Path, caminho: Path) -> list[str]:
     """The repository's own record only grows: what main holds is the beginning of what
-    it holds now. Only the repository's paginas/metodo.md and textos.registo.toml have
-    a history; a test record anywhere else has none."""
+    it holds now. Only the repository's paginas/metodo.md, textos.registo.toml and
+    codigo.registo.toml have a history; a test record anywhere else has none."""
     import subprocess
 
     from . import conferir
@@ -75,7 +75,7 @@ def historia(repo: Path, caminho: Path) -> list[str]:
         relativo = (Path(caminho).absolute().parent.resolve() / Path(caminho).name).relative_to(Path(repo).resolve()).as_posix()
     except ValueError:
         return []
-    if relativo not in ("paginas/metodo.md", "textos.registo.toml"):
+    if relativo not in ("paginas/metodo.md", "textos.registo.toml", "codigo.registo.toml"):
         return []
     ref = conferir.ref_main(repo)
     if ref is None:

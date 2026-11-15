@@ -22,7 +22,7 @@ from pathlib import Path
 
 from . import conferir as conf
 from . import direitos as rights
-from . import julgados, privacidade
+from . import codigo, julgados, privacidade
 from .forma import FECHO, erros_do_corpo
 from .paginas import (
     Contexto,
@@ -90,7 +90,7 @@ def contexto(repo: Path, raiz: Path, pecas: list, previa: bool = False) -> tuple
     mesas, erros = ler_mesas(raiz)
     erros += ligacoes_simbolicas(raiz)
     metodo_f = Path(raiz) / "paginas" / "metodo.md"
-    metodo, julgamento = None, []
+    metodo, julgamento, leituras_fora = None, [], []
     if metodo_f.is_file():
         try:
             metodo, registo_m, impressao_m = julgados.metodo(metodo_f)
@@ -99,20 +99,34 @@ def contexto(repo: Path, raiz: Path, pecas: list, previa: bool = False) -> tuple
         else:
             erros += [f"paginas/metodo.md: {x}" for x in erros_do_corpo(metodo + "".join(f"\n## {t}" for t in FECHO) + "\n")]
             julgamento += julgados.erros_de_julgamento("paginas/metodo.md", registo_m, impressao_m)
+            leituras_fora += registo_m.get("leitura", [])
             erros += julgados.erros_do_registo("paginas/metodo.md", registo_m)
             julgamento += julgados.historia(repo, metodo_f)
     try:
         registo_t, impressao_t, onde_t = julgados.textos(repo, raiz)
         julgamento += julgados.erros_de_julgamento("textos.toml", registo_t, impressao_t)
         erros += julgados.erros_do_registo("textos.registo.toml", registo_t)
+        leituras_fora += registo_t.get("leitura", [])
         if onde_t:
             julgamento += julgados.historia(repo, Path(onde_t))
     except julgados.ErroDoJulgado as e:
         erros.append(str(e))
+    portao_do_codigo = []
+    try:
+        tabelas_c, onde_c = codigo.ler(repo, raiz)
+        erros += codigo.erros_do_registo(tabelas_c)
+        leituras_fora += [t for nome, t in tabelas_c if nome == "leitura"]
+        portao_do_codigo += codigo.erros_do_portao(tabelas_c, codigo.impressao(repo))
+        if onde_c:
+            portao_do_codigo += codigo.historia(repo, Path(onde_c))
+    except codigo.ErroDoCodigo as e:
+        erros.append(str(e))
+        portao_do_codigo.append(f"code: {e}")
     registos, erros_dos_direitos = rights.ler_pasta(Path(raiz) / "direitos")
     erros += erros_dos_direitos
     ctx = Contexto(textos=textos, mesas=mesas, lancamento=bool(sitio.get("lancamento")), pecas=pecas,
-                   metodo=metodo, previa=previa, direitos=registos, julgamento=julgamento)
+                   metodo=metodo, previa=previa, direitos=registos, julgamento=julgamento,
+                   codigo=portao_do_codigo, leituras_fora=leituras_fora)
     return ctx, erros
 
 
@@ -281,6 +295,9 @@ def construir(repo: Path, raiz: Path | None = None, saida: Path | None = None, c
     if not com_rascunhos and any(p.vinculada for p in incluidas):
         for x in ctx.julgamento:
             c.falha(f"check  4 (the published text is the judged text) · reader's text outside pieces: {x}")
+        # No piece is built as published on code the other family has not read (codigo.py).
+        for x in ctx.codigo:
+            c.falha(f"check  5 (verified and judged by the other family) · {x}")
     if not c.ok:
         c.mensagens.insert(0, "the build stops: a piece it would include fails a check")
         return c

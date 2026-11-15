@@ -32,6 +32,8 @@ class Contexto:
     previa: bool = False  # a preview lists drafts too; it is never deployed
     direitos: dict = field(default_factory=dict)  # host -> rights record
     julgamento: list = field(default_factory=list)  # why the Method prose or the fixed sentences are not judged
+    codigo: list = field(default_factory=list)  # why the code has not been read as the gate asks (codigo.py)
+    leituras_fora: list = field(default_factory=list)  # the readings of the Method prose, the fixed sentences and the code
 
     def listada(self, peca) -> bool:
         return peca.publicada or (self.previa and peca.estado == "rascunho")
@@ -571,8 +573,9 @@ def pagina_do_metodo(ctx: Contexto) -> str:
     prosa = markdown_com_referencias(None, ctx.metodo or "")
     publicas = [p for p in ctx.pecas if p.publicada or p.estado == "retirada"]
     lugares: dict[str, dict] = {}
-    for p in publicas:
-        for l in p.registo.get("leitura", []):
+    leituras = [l for p in publicas for l in p.registo.get("leitura", [])] + list(ctx.leituras_fora)
+    for l in leituras:
+        if isinstance(l, dict):
             d = lugares.setdefault(str(l.get("lugar")), {"leituras": 0, "postas": 0, "apanhadas": 0, "adotados": 0, "falhas": 0})
             d["leituras"] += 1
             d["postas"] += int(l.get("plantas_postas", 0))
@@ -584,7 +587,7 @@ def pagina_do_metodo(ctx: Contexto) -> str:
             lugares[c["causa"]]["falhas"] += 1
     equipa = ""
     if lugares:
-        ordem = ("numeros", "oposto", "especialista", "leitor", "justica", "juiz", "correcoes")
+        ordem = ("numeros", "oposto", "especialista", "leitor", "justica", "juiz", "correcoes", "desenhador", "seguranca")
         linhas = "".join(
             f'<tr><td class="lugar"{_r(ctx, "e_lugar")}>{e(ctx.t("lugar_" + k))}</td><td class="mono"{_r(ctx, "e_leituras")}>{d["leituras"]}</td>'
             f'<td class="mono"{_r(ctx, "c_plantas")}>{e(ctx.t("plantas_formato", apanhadas=d["apanhadas"], postas=d["postas"]))}</td>'

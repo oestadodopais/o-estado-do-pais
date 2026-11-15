@@ -46,13 +46,16 @@ def _plantas(campos: dict) -> list[str]:
 
 
 def _acrescentar_a_texto(caminho: Path, antes: bytes, nome: str, campos: dict) -> str:
-    """Append to the record of paginas/metodo.md or to textos.registo.toml."""
+    """Append to the record of paginas/metodo.md, to textos.registo.toml or to
+    codigo.registo.toml."""
     import tomllib
 
-    from . import julgados
+    from . import codigo, julgados
 
     if nome not in ("passo", "leitura"):
         raise ErroDoRegisto(f"the record of {caminho.name} takes passo and leitura tables only")
+    if caminho.name == codigo.REGISTO:
+        return _acrescentar_ao_codigo(caminho, antes, nome, campos)
     if caminho.name != "textos.registo.toml":
         try:
             julgados.separar(antes)
@@ -83,14 +86,38 @@ def _acrescentar_a_texto(caminho: Path, antes: bytes, nome: str, campos: dict) -
     return texto
 
 
+def _acrescentar_ao_codigo(caminho: Path, antes: bytes, nome: str, campos: dict) -> str:
+    """Append to codigo.registo.toml: the record as it would be is validated whole, in the
+    order of the file, before a byte is written."""
+    from . import codigo
+
+    texto = tabela(nome, campos)
+    if antes and not antes.endswith(b"\n"):
+        texto = "\n" + texto
+    try:
+        agora = codigo.em_ordem(antes.decode("utf-8"))
+        depois = codigo.em_ordem((antes + texto.encode("utf-8")).decode("utf-8"))
+    except codigo.ErroDoCodigo as e:
+        raise ErroDoRegisto(str(e)) from None
+    erros = [x for x in codigo.erros_do_registo(depois) if x not in codigo.erros_do_registo(agora)]
+    erros += _plantas(campos)
+    if erros:
+        raise ErroDoRegisto("; ".join(erros))
+    with open(caminho, "ab") as f:
+        f.write(texto.encode("utf-8"))
+    if not caminho.read_bytes().startswith(antes):
+        raise ErroDoRegisto("the file changed above the new table; this must never happen")
+    return texto
+
+
 def acrescentar(caminho: Path, nome: str, campos: dict) -> str:
     """Append one [[nome]] table; returns the text appended.
 
-    The file is a piece, paginas/metodo.md (a record after its text) or
-    textos.registo.toml (the record of textos.toml)."""
+    The file is a piece, paginas/metodo.md (a record after its text),
+    textos.registo.toml (the record of textos.toml) or codigo.registo.toml (the code's)."""
     caminho = Path(caminho)
     antes = caminho.read_bytes()
-    if caminho.name == "textos.registo.toml" or not antes.startswith(b"+++ cabeca\n"):
+    if caminho.name in ("textos.registo.toml", "codigo.registo.toml") or not antes.startswith(b"+++ cabeca\n"):
         return _acrescentar_a_texto(caminho, antes, nome, campos)
     peca = ler_bytes(antes, caminho)  # raises if the file is not a piece
     texto = tabela(nome, campos)

@@ -18,7 +18,7 @@ from oedp import conferir as conf
 from oedp import construir as build
 from oedp import fontes, julgados, noar, numeros
 from oedp.peca import ler
-from tests.apoio import ENSAIOS, LOJA, PECA, REPO, Plantada, loja_fora_do_repositorio
+from tests.apoio import ENSAIOS, LOJA, PECA, REPO, Plantada, loja_fora_do_repositorio, sitio_de_ensaio
 
 DERIVADOS_EM_CIRCULO = '''
 [[linha]]
@@ -304,7 +304,7 @@ class Item13Manifesto(unittest.TestCase):
     def test_planta_ficheiro_fora_do_manifesto(self):
         saida = Path(tempfile.mkdtemp(prefix="oedp-saida-"))
         self.addCleanup(shutil.rmtree, saida, True)
-        self.assertTrue(build.construir(REPO, raiz=ENSAIOS, saida=saida, loja=LOJA).ok)
+        self.assertTrue(build.construir(REPO, raiz=sitio_de_ensaio(self), saida=saida, loja=LOJA).ok)
         est = saida / "static"
         self.assertEqual(build.manifesto_confere(est), [])
         (est / "a-mais.html").write_text("<p>a mais</p>", encoding="utf-8")
@@ -340,7 +340,7 @@ class OsTresPlantados(Base):
     def test_antes_e_agora_com_os_seus_valores(self):
         saida = Path(tempfile.mkdtemp(prefix="oedp-saida-"))
         self.addCleanup(shutil.rmtree, saida, True)
-        self.assertTrue(build.construir(REPO, raiz=ENSAIOS, saida=saida, loja=LOJA).ok)
+        self.assertTrue(build.construir(REPO, raiz=sitio_de_ensaio(self), saida=saida, loja=LOJA).ok)
         for nome in ("correcoes/index.html", "pecas/2026-11-16-peca-de-ensaio/index.html"):
             html = (saida / "static" / nome).read_text(encoding="utf-8")
             self.assertIn('<span class="rotulo">Antes dizia:</span> escrita para ensaiar o esqueleto', html)

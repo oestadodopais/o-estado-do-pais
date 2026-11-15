@@ -13,7 +13,7 @@ from oedp import construir as build
 from oedp import julgados
 from oedp.forma import FECHO
 from oedp.peca import ler
-from tests.apoio import ENSAIOS, LOJA, PECA, REPO, Plantada
+from tests.apoio import ENSAIOS, LOJA, PECA, REPO, Plantada, sitio_de_ensaio
 
 
 class Base(unittest.TestCase):
@@ -116,7 +116,7 @@ class Item04SoOManifestoDaRaiz(unittest.TestCase):
     def test_planta_manifesto_mais_fundo(self):
         saida = Path(tempfile.mkdtemp(prefix="oedp-saida-"))
         self.addCleanup(shutil.rmtree, saida, True)
-        self.assertTrue(build.construir(REPO, raiz=ENSAIOS, saida=saida, loja=LOJA).ok)
+        self.assertTrue(build.construir(REPO, raiz=sitio_de_ensaio(self), saida=saida, loja=LOJA).ok)
         est = saida / "static"
         (est / "tipos" / "manifesto.json").write_text("{}", encoding="utf-8")
         self.assertIn("tipos/manifesto.json", build.manifesto(est)["ficheiros"])
@@ -196,7 +196,7 @@ class Item06OsTitulosDeFecho(Base):
     def test_a_pagina_do_tema_le_o_ultimo_titulo(self):
         saida = Path(tempfile.mkdtemp(prefix="oedp-saida-"))
         self.addCleanup(shutil.rmtree, saida, True)
-        self.assertTrue(build.construir(REPO, raiz=ENSAIOS, saida=saida, loja=LOJA).ok)
+        self.assertTrue(build.construir(REPO, raiz=sitio_de_ensaio(self), saida=saida, loja=LOJA).ok)
         html = (saida / "static" / "temas" / "ensaio" / "index.html").read_text(encoding="utf-8")
         self.assertIn("A próxima edição de ensaio sai a 16 de fevereiro de 2027.", html)
 

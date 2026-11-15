@@ -11,7 +11,7 @@ import unittest
 from pathlib import Path
 
 from oedp import construir as build
-from tests.apoio import ENSAIOS, LOJA, PECA, REPO, Plantada
+from tests.apoio import ENSAIOS, LOJA, PECA, REPO, Plantada, sitio_de_ensaio
 
 ESPERA_SHA = "7cd78372ec71f95d061800946e6a64356625861781e34efa5b2c89921c77e352"  # measured on the live holding page's files
 
@@ -87,7 +87,7 @@ class CincoPaginas(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.saida = Path(tempfile.mkdtemp(prefix="oedp-paginas-"))
-        c = build.construir(REPO, raiz=ENSAIOS, saida=cls.saida, loja=LOJA)
+        c = build.construir(REPO, raiz=sitio_de_ensaio(cls), saida=cls.saida, loja=LOJA)
         assert c.ok, c.mensagens
         cls.est = cls.saida / "static"
 
@@ -132,10 +132,16 @@ class CincoPaginas(unittest.TestCase):
         html = self.ler("metodo/index.html")
         for chave in ("Lugar", "Leituras", "Erros plantados apanhados", "Achados reais adotados", "Falhas apontadas por correções"):
             self.assertIn(f'<th scope="col">{chave}</th>', html)
-        # juiz: three readings, 3 of 3, 2 of 2 and 1 of 1, one finding adopted, one miss named by the correction's causa
-        self.assertIn('<tr><td class="lugar" data-rotulo="Lugar">Juiz</td><td class="mono" data-rotulo="Leituras">3</td>'
-                      '<td class="mono" data-rotulo="Erros plantados apanhados">6 de 6</td><td class="mono" data-rotulo="Achados reais adotados">1</td>'
+        # juiz (ESQ2: the readings of the Method prose and of the fixed sentences count too): three readings
+        # of the piece (3 of 3, 2 of 2, 1 of 1), one of the Method prose (2 of 2) and three of the fixed
+        # sentences (2 of 2, 1 of 1, 1 of 1); one finding adopted; one miss named by the correction's causa
+        self.assertIn('<tr><td class="lugar" data-rotulo="Lugar">Juiz</td><td class="mono" data-rotulo="Leituras">7</td>'
+                      '<td class="mono" data-rotulo="Erros plantados apanhados">12 de 12</td><td class="mono" data-rotulo="Achados reais adotados">1</td>'
                       '<td class="mono" data-rotulo="Falhas apontadas por correções">1</td></tr>', html)
+        # the code's reader, from the test site's record of the code (oedp/ensaio.py)
+        self.assertIn('<tr><td class="lugar" data-rotulo="Lugar">Leitor de código e segurança</td><td class="mono" data-rotulo="Leituras">1</td>'
+                      '<td class="mono" data-rotulo="Erros plantados apanhados">3 de 3</td><td class="mono" data-rotulo="Achados reais adotados">2</td>'
+                      '<td class="mono" data-rotulo="Falhas apontadas por correções">0</td></tr>', html)
         # the four counts are a block of their own, under numeros_titulo, before the team's record
         self.assertLess(html.index('<section class="numeros"><h2>Em números</h2><dl class="contagens"><dt>Peças publicadas</dt>'),
                         html.index('<section class="equipa">'))

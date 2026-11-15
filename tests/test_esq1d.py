@@ -20,7 +20,7 @@ from oedp import conferir as conf
 from oedp import construir as build
 from oedp import derivacoes, fontes, noar, numeros, paginas
 from oedp.peca import impressoes, ler
-from tests.apoio import ENSAIOS, LOJA, PECA, REPO, Plantada, loja_fora_do_repositorio
+from tests.apoio import ENSAIOS, LOJA, PECA, REPO, Plantada, loja_fora_do_repositorio, sitio_de_ensaio
 
 
 class Base(unittest.TestCase):
@@ -76,7 +76,7 @@ class Item02NoAr(unittest.TestCase):
     def setUp(self):
         self.saida = Path(tempfile.mkdtemp(prefix="oedp-noar-"))
         self.addCleanup(shutil.rmtree, self.saida, True)
-        self.assertTrue(build.construir(REPO, raiz=ENSAIOS, saida=self.saida, loja=LOJA).ok)
+        self.assertTrue(build.construir(REPO, raiz=sitio_de_ensaio(self), saida=self.saida, loja=LOJA).ok)
         self.est = self.saida / "static"
         self.vivo = {}
         for f in self.est.rglob("*"):
@@ -437,8 +437,14 @@ class Item11Loja(unittest.TestCase):
             shutil.copy2(REPO / nome, repo / nome)
         shutil.copytree(REPO / "public", repo / "public")
         (repo / "public" / "tipos" / "ligacao").symlink_to(LOJA)
+        # The code's fingerprint is read from git (oedp/codigo.py): the copy is a repository,
+        # and the test site carries an invented passing reading of this copy's code.
+        subprocess.run(["git", "init", "-q", str(repo)], check=True)
+        subprocess.run(["git", "-C", str(repo), "add", "."], check=True)
+        from oedp import codigo, ensaio
         p = Plantada()
         self.addCleanup(p.apagar)
+        (p.pasta / codigo.REGISTO).write_text(ensaio.registo_de_ensaio(repo), encoding="utf-8")
         saida = Path(tempfile.mkdtemp(prefix="oedp-saida-"))
         self.addCleanup(shutil.rmtree, saida, True)
         c = build.construir(repo, raiz=p.pasta, saida=saida, loja=LOJA)

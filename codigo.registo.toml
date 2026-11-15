@@ -1,0 +1,4 @@
+# The record of the code (docs/ESPEC-PECA.md, "The fingerprints"): [[passo]] tables with
+# nome = "construcao" and [[leitura]] tables with lugar = "seguranca". Its fingerprint is
+# printed by `python3 -m oedp impressao codigo`. Appended to only by
+# `python3 -m oedp registar codigo.registo.toml ...` or `python3 -m oedp leitura registar`.

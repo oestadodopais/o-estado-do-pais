@@ -16,7 +16,7 @@ from unittest import mock
 from oedp import conferir as conf
 from oedp import construir as build
 from oedp import noar, privacidade
-from tests.apoio import LOJA, REPO, Plantada, loja_fora_do_repositorio
+from tests.apoio import LOJA, REPO, Plantada, loja_fora_do_repositorio, sitio_de_ensaio
 
 
 class Limpa(unittest.TestCase):
@@ -265,7 +265,7 @@ class Check10(unittest.TestCase):
     def setUp(self):
         self.saida = Path(tempfile.mkdtemp(prefix="oedp-noar-"))
         self.addCleanup(shutil.rmtree, self.saida, True)
-        c = build.construir(REPO, raiz=REPO / "ensaios", saida=self.saida, loja=LOJA)
+        c = build.construir(REPO, raiz=sitio_de_ensaio(self), saida=self.saida, loja=LOJA)
         self.assertTrue(c.ok, c.mensagens)
         self.estatica = self.saida / "static"
         self.vivo = {}

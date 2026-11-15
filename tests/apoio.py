@@ -22,6 +22,18 @@ def loja_fora_do_repositorio(caso) -> Path:
     return pasta
 
 
+def sitio_de_ensaio(caso) -> Path:
+    """A copy of the test site (ensaios/) in a temporary folder, with its invented record of
+    the code on the code as it is now (oedp/ensaio.py), so that the test piece builds as
+    published. `caso` is a test case, or a test class in setUpClass."""
+    from oedp import ensaio
+
+    pasta = Path(tempfile.mkdtemp(prefix="oedp-sitio-"))
+    limpar = caso.addClassCleanup if isinstance(caso, type) else caso.addCleanup
+    limpar(shutil.rmtree, pasta, True)
+    return ensaio.copiar_sitio(pasta)
+
+
 class Plantada:
     """A copy of the test site (piece, desk, method) in a temporary folder."""
 
@@ -30,6 +42,9 @@ class Plantada:
         for sub in ("pecas", "mesas", "paginas", "direitos"):
             shutil.copytree(ENSAIOS / sub, self.pasta / sub)
         shutil.copy2(ENSAIOS / "textos.registo.toml", self.pasta / "textos.registo.toml")
+        from oedp import codigo, ensaio
+
+        (self.pasta / codigo.REGISTO).write_text(ensaio.registo_de_ensaio(), encoding="utf-8")
         self.peca = self.pasta / "pecas" / "2026" / PECA.name
         texto = self.peca.read_text(encoding="utf-8")
         for antes, depois in trocas:

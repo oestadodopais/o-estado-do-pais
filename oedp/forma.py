@@ -49,7 +49,7 @@ CAMPOS_REGISTO = {
 VALORES = {
     ("passo", "nome"): {"encomenda", "nota", "reportagem", "escrita", "edicao"},
     ("passo", "familia"): {"anthropic", "openai"},
-    ("leitura", "lugar"): {"numeros", "oposto", "especialista", "leitor", "justica", "juiz", "correcoes"},
+    ("leitura", "lugar"): {"numeros", "oposto", "especialista", "leitor", "justica", "juiz", "correcoes", "desenhador"},
     ("leitura", "familia"): {"anthropic", "openai"},
     ("leitura", "veredicto"): {"passa", "nao_passa", "levanta"},
     ("estado", "estado"): {"publicada", "retirada", "rascunho"},
@@ -160,12 +160,16 @@ def _restos_de_referencia(texto: str) -> list[str]:
     return [c for c in "{}" if c in resto]
 
 
-def erros_do_registo(registo: dict, nome: str = "registo", tabelas_permitidas=None, datas_aqui: bool = False) -> list[str]:
+def erros_do_registo(registo: dict, nome: str = "registo", tabelas_permitidas=None, datas_aqui: bool = False,
+                     valores: dict | None = None, familia: bool = True) -> list[str]:
     """The one validation of a record, a piece's or a text's: the tables and their fields,
     the values, the fingerprint's form, adotados not above achados, plants caught not
     above plants put, a passing reading that caught every plant, the family rule and the
     one-way state. With `datas_aqui`, the timestamps are checked here too (for a piece
-    they are check 6's)."""
+    they are check 6's). `valores` replaces some allowed values (the code's record takes
+    construcao steps and seguranca readings only); `familia=False` leaves the family rule
+    to the caller (the code's record reads it in the order of the file)."""
+    valores = {**VALORES, **(valores or {})}
     e: list[str] = []
     permitidas = tabelas_permitidas or tuple(CAMPOS_REGISTO)
     for k in registo:
@@ -182,7 +186,7 @@ def erros_do_registo(registo: dict, nome: str = "registo", tabelas_permitidas=No
             _tabela(onde, t, exigidos, opcionais, e)
             if not isinstance(t, dict):
                 continue
-            for (tab, campo), permitidos in VALORES.items():
+            for (tab, campo), permitidos in valores.items():
                 if tab == k and campo in t and t[campo] not in permitidos:
                     e.append(f"{onde}: {campo} {t[campo]!r} is not one of {', '.join(sorted(permitidos))}")
             if datas_aqui:
@@ -204,7 +208,8 @@ def erros_do_registo(registo: dict, nome: str = "registo", tabelas_permitidas=No
                     e.append(f"{onde}: pessoas_vistas belongs to the justica and juiz readings only")
             if k == "correcao" and t.get("especie") == "correcao" and not t.get("causa"):
                 e.append(f"{onde}: a correcao needs its causa")
-    e.extend(erros_de_familia(registo))
+    if familia:
+        e.extend(erros_de_familia(registo))
     e.extend(erros_de_estado(registo))
     return e
 

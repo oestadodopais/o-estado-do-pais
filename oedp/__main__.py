@@ -116,6 +116,15 @@ def cmd_texto(a) -> int:
 
 
 def cmd_impressao(a) -> int:
+    if a.peca == "codigo":
+        from . import codigo
+
+        try:
+            print(f"code       {codigo.impressao(REPO)}")
+        except codigo.ErroDoCodigo as e:
+            print(str(e), file=sys.stderr)
+            return 1
+        return 0
     try:
         peca, folha = impressoes(Path(a.peca).read_bytes())
     except ErroDeForma as e:
@@ -232,6 +241,12 @@ def conferir_tudo(alvos: list[Path], raiz: Path = REPO, imprimir=print) -> tuple
     else:
         resultados.append(conf.Resultado(4, alvo, conf.NAO_VINCULA, [], ["no published piece, so this does not bind yet"]
                                          + (["would fail once a piece is published: " + "; ".join(ctx.julgamento)] if ctx.julgamento else [])))
+    alvo = "the code"
+    if any(p.vinculada for p in pecas):
+        resultados.append(conf._r(5, alvo, ctx.codigo))
+    else:
+        resultados.append(conf.Resultado(5, alvo, conf.NAO_VINCULA, [], ["no published piece, so this does not bind yet"]
+                                         + (["would fail once a piece is published: " + "; ".join(ctx.codigo)] if ctx.codigo else [])))
     resultados.append(conf.Resultado(10, "live site", conf.NAO_CORRIDO,
                                      ["it needs the live address: run `python3 -m oedp no-ar <address>` after publishing"], []))
     for r in resultados:
