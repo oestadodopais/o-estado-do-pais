@@ -40,7 +40,7 @@ class Textos(unittest.TestCase):
     def test_textos_toml_e_a_tabela_da_especificacao(self):
         esperado = tabela_dos_textos()
         real = tomllib.loads((REPO / "textos.toml").read_text(encoding="utf-8"))
-        self.assertEqual(len(esperado), 84)
+        self.assertEqual(len(esperado), 88)
         self.assertEqual(real, esperado)
 
 
