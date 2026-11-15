@@ -85,7 +85,7 @@ def impressao_de_pasta(pasta: Path) -> str:
     linhas = []
     for f in sorted(pasta.rglob("*")):
         nome = f.relative_to(pasta).as_posix()
-        if f.is_dir() and not f.is_symlink() or not e_codigo(nome):
+        if f.is_dir() and not f.is_symlink() or not e_codigo(nome) or f.relative_to(pasta).parts[0] == ".git":
             continue
         dados = b"link:" + os.readlink(f).encode("utf-8") if f.is_symlink() else f.read_bytes()
         linhas.append((nome, hashlib.sha256(dados).hexdigest()))
