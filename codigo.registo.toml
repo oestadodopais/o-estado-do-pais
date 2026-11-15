@@ -147,3 +147,11 @@ familia = "anthropic"
 modelo = "claude-opus-5-5"
 inicio = "2026-11-15T15:19:17Z"
 fim = "2026-11-15T15:44:06Z"
+
+[[passo]]
+nome = "construcao"
+lugar = "construtor"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-15T15:47:56Z"
+fim = "2026-11-15T15:59:33Z"
