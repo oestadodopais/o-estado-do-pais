@@ -2,6 +2,10 @@
 Each rule is read by a checker, on the real output and on a plant that it must refuse."""
 from __future__ import annotations
 
+import argparse
+import contextlib
+import io
+import json
 import re
 import shutil
 import tempfile
@@ -9,6 +13,7 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
+from oedp import __main__ as cli
 from oedp import construir as build
 from oedp import paginas
 from tests.apoio import LOJA, REPO, Plantada
@@ -251,3 +256,74 @@ class H_OCustoLeORegistoDoLancador(unittest.TestCase):
             juiz, dados = self.custo(registo)
             self.assertEqual((juiz["tokens"], juiz["tokens_de"]), (None, None), registo)
             self.assertEqual(dados["totais"]["tokens_por_familia"], {})
+
+
+# --------------------------------------------------------------------------- J. divulgacoes --proximas
+
+import datetime as dt  # noqa: E402
+
+from oedp import divulgacoes  # noqa: E402
+
+
+def linha_do_calendario(titulo, periodo, data, nota=""):
+    return (f'<tr class="tb_ine_tr_odd"><td><span class="datadestaques">{titulo}\n   </span></td>'
+            f'<td class="caldst_texto">\n&nbsp;{periodo}\n</td><td class="caldst_texto" colspan="2">\n{data}</td>'
+            f'<!--  <td class="caldst_texto"></td> --><td class="caldst_texto_just">\n'
+            + (f'<p style="text-align: left;">{nota}</p>\n<p></p>' if nota else "&nbsp;") + "\n</td></tr>")
+
+
+# A page written here in the structure of the real calendar (measured on 15 November 2026), with invented rows.
+CALENDARIO = ('<!doctype html><html><body><table class="institu"><tbody><tr><td>Calendário</td></tr></tbody></table>'
+              '<table cellpadding="0" class="tb_ine" summary="Destaquesdestaques"><caption>Calendário</caption><thead><tr>'
+              '<th class="calendario1">Destaques</th><th class="calendario2">Período</th><th colspan="2">Data</th>'
+              '<th class="calendario4">Observações</th></tr></thead><tbody>'
+              + linha_do_calendario("Um inquérito de ensaio", "2025", "20 de novembro de 2026")
+              + linha_do_calendario("Um índice de ensaio", "Outubro de 2026", "17 de novembro de 2026")
+              + linha_do_calendario("Umas contas de ensaio", "2025", "18 de novembro de 2026",
+                                    "Adiado para 18 de dezembro, por uma razão de ensaio. (09-11-2026)")
+              + linha_do_calendario("Uma linha sem data", "2026", "")
+              + "</tbody></table></body></html>").encode("utf-8")
+HOJE = dt.date(2026, 11, 15)
+
+
+class J_AsProximas(unittest.TestCase):
+    def test_le_o_calendario_por_ordem_com_a_nota(self):
+        lidas = divulgacoes.ler_calendario(CALENDARIO)
+        self.assertEqual([(d.data, d.titulo, d.periodo, d.nota) for d in lidas],
+                         [("2026-11-17", "Um índice de ensaio", "Outubro de 2026", ""),
+                          ("2026-11-18", "Umas contas de ensaio", "2025", "Adiado para 18 de dezembro, por uma razão de ensaio. (09-11-2026)"),
+                          ("2026-11-20", "Um inquérito de ensaio", "2025", "")])
+        linhas = []
+        self.assertEqual(divulgacoes.correr_proximas(CALENDARIO, None, False, HOJE, linhas.append), 0)
+        self.assertEqual(linhas[1], "2026-11-18  Umas contas de ensaio · 2025  note: Adiado para 18 de dezembro, por uma razão de ensaio. (09-11-2026)")
+
+    def test_os_proximos_dias(self):
+        linhas = []
+        divulgacoes.correr_proximas(CALENDARIO, 4, False, HOJE, linhas.append)
+        self.assertEqual([l[:10] for l in linhas], ["2026-11-17", "2026-11-18"])
+        linhas = []
+        divulgacoes.correr_proximas(CALENDARIO, 1, True, HOJE, linhas.append)
+        self.assertEqual(json.loads(linhas[0])["proximas"], [])
+
+    def test_planta_um_calendario_que_mudou_de_forma(self):
+        linhas = []
+        self.assertEqual(divulgacoes.correr_proximas(CALENDARIO.replace(b'class="tb_ine"', b'class="outra"'), None, False, HOJE,
+                                                     linhas.append), 1)
+        self.assertIn("holds no row this command can read", linhas[0])
+
+    def test_planta_a_nota_perdida(self):
+        sem_quarta = CALENDARIO.replace(b'<td class="caldst_texto_just">', b'<th class="caldst_texto_just">').replace(b"</p>\n<p></p>\n</td>", b"</p>\n<p></p>\n</th>")
+        self.assertEqual([d.nota for d in divulgacoes.ler_calendario(sem_quarta)], ["", "", ""])  # the checker sees the note gone
+
+    def test_o_comando_le_o_calendario(self):
+        f = Path(tempfile.mkdtemp(prefix="oedp-calendario-"))
+        self.addCleanup(shutil.rmtree, f, True)
+        (f / "calendario.html").write_bytes(CALENDARIO)
+        pedidos = []
+        with mock.patch.object(divulgacoes, "buscar", lambda **kw: pedidos.append(kw) or CALENDARIO):
+            saida = io.StringIO()
+            with contextlib.redirect_stdout(saida):
+                self.assertEqual(cli.cmd_divulgacoes(argparse.Namespace(dias=None, json=False, de=None, proximas=True)), 0)
+                self.assertEqual(cli.cmd_divulgacoes(argparse.Namespace(dias=None, json=False, de=str(f / "calendario.html"), proximas=True)), 0)
+        self.assertEqual(pedidos, [{"endereco": divulgacoes.CALENDARIO}])
+        self.assertEqual(len(saida.getvalue().splitlines()), 6)

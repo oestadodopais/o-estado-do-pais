@@ -358,8 +358,8 @@ class J_AsDivulgacoes(unittest.TestCase):
         with mock.patch.object(divulgacoes, "buscar", side_effect=AssertionError("no fetch")):
             saida = io.StringIO()
             with contextlib.redirect_stdout(saida), contextlib.redirect_stderr(io.StringIO()):
-                self.assertEqual(cli.cmd_divulgacoes(argparse.Namespace(dias=400, json=False, de=str(f))), 0)
-                self.assertEqual(cli.cmd_divulgacoes(argparse.Namespace(dias=0, json=False, de=str(f))), 2)
+                self.assertEqual(cli.cmd_divulgacoes(argparse.Namespace(dias=400, json=False, de=str(f), proximas=False)), 0)
+                self.assertEqual(cli.cmd_divulgacoes(argparse.Namespace(dias=0, json=False, de=str(f), proximas=False)), 2)
             self.assertEqual(len(saida.getvalue().splitlines()), 3)
 
 

@@ -428,17 +428,20 @@ def cmd_divulgacoes(a) -> int:
 
     from . import divulgacoes
 
-    if a.dias < 1:
+    if a.dias is not None and a.dias < 1:
         print("refused: --dias is a whole number of 1 or more", file=sys.stderr)
         return 2
+    endereco = divulgacoes.CALENDARIO if a.proximas else divulgacoes.ENDERECO
     try:
         # --de reads a copy of the page saved by hand, for a run that must not fetch; nothing is stored either way.
-        dados = Path(a.de).read_bytes() if a.de else divulgacoes.buscar()
+        dados = Path(a.de).read_bytes() if a.de else divulgacoes.buscar(endereco=endereco)
     except (divulgacoes.ErroDasDivulgacoes, OSError) as e:
         print(f"divulgacoes: {e}", file=sys.stderr)
         return 1
     hoje = datas.em_lisboa(dt.datetime.now(dt.timezone.utc)).date()
-    return divulgacoes.correr(dados, a.dias, a.json, hoje)
+    if a.proximas:
+        return divulgacoes.correr_proximas(dados, a.dias, a.json, hoje)
+    return divulgacoes.correr(dados, 7 if a.dias is None else a.dias, a.json, hoje)
 
 
 def cmd_publicar(a) -> int:
@@ -581,7 +584,8 @@ def principal(argv=None) -> int:
     s.set_defaults(f=cmd_custo)
 
     s = sub.add_parser("divulgacoes", help="the latest releases of the statistics office (one page read; nothing stored)")
-    s.add_argument("--dias", type=int, default=7, help="keep the releases of the last N days (default 7)")
+    s.add_argument("--dias", type=int, help="keep the releases of the last N days (default 7); with --proximas, of the next N days")
+    s.add_argument("--proximas", action="store_true", help="the calendar of what is still to come, oldest first, notes included")
     s.add_argument("--json", action="store_true")
     s.add_argument("--de", help="read a copy of the page saved by hand instead of fetching it")
     s.set_defaults(f=cmd_divulgacoes)

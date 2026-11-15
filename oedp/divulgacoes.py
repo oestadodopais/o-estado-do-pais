@@ -16,6 +16,14 @@ title (and after the link, inside the same `<div class="linkdestaques">`, the pe
 covers, « - 3.º Trimestre de 2026»), and a `<div class="datadestaques">` with the date
 written out («13 de novembro de 2026»). The central bank's and Eurostat's lists are not
 read here: nobody has measured their addresses yet.
+
+`--proximas` reads instead the office's calendar of what is still to come (`CALENDARIO`;
+ORDEM-3b, item J), the same way: one page, nothing stored, exit 1 when it cannot be read or
+parsed. Measured on the page fetched by hand on 15 November 2026, 14:37 UTC: a
+`<table class="tb_ine">` whose body rows each hold four cells, the title (in a
+`span.datadestaques`), the period, the date written out, and a note (one row said its release
+was put off). Every row is printed, its note with it, oldest first; `--dias N`, when given,
+keeps those of today and the N - 1 days after it.
 """
 from __future__ import annotations
 
@@ -29,6 +37,7 @@ from dataclasses import asdict, dataclass
 from . import datas, fontes
 
 ENDERECO = "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_destaques&xlang=pt"
+CALENDARIO = "https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_calendarios&xlang=pt"
 MESES = {m: i for i, m in enumerate(("janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto",
                                       "setembro", "outubro", "novembro", "dezembro"), 1)}
 DATA = re.compile(r"(\d{1,2}) de ([a-zç]+) de (\d{4})", re.IGNORECASE)
@@ -99,16 +108,107 @@ def ler(conteudo: bytes, base: str = ENDERECO) -> list[Divulgacao]:
     return sorted(lidas, key=lambda d: d.data, reverse=True)
 
 
+@dataclass
+class Proxima:
+    data: str  # YYYY-MM-DD
+    titulo: str
+    periodo: str
+    nota: str  # "" when the row has none
+
+
+class _Calendario(html.parser.HTMLParser):
+    """The cells of each body row of the calendar's table, in order."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.linhas: list[list[str]] = []
+        self.na_tabela = 0  # depth of <table class="tb_ine">
+        self.no_corpo = False
+        self.celula: list[str] | None = None
+
+    def handle_starttag(self, tag, attrs):
+        classes = (dict(attrs).get("class") or "").split()
+        if tag == "table":
+            if self.na_tabela or "tb_ine" in classes:
+                self.na_tabela += 1
+        elif self.na_tabela == 1 and tag == "tbody":
+            self.no_corpo = True
+        elif self.na_tabela == 1 and self.no_corpo and tag == "tr":
+            self.linhas.append([])
+        elif self.na_tabela == 1 and self.no_corpo and tag == "td" and self.linhas:
+            self.celula = []
+        elif self.celula is not None and tag in ("p", "br"):
+            self.celula.append(" ")
+
+    def handle_endtag(self, tag):
+        if tag == "table" and self.na_tabela:
+            self.na_tabela -= 1
+        elif tag == "tbody" and self.na_tabela == 1:
+            self.no_corpo = False
+        elif tag == "td" and self.celula is not None:
+            self.linhas[-1].append(re.sub(r"\s+", " ", "".join(self.celula)).strip())
+            self.celula = None
+
+    def handle_data(self, data):
+        if self.celula is not None:
+            self.celula.append(data)
+
+
+def _data(texto: str):
+    m = DATA.search(texto)
+    if m and m.group(2).lower() in MESES:
+        return datas.data_real(f"{int(m.group(3)):04d}-{MESES[m.group(2).lower()]:02d}-{int(m.group(1)):02d}")
+    return None
+
+
+def ler_calendario(conteudo: bytes) -> list[Proxima]:
+    """The rows of the calendar that can be read whole (a title, a period, a date), oldest
+    first; the note is kept whatever it says."""
+    p = _Calendario()
+    p.feed(fontes._descodificar(conteudo))
+    p.close()
+    lidas = []
+    for celulas in p.linhas:
+        if len(celulas) < 3:
+            continue
+        data = _data(celulas[2])
+        if celulas[0] and data:
+            lidas.append(Proxima(data.isoformat(), celulas[0], celulas[1], celulas[3] if len(celulas) > 3 else ""))
+    return sorted(lidas, key=lambda d: d.data)
+
+
+def correr_proximas(dados: bytes, dias: int | None, como_json: bool, hoje: dt.date, imprimir=print) -> int:
+    lidas = ler_calendario(dados)
+    if not lidas:
+        imprimir(f"divulgacoes --proximas: the page {CALENDARIO} holds no row this command can read (no row with a title, "
+                 "a period and a date); its structure may have changed. Nothing is listed.")
+        return 1
+    escolhidas = lidas if dias is None else [d for d in lidas
+                                             if hoje.isoformat() <= d.data <= (hoje + dt.timedelta(days=dias - 1)).isoformat()]
+    if como_json:
+        imprimir(json.dumps({"endereco": CALENDARIO, "hoje": hoje.isoformat(), "dias": dias,
+                             "proximas": [asdict(d) for d in escolhidas]}, ensure_ascii=False, indent=1))
+        return 0
+    if not escolhidas:
+        imprimir(f"no release in the statistics office's calendar in the {dias} days from {hoje.isoformat()}; the first on "
+                 f"its page is of {lidas[0].data}: {lidas[0].titulo}")
+        return 0
+    for d in escolhidas:
+        imprimir(f"{d.data}  {d.titulo} · {d.periodo}" + (f"  note: {d.nota}" if d.nota else ""))
+    return 0
+
+
 def recentes(lidas: list[Divulgacao], dias: int, hoje: dt.date) -> list[Divulgacao]:
     desde = hoje - dt.timedelta(days=dias - 1)
     return [d for d in lidas if desde.isoformat() <= d.data <= hoje.isoformat()]
 
 
-def buscar(transporte=fontes.transporte_curl, resolver=fontes.resolver_dns) -> bytes:
+def buscar(transporte=fontes.transporte_curl, resolver=fontes.resolver_dns, endereco: str = ENDERECO) -> bytes:
     try:
-        _, dados = fontes.ler_pagina(ENDERECO, transporte, resolver)
+        _, dados = fontes.ler_pagina(endereco, transporte, resolver)
     except fontes.ErroDaLoja as e:
-        raise ErroDasDivulgacoes(f"the statistics office's list of releases could not be read: {e}") from None
+        qual = "calendar" if endereco == CALENDARIO else "list of releases"
+        raise ErroDasDivulgacoes(f"the statistics office's {qual} could not be read: {e}") from None
     return dados
 
 
