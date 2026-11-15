@@ -28,8 +28,13 @@ def copiar_sitio(raiz: Path, com_pecas: bool = True) -> Path:
     return raiz
 
 
-def construir_ensaio(pasta: Path, com_pecas: bool = True, repo: Path = REPO) -> build.Construcao:
-    """Build the test site into `<pasta>/saida/static`, from a copy of it in `<pasta>/raiz`."""
+def construir_ensaio(pasta: Path, com_pecas: bool = True, repo: Path = REPO, conferir_antes: bool = True) -> build.Construcao:
+    """Build the test site into `<pasta>/saida/static`, from a copy of it in `<pasta>/raiz`.
+
+    `conferir_antes=False` builds the pages without running the ten checks on the test
+    piece first: the browser test and the screenshots need the pages, not a second run of
+    checks that `tudo` already runs on the same piece, and on GitHub the browser step is
+    not given the list of forbidden strings (only the step that runs `tudo` is)."""
     pasta = Path(pasta)
     raiz = copiar_sitio(pasta / "raiz", com_pecas)
-    return build.construir(repo, raiz=raiz, saida=pasta / "saida", loja=LOJA)
+    return build.construir(repo, raiz=raiz, saida=pasta / "saida", loja=LOJA, conferir_antes=conferir_antes)

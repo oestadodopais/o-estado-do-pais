@@ -296,7 +296,7 @@ def cmd_capturas(a) -> int:
             c = construir_previa(Path(a.peca), Path(tmp) / "saida")
             enderecos, abrir = [f"/pecas/{peca.id}/"], True
         else:
-            c = ensaio.construir_ensaio(Path(tmp))
+            c = ensaio.construir_ensaio(Path(tmp), conferir_antes=False)
             enderecos, abrir = None, False
         if not c.ok:
             print("refused: the pages do not build: " + " | ".join(c.mensagens), file=sys.stderr)

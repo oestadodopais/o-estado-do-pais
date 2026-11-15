@@ -188,7 +188,7 @@ def correr(exigir: list[str], imprimir=print, pasta: Path | None = None) -> int:
         imprimir(f"navegador: not run here: {e}")
         return 0
     with tempfile.TemporaryDirectory(prefix="oedp-navegador-") as tmp:
-        c = ensaio.construir_ensaio(Path(pasta or tmp))
+        c = ensaio.construir_ensaio(Path(pasta or tmp), conferir_antes=False)
         if not c.ok:
             imprimir("navegador: failed: the test piece's pages do not build: " + " | ".join(c.mensagens))
             return 1
