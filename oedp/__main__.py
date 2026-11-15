@@ -319,6 +319,11 @@ def cmd_capturas(a) -> int:
 
     from . import ensaio, navegador
 
+    if a.peca and Path(a.peca).resolve().is_relative_to(ensaio.ENSAIOS.resolve()):
+        print(f"refused: {a.peca} is the test piece, and its pages are taken by `python3 -m oedp capturas <folder>` with no "
+              "piece named (they are built from the test store, which OEDP_FONTES may not name, since it is inside the "
+              "repository)", file=sys.stderr)
+        return 2
     try:
         navegador.playwright()
     except navegador.SemPlaywright as e:

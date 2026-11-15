@@ -328,9 +328,11 @@ def historia(peca: Peca, anterior) -> tuple[list[str], bool]:
 
 def republicada_sem_juiz(peca: Peca) -> list[str]:
     """A withdrawn piece is published again only when its record holds a passing juiz reading
-    whose inicio is after that withdrawal's em, on the current fingerprint, by a family other
-    than the producing one, with every plant of at least one caught (docs/ESPEC-PECA.md,
-    edit of 15 November 2026, 03:29 UTC): it does not come back on its earlier approval."""
+    made between the withdrawal and that publication: its inicio after the withdrawal's em,
+    its fim before the publication's em; on the current fingerprint, by a family other than
+    the producing one, with every plant of at least one caught (docs/ESPEC-PECA.md, edits of
+    15 November 2026, 03:29 and 11:09 UTC). It does not come back on its earlier approval,
+    nor on one given after it came back."""
     produtoras = {p.get("familia") for p in _passos(peca)}
     leituras = [l for l in _leituras(peca, "juiz") if l.get("veredicto") == "passa" and l.get("impressao") == peca.impressao
                 and l.get("familia") not in produtoras and isinstance(l.get("plantas_postas"), int)
@@ -342,11 +344,15 @@ def republicada_sem_juiz(peca: Peca) -> list[str]:
         if est.get("estado") == "retirada":
             retirada = est
         elif est.get("estado") == "publicada" and retirada is not None:
-            quando = datas.instante_real(str(retirada.get("em", "")))
-            depois = [l for l in leituras if quando and (i := datas.instante_real(str(l.get("inicio", "")))) and i > quando]
-            if not depois:
-                erros.append(f"the piece was withdrawn at {retirada.get('em')} and published again with no passing juiz reading "
-                             "begun after that withdrawal (on the current fingerprint, by the other family, every plant caught)")
+            desde = datas.instante_real(str(retirada.get("em", "")))
+            ate = datas.instante_real(str(est.get("em", "")))
+            entre = [l for l in leituras if desde and ate
+                     and (i := datas.instante_real(str(l.get("inicio", "")))) and i > desde
+                     and (f := datas.instante_real(str(l.get("fim", "")))) and f < ate]
+            if not entre:
+                erros.append(f"the piece was withdrawn at {retirada.get('em')} and published again at {est.get('em')} with no "
+                             "passing juiz reading begun after that withdrawal and ended before that publication "
+                             "(on the current fingerprint, by the other family, every plant caught)")
             retirada = None
     return erros
 
@@ -432,7 +438,9 @@ def check6(peca: Peca) -> Resultado:
         ano = int(peca.id[:4])
     except ValueError:
         return _r(6, peca.id or "?", ["the id has no year to read dates against"])
-    textos = [(o, lido(peca, t)) for o, t in textos_do_leitor(peca)]
+    # The project's own words: the words printed from a citacao line are the speaker's, and are
+    # not read (docs/ESPEC-PECA.md, check 6, edit of 15 November 2026, 11:09 UTC).
+    textos = [(o, lido(peca, t, citacoes=False)) for o, t in textos_do_leitor(peca)]
     enc = peca.cabeca.get("encomenda")
     if isinstance(enc, dict):
         textos += [(f"encomenda.{k}", v) for k, v in enc.items() if isinstance(v, str)]

@@ -237,8 +237,9 @@ def publicar(repo: Path, oficina: Path | None, loja: Path | None, ambiente: dict
     # every fetch, so the roll-back begins no later than ESPERA_S and one fetch after this.
     prazo = relogio() + ESPERA_S
     passou_o_prazo = lambda: relogio() >= prazo
+    vistos: dict = {}  # the latest answer of each address, over the passes: what the decision below reads
     while True:
-        razoes = noar.conferir(publico, p.estatica, buscar, parar=passou_o_prazo)
+        razoes = noar.conferir(publico, p.estatica, buscar, parar=passou_o_prazo, vistos=vistos)
         if not razoes:
             nota = f"; vercel promote had exited {codigo_p}" if codigo_p else ""
             acrescentar(oficina, {**linha, "resultado": NO_AR, **({"nota": nota.lstrip("; ")} if nota else {})})
@@ -248,7 +249,8 @@ def publicar(repo: Path, oficina: Path | None, loja: Path | None, ambiente: dict
             break
         dormir(PASSO_S)
     imprimir(f"check 10 (live is built) · {publico}: failed for {ESPERA_S} seconds: " + " | ".join(razoes[:5]))
-    if codigo_p != 0 and _inicio_publico(publico, buscar, imprimir) == anterior.get("inicio_sha256"):
+    # No fetch after the deadline: what the passes last fetched decides (ORDEM-2d, B3).
+    if codigo_p != 0 and vistos.get(publico.rstrip("/") + "/") == anterior.get("inicio_sha256"):
         # The promotion did not take effect: the earlier deployment is still live, nothing to undo.
         acrescentar(oficina, {**linha, "resultado": f"falhou: vercel promote exited {codigo_p}; the public address still "
                                                      "serves the deployment of the last line live"})

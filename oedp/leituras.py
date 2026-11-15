@@ -664,6 +664,9 @@ def plantar(pasta: Path, lista: Path, loja: Path | None = None, repo: Path = REP
     pasta = Path(pasta)
     if (pasta / "chave.json").exists():
         raise Recusa("refused: this package was already planted (chave.json exists); build a new one")
+    # Before the first plant, the package must be what montar built: an edit made by hand in
+    # between would otherwise be taken into the hashes plantar records, and pass every later check.
+    pacote_intacto(pasta)
     plantas = _ler_lista(lista)
     leitura_ = ler_json(pasta / "leitura.json")
     if leitura_["alvo"]["tipo"] == "codigo" and leitura_.get("codigo", {}).get("saida_tudo") != 0:
@@ -819,6 +822,18 @@ def executar_ler_sh(args: list[str], ambiente: dict) -> tuple[int, str]:
     return r.returncode, r.stdout + r.stderr
 
 
+def tokens_do_registo(registo_f: Path) -> int | None:
+    """The number on the line after the last `tokens used` of the launcher's log, or None."""
+    if not registo_f.is_file():
+        return None
+    linhas = registo_f.read_text(encoding="utf-8", errors="replace").splitlines()
+    for i in range(len(linhas) - 2, -1, -1):
+        if linhas[i].strip() == "tokens used":
+            numero = linhas[i + 1].strip().replace(",", "").replace(" ", "").replace("\u202f", "")
+            return int(numero) if numero.isdigit() else None
+    return None
+
+
 def lancar(pasta: Path, executar=executar_ler_sh, ambiente: dict | None = None, imprimir=print) -> int:
     pasta = Path(pasta)
     try:
@@ -847,6 +862,13 @@ def lancar(pasta: Path, executar=executar_ler_sh, ambiente: dict | None = None, 
     codigo_saida, texto = executar([str(LER_SH), str(pasta / "pacote"), str(prompt_f), str(saida)], amb)
     fim = agora()
     m = re.search(r"modelo (\S+)", texto)
+    tokens = tokens_do_registo(Path(str(saida) + ".eventos.log"))
+    if tokens is None:
+        dados.pop("tokens", None)
+        imprimir(f"note: the launcher's log ({saida.name}.eventos.log) has no line 'tokens used' followed by a number; "
+                 "the reading's cost is not recorded")
+    else:
+        dados["tokens"] = tokens
     dados.update({"inicio": inicio, "fim": fim, "modelo": m.group(1) if m else "", "lancada_em": inicio,
                   "ler_sh": texto.strip().splitlines()[-1] if texto.strip() else ""})
     escrever_json(pasta / "leitura.json", dados)
@@ -1014,6 +1036,8 @@ def pontuar(pasta: Path, decisoes: Path | None = None, modelo: str | None = None
         pontuacao["pessoas_vistas"] = [str(x) for x in bloco.get("pessoas_vistas", [])]
     escrever_json(pasta / "leitura.json", dados)
     escrever_json(pasta / "pontuacao.json", pontuacao)
+    imprimir(f"tokens used by the reading: {dados['tokens']}" if dados.get("tokens") is not None
+             else "tokens used by the reading: not recorded")
     imprimir(f"verdict on the record: {veredicto} ({apanhadas} of {postas} plants caught, {len(reais)} real findings, "
              f"{adotados} adopted)" + (": " + "; ".join(razoes) if razoes else ""))
     return pontuacao

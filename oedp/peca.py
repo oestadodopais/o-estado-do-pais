@@ -196,9 +196,10 @@ def sem_referencias(texto: str) -> str:
     return "".join(partes)
 
 
-def lido(peca: "Peca", texto: str) -> str:
+def lido(peca: "Peca", texto: str, citacoes: bool = True) -> str:
     """The text as a reader reads it: each reference replaced by what it prints (a line's
-    mostra or quotation, or the tied words), and emphasis marks taken out."""
+    mostra or quotation, or the tied words), and emphasis marks taken out. With
+    `citacoes=False`, a printed quotation is left out (check 6 reads the project's words only)."""
     partes, pos = [], 0
     for r in referencias(texto):
         partes.append(texto[pos : r.inicio])
@@ -207,7 +208,7 @@ def lido(peca: "Peca", texto: str) -> str:
         else:
             linha = peca.linhas.get(r.ids[0], {})
             if linha.get("tipo") == "citacao":
-                partes.append("«" + str(linha.get("excerto", "")).strip() + "»")
+                partes.append("«" + str(linha.get("excerto", "")).strip() + "»" if citacoes else "«»")
             else:
                 partes.append(str(linha.get("mostra", "")))
         pos = r.fim

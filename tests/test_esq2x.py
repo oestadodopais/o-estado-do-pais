@@ -278,6 +278,8 @@ class B7SoOQueFoiConstruido(BasePublicar):
     def test_construir_esvazia_a_pasta_inteira(self):
         saida = Path(tempfile.mkdtemp(prefix="oedp-saida-"))
         self.addCleanup(shutil.rmtree, saida, True)
+        (saida / "static").mkdir()
+        (saida / "static" / "manifesto.json").write_text("{}\n", encoding="utf-8")  # an earlier build
         (saida / "functions").mkdir()
         (saida / "functions" / "velha.func").write_text("left by another build\n", encoding="utf-8")
         vazia = Path(tempfile.mkdtemp(prefix="oedp-vazia-"))
@@ -397,7 +399,8 @@ class B10OutroProtocoloTambemTentaOutraVez(unittest.TestCase):
 
 
 class C11RepublicarPedeJuizNovo(unittest.TestCase):
-    RETIRADA = '\n[[estado]]\nestado = "retirada"\nem = "2026-11-17T09:00:00Z"\npor = "ensaio"\nrazao = "Ensaio."\n'
+    # Before the clock of any run of these tests, so that a publication made now comes after it.
+    RETIRADA = '\n[[estado]]\nestado = "retirada"\nem = "2026-11-14T09:00:00Z"\npor = "ensaio"\nrazao = "Ensaio."\n'
 
     def retirada(self):
         p = Plantada()
@@ -416,8 +419,8 @@ class C11RepublicarPedeJuizNovo(unittest.TestCase):
     def juiz_novo(self, p):
         peca = ler(p.peca)
         registo.acrescentar(p.peca, "leitura", {
-            "lugar": "juiz", "familia": "openai", "modelo": "modelo-de-ensaio", "inicio": "2026-11-18T09:00:00Z",
-            "fim": "2026-11-18T09:20:00Z", "impressao": peca.impressao, "plantas_postas": 1, "plantas_apanhadas": 1,
+            "lugar": "juiz", "familia": "openai", "modelo": "modelo-de-ensaio", "inicio": "2026-11-14T10:00:00Z",
+            "fim": "2026-11-14T10:20:00Z", "impressao": peca.impressao, "plantas_postas": 1, "plantas_apanhadas": 1,
             "achados": 0, "adotados": 0, "veredicto": "passa", "pessoas_vistas": ["pessoa_de_ensaio"]})
 
     def test_planta_retirada_e_publicada_sem_nada_entre_as_duas(self):
@@ -425,16 +428,17 @@ class C11RepublicarPedeJuizNovo(unittest.TestCase):
         antes = p.peca.read_bytes()
         saida, erro = self.publicar(p)
         self.assertEqual(saida, 1, erro)
-        self.assertIn("the piece was withdrawn at 2026-11-17T09:00:00Z and published again with no passing juiz reading", erro)
+        self.assertIn("the piece was withdrawn at 2026-11-14T09:00:00Z and published again at ", erro)
+        self.assertIn("with no passing juiz reading begun after that withdrawal and ended before that publication", erro)
         self.assertEqual(p.peca.read_bytes(), antes)
 
     def test_planta_tabela_escrita_a_mao(self):
         p = self.retirada()
         with open(p.peca, "a", encoding="utf-8") as f:
-            f.write('\n[[estado]]\nestado = "publicada"\nem = "2026-11-18T10:00:00Z"\npor = "a mao"\nrazao = "Ensaio."\n')
+            f.write('\n[[estado]]\nestado = "publicada"\nem = "2026-11-14T10:00:00Z"\npor = "a mao"\nrazao = "Ensaio."\n')
         r = p.resultados(LOJA)[4]
         self.assertEqual(r.estado, conf.FALHOU)
-        self.assertIn("the piece was withdrawn at 2026-11-17T09:00:00Z and published again", r.linha())
+        self.assertIn("the piece was withdrawn at 2026-11-14T09:00:00Z and published again at 2026-11-14T10:00:00Z", r.linha())
 
     def test_retirada_julgada_outra_vez_e_publicada(self):
         p = self.retirada()

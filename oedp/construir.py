@@ -274,8 +274,12 @@ def construir(repo: Path, raiz: Path | None = None, saida: Path | None = None, c
     the site would build before it appends a table that can never be taken back."""
     repo = Path(repo).resolve()
     raiz = Path(raiz or repo).resolve()
-    saida = Path(saida or (repo / (".previa" if com_rascunhos else ".vercel/output"))).resolve()
     c = Construcao()
+    dada = Path(saida or (repo / (".previa" if com_rascunhos else ".vercel/output")))
+    if dada.is_symlink():  # before resolving: resolved, the link would be its target, and the target emptied
+        c.falha(f"refused: {dada} is a symbolic link; give an output folder of its own")
+        return c
+    saida = dada.resolve()
     if saida in (repo, raiz, Path.home(), Path("/")) or repo.is_relative_to(saida):
         c.falha(f"refused: {saida} would hold the repository; give an output folder of its own")
         return c
@@ -313,9 +317,12 @@ def construir(repo: Path, raiz: Path | None = None, saida: Path | None = None, c
 
     estatica = saida / "static"
     # The whole output folder is emptied, not only static/: whatever an earlier build or a
-    # hand left there (functions/, another config) would otherwise be sent unchecked.
-    if saida.is_symlink():
-        c.falha(f"refused: {saida.name} is a symbolic link; give an output folder of its own")
+    # hand left there (functions/, another config) would otherwise be sent unchecked. Only a
+    # build is emptied: a folder that does not exist, is empty, or holds an earlier build,
+    # told by its static/manifesto.json. Any other folder is refused, untouched.
+    if saida.exists() and (not saida.is_dir() or (any(saida.iterdir()) and not (saida / "static" / "manifesto.json").is_file())):
+        c.falha(f"refused: {saida} is not empty and holds no earlier build (no static/manifesto.json); "
+                "give an output folder of its own")
         return c
     if saida.exists():
         for f in saida.iterdir():

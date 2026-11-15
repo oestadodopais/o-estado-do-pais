@@ -32,10 +32,11 @@ def endereco_publico(nome: str) -> str | None:
     return None
 
 
-def conferir(endereco: str, estatica: Path, buscar=buscar_na_rede, parar=None) -> list[str]:
+def conferir(endereco: str, estatica: Path, buscar=buscar_na_rede, parar=None, vistos: dict | None = None) -> list[str]:
     """Reasons the live site differs from the build at `estatica`; empty when equal. `parar`,
     when given, is asked before every fetch; when it says the time is up, the comparison
-    stops there with that as a reason (publicar's deadline)."""
+    stops there with that as a reason (publicar's deadline). `vistos`, when given, receives the
+    SHA-256 of what each address answered."""
     base = endereco.rstrip("/")
     proprio_f = Path(estatica) / "manifesto.json"
     if not proprio_f.is_file():
@@ -58,7 +59,10 @@ def conferir(endereco: str, estatica: Path, buscar=buscar_na_rede, parar=None) -
         if parar is not None and parar():
             raise SemTempo(url)
         try:
-            return buscar(url)
+            dados = buscar(url)
+            if vistos is not None:
+                vistos[url] = hashlib.sha256(dados).hexdigest()
+            return dados
         except (urllib.error.URLError, OSError, ValueError) as e:
             razoes.append(f"{url} could not be fetched ({e})")
             return None
