@@ -14,6 +14,8 @@
 
 *Edited 15 November 2026, 01:36 UTC, with the order of the second block (`blocos/esq2/ORDEM.md`). A link to a receipt must open the receipt: tried in Chromium and WebKit on the pilot piece's page, a click on a figure left its receipt closed, because the link pointed at the closed box itself; with the anchor inside the box's content both engines open it. The link to a source says what it does («Abrir a fonte» for a web page, «Descarregar a fonte» for a file), after the funder as a reader met a download where he expected a page, and a receipt also links the publisher's own page for the document when the source carries one. The Method page's team record gains the code and security reader, from the code's own record. Four fixed sentences are added.*
 
+*Edited 15 November 2026, 02:33 UTC, after the writer and three ordinary readers went through the Method page (`metodo/`): five fixed sentences said more than the pages do, or read wrongly. `registo_intro` said every reader is given planted errors, and the pilot's own record has three readings with none. `recibos_intro` promised a date read for every quotation, and the receipt of a quotation or of an act showed none: both now show it, and the sentence also says what a computed figure's receipt holds. `correcoes_intro` said «Uma correção é um erro», which read literally is false. `lugar_desenhador` was «Desenhador», someone who draws; the seat reads the page. `rodape` said «financiado em privado», which a reader took for financed in secret.*
+
 ## Rules for every page
 
 - **Computed, never listed.** Every page is built from the piece files (and one small file per desk). No page has a list that a piece must edit.
@@ -56,8 +58,8 @@ In order:
    - `derivado`: what the reader sees; the calculation as arithmetic a reader can follow (`r_conta`): each input shown as its number in Portuguese form and linked to its own receipt, the signs + − × ÷ and parentheses, then = and the result, then in words how it was rounded (`r_arred_0`, `r_arred_1` or `r_arred_n`), for example «104,7 − 102,3 = 2,4 (arredondado a uma casa decimal)»; and why the inputs may be compared. The expression of `calculo` itself is never printed.
    - A provisional value is flagged on a line of its own, set as a label, never beside the period.
    - Every receipt ends with `r_voltar`, a link back to the place in the text where the line is first used.
-   - `citacao`: the words, who said them and in what role, when, the source, where, and the link.
-   - `ato`: what the document establishes, the excerpt, the source, where, the date, and the link.
+   - `citacao`: the words, who said them and in what role, when, the source, where, the date read, and the link.
+   - `ato`: what the document establishes, the excerpt, the source, where, the date, the date read, and the link.
 5. **The record** (`registo_titulo`): one row per reading, in the order they were made (when, as date and hour; the seat; the model family; plants caught of plants put in the form `plantas_formato`; real findings; verdict; minutes). The table fits a phone: it may scroll inside its own box, and the seat's name does not break over more than two lines on a desktop. Then the time from commission to publication, then the piece's fingerprint, which wraps on a narrow screen.
 
 Words tied to several lines link to the receipt of the first; the others are reached in the receipts.
@@ -97,7 +99,7 @@ A withdrawn piece keeps its address and shows only its title, the sentence `reti
 | `tema_intro` | Tudo o que este projeto publicou sobre este tema, do mais recente para o mais antigo. |
 | `seguir_titulo` | O que ficou de se seguir |
 | `recibos_titulo` | Os recibos desta peça |
-| `recibos_intro` | Cada número e cada citação desta peça vêm de um documento de que este projeto guardou uma cópia. Aqui está, para cada um, a fonte, o excerto e a data em que foi lido. |
+| `recibos_intro` | Cada número e cada citação desta peça vêm de um documento de que este projeto guardou uma cópia. Aqui estão, para cada um, a fonte, o excerto e a data em que foi lido; para um número calculado, a conta e os números de que parte. |
 | `r_mede`, `r_populacao`, `r_periodo`, `r_provisorio` | O que mede · A quem se refere · Período · Valor provisório |
 | `r_fonte`, `r_onde`, `r_excerto`, `r_lido`, `r_abrir` | Fonte · Onde está · Excerto · Lido a · Abrir a fonte |
 | `r_descarregar`, `r_pagina` | Descarregar a fonte · Ver a página onde a fonte foi publicada |
@@ -107,11 +109,11 @@ A withdrawn piece keeps its address and shows only its title, the sentence `reti
 | `c_quando` | Quando |
 | `r_quem`, `r_quando`, `r_estabelece` | Quem disse · Quando · O que o documento estabelece |
 | `registo_titulo` | O registo desta peça |
-| `registo_intro` | Quem leu esta peça, quando, e o que encontrou. Os erros plantados são erros postos de propósito no texto entregue a cada leitor, para medir se a leitura os apanha. |
+| `registo_intro` | Quem leu esta peça, quando, e o que encontrou. Os erros plantados são erros postos de propósito no material de uma leitura, para medir se ela os apanha; «0 de 0» quer dizer que essa leitura não os levou. |
 | `c_leitura`, `c_familia`, `c_plantas`, `c_achados`, `c_veredicto`, `c_minutos` | Leitura · Família de modelos · Erros plantados apanhados · Achados reais · Veredicto · Minutos |
 | `v_passa`, `v_nao_passa`, `v_levanta` | passa · não passa · levanta |
 | `lugar_numeros`, `lugar_oposto`, `lugar_especialista`, `lugar_leitor`, `lugar_justica`, `lugar_juiz`, `lugar_correcoes` | Editor de números · Leitor do contraditório · Especialista · Leitor comum · Defesa das pessoas nomeadas · Juiz · Editor de correções |
-| `lugar_desenhador`, `lugar_seguranca` | Desenhador · Leitor de código e segurança |
+| `lugar_desenhador`, `lugar_seguranca` | Leitor da página · Leitor de código e segurança |
 | `familia_anthropic`, `familia_openai` | Anthropic · OpenAI |
 | `tempo` | Da encomenda à publicação: {horas} h {minutos} min. |
 | `impressao` | Impressão digital do texto julgado: |
@@ -119,7 +121,7 @@ A withdrawn piece keeps its address and shows only its title, the sentence `reti
 | `retirada_numero` | Um número deixou de corresponder à fonte e está a ser conferido. |
 | `especie_correcao`, `especie_atualizacao` | Correção · Atualização |
 | `antes`, `agora` | Antes dizia: · Agora diz: |
-| `correcoes_intro` | Todas as correções e atualizações deste projeto, com data, para sempre. Uma correção é um erro deste projeto. Uma atualização é uma mudança feita pela fonte. |
+| `correcoes_intro` | Todas as correções e atualizações deste projeto, com data, para sempre. Há correção quando o erro foi deste projeto; há atualização quando foi a fonte que mudou. |
 | `erro_titulo` | Como apontar um erro |
 | `erro_como` | Escreva para correcoes@oestadodopais.pt e diga qual é a peça e qual é a frase. |
 | `sem_correcoes` | Ainda não há correções nem atualizações. |
@@ -133,5 +135,5 @@ A withdrawn piece keeps its address and shows only its title, the sentence `reti
 | `taxa_titulo` | Taxa de erro medida |
 | `nao_existe` | Esta página não existe. |
 | `voltar` | Voltar ao início |
-| `rodape` | Um projeto independente conduzido por uma inteligência artificial, financiado em privado. |
+| `rodape` | Um projeto independente conduzido por uma inteligência artificial, com financiamento privado. |
 | `rodape_contacto` | Correções e contacto: correcoes@oestadodopais.pt |
