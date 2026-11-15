@@ -626,7 +626,14 @@ def _recibo(ctx, peca, lid, usadas=(), na_pagina=()) -> str:
         resumo = f"<span>{e(_impressa(peca, lid))}</span>"
     else:
         resumo = f'<span>{_campo(l.get("diz", ""))}</span>'
-    voltar = f'<p class="voltar"><a href="{_volta(peca, lid, usadas, na_pagina)}">{e(ctx.t("r_voltar"))}</a></p>'
+    # The receipt of an input leads to the receipts of the calculations on the page it enters,
+    # each link showing that calculation's figure (docs/ESPEC-PAGINAS.md, section 3, item 4).
+    contas = [c for c in na_pagina if lid in _entradas(peca, c)]
+    entra = ""
+    if contas:
+        ligacoes = ", ".join(f'<a href="#r-{e(c)}">{e(sem_quebra(mostra_impressa(peca.linhas[c]), True))}</a>' for c in contas)
+        entra = f'<p class="entra-em">{e(ctx.t("r_entra_em"))} {ligacoes}</p>'
+    voltar = entra + f'<p class="voltar"><a href="{_volta(peca, lid, usadas, na_pagina)}">{e(ctx.t("r_voltar"))}</a></p>'
     # The anchor a link leads to is inside the box's content, never the box or its summary:
     # a browser opens a closed <details> when the place it is sent to is inside its content,
     # and does not when it is the box itself (docs/ESPEC-PAGINAS.md, edit of 15 November
@@ -699,7 +706,10 @@ def pagina_da_peca(peca: Peca, ctx: Contexto) -> str:
     correcoes = "".join(_bloco_de_correcao(ctx, c) for c in _correcoes(ctx, peca))
     usadas, so_entradas = recibos_da_pagina(peca)
     na_pagina = usadas + so_entradas
-    recibos = "".join(_recibo(ctx, peca, lid, set(usadas), na_pagina) for lid in na_pagina)
+    recibos = "".join(_recibo(ctx, peca, lid, set(usadas), na_pagina) for lid in usadas)
+    if so_entradas:  # the lines that are only inputs of the calculations above, under a heading of their own
+        recibos += (f'<h3 class="recibos-entradas">{e(ctx.t("recibos_entradas"))}</h3>'
+                    + "".join(_recibo(ctx, peca, lid, set(usadas), na_pagina) for lid in so_entradas))
     primeiros: set = set()
     corpo = (
         '<article class="peca">'
@@ -815,10 +825,21 @@ def pagina_do_metodo(ctx: Contexto) -> str:
         ("n_retiradas", sum(1 for p in publicas if p.estado == "retirada")),
     )
     dl = "".join(f'<dt>{e(ctx.t(k))}</dt><dd class="mono">{n}</dd>' for k, n in contagens)
+    # The last re-check of sources, from reconferencias.toml: the last whole run that was allowed
+    # to withdraw (so_relatar false), ORDEM esq3, item H.
+    contadas = [r for r in ctx.reconferencias if r.get("so_relatar") is False]
+    if contadas:
+        r = contadas[-1]
+        quando = _instante(r.get("em"))
+        reconferencia = ctx.t("reconferencia_ultima", data=datas.por_extenso(datas.em_lisboa(quando).date()) if quando else "",
+                              pecas=r.get("pecas"), excertos=r.get("excertos"), retiradas=len(r.get("retiradas", [])))
+    else:
+        reconferencia = ctx.t("reconferencia_nenhuma")
     corpo = (
         f'<h1 class="pagina-titulo">{e(ctx.t("nav_metodo"))}</h1>'
         f'<div class="texto">{prosa}</div>'
-        f'<section class="numeros"><h2>{e(ctx.t("numeros_titulo"))}</h2><dl class="contagens">{dl}</dl></section>'
+        f'<section class="numeros"><h2>{e(ctx.t("numeros_titulo"))}</h2><dl class="contagens">{dl}</dl>'
+        f'<p class="reconferencia">{e(reconferencia)}</p></section>'
         + (f'<section class="equipa"><h2>{e(ctx.t("equipa_titulo"))}</h2>{equipa}</section>' if equipa else "")
         + f'<section class="taxa"><h2>{e(ctx.t("taxa_titulo"))}</h2><p>{e(ctx.t("sem_auditoria"))}</p></section>'
     )

@@ -100,3 +100,21 @@ class B_ORegistoEscritoAoMontar(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class C_OPatchNoSitioDeEnsaio(unittest.TestCase):
+    def test_o_metodo_diz_que_ainda_nao_houve_conferencia(self):
+        c = ensaio.construir_ensaio(pasta_temporaria(self, "oedp-ensaio-"))
+        self.assertTrue(c.ok, c.mensagens)
+        metodo = (c.estatica / "metodo" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<p class="reconferencia">Ainda não houve nenhuma conferência das fontes das peças publicadas.</p>', metodo)
+
+    def test_planta_um_registo_de_volta_inteira(self):
+        raiz = ensaio.copiar_sitio(pasta_temporaria(self, "oedp-ensaio-") / "raiz")
+        (raiz / "reconferencias.toml").write_text('[[reconferencia]]\nem = "2026-11-22T06:00:00Z"\npecas = 1\nexcertos = 7\n'
+                                                  'falhados = 0\nretiradas = []\nso_relatar = false\n', encoding="utf-8")
+        c = build.construir(REPO, raiz=raiz, saida=pasta_temporaria(self, "oedp-saida-") / "s", loja=ensaio.LOJA, conferir_antes=False)
+        self.assertTrue(c.ok, c.mensagens)
+        metodo = (c.estatica / "metodo" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("Última conferência das fontes: 22 de novembro de 2026. Peças conferidas: 1. Excertos conferidos: 7. "
+                      "Peças retiradas: 0.", metodo)
