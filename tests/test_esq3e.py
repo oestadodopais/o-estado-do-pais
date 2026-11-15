@@ -504,3 +504,51 @@ class H_OsLugaresDasPlantas(ComLeitura):
         with mock.patch.object(leituras, "_lugares_no_fim", lambda *a: None):
             _, lugares = self.plantadas()
         self.assertEqual(lugares["Q7"], ["frase 7"])  # the sentence before the second plant moved it
+
+
+# --------------------------------------------------------------------------- J. two small things
+
+
+class J1_OsTokensDaUltimaEntrada(unittest.TestCase):
+    def tokens(self, texto):
+        f = pasta_temporaria(self, "oedp-log-") / "LEITURA.md.eventos.log"
+        f.write_text(texto, encoding="utf-8")
+        return leituras.tokens_do_registo(f)
+
+    def test_a_ultima_entrada(self):
+        self.assertEqual(self.tokens("tokens used\n100\nmore\ntokens used\n60,733\n"), 60733)
+        self.assertIsNone(self.tokens("tokens used\n100\ntokens used\n"))
+        self.assertIsNone(self.tokens("tokens used\n100\ntokens used"))
+        self.assertIsNone(self.tokens("tokens used\n100\ntokens used\nnot available\n"))
+
+    def test_planta_a_entrada_anterior(self):
+        """ESQ3's loop began one line short of the end and took the earlier count."""
+        def antiga(f):
+            linhas = Path(f).read_text(encoding="utf-8").splitlines()
+            for i in range(len(linhas) - 2, -1, -1):
+                if linhas[i].strip() == "tokens used":
+                    n = linhas[i + 1].strip().replace(",", "")
+                    return int(n) if n.isdigit() else None
+            return None
+        f = pasta_temporaria(self, "oedp-log-") / "x.log"
+        f.write_text("tokens used\n100\ntokens used\n", encoding="utf-8")
+        self.assertEqual(antiga(f), 100)
+        self.assertNotEqual(antiga(f), leituras.tokens_do_registo(f))
+
+
+class J2_UmaOpcaoQueNaoSeAplica(ComLeitura):
+    def test_recusada_e_nomeada(self):
+        p = Plantada()
+        self.addCleanup(p.apagar)
+        for kw, nome in (({"com": ["x.md"]}, "--com"), ({"base": "abc"}, "--base"), ({"ordens": ["o.md"]}, "--ordem"),
+                         ({"relatorios": ["r.md"]}, "--relatorio")):
+            with self.assertRaises(leituras.Recusa) as e:
+                self.montar("juiz", alvo=p.peca, **kw)
+            self.assertIn(f"refused: {nome} does not apply to a reading of peca", str(e.exception))
+        self.assertEqual(list((self.oficina / "leituras").glob("*/*")) if (self.oficina / "leituras").exists() else [], [])
+
+    def test_sem_a_opcao_o_pacote_constroi(self):
+        p = Plantada()
+        self.addCleanup(p.apagar)
+        pasta = self.montar("juiz", alvo=p.peca)  # the control: without the option the package is built
+        self.assertTrue((pasta / "pacote").is_dir())

@@ -508,6 +508,14 @@ def montar(alvo_arg: str, lugar: str, *, folha: bool = False, seccao: str | None
     alvo = alvo_de(alvo_arg, repo)
     if lugar not in lugares_permitidos(alvo.tipo):
         raise Recusa(f"refused: the seat {lugar} does not read {alvo.tipo}; it takes {', '.join(lugares_permitidos(alvo.tipo))}")
+    # An option that does not apply to this kind of reading is refused, not ignored (ORDEM-3c, item J).
+    inaplicaveis = [nome for nome, dado, tipos in (("--com", com, ("metodo",)), ("--base", base, ("codigo",)),
+                                                   ("--ordem", ordens, ("codigo",)), ("--relatorio", relatorios, ("codigo",)),
+                                                   ("--folha", folha, ("peca",)))
+                    if dado and alvo.tipo not in tipos]
+    if inaplicaveis:
+        raise Recusa(f"refused: {', '.join(inaplicaveis)} does not apply to a reading of {alvo.tipo}, and would be ignored "
+                     "(--com is for the Method page's judge; --base, --ordem and --relatorio for the code; --folha for a piece)")
     if folha and lugar not in ("especialista", "oposto"):
         raise Recusa("refused: --folha is for the especialista and the oposto, reading the fact sheet before the text")
     texto_do_prompt = prompt(lugar, Path(equipa or Path(repo) / "equipa"), seccao)  # the briefs first: refused before any work
@@ -858,13 +866,15 @@ def executar_ler_sh(args: list[str], ambiente: dict) -> tuple[int, str]:
 
 
 def tokens_do_registo(registo_f: Path) -> int | None:
-    """The number on the line after the last `tokens used` of the launcher's log, or None."""
+    """The number on the line after the last line that is exactly `tokens used` of the launcher's
+    log, or None: when that last line has no number after it (an interrupted entry), there is no
+    count, and an earlier entry's number is not taken for it (ORDEM-3c, item J)."""
     if not registo_f.is_file():
         return None
     linhas = registo_f.read_text(encoding="utf-8", errors="replace").splitlines()
-    for i in range(len(linhas) - 2, -1, -1):
+    for i in range(len(linhas) - 1, -1, -1):
         if linhas[i].strip() == "tokens used":
-            numero = linhas[i + 1].strip().replace(",", "").replace(" ", "").replace("\u202f", "")
+            numero = linhas[i + 1].strip().replace(",", "").replace(" ", "").replace("\u202f", "") if i + 1 < len(linhas) else ""
             return int(numero) if numero.isdigit() else None
     return None
 
