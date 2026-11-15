@@ -76,15 +76,65 @@ mostra = "0,2 pontos percentuais"
 id = "ipc_homologa_set"
 tipo = "valor"
 fonte = "ine_ipc_out2026_quadros"
-onde = "folha TII-PT (Table II, Annual rates (%), PORTUGAL), linha Total, 2026, coluna Sep"
-excerto = '''All items CPI and Special aggregates Year Month Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec Total 2025 2.54 2.39 1.85 2.1 2.26 2.37 2.64 2.76 2.4 2.34 2.21 2.19 2026 1.92 2.1 2.71 3.35 3.27 3.22 3.04 3.3 3.61 3.8'''
+onde = "Quadros do destaque, folha TII-PT (quadro II, taxas de variação homóloga, no original «Annual rates (%)»), linha «Total», coluna de setembro de 2026, o penúltimo número da linha"
+excerto = '''Total 2025 2.54 2.39 1.85 2.1 2.26 2.37 2.64 2.76 2.4 2.34 2.21 2.19 2026 1.92 2.1 2.71 3.35 3.27 3.22 3.04 3.3 3.61 3.8'''
 valor = "3.61"
 unidade = "%"
-mede = "Taxa de variação homóloga do IPC, total (no quadro: Total, Annual rates (%)), publicada com duas casas decimais"
+mede = "Taxa de variação homóloga do IPC total, com duas casas decimais"
 populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
 periodo = "setembro de 2026, face a setembro de 2025"
 provisorio = false
-mostra = "3,6 %"
+mostra = "3,61 %"
+
+[[linha]]
+id = "ipc_homologa_out_2c"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TII-PT (quadro II, taxas de variação homóloga, no original «Annual rates (%)»), linha «Total», coluna de outubro de 2026, o último número da linha"
+excerto = '''Total 2025 2.54 2.39 1.85 2.1 2.26 2.37 2.64 2.76 2.4 2.34 2.21 2.19 2026 1.92 2.1 2.71 3.35 3.27 3.22 3.04 3.3 3.61 3.8'''
+valor = "3.8"
+unidade = "%"
+mede = "Taxa de variação homóloga do IPC total, com duas casas decimais (a mesma taxa que o destaque publica com uma casa, 3,8 %)"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "outubro de 2026, face a outubro de 2025"
+provisorio = false
+mostra = "3,80 %"
+
+[[linha]]
+id = "ipc_homologa_dif_2c"
+tipo = "derivado"
+calculo = "ipc_homologa_out_2c - ipc_homologa_set"
+valor = "0.19"
+unidade = "pontos percentuais"
+mede = "Taxa de variação homóloga do IPC total em outubro de 2026 menos a de setembro de 2026, com duas casas decimais"
+periodo = "setembro e outubro de 2026 (taxas homólogas)"
+compara = "As duas taxas estão na mesma linha do mesmo quadro dos quadros do destaque: a mesma medida (taxa de variação homóloga), o mesmo agregado e a mesma população (IPC total, Portugal), meses seguidos com a mesma estrutura de ponderação de 2026. Duas casas decimais, como nos quadros; a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais). O destaque, com uma casa decimal, dá 0,2 pontos percentuais."
+mostra = "0,19 pontos percentuais"
+
+[[linha]]
+id = "ipc_homologa_jan"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TII-PT (quadro II, taxas de variação homóloga, no original «Annual rates (%)»), linha «Total», coluna de janeiro de 2026, o primeiro número a seguir a 2026"
+excerto = '''Total 2025 2.54 2.39 1.85 2.1 2.26 2.37 2.64 2.76 2.4 2.34 2.21 2.19 2026 1.92 2.1 2.71 3.35 3.27 3.22 3.04 3.3 3.61 3.8'''
+valor = "1.92"
+unidade = "%"
+mede = "Taxa de variação homóloga do IPC total, com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "janeiro de 2026, face a janeiro de 2025"
+provisorio = false
+mostra = "1,92 %"
+
+[[linha]]
+id = "ipc_homologa_out_vs_jan"
+tipo = "derivado"
+calculo = "ipc_homologa_out_2c - ipc_homologa_jan"
+valor = "1.88"
+unidade = "pontos percentuais"
+mede = "Taxa de variação homóloga do IPC total em outubro de 2026 menos a de janeiro de 2026"
+periodo = "janeiro e outubro de 2026 (taxas homólogas)"
+compara = "As duas taxas estão na mesma linha do mesmo quadro dos quadros do destaque: a mesma medida (taxa de variação homóloga), o mesmo agregado e a mesma população, e a mesma estrutura de ponderação de 2026. Cada taxa compara o seu mês com o mesmo mês de 2025, pelo que a diferença mostra quanto a taxa homóloga se moveu entre janeiro e outubro, não quanto subiram os preços nesse período. Duas casas decimais, como nos quadros; a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais)."
+mostra = "1,88 pontos percentuais"
 
 [[linha]]
 id = "ipc_mensal_out"
@@ -101,43 +151,43 @@ provisorio = false
 mostra = "0,2 %"
 
 [[linha]]
+id = "ipc_mensal_out_2c"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TIII-PT (quadro III, taxas de variação mensal, no original «Monthly rates (%)»), linha «Total», coluna de outubro de 2026, o último número da linha"
+excerto = '''Total 2025 -0.45 -0.11 1.42 0.72 0.32 0.11 -0.35 -0.22 0.93 0.01 -0.29 0.09 2026 -0.71 0.07 2.02 1.35 0.25 0.06 -0.53 0.03 1.24 0.2'''
+valor = "0.2"
+unidade = "%"
+mede = "Taxa de variação mensal do IPC total, com duas casas decimais (a mesma taxa que o destaque publica com uma casa, 0,2 %)"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "outubro de 2026, face a setembro de 2026"
+provisorio = false
+mostra = "0,20 %"
+
+[[linha]]
 id = "ipc_mensal_out25"
 tipo = "valor"
 fonte = "ine_ipc_out2026_quadros"
-onde = "folha TIII-PT (Table III, Monthly rates (%), PORTUGAL), linha Total, 2025, coluna Oct"
-excerto = '''All items CPI and Special aggregates Year Month Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec Total 2025 -0.45 -0.11 1.42 0.72 0.32 0.11 -0.35 -0.22 0.93 0.01 -0.29 0.09 2026 -0.71 0.07 2.02 1.35 0.25 0.06 -0.53 0.03 1.24 0.2'''
+onde = "Quadros do destaque, folha TIII-PT (quadro III, taxas de variação mensal, no original «Monthly rates (%)»), linha «Total», coluna de outubro de 2025, o décimo número a seguir a 2025"
+excerto = '''Total 2025 -0.45 -0.11 1.42 0.72 0.32 0.11 -0.35 -0.22 0.93 0.01 -0.29 0.09 2026 -0.71 0.07 2.02 1.35 0.25 0.06 -0.53 0.03 1.24 0.2'''
 valor = "0.01"
 unidade = "%"
-mede = "Taxa de variação mensal do IPC, total, em outubro de 2025 (no quadro: Total, Monthly rates (%)); o destaque descreve-a como nula (p. 1 e p. 4)"
+mede = "Taxa de variação mensal do IPC total em outubro de 2025, com duas casas decimais; o destaque descreve-a como nula (p. 1 e p. 4)"
 populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
 periodo = "outubro de 2025, face a setembro de 2025"
 provisorio = false
-mostra = "0,0 %"
+mostra = "0,01 %"
 
 [[linha]]
 id = "ipc_mensal_vs_ano_antes"
 tipo = "derivado"
-calculo = "round ( ipc_mensal_out - ipc_mensal_out25 , 1 )"
-valor = "0.2"
+calculo = "ipc_mensal_out_2c - ipc_mensal_out25"
+valor = "0.19"
 unidade = "pontos percentuais"
 mede = "Quanto a variação mensal do IPC em outubro de 2026 ficou acima da de outubro de 2025: o mês que entra na taxa homóloga de outubro face ao que dela sai"
 periodo = "outubro de 2026 e outubro de 2025 (variações mensais)"
-compara = "A mesma medida (taxa de variação mensal do IPC total, Portugal), o mesmo mês do calendário em anos seguidos, pelo que o padrão sazonal é o mesmo (o INE avisa que a variação mensal é influenciada por efeitos sazonais, p. 10); a mesma série de base 2025=100 do INE. A de 2026 é a do destaque, com uma casa decimal (0,20 no Quadro 3, p. 12); a de 2025 é a dos quadros, com duas; o resultado mostra-se com uma casa decimal."
-mostra = "0,2 pontos percentuais"
-
-[[linha]]
-id = "ipc_media12"
-tipo = "valor"
-fonte = "ine_ipc_out2026"
-onde = "p. 1, primeiro parágrafo"
-excerto = '''A variação média dos últimos doze meses foi 2,9% (2,8% no mês anterior).'''
-valor = "2.9"
-unidade = "%"
-mede = "Taxa de variação média dos últimos doze meses do IPC: compara o índice médio dos últimos doze meses com o dos doze meses imediatamente anteriores; só no mês de dezembro corresponde à taxa de inflação anual (p. 10)"
-populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
-periodo = "novembro de 2025 a outubro de 2026, face a novembro de 2024 a outubro de 2025"
-provisorio = false
-mostra = "2,9 %"
+compara = "A mesma medida (taxa de variação mensal do IPC total, Portugal), na mesma linha do mesmo quadro, no mesmo mês do calendário com um ano de intervalo. O destaque (p. 10) diz que a taxa homóloga não é afetada pelas oscilações sazonais perante um padrão estável de sazonalidade; estes números não mostram se o padrão de outubro foi o mesmo nos dois anos. Duas casas decimais, como nos quadros; a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais)."
+mostra = "0,19 pontos percentuais"
 
 [[linha]]
 id = "subjacente_out"
@@ -168,15 +218,68 @@ provisorio = false
 mostra = "2,7 %"
 
 [[linha]]
+id = "subjacente_out_2c"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TII-PT (quadro II, taxas de variação homóloga, no original «Annual rates (%)»), linha «Total excluding unprocessed food and energy», coluna de outubro de 2026, o último número da linha"
+excerto = '''Total excluding unprocessed food and energy 2025 2.66 2.45 1.88 2.14 2.24 2.4 2.48 2.44 1.97 2.15 1.96 2.05 2026 1.8 1.94 2.01 2.2 2.19 2.5 2.57 2.64 2.72 2.79'''
+valor = "2.79"
+unidade = "%"
+mede = "Taxa de variação homóloga do IPC excluindo produtos alimentares não transformados e energéticos (o indicador de inflação subjacente), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "outubro de 2026, face a outubro de 2025"
+provisorio = false
+mostra = "2,79 %"
+
+[[linha]]
+id = "subjacente_set_2c"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TII-PT (quadro II, taxas de variação homóloga, no original «Annual rates (%)»), linha «Total excluding unprocessed food and energy», coluna de setembro de 2026, o penúltimo número da linha"
+excerto = '''Total excluding unprocessed food and energy 2025 2.66 2.45 1.88 2.14 2.24 2.4 2.48 2.44 1.97 2.15 1.96 2.05 2026 1.8 1.94 2.01 2.2 2.19 2.5 2.57 2.64 2.72 2.79'''
+valor = "2.72"
+unidade = "%"
+mede = "Taxa de variação homóloga do IPC excluindo produtos alimentares não transformados e energéticos (o indicador de inflação subjacente), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "setembro de 2026, face a setembro de 2025"
+provisorio = false
+mostra = "2,72 %"
+
+[[linha]]
 id = "subjacente_subida"
 tipo = "derivado"
-calculo = "subjacente_out - subjacente_set"
-valor = "0.1"
+calculo = "subjacente_out_2c - subjacente_set_2c"
+valor = "0.07"
 unidade = "pontos percentuais"
-mede = "Quanto a taxa de variação homóloga do indicador de inflação subjacente de outubro de 2026 ficou acima da de setembro de 2026"
+mede = "Taxa de variação homóloga do indicador de inflação subjacente em outubro de 2026 menos a de setembro de 2026, com duas casas decimais"
 periodo = "setembro e outubro de 2026 (taxas homólogas)"
-compara = "As duas taxas vêm da mesma frase do destaque (p. 1): a mesma medida (variação homóloga do IPC excluindo produtos alimentares não transformados e energéticos), a mesma unidade, a mesma população, meses seguidos com a mesma estrutura de ponderação de 2026; ambas com uma casa decimal, como o destaque as dá."
-mostra = "0,1 pontos percentuais"
+compara = "As duas taxas estão na mesma linha do mesmo quadro dos quadros do destaque: a mesma medida (taxa de variação homóloga do IPC excluindo produtos alimentares não transformados e energéticos), a mesma unidade e população, meses seguidos com a mesma estrutura de ponderação de 2026. Duas casas decimais, como nos quadros; a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais)."
+mostra = "0,07 pontos percentuais"
+
+[[linha]]
+id = "subjacente_jan"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TII-PT (quadro II, taxas de variação homóloga, no original «Annual rates (%)»), linha «Total excluding unprocessed food and energy», coluna de janeiro de 2026, o primeiro número a seguir a 2026"
+excerto = '''Total excluding unprocessed food and energy 2025 2.66 2.45 1.88 2.14 2.24 2.4 2.48 2.44 1.97 2.15 1.96 2.05 2026 1.8 1.94 2.01 2.2 2.19 2.5 2.57 2.64 2.72 2.79'''
+valor = "1.8"
+unidade = "%"
+mede = "Taxa de variação homóloga do IPC excluindo produtos alimentares não transformados e energéticos (o indicador de inflação subjacente), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "janeiro de 2026, face a janeiro de 2025"
+provisorio = false
+mostra = "1,80 %"
+
+[[linha]]
+id = "subjacente_out_vs_jan"
+tipo = "derivado"
+calculo = "subjacente_out_2c - subjacente_jan"
+valor = "0.99"
+unidade = "pontos percentuais"
+mede = "Taxa de variação homóloga do indicador de inflação subjacente em outubro de 2026 menos a de janeiro de 2026"
+periodo = "janeiro e outubro de 2026 (taxas homólogas)"
+compara = "As duas taxas estão na mesma linha do mesmo quadro dos quadros do destaque: a mesma medida (taxa de variação homóloga), o mesmo agregado e a mesma população, e a mesma estrutura de ponderação de 2026. Cada taxa compara o seu mês com o mesmo mês de 2025, pelo que a diferença mostra quanto a taxa homóloga se moveu entre janeiro e outubro, não quanto subiram os preços nesse período. Duas casas decimais, como nos quadros; a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais)."
+mostra = "0,99 pontos percentuais"
 
 [[linha]]
 id = "energeticos_out"
@@ -207,15 +310,82 @@ provisorio = false
 mostra = "15,3 %"
 
 [[linha]]
+id = "energeticos_out_2c"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TII-PT (quadro II, taxas de variação homóloga, no original «Annual rates (%)»), linha «Energy», coluna de outubro de 2026, o último número da linha"
+excerto = '''Energy 2025 2.39 1.5 0.08 -0.1 0.11 -1.34 -1.06 -0.18 0.35 -1.23 -0.85 -2.38 2026 -2.24 -2.17 5.74 11.68 13.14 9.12 8.67 12.2 15.31 17.38'''
+valor = "17.38"
+unidade = "%"
+mede = "Taxa de variação homóloga do índice dos produtos energéticos (um agregado especial do IPC, não uma classe), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "outubro de 2026, face a outubro de 2025"
+provisorio = false
+mostra = "17,38 %"
+
+[[linha]]
+id = "energeticos_set_2c"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TII-PT (quadro II, taxas de variação homóloga, no original «Annual rates (%)»), linha «Energy», coluna de setembro de 2026, o penúltimo número da linha"
+excerto = '''Energy 2025 2.39 1.5 0.08 -0.1 0.11 -1.34 -1.06 -0.18 0.35 -1.23 -0.85 -2.38 2026 -2.24 -2.17 5.74 11.68 13.14 9.12 8.67 12.2 15.31 17.38'''
+valor = "15.31"
+unidade = "%"
+mede = "Taxa de variação homóloga do índice dos produtos energéticos (um agregado especial do IPC, não uma classe), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "setembro de 2026, face a setembro de 2025"
+provisorio = false
+mostra = "15,31 %"
+
+[[linha]]
 id = "energeticos_subida"
 tipo = "derivado"
-calculo = "energeticos_out - energeticos_set"
-valor = "2.1"
+calculo = "energeticos_out_2c - energeticos_set_2c"
+valor = "2.07"
 unidade = "pontos percentuais"
-mede = "Quanto a taxa de variação homóloga do índice dos produtos energéticos de outubro de 2026 ficou acima da de setembro de 2026"
+mede = "Taxa de variação homóloga do índice dos produtos energéticos em outubro de 2026 menos a de setembro de 2026, com duas casas decimais"
 periodo = "setembro e outubro de 2026 (taxas homólogas)"
-compara = "As duas taxas vêm da mesma frase do destaque (p. 1): a mesma medida (variação homóloga do agregado dos produtos energéticos do IPC), a mesma unidade, a mesma população, meses seguidos com a mesma estrutura de ponderação de 2026; ambas com uma casa decimal."
-mostra = "2,1 pontos percentuais"
+compara = "As duas taxas estão na mesma linha do mesmo quadro dos quadros do destaque: a mesma medida (taxa de variação homóloga do agregado dos produtos energéticos do IPC), a mesma unidade e população, meses seguidos com a mesma estrutura de ponderação de 2026. Duas casas decimais, como nos quadros; a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais)."
+mostra = "2,07 pontos percentuais"
+
+[[linha]]
+id = "sem_energia_out"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TII-PT (quadro II, taxas de variação homóloga, no original «Annual rates (%)»), linha «Total excluding energy», coluna de outubro de 2026, o último número da linha"
+excerto = '''Total excluding energy 2025 2.55 2.44 1.99 2.28 2.46 2.68 2.93 3 2.58 2.64 2.45 2.55 2026 2.26 2.46 2.53 2.81 2.62 2.83 2.68 2.72 2.84 2.91'''
+valor = "2.91"
+unidade = "%"
+mede = "Taxa de variação homóloga do IPC total excluindo os produtos energéticos (no original, «Total excluding energy»), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "outubro de 2026, face a outubro de 2025"
+provisorio = false
+mostra = "2,91 %"
+
+[[linha]]
+id = "sem_energia_set"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TII-PT (quadro II, taxas de variação homóloga, no original «Annual rates (%)»), linha «Total excluding energy», coluna de setembro de 2026, o penúltimo número da linha"
+excerto = '''Total excluding energy 2025 2.55 2.44 1.99 2.28 2.46 2.68 2.93 3 2.58 2.64 2.45 2.55 2026 2.26 2.46 2.53 2.81 2.62 2.83 2.68 2.72 2.84 2.91'''
+valor = "2.84"
+unidade = "%"
+mede = "Taxa de variação homóloga do IPC total excluindo os produtos energéticos (no original, «Total excluding energy»), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "setembro de 2026, face a setembro de 2025"
+provisorio = false
+mostra = "2,84 %"
+
+[[linha]]
+id = "sem_energia_subida"
+tipo = "derivado"
+calculo = "sem_energia_out - sem_energia_set"
+valor = "0.07"
+unidade = "pontos percentuais"
+mede = "Taxa de variação homóloga do IPC total excluindo os produtos energéticos em outubro de 2026 menos a de setembro de 2026"
+periodo = "setembro e outubro de 2026 (taxas homólogas)"
+compara = "As duas taxas estão na mesma linha do mesmo quadro dos quadros do destaque: a mesma medida (taxa de variação homóloga), o mesmo agregado (o total sem os produtos energéticos) e a mesma população, meses seguidos com a mesma estrutura de ponderação de 2026. Duas casas decimais, como nos quadros; a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais)."
+mostra = "0,07 pontos percentuais"
 
 [[linha]]
 id = "alim_nt_out"
@@ -246,15 +416,43 @@ provisorio = false
 mostra = "3,7 %"
 
 [[linha]]
+id = "alim_nt_out_2c"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TII-PT (quadro II, taxas de variação homóloga, no original «Annual rates (%)»), linha «Unprocessed food», coluna de outubro de 2026, o último número da linha"
+excerto = '''Unprocessed food 2025 1.8 2.4 2.77 3.25 4.01 4.67 6.15 6.99 6.97 6.09 5.95 6.07 2026 5.81 6.66 6.39 7.45 5.68 5.12 3.69 3.42 3.66 3.71'''
+valor = "3.71"
+unidade = "%"
+mede = "Taxa de variação homóloga do índice dos produtos alimentares não transformados (um agregado especial do IPC), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "outubro de 2026, face a outubro de 2025"
+provisorio = false
+mostra = "3,71 %"
+
+[[linha]]
+id = "alim_nt_set_2c"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TII-PT (quadro II, taxas de variação homóloga, no original «Annual rates (%)»), linha «Unprocessed food», coluna de setembro de 2026, o penúltimo número da linha"
+excerto = '''Unprocessed food 2025 1.8 2.4 2.77 3.25 4.01 4.67 6.15 6.99 6.97 6.09 5.95 6.07 2026 5.81 6.66 6.39 7.45 5.68 5.12 3.69 3.42 3.66 3.71'''
+valor = "3.66"
+unidade = "%"
+mede = "Taxa de variação homóloga do índice dos produtos alimentares não transformados (um agregado especial do IPC), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "setembro de 2026, face a setembro de 2025"
+provisorio = false
+mostra = "3,66 %"
+
+[[linha]]
 id = "alim_nt_variacao"
 tipo = "derivado"
-calculo = "alim_nt_out - alim_nt_set"
-valor = "0.0"
+calculo = "alim_nt_out_2c - alim_nt_set_2c"
+valor = "0.05"
 unidade = "pontos percentuais"
-mede = "Diferença entre a taxa de variação homóloga dos produtos alimentares não transformados de outubro de 2026 e a de setembro de 2026"
+mede = "Taxa de variação homóloga dos produtos alimentares não transformados em outubro de 2026 menos a de setembro de 2026, com duas casas decimais"
 periodo = "setembro e outubro de 2026 (taxas homólogas)"
-compara = "As duas taxas vêm da mesma frase do destaque (p. 1), que dá a de setembro como valor idêntico: a mesma medida, unidade e população, meses seguidos com a mesma estrutura de ponderação de 2026; com uma casa decimal."
-mostra = "0,0 pontos percentuais"
+compara = "As duas taxas estão na mesma linha do mesmo quadro dos quadros do destaque: a mesma medida, unidade e população, meses seguidos com a mesma estrutura de ponderação de 2026. Duas casas decimais, como nos quadros; a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais). O destaque, com uma casa decimal, dá as duas como idênticas (3,7 %)."
+mostra = "0,05 pontos percentuais"
 
 [[linha]]
 id = "classe01_out"
@@ -407,7 +605,7 @@ tipo = "derivado"
 calculo = "classe04_out - classe04_set"
 valor = "0.65"
 unidade = "pontos percentuais"
-mede = "Taxa de variação homóloga da classe 04 («Habitação, água, eletricidade, gás e outros combustíveis») em outubro de 2026 menos a de setembro de 2026: positiva quando a taxa subiu, negativa quando desceu"
+mede = "Taxa de variação homóloga da classe 04 da ECOICOP 2 em outubro de 2026 menos a de setembro de 2026: positiva quando a taxa subiu, negativa quando desceu. A classe chama-se, no destaque, «Habitação, água, eletricidade, gás e outros combustíveis»: é a classe inteira, não só as rendas nem só a habitação"
 periodo = "setembro e outubro de 2026 (taxas homólogas)"
 compara = "As duas taxas estão na mesma linha da mesma folha (TII-PT) dos quadros do INE: a mesma medida (taxa de variação homóloga, Annual rates (%)), a mesma unidade, a mesma classe da ECOICOP 2 e a mesma população (IPC, Portugal, base 2025=100), meses seguidos com a mesma estrutura de ponderação de 2026. Publicadas com duas casas decimais, a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais)."
 mostra = "0,65 pontos percentuais"
@@ -764,6 +962,90 @@ compara = "As duas taxas estão na mesma linha da mesma folha (TII-PT) dos quadr
 mostra = "-0,74 pontos percentuais"
 
 [[linha]]
+id = "peso_classe01"
+tipo = "valor"
+fonte = "ine_ipc_out2026"
+onde = "p. 11, Quadro 2 (ponderadores do IPC e do IHPC em 2026), linha da classe 01, coluna do IPC: o primeiro dos dois números da linha (o segundo é o do IHPC)"
+excerto = '''01 Produtos alimentares e bebidas não alcoólicas 224,0 207,4'''
+valor = "224.0"
+unidade = "‰"
+mede = "Ponderador da classe 01 da ECOICOP 2, «Produtos alimentares e bebidas não alcoólicas», no IPC: a parte da classe na estrutura de ponderação do índice, em permilagem (o total do quadro é 1 000)"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "2026 (a estrutura de ponderação dos índices de 2026)"
+provisorio = false
+mostra = "224,0 ‰"
+
+[[linha]]
+id = "peso_classe04"
+tipo = "valor"
+fonte = "ine_ipc_out2026"
+onde = "p. 11, Quadro 2 (ponderadores do IPC e do IHPC em 2026), linha da classe 04, coluna do IPC: o primeiro dos dois números da linha (o segundo é o do IHPC)"
+excerto = '''04 Habitação, água, eletricidade, gás e outros combustíveis 93,6 82,5'''
+valor = "93.6"
+unidade = "‰"
+mede = "Ponderador da classe 04 da ECOICOP 2, «Habitação, água, eletricidade, gás e outros combustíveis», no IPC: a parte da classe na estrutura de ponderação do índice, em permilagem (o total do quadro é 1 000)"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "2026 (a estrutura de ponderação dos índices de 2026)"
+provisorio = false
+mostra = "93,6 ‰"
+
+[[linha]]
+id = "peso_classe07"
+tipo = "valor"
+fonte = "ine_ipc_out2026"
+onde = "p. 11, Quadro 2 (ponderadores do IPC e do IHPC em 2026), linha da classe 07, coluna do IPC: o primeiro dos dois números da linha (o segundo é o do IHPC)"
+excerto = '''07 Transportes 151,3 149,0'''
+valor = "151.3"
+unidade = "‰"
+mede = "Ponderador da classe 07 da ECOICOP 2, «Transportes», no IPC: a parte da classe na estrutura de ponderação do índice, em permilagem (o total do quadro é 1 000)"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "2026 (a estrutura de ponderação dos índices de 2026)"
+provisorio = false
+mostra = "151,3 ‰"
+
+[[linha]]
+id = "peso_classe08"
+tipo = "valor"
+fonte = "ine_ipc_out2026"
+onde = "p. 11, Quadro 2 (ponderadores do IPC e do IHPC em 2026), linha da classe 08, coluna do IPC: o primeiro dos dois números da linha (o segundo é o do IHPC)"
+excerto = '''08 Informação e comunicação 30,8 27,5'''
+valor = "30.8"
+unidade = "‰"
+mede = "Ponderador da classe 08 da ECOICOP 2, «Informação e comunicação», no IPC: a parte da classe na estrutura de ponderação do índice, em permilagem (o total do quadro é 1 000)"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "2026 (a estrutura de ponderação dos índices de 2026)"
+provisorio = false
+mostra = "30,8 ‰"
+
+[[linha]]
+id = "peso_classe09"
+tipo = "valor"
+fonte = "ine_ipc_out2026"
+onde = "p. 11, Quadro 2 (ponderadores do IPC e do IHPC em 2026), linha da classe 09, coluna do IPC: o primeiro dos dois números da linha (o segundo é o do IHPC)"
+excerto = '''09 Lazer, recreação, desporto e cultura 58,8 55,6'''
+valor = "58.8"
+unidade = "‰"
+mede = "Ponderador da classe 09 da ECOICOP 2, «Lazer, recreação, desporto e cultura», no IPC: a parte da classe na estrutura de ponderação do índice, em permilagem (o total do quadro é 1 000)"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "2026 (a estrutura de ponderação dos índices de 2026)"
+provisorio = false
+mostra = "58,8 ‰"
+
+[[linha]]
+id = "peso_classe11"
+tipo = "valor"
+fonte = "ine_ipc_out2026"
+onde = "p. 11, Quadro 2 (ponderadores do IPC e do IHPC em 2026), linha da classe 11, coluna do IPC: o primeiro dos dois números da linha (o segundo é o do IHPC)"
+excerto = '''11 Restaurantes e serviços de alojamento 105,4 167,0'''
+valor = "105.4"
+unidade = "‰"
+mede = "Ponderador da classe 11 da ECOICOP 2, «Restaurantes e serviços de alojamento», no IPC: a parte da classe na estrutura de ponderação do índice, em permilagem (o total do quadro é 1 000)"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "2026 (a estrutura de ponderação dos índices de 2026)"
+provisorio = false
+mostra = "105,4 ‰"
+
+[[linha]]
 id = "classe08_mensal_out"
 tipo = "valor"
 fonte = "ine_ipc_out2026_quadros"
@@ -799,7 +1081,7 @@ valor = "2.12"
 unidade = "pontos percentuais"
 mede = "Variação mensal da classe 08 («Informação e comunicação») em outubro de 2026 menos a de outubro de 2025: o mês que entra na taxa homóloga de outubro face ao que dela sai"
 periodo = "outubro de 2026 e outubro de 2025 (variações mensais)"
-compara = "As duas taxas estão na mesma linha da mesma folha (TIII-PT) dos quadros do INE: a mesma medida (taxa de variação mensal), a mesma classe e população (IPC, Portugal, base 2025=100) e o mesmo mês do calendário em anos seguidos, pelo que o padrão sazonal é o mesmo; duas casas decimais, a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais)."
+compara = "As duas taxas estão na mesma linha da mesma folha (TIII-PT) dos quadros do INE: a mesma medida (taxa de variação mensal), a mesma classe e população (IPC, Portugal, base 2025=100), no mesmo mês do calendário com um ano de intervalo. O destaque (p. 10) diz que a taxa homóloga não é afetada pelas oscilações sazonais perante um padrão estável de sazonalidade; estes números não mostram se o padrão de outubro foi o mesmo nos dois anos. Duas casas decimais, como nos quadros; a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais)."
 mostra = "2,12 pontos percentuais"
 
 [[linha]]
@@ -838,8 +1120,125 @@ valor = "1.89"
 unidade = "pontos percentuais"
 mede = "Variação mensal da classe 09 («Lazer, recreação, desporto e cultura») em outubro de 2026 menos a de outubro de 2025: o mês que entra na taxa homóloga de outubro face ao que dela sai"
 periodo = "outubro de 2026 e outubro de 2025 (variações mensais)"
-compara = "As duas taxas estão na mesma linha da mesma folha (TIII-PT) dos quadros do INE: a mesma medida (taxa de variação mensal), a mesma classe e população (IPC, Portugal, base 2025=100) e o mesmo mês do calendário em anos seguidos, pelo que o padrão sazonal é o mesmo; duas casas decimais, a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais)."
+compara = "As duas taxas estão na mesma linha da mesma folha (TIII-PT) dos quadros do INE: a mesma medida (taxa de variação mensal), a mesma classe e população (IPC, Portugal, base 2025=100), no mesmo mês do calendário com um ano de intervalo. O destaque (p. 10) diz que a taxa homóloga não é afetada pelas oscilações sazonais perante um padrão estável de sazonalidade; estes números não mostram se o padrão de outubro foi o mesmo nos dois anos. Duas casas decimais, como nos quadros; a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais)."
 mostra = "1,89 pontos percentuais"
+
+[[linha]]
+id = "classe10_mensal_out"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TIII-PT (quadro III, taxas de variação mensal, no original «Monthly rates (%)»), linha «Education services», coluna de outubro de 2026, o último número da linha"
+excerto = '''Education services 2025 0.04 0.05 0.03 0 0.01 0.01 -0.01 0.02 0.1 3.88 0.08 0.02 2026 -0.04 0.05 0.09 0.1 0.03 0 0.05 0.09 0.22 2.36'''
+valor = "2.36"
+unidade = "%"
+mede = "Taxa de variação mensal do IPC da classe 10 da ECOICOP 2, «Serviços de educação» (no original, «Education services»), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "outubro de 2026, face a setembro de 2026"
+provisorio = false
+mostra = "2,36 %"
+
+[[linha]]
+id = "classe10_mensal_out25"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TIII-PT (quadro III, taxas de variação mensal, no original «Monthly rates (%)»), linha «Education services», coluna de outubro de 2025, o décimo número a seguir a 2025"
+excerto = '''Education services 2025 0.04 0.05 0.03 0 0.01 0.01 -0.01 0.02 0.1 3.88 0.08 0.02 2026 -0.04 0.05 0.09 0.1 0.03 0 0.05 0.09 0.22 2.36'''
+valor = "3.88"
+unidade = "%"
+mede = "Taxa de variação mensal do IPC da classe 10 da ECOICOP 2, «Serviços de educação» (no original, «Education services»), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "outubro de 2025, face a setembro de 2025"
+provisorio = false
+mostra = "3,88 %"
+
+[[linha]]
+id = "classe10_mensal_vs_ano_antes"
+tipo = "derivado"
+calculo = "classe10_mensal_out - classe10_mensal_out25"
+valor = "-1.52"
+unidade = "pontos percentuais"
+mede = "Variação mensal da classe 10 («Serviços de educação») em outubro de 2026 menos a de outubro de 2025: o mês que entra na taxa homóloga de outubro face ao que dela sai; negativa quando o mês que entra subiu menos do que o que sai"
+periodo = "outubro de 2026 e outubro de 2025 (variações mensais)"
+compara = "As duas taxas estão na mesma linha da mesma folha (TIII-PT) dos quadros do INE: a mesma medida (taxa de variação mensal), a mesma classe e população (IPC, Portugal, base 2025=100), no mesmo mês do calendário com um ano de intervalo. O destaque (p. 10) diz que a taxa homóloga não é afetada pelas oscilações sazonais perante um padrão estável de sazonalidade; estes números não mostram se o padrão de outubro foi o mesmo nos dois anos. Duas casas decimais, como nos quadros; a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais)."
+mostra = "-1,52 pontos percentuais"
+
+[[linha]]
+id = "classe13_mensal_out"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TIII-PT (quadro III, taxas de variação mensal, no original «Monthly rates (%)»), linha «Personal care, social protection and miscellaneous goods and services», coluna de outubro de 2026, o último número da linha"
+excerto = '''Personal care, social protection and miscellaneous goods and services 2025 0.43 0.6 0.04 0.08 -0.06 0.13 -0.03 0.03 0.32 1.34 0.07 0.25 2026 1.03 0.64 0.39 0.36 -0.19 -0.11 -0.11 0.38 0.12 0.62'''
+valor = "0.62"
+unidade = "%"
+mede = "Taxa de variação mensal do IPC da classe 13 da ECOICOP 2, «Serviços de higiene e cuidados pessoais, proteção social e bens e serv. diversos» (no original, «Personal care, social protection and miscellaneous goods and services»), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "outubro de 2026, face a setembro de 2026"
+provisorio = false
+mostra = "0,62 %"
+
+[[linha]]
+id = "classe13_mensal_out25"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TIII-PT (quadro III, taxas de variação mensal, no original «Monthly rates (%)»), linha «Personal care, social protection and miscellaneous goods and services», coluna de outubro de 2025, o décimo número a seguir a 2025"
+excerto = '''Personal care, social protection and miscellaneous goods and services 2025 0.43 0.6 0.04 0.08 -0.06 0.13 -0.03 0.03 0.32 1.34 0.07 0.25 2026 1.03 0.64 0.39 0.36 -0.19 -0.11 -0.11 0.38 0.12 0.62'''
+valor = "1.34"
+unidade = "%"
+mede = "Taxa de variação mensal do IPC da classe 13 da ECOICOP 2, «Serviços de higiene e cuidados pessoais, proteção social e bens e serv. diversos» (no original, «Personal care, social protection and miscellaneous goods and services»), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "outubro de 2025, face a setembro de 2025"
+provisorio = false
+mostra = "1,34 %"
+
+[[linha]]
+id = "classe13_mensal_vs_ano_antes"
+tipo = "derivado"
+calculo = "classe13_mensal_out - classe13_mensal_out25"
+valor = "-0.72"
+unidade = "pontos percentuais"
+mede = "Variação mensal da classe 13 («Serviços de higiene e cuidados pessoais, proteção social e bens e serv. diversos») em outubro de 2026 menos a de outubro de 2025: o mês que entra na taxa homóloga de outubro face ao que dela sai; negativa quando o mês que entra subiu menos do que o que sai"
+periodo = "outubro de 2026 e outubro de 2025 (variações mensais)"
+compara = "As duas taxas estão na mesma linha da mesma folha (TIII-PT) dos quadros do INE: a mesma medida (taxa de variação mensal), a mesma classe e população (IPC, Portugal, base 2025=100), no mesmo mês do calendário com um ano de intervalo. O destaque (p. 10) diz que a taxa homóloga não é afetada pelas oscilações sazonais perante um padrão estável de sazonalidade; estes números não mostram se o padrão de outubro foi o mesmo nos dois anos. Duas casas decimais, como nos quadros; a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais)."
+mostra = "-0,72 pontos percentuais"
+
+[[linha]]
+id = "classe03_mensal_out"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TIII-PT (quadro III, taxas de variação mensal, no original «Monthly rates (%)»), linha «Clothing and footwear», coluna de outubro de 2026, o último número da linha"
+excerto = '''Clothing and footwear 2025 -14.23 -4.94 21.78 0.82 0.02 -0.71 -13.63 -6.45 22.5 1.8 -0.07 -1.78 2026 -14.29 -5.07 21.67 1.67 0.61 -2.26 -12.82 -6.41 21.51 0.53'''
+valor = "0.53"
+unidade = "%"
+mede = "Taxa de variação mensal do IPC da classe 03 da ECOICOP 2, «Vestuário e calçado» (no original, «Clothing and footwear»), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "outubro de 2026, face a setembro de 2026"
+provisorio = false
+mostra = "0,53 %"
+
+[[linha]]
+id = "classe03_mensal_out25"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TIII-PT (quadro III, taxas de variação mensal, no original «Monthly rates (%)»), linha «Clothing and footwear», coluna de outubro de 2025, o décimo número a seguir a 2025"
+excerto = '''Clothing and footwear 2025 -14.23 -4.94 21.78 0.82 0.02 -0.71 -13.63 -6.45 22.5 1.8 -0.07 -1.78 2026 -14.29 -5.07 21.67 1.67 0.61 -2.26 -12.82 -6.41 21.51 0.53'''
+valor = "1.8"
+unidade = "%"
+mede = "Taxa de variação mensal do IPC da classe 03 da ECOICOP 2, «Vestuário e calçado» (no original, «Clothing and footwear»), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "outubro de 2025, face a setembro de 2025"
+provisorio = false
+mostra = "1,80 %"
+
+[[linha]]
+id = "classe03_mensal_vs_ano_antes"
+tipo = "derivado"
+calculo = "classe03_mensal_out - classe03_mensal_out25"
+valor = "-1.27"
+unidade = "pontos percentuais"
+mede = "Variação mensal da classe 03 («Vestuário e calçado») em outubro de 2026 menos a de outubro de 2025: o mês que entra na taxa homóloga de outubro face ao que dela sai; negativa quando o mês que entra subiu menos do que o que sai"
+periodo = "outubro de 2026 e outubro de 2025 (variações mensais)"
+compara = "As duas taxas estão na mesma linha da mesma folha (TIII-PT) dos quadros do INE: a mesma medida (taxa de variação mensal), a mesma classe e população (IPC, Portugal, base 2025=100), no mesmo mês do calendário com um ano de intervalo. O destaque (p. 10) diz que a taxa homóloga não é afetada pelas oscilações sazonais perante um padrão estável de sazonalidade; estes números não mostram se o padrão de outubro foi o mesmo nos dois anos. Duas casas decimais, como nos quadros; a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais)."
+mostra = "-1,27 pontos percentuais"
 
 [[linha]]
 id = "bens_out"
@@ -920,12 +1319,76 @@ compara = "As duas taxas estão na mesma linha da mesma folha (TII-PT) dos quadr
 mostra = "0,29 pontos percentuais"
 
 [[linha]]
+id = "servicos_jan"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TII-PT (quadro II, taxas de variação homóloga, no original «Annual rates (%)»), linha «Services», coluna de janeiro de 2026, o primeiro número a seguir a 2026"
+excerto = '''Services 2025 4.51 3.77 3.4 4.47 3.98 4.22 4.38 4.38 3.56 3.82 3.57 3.86 2026 3.15 3.38 3.41 3.16 3.42 4.19 4.03 3.95 4.4 4.69'''
+valor = "3.15"
+unidade = "%"
+mede = "Taxa de variação homóloga do IPC do agregado especial dos serviços (no original, «Services»), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "janeiro de 2026, face a janeiro de 2025"
+provisorio = false
+mostra = "3,15 %"
+
+[[linha]]
+id = "servicos_out_vs_jan"
+tipo = "derivado"
+calculo = "servicos_out - servicos_jan"
+valor = "1.54"
+unidade = "pontos percentuais"
+mede = "Taxa de variação homóloga dos serviços em outubro de 2026 menos a de janeiro de 2026"
+periodo = "janeiro e outubro de 2026 (taxas homólogas)"
+compara = "As duas taxas estão na mesma linha do mesmo quadro dos quadros do destaque: a mesma medida (taxa de variação homóloga), o mesmo agregado e a mesma população, e a mesma estrutura de ponderação de 2026. Cada taxa compara o seu mês com o mesmo mês de 2025, pelo que a diferença mostra quanto a taxa homóloga se moveu entre janeiro e outubro, não quanto subiram os preços nesse período. Duas casas decimais, como nos quadros; a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais)."
+mostra = "1,54 pontos percentuais"
+
+[[linha]]
+id = "servicos_mensal_out"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TIII-PT (quadro III, taxas de variação mensal, no original «Monthly rates (%)»), linha «Services», coluna de outubro de 2026, o último número da linha"
+excerto = '''Services 2025 0.47 0.27 0.85 1.76 0.42 0.14 0.41 0.6 -0.56 -0.38 -0.87 0.71 2026 -0.22 0.5 0.88 1.51 0.68 0.88 0.26 0.53 -0.13 -0.11'''
+valor = "-0.11"
+unidade = "%"
+mede = "Taxa de variação mensal do IPC do agregado especial dos serviços (no original, «Services»), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "outubro de 2026, face a setembro de 2026"
+provisorio = false
+mostra = "-0,11 %"
+
+[[linha]]
+id = "servicos_mensal_out25"
+tipo = "valor"
+fonte = "ine_ipc_out2026_quadros"
+onde = "Quadros do destaque, folha TIII-PT (quadro III, taxas de variação mensal, no original «Monthly rates (%)»), linha «Services», coluna de outubro de 2025, o décimo número a seguir a 2025"
+excerto = '''Services 2025 0.47 0.27 0.85 1.76 0.42 0.14 0.41 0.6 -0.56 -0.38 -0.87 0.71 2026 -0.22 0.5 0.88 1.51 0.68 0.88 0.26 0.53 -0.13 -0.11'''
+valor = "-0.38"
+unidade = "%"
+mede = "Taxa de variação mensal do IPC do agregado especial dos serviços (no original, «Services»), com duas casas decimais"
+populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
+periodo = "outubro de 2025, face a setembro de 2025"
+provisorio = false
+mostra = "-0,38 %"
+
+[[linha]]
+id = "servicos_mensal_vs_ano_antes"
+tipo = "derivado"
+calculo = "servicos_mensal_out - servicos_mensal_out25"
+valor = "0.27"
+unidade = "pontos percentuais"
+mede = "Variação mensal dos serviços em outubro de 2026 menos a de outubro de 2025: o mês que entra na taxa homóloga de outubro face ao que dela sai; os preços dos serviços desceram nos dois meses, menos em 2026"
+periodo = "outubro de 2026 e outubro de 2025 (variações mensais)"
+compara = "As duas taxas estão na mesma linha do mesmo quadro dos quadros do destaque: a mesma medida (taxa de variação mensal), o mesmo agregado e a mesma população (IPC, Portugal), no mesmo mês do calendário com um ano de intervalo. O destaque (p. 10) diz que a taxa homóloga não é afetada pelas oscilações sazonais perante um padrão estável de sazonalidade; estes números não mostram se o padrão de outubro foi o mesmo nos dois anos. Duas casas decimais, como nos quadros; a diferença herda o arredondamento de ambas (até 0,01 pontos percentuais)."
+mostra = "0,27 pontos percentuais"
+
+[[linha]]
 id = "contribuicoes_maiores"
 tipo = "ato"
 fonte = "ine_ipc_out2026"
 onde = "p. 3, primeiro parágrafo (sobre a Figura 3)"
 excerto = '''Em outubro, nas classes com maiores contribuições positivas para a variação homóloga do IPC (ver figura 3), destacam-se a dos Transportes (classe 7) e dos Restaurantes e serviços de alojamento (classe 11). Em sentido contrário, apenas se registou uma contribuição negativa, na classe do Vestuário e calçado (classe 3).'''
-diz = "O INE destaca os Transportes (classe 7) e os Restaurantes e serviços de alojamento (classe 11) entre as classes com maiores contribuições positivas para a variação homóloga do IPC em outubro de 2026, e escreve que só o Vestuário e calçado (classe 3) teve contribuição negativa; a Figura 3 não imprime os valores das contribuições."
+diz = "O INE destaca os Transportes (classe 7) e os Restaurantes e serviços de alojamento (classe 11) entre as classes com maiores contribuições positivas para a taxa de variação homóloga do IPC de outubro de 2026, isto é, para o nível dessa taxa e não para a sua variação face a setembro; e escreve que só o Vestuário e calçado (classe 3) teve contribuição negativa. A Figura 3 não imprime os valores."
 quem = ""
 quando = "2026-11-11"
 
@@ -935,7 +1398,7 @@ tipo = "ato"
 fonte = "ine_ipc_out2026"
 onde = "p. 3, segundo parágrafo (sobre a Figura 4)"
 excerto = '''Comparando com o mês precedente, destaca-se o aumento da contribuição para a variação homóloga do IPC da classe do Lazer, recreação, desporto e cultura (classe 9), da Informação e comunicação (classe 8) e da Habitação, água, eletricidade, gás e outros combustíveis (classe 4). Em sentido contrário, destacam-se as classes do Vestuário e calçado (classe 3) e dos Serviços de higiene e cuidados pessoais, proteção social e bens e serviços diversos (classe 13).'''
-diz = "O INE destaca, face a setembro de 2026, o aumento da contribuição para a variação homóloga do IPC das classes 9 (Lazer, recreação, desporto e cultura), 8 (Informação e comunicação) e 4 (Habitação, água, eletricidade, gás e outros combustíveis) e, em sentido contrário, as classes 3 (Vestuário e calçado) e 13 (Serviços de higiene e cuidados pessoais, proteção social e bens e serviços diversos); a Figura 4 não imprime os valores."
+diz = "Comparando com setembro de 2026, o INE destaca o aumento da contribuição para a variação homóloga do IPC das classes 9 (Lazer, recreação, desporto e cultura), 8 (Informação e comunicação) e 4 (Habitação, água, eletricidade, gás e outros combustíveis) e, em sentido contrário, as classes 3 (Vestuário e calçado) e 13 (Serviços de higiene e cuidados pessoais, proteção social e bens e serviços diversos). Não diz em quanto, e a Figura 4 não imprime os valores."
 quem = ""
 quando = "2026-11-11"
 
@@ -989,45 +1452,6 @@ compara = "As duas taxas são do mesmo índice harmonizado (IHPC), que o INE apr
 mostra = "-0,1 pontos percentuais"
 
 [[linha]]
-id = "ihpc_subjacente_out"
-tipo = "valor"
-fonte = "ine_ipc_out2026"
-onde = "p. 1, segundo parágrafo"
-excerto = '''Excluindo produtos alimentares não transformados e energéticos, o IHPC em Portugal atingiu uma variação homóloga de 2,9% em outubro (2,7% em setembro), taxa superior à da área do Euro (estimada em 2,2%).'''
-valor = "2.9"
-unidade = "%"
-mede = "Taxa de variação homóloga do IHPC português excluindo produtos alimentares não transformados e energéticos"
-populacao = "IHPC, Portugal: inclui na estrutura de ponderação a despesa realizada pelos não residentes, excluída do âmbito do IPC"
-periodo = "outubro de 2026, face a outubro de 2025"
-provisorio = false
-mostra = "2,9 %"
-
-[[linha]]
-id = "area_euro_subjacente_out"
-tipo = "valor"
-fonte = "ine_ipc_out2026"
-onde = "p. 1, segundo parágrafo"
-excerto = '''Excluindo produtos alimentares não transformados e energéticos, o IHPC em Portugal atingiu uma variação homóloga de 2,9% em outubro (2,7% em setembro), taxa superior à da área do Euro (estimada em 2,2%).'''
-valor = "2.2"
-unidade = "%"
-mede = "Taxa de variação homóloga do IHPC da área do euro excluindo produtos alimentares não transformados e energéticos, estimada (o destaque escreve estimada em 2,2%)"
-populacao = "IHPC, área do euro"
-periodo = "outubro de 2026, face a outubro de 2025"
-provisorio = true
-mostra = "2,2 %"
-
-[[linha]]
-id = "ihpc_subjacente_vs_area"
-tipo = "derivado"
-calculo = "ihpc_subjacente_out - area_euro_subjacente_out"
-valor = "0.7"
-unidade = "pontos percentuais"
-mede = "Taxa de variação homóloga do IHPC português excluindo produtos alimentares não transformados e energéticos menos a da área do euro"
-periodo = "outubro de 2026, face a outubro de 2025"
-compara = "As duas taxas são do mesmo índice harmonizado e do mesmo agregado (excluindo produtos alimentares não transformados e energéticos), a mesma medida e o mesmo mês; a da área do euro é estimada, e o destaque dá a mesma diferença (superior em 0,7 p.p., p. 7)."
-mostra = "0,7 pontos percentuais"
-
-[[linha]]
 id = "area_euro_estimativa"
 tipo = "ato"
 fonte = "ine_ipc_out2026"
@@ -1048,20 +1472,6 @@ quem = ""
 quando = "2026-11-11"
 
 [[linha]]
-id = "rendas_homologa_out"
-tipo = "valor"
-fonte = "ine_ipc_out2026"
-onde = "p. 9, primeiro parágrafo"
-excerto = '''A variação homóloga das rendas de habitação por metro quadrado manteve-se em 5,2% em outubro de 2026.'''
-valor = "5.2"
-unidade = "%"
-mede = "Taxa de variação homóloga do valor médio das rendas de habitação por metro quadrado, que se manteve face ao mês anterior (a Figura 10 chama-lhes rendas efetivas pagas por inquilinos)"
-populacao = "Rendas de habitação, Portugal (o destaque não diz que contratos abrange)"
-periodo = "outubro de 2026, face a outubro de 2025"
-provisorio = false
-mostra = "5,2 %"
-
-[[linha]]
 id = "estimativa_rapida"
 tipo = "ato"
 fonte = "ine_ipc_out2026"
@@ -1070,20 +1480,6 @@ excerto = '''Com arredondamento a uma casa decimal, esta taxa coincide com o val
 diz = "O INE indica que a taxa de variação homóloga de outubro de 2026 que agora publica coincide, com arredondamento a uma casa decimal, com a da estimativa rápida divulgada a 30 de outubro de 2026."
 quem = ""
 quando = "2026-10-30"
-
-[[linha]]
-id = "ipc_estimativa_rapida"
-tipo = "valor"
-fonte = "ine_ipc_out2026"
-onde = "p. 12, Quadro 3 (Valores estimados e definitivos, outubro 2026), linha IPC Total, coluna Var. homóloga (%), Valor estimado"
-excerto = '''Quadro 3 VALORES ESTIMADOS E DEFINITIVOS (OUTUBRO 2026) Quadro 4 DIFERENÇAS ENTRE TAXAS DE VARIAÇÃO HOMÓLOGA ESTIMADAS E DEFINITIVAS Data da próxima estimativa rápida – 30 de novembro de 2026 Data do próximo destaque – 14 de dezembro de 2026 Valor estimado Valor definitivo Valor estimado Valor definitivo Valor estimado Valor definitivo IPC Total 0,18 0,20 3,79 3,80 2,90 2,90'''
-valor = "3.79"
-unidade = "%"
-mede = "Taxa de variação homóloga do IPC de outubro de 2026 na estimativa rápida (Valor estimado), contra 3,80 no Valor definitivo; o quadro arredonda a duas casas decimais"
-populacao = "IPC, Portugal: bens e serviços representativos da estrutura de despesa de consumo da população residente em Portugal"
-periodo = "outubro de 2026, face a outubro de 2025"
-provisorio = false
-mostra = "3,79 %"
 
 [[linha]]
 id = "proximas_datas"
@@ -1133,3 +1529,24 @@ plantas_apanhadas = 0
 achados = 12
 adotados = 10
 veredicto = "passa"
+
+[[leitura]]
+lugar = "especialista"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-15T11:32:41Z"
+fim = "2026-11-15T11:41:32Z"
+impressao = "b362c09489a75622523cc0a857414847784d1e16b12c2f76f27aaccee1ea0890"
+plantas_postas = 0
+plantas_apanhadas = 0
+achados = 18
+adotados = 16
+veredicto = "levanta"
+
+[[passo]]
+nome = "reportagem"
+lugar = "reporter"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-15T11:43:10Z"
+fim = "2026-11-15T11:49:03Z"
