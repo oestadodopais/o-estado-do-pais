@@ -207,10 +207,57 @@ class Resposta:
     erro: str = ""
     redirecao: str = ""  # where a 3xx answer points, as curl reads it
     nota: str = ""  # said to the caller, e.g. that the request was tried again over HTTP/1.1
+    http11: bool = False  # the default protocol failed and HTTP/1.1 answered: the host is remembered for it
 
 
-def transporte_curl(url: str, destino: Path, metodo: str = "GET", endereco: str | None = None) -> Resposta:
-    """One request, redirects off. `endereco` pins the address curl connects to."""
+class Memoria:
+    """What each host did not answer, kept in `hosts.json` in the store's folder, next to
+    `sha256/` (ORDEM esq2, item D). It is a cache: losing it loses nothing but time. It
+    changes only how a host is asked, never what is allowed: the public-host rule,
+    robots.txt, the rights record and the redirect limit are applied exactly as without it.
+
+    * `sem_head`: the host did not answer a HEAD request (a transport error, 405 or 501),
+      so the fetcher goes straight to its path for such a server: GET from that address.
+    * `http11`: a request failed over the default protocol and was answered over
+      HTTP/1.1, so the host is asked over HTTP/1.1 first.
+    """
+
+    CHAVES = ("sem_head", "http11")
+
+    def __init__(self, ficheiro: Path | None):
+        self.ficheiro = Path(ficheiro) if ficheiro is not None else None
+        self.dados: dict = {}
+        if self.ficheiro is not None and self.ficheiro.is_file():
+            try:
+                lido = json.loads(self.ficheiro.read_text(encoding="utf-8"))
+                self.dados = lido if isinstance(lido, dict) else {}
+            except (OSError, ValueError):
+                self.dados = {}  # a damaged cache is an empty one
+
+    def sabe(self, host: str, chave: str) -> bool:
+        return bool((self.dados.get((host or "").lower()) or {}).get(chave))
+
+    def marcar(self, host: str, chave: str):
+        host = (host or "").lower()
+        if not host or self.sabe(host, chave):
+            return
+        self.dados.setdefault(host, {})[chave] = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        if self.ficheiro is not None:
+            self.ficheiro.parent.mkdir(parents=True, exist_ok=True)
+            temporario = self.ficheiro.with_name(self.ficheiro.name + ".parcial")
+            temporario.write_text(json.dumps(self.dados, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+            temporario.replace(self.ficheiro)
+
+
+def memoria_da_loja(raiz: Path) -> Memoria:
+    return Memoria(Path(raiz) / "hosts.json")
+
+
+def transporte_curl(url: str, destino: Path, metodo: str = "GET", endereco: str | None = None,
+                    primeiro_http11: bool = False) -> Resposta:
+    """One request, redirects off. `endereco` pins the address curl connects to. With
+    `primeiro_http11` (a host remembered for it) HTTP/1.1 is asked first, and the default
+    protocol is the one tried again."""
     curl = shutil.which("curl")
     if curl is None:
         raise ErroDaLoja("curl is not installed here, and fonte fetches only through curl")
@@ -231,15 +278,17 @@ def transporte_curl(url: str, destino: Path, metodo: str = "GET", endereco: str 
         except subprocess.TimeoutExpired:
             raise ErroDaLoja(f"{url}: curl did not finish in 180 seconds") from None
 
-    r = correr(args)
-    nota = ""
+    r = correr(args + (["--http1.1"] if primeiro_http11 else []))
+    nota, http11 = "", False
     # A failure of transport (not a bad address, not a size limit) is tried once more over
     # HTTP/1.1: some hosts fail over HTTP/2 ("Invalid HTTP header field was received").
     if r.returncode not in (0, 1, 3, 6, 47, 63):
         primeiro = (r.stderr or "").strip() or f"curl exit {r.returncode}"
-        r = correr(args + ["--http1.1"])
-        nota = f"{url}: curl failed ({primeiro}); tried once more with --http1.1, which " + (
+        r = correr(args + ([] if primeiro_http11 else ["--http1.1"]))
+        outro = "without --http1.1" if primeiro_http11 else "with --http1.1"
+        nota = f"{url}: curl failed ({primeiro}); tried once more {outro}, which " + (
             "succeeded" if r.returncode == 0 else f"failed too (curl exit {r.returncode})")
+        http11 = r.returncode == 0 and not primeiro_http11
     try:
         dados = json.loads(r.stdout) if r.stdout.strip() else {}
     except json.JSONDecodeError:
@@ -254,6 +303,7 @@ def transporte_curl(url: str, destino: Path, metodo: str = "GET", endereco: str 
         erro=(r.stderr or str(dados.get("errormsg") or "")).strip(),
         redirecao=str(dados.get("redirect_url") or ""),
         nota=nota,
+        http11=http11,
     )
 
 
@@ -346,13 +396,21 @@ def robots_decide(texto: str, url: str) -> bool:
     return melhor is None or melhor[1] == "allow"
 
 
-def _um_pedido(url: str, raiz: Path, transporte, resolver, metodo: str = "GET", guardar_em: Path | None = None):
+def _um_pedido(url: str, raiz: Path, transporte, resolver, metodo: str = "GET", guardar_em: Path | None = None,
+               memoria: Memoria | None = None):
     """One request to a checked public address. Returns (answer, bytes); the bytes are
-    kept in `guardar_em` when given, and otherwise discarded."""
+    kept in `guardar_em` when given, and otherwise discarded. A host remembered for
+    HTTP/1.1 is asked over it first; one that answers only over it is remembered."""
     endereco = endereco_publico(url, resolver)
+    host = urllib.parse.urlsplit(url).hostname or ""
     temporario = guardar_em or _temporario(raiz)
     try:
-        r = transporte(url, temporario, metodo, endereco)
+        if memoria is not None and memoria.sabe(host, "http11"):
+            r = transporte(url, temporario, metodo, endereco, primeiro_http11=True)
+        else:
+            r = transporte(url, temporario, metodo, endereco)
+        if memoria is not None and getattr(r, "http11", False):
+            memoria.marcar(host, "http11")
         dados = temporario.read_bytes() if temporario.exists() else b""
     finally:
         if guardar_em is None:
@@ -360,12 +418,13 @@ def _um_pedido(url: str, raiz: Path, transporte, resolver, metodo: str = "GET", 
     return r, dados
 
 
-def robots_permite(url: str, raiz: Path, transporte=transporte_curl, resolver=resolver_dns) -> tuple[bool, str]:
+def robots_permite(url: str, raiz: Path, transporte=transporte_curl, resolver=resolver_dns,
+                   memoria: Memoria | None = None) -> tuple[bool, str]:
     partes = urllib.parse.urlsplit(url)
     endereco = f"{partes.scheme}://{partes.netloc}/robots.txt"
     for salto in range(MAX_SALTOS + 1):
         try:
-            r, dados = _um_pedido(endereco, raiz, transporte, resolver)
+            r, dados = _um_pedido(endereco, raiz, transporte, resolver, memoria=memoria)
         except ErroDaLoja as e:
             return False, f"{endereco}: {e}"
         if r.saida != 0 or r.http == 0:
@@ -387,19 +446,26 @@ def robots_permite(url: str, raiz: Path, transporte=transporte_curl, resolver=re
     return True, "unreachable branch"
 
 
-def seguir(url: str, raiz: Path, transporte=transporte_curl, resolver=resolver_dns) -> tuple[Resposta | None, str, int]:
+def seguir(url: str, raiz: Path, transporte=transporte_curl, resolver=resolver_dns,
+           memoria: Memoria | None = None) -> tuple[Resposta | None, str, int]:
     """Follow redirects here, at most five, with HEAD requests. At every hop, the first
     included: an https or http address, a host whose every address is public, and its
     robots.txt obeyed. Returns (the last answer, the address it answered for, the hops
     used); the answer is None when the server does not answer HEAD (an error, 405 or
-    501), and the caller then goes on with GET from that address."""
+    501), and the caller then goes on with GET from that address. A host remembered for
+    not answering HEAD is not asked it again: after the same checks, the answer is None."""
     for salto in range(MAX_SALTOS + 1):
         endereco_publico(url, resolver)
-        permite, razao = robots_permite(url, raiz, transporte, resolver)
+        permite, razao = robots_permite(url, raiz, transporte, resolver, memoria)
         if not permite:
             raise ErroDaLoja(f"refused: {razao}")
-        r, _ = _um_pedido(url, raiz, transporte, resolver, "HEAD")
+        host = urllib.parse.urlsplit(url).hostname or ""
+        if memoria is not None and memoria.sabe(host, "sem_head"):
+            return None, url, salto
+        r, _ = _um_pedido(url, raiz, transporte, resolver, "HEAD", memoria=memoria)
         if r.saida != 0 or r.http in (405, 501):
+            if memoria is not None:
+                memoria.marcar(host, "sem_head")
             return None, url, salto
         if r.http in REDIRECOES and r.redirecao:
             if salto == MAX_SALTOS:
@@ -431,7 +497,7 @@ def resumo_da_copia(dados: bytes, tipo: str) -> str:
 
 
 def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, termos: bool = False,
-           resolver=resolver_dns, pequeno: bool = False, avisos: list | None = None) -> str:
+           resolver=resolver_dns, pequeno: bool = False, avisos: list | None = None, memoria: Memoria | None = None) -> str:
     """Fetch, store, and return the table to paste. Raises ErroDaLoja; a refusal stores nothing.
 
     The redirects are followed here (see `seguir`); the rights record of the host
@@ -439,16 +505,17 @@ def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, t
     document is downloaded; curl itself never follows a redirect. With `termos`, the address is a publisher's terms page: no record is asked for,
     and the printed table is the beginning of one.
     """
+    memoria = memoria if memoria is not None else memoria_da_loja(raiz)
     if avisos is not None:  # every request's note (a retry over HTTP/1.1) reaches the caller
         base = transporte
 
-        def transporte(u, destino, metodo="GET", endereco=None):
-            r = base(u, destino, metodo, endereco)
+        def transporte(u, destino, metodo="GET", endereco=None, **kw):
+            r = base(u, destino, metodo, endereco, **kw)
             if r.nota:
                 avisos.append(r.nota)
             return r
 
-    r_head, final, saltos = seguir(url, raiz, transporte, resolver)
+    r_head, final, saltos = seguir(url, raiz, transporte, resolver, memoria)
     if r_head is not None and not 200 <= r_head.http <= 299:
         raise ErroDaLoja(f"refused: {final} answered {r_head.http}")
     temporario = _temporario(raiz)
@@ -462,7 +529,7 @@ def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, t
             if not termos and direitos_de is not None:
                 direitos_de(host_final)
             temporario.unlink(missing_ok=True)
-            r, dados = _um_pedido(final, raiz, transporte, resolver, "GET", guardar_em=temporario)
+            r, dados = _um_pedido(final, raiz, transporte, resolver, "GET", guardar_em=temporario, memoria=memoria)
             if r.saida != 0:
                 raise ErroDaLoja(f"{final} could not be fetched ({r.erro or 'curl exit ' + str(r.saida)})")
             if r.http in REDIRECOES and r.redirecao:
@@ -471,7 +538,7 @@ def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, t
                 saltos += 1
                 final = urllib.parse.urljoin(final, r.redirecao)
                 endereco_publico(final, resolver)
-                permite, razao = robots_permite(final, raiz, transporte, resolver)
+                permite, razao = robots_permite(final, raiz, transporte, resolver, memoria)
                 if not permite:
                     raise ErroDaLoja(f"refused: {razao}")
                 continue
@@ -511,7 +578,7 @@ def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, t
 
 
 def com_pagina(tabela: str, pagina: str, raiz: Path, direitos_de=None, transporte=transporte_curl,
-               resolver=resolver_dns, avisos: list | None = None) -> str:
+               resolver=resolver_dns, avisos: list | None = None, memoria: Memoria | None = None) -> str:
     """The source's table with `pagina` and `pagina_sha256` added: the publisher's own page
     for the document, fetched and stored by `buscar` under the same rules as a source
     (public host, robots.txt, a rights record for its host, a 2xx answer). `pagina` is the
@@ -519,5 +586,5 @@ def com_pagina(tabela: str, pagina: str, raiz: Path, direitos_de=None, transport
     import tomllib
 
     lida = tomllib.loads(buscar(pagina, raiz, direitos_de=direitos_de, transporte=transporte,
-                                resolver=resolver, avisos=avisos))["fonte"][0]
+                                resolver=resolver, avisos=avisos, memoria=memoria))["fonte"][0]
     return tabela + f"pagina = {_toml_texto(lida['url_final'])}\npagina_sha256 = {_toml_texto(lida['sha256'])}\n"
