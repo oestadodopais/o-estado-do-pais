@@ -65,8 +65,45 @@ def _vinculo(n, peca: Peca, razoes, notas=None):
 # --------------------------------------------------------------------------- 1
 
 
+PALAVRAS_DO_DIARIO, FIGURAS_DO_DIARIO = 500, 12
+
+
+def tamanho(peca: Peca) -> tuple[int, int]:
+    """(words of the text, figures printed), as docs/ESPEC-PECA.md counts them (edit of 15
+    November 2026, 13:17 UTC). Words: the corpo as a reader sees it, the three closing
+    headings left out, each printed line one word, tied words as their words, and a word any
+    run of characters between spaces that holds a letter or a digit (so Markdown's marks and
+    a table's pipes are not words). Figures: the valor and derivado lines printed by `{id}` in
+    the title, the lead and the text, each time they are printed."""
+    linhas = [l for l in peca.corpo.split("\n") if not (l.startswith("## ") and l[3:].strip() in forma.FECHO)]
+    corpo = "\n".join(linhas)
+    partes, pos = [], 0
+    for r in referencias(corpo):
+        partes.append(corpo[pos : r.inicio])
+        partes.append(" X " if r.forma == "simples" else " " + r.palavras + " ")
+        pos = r.fim
+    partes.append(corpo[pos:])
+    palavras = sum(1 for p in "".join(partes).split() if re.search(r"[^\W_]", p))
+    figuras = sum(1 for _, texto in textos_do_leitor(peca) for r in referencias(texto)
+                  if r.forma == "simples" and peca.linhas.get(r.ids[0], {}).get("tipo") in ("valor", "derivado"))
+    return palavras, figuras
+
+
+def nota_de_tamanho(peca: Peca) -> list[str]:
+    """The size of a kind is said, not enforced: a note when a diario passes 500 words of text
+    or prints more than twelve figures."""
+    if peca.cabeca.get("tipo") != "diario":
+        return []
+    palavras, figuras = tamanho(peca)
+    if palavras <= PALAVRAS_DO_DIARIO and figuras <= FIGURAS_DO_DIARIO:
+        return []
+    return [f"a diario of {palavras} words of text and {figuras} printed figures; the foundation gives a daily item "
+            f"200 to {PALAVRAS_DO_DIARIO} words and about eight figures (said, not enforced: {PALAVRAS_DO_DIARIO} words "
+            f"and {FIGURAS_DO_DIARIO} figures are where this note starts)"]
+
+
 def check1(peca: Peca) -> Resultado:
-    razoes, notas = [], []
+    razoes, notas = [], nota_de_tamanho(peca)
     for onde, texto in textos_do_leitor(peca):
         for ref in referencias(texto):
             for i in ref.ids:
@@ -112,13 +149,24 @@ def check1(peca: Peca) -> Resultado:
 # --------------------------------------------------------------------------- 2
 
 
+PARAGRAFO = re.compile(r"(?<![^\W\d_])par[aá]grafos?(?![^\W\d_])", re.IGNORECASE)
+
+
+def notas_de_onde(peca: Peca) -> list[str]:
+    """An `onde` that names a paragraph: the stored text has no paragraph breaks, so nobody
+    downstream can check one (docs/ESPEC-PECA.md, check 2, edit of 15 November 2026, 13:17 UTC).
+    A note, not a failure."""
+    return [f"{lid}: onde names a paragraph ({l.get('onde')!r}); the stored text has no paragraph breaks, so name the page, "
+            "and for a table its sheet and row" for lid, l in peca.linhas.items() if PARAGRAFO.search(str(l.get("onde", "")))]
+
+
 def check2(peca: Peca, loja: Path | None) -> Resultado:
     if loja is None or not Path(loja).is_dir():
         porque = "OEDP_FONTES is not set" if loja is None else f"the store {loja} does not exist here"
         if peca.publicada:
             return _r(2, peca.id, [f"{porque}, and a published piece must be checked against its sources"])
-        return Resultado(2, peca.id, NAO_CORRIDO, [porque], [])
-    razoes, notas, em_falta = [], [], []
+        return Resultado(2, peca.id, NAO_CORRIDO, [porque], notas_de_onde(peca))
+    razoes, notas, em_falta = [], notas_de_onde(peca), []
     textos: dict[str, list[str]] = {}
     for fid, f in peca.fontes.items():
         try:
@@ -166,8 +214,18 @@ def check2(peca: Peca, loja: Path | None) -> Resultado:
             notas.append(f"{lid}: found on p. {achada}, not on p. {pedida} named in onde")
         elif len(paginas) > 1:
             notas.append(f"{lid}: found on p. {achada}")
-        if l.get("tipo") == "valor" and not numeros.contem_figura(fontes.normalizar(str(l.get("excerto", ""))), str(l.get("valor", ""))):
+        if l.get("tipo") != "valor":
+            continue
+        lugares = numeros.ocorrencias(fontes.normalizar(str(l.get("excerto", ""))), str(l.get("valor", "")))
+        n = l.get("ocorrencia")
+        if not lugares:
             razoes.append(f"{lid}: the excerpt does not hold valor {l.get('valor')} as a source would print it")
+        elif isinstance(n, int) and not isinstance(n, bool) and n > len(lugares):
+            razoes.append(f"{lid}: ocorrencia = {n}, but the figure {l.get('valor')} occurs {len(lugares)} "
+                          f"time{'s' if len(lugares) > 1 else ''} in the excerpt")
+        elif len(lugares) > 1 and "ocorrencia" not in l:
+            notas.append(f"{lid}: the figure {l.get('valor')} occurs {len(lugares)} times in the excerpt and the line has "
+                         "no ocorrencia, so the page marks none of them")
     if em_falta:
         if peca.publicada:
             razoes.extend(em_falta)

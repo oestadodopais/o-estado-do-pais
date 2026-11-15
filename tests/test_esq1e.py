@@ -233,7 +233,9 @@ class Paginas(unittest.TestCase):
         self.assertEqual(posicoes, sorted(posicoes))
 
     def test_10_todo_o_mostra_na_letra_das_figuras(self):
-        self.assertIn('<summary><span class="figura">um terço</span></summary>', self.ler("pecas/2026-11-16-peca-de-ensaio/index.html"))
+        # Closed, a receipt shows the figure and then what it measures (ESQ3, item C).
+        self.assertIn('<summary><span class="figura">um terço</span> <span class="mede">Inquiridos de ensaio que responderam</span></summary>',
+                      self.ler("pecas/2026-11-16-peca-de-ensaio/index.html"))
 
     def test_11_coluna_centrada_e_nome_sem_ligacao_na_primeira(self):
         css = (REPO / "public" / "estilo.css").read_text(encoding="utf-8")

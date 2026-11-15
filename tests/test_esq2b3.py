@@ -14,7 +14,8 @@ from tests.apoio import REPO, Plantada
 ORDEM = {
     "valor": ["O que mede", "A quem se refere", "Período", "Fonte", "Onde está", "Excerto", "Lido a", "(ligação)"],
     "citacao": ["Quem disse", "Quando", "Fonte", "Onde está", "Lido a", "(ligação)"],
-    "ato": ["O que o documento estabelece", "Excerto", "Fonte", "Onde está", "Quando", "Lido a", "(ligação)"],
+    # What the document establishes is the summary, and is not printed a second time (ESQ3, item C).
+    "ato": ["Excerto", "Fonte", "Onde está", "Quando", "Lido a", "(ligação)"],
 }
 
 

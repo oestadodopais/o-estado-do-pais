@@ -67,13 +67,13 @@ class Ancoras(unittest.TestCase):
 
     def test_planta_ancora_no_summary(self):
         erros = self._plantar(lambda t: t.replace(
-            '<summary><span class="figura">104,7 pontos</span></summary><span class="ancora" id="r-indice"></span>',
-            '<summary id="r-indice"><span class="figura">104,7 pontos</span></summary>', 1))
+            '<summary><span class="figura">104,7 pontos</span> <span class="mede">Índice de ensaio, inventado para os ensaios</span></summary><span class="ancora" id="r-indice"></span>',
+            '<summary id="r-indice"><span class="figura">104,7 pontos</span> <span class="mede">Índice de ensaio, inventado para os ensaios</span></summary>', 1))
         self.assertTrue(any("#r-indice" in x and "<summary>" in x for x in erros), erros)
 
     def test_planta_ancora_dentro_do_summary(self):
         erros = self._plantar(lambda t: t.replace(
-            '<summary><span class="figura">104,7 pontos</span></summary><span class="ancora" id="r-indice"></span>',
+            '<summary><span class="figura">104,7 pontos</span> <span class="mede">Índice de ensaio, inventado para os ensaios</span></summary><span class="ancora" id="r-indice"></span>',
             '<summary><span class="figura" id="r-indice">104,7 pontos</span></summary>', 1))
         self.assertTrue(any("#r-indice" in x and "inside a <summary>" in x for x in erros), erros)
 

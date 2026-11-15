@@ -93,6 +93,45 @@ def normalizar(texto: str) -> str:
     return re.sub(r"\s+", " ", texto).strip()
 
 
+def normalizar_com_mapa(texto: str) -> tuple[str, list[tuple[int, int]]] | None:
+    """`normalizar(texto)`, and for each of its characters the span (start, end) of the
+    characters of `texto` it came from; None when the two cannot be matched.
+
+    The page marks a figure inside the excerpt as the piece file prints it, and check 2
+    finds the figure in the normalised excerpt, so the place found there is carried back
+    here (ORDEM esq3, item D). Each base character is normalised with the combining marks
+    that follow it, which gives NFKC's own result in every case but a few scripts this
+    project does not quote (Hangul jamo, for one); the result is compared with
+    `normalizar` and, when they differ, None is returned and nothing is marked."""
+    partes: list[tuple[str, int, int]] = []  # (normalised characters, start, end in texto)
+    i = 0
+    while i < len(texto):
+        j = i + 1
+        while j < len(texto) and unicodedata.combining(texto[j]):
+            j += 1
+        for c in unicodedata.normalize("NFKC", texto[i:j]).replace("­", ""):
+            partes.append((c, i, j))
+        i = j
+    saida: list[str] = []
+    mapa: list[tuple[int, int]] = []
+    for c, a, b in partes:
+        if re.match(r"\s", c):
+            if saida and saida[-1] == " ":
+                mapa[-1] = (mapa[-1][0], b)  # a run of white space is one space
+                continue
+            c = " "
+        saida.append(c)
+        mapa.append((a, b))
+    while saida and saida[0] == " ":
+        saida.pop(0)
+        mapa.pop(0)
+    while saida and saida[-1] == " ":
+        saida.pop()
+        mapa.pop()
+    normalizado = "".join(saida)
+    return (normalizado, mapa) if normalizado == normalizar(texto) else None
+
+
 class _SemEtiquetas(html.parser.HTMLParser):
     SALTAR = {"script", "style", "noscript", "template"}
 

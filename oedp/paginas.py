@@ -15,7 +15,7 @@ from decimal import ROUND_HALF_UP, Decimal
 
 import markdown
 
-from . import datas, derivacoes, numeros
+from . import datas, derivacoes, fontes, numeros
 from .forma import FECHO
 from .peca import Peca, ordem_de_uso, referencias, seccao_do_corpo
 
@@ -94,17 +94,65 @@ def _ligacao(peca: Peca, lid: str, modo: str) -> str | None:
 NBSP = "\u00a0"
 # A number (with its thousands groups and decimals) and the space after it.
 _NUMERO_E_ESPACO = re.compile(r"(\d{1,3}(?:[ \u00a0\u202f]\d{3})+|\d+)((?:[.,]\d+)*)(?:\.º|º|ª)?[ \u00a0\u202f](?=\S)")
+# A range inside tied words, «de 1 a 4 trabalhadores»: the «a» between two numbers.
+_INTERVALO = re.compile(r"(?<=\d)[ \u00a0\u202f]a[ \u00a0\u202f](?=\d)")
+_ESPACO = re.compile(r"[ \u00a0\u202f]")
+
+
+def _juntar(texto: str) -> str:
+    return texto.replace(" ", NBSP).replace("\u202f", NBSP)
 
 
 def sem_quebra(texto: str, linha_impressa: bool) -> str:
-    """A printed line never breaks; inside tied words a number stays with the next word."""
+    """Where a line may not break (docs/ESPEC-PAGINAS.md, Figures, edit of 15 November 2026,
+    13:09 UTC).
+
+    A printed line (`linha_impressa`, a mostra) never breaks inside its number, nor between
+    the number and a unit that is a symbol or one word («4,40 %», «58,8 ‰»); before a unit
+    of two words or more («0,19» then «pontos percentuais») it may. This module's reading:
+    a scale word the figure is read with («mil», «milhões», as `numeros.FIGURA` reads it)
+    is part of the number, so «602,5 mil» stays whole and may break before «postos de
+    trabalho». A mostra with no figure («um terço») is kept whole, as before.
+
+    Inside tied words, a number stays with the word that follows it, and a range «N a M»
+    stays whole."""
     if linha_impressa:
-        return re.sub(r"[ \u202f]", NBSP, texto)
+        m = numeros.FIGURA.search(texto)
+        if m is None:
+            return _juntar(texto)
+        antes, figura, depois = texto[: m.start()], _juntar(m.group(0)), texto[m.end() :]
+        unidade = depois.strip(" \u00a0\u202f")
+        if depois[:1] and _ESPACO.match(depois[:1]) and unidade and not _ESPACO.search(unidade):
+            depois = NBSP + unidade  # a symbol or one word goes with its number
+        return antes + figura + depois
+    texto = _NUMERO_E_ESPACO.sub(lambda m: _juntar(m.group(0)), texto)
+    return _INTERVALO.sub(NBSP + "a" + NBSP, texto)
 
-    def junta(m):
-        return m.group(0).replace(" ", NBSP).replace("\u202f", NBSP)
 
-    return _NUMERO_E_ESPACO.sub(junta, texto)
+# In an excerpt and in `onde`: a space between two digits («1 617») and the space after «p.»
+# before a number are not places to break. Each is one character replaced by one, so a place
+# found in the excerpt (the mark, `_excerto`) is the same place after it.
+_ENTRE_DIGITOS = re.compile(r"(?<=\d) (?=\d)")
+_PAGINA = re.compile(r"(?<![^\W\d_])(p\.) (?=\d)")
+
+
+def sem_quebra_na_fonte(texto: str) -> str:
+    return _PAGINA.sub(r"\1" + NBSP, _ENTRE_DIGITOS.sub(NBSP, texto))
+
+
+# Two links to receipts with nothing, or only white space (or the empty anchor of a first
+# use), between them: the second gets the class `encostada`, which the stylesheet sets
+# apart by a gap (docs/ESPEC-PAGINAS.md, Links, edit of 15 November 2026, 13:09 UTC).
+_LIGACAO_A_RECIBO = re.compile(r'<a class="(ref|ligada)"[^>]*>.*?</a>', re.S)
+_SO_ESPACO = re.compile(r'(?:\s|<span id="u-[a-z0-9_]+"></span>)*')
+
+
+def marcar_encostadas(fragmento: str) -> str:
+    achadas = list(_LIGACAO_A_RECIBO.finditer(fragmento))
+    marcar = [b.end(1) for a, b in zip(achadas, achadas[1:]) if _SO_ESPACO.fullmatch(fragmento, a.end(), b.start())]
+    for pos in reversed(marcar):
+        fragmento = fragmento[:pos] + " encostada" + fragmento[pos:]
+    return fragmento
 
 
 def _html_da_referencia(peca: Peca, r, modo: str, primeiros: set | None = None) -> str:
@@ -136,7 +184,7 @@ def em_linha(peca: Peca, texto: str, modo: str = "aqui", primeiros: set | None =
         partes.append(_html_da_referencia(peca, r, modo, primeiros))
         pos = r.fim
     partes.append(e(texto[pos:]))
-    return "".join(partes)
+    return marcar_encostadas("".join(partes))
 
 
 def texto_simples(peca: Peca, texto: str) -> str:
@@ -167,7 +215,7 @@ def markdown_com_referencias(peca: Peca | None, texto: str, modo: str = "aqui", 
     saida = markdown.markdown("".join(partes), extensions=["tables"], output_format="html")
     for marca, conteudo in trocas.items():
         saida = saida.replace(marca, conteudo)
-    return saida
+    return marcar_encostadas(saida)
 
 
 # --------------------------------------------------------------------------- the frame of every page
@@ -192,6 +240,11 @@ def sem_ligacoes_a_si(html_da_pagina: str, aqui: str | None) -> str:
 
 def pagina(ctx: Contexto, titulo: str, corpo: str, *, inicio: bool = False, meta: str = "", aqui: str | None = None) -> str:
     """The frame of every page; `aqui` is the page's own public address."""
+    # The AI line links to the Method page; on the Method page itself the link is not
+    # printed at all, and the line ends at its full stop (docs/ESPEC-PAGINAS.md, edit of
+    # 15 November 2026, 13:09 UTC).
+    ia_ligacao = "" if aqui == "/metodo/" else f' <a href="/metodo/">{e(ctx.t("ia_ligacao"))}</a>'
+
     robots = "" if ctx.lancamento else '<meta name="robots" content="noindex, nofollow">\n'
     nome = e(ctx.t("nome"))
     # The name links to the front page on every other page, the one link not underlined;
@@ -214,7 +267,7 @@ def pagina(ctx: Contexto, titulo: str, corpo: str, *, inicio: bool = False, meta
 <a class="saltar" href="#conteudo">{e(ctx.t("saltar"))}</a>
 <div class="wrap">
 <header class="cabecalho">
-<p class="rotulo-ia-linha">{e(ctx.t("ia_linha"))} <a href="/metodo/">{e(ctx.t("ia_ligacao"))}</a></p>
+<p class="rotulo-ia-linha">{e(ctx.t("ia_linha"))}{ia_ligacao}</p>
 <div class="masthead">{marca}</div>
 <nav class="menu">
 <a href="/">{e(ctx.t("nav_inicio"))}</a>
@@ -309,25 +362,96 @@ def _fonte_dl(ctx, peca, linha) -> str:
         ligacoes += f'<dd class="abrir"><a href="{e(str(f["pagina"]))}" rel="noopener noreferrer">{e(ctx.t("r_pagina"))}</a></dd>'
     return (
         f'<dt>{e(ctx.t("r_fonte"))}</dt><dd>{e(str(f.get("titulo", "")))} · {e(str(f.get("editor", "")))}</dd>'
-        f'<dt>{e(ctx.t("r_onde"))}</dt><dd>{e(str(linha.get("onde", "")))}</dd>'
+        f'<dt>{e(ctx.t("r_onde"))}</dt><dd>{e(sem_quebra_na_fonte(str(linha.get("onde", ""))))}</dd>'
     ), (
         f'<dt>{e(ctx.t("r_lido"))}</dt><dd>{e(_data_de(f.get("lido_em")))}</dd>'
         + ligacoes
     )
 
 
+def lugar_da_figura(linha: dict) -> tuple[int, int] | None:
+    """Where the page marks a `valor` line's figure in its excerpt (the excerpt stripped, as
+    the page prints it): (start, end), or None when nothing is marked.
+
+    The places are those check 2 finds (`numeros.ocorrencias`, on the normalised excerpt),
+    carried back to the excerpt's own characters by `fontes.normalizar_com_mapa`. One place:
+    it is marked. `ocorrencia = n`: the n-th is marked. More than one and no `ocorrencia`:
+    none (docs/ESPEC-PECA.md and ESPEC-PAGINAS.md, edits of 15 November 2026)."""
+    if linha.get("tipo") != "valor":
+        return None
+    par = fontes.normalizar_com_mapa(str(linha.get("excerto", "")).strip())
+    if par is None:
+        return None
+    normalizado, mapa = par
+    lugares = numeros.ocorrencias(normalizado, str(linha.get("valor", "")))
+    n = linha.get("ocorrencia")
+    if isinstance(n, int) and not isinstance(n, bool):
+        if not 1 <= n <= len(lugares):
+            return None
+        a, b = lugares[n - 1]
+    elif len(lugares) == 1:
+        a, b = lugares[0]
+    else:
+        return None
+    return mapa[a][0], mapa[b - 1][1]
+
+
 def _excerto(ctx, linha) -> str:
-    return f'<dt>{e(ctx.t("r_excerto"))}</dt><dd><blockquote class="excerto">{e(str(linha.get("excerto", "")).strip())}</blockquote></dd>'
+    """The excerpt with its own line breaks (the stylesheet keeps them), no break inside a
+    number or after «p.», and the figure marked."""
+    excerto = str(linha.get("excerto", "")).strip()
+    impresso = sem_quebra_na_fonte(excerto)  # one character for one: the places stay
+    lugar = lugar_da_figura(linha)
+    if lugar is None:
+        corpo = e(impresso)
+    else:
+        a, b = lugar
+        corpo = f"{e(impresso[:a])}<mark>{e(impresso[a:b])}</mark>{e(impresso[b:])}"
+    return f'<dt>{e(ctx.t("r_excerto"))}</dt><dd><blockquote class="excerto">{corpo}</blockquote></dd>'
 
 
-SINAIS = {"+": "+", "-": "\u2212", "*": "\u00d7", "/": "\u00f7"}
+SINAIS = {"+": "+", "-": "−", "*": "×", "/": "÷"}
+MENOS = "−"
+
+
+def numero_mostrado(linha: dict) -> tuple[str, bool]:
+    """The number of a line as its `mostra` shows it, without the unit, and whether it is
+    negative: «4,40 %» gives ("4,40", False), «−0,11 pontos percentuais» ("0,11", True).
+    A scale word the figure is read with stays («602,5 mil»): without it the number would
+    be another. A line marked `mostra_livre`, or whose mostra holds no single figure, falls
+    back to its valor in Portuguese form (docs/ESPEC-PAGINAS.md, section 3, `derivado`)."""
+    if linha.get("mostra_livre") is not True:
+        achados = list(numeros.FIGURA.finditer(str(linha.get("mostra", ""))))
+        if len(achados) == 1:
+            m = achados[0]
+            texto = m["inteiro"] + ("," + m["decimais"] if m["decimais"] else "") + (" " + m["escala"] if m["escala"] else "")
+            return _juntar(texto), m["sinal"] in ("-", MENOS)
+    valor = str(linha.get("valor", "")).strip()
+    return numeros.portugues(valor.lstrip("-")), valor.startswith("-")
+
+
+def _entradas(peca, lid) -> list[str]:
+    """The lines a derivado's calculation names, in the order it names them, each once."""
+    l = peca.linhas.get(lid, {})
+    if l.get("tipo") != "derivado":
+        return []
+    vistas: list[str] = []
+    for i in derivacoes.ids_em(str(l.get("calculo", ""))):
+        if i in peca.linhas and i not in vistas:
+            vistas.append(i)
+    return vistas
 
 
 def _conta(ctx, peca, linha) -> str:
     """The calculation as arithmetic a reader can follow; the expression itself is never printed.
 
-    `round ( x , n )` may only be the outermost step (check 3), so it is taken off and
-    said in words after the result: «104,7 − 102,3 = 2,4 (arredondado a uma casa decimal)».
+    Each input is printed as its own line's mostra shows it, without the unit, and linked
+    to its receipt; a negative one in parentheses with a true minus sign, «(−0,11) − (−0,38)».
+    The result is the line's own mostra, without the unit. `round ( x , n )` may only be
+    the outermost step (check 3), so it is taken off and said in words after the result:
+    «104,7 − 102,3 = 2,4 (arredondado a uma casa decimal)». Under it, one line for each
+    input that is a `valor` line: the input, then its periodo (docs/ESPEC-PAGINAS.md,
+    section 3, `derivado`, edit of 15 November 2026, 13:09 UTC).
     """
     toks = derivacoes.simbolos(str(linha.get("calculo", "")))
     casas = derivacoes.arredondamento_exterior(toks)
@@ -342,40 +466,74 @@ def _conta(ctx, peca, linha) -> str:
             cola = False
             continue
         if t in peca.linhas:
-            parte = f'<a href="#r-{e(t)}">{e(numeros.portugues(peca.linhas[t].get("valor", "")))}</a>'
+            numero, negativo = numero_mostrado(peca.linhas[t])
+            ligado = f'<a href="#r-{e(t)}">{MENOS if negativo else ""}{e(numero)}</a>'
+            parte = f"({ligado})" if negativo else ligado
         elif derivacoes.LITERAL.match(t):
-            parte = e(numeros.portugues(t))
+            numero = e(numeros.portugues(t.lstrip("-")))
+            parte = f"({MENOS}{numero})" if t.startswith("-") else numero
         elif unario:
-            parte = "\u2212"
+            parte = MENOS
         else:
             parte = SINAIS.get(t, e(t))
         texto += ("" if cola else " ") + parte
         cola = t == "(" or unario
-    resultado = f"{texto}\u00a0= {e(numeros.portugues(str(linha.get('valor', ''))))}"
+    numero, negativo = numero_mostrado(linha)
+    resultado = f"{texto}\u00a0= {MENOS if negativo else ''}{e(numero)}"
     if casas is not None:
         chave = "r_arred_0" if casas == 0 else "r_arred_1" if casas == 1 else "r_arred_n"
         resultado += f" ({e(ctx.t(chave, n=casas))})"
+    itens = []
+    for i in _entradas(peca, str(linha.get("id", ""))):
+        if peca.linhas[i].get("tipo") != "valor":
+            continue  # an input that is itself a calculation has its own receipt and its own list
+        numero, negativo = numero_mostrado(peca.linhas[i])
+        itens.append(f'<li><a href="#r-{e(i)}">{MENOS if negativo else ""}{e(numero)}</a> · '
+                     f'<span class="periodo">{e(str(peca.linhas[i].get("periodo", "")))}</span></li>')
+    if itens:
+        resultado += f'<ul class="entradas-da-conta">{"".join(itens)}</ul>'
     return resultado
 
 
-def _volta(peca, lid, usadas) -> str:
-    """Where `r_voltar` leads: the first use in the text; for a line used only as an
-    input, the receipt of the first computed figure that uses it; else the text's top."""
+def recibos_da_pagina(peca) -> tuple[list[str], list[str]]:
+    """(the lines the title, the lead or the text prints or ties, in the order of first use;
+    the lines that are only inputs of a calculation shown on the page, directly or through
+    another calculation). A line used nowhere is in neither: it has no receipt on the page
+    and stays in the file (docs/ESPEC-PAGINAS.md, section 3, item 4).
+
+    This module's reading of «in the order the calculations use them»: the calculations
+    are taken in the order of the page, and an input that is itself a calculation is
+    followed at once by its own inputs."""
+    usadas = [lid for lid in ordem_de_uso(peca) if lid in peca.linhas]
+    so_entradas: list[str] = []
+
+    def seguir(lid):
+        for i in _entradas(peca, lid):
+            if i not in usadas and i not in so_entradas:
+                so_entradas.append(i)
+                seguir(i)
+
+    for lid in usadas:
+        seguir(lid)
+    return usadas, so_entradas
+
+
+def _volta(peca, lid, usadas, na_pagina) -> str:
+    """Where `r_voltar` leads: the first use in the text; for a line that is only an input,
+    the receipt of the first calculation on the page that uses it; else the text's top."""
     if lid in usadas:
         return f"#u-{lid}"
-    for outro, l in peca.linhas.items():
-        if l.get("tipo") == "derivado" and lid in derivacoes.ids_em(str(l.get("calculo", ""))):
+    for outro in na_pagina:
+        if lid in _entradas(peca, outro):
             return f"#r-{outro}"
     return "#conteudo"
 
 
-def _recibo(ctx, peca, lid, usadas=()) -> str:
+def _recibo(ctx, peca, lid, usadas=(), na_pagina=()) -> str:
     l = peca.linhas[lid]
     tipo = l.get("tipo")
     sinal = ""
-    figura = tipo in ("valor", "derivado")  # every mostra, a mostra_livre one included
     if tipo == "valor":
-        resumo = e(sem_quebra(str(l.get("mostra", "")), True))
         if l.get("provisorio"):
             sinal = f'<p class="sinal">{e(ctx.t("r_provisorio"))}</p>'
         antes_excerto, depois_excerto = _fonte_dl(ctx, peca, l)
@@ -386,13 +544,11 @@ def _recibo(ctx, peca, lid, usadas=()) -> str:
             + antes_excerto + _excerto(ctx, l) + depois_excerto
         )
     elif tipo == "derivado":
-        resumo = e(sem_quebra(str(l.get("mostra", "")), True))
         dl = (
             f'<dt>{e(ctx.t("r_conta"))}</dt><dd class="conta">{_conta(ctx, peca, l)}</dd>'
             f'<dt>{e(ctx.t("r_compara"))}</dt><dd>{e(str(l.get("compara", "")))}</dd>'
         )
     elif tipo == "citacao":
-        resumo = e(_impressa(peca, lid))
         pessoa = peca.pessoas.get(l.get("quem"))
         quem = f'{pessoa.get("nome", "")}, {pessoa.get("cargo", "")}' if pessoa else str(l.get("entidade", ""))
         antes_excerto, depois_excerto = _fonte_dl(ctx, peca, l)
@@ -403,22 +559,31 @@ def _recibo(ctx, peca, lid, usadas=()) -> str:
             + antes_excerto + depois_excerto
         )
     else:
-        resumo = e(str(l.get("diz", "")))
+        # What the document establishes is the summary, and is not printed a second time here.
         antes_excerto, depois_excerto = _fonte_dl(ctx, peca, l)
         quando = datas.data_real(str(l.get("quando", "")))
         dl = (
-            f'<dt>{e(ctx.t("r_estabelece"))}</dt><dd>{e(str(l.get("diz", "")))}</dd>'
-            + _excerto(ctx, l) + antes_excerto
+            _excerto(ctx, l) + antes_excerto
             + f'<dt>{e(ctx.t("r_quando"))}</dt><dd>{e(datas.por_extenso(quando) if quando else "")}</dd>'
             + depois_excerto
         )
-    classe = ' class="figura"' if figura else ""
-    voltar = f'<p class="voltar"><a href="{_volta(peca, lid, usadas)}">{e(ctx.t("r_voltar"))}</a></p>'
+    # Closed, a receipt says what it is (docs/ESPEC-PAGINAS.md, section 3, item 4): a figure
+    # (every mostra, a mostra_livre one included) and then what it measures, on one line
+    # that the stylesheet cuts; a quotation's words; an act's sentence.
+    if tipo in ("valor", "derivado"):
+        mede = str(l.get("mede", ""))
+        resumo = (f'<span class="figura">{e(sem_quebra(str(l.get("mostra", "")), True))}</span>'
+                  + (f' <span class="mede">{e(mede)}</span>' if mede.strip() else ""))
+    elif tipo == "citacao":
+        resumo = f"<span>{e(_impressa(peca, lid))}</span>"
+    else:
+        resumo = f'<span>{e(str(l.get("diz", "")))}</span>'
+    voltar = f'<p class="voltar"><a href="{_volta(peca, lid, usadas, na_pagina)}">{e(ctx.t("r_voltar"))}</a></p>'
     # The anchor a link leads to is inside the box's content, never the box or its summary:
     # a browser opens a closed <details> when the place it is sent to is inside its content,
     # and does not when it is the box itself (docs/ESPEC-PAGINAS.md, edit of 15 November
     # 2026). The stylesheet places the anchor at the box's top, so the summary shows.
-    return (f'<details class="recibo"><summary><span{classe}>{resumo}</span></summary>'
+    return (f'<details class="recibo"><summary>{resumo}</summary>'
             f'<span class="ancora" id="r-{e(lid)}"></span>{sinal}<dl>{dl}</dl>{voltar}</details>')
 
 
@@ -484,10 +649,9 @@ def pagina_da_peca(peca: Peca, ctx: Contexto) -> str:
         linha_pub = f'<p class="publicada">{e(ctx.t("publicada", data=datas.por_extenso(datas.em_lisboa(publ).date()), hora=datas.hora(publ)))}</p>'
     temas = _ligacoes_de_temas(ctx, peca.cabeca.get("temas", []))
     correcoes = "".join(_bloco_de_correcao(ctx, c) for c in _correcoes(ctx, peca))
-    ordem = ordem_de_uso(peca)
-    ordem += [lid for lid in peca.linhas if lid not in ordem]
-    usadas = set(ordem_de_uso(peca))
-    recibos = "".join(_recibo(ctx, peca, lid, usadas) for lid in ordem if lid in peca.linhas)
+    usadas, so_entradas = recibos_da_pagina(peca)
+    na_pagina = usadas + so_entradas
+    recibos = "".join(_recibo(ctx, peca, lid, set(usadas), na_pagina) for lid in na_pagina)
     primeiros: set = set()
     corpo = (
         '<article class="peca">'
@@ -623,8 +787,8 @@ def pagina_das_correcoes(ctx: Contexto) -> str:
     corpo = (
         f'<h1 class="pagina-titulo">{e(ctx.t("nav_correcoes"))}</h1>'
         f'<p class="intro">{e(ctx.t("correcoes_intro"))}</p>'
-        f'<section class="erro"><h2>{e(ctx.t("erro_titulo"))}</h2><p>{_com_endereco(ctx.t("erro_como"))}</p></section>'
         f'<section class="correcoes-lista">{lista}</section>'
+        f'<section class="erro"><h2>{e(ctx.t("erro_titulo"))}</h2><p>{_com_endereco(ctx.t("erro_como"))}</p></section>'
     )
     return pagina(ctx, f"{ctx.t('nav_correcoes')} · {ctx.t('nome')}", corpo, aqui="/correcoes/")
 

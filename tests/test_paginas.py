@@ -105,8 +105,9 @@ class CincoPaginas(unittest.TestCase):
             self.assertIn('<html lang="pt-PT">', html)
             self.assertEqual(html.count("<h1"), 1, nome)
             self.assertIn('<meta name="robots" content="noindex, nofollow">', html)
-            ligacao = '<span aria-current="page">Como é feito</span>' if nome.startswith("metodo/") else '<a href="/metodo/">Como é feito</a>'
-            self.assertIn('Texto gerado e editado por inteligência artificial. Nenhuma pessoa o revê antes de ser publicado. ' + ligacao, html)
+            # On the Method page the AI line ends at its full stop: ia_ligacao is not printed (ESQ3, item F).
+            ligacao = '</p>' if nome.startswith("metodo/") else ' <a href="/metodo/">Como é feito</a></p>'
+            self.assertIn('<p class="rotulo-ia-linha">Texto gerado e editado por inteligência artificial. Nenhuma pessoa o revê antes de ser publicado.' + ligacao, html)
             self.assertLess(html.index("rotulo-ia-linha"), html.index("wordmark"), "the AI line sits above the name")
             self.assertNotIn("<script", html)
             self.assertRegex(html, r'<body>\n<a class="saltar" href="#conteudo">Saltar para o texto</a>\n')
@@ -153,7 +154,7 @@ class CincoPaginas(unittest.TestCase):
     def test_a_conta_e_aritmetica_e_nunca_a_expressao(self):
         html = self.ler("pecas/2026-11-16-peca-de-ensaio/index.html")
         self.assertIn('<dd class="conta"><a href="#r-indice">104,7</a> \u2212 <a href="#r-indice_anterior">102,3</a>'
-                      '\u00a0= 2,4 (arredondado a uma casa decimal)</dd>', html)
+                      '\u00a0= 2,4 (arredondado a uma casa decimal)<ul class="entradas-da-conta">', html)
         self.assertNotIn("round", html)
         self.assertNotIn("indice - indice_anterior", html)
 
@@ -173,7 +174,8 @@ class CincoPaginas(unittest.TestCase):
 
     def test_uma_linha_impressa_nao_parte(self):
         html = self.ler("pecas/2026-11-16-peca-de-ensaio/index.html")
-        self.assertIn('>1,2\u00a0milhões\u00a0de\u00a0euros</a>', html)
+        # «milhões» is read with the figure; «de euros», a unit of two words, may go to the next line (ESQ3, item E).
+        self.assertIn('>1,2\u00a0milhões de euros</a>', html)
         self.assertIn('>um\u00a0terço</a>', html)
         self.assertIn("segunda-feira, 16\u00a0de novembro</a>", html)
         self.assertIn("16\u00a0de fevereiro de 2027</a>", html)
@@ -182,7 +184,8 @@ class CincoPaginas(unittest.TestCase):
 
     def test_o_sinal_de_provisorio_e_o_regresso_ao_texto(self):
         html = self.ler("pecas/2026-11-16-peca-de-ensaio/index.html")
-        self.assertIn('<summary><span class="figura">104,7\u00a0pontos</span></summary><span class="ancora" id="r-indice"></span><p class="sinal">Valor provisório</p><dl>', html)
+        self.assertIn('<summary><span class="figura">104,7\u00a0pontos</span> <span class="mede">Índice de ensaio, inventado para os ensaios</span>'
+                      '</summary><span class="ancora" id="r-indice"></span><p class="sinal">Valor provisório</p><dl>', html)
         self.assertNotIn('class="provisorio"', html)
         self.assertIn('<summary><span>O despacho de ensaio foi assinado pela ministra de ensaio.</span></summary>', html)
         recibos = re.findall(r'<details class="recibo"><summary>.*?</summary><span class="ancora" id="r-([a-z_]+)"></span>.*?</details>', html, re.S)

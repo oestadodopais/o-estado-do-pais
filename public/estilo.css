@@ -25,6 +25,7 @@
   --rule-strong: var(--g2);
   --muted: var(--g1);
   --focus: var(--ink);
+  --marca: #e9e4c8; /* the figure marked in its excerpt */
   --f-prosa: 'Spectral', Georgia, 'Times New Roman', serif;
   --f-instr: 'Bitter', 'Rockwell', 'Roboto Slab', Georgia, serif;
   --f-versal: 'Spectral SC', 'Spectral', Georgia, 'Times New Roman', serif;
@@ -41,6 +42,7 @@
     --g1: #b9beba;
     --g2: #8e948f;
     --g3: #3a3f3c;
+    --marca: #4a4630;
     color-scheme: dark;
   }
 }
@@ -76,6 +78,9 @@ code { font-family: inherit; font-size: 14px; overflow-wrap: anywhere; word-brea
 .figura, .recibo dd.conta { font-family: var(--f-instr); font-variant-numeric: tabular-nums lining-nums; }
 /* A link to a receipt has one look wherever it is; every other link is underlined. */
 a.ref, a.ligada { text-decoration-line: underline; text-decoration-style: dotted; text-decoration-color: currentColor; }
+/* Two links to receipts that touch are set apart, so their underlines read as two (the
+   class is given when the page is built). */
+a.ref.encostada, a.ligada.encostada { margin-left: 0.4em; }
 .eyebrow {
   font-family: var(--f-versal);
   font-size: 13px;
@@ -196,9 +201,26 @@ th { font-family: var(--f-versal); font-weight: 600; letter-spacing: .04em; text
 .recibo > .ancora { position: absolute; top: 0; left: 0; scroll-margin-top: 8px; }
 .recibo > summary, .registo > summary { cursor: pointer; min-height: 44px; display: flex; align-items: baseline; gap: 10px; padding: 11px 0; list-style: none; }
 .recibo > summary::-webkit-details-marker, .registo > summary::-webkit-details-marker { display: none; }
-.recibo > summary::before, .registo > summary::before { content: '+'; font-family: var(--f-instr); color: var(--muted); width: 1ch; }
-.recibo[open] > summary::before, .registo[open] > summary::before { content: '\2212'; }
+/* The mark that opens a box is drawn, not typed: a chevron made of two borders of an empty
+   box, at the end of the line, pointing down when closed and up when open. It holds no
+   character, so nothing beside a figure can be read as its sign. */
+.recibo > summary::after, .registo > summary::after {
+  content: '';
+  flex: none;
+  align-self: center;
+  margin-left: auto;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: translateY(-2px) rotate(45deg);
+}
+.recibo[open] > summary::after, .registo[open] > summary::after { transform: translateY(2px) rotate(-135deg); }
 .recibo > summary { font-size: 16px; line-height: 1.4; }
+/* Closed, a receipt says what it is: the figure, whole, then what it measures, on one line
+   cut with an ellipsis where it does not fit. */
+.recibo > summary > .figura { flex: none; }
+.recibo > summary > .mede { flex: 1 1 auto; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: var(--muted); }
 .registo > summary { padding: 6px 0; }
 .recibo:has(> .ancora:target) > summary { text-decoration: underline; }
 .recibo dl { margin: 0 0 0 2ch; display: grid; grid-template-columns: minmax(0, 11rem) minmax(0, 1fr); gap: 6px 16px; font-size: 15px; }
@@ -209,19 +231,23 @@ th { font-family: var(--f-versal); font-weight: 600; letter-spacing: .04em; text
 .voltar { margin: 0 0 16px 2ch; font-size: 15px; }
 .voltar a, .recibo dd.abrir a { display: inline-flex; align-items: center; min-height: 44px; }
 .recibo dd.conta { font-family: var(--f-instr); font-variant-numeric: tabular-nums lining-nums; }
-.excerto { margin: 0; padding-left: 12px; border-left: 2px solid var(--rule-strong); font-style: italic; }
+.excerto { margin: 0; padding-left: 12px; border-left: 2px solid var(--rule-strong); font-style: italic; white-space: pre-line; }
+/* The figure inside its excerpt: a tint, and a weight and an underline that do not rely on colour. */
+.excerto mark { background: var(--marca); color: inherit; font-weight: 600; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+/* Under a calculation, which input is which: the number, then its period. */
+.entradas-da-conta { list-style: none; margin: 6px 0 0; padding: 0; }
+.entradas-da-conta .periodo { font-family: var(--f-prosa); }
 @media (max-width: 640px) {
   .recibo dl { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .recibo dd { margin-bottom: 8px; }
 }
-/* The record's box is wider than the column, and centred on it like the column on the page. */
-.registo {
+/* The record keeps the reading column's left edge, its heading and intro included; only its
+   table is wider than the column, centred on it like the column on the page. */
+.registo { max-width: 68ch; margin-top: clamp(32px, 4vw, 48px); border-top: 1.5px solid var(--ink); padding-top: 8px; }
+.registo .tabela {
   --largura: min(980px, calc(100vw - 2 * var(--gutter)));
   width: var(--largura);
   margin-inline: calc((100% - var(--largura)) / 2);
-  margin-top: clamp(32px, 4vw, 48px);
-  border-top: 1.5px solid var(--ink);
-  padding-top: 8px;
 }
 td.lugar { min-width: 10.5em; }
 .registo td.quando { white-space: nowrap; }

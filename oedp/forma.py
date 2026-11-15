@@ -35,7 +35,11 @@ CAMPOS_LINHA = {
     "citacao": {"id": S, "tipo": S, "fonte": S, "onde": S, "excerto": S, "quem": S, "entidade": S, "quando": S},
     "ato": {"id": S, "tipo": S, "fonte": S, "onde": S, "excerto": S, "diz": S, "quem": S, "quando": S},
 }
-OPCIONAIS_LINHA = {"valor": {"mostra_livre": B}, "derivado": {"mostra_livre": B}, "citacao": {}, "ato": {}}
+# `ocorrencia`: which occurrence of the figure in the excerpt the line means (docs/ESPEC-PECA.md,
+# edit of 15 November 2026, 13:17 UTC); a valor line's only.
+OPCIONAIS_LINHA = {"valor": {"mostra_livre": B, "ocorrencia": I}, "derivado": {"mostra_livre": B}, "citacao": {}, "ato": {}}
+# The fields a reader sees in a receipt, which never hold an internal name (check 9).
+CAMPOS_DO_LEITOR = ("mede", "populacao", "periodo", "compara", "diz", "onde")
 CAMPOS_PESSOA = {"id": S, "nome": S, "nome_curto": S, "cargo": S, "linhas": L}
 CAMPOS_REGISTO = {
     "passo": ({"nome": S, "lugar": S, "familia": S, "modelo": S, "inicio": S, "fim": S}, {}),
@@ -247,6 +251,25 @@ def erros_de_estado(registo: dict) -> list[str]:
     return []
 
 
+def ids_nos_campos_do_leitor(peca: Peca) -> list[str]:
+    """A field a reader sees that holds, as a word of its own, the id of a line or of a source
+    of the piece when that id has a `_` in it (docs/ESPEC-PECA.md, check 9, edit of 15 November
+    2026, 13:17 UTC: the pilot showed readers «ver a linha ap_total_real_quadro»). An id with
+    no `_` is left out: it is a plain word («total») as often as a name."""
+    nomes = sorted({i for i in list(peca.linhas) + list(peca.fontes) if "_" in i}, key=len, reverse=True)
+    erros = []
+    for lid, l in peca.linhas.items():
+        for campo in CAMPOS_DO_LEITOR:
+            texto = l.get(campo)
+            if not isinstance(texto, str):
+                continue
+            for nome in nomes:
+                if re.search(r"(?<![A-Za-z0-9_])" + re.escape(nome) + r"(?![A-Za-z0-9_])", texto):
+                    erros.append(f"folha [[linha]] {lid}: {campo} holds {nome!r}, the id of a line or source of this piece; "
+                                 "a field a reader sees says it in words, never by an internal name")
+    return erros
+
+
 def erros(peca: Peca, ficheiro: Path | None = None) -> list[str]:
     e: list[str] = []
     c = peca.cabeca
@@ -339,11 +362,16 @@ def erros(peca: Peca, ficheiro: Path | None = None) -> list[str]:
                 for k in ("excerto", "mostra", "onde", "calculo", "diz"):
                     if k in CAMPOS_LINHA[tipo] and isinstance(t.get(k), str) and not t[k].strip():
                         e.append(f"{onde}: {k} is empty")
+                if "ocorrencia" in t and tipo != "valor":
+                    e.append(f"{onde}: ocorrencia belongs to a valor line only, and this line is {tipo}")
+                elif _tipo_ok(t.get("ocorrencia"), I) and t["ocorrencia"] < 1:
+                    e.append(f"{onde}: ocorrencia {t['ocorrencia']} is not a whole number of 1 or more")
             else:
                 _tabela(onde, t, CAMPOS_PESSOA, {}, e)
                 for lid in t.get("linhas", []) if isinstance(t, dict) and isinstance(t.get("linhas"), list) else []:
                     if lid not in peca.linhas:
                         e.append(f"{onde}: linhas names {lid!r}, which is not a [[linha]] of this piece")
 
+    e.extend(ids_nos_campos_do_leitor(peca))
     e.extend(erros_do_registo(peca.registo))
     return e
