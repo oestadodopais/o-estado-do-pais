@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import sys
 import time
+import tomllib
 import unittest
 from pathlib import Path
 
@@ -347,6 +348,26 @@ def cmd_leitura(a) -> int:
         return 2
 
 
+def cmd_reconferir(a) -> int:
+    from . import leituras, reconferir
+
+    loja = _loja_ou_falha()
+    if loja is None:
+        return 2
+    try:
+        oficina = leituras.oficina()
+    except leituras.Recusa as e:
+        print(str(e), file=sys.stderr)
+        return 2
+    caminhos = [Path(p) for p in a.pecas] if a.pecas else reconferir.pecas_publicadas(REPO)
+    if not caminhos:
+        print("no published piece: nothing to re-check")
+        return 0
+    textos = tomllib.loads((REPO / "textos.toml").read_text(encoding="utf-8"))
+    codigo_saida, _ = reconferir.reconferir(caminhos, loja, oficina, textos, retirar=a.retirar, raiz=REPO)
+    return codigo_saida
+
+
 def cmd_tudo(a) -> int:
     t0 = time.monotonic()
     ok1 = cmd_conferir(argparse.Namespace(pecas=[])) == 0
@@ -449,7 +470,12 @@ def principal(argv=None) -> int:
     m.add_argument("--fim")
     m.set_defaults(f=cmd_leitura)
 
-    s = sub.add_parser("navegador",help="a link to a receipt opens it, in real browsers (needs requirements-navegador.txt)")
+    s = sub.add_parser("reconferir", help="fetch every published piece's sources again and compare with the stored copies")
+    s.add_argument("--retirar", action="store_true", help="withdraw a piece whose excerpt is no longer in its source")
+    s.add_argument("pecas", nargs="*")
+    s.set_defaults(f=cmd_reconferir)
+
+    s = sub.add_parser("navegador", help="a link to a receipt opens it, in real browsers (needs requirements-navegador.txt)")
     s.add_argument("--exigir", help="engines that must run, comma-separated: chromium,firefox,webkit")
     s.set_defaults(f=cmd_navegador)
 

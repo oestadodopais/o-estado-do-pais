@@ -478,6 +478,7 @@ def montar(alvo_arg: str, lugar: str, *, folha: bool = False, seccao: str | None
         raise Recusa(f"refused: the seat {lugar} does not read {alvo.tipo}; it takes {', '.join(lugares_permitidos(alvo.tipo))}")
     if folha and lugar not in ("especialista", "oposto"):
         raise Recusa("refused: --folha is for the especialista and the oposto, reading the fact sheet before the text")
+    texto_do_prompt = prompt(lugar, Path(equipa or Path(repo) / "equipa"), seccao)  # the briefs first: refused before any work
     pasta = pasta_nova(base_oficina, alvo, lugar)
     pacote = pasta / "pacote"
     pacote.mkdir(parents=True)
@@ -493,7 +494,7 @@ def montar(alvo_arg: str, lugar: str, *, folha: bool = False, seccao: str | None
             impressao, extra = pacote_do_codigo(alvo, pacote, base, list(ordens), list(relatorios), pasta, artefactos)
         if lugar != "leitor":
             _escrever(pacote, "LEIA-ME.md", leia_me(pacote))
-        (pasta / "PROMPT.md").write_text(prompt(lugar, Path(equipa or Path(repo) / "equipa"), seccao), encoding="utf-8")
+        (pasta / "PROMPT.md").write_text(texto_do_prompt, encoding="utf-8")
         mesma_hora(pacote)
         commit = _git(repo, "rev-parse", "HEAD", text=True).stdout.strip()
         escrever_json(pasta / "leitura.json", {
