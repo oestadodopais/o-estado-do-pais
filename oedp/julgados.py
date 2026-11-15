@@ -84,6 +84,8 @@ def historia(repo: Path, caminho: Path) -> list[str]:
     r = subprocess.run(["git", "-C", str(repo), "show", f"{ref}:{relativo}"], capture_output=True)
     if r.returncode != 0:
         return []
+    if not Path(caminho).is_file():  # a record main holds and the tree has lost is a record cut
+        return [f"{relativo}: main holds this record and the tree does not: a record cut, as if a table were removed"]
     antes, agora = r.stdout, Path(caminho).read_bytes()
     if relativo == "paginas/metodo.md":
         try:

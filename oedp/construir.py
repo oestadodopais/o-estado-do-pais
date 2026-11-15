@@ -138,8 +138,8 @@ def contexto(repo: Path, raiz: Path, pecas: list, previa: bool = False) -> tuple
 
     reconferencias, erros_r = reconferir.ler_registo(raiz)
     erros += erros_r
-    if (Path(raiz) / reconferir.REGISTO).is_file():
-        julgamento += julgados.historia(repo, Path(raiz) / reconferir.REGISTO)
+    # Compared with main whether or not the tree still has the file (edit of 15 November 2026, 15:17 UTC).
+    julgamento += julgados.historia(repo, Path(raiz) / reconferir.REGISTO)
     registos, erros_dos_direitos = rights.ler_pasta(Path(raiz) / "direitos")
     erros += erros_dos_direitos
     ctx = Contexto(textos=textos, mesas=mesas, lancamento=bool(sitio.get("lancamento")), pecas=pecas,

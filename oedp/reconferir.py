@@ -155,11 +155,15 @@ def reconferir(caminhos: list[Path], loja: Path, oficina: Path, textos: dict, re
     buscar = buscar or buscador_real(raiz or Path(caminhos[0]).resolve().parents[2])
     resultados = []
     lidas, procurados, nao_achados, retiradas = 0, 0, 0, []
+    # What makes the run not whole (docs/ESPEC-PECA.md, edit of 15 November 2026, 15:17 UTC): a
+    # piece that could not be read, a source that did not answer or answered with an error.
+    incompleta: list[str] = []
     for caminho in caminhos:
         try:
             peca = ler(caminho)
         except (ErroDeForma, OSError) as e:
-            imprimir(f"{caminho}: not a piece ({e}); skipped")
+            imprimir(f"{caminho}: not a piece ({e}); not re-checked, so this run is not whole")
+            incompleta.append(f"the piece file {Path(caminho).name} could not be read ({e})")
             continue
         if not peca.publicada:
             imprimir(f"{peca.id}: {peca.estado}, not published; not re-checked")
@@ -173,6 +177,8 @@ def reconferir(caminhos: list[Path], loja: Path, oficina: Path, textos: dict, re
                 nova = buscar(str(f.get("url", "")), loja)
             except fontes.ErroDaLoja as e:
                 r.update(resultado=INACESSIVEL, razao=str(e))
+                if any(l.get("fonte") == fid and l.get("tipo") in COM_EXCERTO for l in peca.linhas.values()):
+                    incompleta.append(f"{peca.id} · {fid} could not be fetched and read ({e})")
             else:
                 procurados += sum(1 for l in peca.linhas.values() if l.get("fonte") == fid and l.get("tipo") in COM_EXCERTO)
                 r["sha256_novo"] = nova
@@ -211,6 +217,11 @@ def reconferir(caminhos: list[Path], loja: Path, oficina: Path, textos: dict, re
                                     ensure_ascii=False) + "\n", encoding="utf-8")
     ok = all(r["resultado"] in (IGUAL, MUDOU) for r in resultados)
     imprimir(f"re-check: {len(resultados)} sources, " + ("all stand" if ok else "not all stand") + f"; report in {relatorio}")
+    if registo_em is not None and incompleta:
+        imprimir(f"not a whole run, so nothing is appended to {REGISTO}: " + "; ".join(incompleta))
+        return 1, relatorio
+    if incompleta:
+        return 1, relatorio
     if registo_em is not None:
         campos = {"em": registo.agora(), "pecas": lidas, "excertos": procurados, "falhados": nao_achados,
                   "retiradas": retiradas, "so_relatar": not retirar}
@@ -221,11 +232,13 @@ def reconferir(caminhos: list[Path], loja: Path, oficina: Path, textos: dict, re
 
 
 def pecas_publicadas(raiz: Path) -> list[Path]:
+    """The pieces a whole run must read: every published piece, and every file under pecas/ that
+    cannot be read (it may be a published piece; `reconferir` names it and the run is not whole)."""
     saida = []
     for c in pecas_em(raiz):
         try:
             if ler(c).publicada:
                 saida.append(c)
         except (ErroDeForma, OSError):
-            continue
+            saida.append(c)
     return saida

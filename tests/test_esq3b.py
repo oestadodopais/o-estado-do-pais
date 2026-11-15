@@ -83,9 +83,14 @@ class H_ORegistoDasReconferencias(unittest.TestCase):
         self.assertEqual({k: v for k, v in t[0].items() if k != "em"},
                          {"pecas": 1, "excertos": 7, "falhados": 4, "retiradas": ["2026-11-16-peca-de-ensaio"], "so_relatar": False})
 
-    def test_uma_fonte_inacessivel_nao_conta_como_procurada(self):
-        self.correr({PDF_URL: fontes.ErroDaLoja("refused: example.org answered 503"), HTML_URL: self.original(HTML)})
-        self.assertEqual((self.tabelas()[0]["excertos"], self.tabelas()[0]["falhados"]), (3, 0))
+    def test_uma_fonte_inacessivel_faz_uma_volta_que_nao_e_inteira(self):
+        # ESQ3c, item E (docs/ESPEC-PECA.md, edit of 15:17 UTC): a source that does not answer makes the run
+        # not whole, and nothing is appended; it still withdraws nothing.
+        antes = self.p.peca.read_bytes()
+        codigo, _ = self.correr({PDF_URL: fontes.ErroDaLoja("refused: example.org answered 503"), HTML_URL: self.original(HTML)}, retirar=True)
+        self.assertEqual(codigo, 1)
+        self.assertEqual(self.tabelas(), [])
+        self.assertEqual(self.p.peca.read_bytes(), antes)
 
     def test_planta_uma_volta_parcial_nao_acrescenta(self):
         self.correr({PDF_URL: self.original(PDF), HTML_URL: self.original(HTML)}, registo_em=None)

@@ -377,3 +377,89 @@ class G_UmaLinhaDeQuadro(unittest.TestCase):
         with mock.patch.object(numeros, "NUMERO_DE_QUADRO", numeros.NUMERO_INTEIRO):
             r, _, _ = self.linha("98 102 105", "102", "true")
         self.assertEqual(r.estado, conf.FALHOU)  # the row read as one number, 98102105
+
+
+# --------------------------------------------------------------------------- E. the re-check's record
+
+
+from oedp import julgados, reconferir  # noqa: E402
+from tests.test_esq1f import commit, git_temporario  # noqa: E402
+
+PDF = "3f9a602b9c8e9f75b8fdd9e63aadddfae0a1776aa4a31241b567946b3add3e89"
+PDF_URL, HTML_URL = "https://example.org/ensaio/documento.pdf", "https://example.org/ensaio/tabela.html"
+
+
+class E_UmaVoltaInteira(unittest.TestCase):
+    def setUp(self):
+        self.loja = loja_fora_do_repositorio(self)
+        self.oficina = pasta_temporaria(self, "oedp-oficina-")
+        self.raiz = pasta_temporaria(self, "oedp-raiz-")
+        self.p = Plantada()
+        self.addCleanup(self.p.apagar)
+        self.linhas = []
+
+    def correr(self, caminhos, respostas):
+        def buscar(url, loja):
+            r = respostas[url]
+            if isinstance(r, Exception):
+                raise r
+            return fontes.guardar(loja, r)
+        return reconferir.reconferir(caminhos, self.loja, self.oficina, TEXTOS, retirar=True, buscar=buscar,
+                                     imprimir=self.linhas.append, hoje="2026-11-22", registo_em=self.raiz)
+
+    def originais(self):
+        return {PDF_URL: fontes.caminho_da_copia(self.loja, PDF).read_bytes(),
+                HTML_URL: fontes.caminho_da_copia(self.loja, HTML_ANTIGO).read_bytes()}
+
+    def test_uma_peca_que_nao_se_le(self):
+        ma = self.p.pasta / "pecas" / "2026" / "2026-11-17-partida.md"
+        ma.write_text("+++ cabeca\nisto não é TOML [\n", encoding="utf-8")
+        self.assertIn(ma, reconferir.pecas_publicadas(self.p.pasta))
+        codigo, _ = self.correr([self.p.peca, ma], self.originais())
+        self.assertEqual(codigo, 1)
+        self.assertFalse((self.raiz / reconferir.REGISTO).exists())
+        self.assertTrue(any("not a whole run" in l and "2026-11-17-partida.md could not be read" in l for l in self.linhas), self.linhas)
+
+    def test_uma_fonte_que_nao_responde(self):
+        respostas = {**self.originais(), HTML_URL: fontes.ErroDaLoja("example.org did not connect within 10 seconds, twice")}
+        codigo, _ = self.correr([self.p.peca], respostas)
+        self.assertEqual(codigo, 1)
+        self.assertFalse((self.raiz / reconferir.REGISTO).exists())
+        self.assertTrue(any("tabela_html could not be fetched and read" in l for l in self.linhas), self.linhas)
+
+    def test_uma_volta_inteira_regista(self):
+        """The control: every piece read and every source answered, one table appended."""
+        codigo, _ = self.correr([self.p.peca], self.originais())
+        self.assertEqual(codigo, 0)
+        self.assertEqual(len(tomllib.loads((self.raiz / reconferir.REGISTO).read_text(encoding="utf-8"))["reconferencia"]), 1)
+
+
+class E_ORegistoQueDesapareceu(unittest.TestCase):
+    def test_o_ficheiro_apagado_de_uma_arvore_cujo_main_o_tem(self):
+        repo = git_temporario(self)
+        f = repo / reconferir.REGISTO
+        f.write_text('[[reconferencia]]\nem = "2026-11-22T06:00:00Z"\npecas = 1\nexcertos = 7\nfalhados = 0\nretiradas = []\n'
+                     "so_relatar = false\n", encoding="utf-8")
+        commit(repo, reconferir.REGISTO)
+        f.unlink()
+        self.assertEqual(julgados.historia(repo, f),
+                         ["reconferencias.toml: main holds this record and the tree does not: a record cut, as if a table were removed"])
+
+    def test_planta_a_comparacao_so_com_o_ficheiro(self):
+        repo = git_temporario(self)
+        (repo / "outro.txt").write_text("x\n", encoding="utf-8")
+        commit(repo, "outro.txt")
+        self.assertEqual(julgados.historia(repo, repo / reconferir.REGISTO), [])  # main never had it: nothing cut
+
+    def test_na_construcao(self):
+        visto = []
+        original = julgados.historia
+
+        def espia(repo, caminho):
+            visto.append(Path(caminho).name)
+            return original(repo, caminho)
+
+        vazia = pasta_temporaria(self, "oedp-vazia-")
+        with mock.patch.object(julgados, "historia", espia):
+            build.contexto(REPO, vazia, [])
+        self.assertIn(reconferir.REGISTO, visto)  # asked though the tree has no such file
