@@ -684,6 +684,7 @@ def plantar(pasta: Path, lista: Path, loja: Path | None = None, repo: Path = REP
     try:
         for planta in plantas:
             chave.append(_uma_planta(p, planta))
+        _lugares_no_fim(p, plantas, chave)
         _provas_finais(pacote, plantas, chave, Path(lista))
     except BaseException:
         shutil.rmtree(pacote)
@@ -782,6 +783,39 @@ def derivado_de(relativo: str, ficheiro: str) -> bool:
 def _num(lugar: str):
     m = re.search(r"(\d+)$", lugar)
     return int(m.group(1)) if m else 0
+
+
+def _numerado_de(p: "Plantador", ficheiro: str, texto: str) -> str | None:
+    """The numbered text a reader is given when the planted file `ficheiro` holds `texto`."""
+    if ficheiro == "peca.md":
+        return texto_numerado_da_peca(texto.encode("utf-8"), p.repo)
+    if ficheiro == "metodo.md":
+        return numerado.numerar(numerado.blocos_da_prosa(texto))
+    if ficheiro == "TEXTOS-NUMERADOS.md":
+        return texto
+    return None
+
+
+def _lugares_no_fim(p: "Plantador", plantas: list[dict], chave: list[dict]):
+    """The places of every plant, worked out again once the last plant is in (ORDEM-3c, item H): a
+    later plant that adds or removes a sentence moves the numbers of the sentences after it, so a
+    sentence place recorded when its plant went in may no longer be the one the reader's copy
+    numbers. Each plant's sentences are found by comparing the final numbered text with the same
+    package in which that plant alone is undone; its other places (`linha`, `fonte`) stand."""
+    for planta, c in zip(plantas, chave):
+        if not any(l.startswith("frase ") for l in c["lugares"]):
+            continue
+        nome = "TEXTOS-NUMERADOS.md" if c["ficheiro"] == "TEXTOS-NUMERADOS.md" else "TEXTO-NUMERADO.md"
+        texto = _texto(p.pacote / c["ficheiro"])
+        if texto.count(planta["depois"]) != 1:
+            raise Recusa(f"refused: {planta['id']}: its new text is not found exactly once in {c['ficheiro']} after the last "
+                         "plant, so its places cannot be worked out again")
+        sem_ela = _numerado_de(p, c["ficheiro"], texto.replace(planta["depois"], planta["antes"], 1))
+        frases = lugares_no_texto(sem_ela, _texto(p.pacote / nome)) if sem_ela is not None else []
+        if not frases:
+            raise Recusa(f"refused: {planta['id']}: after the last plant its sentence is no longer found in {nome}")
+        outros = [l for l in c["lugares"] if not l.startswith("frase ")]
+        c["lugares"] = sorted(set(outros + frases), key=lambda x: (x.split()[0], _num(x)))
 
 
 def _provas_finais(pacote: Path, plantas: list[dict], chave: list[dict], lista: Path):

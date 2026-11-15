@@ -463,3 +463,44 @@ class E_ORegistoQueDesapareceu(unittest.TestCase):
         with mock.patch.object(julgados, "historia", espia):
             build.contexto(REPO, vazia, [])
         self.assertIn(reconferir.REGISTO, visto)  # asked though the tree has no such file
+
+
+# --------------------------------------------------------------------------- H. the places of the plants
+
+
+from tests.test_esq2a import PDF as PDF_DE_ENSAIO, PLANTA_BOA  # noqa: E402
+
+SEGUNDA = f"""
+[[planta]]
+id = "Q8"
+ficheiro = "peca.md"
+antes = '''Esta é uma peça de ensaio. Todos os números'''
+depois = '''Esta é uma peça de ensaio. O índice de ensaio desceu no trimestre. Todos os números'''
+descricao = "a sentence put before the first plant says the index fell"
+desmente = '''contra 102,3 pontos no segundo trimestre'''
+desmente_em = "fontes/{PDF_DE_ENSAIO}.txt"
+"""
+
+
+class H_OsLugaresDasPlantas(ComLeitura):
+    def plantadas(self):
+        p = Plantada()
+        self.addCleanup(p.apagar)
+        pasta = self.montar("juiz", alvo=p.peca)
+        chave = self.plantar(pasta, PLANTA_BOA + SEGUNDA)
+        return pasta, {c["id"]: c["lugares"] for c in chave}
+
+    def test_a_primeira_planta_no_numero_que_o_leitor_ve(self):
+        pasta, lugares = self.plantadas()
+        numerado_ = (pasta / "pacote" / "TEXTO-NUMERADO.md").read_text(encoding="utf-8")
+        frases = __import__("oedp.numerado", fromlist=["lista"]).lista(numerado_)
+        self.assertEqual(lugares["Q7"], ["frase 8"])
+        self.assertIn("uma descida de", frases[7])
+        self.assertEqual(lugares["Q8"], ["frase 5"])
+        self.assertIn("O índice de ensaio desceu no trimestre.", frases[4])
+        self.assertEqual(json.loads((pasta / "chave.json").read_text())["plantas"][0]["lugares"], ["frase 8"])
+
+    def test_planta_os_lugares_de_quando_entrou(self):
+        with mock.patch.object(leituras, "_lugares_no_fim", lambda *a: None):
+            _, lugares = self.plantadas()
+        self.assertEqual(lugares["Q7"], ["frase 7"])  # the sentence before the second plant moved it
