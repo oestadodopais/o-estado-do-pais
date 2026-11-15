@@ -1,4 +1,9 @@
-# Site settings. One setting exists: `lancamento`. While it is unset, every page
-# carries `noindex, nofollow` and the host sends `X-Robots-Tag: noindex, nofollow`.
-# Setting it makes the site visible to search engines, and that decision is the
-# funder's alone.
+# Site settings.
+#
+# `lancamento`: while it is unset, every page carries `noindex, nofollow` and the host
+# sends `X-Robots-Tag: noindex, nofollow`. Setting it makes the site visible to search
+# engines, and that decision is the funder's alone.
+#
+# `endereco`: the public address. `python3 -m oedp publicar` proves against it that what
+# is live is what was built.
+endereco = "https://xn--oestadodopas-2fb.pt"

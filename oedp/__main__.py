@@ -368,6 +368,23 @@ def cmd_reconferir(a) -> int:
     return codigo_saida
 
 
+def cmd_publicar(a) -> int:
+    import os
+
+    from . import leituras, publicar
+
+    try:
+        oficina = leituras.oficina()
+    except leituras.Recusa as e:
+        print(str(e), file=sys.stderr)
+        return 2
+    try:
+        return publicar.publicar(REPO, oficina, _loja(), dict(os.environ), ensaio=a.ensaio)
+    except publicar.Recusa as e:
+        print(str(e), file=sys.stderr)
+        return 2
+
+
 def cmd_tudo(a) -> int:
     t0 = time.monotonic()
     ok1 = cmd_conferir(argparse.Namespace(pecas=[])) == 0
@@ -469,6 +486,10 @@ def principal(argv=None) -> int:
     m.add_argument("--inicio")
     m.add_argument("--fim")
     m.set_defaults(f=cmd_leitura)
+
+    s = sub.add_parser("publicar", help="check, build, deploy, promote, and prove the live site is the build")
+    s.add_argument("--ensaio", action="store_true", help="stop before running vercel and print the two commands")
+    s.set_defaults(f=cmd_publicar)
 
     s = sub.add_parser("reconferir", help="fetch every published piece's sources again and compare with the stored copies")
     s.add_argument("--retirar", action="store_true", help="withdraw a piece whose excerpt is no longer in its source")
