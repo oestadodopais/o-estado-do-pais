@@ -44,8 +44,16 @@ requirements-navegador.txt`, then `python3 -m playwright install chromium firefo
 Folders: `oedp/` the code; `pecas/` the pieces; `mesas/` one file per desk;
 `direitos/` one rights record per publisher's host;
 `paginas/` the Method prose; `public/` the stylesheet, typefaces and icons;
-`ensaios/` the test piece (invented figures), its store and the holding page;
+`ensaios/` the test piece (invented figures), its store, its own fixed sentences and the holding page;
 `tests/` the tests, including one planted failure for each check.
+
+How the test site is authorized. It has its own fixed sentences, `ensaios/textos.toml`, which
+hold a key the real `textos.toml` may never hold (`arvore_de_ensaio`), so nothing made for one
+fits the other. Its records (of those sentences and of the code) are not stored: `oedp/ensaio.py`
+writes them into each tree it assembles, invented and signed by the tests' model name
+(`modelo-de-ensaio`), and marks that tree with `ARVORE-DE-ENSAIO.txt`. Every gate counts a step
+or a reading signed by that name only inside a marked tree (`oedp/marca.py`), and the mark is
+refused in the repository's own tree.
 
 Publishing on push is switched off in `vercel.json`. The GitHub workflow's job
 `portao` runs `tudo` on every push, with `main` fetched so that check 4 can prove
@@ -76,9 +84,6 @@ failing. Three things are outside that line, written down rather than repaired:
 - `publicar` proves what is live only after promoting it: a deployment's own address
   answers with a login page, so it cannot be compared before. A failure is rolled back
   within about two minutes, during which the new deployment is public.
-- The test site's record of the code (`oedp/ensaio.py`) is invented and written at test
-  time on the code as it is, so that the test piece builds as published; the real record
-  is never written by it. Every invented record the tests use is signed by one model name
-  (`modelo-de-ensaio`), and no gate counts a step or a reading signed by it outside a tree
-  that `oedp/ensaio.py` assembled and marked with `ARVORE-DE-ENSAIO.txt` (`oedp/marca.py`);
-  the mark is refused in the repository's own tree.
+- The test site's records (of the code, and of its own fixed sentences) are invented and
+  written at test time into the tree the tests assemble, so that the test piece builds as
+  published; the real records are never written by them (see «How the test site is authorized»).
