@@ -540,6 +540,34 @@ def segredo_so_no_passo(texto: str) -> list[str]:
     return erros
 
 
+CHECKOUT_DAS_FONTES = "repository: oestadodopais/o-estado-do-pais-fontes"
+
+
+def chave_das_fontes_so_no_checkout(texto: str) -> list[str]:
+    """The workflow gives FONTES_CHAVE to the step that checks out the store, and to no
+    other: elsewhere it may appear only as the test of whether it exists."""
+    linhas = texto.splitlines()
+    erros = []
+    for i, l in enumerate(linhas):
+        if "secrets.FONTES_CHAVE" not in l:
+            continue
+        if l.strip() == "TEM_CHAVE: ${{ secrets.FONTES_CHAVE != '' }}":
+            continue
+        recuo = len(l) - len(l.lstrip())
+        passo = next((j for j in range(i - 1, -1, -1)
+                      if linhas[j].lstrip().startswith("- ") and len(linhas[j]) - len(linhas[j].lstrip()) < recuo), None)
+        if passo is None:
+            erros.append(f"line {i + 1}: FONTES_CHAVE is given outside a step")
+            continue
+        topo = len(linhas[passo]) - len(linhas[passo].lstrip())
+        fim = next((k for k in range(passo + 1, len(linhas))
+                    if linhas[k].lstrip().startswith("- ") and len(linhas[k]) - len(linhas[k].lstrip()) <= topo), len(linhas))
+        bloco = "\n".join(linhas[passo:fim])
+        if CHECKOUT_DAS_FONTES not in bloco or "uses: actions/checkout@" not in bloco or l.strip() != "ssh-key: ${{ secrets.FONTES_CHAVE }}":
+            erros.append(f"line {i + 1}: FONTES_CHAVE is given to a step other than the checkout of the store")
+    return erros
+
+
 def check8_arvore(repo: Path, ambiente: dict | None = None, extras=()) -> Resultado:
     try:
         ficheiros = ficheiros_seguidos(repo, extras)
@@ -550,6 +578,7 @@ def check8_arvore(repo: Path, ambiente: dict | None = None, extras=()) -> Result
     fluxo = Path(repo) / ".github" / "workflows" / "portao.yml"
     if fluxo.is_file():
         razoes += [f"portao.yml: {x}" for x in segredo_so_no_passo(fluxo.read_text(encoding="utf-8"))]
+        razoes += [f"portao.yml: {x}" for x in chave_das_fontes_so_no_checkout(fluxo.read_text(encoding="utf-8"))]
     return _r(8, "tracked files", razoes, [f"{r.vistos} files read"] + ([r.nota] if r.nota else []))
 
 

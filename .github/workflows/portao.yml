@@ -30,10 +30,38 @@ jobs:
       # Check 4 proves against main that a piece's record only grows.
       - name: Main, for the history of the records
         run: git fetch --no-tags --depth=1 origin +refs/heads/main:refs/remotes/origin/main
+      # The private store of sources, read-only, once its key exists (the repository secret
+      # FONTES_CHAVE, a deploy key of oestadodopais/o-estado-do-pais-fontes). This step learns
+      # only whether the key exists, never the key; the key is given to the checkout alone.
+      - name: Whether the store's key exists
+        id: fontes
+        env:
+          TEM_CHAVE: ${{ secrets.FONTES_CHAVE != '' }}
+        run: |
+          if [ "$TEM_CHAVE" = "true" ]; then
+            echo "pasta=$RUNNER_TEMP/fontes" >> "$GITHUB_OUTPUT"
+            echo "FONTES_CHAVE is set: the store of sources is checked out, read-only, for the checks"
+          else
+            echo "FONTES_CHAVE is not set: the checks run without the store of sources, as before"
+          fi
+      - name: The store of sources, read-only
+        if: steps.fontes.outputs.pasta != ''
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: oestadodopais/o-estado-do-pais-fontes
+          ssh-key: ${{ secrets.FONTES_CHAVE }}
+          persist-credentials: false
+          path: .fontes-por-mover
+      # The action places a checkout under the workspace; the commands refuse a store inside
+      # the repository's tree, so it is moved out before anything reads it.
+      - name: The store, moved outside the checked-out tree
+        if: steps.fontes.outputs.pasta != ''
+        run: mv .fontes-por-mover "${{ steps.fontes.outputs.pasta }}"
       # The secret is given to this step only, not to the one that installs dependencies.
       - name: Checks, build and tests
         env:
           PRIVACIDADE_PROIBIDOS: ${{ secrets.PRIVACIDADE_PROIBIDOS }}
+          OEDP_FONTES: ${{ steps.fontes.outputs.pasta }}
         run: python3 -m oedp tudo
       # A link to a receipt opens it, proven in three browser engines. These are steps of
       # this job, not a job of their own, so the required check cannot go green around them.
