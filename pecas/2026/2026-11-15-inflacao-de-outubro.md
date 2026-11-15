@@ -1858,3 +1858,30 @@ familia = "anthropic"
 modelo = "claude-fable-5-2"
 inicio = "2026-11-15T13:28:49Z"
 fim = "2026-11-15T13:29:08Z"
+
+[[leitura]]
+lugar = "juiz"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-15T13:32:30Z"
+fim = "2026-11-15T13:39:27Z"
+impressao = "c2d4145cfb720893f1e3662f066ba6599f75ef54e67719b7daefbfc8120752f7"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 3
+adotados = 2
+veredicto = "nao_passa"
+pessoas_vistas = []
+
+[[leitura]]
+lugar = "leitor"
+familia = "anthropic"
+modelo = "claude-sonnet-5-5"
+inicio = "2026-11-15T13:29:48Z"
+fim = "2026-11-15T13:32:13Z"
+impressao = "c2d4145cfb720893f1e3662f066ba6599f75ef54e67719b7daefbfc8120752f7"
+plantas_postas = 0
+plantas_apanhadas = 0
+achados = 22
+adotados = 6
+veredicto = "levanta"
