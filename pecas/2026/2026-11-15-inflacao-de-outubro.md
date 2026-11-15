@@ -1820,3 +1820,17 @@ plantas_apanhadas = 3
 achados = 0
 adotados = 0
 veredicto = "passa"
+
+[[leitura]]
+lugar = "juiz"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-15T13:19:59Z"
+fim = "2026-11-15T13:26:29Z"
+impressao = "4308a731348fecef6517ace9f91d6fa6021c759dbb7b063b042415fd5e959ddc"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 7
+adotados = 7
+veredicto = "passa"
+pessoas_vistas = []
