@@ -312,8 +312,14 @@ def construir(repo: Path, raiz: Path | None = None, saida: Path | None = None, c
         return c
 
     estatica = saida / "static"
-    if estatica.exists():
-        shutil.rmtree(estatica)
+    # The whole output folder is emptied, not only static/: whatever an earlier build or a
+    # hand left there (functions/, another config) would otherwise be sent unchecked.
+    if saida.is_symlink():
+        c.falha(f"refused: {saida.name} is a symbolic link; give an output folder of its own")
+        return c
+    if saida.exists():
+        for f in saida.iterdir():
+            shutil.rmtree(f) if f.is_dir() and not f.is_symlink() else f.unlink()
     estatica.mkdir(parents=True)
     c.estatica = estatica
     listadas = [p for p in incluidas if p.publicada or com_rascunhos]
@@ -351,14 +357,15 @@ def construir(repo: Path, raiz: Path | None = None, saida: Path | None = None, c
 
     for x in ligacoes_partidas(estatica):
         c.falha(f"check 9: {x}")
+    (saida / "config.json").write_text(json.dumps(configuracao(repo, ctx.lancamento), indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     construidos = [(f.relative_to(estatica).as_posix(), f.read_bytes()) for f in sorted(estatica.rglob("*")) if f.is_file()]
-    p8 = privacidade.conferir(construidos)
+    # The hosting configuration is sent with the pages, so check 8 reads it too.
+    p8 = privacidade.conferir(construidos + [("config.json", (saida / "config.json").read_bytes())])
     for x in p8.razoes:
         c.falha(f"check 8: built file {x}")
     _escrever(estatica, "manifesto.json", json.dumps(manifesto(estatica), indent=1, sort_keys=True) + "\n")
     for x in manifesto_confere(estatica):
         c.falha(f"check 9: {x}")
-    (saida / "config.json").write_text(json.dumps(configuracao(repo, ctx.lancamento), indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     if c.ok:
         onde = estatica.relative_to(repo).as_posix() if estatica.is_relative_to(repo) else estatica.name
         c.mensagens.append(f"built {sum(1 for f in estatica.rglob('*') if f.is_file())} files into {onde}")

@@ -17,9 +17,9 @@ from pathlib import Path
 from .fontes import AGENTE
 
 
-def buscar_na_rede(url: str) -> bytes:
+def buscar_na_rede(url: str, tempo: float = 60) -> bytes:
     pedido = urllib.request.Request(url, headers={"User-Agent": AGENTE, "Cache-Control": "no-cache"})
-    with urllib.request.urlopen(pedido, timeout=60) as r:
+    with urllib.request.urlopen(pedido, timeout=tempo) as r:
         return r.read()
 
 
@@ -32,8 +32,10 @@ def endereco_publico(nome: str) -> str | None:
     return None
 
 
-def conferir(endereco: str, estatica: Path, buscar=buscar_na_rede) -> list[str]:
-    """Reasons the live site differs from the build at `estatica`; empty when equal."""
+def conferir(endereco: str, estatica: Path, buscar=buscar_na_rede, parar=None) -> list[str]:
+    """Reasons the live site differs from the build at `estatica`; empty when equal. `parar`,
+    when given, is asked before every fetch; when it says the time is up, the comparison
+    stops there with that as a reason (publicar's deadline)."""
     base = endereco.rstrip("/")
     proprio_f = Path(estatica) / "manifesto.json"
     if not proprio_f.is_file():
@@ -49,27 +51,35 @@ def conferir(endereco: str, estatica: Path, buscar=buscar_na_rede) -> list[str]:
         return ["the build lists no page, so nothing can be shown to be live"]
     razoes = []
 
+    class SemTempo(Exception):
+        pass
+
     def vivo(url: str) -> bytes | None:
+        if parar is not None and parar():
+            raise SemTempo(url)
         try:
             return buscar(url)
         except (urllib.error.URLError, OSError, ValueError) as e:
             razoes.append(f"{url} could not be fetched ({e})")
             return None
 
-    dados = vivo(base + "/manifesto.json")
-    if dados is not None and dados != proprio_f.read_bytes():
-        razoes.append("the live manifesto.json is not the built one")
-    for nome, sha in sorted(proprio.items()):
-        construido = (Path(estatica) / nome).read_bytes() if (Path(estatica) / nome).is_file() else None
-        if construido is None or hashlib.sha256(construido).hexdigest() != sha:
-            razoes.append(f"{nome}: the build's own file does not match its manifest")
-            continue
-        dados = vivo(base + "/" + nome)
-        if dados is not None and hashlib.sha256(dados).hexdigest() != sha:
-            razoes.append(f"{nome}: live SHA-256 {hashlib.sha256(dados).hexdigest()} is not the built {sha}")
-        publico = endereco_publico(nome)
-        if publico is not None:
-            dados = vivo(base + "/" + publico)
+    try:
+        dados = vivo(base + "/manifesto.json")
+        if dados is not None and dados != proprio_f.read_bytes():
+            razoes.append("the live manifesto.json is not the built one")
+        for nome, sha in sorted(proprio.items()):
+            construido = (Path(estatica) / nome).read_bytes() if (Path(estatica) / nome).is_file() else None
+            if construido is None or hashlib.sha256(construido).hexdigest() != sha:
+                razoes.append(f"{nome}: the build's own file does not match its manifest")
+                continue
+            dados = vivo(base + "/" + nome)
             if dados is not None and hashlib.sha256(dados).hexdigest() != sha:
-                razoes.append(f"/{publico}: what the host serves at the public address is not the built {nome}")
+                razoes.append(f"{nome}: live SHA-256 {hashlib.sha256(dados).hexdigest()} is not the built {sha}")
+            publico = endereco_publico(nome)
+            if publico is not None:
+                dados = vivo(base + "/" + publico)
+                if dados is not None and hashlib.sha256(dados).hexdigest() != sha:
+                    razoes.append(f"/{publico}: what the host serves at the public address is not the built {nome}")
+    except SemTempo as e:
+        razoes.append(f"the time to compare ran out before {e} was fetched")
     return razoes

@@ -44,6 +44,7 @@ from pathlib import Path
 DEPLOY = ["vercel", "deploy", "--prebuilt", "--prod", "--skip-domain", "--yes"]
 NO_AR = "no ar"
 ESPERA_S, PASSO_S = 120, 5
+BUSCA_S = 10  # seconds each fetch of the comparison after promotion may take
 
 
 class Recusa(Exception):
@@ -183,7 +184,7 @@ def publicar(repo: Path, oficina: Path | None, loja: Path | None, ambiente: dict
              imprimir=print) -> int:
     from . import noar
 
-    buscar = buscar or noar.buscar_na_rede
+    buscar = buscar or (lambda url: noar.buscar_na_rede(url, tempo=BUSCA_S))
     razoes = condicoes(repo, ambiente)
     if razoes:
         for r in razoes:
@@ -199,6 +200,13 @@ def publicar(repo: Path, oficina: Path | None, loja: Path | None, ambiente: dict
     if not p.ok:
         for m in p.mensagens:
             imprimir(f"refused: {m}")
+        return 1
+    # Nothing is sent that was not built and checked now: the output holds static/ and config.json only.
+    saida = Path(p.estatica).parent
+    outros = sorted(f.name for f in saida.iterdir() if f.name not in ("static", "config.json"))
+    if outros:
+        imprimir(f"refused: {saida.name}/ holds {', '.join(outros)}, which this build did not make and the checks did not read; "
+                 "only static/ and config.json are sent")
         return 1
     commit = _git(repo, "rev-parse", "HEAD").stdout.strip()
     linha = {"em": agora(), "commit": commit, "manifesto_sha256": sha_de(p.estatica / "manifesto.json"),
@@ -222,30 +230,46 @@ def publicar(repo: Path, oficina: Path | None, loja: Path | None, ambiente: dict
     linha["implantacao"] = implantacao
     codigo_p, _, erro_p = correr(["vercel", "promote", implantacao, "--yes"], repo)
     if codigo_p != 0:
-        acrescentar(oficina, {**linha, "resultado": f"falhou: vercel promote exited {codigo_p}"})
-        imprimir(f"failed: vercel promote exited {codigo_p}: {erro_p.strip()}")
-        return 1
-    inicio = relogio()
+        # The command may have taken effect before its answer was lost: compare anyway.
+        imprimir(f"vercel promote exited {codigo_p} ({erro_p.strip()}); the public address is compared anyway, "
+                 "since the promotion may have taken effect")
+    # Step 4, bounded by the clock: each fetch gets BUSCA_S seconds, the clock is read before
+    # every fetch, so the roll-back begins no later than ESPERA_S and one fetch after this.
+    prazo = relogio() + ESPERA_S
+    passou_o_prazo = lambda: relogio() >= prazo
     while True:
-        razoes = noar.conferir(publico, p.estatica, buscar)
+        razoes = noar.conferir(publico, p.estatica, buscar, parar=passou_o_prazo)
         if not razoes:
-            acrescentar(oficina, {**linha, "resultado": NO_AR})
-            imprimir(f"check 10 (live is built) · {publico}: passed; published {commit[:12]}")
+            nota = f"; vercel promote had exited {codigo_p}" if codigo_p else ""
+            acrescentar(oficina, {**linha, "resultado": NO_AR, **({"nota": nota.lstrip("; ")} if nota else {})})
+            imprimir(f"check 10 (live is built) · {publico}: passed; published {commit[:12]}{nota}")
             return 0
-        if relogio() - inicio >= ESPERA_S:
+        if passou_o_prazo():
             break
         dormir(PASSO_S)
-    # Step 5: put the earlier deployment back.
     imprimir(f"check 10 (live is built) · {publico}: failed for {ESPERA_S} seconds: " + " | ".join(razoes[:5]))
+    if codigo_p != 0 and _inicio_publico(publico, buscar, imprimir) == anterior.get("inicio_sha256"):
+        # The promotion did not take effect: the earlier deployment is still live, nothing to undo.
+        acrescentar(oficina, {**linha, "resultado": f"falhou: vercel promote exited {codigo_p}; the public address still "
+                                                     "serves the deployment of the last line live"})
+        imprimir("failed: the promotion did not take effect; the front page is still the one the last line recorded")
+        return 1
+    # Step 5: put the earlier deployment back.
     codigo_v, _, erro_v = correr(["vercel", "promote", str(anterior.get("implantacao")), "--yes"], repo)
-    try:
-        voltou = hashlib.sha256(buscar(publico.rstrip("/") + "/")).hexdigest() == anterior.get("inicio_sha256")
-    except Exception as e:  # the check of the roll-back must not hide that it could not be made
-        voltou = None
-        imprimir(f"the front page could not be fetched after the roll-back ({e})")
+    frente = _inicio_publico(publico, buscar, imprimir)
+    voltou = None if frente is None else frente == anterior.get("inicio_sha256")
     acrescentar(oficina, {**linha, "resultado": f"falhou: no-ar did not pass in {ESPERA_S} s; earlier deployment promoted "
                                                  f"(exit {codigo_v}); front page as before: {voltou}"})
     imprimir(f"rolled back: vercel promote of the earlier deployment exited {codigo_v}" + (f" ({erro_v.strip()})" if codigo_v else "")
              + "; the front page is " + {True: "again", False: "NOT", None: "not known to be"}[voltou]
              + " the one the last line recorded")
     return 1
+
+
+def _inicio_publico(publico: str, buscar, imprimir) -> str | None:
+    """The SHA-256 of the front page at the public address, or None when it cannot be fetched."""
+    try:
+        return hashlib.sha256(buscar(publico.rstrip("/") + "/")).hexdigest()
+    except Exception as e:  # the check must not hide that it could not be made
+        imprimir(f"the front page could not be fetched ({e})")
+        return None

@@ -115,6 +115,27 @@ def ficheiros_do_pacote(pacote: Path) -> dict[str, str]:
             for f in sorted(Path(pacote).rglob("*")) if f.is_file() and not f.is_symlink()}
 
 
+def pacote_intacto(pasta: Path):
+    """Refuse, naming the files, when the package is not byte for byte what `montar` built
+    or, once planted, what `plantar` left: a file changed, missing, or there and not listed.
+    A package changed by hand would otherwise be read and recorded under the fingerprint of
+    something else."""
+    pasta = Path(pasta)
+    chave = pasta / "chave.json"
+    esperado = (ler_json(chave) if chave.is_file() else ler_json(pasta / "leitura.json")).get("ficheiros")
+    if not isinstance(esperado, dict):
+        raise Recusa("refused: the reading's folder records no list of the package's files, so the package cannot be "
+                     "shown to be the one built" + (" and planted" if chave.is_file() else ""))
+    real = ficheiros_do_pacote(pasta / "pacote")
+    mudados = sorted(n for n in set(esperado) & set(real) if esperado[n] != real[n])
+    em_falta = sorted(set(esperado) - set(real))
+    a_mais = sorted(set(real) - set(esperado))
+    if mudados or em_falta or a_mais:
+        partes = ([f"changed: {', '.join(mudados)}"] if mudados else []) + ([f"missing: {', '.join(em_falta)}"] if em_falta else []) \
+            + ([f"not listed: {', '.join(a_mais)}"] if a_mais else [])
+        raise Recusa("refused: the package is not the one " + ("planted" if chave.is_file() else "built") + " (" + "; ".join(partes) + ")")
+
+
 def mesma_hora(pacote: Path, quando: float | None = None):
     """Every file and folder of the package gets one modification time, so that the time a
     file was changed says nothing about a plant."""
@@ -534,17 +555,23 @@ def lugares_no_texto(antes: str, depois: str) -> list[str]:
     return lugares
 
 
-def _linhas_da_folha(folha: bytes) -> dict[str, dict]:
+def _tabelas_da_folha(folha: bytes, chave: str) -> dict[str, dict]:
     try:
         dados = tomllib.loads(folha.decode("utf-8"))
     except tomllib.TOMLDecodeError as e:
         raise Recusa(f"refused: the planted fact sheet is not valid TOML ({e})") from None
-    return {t.get("id"): t for chave in ("fonte", "linha", "pessoa") for t in dados.get(chave, []) if isinstance(t, dict)}
+    return {t.get("id"): t for t in dados.get(chave, []) if isinstance(t, dict)}
 
 
 def lugares_na_folha(antes: bytes, depois: bytes) -> list[str]:
-    a, b = _linhas_da_folha(antes), _linhas_da_folha(depois)
-    return [f"linha {i}" for i in sorted(set(a) | set(b), key=str) if a.get(i) != b.get(i)]
+    """`fonte <id>` for each changed [[fonte]], `linha <id>` for each changed [[linha]], in the
+    words of a finding (equipa/00-comum.md). A changed [[pessoa]] has no place of its own: it
+    is placed by the numbered sentences it changes, and refused where it changes none."""
+    lugares = []
+    for chave, palavra in (("fonte", "fonte"), ("linha", "linha")):
+        a, b = _tabelas_da_folha(antes, chave), _tabelas_da_folha(depois, chave)
+        lugares += [f"{palavra} {i}" for i in sorted(set(a) | set(b), key=str) if a.get(i) != b.get(i)]
+    return lugares
 
 
 def _conferencias(bruto: bytes, loja: Path | None) -> list[tuple]:
@@ -661,7 +688,7 @@ def plantar(pasta: Path, lista: Path, loja: Path | None = None, repo: Path = REP
     finally:
         shutil.rmtree(copia, ignore_errors=True)
     mesma_hora(pacote)
-    escrever_json(pasta / "chave.json", {"plantas": chave, "plantada_em": agora()})
+    escrever_json(pasta / "chave.json", {"plantas": chave, "plantada_em": agora(), "ficheiros": ficheiros_do_pacote(pacote)})
     for c in chave:
         imprimir(f"{c['id']}: planted in {c['ficheiro']}; its places: {', '.join(c['lugares']) or '(see the lines)'}")
     return chave
@@ -794,6 +821,11 @@ def executar_ler_sh(args: list[str], ambiente: dict) -> tuple[int, str]:
 
 def lancar(pasta: Path, executar=executar_ler_sh, ambiente: dict | None = None, imprimir=print) -> int:
     pasta = Path(pasta)
+    try:
+        pacote_intacto(pasta)
+    except Recusa as e:
+        imprimir(str(e))
+        return 2
     dados = ler_json(pasta / "leitura.json")
     lugar = dados["lugar"]
     prompt_f, saida = pasta / "PROMPT.md", pasta / "LEITURA.md"
@@ -830,6 +862,7 @@ def lancar(pasta: Path, executar=executar_ler_sh, ambiente: dict | None = None, 
 
 # --------------------------------------------------------------------------- A4: pontuar
 
+GRAVIDADES = ("trava", "corrigir", "menor")
 ONDE = re.compile(r"(frase [1-9]\d*|linha [a-z][a-z0-9_]*|fonte [a-z][a-z0-9_]*|ficheiro \S+:[1-9]\d*|geral)\Z")
 
 
@@ -850,6 +883,9 @@ def bloco_final(texto: str) -> dict:
         if not isinstance(onde, str) or not ONDE.match(onde):
             raise Recusa(f"refused: [[achado]] number {n} has onde {onde!r}, which is not one of the forms of the common page "
                          "(frase <N> | linha <id> | fonte <id> | ficheiro <path>:<line> | geral)")
+        if a.get("gravidade") not in GRAVIDADES:
+            raise Recusa(f"refused: [[achado]] number {n} has gravidade {a.get('gravidade')!r}, which is not exactly "
+                         "trava, corrigir or menor; a finding is not read as a lesser one than it says")
     return dados
 
 
@@ -880,6 +916,7 @@ def _ficheiro_do_achado(onde: str) -> str | None:
 def pontuar(pasta: Path, decisoes: Path | None = None, modelo: str | None = None, inicio: str | None = None,
             fim: str | None = None, imprimir=print) -> dict:
     pasta = Path(pasta)
+    pacote_intacto(pasta)
     dados = ler_json(pasta / "leitura.json")
     lugar = dados["lugar"]
     leitura_f = pasta / "LEITURA.md"
@@ -991,8 +1028,23 @@ def ficheiro_do_registo(alvo: dict) -> Path:
             "codigo": caminho / codigo.REGISTO}[alvo["tipo"]]
 
 
+def leituras_no_registo(alvo: dict) -> list[dict]:
+    """The [[leitura]] tables already in the target's record."""
+    destino = ficheiro_do_registo(alvo)
+    if not destino.is_file():
+        return []
+    if alvo["tipo"] == "peca":
+        return ler(destino).registo.get("leitura", [])
+    if alvo["tipo"] == "metodo":
+        return julgados.metodo(destino)[1].get("leitura", [])
+    if alvo["tipo"] == "codigo":
+        return [t for n, t in codigo.em_ordem(destino.read_text(encoding="utf-8")) if n == "leitura"]
+    return tomllib.loads(destino.read_text(encoding="utf-8")).get("leitura", [])
+
+
 def registar(pasta: Path, imprimir=print) -> str:
     pasta = Path(pasta)
+    pacote_intacto(pasta)
     dados = ler_json(pasta / "leitura.json")
     p_f, l_f = pasta / "pontuacao.json", pasta / "LEITURA.md"
     if not p_f.is_file():
@@ -1007,6 +1059,14 @@ def registar(pasta: Path, imprimir=print) -> str:
     if p["lugar"] in ("justica", "juiz") and "pessoas_vistas" in p:
         campos["pessoas_vistas"] = p["pessoas_vistas"]
     destino = ficheiro_do_registo(dados["alvo"])
+    # An interrupted registration (the table appended, leitura.json not yet marked) must not
+    # append the same reading twice.
+    mesma = [l for l in leituras_no_registo(dados["alvo"])
+             if all(l.get(k) == campos[k] for k in ("lugar", "inicio", "fim", "impressao"))]
+    if mesma:
+        raise Recusa(f"refused: the record of {destino.name} already holds a {campos['lugar']} reading with this start, "
+                     f"end and fingerprint ({campos['inicio']} to {campos['fim']}, {campos['impressao'][:12]}…); "
+                     "it was registered before, perhaps by a run that was interrupted")
     try:
         texto = registo.acrescentar(destino, "leitura", campos)
     except (registo.ErroDoRegisto, ErroDeForma) as e:

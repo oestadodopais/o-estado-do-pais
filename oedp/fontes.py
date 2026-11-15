@@ -173,8 +173,46 @@ def texto_impresso(dados: bytes) -> str:
     return "".join(f"=== p. {n} ===\n{texto}\n" for n, texto in enumerate(paginas, 1))
 
 
+MENOS = "-\u2212\u2010\u2011\u2012\u2013"  # a hyphen or a minus sign before a number makes it another number
+
+
+def inteiro_em(alvo: str, texto: str, i: int) -> bool:
+    """Whether the occurrence of `alvo` at `texto[i]` is whole (docs/ESPEC-PECA.md, check 2,
+    edit of 15 November 2026, 03:29 UTC): the character before it is not a letter or a digit
+    when the excerpt begins with one, nor, when it begins with a digit, a minus sign or a
+    hyphen, or a point or comma that follows a digit; the character after it is not a
+    letter or a digit when it ends with one, nor, when it ends with a digit, a point or
+    comma followed by a digit. So `100` is not found in `1000`, `-100`, `100,5` or `2.100`."""
+    j = i + len(alvo)
+    antes = texto[i - 1] if i > 0 else ""
+    depois = texto[j] if j < len(texto) else ""
+    if alvo[0].isalnum() and antes.isalnum():
+        return False
+    if alvo[0].isdigit():
+        if antes and antes in MENOS:
+            return False
+        if antes in (".", ",") and i >= 2 and texto[i - 2].isdigit():
+            return False
+    if alvo[-1].isalnum() and depois.isalnum():
+        return False
+    if alvo[-1].isdigit() and depois in (".", ",") and j + 1 < len(texto) and texto[j + 1].isdigit():
+        return False
+    return True
+
+
+def achado_inteiro(alvo: str, texto: str) -> bool:
+    """Whether the normalised excerpt occurs whole anywhere in the normalised text."""
+    i = texto.find(alvo)
+    while i >= 0:
+        if inteiro_em(alvo, texto, i):
+            return True
+        i = texto.find(alvo, i + 1)
+    return False
+
+
 def procurar(excerto: str, paginas: list[str], pagina_pedida: int | None) -> int | None:
-    """The 1-based page where the normalised excerpt is found, or None."""
+    """The 1-based page where the normalised excerpt is found whole, or None. Check 2 and
+    the weekly re-check both read a copy through this one function."""
     alvo = normalizar(excerto)
     if not alvo:
         return None
@@ -183,7 +221,7 @@ def procurar(excerto: str, paginas: list[str], pagina_pedida: int | None) -> int
         ordem.remove(pagina_pedida)
         ordem.insert(0, pagina_pedida)
     for n in ordem:
-        if alvo in paginas[n - 1]:
+        if achado_inteiro(alvo, paginas[n - 1]):
             return n
     return None
 
@@ -300,23 +338,35 @@ def transporte_curl(url: str, destino: Path, metodo: str = "GET", endereco: str 
             raise ErroDaLoja(f"{url}: curl did not finish in 180 seconds") from None
 
     host = urllib.parse.urlsplit(url).hostname or url
-    primeiros = args + (["--http1.1"] if primeiro_http11 else [])
-    r = correr(primeiros)
-    nota, http11, sem_ligacao = "", False, False
-    if nao_ligou(r):
-        r = correr(primeiros)
-        sem_ligacao = nao_ligou(r)
-        nota = (f"{url}: {host} did not connect within {LIGACAO_S} seconds; tried once more, which "
-                + ("did not connect either" if sem_ligacao else "succeeded" if r.returncode == 0 else f"connected and then failed (curl exit {r.returncode})"))
+    notas: list[str] = []
+
+    def tentativa(lista):
+        """One attempt, and one more when the host did not connect; (answer, did it connect at last)."""
+        r = correr(lista)
+        if not nao_ligou(r):
+            return r, True
+        r = correr(lista)
+        ligou = not nao_ligou(r)
+        notas.append(f"{url}: {host} did not connect within {LIGACAO_S} seconds; tried once more, which "
+                     + ("did not connect either" if not ligou else "succeeded" if r.returncode == 0
+                        else f"connected and then failed (curl exit {r.returncode})"))
+        return r, ligou
+
+    r, ligou = tentativa(args + (["--http1.1"] if primeiro_http11 else []))
+    http11 = False
     # A failure of transport (not a bad address, not a size limit) is tried once more over
-    # HTTP/1.1: some hosts fail over HTTP/2 ("Invalid HTTP header field was received").
-    if not sem_ligacao and r.returncode not in (0, 1, 3, 6, 47, 63):
+    # HTTP/1.1: some hosts fail over HTTP/2 ("Invalid HTTP header field was received"). That
+    # attempt gets the same one more try when it does not connect.
+    if ligou and r.returncode not in (0, 1, 3, 6, 47, 63):
         primeiro = (r.stderr or "").strip() or f"curl exit {r.returncode}"
-        r = correr(args + ([] if primeiro_http11 else ["--http1.1"]))
         outro = "without --http1.1" if primeiro_http11 else "with --http1.1"
-        nota = (nota + "; " if nota else "") + f"{url}: curl failed ({primeiro}); tried once more {outro}, which " + (
-            "succeeded" if r.returncode == 0 else f"failed too (curl exit {r.returncode})")
+        n = len(notas)
+        r, ligou = tentativa(args + ([] if primeiro_http11 else ["--http1.1"]))
+        notas.insert(n, f"{url}: curl failed ({primeiro}); tried once more {outro}, which " + (
+            "succeeded" if r.returncode == 0 else "did not connect" if not ligou else f"failed too (curl exit {r.returncode})"))
         http11 = r.returncode == 0 and not primeiro_http11
+    sem_ligacao = not ligou
+    nota = "; ".join(notas)
     try:
         dados = json.loads(r.stdout) if r.stdout.strip() else {}
     except json.JSONDecodeError:
@@ -574,8 +624,8 @@ def buscar(url: str, raiz: Path, direitos_de=None, transporte=transporte_curl, t
                 if not permite:
                     raise ErroDaLoja(f"refused: {razao}")
                 continue
-            if not 200 <= r.http <= 299:
-                raise ErroDaLoja(f"refused: {final} answered {r.http}")
+            if r.http != 200:  # only a whole answer is a source: 206 and every other code are refused
+                raise ErroDaLoja(f"refused: {final} answered {r.http}; only an answer 200 is stored")
             break
         if len(dados) < MINIMO and not pequeno:
             raise ErroDaLoja(f"refused: {final} answered 200 with only {resumo_da_copia(dados, r.tipo)}; "

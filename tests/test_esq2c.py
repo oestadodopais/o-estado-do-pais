@@ -72,7 +72,7 @@ class Reconferir(unittest.TestCase):
         self.assertEqual(codigo, 1)
         r = json.loads(relatorio.read_text(encoding="utf-8"))["fontes"][0]
         self.assertEqual((r["resultado"], r["linhas"]), ("falhou", ["indice", "indice_anterior", "despacho", "proxima"]))
-        self.assertEqual(self.p.peca.read_bytes(), antes)  # without --retirar, the piece is left untouched
+        self.assertEqual(self.p.peca.read_bytes(), antes)  # with --so-relatar (retirar=False), the piece is left untouched
 
         codigo, _ = self.correr({"https://example.org/ensaio/documento.pdf": nova,
                                  "https://example.org/ensaio/tabela.html": self.original(HTML)}, retirar=True)

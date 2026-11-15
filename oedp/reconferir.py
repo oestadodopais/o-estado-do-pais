@@ -1,4 +1,4 @@
-"""The weekly re-check: `python3 -m oedp reconferir [--retirar] [<piece> …]`.
+"""The weekly re-check: `python3 -m oedp reconferir [--so-relatar] [<piece> …]`.
 
 For every published piece (or those named that are published), for every `[[fonte]]`,
 the source's `url` is fetched again by the fetcher, under its rules (public host,
@@ -10,9 +10,10 @@ the stored copy:
   still finds its excerpt in the new copy's text, by the function check 2 uses
   (`fontes.procurar`), with a `valor` line's figure in its excerpt (`numeros.contem_figura`).
   The new copy is stored too (the fetcher stores what it fetches).
-* `falhou`: other bytes, and a line's excerpt is no longer found. With `--retirar`, one
-  `[[estado]]` `retirada` is appended to the piece, its `razao` the fixed sentence
-  `retirada_numero`.
+* `falhou`: other bytes, and a line's excerpt is no longer found. One `[[estado]]`
+  `retirada` is appended to the piece, its `razao` the fixed sentence `retirada_numero`:
+  the piece is withdrawn by default (ESQ2c item 12); `--so-relatar` reports and withdraws
+  nothing.
 * `inacessivel`: the address could not be fetched, answered other than 2xx, or its
   host now refuses. Never a pass, and never a withdrawal by itself: the stored copy is
   still the receipt.
@@ -64,7 +65,7 @@ def linhas_que_falham(peca, fid: str, dados: bytes) -> list[str]:
     return falham
 
 
-def reconferir(caminhos: list[Path], loja: Path, oficina: Path, textos: dict, retirar: bool = False,
+def reconferir(caminhos: list[Path], loja: Path, oficina: Path, textos: dict, retirar: bool = True,
                buscar=None, raiz: Path | None = None, imprimir=print, hoje: str | None = None) -> tuple[int, Path]:
     """Re-check the sources; returns (exit code, the report's path)."""
     buscar = buscar or buscador_real(raiz or Path(caminhos[0]).resolve().parents[2])

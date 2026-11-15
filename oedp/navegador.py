@@ -78,9 +78,6 @@ _ESTADO = """([ancora]) => {
           excerto: caixa(d && (d.querySelector('blockquote.excerto') || d.querySelector('dd.conta')))};
 }"""
 
-# The receipt open, its summary and its excerpt (a computed figure's: its calculation)
-# wholly inside the window.
-_A_VISTA = "([x]) => { const s = (" + _ESTADO + ")([x]); const v = (c) => !!c && c.altura > 0 && c.cima >= 0 && c.baixo <= s.janela; return s.existe && s.aberto && v(s.resumo) && v(s.excerto); }"
 
 _NA_JANELA = """([seletor]) => { const el = document.querySelector(seletor); if (!el) return false;
   const r = el.getBoundingClientRect(); return r.height > 0 && r.top >= 0 && r.bottom <= window.innerHeight; }"""
@@ -88,6 +85,26 @@ _NA_JANELA = """([seletor]) => { const el = document.querySelector(seletor); if 
 
 def _visivel(caixa, janela) -> bool:
     return bool(caixa) and caixa["altura"] > 0 and caixa["cima"] >= 0 and caixa["baixo"] <= janela
+
+
+def recibo_a_vista(estado: dict) -> bool:
+    """Proof 1's condition, decided here and not in the page: the receipt exists and is open,
+    and its summary AND its excerpt (a computed figure's: its calculation) are both wholly
+    inside the window. `estado` is what `_ESTADO` returns from the page."""
+    return bool(estado.get("existe") and estado.get("aberto")
+                and _visivel(estado.get("resumo"), estado.get("janela", 0))
+                and _visivel(estado.get("excerto"), estado.get("janela", 0)))
+
+
+def _ate_estar_a_vista(pagina, ancora: str) -> dict:
+    """Read the receipt's state until it is in view or ESPERA_MS pass; the last state read."""
+    limite = ESPERA_MS
+    while True:
+        estado = pagina.evaluate(_ESTADO, [ancora])
+        if recibo_a_vista(estado) or limite <= 0:
+            return estado
+        pagina.wait_for_timeout(100)
+        limite -= 100
 
 
 def _esperar(pagina, funcao, args) -> bool:
@@ -126,8 +143,7 @@ def provas(pagina, base: str, peca_id: str) -> list[str]:
     aberto = _aberto(pagina, ancora)
     if not aberto:
         falhas.append(f"1. a click on the figure {href} left its receipt closed")
-    elif not _esperar(pagina, _A_VISTA, [ancora]):
-        estado = pagina.evaluate(_ESTADO, [ancora])
+    elif not recibo_a_vista(estado := _ate_estar_a_vista(pagina, ancora)):
         if not _visivel(estado["resumo"], estado["janela"]):
             falhas.append(f"1. after a click on {href} the receipt is open but its summary is not in the window ({estado['resumo']})")
         if not _visivel(estado["excerto"], estado["janela"]):

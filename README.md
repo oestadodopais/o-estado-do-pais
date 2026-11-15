@@ -20,7 +20,7 @@ Python 3.12 or later. `python3 -m pip install -r requirements.txt`, then:
 | `python3 -m oedp leitura lancar <folder>` | Runs `scripts/leituras/ler.sh` for a Codex seat (needs `CODEX_RACIOCINIO`); for a Claude seat, says where the prompt and the answer are |
 | `python3 -m oedp leitura pontuar <folder> [--decisoes <f>]` | Scores the reader's closing block against the key: the verdict on the record |
 | `python3 -m oedp leitura registar <folder>` | Appends the scored `[[leitura]]` to the target's record |
-| `python3 -m oedp reconferir [--retirar] [<piece>…]` | Fetches every published piece's sources again and compares them with the stored copies; `--retirar` withdraws a piece whose excerpt is gone |
+| `python3 -m oedp reconferir [--so-relatar] [<piece>…]` | Fetches every published piece's sources again and compares them with the stored copies, and withdraws a piece whose excerpt is gone; `--so-relatar` reports and withdraws nothing |
 | `python3 -m oedp publicar [--ensaio]` | On the laptop: checks, the code's gate, the build, `vercel deploy` and `promote`, then `no-ar` against `endereco` for two minutes, rolling back if it fails |
 | `python3 -m oedp navegador [--exigir chromium,firefox,webkit]` | A link to a receipt opens it, in real browsers (needs `requirements-navegador.txt`) |
 | `python3 -m oedp capturas <folder> [<piece>]` | Screenshots of the built pages with Chromium, 390 and 1280 px, light and dark |

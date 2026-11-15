@@ -326,8 +326,33 @@ def historia(peca: Peca, anterior) -> tuple[list[str], bool]:
     return razoes, True
 
 
+def republicada_sem_juiz(peca: Peca) -> list[str]:
+    """A withdrawn piece is published again only when its record holds a passing juiz reading
+    whose inicio is after that withdrawal's em, on the current fingerprint, by a family other
+    than the producing one, with every plant of at least one caught (docs/ESPEC-PECA.md,
+    edit of 15 November 2026, 03:29 UTC): it does not come back on its earlier approval."""
+    produtoras = {p.get("familia") for p in _passos(peca)}
+    leituras = [l for l in _leituras(peca, "juiz") if l.get("veredicto") == "passa" and l.get("impressao") == peca.impressao
+                and l.get("familia") not in produtoras and isinstance(l.get("plantas_postas"), int)
+                and l.get("plantas_postas") >= 1 and l.get("plantas_apanhadas") == l.get("plantas_postas")]
+    erros, retirada = [], None
+    for est in peca.registo.get("estado", []):
+        if not isinstance(est, dict):
+            continue
+        if est.get("estado") == "retirada":
+            retirada = est
+        elif est.get("estado") == "publicada" and retirada is not None:
+            quando = datas.instante_real(str(retirada.get("em", "")))
+            depois = [l for l in leituras if quando and (i := datas.instante_real(str(l.get("inicio", "")))) and i > quando]
+            if not depois:
+                erros.append(f"the piece was withdrawn at {retirada.get('em')} and published again with no passing juiz reading "
+                             "begun after that withdrawal (on the current fingerprint, by the other family, every plant caught)")
+            retirada = None
+    return erros
+
+
 def check4(peca: Peca, pagina: str | None, anterior=("unavailable", None)) -> Resultado:
-    razoes = []
+    razoes = republicada_sem_juiz(peca)
     passadas = [l for l in _leituras(peca, "juiz") if l.get("veredicto") == "passa"]
     if not passadas:
         razoes.append("there is no passing juiz reading")

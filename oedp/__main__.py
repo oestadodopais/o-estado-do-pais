@@ -389,7 +389,7 @@ def cmd_reconferir(a) -> int:
         print("no published piece: nothing to re-check")
         return 0
     textos = tomllib.loads((REPO / "textos.toml").read_text(encoding="utf-8"))
-    codigo_saida, _ = reconferir.reconferir(caminhos, loja, oficina, textos, retirar=a.retirar, raiz=REPO)
+    codigo_saida, _ = reconferir.reconferir(caminhos, loja, oficina, textos, retirar=not a.so_relatar, raiz=REPO)
     return codigo_saida
 
 
@@ -517,7 +517,8 @@ def principal(argv=None) -> int:
     s.set_defaults(f=cmd_publicar)
 
     s = sub.add_parser("reconferir", help="fetch every published piece's sources again and compare with the stored copies")
-    s.add_argument("--retirar", action="store_true", help="withdraw a piece whose excerpt is no longer in its source")
+    s.add_argument("--so-relatar", action="store_true",
+                   help="report only; by default a piece whose excerpt is no longer in its source is withdrawn")
     s.add_argument("pecas", nargs="*")
     s.set_defaults(f=cmd_reconferir)
 
