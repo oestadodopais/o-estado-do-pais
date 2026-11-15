@@ -1075,11 +1075,12 @@ def pontuar(pasta: Path, decisoes: Path | None = None, modelo: str | None = None
         trava = [n for n, a in reais if a.get("gravidade") == "trava"]
         if trava:
             razoes.append(f"real findings at trava: {trava} (closed only by a repair read again)")
-        # For the seats whose pass the checks count, a real finding adopted, of any severity, stops a
-        # pass: adopting it means what was read is about to change, and the pass belongs to what is
-        # read after the repair (ORDEM-3b, item I; equipa/00-comum.md since 14:28 UTC, 15 November 2026).
+        # For every seat whose verdict can be passa (every seat of the other family from what it read:
+        # this branch), a real finding adopted, of any severity, stops a pass: adopting it means what
+        # was read is about to change, and the pass belongs to what is read after the repair (ORDEM-3b,
+        # item I; ORDEM-3e, item C: check 7 counts the justica's pass too).
         adotados_reais = [n for n, _ in reais if d_achados.get(n, {}).get("decisao") == "adotado"]
-        if lugar in COM_PLANTAS_OBRIGATORIAS and adotados_reais:
+        if adotados_reais:
             razoes.append(f"real findings adopted: {adotados_reais} (what was read is about to change; the pass belongs to "
                           "what is read after the repair)")
         veredicto = "nao_passa" if razoes else "passa"
