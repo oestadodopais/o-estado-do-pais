@@ -497,6 +497,15 @@ class F_QuatroReparacoes(SitioDeEnsaio):
         self.assertIn('<a href="/metodo/">Como é feito</a></p>', self.ler("correcoes/index.html"))
         self.assertEqual(build.ligacoes_partidas(self.est), [])
 
+    def test_planta_a_ligacao_da_ia_no_metodo(self):
+        """The old Method page printed ia_ligacao as plain text marked as the current page."""
+        metodo = self.ler("metodo/index.html")
+        frase = "Nenhuma pessoa o revê antes de ser publicado."
+        for plantado in (metodo.replace(frase + "</p>", frase + ' <span aria-current="page">Como é feito</span></p>', 1),
+                         metodo.replace(frase + "</p>", frase + ' <a href="/metodo/">Como é feito</a></p>', 1)):
+            linha = re.search(r'<p class="rotulo-ia-linha">(.*?)</p>', plantado).group(1)
+            self.assertNotEqual(linha, "Texto gerado e editado por inteligência artificial. " + frase)
+
     def test_a_pagina_das_correcoes_por_ordem(self):
         html = self.ler("correcoes/index.html")
         posicoes = [html.index(x) for x in ('<p class="intro">Todas as correções', '<section class="correcoes-lista">',
@@ -521,6 +530,13 @@ class F_QuatroReparacoes(SitioDeEnsaio):
                  '<p class="temas"><a href="/temas/ensaio/">']
         posicoes = [cabeca.index(x) for x in ordem]
         self.assertEqual(posicoes, sorted(posicoes))
+
+    def test_planta_a_data_depois_dos_temas(self):
+        html = self.ler("pecas/2026-11-16-peca-de-ensaio/index.html")
+        publicada = re.search(r'<p class="publicada">.*?</p>', html).group(0)
+        plantado = html.replace(publicada, "", 1).replace("</p></header>", "</p>" + publicada + "</header>", 1)
+        cabeca = re.search(r'<header class="peca-cabeca">(.*?)</header>', plantado, re.S).group(1)
+        self.assertGreater(cabeca.index('<p class="publicada">'), cabeca.index('<p class="temas">'))
 
     def test_um_rascunho_nao_tem_data_de_publicacao(self):
         peca, html, _ = pagina_plantada(self, [('[[estado]]\nestado = "publicada"', '[[estado]]\nestado = "rascunho"')])
