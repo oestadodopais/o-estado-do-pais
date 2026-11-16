@@ -155,3 +155,145 @@ familia = "anthropic"
 modelo = "claude-opus-5-5"
 inicio = "2026-11-15T15:47:56Z"
 fim = "2026-11-15T15:59:33Z"
+
+[[leitura]]
+lugar = "seguranca"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-15T16:15:53Z"
+fim = "2026-11-15T16:32:13Z"
+impressao = "8ffff2a453d603e18666c75c6ab6a9bcb5f65e00c70afc2aa7198f0fd5be8d83"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 6
+adotados = 6
+veredicto = "nao_passa"
+
+[[passo]]
+nome = "construcao"
+lugar = "construtor"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-15T16:34:10Z"
+fim = "2026-11-15T16:43:24Z"
+
+[[leitura]]
+lugar = "seguranca"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-15T16:57:01Z"
+fim = "2026-11-15T17:05:25Z"
+impressao = "0f7950511100061b3b494cea2724596ef24fdd39df62ce25cd7cc2c1f855f3dd"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 4
+adotados = 4
+veredicto = "nao_passa"
+
+[[passo]]
+nome = "construcao"
+lugar = "construtor"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-15T17:08:00Z"
+fim = "2026-11-15T17:18:45Z"
+
+[[leitura]]
+lugar = "seguranca"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-15T17:31:15Z"
+fim = "2026-11-15T17:37:41Z"
+impressao = "eea210cb6db716fc4c6abf3c05cf40df6e43ca6e37380828e54695fa37c4fc98"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 1
+adotados = 1
+veredicto = "nao_passa"
+
+[[passo]]
+nome = "construcao"
+lugar = "construtor"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-16T10:52:03Z"
+fim = "2026-11-16T11:14:59Z"
+
+[[passo]]
+nome = "construcao"
+lugar = "construtor"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-16T11:16:53Z"
+fim = "2026-11-16T11:28:58Z"
+
+[[passo]]
+nome = "construcao"
+lugar = "construtor"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-16T11:32:30Z"
+fim = "2026-11-16T11:39:26Z"
+
+[[leitura]]
+lugar = "seguranca"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-16T11:57:26Z"
+fim = "2026-11-16T12:07:10Z"
+impressao = "ad351be91878946274de7cc8cfe49384f3898bcf423cca36e5ceb1a137adbc54"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 2
+adotados = 2
+veredicto = "nao_passa"
+
+[[passo]]
+nome = "construcao"
+lugar = "construtor"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-16T12:10:18Z"
+fim = "2026-11-16T12:19:34Z"
+
+[[passo]]
+nome = "construcao"
+lugar = "construtor"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-16T12:29:05Z"
+fim = "2026-11-16T12:43:33Z"
+
+[[leitura]]
+lugar = "seguranca"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-16T12:57:16Z"
+fim = "2026-11-16T13:09:38Z"
+impressao = "fd3f7af28de402b51bef235a7a09576150f0d1d3f988e60392db0cdcdf5d4489"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 6
+adotados = 6
+veredicto = "nao_passa"
+
+[[passo]]
+nome = "construcao"
+lugar = "construtor"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-16T13:14:24Z"
+fim = "2026-11-16T13:29:15Z"
+
+[[leitura]]
+lugar = "seguranca"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-16T13:51:06Z"
+fim = "2026-11-16T14:00:29Z"
+impressao = "3792fac24589d8f9850e07016805a7d3715f53cc59277ff620f83d3fca762988"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 2
+adotados = 0
+veredicto = "passa"

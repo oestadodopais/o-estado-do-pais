@@ -14,6 +14,43 @@ LOJA = ENSAIOS / "fontes"
 PECA = ENSAIOS / "pecas" / "2026" / "2026-11-16-peca-de-ensaio.md"
 
 
+def perto_do_relogio(instante, agora, segundos: float) -> bool:
+    """Whether `instante` lies within `segundos` of `agora`, before or after (two aware datetimes)."""
+    return abs((instante - agora).total_seconds()) <= segundos
+
+
+def erros_dos_registos(raiz: Path) -> list[str]:
+    """Whether a tree's records are records, whatever they hold (ESQ3i, A; ESQ3j, D3): the sentences'
+    record and the code's record exist, parse, hold only their own tables and every entry has its
+    fields; `reconferencias.toml`, when present, has the shape of its record. The errors, each
+    naming its file; [] when all are well formed."""
+    import tomllib
+
+    from oedp import codigo, julgados, reconferir
+
+    erros = []
+    f = Path(raiz) / "textos.registo.toml"
+    if not f.is_file():
+        erros.append("textos.registo.toml: absent")
+    else:
+        try:
+            textos = tomllib.loads(f.read_text(encoding="utf-8"))
+            erros += [f"textos.registo.toml: [[{k}]] is not a table of this record" for k in set(textos) - {"passo", "leitura"}]
+            erros += [f"textos.registo.toml: {x}" for x in julgados.erros_do_registo("textos.toml", textos)]
+        except tomllib.TOMLDecodeError as e:
+            erros.append(f"textos.registo.toml: not valid TOML ({e})")
+    f = Path(raiz) / codigo.REGISTO
+    if not f.is_file():
+        erros.append(f"{codigo.REGISTO}: absent")
+    else:
+        try:
+            erros += [f"{codigo.REGISTO}: {x}" for x in codigo.erros_do_registo(codigo.em_ordem(f.read_text(encoding="utf-8")))]
+        except codigo.ErroDoCodigo as e:
+            erros.append(str(e))
+    erros += reconferir.ler_registo(Path(raiz))[1]  # [1]: the errors of its shape; [0] would be its entries
+    return erros
+
+
 def loja_fora_do_repositorio(caso) -> Path:
     """A copy of the test store in a temporary folder: OEDP_FONTES may not point inside the repository."""
     pasta = Path(tempfile.mkdtemp(prefix="oedp-loja-"))

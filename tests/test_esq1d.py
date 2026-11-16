@@ -151,7 +151,7 @@ class Item03Historia(Base):
 class Item04Numeros(Base):
     def test_planta_sinal_separado(self):
         r, _ = self.plantar([('mostra = "104,7 pontos"', 'mostra = "− 104,7 pontos"')])
-        self.falha(r, 1, "shows -104.7, but valor 104.7")
+        self.falha(r, 1, "comes before the number; nothing may, but a minus sign right before it")  # ESQ3f: one form
 
     def test_planta_figura_dentro_de_outra(self):
         r, _ = self.plantar([('valor = "104.7"', 'valor = "4.7"'), ('mostra = "104,7 pontos"', 'mostra = "4,7 pontos"')])
@@ -279,8 +279,14 @@ class Item09TextoDoLeitorJulgado(unittest.TestCase):
         self.assertEqual(len(tomllib.loads((p.pasta / "textos.registo.toml").read_text(encoding="utf-8"))["passo"]), 2)
 
     def test_os_registos_reais_existem(self):
-        self.assertTrue((REPO / "textos.registo.toml").is_file())
-        self.assertEqual(tomllib.loads((REPO / "textos.registo.toml").read_text(encoding="utf-8")), {})
+        """The real records exist and are records, whatever they hold (ESQ3i, A): each parses, holds
+        only the tables its record may hold, and every entry has its fields."""
+        from tests.apoio import erros_dos_registos
+        self.assertEqual(erros_dos_registos(REPO), [])  # the judgment is one function, tested on scratch trees (ESQ3j, D3)
+
+    def test_planta_um_registo_que_nao_e_registo(self):
+        from oedp import julgados
+        self.assertTrue(julgados.erros_do_registo("textos.toml", {"passo": [{"nome": "escrita"}]}))
 
 
 # --------------------------------------------------------------------------- 10
@@ -474,8 +480,8 @@ class Item12Segredo(unittest.TestCase):
 class Item13ONome(unittest.TestCase):
     def test_o_nome_leva_a_primeira_pagina(self):
         ctx = paginas.Contexto(textos=tomllib.loads((REPO / "textos.toml").read_text(encoding="utf-8")))
-        self.assertIn('<p class="wordmark"><a href="/">O Estado do País</a></p>', paginas.pagina_404(ctx))
-        self.assertIn('<h1 class="wordmark">O Estado do País</h1>', paginas.pagina_inicial(ctx))
+        self.assertIn(f'<p class="wordmark"><a href="/">{paginas.e(ctx.t("nome"))}</a></p>', paginas.pagina_404(ctx))
+        self.assertIn(f'<h1 class="wordmark">{paginas.e(ctx.t("nome"))}</h1>', paginas.pagina_inicial(ctx))
 
 
 # --------------------------------------------------------------------------- the five planted in the reader's copy

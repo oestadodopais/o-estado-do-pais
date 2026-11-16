@@ -738,10 +738,7 @@ def _uma_planta(p: Plantador, planta: dict) -> dict:
     if ficheiro.startswith("arvore/"):
         # the whole lines of the planted file that hold the new text, each as an added line of the diff
         plantado = _texto(alvo_f)
-        inicio = plantado.index(planta["depois"])
-        fim = inicio + len(planta["depois"].rstrip("\n"))
-        primeira = plantado.count("\n", 0, inicio) + 1
-        linhas = list(range(primeira, plantado.count("\n", 0, fim) + 2))
+        primeira, linhas = _linhas_da_planta(plantado, planta["depois"])
         inteiras = plantado.split("\n")[primeira - 1 : linhas[-1]]
         diff = (pacote / "diff.patch").read_text(encoding="utf-8", errors="replace").splitlines()
         if not any(l.strip() for l in inteiras) or not all(("+" + l) in diff for l in inteiras if l.strip()):
@@ -795,6 +792,14 @@ def _num(lugar: str):
     return int(m.group(1)) if m else 0
 
 
+def _linhas_da_planta(plantado: str, depois: str) -> tuple[int, list[int]]:
+    """(the first line, every line) of the planted text `depois` in the planted file's text."""
+    inicio = plantado.index(depois)
+    fim = inicio + len(depois.rstrip("\n"))
+    primeira = plantado.count("\n", 0, inicio) + 1
+    return primeira, list(range(primeira, plantado.count("\n", 0, fim) + 2))
+
+
 def _numerado_de(p: "Plantador", ficheiro: str, texto: str) -> str | None:
     """The numbered text a reader is given when the planted file `ficheiro` holds `texto`."""
     if ficheiro == "peca.md":
@@ -813,6 +818,14 @@ def _lugares_no_fim(p: "Plantador", plantas: list[dict], chave: list[dict]):
     numbers. Each plant's sentences are found by comparing the final numbered text with the same
     package in which that plant alone is undone; its other places (`linha`, `fonte`) stand."""
     for planta, c in zip(plantas, chave):
+        if c["ficheiro"].startswith("arvore/"):
+            # A plant in code: its lines in the file as the last plant left it (ORDEM-3e, item F).
+            texto = _texto(p.pacote / c["ficheiro"])
+            if texto.count(planta["depois"]) != 1:
+                raise Recusa(f"refused: {planta['id']}: its new text is not found exactly once in {c['ficheiro']} after the "
+                             "last plant, so its lines cannot be worked out again")
+            c["linhas"] = _linhas_da_planta(texto, planta["depois"])[1]
+            continue
         if not any(l.startswith("frase ") for l in c["lugares"]):
             continue
         nome = "TEXTOS-NUMERADOS.md" if c["ficheiro"] == "TEXTOS-NUMERADOS.md" else "TEXTO-NUMERADO.md"
@@ -875,7 +888,7 @@ def tokens_do_registo(registo_f: Path) -> int | None:
         return None
     linhas = registo_f.read_text(encoding="utf-8", errors="replace").splitlines()
     for i in range(len(linhas) - 1, -1, -1):
-        if linhas[i].strip() == "tokens used":
+        if linhas[i] == "tokens used":  # exactly: a line with a space around the words is not the marker (ORDEM-3e, G)
             numero = linhas[i + 1].strip().replace(",", "").replace(" ", "").replace("\u202f", "") if i + 1 < len(linhas) else ""
             return int(numero) if numero.isdigit() else None
     return None
@@ -1075,11 +1088,12 @@ def pontuar(pasta: Path, decisoes: Path | None = None, modelo: str | None = None
         trava = [n for n, a in reais if a.get("gravidade") == "trava"]
         if trava:
             razoes.append(f"real findings at trava: {trava} (closed only by a repair read again)")
-        # For the seats whose pass the checks count, a real finding adopted, of any severity, stops a
-        # pass: adopting it means what was read is about to change, and the pass belongs to what is
-        # read after the repair (ORDEM-3b, item I; equipa/00-comum.md since 14:28 UTC, 15 November 2026).
+        # For every seat whose verdict can be passa (every seat of the other family from what it read:
+        # this branch), a real finding adopted, of any severity, stops a pass: adopting it means what
+        # was read is about to change, and the pass belongs to what is read after the repair (ORDEM-3b,
+        # item I; ORDEM-3e, item C: check 7 counts the justica's pass too).
         adotados_reais = [n for n, _ in reais if d_achados.get(n, {}).get("decisao") == "adotado"]
-        if lugar in COM_PLANTAS_OBRIGATORIAS and adotados_reais:
+        if adotados_reais:
             razoes.append(f"real findings adopted: {adotados_reais} (what was read is about to change; the pass belongs to "
                           "what is read after the repair)")
         veredicto = "nao_passa" if razoes else "passa"

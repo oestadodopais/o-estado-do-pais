@@ -462,12 +462,11 @@ def numero_mostrado(linha: dict) -> tuple[str, bool]:
     valor = derivacoes.numero(str(linha.get("valor", "")).strip())
     casas = None
     if linha.get("mostra_livre") is not True:
-        try:
-            figura, casas_m, escala_m = numeros.ler_mostra(str(linha.get("mostra", "")))
+        try:  # the mostra in its one form (numeros.ler_forma), with no scale word
+            figura, casas_m, escala = numeros.ler_forma(str(linha.get("mostra", "")), str(linha.get("unidade", "")), valor)
         except numeros.ErroDeFigura:
             figura = None
-        if (figura is not None and escala_m == numeros.escala_da_unidade(str(linha.get("unidade", "")))
-                and abs(figura) == abs(valor) and -valor.as_tuple().exponent <= casas_m):
+        if figura is not None and escala == 1 and abs(figura) == abs(valor) and -valor.as_tuple().exponent <= casas_m:
             casas = casas_m
     absoluto = abs(valor)
     texto = format(absoluto.quantize(Decimal(1).scaleb(-casas)) if casas is not None else absoluto, "f")

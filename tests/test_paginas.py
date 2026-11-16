@@ -167,11 +167,11 @@ class CincoPaginas(unittest.TestCase):
         conta = lambda c, v: paginas._conta(ctx, peca, {"calculo": c, "valor": v})
         # A number of the arithmetic has its thousands grouped by no-break spaces (ESQ3c, item B: «1 500»).
         self.assertEqual(conta("round ( a / b * 100 , 0 )", "77"),
-                         '<a href="#r-a">30\u00a0800</a> \u00f7 <a href="#r-b">39\u00a0900</a> \u00d7 100\u00a0= 77 (arredondado à unidade)')
+                         '<a href="#r-a">30\u00a0800</a> \u00f7 <a href="#r-b">39\u00a0900</a> \u00d7 100\u00a0= 77 (' + paginas.e(ctx.t("r_arred_0")) + ")")
         self.assertEqual(conta("( a + b ) / 2", "35350"),
                          '(<a href="#r-a">30\u00a0800</a> + <a href="#r-b">39\u00a0900</a>) \u00f7 2\u00a0= 35\u00a0350')
         self.assertEqual(conta("round ( - a + b , 2 )", "9100.00"),
-                         '\u2212<a href="#r-a">30\u00a0800</a> + <a href="#r-b">39\u00a0900</a>\u00a0= 9\u00a0100,00 (arredondado a 2 casas decimais)')
+                         '\u2212<a href="#r-a">30\u00a0800</a> + <a href="#r-b">39\u00a0900</a>\u00a0= 9\u00a0100,00 (' + paginas.e(ctx.t("r_arred_n", n=2)) + ")")
 
     def test_uma_linha_impressa_nao_parte(self):
         html = self.ler("pecas/2026-11-16-peca-de-ensaio/index.html")

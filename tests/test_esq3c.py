@@ -50,15 +50,15 @@ class H_AUltimaReconferenciaNoMetodo(unittest.TestCase):
         return re.search(r'<p class="reconferencia">(.*?)</p>', paginas.pagina_do_metodo(ctx)).group(1)
 
     def test_nenhuma(self):
-        self.assertEqual(self.metodo([]), "Ainda não houve nenhuma conferência das fontes das peças publicadas.")
+        self.assertEqual(self.metodo([]), paginas.e(contexto().t("reconferencia_nenhuma")))
 
     def test_a_ultima_que_podia_retirar(self):
         t = lambda em, so, r: {"em": em, "pecas": 2, "excertos": 9, "falhados": len(r), "retiradas": r, "so_relatar": so}
         tabelas = [t("2026-11-22T06:00:00Z", False, ["2026-11-15-a"]), t("2026-11-29T06:00:00Z", False, []),
                    t("2026-11-30T06:00:00Z", True, ["2026-11-15-b"])]
-        self.assertEqual(self.metodo(tabelas), "Última conferência das fontes: 29 de novembro de 2026. Peças conferidas: 2. "
-                                               "Excertos conferidos: 9. Peças retiradas: 0.")
-        self.assertEqual(self.metodo(tabelas[2:]), "Ainda não houve nenhuma conferência das fontes das peças publicadas.")
+        self.assertEqual(self.metodo(tabelas), paginas.e(contexto().t("reconferencia_ultima", data="29 de novembro de 2026",
+                                                                       pecas=2, excertos=9, retiradas=0)))
+        self.assertEqual(self.metodo(tabelas[2:]), paginas.e(contexto().t("reconferencia_nenhuma")))
 
 
 if __name__ == "__main__":

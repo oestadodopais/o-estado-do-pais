@@ -204,7 +204,7 @@ class Item05TextosJulgados(unittest.TestCase):
 class Item06Sinais(Base):
     def test_planta_sinal_separado_por_tabulacao(self):
         r, _, _ = self.plantar([('mostra = "104,7 pontos"', 'mostra = "−\\t104,7 pontos"')])
-        self.falha(r, 1, "shows -104.7, but valor 104.7")
+        self.falha(r, 1, "U+0009 in the mostra")  # ESQ3g: a tab is no space of the one form, wherever it is
 
     def test_planta_valor_negativo_sem_sinal_na_fonte(self):
         r, _, _ = self.plantar([('valor = "104.7"', 'valor = "-104.7"'), ('mostra = "104,7 pontos"', 'mostra = "−104,7 pontos"')])

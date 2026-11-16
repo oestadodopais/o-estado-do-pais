@@ -122,7 +122,15 @@ def check1(peca: Peca) -> Resultado:
             continue
         mostra = str(l.get("mostra", ""))
         livre = l.get("mostra_livre") is True
-        if not re.search(r"\d", mostra):
+        # Every display and its unit hold only what is on the list, free displays included, before
+        # any number is compared (docs/ESPEC-PECA.md, check 1, edit of 16 November 2026, 13:13 UTC).
+        try:
+            numeros.so_caracteres_da_lista("mostra", mostra)
+            numeros.so_caracteres_da_lista("unidade", str(l.get("unidade", "")))
+        except numeros.ErroDeFigura as e:
+            razoes.append(f"{lid}: {e}")
+            continue
+        if not re.search(r"[0-9]", mostra):
             if livre:
                 notas.append(f"{lid}: not compared, left to the numbers editor")
             else:
@@ -131,28 +139,18 @@ def check1(peca: Peca) -> Resultado:
         if livre:
             razoes.append(f"{lid}: mostra_livre is set but mostra {mostra!r} has a digit")
             continue
+        # One form for a mostra (docs/ESPEC-PECA.md, check 1, edit of 15 November 2026, 17:07 UTC):
+        # anything that does not fit is refused, never passed with a note.
         try:
             valor = derivacoes.numero(str(l.get("valor", "")))
-            figura, casas, escala_m = numeros.ler_mostra(mostra)
+            figura, casas, escala = numeros.ler_forma(mostra, str(l.get("unidade", "")), valor)
         except (derivacoes.ErroDeConta, numeros.ErroDeFigura) as e:
             razoes.append(f"{lid}: {e}")
             continue
-        escala_u = numeros.escala_da_unidade(str(l.get("unidade", "")))
-        quer = numeros.esperado(valor, escala_u, escala_m, casas)
+        quer = numeros.esperado(valor, 1, escala, casas)
         if figura != quer:
-            razoes.append(
-                f"{lid}: mostra {mostra!r} shows {figura}, but valor {l.get('valor')} in "
-                f"{l.get('unidade')!r} at the precision shown is {quer}"
-            )
-        # The unit the mostra prints is the line's own (edit of 15 November 2026, 15:17 UTC).
-        palavras_m, tipo_m = numeros.unidade_lida(numeros.unidade_da_mostra(mostra))
-        palavras_u, tipo_u = numeros.unidade_lida(str(l.get("unidade", "")))
-        if tipo_m and tipo_u and tipo_m != tipo_u:
-            razoes.append(f"{lid}: mostra {mostra!r} prints a unit in {tipo_m} ({palavras_m!r}), but the line's unidade "
-                          f"{l.get('unidade')!r} is in {tipo_u}")
-        elif not (tipo_m and tipo_u) and palavras_m.lower() != palavras_u.lower():
-            notas.append(f"{lid}: the unit mostra prints ({palavras_m!r}) and unidade ({palavras_u!r}) are not compared by "
-                         "the script, which does not know them both; left to the numbers editor")
+            razoes.append(f"{lid}: mostra {mostra!r} shows {figura}, but valor {l.get('valor')} in "
+                          f"{l.get('unidade')!r} at the precision shown is {quer}")
     return _r(1, peca.id, razoes, notas)
 
 

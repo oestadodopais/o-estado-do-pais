@@ -20,6 +20,12 @@
 
 *Edited 15 November 2026, 14:27 UTC, after the designer read the piece page as the third block built it (`blocos/esq3/LEITURA-DESENHADOR-5.md`: both faults that stopped publication are repaired; eleven new findings, one of them able to make a reader misread a figure, and that one made by this page's own rule). The rule «a space between two digits is not a place to break» turned a table's row into one unbreakable string, which the browser then cut inside the numbers, the receipt's own figure among them: the rule is withdrawn, and what is kept whole is the figure the receipt marks. Also: a calculation's receipt says in full what it measures; on a phone a closed receipt gives what it measures two lines instead of a few characters, and an open one does not repeat it; the mark takes the sign of a negative figure; a negative figure is printed with a true minus sign wherever the page prints it; «p.» stays with its number in every field; the inputs of a calculation look like the other links to receipts.*
 
+*Edited 16 November 2026, 11:00 UTC: the label of a daily piece, `tipo_diario`, is «Notícia e análise» and no longer «Diário». «Diário», alone above the title, was questioned in five ordinary readings of five (a diary, a newspaper, a section, a kind of text). Six candidates went before twelve short readings by synthetic readers, two each (`textos/rotulo-2026-11-16/PAINEL.md` in the direction folder): «Notícia» was the clearest, and both its readers took it to promise a text with no analysis and no opinion, which a daily piece does not keep; of the labels that promise nothing untrue, «Notícia e análise» was the only one understood at once. The key keeps its name. The ordinary readers of the next pieces are the check on this choice.*
+
+*Edited 16 November 2026, 12:28 UTC, after the judge's first reading of the fixed sentences (Codex; 3 planted errors of 3 caught; six real findings, all adopted; `textos/juiz/` in the direction folder). Five sentences change. `publicada` no longer says «às» before the hour, which is wrong for the one hour that is singular, and says whose hour it is. `seguir_titulo` takes the words the piece itself uses for that paragraph, «O que acompanhar»: one thing, one name. `registo_intro` no longer promises what each reading found (the table gives counts), and says what «achados reais» and the verdict «levanta» mean. `retirada_numero` no longer says that the figure is being checked, which nobody may be doing at the moment a script withdraws a piece; it says when the piece returns. `erro_como` says, in the Method page's own words, that a person receives the message and hands it to the corrections editor.*
+
+*Edited 16 November 2026, 12:58 UTC, after the judge's second reading of the fixed sentences (Codex; 3 planted errors of 3 caught; one real finding, adopted; the five repairs of the first reading held). `retirada_numero` said that a figure no longer matched its source. The weekly re-check withdraws a piece when an excerpt it quotes is no longer found in the source, which is all that is known at that moment: the figure may still be right and the source only rewritten. The sentence now says that.*
+
 ## Rules for every page
 
 - **Computed, never listed.** Every page is built from the piece files (and one small file per desk). No page has a list that a piece must edit.
@@ -99,11 +105,11 @@ A withdrawn piece keeps its address and shows only its title, the sentence `reti
 | `ia_linha` | Texto gerado e editado por inteligência artificial. Nenhuma pessoa o revê antes de ser publicado. |
 | `ia_ligacao` | Como é feito |
 | `nav_inicio`, `nav_metodo`, `nav_correcoes` | Início · Método · Correções |
-| `tipo_diario`, `tipo_artigo`, `tipo_estudo` | Diário · Artigo · Estudo |
-| `publicada` | Publicada a {data}, às {hora}. |
+| `tipo_diario`, `tipo_artigo`, `tipo_estudo` | Notícia e análise · Artigo · Estudo |
+| `publicada` | Publicada a {data}, {hora} (hora de Lisboa). |
 | `temas_titulo` | Temas |
 | `tema_intro` | Tudo o que este projeto publicou sobre este tema, do mais recente para o mais antigo. |
-| `seguir_titulo` | O que ficou de se seguir |
+| `seguir_titulo` | O que acompanhar |
 | `recibos_titulo` | Os recibos desta peça |
 | `recibos_intro` | Cada número e cada citação desta peça vêm de um documento de que este projeto guardou uma cópia. Aqui estão, para cada um, a fonte, o excerto e a data em que foi lido; para um número calculado, a conta e os números de que parte. |
 | `r_mede`, `r_populacao`, `r_periodo`, `r_provisorio` | O que mede · A quem se refere · Período · Valor provisório |
@@ -117,7 +123,7 @@ A withdrawn piece keeps its address and shows only its title, the sentence `reti
 | `c_quando` | Quando |
 | `r_quem`, `r_quando`, `r_estabelece` | Quem disse · Quando · O que o documento estabelece |
 | `registo_titulo` | O registo desta peça |
-| `registo_intro` | Quem leu esta peça, quando, e o que encontrou. Os erros plantados são erros postos de propósito no material de uma leitura, para medir se ela os apanha; «0 de 0» quer dizer que essa leitura não os levou. |
+| `registo_intro` | Quem leu esta peça, quando, e com que resultado. Os erros plantados são erros postos de propósito no material de uma leitura, para medir se ela os apanha; «0 de 0» quer dizer que essa leitura não os levou. Os achados reais são os problemas que a leitura encontrou além desses. Só as leituras feitas por modelos de uma família diferente da de quem escreveu a peça dão «passa» ou «não passa»; as da mesma família apontam problemas, e o seu veredicto é «levanta». |
 | `c_leitura`, `c_familia`, `c_plantas`, `c_achados`, `c_veredicto`, `c_minutos` | Leitura · Família de modelos · Erros plantados apanhados · Achados reais · Veredicto · Minutos |
 | `v_passa`, `v_nao_passa`, `v_levanta` | passa · não passa · levanta |
 | `lugar_numeros`, `lugar_oposto`, `lugar_especialista`, `lugar_leitor`, `lugar_justica`, `lugar_juiz`, `lugar_correcoes` | Editor de números · Leitor do contraditório · Especialista · Leitor comum · Defesa das pessoas nomeadas · Juiz · Editor de correções |
@@ -126,12 +132,12 @@ A withdrawn piece keeps its address and shows only its title, the sentence `reti
 | `tempo` | Da encomenda à publicação: {horas} h {minutos} min. |
 | `impressao` | Impressão digital do texto julgado: |
 | `retirada` | Esta peça foi retirada a {data}. |
-| `retirada_numero` | Um número deixou de corresponder à fonte e está a ser conferido. |
+| `retirada_numero` | Um excerto que esta peça cita já não se encontra na fonte. A peça volta quando for corrigida e julgada de novo. |
 | `especie_correcao`, `especie_atualizacao` | Correção · Atualização |
 | `antes`, `agora` | Antes dizia: · Agora diz: |
 | `correcoes_intro` | Todas as correções e atualizações deste projeto, com data, para sempre. Há correção quando o erro foi deste projeto; há atualização quando foi a fonte que mudou. |
 | `erro_titulo` | Como apontar um erro |
-| `erro_como` | Escreva para correcoes@oestadodopais.pt e diga qual é a peça e qual é a frase. |
+| `erro_como` | Escreva para correcoes@oestadodopais.pt e diga qual é a peça e qual é a frase. A mensagem é recebida por uma pessoa, que a entrega ao editor de correções, um modelo da OpenAI. |
 | `sem_correcoes` | Ainda não há correções nem atualizações. |
 | `numeros_titulo` | Em números |
 | `equipa_titulo` | A equipa e o seu registo |

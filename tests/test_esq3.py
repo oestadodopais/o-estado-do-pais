@@ -9,6 +9,7 @@ from __future__ import annotations
 import hashlib
 import html as html_mod
 import re
+import tomllib
 import shutil
 import tempfile
 import unittest
@@ -17,7 +18,7 @@ from unittest import mock
 
 from oedp import conferir as conf
 from oedp import construir as build
-from oedp import fontes, numeros, paginas
+from oedp import ensaio, fontes, numeros, paginas
 from oedp.peca import ler
 from tests.apoio import LOJA, REPO, Plantada, loja_fora_do_repositorio, sitio_de_ensaio
 
@@ -144,6 +145,7 @@ QUATRO_E_QUARENTA = [
     ('valor = "104.7"', 'valor = "4.7"'), ('unidade = "pontos"\nmede = "Índice', 'unidade = "%"\nmede = "Índice'),
     ('mostra = "104,7 pontos"', 'mostra = "4,70 %"'),
     ('valor = "102.3"', 'valor = "4.4"'), ('mostra = "102,3 pontos"', 'mostra = "4,40 %"'),
+    ('unidade = "pontos"\nmede = "Índice', 'unidade = "%"\nmede = "Índice'),  # the second input's unit (ESQ3f: one form)
     ('calculo = "round ( indice - indice_anterior , 1 )"\nvalor = "2.4"\nunidade = "pontos"',
      'calculo = "round ( indice - indice_anterior , 2 )"\nvalor = "0.3"\nunidade = "pontos percentuais"'),
     ('mostra = "2,4 pontos"', 'mostra = "0,30 pontos percentuais"'),
@@ -510,12 +512,15 @@ class F_QuatroReparacoes(SitioDeEnsaio):
 
     def test_a_pagina_das_correcoes_por_ordem(self):
         html = self.ler("correcoes/index.html")
-        posicoes = [html.index(x) for x in ('<p class="intro">Todas as correções', '<section class="correcoes-lista">',
-                                             "<h2>Como apontar um erro</h2>", "Escreva para")]
+        # Each sentence read from the file its page was built from, never typed (ESQ3i, B): the test site's
+        # own sentences for the built site, the real ones for the page built here.
+        do_sitio = paginas.Contexto(textos=tomllib.loads(ensaio.TEXTOS.read_text(encoding="utf-8")))
+        posicoes = [html.index(x) for x in (f'<p class="intro">{paginas.e(do_sitio.t("correcoes_intro"))}', '<section class="correcoes-lista">',
+                                             f'<h2>{paginas.e(do_sitio.t("erro_titulo"))}</h2>', paginas._com_endereco(do_sitio.t("erro_como")))]
         self.assertEqual(posicoes, sorted(posicoes))
         ctx = paginas.Contexto(textos=build.contexto(REPO, REPO, [])[0].textos)
         vazia = paginas.pagina_das_correcoes(ctx)
-        posicoes = [vazia.index(x) for x in ('<p class="intro">', "Ainda não há correções nem atualizações.", "<h2>Como apontar um erro</h2>")]
+        posicoes = [vazia.index(x) for x in ('<p class="intro">', paginas.e(ctx.t("sem_correcoes")), f'<h2>{paginas.e(ctx.t("erro_titulo"))}</h2>')]
         self.assertEqual(posicoes, sorted(posicoes))
 
     def test_planta_o_erro_antes_da_lista(self):

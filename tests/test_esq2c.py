@@ -9,7 +9,7 @@ import unittest
 from pathlib import Path
 
 from oedp import construir as build
-from oedp import fontes, reconferir
+from oedp import fontes, paginas, reconferir
 from oedp.peca import ler
 from tests.apoio import REPO, Plantada, loja_fora_do_repositorio
 
@@ -80,7 +80,7 @@ class Reconferir(unittest.TestCase):
         self.assertTrue(self.p.peca.read_bytes().startswith(antes))
         peca = ler(self.p.peca)
         self.assertEqual(peca.estado, "retirada")
-        self.assertEqual(peca.ultimo_estado()["razao"], "Um número deixou de corresponder à fonte e está a ser conferido.")
+        self.assertEqual(peca.ultimo_estado()["razao"], TEXTOS["retirada_numero"])  # the sentences reconferir was given
         self.assertEqual(peca.ultimo_estado()["por"], "python3 -m oedp reconferir")
         self.assertEqual(peca.impressao, ler(self.p.peca).impressao)
         saida = Path(tempfile.mkdtemp(prefix="oedp-saida-"))
@@ -89,7 +89,7 @@ class Reconferir(unittest.TestCase):
         self.assertTrue(c.ok, c.mensagens)
         pagina = (saida / "static" / "pecas" / peca.id / "index.html").read_text(encoding="utf-8")
         self.assertIn('<p class="retirada">Esta peça foi retirada a ', pagina)
-        self.assertIn("<p>Um número deixou de corresponder à fonte e está a ser conferido.</p>", pagina)
+        self.assertIn(f"<p>{paginas.e(TEXTOS['retirada_numero'])}</p>", pagina)  # escaped, as the page prints it (finding 8)
         self.assertNotIn('class="texto"', pagina)
 
     def test_planta_fonte_inacessivel_nao_retira_e_falha(self):

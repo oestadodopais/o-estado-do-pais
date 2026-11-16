@@ -7,7 +7,7 @@ its link). The HTML that code returns is read with an HTML parser, block by bloc
 numbered text holds the same words as the page, in the same order. A test compares the
 two on the test piece.
 
-The label of the kind of piece (the fixed sentence `tipo_<kind>`, «Diário»), which the page
+The label of the kind of piece (the fixed sentence `tipo_<kind>` of textos.toml), which the page
 prints above the title, is not a sentence of the text: three ordinary readers in three
 readings could not place it when it was sentence 1. The copy of a piece opens with one
 unnumbered line, in English, for the reader of the copy, that says so and gives the label;

@@ -1,2 +1,68 @@
 # The record of textos.toml (its judgment). Its fingerprint is the SHA-256 of
 # textos.toml. Appended to only by `python3 -m oedp registar textos.registo.toml ...`.
+
+[[passo]]
+nome = "escrita"
+lugar = "direcao"
+familia = "anthropic"
+modelo = "claude-fable-5-2"
+inicio = "2026-11-14T21:16:59Z"
+fim = "2026-11-16T11:00:26Z"
+
+[[leitura]]
+lugar = "juiz"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-16T12:17:31Z"
+fim = "2026-11-16T12:24:33Z"
+impressao = "fa156b4f71588762d16d8d53e3b659e8b6b3dfe90d59b6342566b626875e65cc"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 6
+adotados = 6
+veredicto = "nao_passa"
+pessoas_vistas = []
+
+[[passo]]
+nome = "edicao"
+lugar = "direcao"
+familia = "anthropic"
+modelo = "claude-fable-5-2"
+inicio = "2026-11-16T12:26:32Z"
+fim = "2026-11-16T12:28:21Z"
+
+[[leitura]]
+lugar = "juiz"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-16T12:52:36Z"
+fim = "2026-11-16T12:57:40Z"
+impressao = "8454e5df3dfda66cac23b0734701a0daef961b6ca49dab3e8b0b10eda4af60dd"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 1
+adotados = 1
+veredicto = "nao_passa"
+pessoas_vistas = ["The unnamed person receiving corrections email, in frase 64; no individual is named in the fixed sentences."]
+
+[[passo]]
+nome = "edicao"
+lugar = "direcao"
+familia = "anthropic"
+modelo = "claude-fable-5-2"
+inicio = "2026-11-16T12:58:28Z"
+fim = "2026-11-16T12:58:28Z"
+
+[[leitura]]
+lugar = "juiz"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-16T13:05:05Z"
+fim = "2026-11-16T13:10:26Z"
+impressao = "2a6fcbfe3c06c16648a6a517ceb7928e4a52cb57af65e09706ecce019ec7d3ca"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 0
+adotados = 0
+veredicto = "passa"
+pessoas_vistas = []

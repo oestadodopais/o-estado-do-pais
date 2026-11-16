@@ -18,7 +18,7 @@ import tomllib
 import unittest
 from pathlib import Path
 
-from oedp import leituras, numerado
+from oedp import leituras, numerado, paginas
 from oedp.__main__ import MODELO
 from oedp.peca import ler, paragrafos
 from oedp.ambiente import sem_git_local
@@ -213,7 +213,10 @@ class TextoNumerado(Base):
         do_numerado = numerado.limpar(" ".join(numerado.lista(numerado_)))
         self.assertEqual(do_numerado, da_pagina)
         self.assertIn("[7] No trimestre anterior ficara em 102,3 pontos, uma subida de 2,4 pontos.", numerado_)
-        rotulo = re.search(r'<p class="eyebrow">([^<]+)</p>', pagina).group(1)
+        # The page is built with the test site's sentences, the copy with the real ones that
+        # texto_numerado_da_peca reads: the label is the real file's, read, never typed.
+        self.assertRegex(pagina, r'<p class="eyebrow">[^<]+</p>')
+        rotulo = leituras.contexto_de_textos(REPO).t("tipo_" + ler(PECA).cabeca["tipo"])
         self.assertTrue(numerado_.startswith(f"(Above the title the page prints the label of the kind of piece, «{rotulo}». "
                                              "It is not a sentence of the text, and is not numbered.)\n\n[1] Peça de ensaio"))
         self.assertNotIn(f"] {rotulo}\n", numerado_)
@@ -250,24 +253,29 @@ class MetodoTextosCodigo(Base):
     def test_o_juiz_dos_textos(self):
         pasta = self.montar("juiz", alvo=REPO / "textos.toml")
         numerados = (pasta / "pacote" / "TEXTOS-NUMERADOS.md").read_text(encoding="utf-8")
-        self.assertIn("[1] `nome`: O Estado do País\n", numerados)
-        self.assertIn("`r_descarregar`: Descarregar a fonte", numerados)
+        reais = tomllib.loads((REPO / "textos.toml").read_text(encoding="utf-8"))  # the file the package numbers
+        self.assertIn(f"[1] `nome`: {reais['nome']}\n", numerados)
+        self.assertIn(f"`r_descarregar`: {reais['r_descarregar']}", numerados)
         self.assertTrue((pasta / "pacote" / "construido" / "pecas" / "2026-11-16-peca-de-ensaio" / "index.html").is_file())
         self.assertTrue((pasta / "pacote" / "docs" / "ESPEC-PAGINAS.md").is_file())
         # a plant in a sentence is seen in the built pages too: the two files never disagree
-        self.plantar(pasta, '''
+        voltar = reais["r_voltar"]  # the real sentence, read; the plant adds two words to it
+        plantado = voltar + " de novo"
+        toml = lambda s: json.dumps(s, ensure_ascii=False)  # a TOML basic string, escaped (ESQ3j, C2: finding 7)
+        self.plantar(pasta, f'''
 [[planta]]
 id = "Q3"
 ficheiro = "TEXTOS-NUMERADOS.md"
-antes = "`r_voltar`: Voltar ao texto"
-depois = "`r_voltar`: Voltar ao início do texto"
+antes = {toml("`r_voltar`: " + voltar)}
+depois = {toml("`r_voltar`: " + plantado)}
 descricao = "the back link's words are not the specification's"
-desmente = "| `r_voltar` | Voltar ao texto |"
+desmente = {toml("| `r_voltar` | " + voltar + " |")}
 desmente_em = "docs/ESPEC-PAGINAS.md"
 ''')
         pagina = (pasta / "pacote" / "construido" / "pecas" / "2026-11-16-peca-de-ensaio" / "index.html").read_text(encoding="utf-8")
-        self.assertIn(">Voltar ao início do texto</a>", pagina)
-        self.assertNotIn(">Voltar ao texto</a>", pagina)
+        # The page prints the sentence escaped, so it is looked for escaped (finding 8's habit).
+        self.assertIn(f">{paginas.e(plantado)}</a>", pagina)
+        self.assertNotIn(f">{paginas.e(voltar)}</a>", pagina)
 
 
 def falsos_artefactos(arvore: Path, pacote: Path) -> int:

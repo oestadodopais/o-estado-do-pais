@@ -116,9 +116,10 @@ class Paridade(unittest.TestCase):
 
 class Numeros(unittest.TestCase):
     def test_mostra(self):
-        self.assertEqual(numeros.ler_mostra("1 234,5 mil milhões de euros"), (Decimal("1234.5"), 1, 10**9))
-        self.assertEqual(numeros.ler_mostra("−1,4 pontos"), (Decimal("-1.4"), 1, 1))
-        self.assertEqual(numeros.escala_da_unidade("milhões de euros"), 10**6)
+        # The one form of a mostra (ESQ3f): the scale word between the number and the unidade, the sign as the valor's.
+        self.assertEqual(numeros.ler_forma("1 234,5 mil milhões de euros", "euros", Decimal("1234500000000")), (Decimal("1234.5"), 1, 10**9))
+        self.assertEqual(numeros.ler_forma("−1,4 pontos", "pontos", Decimal("-1.4")), (Decimal("-1.4"), 1, 1))
+        self.assertEqual(numeros.ler_forma("2,3 milhões de euros", "milhões de euros", Decimal("2.3")), (Decimal("2.3"), 1, 1))
         self.assertEqual(numeros.esperado(Decimal("2345.05"), 10**6, 10**9, 1), Decimal("2.3"))
         self.assertEqual(numeros.esperado(Decimal("0.25"), 1, 1, 1), Decimal("0.3"))
 
