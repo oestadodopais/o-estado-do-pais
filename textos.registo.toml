@@ -1,2 +1,24 @@
 # The record of textos.toml (its judgment). Its fingerprint is the SHA-256 of
 # textos.toml. Appended to only by `python3 -m oedp registar textos.registo.toml ...`.
+
+[[passo]]
+nome = "escrita"
+lugar = "direcao"
+familia = "anthropic"
+modelo = "claude-fable-5-2"
+inicio = "2026-11-14T21:16:59Z"
+fim = "2026-11-16T11:00:26Z"
+
+[[leitura]]
+lugar = "juiz"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-16T12:17:31Z"
+fim = "2026-11-16T12:24:33Z"
+impressao = "fa156b4f71588762d16d8d53e3b659e8b6b3dfe90d59b6342566b626875e65cc"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 6
+adotados = 6
+veredicto = "nao_passa"
+pessoas_vistas = []

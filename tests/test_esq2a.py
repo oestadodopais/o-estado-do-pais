@@ -253,24 +253,27 @@ class MetodoTextosCodigo(Base):
     def test_o_juiz_dos_textos(self):
         pasta = self.montar("juiz", alvo=REPO / "textos.toml")
         numerados = (pasta / "pacote" / "TEXTOS-NUMERADOS.md").read_text(encoding="utf-8")
-        self.assertIn("[1] `nome`: O Estado do País\n", numerados)
-        self.assertIn("`r_descarregar`: Descarregar a fonte", numerados)
+        reais = tomllib.loads((REPO / "textos.toml").read_text(encoding="utf-8"))  # the file the package numbers
+        self.assertIn(f"[1] `nome`: {reais['nome']}\n", numerados)
+        self.assertIn(f"`r_descarregar`: {reais['r_descarregar']}", numerados)
         self.assertTrue((pasta / "pacote" / "construido" / "pecas" / "2026-11-16-peca-de-ensaio" / "index.html").is_file())
         self.assertTrue((pasta / "pacote" / "docs" / "ESPEC-PAGINAS.md").is_file())
         # a plant in a sentence is seen in the built pages too: the two files never disagree
-        self.plantar(pasta, '''
+        voltar = reais["r_voltar"]  # the real sentence, read; the plant adds two words to it
+        plantado = voltar + " de novo"
+        self.plantar(pasta, f'''
 [[planta]]
 id = "Q3"
 ficheiro = "TEXTOS-NUMERADOS.md"
-antes = "`r_voltar`: Voltar ao texto"
-depois = "`r_voltar`: Voltar ao início do texto"
+antes = "`r_voltar`: {voltar}"
+depois = "`r_voltar`: {plantado}"
 descricao = "the back link's words are not the specification's"
-desmente = "| `r_voltar` | Voltar ao texto |"
+desmente = "| `r_voltar` | {voltar} |"
 desmente_em = "docs/ESPEC-PAGINAS.md"
 ''')
         pagina = (pasta / "pacote" / "construido" / "pecas" / "2026-11-16-peca-de-ensaio" / "index.html").read_text(encoding="utf-8")
-        self.assertIn(">Voltar ao início do texto</a>", pagina)
-        self.assertNotIn(">Voltar ao texto</a>", pagina)
+        self.assertIn(f">{plantado}</a>", pagina)
+        self.assertNotIn(f">{voltar}</a>", pagina)
 
 
 def falsos_artefactos(arvore: Path, pacote: Path) -> int:

@@ -52,9 +52,13 @@ class LidoA(unittest.TestCase):
         self.assertNotEqual(rotulos(self.recibo("despacho", plantado)), ORDEM["ato"])
 
     def test_os_textos_sao_os_da_tabela(self):
-        textos = tomllib.loads((REPO / "textos.toml").read_text(encoding="utf-8"))
-        self.assertEqual(textos["lugar_desenhador"], "Leitor da página")
-        self.assertIn("«0 de 0» quer dizer que essa leitura não os levou.", textos["registo_intro"])
+        # The sentences of the file this page was built from (the test site's own), never the real file's
+        # typed or assumed equal to them (ESQ3i, B).
+        textos = tomllib.loads((self.p.pasta / "textos.toml").read_text(encoding="utf-8"))
+        # The sentences are present and printed; that they are the table's words is test_paginas's
+        # test_textos_toml_e_a_tabela_da_especificacao (ESQ3i, B: no real sentence typed here).
+        self.assertTrue(textos["lugar_desenhador"].strip())
+        self.assertTrue(textos["registo_intro"].strip())
         self.assertIn(textos["registo_intro"], self.html)
         self.assertIn(textos["recibos_intro"], self.html)
         self.assertIn(textos["rodape"], self.html)

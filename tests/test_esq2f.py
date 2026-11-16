@@ -29,10 +29,12 @@ class PalavrasDaLigacao(unittest.TestCase):
         self.ctx = paginas.Contexto(textos=tomllib.loads((REPO / "textos.toml").read_text(encoding="utf-8")))
 
     def test_pagina_web_abre_e_ficheiro_descarrega(self):
-        for tipo, quer in (("text/html", "Abrir a fonte"), ("application/xhtml+xml", "Abrir a fonte"),
-                           ("text/html; charset=utf-8", "Abrir a fonte"), ("application/pdf", "Descarregar a fonte"),
-                           ("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Descarregar a fonte"),
-                           ("text/csv", "Descarregar a fonte"), ("", "Descarregar a fonte")):
+        abrir, descarregar = self.ctx.t("r_abrir"), self.ctx.t("r_descarregar")  # read, never typed (ESQ3i, B)
+        self.assertNotEqual(abrir, descarregar)
+        for tipo, quer in (("text/html", abrir), ("application/xhtml+xml", abrir),
+                           ("text/html; charset=utf-8", abrir), ("application/pdf", descarregar),
+                           ("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", descarregar),
+                           ("text/csv", descarregar), ("", descarregar)):
             self.assertEqual(paginas.palavras_da_ligacao(self.ctx, {"tipo_conteudo": tipo}), quer, tipo)
 
     def test_na_pagina_construida(self):
