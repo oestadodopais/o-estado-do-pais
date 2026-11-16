@@ -467,19 +467,32 @@ def cmd_publicar(a) -> int:
         return 2
 
 
+def passo_dos_testes(raiz: Path) -> bool:
+    """`tudo`'s test step on the tree `raiz`: the whole suite under raiz/tests, which passes only if
+    it ran at least one test, every test passed, and every test file was loaded (descoberta.py)."""
+    from . import descoberta
+
+    suite = unittest.defaultTestLoader.discover(str(raiz / "tests"), pattern=descoberta.PADRAO, top_level_dir=str(raiz))
+    ids = descoberta.ids_da_bateria(suite)  # before the run, which empties the suite as it goes
+    resultado = unittest.TextTestRunner(verbosity=1).run(suite)
+    ok = resultado.wasSuccessful() and resultado.testsRun > 0
+    if resultado.testsRun == 0:  # an empty suite is the one way discovery breaks without an error (ESQ3h, A)
+        print("tudo: the suite ran no test")
+    for f in descoberta.nao_carregados(ids, raiz):
+        print(f"tudo: {f} matches {descoberta.PADRAO} and no test of the suite comes from it (not loaded, or it holds no test)")
+        ok = False
+    return ok
+
+
 def cmd_tudo(a) -> int:
     t0 = time.monotonic()
     ok1 = cmd_conferir(argparse.Namespace(pecas=[])) == 0
     t1 = time.monotonic()
     ok2 = cmd_construir(argparse.Namespace(saida=None, com_rascunhos=False)) == 0
     t2 = time.monotonic()
-    suite = unittest.defaultTestLoader.discover(str(REPO / "tests"), top_level_dir=str(REPO))
-    resultado = unittest.TextTestRunner(verbosity=1).run(suite)
+    ok3 = passo_dos_testes(REPO)
     t3 = time.monotonic()
     print(f"seconds: conferir {t1 - t0:.2f} · construir {t2 - t1:.2f} · tests {t3 - t2:.2f}")
-    ok3 = resultado.wasSuccessful() and resultado.testsRun > 0
-    if resultado.testsRun == 0:  # an empty suite is the one way discovery breaks without an error (ESQ3h, A)
-        print("tudo: the suite ran no test")
     print("tudo: " + ("passed" if ok1 and ok2 and ok3 else "failed"))
     return 0 if ok1 and ok2 and ok3 else 1
 

@@ -23,6 +23,7 @@ VARIAVEL = "OEDP_ENSAIO_DIAS_ADIANTE"
 DIAS = (1, 400)
 
 _CORREU = re.compile(r"^Ran (\d+) tests? in ", re.M)
+_ID = re.compile(r"^\w+ \(([\w.]+)\)", re.M)  # a verbose run's line: «test_x (tests.mod.Class.test_x) ... ok»
 _FALHOU = re.compile(r"^(?:FAIL|ERROR): (.+)$", re.M)
 
 
@@ -40,12 +41,17 @@ def ambiente(dias: int | None) -> dict[str, str]:
 
 
 def uma_corrida(raiz: Path, dias: int | None) -> tuple[int | None, bool, list[str]]:
-    """(tests run, or None when the run said no count; whether it passed; the failing tests)."""
-    r = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", str(raiz / "tests"), "-t", str(raiz)],
-                       cwd=raiz, env=ambiente(dias), capture_output=True, text=True)
+    """(tests run, or None when the run said no count; whether it passed; the failing tests, and the
+    test files it did not load, by the same rule as `tudo`: oedp/descoberta.py)."""
+    from oedp import descoberta
+
+    r = subprocess.run([sys.executable, "-m", "unittest", "discover", "-v", "-s", str(raiz / "tests"), "-p", descoberta.PADRAO,
+                        "-t", str(raiz)], cwd=raiz, env=ambiente(dias), capture_output=True, text=True)
     saida = r.stdout + r.stderr
     contagem = _CORREU.findall(saida)
-    return (int(contagem[-1]) if contagem else None), r.returncode == 0, _FALHOU.findall(saida)
+    faltam = descoberta.nao_carregados(_ID.findall(saida), raiz)
+    falhas = _FALHOU.findall(saida) + [f"{f} not loaded" for f in faltam]
+    return (int(contagem[-1]) if contagem else None), r.returncode == 0 and not faltam, falhas
 
 
 def correr(dias=DIAS, raiz: Path = RAIZ, imprimir=print) -> int:
