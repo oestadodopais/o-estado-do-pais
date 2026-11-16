@@ -188,7 +188,8 @@ class C2Portao(unittest.TestCase):
         self.assertEqual(nomes[i + 1], "The suite with the clock moved ahead", nomes)
         tudo, seguinte = passos[i], passos[i + 1]
         self.assertIn("run: python3 -m oedp tudo", tudo)
-        self.assertTrue(seguinte.rstrip().endswith("run: python3 -m oedp adiante"), seguinte)
+        # Without the private list, check 8 fails where GITHUB_ACTIONS is set (oedp/privacidade.py), so it is taken out.
+        self.assertTrue(seguinte.rstrip().endswith("run: env -u GITHUB_ACTIONS python3 -m oedp adiante"), seguinte)
         ambiente = lambda p: dict(re.findall(r"^\s+([A-Z_]+): (.+)$", p, re.M))
         # The store as the checks have it; the private list stays with the step that runs the checks (check 8).
         self.assertEqual(ambiente(seguinte), {"OEDP_FONTES": ambiente(tudo)["OEDP_FONTES"]})

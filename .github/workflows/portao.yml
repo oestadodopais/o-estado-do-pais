@@ -66,11 +66,13 @@ jobs:
       # The suite again with Python's clock moved one day and four hundred days ahead, so that a
       # test that depends on the day it runs fails on the day it is written (tests/adiante.py).
       # The store as for the checks; not PRIVACIDADE_PROIBIDOS, which check 8 lets only the step
-      # that runs the checks have (the suite passes without it, as in a fresh clone).
+      # that runs the checks have. Without the list, check 8 fails wherever GITHUB_ACTIONS is set,
+      # so this step runs the suite with it taken out, as on a laptop or in a fresh clone; the
+      # gate's own check 8, with the list, is the step above.
       - name: The suite with the clock moved ahead
         env:
           OEDP_FONTES: ${{ steps.fontes.outputs.pasta }}
-        run: python3 -m oedp adiante
+        run: env -u GITHUB_ACTIONS python3 -m oedp adiante
       # A link to a receipt opens it, proven in three browser engines. These are steps of
       # this job, not a job of their own, so the required check cannot go green around them.
       - name: Browsers, for the browser test
