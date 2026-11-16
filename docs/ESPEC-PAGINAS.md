@@ -24,6 +24,8 @@
 
 *Edited 16 November 2026, 12:28 UTC, after the judge's first reading of the fixed sentences (Codex; 3 planted errors of 3 caught; six real findings, all adopted; `textos/juiz/` in the direction folder). Five sentences change. `publicada` no longer says «às» before the hour, which is wrong for the one hour that is singular, and says whose hour it is. `seguir_titulo` takes the words the piece itself uses for that paragraph, «O que acompanhar»: one thing, one name. `registo_intro` no longer promises what each reading found (the table gives counts), and says what «achados reais» and the verdict «levanta» mean. `retirada_numero` no longer says that the figure is being checked, which nobody may be doing at the moment a script withdraws a piece; it says when the piece returns. `erro_como` says, in the Method page's own words, that a person receives the message and hands it to the corrections editor.*
 
+*Edited 16 November 2026, 12:58 UTC, after the judge's second reading of the fixed sentences (Codex; 3 planted errors of 3 caught; one real finding, adopted; the five repairs of the first reading held). `retirada_numero` said that a figure no longer matched its source. The weekly re-check withdraws a piece when an excerpt it quotes is no longer found in the source, which is all that is known at that moment: the figure may still be right and the source only rewritten. The sentence now says that.*
+
 ## Rules for every page
 
 - **Computed, never listed.** Every page is built from the piece files (and one small file per desk). No page has a list that a piece must edit.
@@ -130,7 +132,7 @@ A withdrawn piece keeps its address and shows only its title, the sentence `reti
 | `tempo` | Da encomenda à publicação: {horas} h {minutos} min. |
 | `impressao` | Impressão digital do texto julgado: |
 | `retirada` | Esta peça foi retirada a {data}. |
-| `retirada_numero` | Um número deixou de corresponder à fonte. A peça volta quando for corrigida e julgada de novo. |
+| `retirada_numero` | Um excerto que esta peça cita já não se encontra na fonte. A peça volta quando for corrigida e julgada de novo. |
 | `especie_correcao`, `especie_atualizacao` | Correção · Atualização |
 | `antes`, `agora` | Antes dizia: · Agora diz: |
 | `correcoes_intro` | Todas as correções e atualizações deste projeto, com data, para sempre. Há correção quando o erro foi deste projeto; há atualização quando foi a fonte que mudou. |
