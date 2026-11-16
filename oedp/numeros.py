@@ -37,7 +37,7 @@ class ErroDeFigura(Exception):
 # The one form of a mostra: an optional minus sign right before the number, the number in
 # Portuguese form, a space, optionally one scale word, and the line's own unidade letter for letter.
 # Where the form has a space it is exactly one of ESPACOS, the three counting as the same letter.
-NUMERO_PT = re.compile(r"(?P<inteiro>\d{1,3}(?:[" + ESPACOS + r"]\d{3})+|\d+)(?:,(?P<decimais>\d+))?")
+NUMERO_PT = re.compile(r"(?P<inteiro>[0-9]{1,3}(?:[" + ESPACOS + r"][0-9]{3})+|[0-9]+)(?:,(?P<decimais>[0-9]+))?")
 ESCALAS_DA_MOSTRA = (("mil milhões de", 10**9), ("milhões de", 10**6), ("mil", 10**3))
 
 
@@ -51,27 +51,50 @@ def _sem_nome(c: str) -> str:
     return "" if unicodedata.name(c, "") else f" (category {unicodedata.category(c)}, which has no Unicode name)"
 
 
-def invisivel(c: str) -> bool:
-    """A character a reader cannot see: Unicode category control, format, surrogate, private use or
-    unassigned (C…), or a separator (Z…) that is not one of ESPACOS (docs/ESPEC-PECA.md, check 1,
-    edit of 16 November 2026, 12:09 UTC)."""
-    categoria = unicodedata.category(c)
-    return categoria[0] == "C" or (categoria[0] == "Z" and c not in ESPACOS)
+# What a mostra and its unidade may hold, and nothing else (docs/ESPEC-PECA.md, check 1, edit of
+# 16 November 2026, 13:13 UTC): a Latin letter typed as one character (LATIN_), the digits 0 to 9
+# (DIGITOS, the only digits of a number), the three spaces (ESPACOS), and these signs.
+DIGITOS = "0123456789"
+SINAIS = "%‰,.-−/()€$£°ºª²³µ"  # µ is U+00B5 MICRO SIGN
+LATIN_ = ("LATIN SMALL LETTER ", "LATIN CAPITAL LETTER ")
 
 
-def so_os_espacos_da_forma(campo: str, texto: str) -> None:
-    """ErroDeFigura naming the character and the field (`mostra` or `unidade`) when `texto` holds
-    white space that is not one of ESPACOS, any character a reader cannot see (`invisivel`), two
-    spaces in a row, or a space at either end (docs/ESPEC-PECA.md, check 1, edits of 16 November
-    2026, 10:50 and 12:09 UTC). Every character is looked at, the ends included."""
+def na_lista(c: str) -> bool:
+    if c in DIGITOS or c in ESPACOS or c in SINAIS:
+        return True
+    return unicodedata.category(c) in ("Ll", "Lu") and unicodedata.name(c, "").startswith(LATIN_)
+
+
+def so_caracteres_da_lista(campo: str, texto: str) -> None:
+    """The rules on characters, for every display, free ones included: white space that is not one
+    of ESPACOS is refused as the space rule says it, then anything else off the list."""
     for c in texto:
         if c.isspace() and c not in ESPACOS:
             raise ErroDeFigura(f"{campo} {texto!r}: {_nome(c)} in the {campo}{_sem_nome(c)}; where the one form has a space "
                                "it is exactly one ordinary space, U+00A0 NO-BREAK SPACE or U+202F NARROW NO-BREAK SPACE")
-    for c in texto:
-        if invisivel(c):
-            raise ErroDeFigura(f"{campo} {texto!r}: {_nome(c)} in the {campo}{_sem_nome(c)}, a character a reader cannot see; "
-                               "a mostra and its unidade hold only what a reader sees")
+    so_o_que_a_lista_permite(campo, texto)
+
+
+def so_o_que_a_lista_permite(campo: str, texto: str) -> None:
+    """ErroDeFigura naming the character (code point, and its Unicode name or its category) and the
+    field when `texto` holds a character that is not on the list (`na_lista`). A combining mark
+    that makes one letter with the letter before it is a decomposed accent, said as such."""
+    for k, c in enumerate(texto):
+        if na_lista(c):
+            continue
+        if k and unicodedata.category(c).startswith("M") and len(unicodedata.normalize("NFC", texto[k - 1] + c)) == 1:
+            raise ErroDeFigura(f"{campo} {texto!r}: {_nome(c)} in the {campo}, after {texto[k - 1]!r}: a decomposed accent; "
+                               f"type the accented letter as one character ({unicodedata.normalize('NFC', texto[k - 1] + c)!r})")
+        raise ErroDeFigura(f"{campo} {texto!r}: {_nome(c)} in the {campo}{_sem_nome(c)}, which is not on the list of what "
+                           f"a display may hold: Latin letters, the digits 0 to 9, the three spaces and the signs {SINAIS}")
+
+
+def so_os_espacos_da_forma(campo: str, texto: str) -> None:
+    """ErroDeFigura naming the character and the field (`mostra` or `unidade`) when `texto` holds
+    white space that is not one of ESPACOS, a character not on the list (`so_o_que_a_lista_permite`),
+    two spaces in a row, or a space at either end (docs/ESPEC-PECA.md, check 1, edits of 16 November
+    2026, 10:50 and 13:13 UTC). Every character is looked at, the ends included."""
+    so_caracteres_da_lista(campo, texto)
     for a, b in zip(texto, texto[1:]):
         if a in ESPACOS and b in ESPACOS:
             raise ErroDeFigura(f"{campo} {texto!r}: two spaces in a row in the {campo} ({_nome(a)}, {_nome(b)}); "
@@ -95,7 +118,7 @@ def ler_forma(mostra: str, unidade: str, valor: Decimal) -> tuple[Decimal, int, 
     alone (so_os_espacos_da_forma)."""
     so_os_espacos_da_forma("mostra", mostra)
     so_os_espacos_da_forma("unidade", unidade)
-    i = next((k for k, c in enumerate(mostra) if c.isdigit()), None)
+    i = next((k for k, c in enumerate(mostra) if c in DIGITOS), None)  # only 0 to 9 are digits of a number
     if i is None:
         raise ErroDeFigura(f"mostra {mostra!r} has no number")
     antes = mostra[:i]

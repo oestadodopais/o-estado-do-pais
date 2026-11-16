@@ -61,7 +61,7 @@ class B_NadaQueOLeitorNaoVe(unittest.TestCase):
     def test_o_hifen_brando_antes_do_simbolo_nos_dois_campos(self):
         r = check1_de(self, "­%", "1,5 ­%", "1.5")
         self.assertEqual(r.estado, conf.FALHOU)
-        self.assertTrue(any(x.startswith("indice:") and "U+00AD SOFT HYPHEN in the mostra, a character a reader cannot see" in x
+        self.assertTrue(any(x.startswith("indice:") and "U+00AD SOFT HYPHEN in the mostra, which is not on the list" in x
                             for x in r.razoes), r.razoes)
 
     def test_cada_invisivel_no_mostra_e_na_unidade(self):
@@ -75,7 +75,7 @@ class B_NadaQueOLeitorNaoVe(unittest.TestCase):
                 msg = self.recusa(mostra, unidade, "0.19")
                 self.assertIn(f"{codigo} ", msg)
                 self.assertIn(f" in the {campo}", msg)
-                self.assertIn("a character a reader cannot see", msg)
+                self.assertIn("which is not on the list of what a display may hold", msg)  # ESQ3j: the list replaced this rule
 
     def test_o_separador_de_linha(self):
         msg = self.recusa("1,5 %", "%", "1.5")

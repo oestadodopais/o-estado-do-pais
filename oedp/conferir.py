@@ -122,7 +122,15 @@ def check1(peca: Peca) -> Resultado:
             continue
         mostra = str(l.get("mostra", ""))
         livre = l.get("mostra_livre") is True
-        if not re.search(r"\d", mostra):
+        # Every display and its unit hold only what is on the list, free displays included, before
+        # any number is compared (docs/ESPEC-PECA.md, check 1, edit of 16 November 2026, 13:13 UTC).
+        try:
+            numeros.so_caracteres_da_lista("mostra", mostra)
+            numeros.so_caracteres_da_lista("unidade", str(l.get("unidade", "")))
+        except numeros.ErroDeFigura as e:
+            razoes.append(f"{lid}: {e}")
+            continue
+        if not re.search(r"[0-9]", mostra):
             if livre:
                 notas.append(f"{lid}: not compared, left to the numbers editor")
             else:

@@ -277,7 +277,9 @@ class B1_UmMaisNaoESinal(unittest.TestCase):
                                        ("euros", "+104,7 euros", "-104.7"), ("euros", "+104,7 euros", "104.7")):
             r = check1_de(self, unidade, mostra, valor)
             self.assertEqual(r.estado, conf.FALHOU, (mostra, valor))
-            self.assertTrue(any(x.startswith("indice:") and "'+' comes before the number" in x for x in r.razoes), (mostra, valor, r.razoes))
+            # ESQ3j: «+» is not on the list of what a display may hold, so the list refuses it first.
+            self.assertTrue(any(x.startswith("indice:") and "U+002B PLUS SIGN in the mostra, which is not on the list" in x
+                                for x in r.razoes), (mostra, valor, r.razoes))
 
 
 class B2_NadaDepoisDaUnidade(unittest.TestCase):
