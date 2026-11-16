@@ -5,6 +5,7 @@ the judge of the Method page. No network; `vercel`, curl and the launcher are st
 from __future__ import annotations
 
 import contextlib
+import datetime as dt
 import io
 import json
 import os
@@ -15,11 +16,11 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
-from oedp import codigo, fontes, leituras, navegador, publicar, reconferir, registo
+from oedp import codigo, datas, fontes, leituras, navegador, publicar, reconferir, registo
 from oedp import conferir as conf
 from oedp import construir as build
 from oedp.peca import ler
-from tests.apoio import ENSAIOS, LOJA, REPO, Plantada, loja_fora_do_repositorio
+from tests.apoio import ENSAIOS, LOJA, PECA, REPO, Plantada, loja_fora_do_repositorio
 from tests.test_esq1d import DOCUMENTO, SitioFalso
 from tests.test_esq2a import PDF, PLANTA_BOA, Base as BaseLeitura, ComLeitura, achado, bloco
 from tests.test_esq2b import ANTERIOR, IMPLANTACAO, Base as BasePublicar
@@ -398,9 +399,33 @@ class B10OutroProtocoloTambemTentaOutraVez(unittest.TestCase):
 # --------------------------------------------------------------------------- C
 
 
+def ultimo_instante_do_registo(caminho: Path) -> dt.datetime:
+    """The latest instant on a piece's own record: every inicio, fim and em of every table."""
+    registo = ler(caminho).registo
+    return max(i for tabelas in registo.values() if isinstance(tabelas, list) for t in tabelas if isinstance(t, dict)
+               for k in ("inicio", "fim", "em") if (i := datas.instante_real(str(t.get(k, "")))))
+
+
+def _instante(i: dt.datetime) -> str:
+    return i.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
 class C11RepublicarPedeJuizNovo(unittest.TestCase):
-    # Before the clock of any run of these tests, so that a publication made now comes after it.
-    RETIRADA = '\n[[estado]]\nestado = "retirada"\nem = "2026-11-14T09:00:00Z"\npor = "ensaio"\nrazao = "Ensaio."\n'
+    # The order of the instants (ORDEM-3g, C1): every step and reading on the test piece's own
+    # record; then the withdrawal, a minute after the last of them (read from the record, not
+    # typed); then the new juiz reading of juiz_novo, from a minute after the withdrawal to two
+    # minutes after; then the publication table written by hand, a minute after that reading;
+    # the publication by the command is made at the real clock. So between the withdrawal and a
+    # publication nothing on the record can lie but the new reading, whichever day these tests
+    # run. Typed two days before the record's readings, the withdrawal had a passing juiz reading
+    # of the record lie between it and a publication made now, from the day that reading ended
+    # (16 November 2026, 10:25 UTC), and the first test failed from then on. The record's last
+    # reading ends at 16 November 2026, 12:10 UTC: the third test passes at any clock from 12:13.
+    ULTIMO = ultimo_instante_do_registo(PECA)
+    RETIRADA_EM = _instante(ULTIMO + dt.timedelta(minutes=1))
+    JUIZ_INICIO, JUIZ_FIM = _instante(ULTIMO + dt.timedelta(minutes=2)), _instante(ULTIMO + dt.timedelta(minutes=3))
+    PUBLICADA_A_MAO_EM = _instante(ULTIMO + dt.timedelta(minutes=4))
+    RETIRADA = f'\n[[estado]]\nestado = "retirada"\nem = "{RETIRADA_EM}"\npor = "ensaio"\nrazao = "Ensaio."\n'
 
     def retirada(self):
         p = Plantada()
@@ -419,8 +444,8 @@ class C11RepublicarPedeJuizNovo(unittest.TestCase):
     def juiz_novo(self, p):
         peca = ler(p.peca)
         registo.acrescentar(p.peca, "leitura", {
-            "lugar": "juiz", "familia": "openai", "modelo": "modelo-de-ensaio", "inicio": "2026-11-14T10:00:00Z",
-            "fim": "2026-11-14T10:20:00Z", "impressao": peca.impressao, "plantas_postas": 1, "plantas_apanhadas": 1,
+            "lugar": "juiz", "familia": "openai", "modelo": "modelo-de-ensaio", "inicio": self.JUIZ_INICIO,
+            "fim": self.JUIZ_FIM, "impressao": peca.impressao, "plantas_postas": 1, "plantas_apanhadas": 1,
             "achados": 0, "adotados": 0, "veredicto": "passa", "pessoas_vistas": ["pessoa_de_ensaio"]})
 
     def test_planta_retirada_e_publicada_sem_nada_entre_as_duas(self):
@@ -428,17 +453,24 @@ class C11RepublicarPedeJuizNovo(unittest.TestCase):
         antes = p.peca.read_bytes()
         saida, erro = self.publicar(p)
         self.assertEqual(saida, 1, erro)
-        self.assertIn("the piece was withdrawn at 2026-11-14T09:00:00Z and published again at ", erro)
+        self.assertIn(f"the piece was withdrawn at {self.RETIRADA_EM} and published again at ", erro)
         self.assertIn("with no passing juiz reading begun after that withdrawal and ended before that publication", erro)
         self.assertEqual(p.peca.read_bytes(), antes)
 
     def test_planta_tabela_escrita_a_mao(self):
         p = self.retirada()
         with open(p.peca, "a", encoding="utf-8") as f:
-            f.write('\n[[estado]]\nestado = "publicada"\nem = "2026-11-14T10:00:00Z"\npor = "a mao"\nrazao = "Ensaio."\n')
+            f.write(f'\n[[estado]]\nestado = "publicada"\nem = "{self.PUBLICADA_A_MAO_EM}"\npor = "a mao"\nrazao = "Ensaio."\n')
         r = p.resultados(LOJA)[4]
         self.assertEqual(r.estado, conf.FALHOU)
-        self.assertIn("the piece was withdrawn at 2026-11-14T09:00:00Z and published again at 2026-11-14T10:00:00Z", r.linha())
+        self.assertIn(f"the piece was withdrawn at {self.RETIRADA_EM} and published again at {self.PUBLICADA_A_MAO_EM}", r.linha())
+
+    def test_nenhuma_leitura_do_registo_comeca_depois_da_retirada(self):
+        leituras_do_registo = ler(PECA).registo.get("leitura", [])
+        self.assertTrue(leituras_do_registo)
+        self.assertTrue(all(datas.instante_real(l["inicio"]) < datas.instante_real(self.RETIRADA_EM) for l in leituras_do_registo))
+        self.assertLess(datas.instante_real(self.RETIRADA_EM), datas.instante_real(self.JUIZ_INICIO))
+        self.assertLess(datas.instante_real(self.JUIZ_FIM), datas.instante_real(self.PUBLICADA_A_MAO_EM))
 
     def test_retirada_julgada_outra_vez_e_publicada(self):
         p = self.retirada()
