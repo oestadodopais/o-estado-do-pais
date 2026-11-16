@@ -247,3 +247,11 @@ plantas_apanhadas = 3
 achados = 2
 adotados = 2
 veredicto = "nao_passa"
+
+[[passo]]
+nome = "construcao"
+lugar = "construtor"
+familia = "anthropic"
+modelo = "claude-opus-5-5"
+inicio = "2026-11-16T12:10:18Z"
+fim = "2026-11-16T12:19:34Z"
