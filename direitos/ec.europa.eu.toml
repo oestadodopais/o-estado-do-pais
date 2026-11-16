@@ -1,0 +1,83 @@
+# Rights record of Eurostat, made from its page «Copyright notice and free re-use of data».
+# excerto_max is the project's own limit: the terms set no length; 600, as for the INE.
+# robots.txt of ec.europa.eu, read 2026-11-16T14:38:37Z: no group names this project's agent;
+# the group for all agents disallows, among other paths, /eurostat/tgm/,
+# /eurostat/SDMX/diss-web/rest/, /eurostat/search, /eurostat/*/search/-/, /eurostat/fr/ and
+# /eurostat/de/; it does not disallow /eurostat/web/products-euro-indicators/,
+# /eurostat/documents/ or /eurostat/help/.
+editor = "Eurostat"
+termos_url = "https://ec.europa.eu/eurostat/help/copyright-notice"
+termos_sha256 = "4ac51d8fa3337c1c87f1e774ffc7ceb400068809c21218557755707ebe7c8cb4"
+lido_em = "2026-11-16T14:37:08Z"
+guardar = "sim"
+excerto_max = 600
+licenca = "Creative Commons Attribution 4.0 International"
+reproduzir = "sim"
+credito = "Source: Eurostat, [Title of the product], [link to the product], [access date]."
+duvidas = [
+  "The host ec.europa.eu serves many services of the European Commission besides Eurostat. These terms speak of «this website», Eurostat's, and so this record covers only Eurostat's documents (addresses under /eurostat/); check 9 finds a record by host alone, so a source from another part of ec.europa.eu would pass check 9 on this record although these terms do not govern it.",
+  "The licence «Creative Commons Attribution 4.0 International» is named for «the editorial content of this website»; «statistical data, metadata, publications, and other dissemination tools» are under a separate leave, «provided the source is acknowledged». The terms do not say which of the two governs the text, tables and charts of a Euro indicators release, nor whether a link to the licence must go with the credit.",
+  "«These general principles can be subject to conditions which may be specified in individual copyright notices»: every stored document must be read for a copyright notice of its own before it is quoted or reproduced.",
+  "«When reuse involves translations of publications or modifications to the data or text», this «must be stated clearly», and «A disclaimer regarding the non-responsibility of Eurostat shall be included». The terms do not say whether a figure the project computes from Eurostat's figures, or Eurostat's words rendered in Portuguese, counts as a modification or a translation, and they give the disclaimer's wording only for translations of publications.",
+  "The terms give three forms of credit (datasets, publications, and «Other products», which include «webpages» and «PDF documents»), all in English. They do not say whether a Portuguese rendering of the credit is acceptable, nor whether the credit must stand beside each figure or may be given once per piece. The form in credito is the one for webpages; a dataset is credited «Source: [digital object identifier (DOI) number of the Eurostat dataset], [access date]».",
+  "Some material «may not be reused for commercial purposes», among it data for countries outside the EU, EFTA and the «official EU acceding and candidate countries», data «belonging to sources other than Eurostat», and co-publications. The terms do not define «commercial purposes» and do not say whether this project's use is commercial; until that is settled, no such data is reproduced or quoted from Eurostat.",
+  "Material whose copyright «is identified as belonging to a third-party», such as photos or illustrations, and logos and trademarks, are outside the leave; the terms do not say where in a document that identification is given. The project reproduces no photo, illustration, logo or trademark from this host.",
+  "The terms name as their basis «the legal notice of the European Commission 'Europa website'» and say the reuse policy is implemented by «the Decision of 12 December 2011». Neither is stored with this record, so whether either adds a condition to these terms is open.",
+  "The terms carry no date and do not say how a change is announced; the page shows the words «Copyright notice EN REVAMP» after its title. This record holds for the terms as read on lido_em.",
+]
+
+[[apoio]]
+campo = "editor"
+excerto = "This site is managed by Eurostat and is an official website of the European Union"
+
+[[apoio]]
+campo = "guardar"
+excerto = "Reuse of statistical data, metadata, publications, and other dissemination tools published on this website for commercial or non-commercial purposes is authorised provided the source is acknowledged."
+
+[[apoio]]
+campo = "guardar"
+excerto = "There is no special procedure or requirement for a written licence. Just download the material and use it, unless the material is listed in the exceptions above."
+
+[[apoio]]
+campo = "excerto_max"
+excerto = "This means that you can re-use the content provided you acknowledge the source and indicate any changes you have made."
+
+[[apoio]]
+campo = "licenca"
+excerto = "The copyright for the editorial content of this website, which is owned by the EU, is licensed under the Creative Commons Attribution 4.0 International licence"
+
+[[apoio]]
+campo = "reproduzir"
+excerto = "Reuse of statistical data, metadata, publications, and other dissemination tools published on this website for commercial or non-commercial purposes is authorised provided the source is acknowledged."
+
+[[apoio]]
+campo = "reproduzir"
+excerto = "The permission granted above does not extend to any material whose copyright is identified as belonging to a third-party"
+
+[[apoio]]
+campo = "reproduzir"
+excerto = "Logos and trademarks are excluded from the above mentioned general permission, except if they are redistributed as an integral part of a Eurostat publication and if the publication is redistributed unchanged."
+
+[[apoio]]
+campo = "credito"
+excerto = "Other products Source: Eurostat, [Title of the product], [link to the product], [access date]. This concerns for example interactive tools, data visualisations, webpages, Statistics Explained articles, PDF documents."
+
+[[apoio]]
+campo = "credito"
+excerto = "When reuse involves translations of publications or modifications to the data or text , this must be stated clearly to the end user of the information. A disclaimer regarding the non-responsibility of Eurostat shall be included."
+
+[[apoio]]
+campo = "duvidas"
+excerto = "These general principles can be subject to conditions which may be specified in individual copyright notices. Therefore, users are advised to refer to the copyright information on the individual documents."
+
+[[apoio]]
+campo = "duvidas"
+excerto = "Data for countries other than: Member States of the European Union (EU) Member States of the European Free Trade Association (EFTA) official EU acceding and candidate countries."
+
+[[apoio]]
+campo = "duvidas"
+excerto = "The basis for the copyright and licence policy of Eurostat is the legal notice of the European Commission 'Europa website', which can be found in the footer of every webpage of the Eurostat website."
+
+[[apoio]]
+campo = "duvidas"
+excerto = "The reuse policy of the European Commission is implemented by the Decision of 12 December 2011"
