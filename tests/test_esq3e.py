@@ -308,9 +308,12 @@ class C_AUnidadeDoMostra(unittest.TestCase):
 
     def test_a_mesma_unidade_passa(self):
         for unidade, mostra in (("%", "104,7 %"), ("‰", "104,7 ‰"), ("€", "104,7 €"), ("mil euros", "104,7 mil euros"),
-                                ("pontos percentuais", "104,7 pontos percentuais"), ("pontos", "104,7  pontos")):
+                                ("pontos percentuais", "104,7 pontos percentuais")):
             r = check1_com(self, unidade, mostra)
             self.assertEqual(r.estado, conf.PASSOU, (unidade, mostra, r.linha()))
+        # Two spaces in a row passed here until ESQ3g; the one form now has exactly one (ESQ3g, A).
+        r = check1_com(self, "pontos", "104,7  pontos")
+        self.assertTrue(any("two spaces in a row in the mostra" in x for x in r.razoes), r.razoes)
 
     def test_planta_a_unidade_por_ler(self):
         """With the unit not read, a per mille shown as a per cent is let through: what the reader found."""

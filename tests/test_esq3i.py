@@ -193,3 +193,125 @@ class C2Portao(unittest.TestCase):
         # The store as the checks have it; the private list stays with the step that runs the checks (check 8).
         self.assertEqual(ambiente(seguinte), {"OEDP_FONTES": ambiente(tudo)["OEDP_FONTES"]})
         self.assertIn("PRIVACIDADE_PROIBIDOS", ambiente(tudo))
+
+
+# --------------------------------------------------------------------------- A
+
+
+from decimal import Decimal  # noqa: E402
+
+from oedp import conferir as conf  # noqa: E402
+from oedp import numeros  # noqa: E402
+from oedp.peca import ler  # noqa: E402
+from tests.apoio import Plantada  # noqa: E402
+from tests.test_esq3 import MENOS, NB, aritmetica, entradas_listadas, pagina_plantada, recibo  # noqa: E402
+
+LINHA_INDICE = ('valor = "104.7"\nunidade = "pontos"', 'mostra = "104,7 pontos"')
+
+
+def toml(texto: str) -> str:
+    """A TOML basic string: JSON's escapes are TOML's (\\t, \\n, \\uXXXX)."""
+    return json.dumps(texto)
+
+
+def trocas_do_indice(unidade: str, mostra: str, valor: str = "104.7") -> list[tuple[str, str]]:
+    return [(LINHA_INDICE[0], f"valor = {toml(valor)}\nunidade = {toml(unidade)}"), (LINHA_INDICE[1], f"mostra = {toml(mostra)}")]
+
+
+def check1_de(caso, unidade: str, mostra: str, valor: str = "104.7"):
+    """Check 1 on the test piece with the line `indice` given this unidade, mostra and valor."""
+    p = Plantada(trocas_do_indice(unidade, mostra, valor))
+    caso.addCleanup(p.apagar)
+    return conf.check1(ler(p.peca))
+
+
+class A_UmEspacoSo(unittest.TestCase):
+    RECUSADOS = (  # (unidade, mostra, valor, what the refusal says)
+        ("%", "1,5\t%", "1.5", "U+0009 in the mostra"),
+        ("%", "1,5\n%", "1.5", "U+000A in the mostra"),
+        ("%", "1,5  %", "1.5", "two spaces in a row in the mostra"),
+        ("%", "1,5 % ", "1.5", "a space (U+0020 SPACE) at the end of the mostra"),
+        ("pontos\tpercentuais", "0,19 pontos percentuais", "0.19", "U+0009 in the unidade"),
+        ("pontos  percentuais", "0,19 pontos percentuais", "0.19", "two spaces in a row in the unidade"),
+        ("%", "1,5 %", "1.5", "U+2009 THIN SPACE in the mostra"),
+        ("%", "1,5​%", "1.5", "U+200B ZERO WIDTH SPACE in the mostra"),
+        (" %", "1,5 %", "1.5", "a space (U+0020 SPACE) at the start of the unidade"),
+        ("%", "1,5  %", "1.5", "two spaces in a row in the mostra (U+00A0 NO-BREAK SPACE, U+202F NARROW NO-BREAK SPACE)"),
+    )
+
+    def test_recusados_com_o_caracter_e_o_campo(self):
+        for unidade, mostra, valor, diz in self.RECUSADOS:
+            r = check1_de(self, unidade, mostra, valor)
+            self.assertEqual(r.estado, conf.FALHOU, (unidade, mostra))
+            self.assertTrue(any(x.startswith("indice:") and diz in x for x in r.razoes), (mostra, diz, r.razoes))
+
+    def test_os_tres_espacos_passam_e_contam_como_a_mesma_letra(self):
+        for espaco in numeros.ESPACOS:
+            r = check1_de(self, "%", f"1,5{espaco}%", "1.5")
+            self.assertEqual(r.estado, conf.PASSOU, (hex(ord(espaco)), r.linha()))
+        r = check1_de(self, "pontos percentuais", "0,19 pontos percentuais", "0.19")
+        self.assertEqual(r.estado, conf.PASSOU, r.linha())
+        self.assertEqual(numeros.ler_forma("1 500,5 mil euros", "euros", Decimal("1500500")), (Decimal("1500.5"), 1, 1000))
+
+
+class A_APaginaJuntaONumeroEAUnidade(unittest.TestCase):
+    def test_cada_espaco_aceite_da_um_espaco_sem_quebra(self):
+        for unidade in ("pontos", "%"):
+            for espaco in numeros.ESPACOS:
+                _, html, _ = pagina_plantada(self, trocas_do_indice(unidade, f"104,7{espaco}{unidade}"))
+                # The figure in the title and the text (each a link to its receipt), and in its receipt's summary.
+                impressos = re.findall(r'<a class="ref" href="#r-indice"[^>]*>(\d[^<]*)</a>', html)
+                impressos += re.findall(r'<span class="figura">([^<]*)</span>', recibo(html, "indice"))
+                self.assertGreaterEqual(len(impressos), 3, html)
+                for f in impressos:
+                    self.assertEqual(f, f"104,7{NB}{unidade}", (unidade, hex(ord(espaco))))
+
+
+# --------------------------------------------------------------------------- B
+
+
+class B1_UmMaisNaoESinal(unittest.TestCase):
+    def test_mais_recusado_nos_dois_sinais(self):
+        for unidade, mostra, valor in (("%", "+4,4 %", "-4.4"), ("%", "+4,4 %", "4.4"),
+                                       ("euros", "+104,7 euros", "-104.7"), ("euros", "+104,7 euros", "104.7")):
+            r = check1_de(self, unidade, mostra, valor)
+            self.assertEqual(r.estado, conf.FALHOU, (mostra, valor))
+            self.assertTrue(any(x.startswith("indice:") and "'+' comes before the number" in x for x in r.razoes), (mostra, valor, r.razoes))
+
+
+class B2_NadaDepoisDaUnidade(unittest.TestCase):
+    def test_o_que_vem_depois_da_unidade_e_recusado(self):
+        for unidade, mostra, valor in (("pontos", "2,4 pontos percentuais", "2.4"), ("euros", "104,7 euros por mês", "104.7"),
+                                       ("euros", "104,7 euros.", "104.7"), ("", "104,7 x", "104.7")):
+            r = check1_de(self, unidade, mostra, valor)
+            self.assertEqual(r.estado, conf.FALHOU, (unidade, mostra))
+            self.assertTrue(any(x.startswith("indice:") and "which is not the line's unidade" in x for x in r.razoes), (mostra, r.razoes))
+
+    def test_uma_unidade_vazia_aceita_so_o_numero(self):
+        self.assertEqual(check1_de(self, "", "104,7").estado, conf.PASSOU)
+
+    def test_a_escala_antes_de_uma_unidade_curta(self):
+        self.assertEqual(numeros.ler_forma("1,5 mil m", "m", Decimal("1500")), (Decimal("1.5"), 1, 1000))
+        r = check1_de(self, "m", "1,5 mil m", "1500")
+        self.assertEqual(r.estado, conf.PASSOU, r.linha())
+
+
+# A derived receipt whose inputs and result are negative and shown with a final zero.
+ZEROS_NEGATIVOS = [
+    ('valor = "104.7"', 'valor = "-4.5"'), ('unidade = "pontos"\nmede = "Índice', 'unidade = "%"\nmede = "Índice'),
+    ('mostra = "104,7 pontos"', 'mostra = "−4,50 %"'),
+    ('valor = "102.3"', 'valor = "-4.4"'), ('mostra = "102,3 pontos"', 'mostra = "−4,40 %"'),
+    ('unidade = "pontos"\nmede = "Índice', 'unidade = "%"\nmede = "Índice'),
+    ('calculo = "round ( indice - indice_anterior , 1 )"\nvalor = "2.4"\nunidade = "pontos"',
+     'calculo = "round ( indice - indice_anterior , 2 )"\nvalor = "-0.1"\nunidade = "%"'),
+    ('mostra = "2,4 pontos"', 'mostra = "−0,10 %"'),
+]
+
+
+class B3_UmaLinhaNegativaGuardaOsZeros(unittest.TestCase):
+    def test_entrada_e_resultado_negativos_com_os_seus_zeros(self):
+        _, html, _ = pagina_plantada(self, ZEROS_NEGATIVOS)
+        self.assertEqual(aritmetica(html, "diferenca"),
+                         f"({MENOS}4,50) {MENOS} ({MENOS}4,40){NB}= {MENOS}0,10 (arredondado a 2 casas decimais)")
+        self.assertEqual(entradas_listadas(html, "diferenca"),
+                         [f"{MENOS}4,50 · Terceiro trimestre de ensaio", f"{MENOS}4,40 · Segundo trimestre de ensaio"])

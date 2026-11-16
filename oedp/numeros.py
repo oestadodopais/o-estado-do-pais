@@ -1,7 +1,7 @@
 """Reading a figure as a reader sees it (`mostra`) and as a source prints it.
 
-Check 1 reads a `mostra` in its one form (`ler_forma`; docs/ESPEC-PECA.md, check 1, edit of
-15 November 2026, 17:07 UTC) and compares it with `valor`: the figure shown must equal `valor`
+Check 1 reads a `mostra` in its one form (`ler_forma`; docs/ESPEC-PECA.md, check 1, edits of
+15 November 2026, 17:07 UTC, and 16 November 2026, 10:50 UTC) and compares it with `valor`: the figure shown must equal `valor`
 divided by the scale word the `mostra` may carry, rounded half up to the decimals shown.
 Check 2 asks that a `valor` line's excerpt hold the digits of `valor` in one of the ways a
 source prints them.
@@ -9,6 +9,7 @@ source prints them.
 from __future__ import annotations
 
 import re
+import unicodedata
 from decimal import ROUND_HALF_UP, Decimal, localcontext
 
 ESPACOS = "   "
@@ -35,13 +36,40 @@ class ErroDeFigura(Exception):
 
 # The one form of a mostra: an optional minus sign right before the number, the number in
 # Portuguese form, a space, optionally one scale word, and the line's own unidade letter for letter.
+# Where the form has a space it is exactly one of ESPACOS, the three counting as the same letter.
 NUMERO_PT = re.compile(r"(?P<inteiro>\d{1,3}(?:[" + ESPACOS + r"]\d{3})+|\d+)(?:,(?P<decimais>\d+))?")
 ESCALAS_DA_MOSTRA = (("mil milhões de", 10**9), ("milhões de", 10**6), ("mil", 10**3))
 
 
+# Two characters Unicode names as spaces though they are not white space: refused with it.
+_LARGURA_ZERO = "\u200b\ufeff"  # ZERO WIDTH SPACE, ZERO WIDTH NO-BREAK SPACE
+
+
+def _nome(c: str) -> str:
+    nome = unicodedata.name(c, "")
+    return f"U+{ord(c):04X}" + (f" {nome}" if nome else "")
+
+
+def so_os_espacos_da_forma(campo: str, texto: str) -> None:
+    """ErroDeFigura naming the character and the field (`mostra` or `unidade`) when `texto` holds
+    white space that is not one of ESPACOS, two spaces in a row, or a space at either end
+    (docs/ESPEC-PECA.md, check 1, edit of 16 November 2026, 10:50 UTC)."""
+    for c in texto:
+        if (c.isspace() or c in _LARGURA_ZERO) and c not in ESPACOS:
+            raise ErroDeFigura(f"{campo} {texto!r}: {_nome(c)} in the {campo}; where the one form has a space it is exactly "
+                               "one ordinary space, U+00A0 NO-BREAK SPACE or U+202F NARROW NO-BREAK SPACE")
+    for a, b in zip(texto, texto[1:]):
+        if a in ESPACOS and b in ESPACOS:
+            raise ErroDeFigura(f"{campo} {texto!r}: two spaces in a row in the {campo} ({_nome(a)}, {_nome(b)}); "
+                               "where the one form has a space it is exactly one")
+    for onde, c in (("start", texto[:1]), ("end", texto[-1:])):
+        if c and c in ESPACOS:
+            raise ErroDeFigura(f"{campo} {texto!r}: a space ({_nome(c)}) at the {onde} of the {campo}")
+
+
 def _palavras(texto: str) -> str:
-    """Trimmed, with every run of white space (a no-break space included) taken as one space."""
-    return re.sub(r"\s+", " ", str(texto)).strip()
+    """The three spaces of the form read as one letter, the ordinary space."""
+    return str(texto).replace("\u00a0", " ").replace("\u202f", " ")
 
 
 def ler_forma(mostra: str, unidade: str, valor: Decimal) -> tuple[Decimal, int, int]:
@@ -49,7 +77,10 @@ def ler_forma(mostra: str, unidade: str, valor: Decimal) -> tuple[Decimal, int, 
     in its one form, or ErroDeFigura saying which part is wrong. Nothing before the number but a
     minus sign right before it, present exactly when `valor` is negative; after the number a space,
     optionally «mil», «milhões de» or «mil milhões de», then `unidade` letter for letter, and
-    nothing after it."""
+    nothing after it. Every space of the form, in the mostra and in the unidade, is one of ESPACOS,
+    alone (so_os_espacos_da_forma)."""
+    so_os_espacos_da_forma("mostra", mostra)
+    so_os_espacos_da_forma("unidade", unidade)
     i = next((k for k, c in enumerate(mostra) if c.isdigit()), None)
     if i is None:
         raise ErroDeFigura(f"mostra {mostra!r} has no number")
@@ -58,12 +89,12 @@ def ler_forma(mostra: str, unidade: str, valor: Decimal) -> tuple[Decimal, int, 
         raise ErroDeFigura(f"mostra {mostra!r}: {antes!r} comes before the number; nothing may, but a minus sign right before it")
     m = NUMERO_PT.match(mostra, i)
     resto = mostra[m.end():]
-    if resto and not resto[0].isspace():
+    if resto and resto[0] not in ESPACOS:
         raise ErroDeFigura(f"mostra {mostra!r}: the number {mostra[i:m.end()]!r} is followed by {resto[:1]!r}; in Portuguese "
                            "form a number has a decimal comma and is followed by a space and the unit")
-    resto_p, unidade_p = _palavras(resto), _palavras(unidade)
+    resto_p, unidade_p = _palavras(resto[1:]), _palavras(unidade)  # after the one space
     escala = 1 if resto_p == unidade_p else next(
-        (e for palavra, e in ESCALAS_DA_MOSTRA if resto_p == _palavras(f"{palavra} {unidade_p}")), None)
+        (e for palavra, e in ESCALAS_DA_MOSTRA if resto_p == " ".join(filter(None, (palavra, unidade_p)))), None)
     if escala is None:
         raise ErroDeFigura(f"mostra {mostra!r}: after the number comes {resto_p!r}, which is not the line's unidade "
                            f"{unidade_p!r} letter for letter; only «mil», «milhões de» or «mil milhões de» may come before it")
