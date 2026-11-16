@@ -9,7 +9,7 @@ import unittest
 from pathlib import Path
 
 from oedp import construir as build
-from oedp import fontes, reconferir
+from oedp import fontes, paginas, reconferir
 from oedp.peca import ler
 from tests.apoio import REPO, Plantada, loja_fora_do_repositorio
 
@@ -89,7 +89,7 @@ class Reconferir(unittest.TestCase):
         self.assertTrue(c.ok, c.mensagens)
         pagina = (saida / "static" / "pecas" / peca.id / "index.html").read_text(encoding="utf-8")
         self.assertIn('<p class="retirada">Esta peça foi retirada a ', pagina)
-        self.assertIn(f"<p>{TEXTOS['retirada_numero']}</p>", pagina)
+        self.assertIn(f"<p>{paginas.e(TEXTOS['retirada_numero'])}</p>", pagina)  # escaped, as the page prints it (finding 8)
         self.assertNotIn('class="texto"', pagina)
 
     def test_planta_fonte_inacessivel_nao_retira_e_falha(self):

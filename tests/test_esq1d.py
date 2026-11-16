@@ -281,14 +281,8 @@ class Item09TextoDoLeitorJulgado(unittest.TestCase):
     def test_os_registos_reais_existem(self):
         """The real records exist and are records, whatever they hold (ESQ3i, A): each parses, holds
         only the tables its record may hold, and every entry has its fields."""
-        from oedp import codigo, julgados, reconferir
-        self.assertTrue((REPO / "textos.registo.toml").is_file())
-        textos = tomllib.loads((REPO / "textos.registo.toml").read_text(encoding="utf-8"))
-        self.assertLessEqual(set(textos), {"passo", "leitura"})
-        self.assertEqual(julgados.erros_do_registo("textos.toml", textos), [])
-        self.assertTrue((REPO / codigo.REGISTO).is_file())
-        self.assertEqual(codigo.erros_do_registo(codigo.em_ordem((REPO / codigo.REGISTO).read_text(encoding="utf-8"))), [])
-        self.assertEqual(reconferir.ler_registo(REPO)[1], [])  # no file is no run yet; a file is a record
+        from tests.apoio import erros_dos_registos
+        self.assertEqual(erros_dos_registos(REPO), [])  # the judgment is one function, tested on scratch trees (ESQ3j, D3)
 
     def test_planta_um_registo_que_nao_e_registo(self):
         from oedp import julgados

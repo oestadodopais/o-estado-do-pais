@@ -18,7 +18,7 @@ import tomllib
 import unittest
 from pathlib import Path
 
-from oedp import leituras, numerado
+from oedp import leituras, numerado, paginas
 from oedp.__main__ import MODELO
 from oedp.peca import ler, paragrafos
 from oedp.ambiente import sem_git_local
@@ -261,19 +261,21 @@ class MetodoTextosCodigo(Base):
         # a plant in a sentence is seen in the built pages too: the two files never disagree
         voltar = reais["r_voltar"]  # the real sentence, read; the plant adds two words to it
         plantado = voltar + " de novo"
+        toml = lambda s: json.dumps(s, ensure_ascii=False)  # a TOML basic string, escaped (ESQ3j, C2: finding 7)
         self.plantar(pasta, f'''
 [[planta]]
 id = "Q3"
 ficheiro = "TEXTOS-NUMERADOS.md"
-antes = "`r_voltar`: {voltar}"
-depois = "`r_voltar`: {plantado}"
+antes = {toml("`r_voltar`: " + voltar)}
+depois = {toml("`r_voltar`: " + plantado)}
 descricao = "the back link's words are not the specification's"
-desmente = "| `r_voltar` | {voltar} |"
+desmente = {toml("| `r_voltar` | " + voltar + " |")}
 desmente_em = "docs/ESPEC-PAGINAS.md"
 ''')
         pagina = (pasta / "pacote" / "construido" / "pecas" / "2026-11-16-peca-de-ensaio" / "index.html").read_text(encoding="utf-8")
-        self.assertIn(f">{plantado}</a>", pagina)
-        self.assertNotIn(f">{voltar}</a>", pagina)
+        # The page prints the sentence escaped, so it is looked for escaped (finding 8's habit).
+        self.assertIn(f">{paginas.e(plantado)}</a>", pagina)
+        self.assertNotIn(f">{paginas.e(voltar)}</a>", pagina)
 
 
 def falsos_artefactos(arvore: Path, pacote: Path) -> int:

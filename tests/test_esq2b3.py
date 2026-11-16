@@ -59,6 +59,6 @@ class LidoA(unittest.TestCase):
         # test_textos_toml_e_a_tabela_da_especificacao (ESQ3i, B: no real sentence typed here).
         self.assertTrue(textos["lugar_desenhador"].strip())
         self.assertTrue(textos["registo_intro"].strip())
-        self.assertIn(textos["registo_intro"], self.html)
-        self.assertIn(textos["recibos_intro"], self.html)
-        self.assertIn(textos["rodape"], self.html)
+        self.assertIn(paginas.e(textos["registo_intro"]), self.html)  # escaped, as the page prints them (ESQ3j, C2)
+        self.assertIn(paginas.e(textos["recibos_intro"]), self.html)
+        self.assertIn(paginas.e(textos["rodape"]), self.html)

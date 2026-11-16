@@ -166,3 +166,45 @@ class B_SoOQueEstaNaLista(unittest.TestCase):
             r = check1_de(self, unidade, mostra, valor)
             self.assertEqual(r.estado, conf.PASSOU, (mostra, r.linha()))
         self.assertEqual(check1_livre(self, "um terço").estado, conf.PASSOU)
+
+
+# --------------------------------------------------------------------------- D3
+
+
+import shutil  # noqa: E402
+import tempfile  # noqa: E402
+
+from oedp import reconferir  # noqa: E402
+from tests.apoio import erros_dos_registos  # noqa: E402
+
+
+class D3_OsRegistosSaoRegistos(unittest.TestCase):
+    def arvore(self) -> Path:
+        raiz = Path(tempfile.mkdtemp(prefix="oedp-registos-"))
+        self.addCleanup(shutil.rmtree, raiz, True)
+        for nome in ("textos.registo.toml", "codigo.registo.toml"):
+            shutil.copy(REPO / nome, raiz / nome)
+        return raiz
+
+    def test_registos_crescidos_e_validos(self):
+        raiz = self.arvore()
+        reconferir.acrescentar(raiz, {"em": "2026-11-16T13:30:00Z", "pecas": 1, "excertos": 7, "falhados": 0, "retiradas": [],
+                                      "so_relatar": False})
+        self.assertEqual(erros_dos_registos(raiz), [])
+
+    def test_reconferencias_mal_formado_e_nomeado(self):
+        raiz = self.arvore()
+        (raiz / "reconferencias.toml").write_text('[[reconferencia]]\nem = "2026-11-16T13:30:00Z"\npecas = 1\n', encoding="utf-8")
+        self.assertTrue(any(x.startswith("reconferencias.toml") for x in erros_dos_registos(raiz)), erros_dos_registos(raiz))
+
+    def test_registo_dos_textos_mal_formado_e_nomeado(self):
+        raiz = self.arvore()
+        with open(raiz / "textos.registo.toml", "a", encoding="utf-8") as f:
+            f.write('\n[[passo]]\nnome = "escrita"\n')
+        self.assertTrue(any(x.startswith("textos.registo.toml") for x in erros_dos_registos(raiz)), erros_dos_registos(raiz))
+
+    def test_registo_do_codigo_mal_formado_e_nomeado(self):
+        raiz = self.arvore()
+        with open(raiz / "codigo.registo.toml", "a", encoding="utf-8") as f:
+            f.write('\n[[passo]]\nnome = "construcao"\n')
+        self.assertTrue(any(x.startswith("codigo.registo.toml") for x in erros_dos_registos(raiz)), erros_dos_registos(raiz))
