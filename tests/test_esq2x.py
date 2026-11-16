@@ -411,20 +411,21 @@ def _instante(i: dt.datetime) -> str:
 
 
 class C11RepublicarPedeJuizNovo(unittest.TestCase):
-    # The order of the instants (ORDEM-3g, C1): every step and reading on the test piece's own
-    # record; then the withdrawal, a minute after the last of them (read from the record, not
-    # typed); then the new juiz reading of juiz_novo, from a minute after the withdrawal to two
-    # minutes after; then the publication table written by hand, a minute after that reading;
-    # the publication by the command is made at the real clock. So between the withdrawal and a
-    # publication nothing on the record can lie but the new reading, whichever day these tests
-    # run. Typed two days before the record's readings, the withdrawal had a passing juiz reading
-    # of the record lie between it and a publication made now, from the day that reading ended
-    # (16 November 2026, 10:25 UTC), and the first test failed from then on. The record's last
-    # reading ends at 16 November 2026, 12:10 UTC: the third test passes at any clock from 12:13.
+    # The order of the instants (ORDEM-3g, C1, second form), each read from the test piece's own
+    # record, none typed: every step and reading on that record (the last of them, ULTIMO); the
+    # withdrawal, a minute after it; the new juiz reading of juiz_novo, from two to three minutes
+    # after it; the publication table written by hand, at four minutes; the publication by the
+    # command, at five, with the clock the command reads (registo.agora) pinned to that instant.
+    # So nothing on the record can lie between the withdrawal and a publication but the new
+    # reading, and no test of this class depends on the day it runs. Typed, the withdrawal fell
+    # two days before the record's readings, the command published at the real clock, and the
+    # first test failed from the day the record's first juiz reading ended (16 November 2026,
+    # 10:25 UTC). That the command reads the real clock when nothing is pinned is tested below.
     ULTIMO = ultimo_instante_do_registo(PECA)
     RETIRADA_EM = _instante(ULTIMO + dt.timedelta(minutes=1))
     JUIZ_INICIO, JUIZ_FIM = _instante(ULTIMO + dt.timedelta(minutes=2)), _instante(ULTIMO + dt.timedelta(minutes=3))
     PUBLICADA_A_MAO_EM = _instante(ULTIMO + dt.timedelta(minutes=4))
+    PUBLICADA_EM = _instante(ULTIMO + dt.timedelta(minutes=5))  # the command's publication, pinned
     RETIRADA = f'\n[[estado]]\nestado = "retirada"\nem = "{RETIRADA_EM}"\npor = "ensaio"\nrazao = "Ensaio."\n'
 
     def retirada(self):
@@ -437,7 +438,8 @@ class C11RepublicarPedeJuizNovo(unittest.TestCase):
     def publicar(self, p):
         from oedp import __main__ as cli
         erro = io.StringIO()
-        with mock.patch.dict(os.environ, {"OEDP_FONTES": str(loja_fora_do_repositorio(self))}), contextlib.redirect_stderr(erro):
+        with mock.patch.dict(os.environ, {"OEDP_FONTES": str(loja_fora_do_repositorio(self))}), \
+                mock.patch.object(registo, "agora", return_value=self.PUBLICADA_EM), contextlib.redirect_stderr(erro):
             saida = cli.principal(["estado", str(p.peca), "publicada", "--razao", "Ensaio."])
         return saida, erro.getvalue()
 
@@ -453,7 +455,7 @@ class C11RepublicarPedeJuizNovo(unittest.TestCase):
         antes = p.peca.read_bytes()
         saida, erro = self.publicar(p)
         self.assertEqual(saida, 1, erro)
-        self.assertIn(f"the piece was withdrawn at {self.RETIRADA_EM} and published again at ", erro)
+        self.assertIn(f"the piece was withdrawn at {self.RETIRADA_EM} and published again at {self.PUBLICADA_EM} ", erro)
         self.assertIn("with no passing juiz reading begun after that withdrawal and ended before that publication", erro)
         self.assertEqual(p.peca.read_bytes(), antes)
 
@@ -471,6 +473,7 @@ class C11RepublicarPedeJuizNovo(unittest.TestCase):
         self.assertTrue(all(datas.instante_real(l["inicio"]) < datas.instante_real(self.RETIRADA_EM) for l in leituras_do_registo))
         self.assertLess(datas.instante_real(self.RETIRADA_EM), datas.instante_real(self.JUIZ_INICIO))
         self.assertLess(datas.instante_real(self.JUIZ_FIM), datas.instante_real(self.PUBLICADA_A_MAO_EM))
+        self.assertLess(datas.instante_real(self.JUIZ_FIM), datas.instante_real(self.PUBLICADA_EM))
 
     def test_retirada_julgada_outra_vez_e_publicada(self):
         p = self.retirada()
@@ -478,6 +481,17 @@ class C11RepublicarPedeJuizNovo(unittest.TestCase):
         saida, erro = self.publicar(p)
         self.assertEqual(saida, 0, erro)
         self.assertEqual(ler(p.peca).estado, "publicada")
+        self.assertEqual(ler(p.peca).registo["estado"][-1]["em"], self.PUBLICADA_EM)
+
+    def test_sem_o_pino_o_comando_le_o_relogio_real(self):
+        # A withdrawal needs no judgment: the command writes its em from the clock, unpinned.
+        from oedp import __main__ as cli
+        p = Plantada()
+        self.addCleanup(p.apagar)
+        with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+            self.assertEqual(cli.principal(["estado", str(p.peca), "retirada", "--razao", "Ensaio."]), 0)
+        escrito = datas.instante_real(ler(p.peca).registo["estado"][-1]["em"])
+        self.assertLess(abs((escrito - dt.datetime.now(dt.timezone.utc)).total_seconds()), 120)
 
 
 class C12ReconferirRetiraPorOmissao(unittest.TestCase):
