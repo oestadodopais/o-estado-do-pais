@@ -284,3 +284,16 @@ familia = "anthropic"
 modelo = "claude-opus-5-5"
 inicio = "2026-11-16T13:14:24Z"
 fim = "2026-11-16T13:29:15Z"
+
+[[leitura]]
+lugar = "seguranca"
+familia = "openai"
+modelo = "gpt-6-astra"
+inicio = "2026-11-16T13:51:06Z"
+fim = "2026-11-16T14:00:29Z"
+impressao = "3792fac24589d8f9850e07016805a7d3715f53cc59277ff620f83d3fca762988"
+plantas_postas = 3
+plantas_apanhadas = 3
+achados = 2
+adotados = 0
+veredicto = "passa"

@@ -28,6 +28,8 @@
 
 *Edited 16 November 2026, 13:13 UTC, after the sixth code and security reading of the third block. The rule on characters is turned round: check 1 now says what a `mostra` and a `unidade` may hold, and refuses everything else. Three readings in a row each found another kind of character nobody can see (white space, then format characters, then joiners, variation selectors and fillers that Unicode counts as marks or letters), and the last also found that a display with no digit escaped the rule altogether and that a superscript digit ended in a traceback. A list of what is refused will always lack one. Counted on the two real fact sheets and the test piece, every display uses eighteen small letters (a b c d e h i l m n o p r s t u ç õ), the ten digits, the ordinary space and five signs (% ‰ , - −), all in composed form. The list in check 1 is that, with the capitals, the other accented letters and the signs a unit in Portuguese statistics plainly needs.*
 
+*Edited 16 November 2026, 14:01 UTC, after the seventh code and security reading of the third block, which passed. One thing in check 1 is not yet as its row says, and is said here so that this page is true of the code: **a display with no digit (a `mostra_livre`) is held to the list of characters and to no white space but the three spaces, and not yet to the two rules on where spaces sit** (none doubled, none at an end). Nothing a reader sees depends on it, and the numbers editor reads every such display whole. The repair is on the fourth block's list (`PARA-ESQ3.md`, item 31).*
+
 ## The idea in four lines
 
 1. One piece is one text file. Everything a reader sees comes from it, and nothing else is edited to publish it.
