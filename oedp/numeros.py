@@ -41,23 +41,37 @@ NUMERO_PT = re.compile(r"(?P<inteiro>\d{1,3}(?:[" + ESPACOS + r"]\d{3})+|\d+)(?:
 ESCALAS_DA_MOSTRA = (("mil milhões de", 10**9), ("milhões de", 10**6), ("mil", 10**3))
 
 
-# Two characters Unicode names as spaces though they are not white space: refused with it.
-_LARGURA_ZERO = "\u200b\ufeff"  # ZERO WIDTH SPACE, ZERO WIDTH NO-BREAK SPACE
-
-
 def _nome(c: str) -> str:
     nome = unicodedata.name(c, "")
     return f"U+{ord(c):04X}" + (f" {nome}" if nome else "")
 
 
+def _sem_nome(c: str) -> str:
+    """For a character with no Unicode name (a control), its category, said after the field."""
+    return "" if unicodedata.name(c, "") else f" (category {unicodedata.category(c)}, which has no Unicode name)"
+
+
+def invisivel(c: str) -> bool:
+    """A character a reader cannot see: Unicode category control, format, surrogate, private use or
+    unassigned (C…), or a separator (Z…) that is not one of ESPACOS (docs/ESPEC-PECA.md, check 1,
+    edit of 16 November 2026, 12:09 UTC)."""
+    categoria = unicodedata.category(c)
+    return categoria[0] == "C" or (categoria[0] == "Z" and c not in ESPACOS)
+
+
 def so_os_espacos_da_forma(campo: str, texto: str) -> None:
     """ErroDeFigura naming the character and the field (`mostra` or `unidade`) when `texto` holds
-    white space that is not one of ESPACOS, two spaces in a row, or a space at either end
-    (docs/ESPEC-PECA.md, check 1, edit of 16 November 2026, 10:50 UTC)."""
+    white space that is not one of ESPACOS, any character a reader cannot see (`invisivel`), two
+    spaces in a row, or a space at either end (docs/ESPEC-PECA.md, check 1, edits of 16 November
+    2026, 10:50 and 12:09 UTC). Every character is looked at, the ends included."""
     for c in texto:
-        if (c.isspace() or c in _LARGURA_ZERO) and c not in ESPACOS:
-            raise ErroDeFigura(f"{campo} {texto!r}: {_nome(c)} in the {campo}; where the one form has a space it is exactly "
-                               "one ordinary space, U+00A0 NO-BREAK SPACE or U+202F NARROW NO-BREAK SPACE")
+        if c.isspace() and c not in ESPACOS:
+            raise ErroDeFigura(f"{campo} {texto!r}: {_nome(c)} in the {campo}{_sem_nome(c)}; where the one form has a space "
+                               "it is exactly one ordinary space, U+00A0 NO-BREAK SPACE or U+202F NARROW NO-BREAK SPACE")
+    for c in texto:
+        if invisivel(c):
+            raise ErroDeFigura(f"{campo} {texto!r}: {_nome(c)} in the {campo}{_sem_nome(c)}, a character a reader cannot see; "
+                               "a mostra and its unidade hold only what a reader sees")
     for a, b in zip(texto, texto[1:]):
         if a in ESPACOS and b in ESPACOS:
             raise ErroDeFigura(f"{campo} {texto!r}: two spaces in a row in the {campo} ({_nome(a)}, {_nome(b)}); "

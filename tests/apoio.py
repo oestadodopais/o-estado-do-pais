@@ -14,6 +14,11 @@ LOJA = ENSAIOS / "fontes"
 PECA = ENSAIOS / "pecas" / "2026" / "2026-11-16-peca-de-ensaio.md"
 
 
+def perto_do_relogio(instante, agora, segundos: float) -> bool:
+    """Whether `instante` lies within `segundos` of `agora`, before or after (two aware datetimes)."""
+    return abs((instante - agora).total_seconds()) <= segundos
+
+
 def loja_fora_do_repositorio(caso) -> Path:
     """A copy of the test store in a temporary folder: OEDP_FONTES may not point inside the repository."""
     pasta = Path(tempfile.mkdtemp(prefix="oedp-loja-"))

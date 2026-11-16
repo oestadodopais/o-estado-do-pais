@@ -20,7 +20,7 @@ from oedp import codigo, datas, fontes, leituras, navegador, publicar, reconferi
 from oedp import conferir as conf
 from oedp import construir as build
 from oedp.peca import ler
-from tests.apoio import ENSAIOS, LOJA, PECA, REPO, Plantada, loja_fora_do_repositorio
+from tests.apoio import ENSAIOS, LOJA, PECA, REPO, Plantada, loja_fora_do_repositorio, perto_do_relogio
 from tests.test_esq1d import DOCUMENTO, SitioFalso
 from tests.test_esq2a import PDF, PLANTA_BOA, Base as BaseLeitura, ComLeitura, achado, bloco
 from tests.test_esq2b import ANTERIOR, IMPLANTACAO, Base as BasePublicar
@@ -491,7 +491,7 @@ class C11RepublicarPedeJuizNovo(unittest.TestCase):
         with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
             self.assertEqual(cli.principal(["estado", str(p.peca), "retirada", "--razao", "Ensaio."]), 0)
         escrito = datas.instante_real(ler(p.peca).registo["estado"][-1]["em"])
-        self.assertLess(abs((escrito - dt.datetime.now(dt.timezone.utc)).total_seconds()), 120)
+        self.assertTrue(perto_do_relogio(escrito, dt.datetime.now(dt.timezone.utc), 120), escrito)
 
 
 class C12ReconferirRetiraPorOmissao(unittest.TestCase):

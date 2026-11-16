@@ -477,7 +477,9 @@ def cmd_tudo(a) -> int:
     resultado = unittest.TextTestRunner(verbosity=1).run(suite)
     t3 = time.monotonic()
     print(f"seconds: conferir {t1 - t0:.2f} · construir {t2 - t1:.2f} · tests {t3 - t2:.2f}")
-    ok3 = resultado.wasSuccessful()
+    ok3 = resultado.wasSuccessful() and resultado.testsRun > 0
+    if resultado.testsRun == 0:  # an empty suite is the one way discovery breaks without an error (ESQ3h, A)
+        print("tudo: the suite ran no test")
     print("tudo: " + ("passed" if ok1 and ok2 and ok3 else "failed"))
     return 0 if ok1 and ok2 and ok3 else 1
 

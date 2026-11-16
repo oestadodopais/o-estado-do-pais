@@ -2,9 +2,9 @@
 days ahead (1 and 400 when none is given), each run in a child process. The moved runs load
 the shim of tests/relogio/ (its folder first on PYTHONPATH, the number of days in
 OEDP_ENSAIO_DIAS_ADIANTE); the run at the real clock has neither. One line per run: the days,
-the tests run, the result and the failing tests by name. Exit 1 if any run fails, or if a moved
-run ran a different number of tests from the run at the real clock, so that an import error
-under the shim cannot pass as fewer tests.
+the tests run, the result and the failing tests by name. Exit 1 if any run fails or runs no
+test, or if a moved run ran a different number of tests from the run at the real clock, so that
+an import error under the shim cannot pass as fewer tests.
 
 It lives with the tests, not in oedp/, so that no file of oedp/ names the variable or the shim
 (tests/test_esq3i.py); `oedp adiante` only starts it."""
@@ -51,18 +51,20 @@ def uma_corrida(raiz: Path, dias: int | None) -> tuple[int | None, bool, list[st
 def correr(dias=DIAS, raiz: Path = RAIZ, imprimir=print) -> int:
     real, ok_real, falhas_real = uma_corrida(raiz, None)
     imprimir(_linha("+0 (real clock)", real, ok_real, falhas_real, None))
-    ok = ok_real and real is not None
+    ok = ok_real and bool(real)  # a run that ran no test is a failed run (ESQ3h, A)
     for n in dias:
         contagem, passou, falhas = uma_corrida(raiz, n)
         imprimir(_linha(f"+{n}", contagem, passou, falhas, real))
-        ok = ok and passou and contagem is not None and contagem == real
+        ok = ok and passou and bool(contagem) and contagem == real  # every run counts, not the last one
     imprimir("adiante: " + ("passed" if ok else "failed"))
     return 0 if ok else 1
 
 
 def _linha(dias: str, contagem: int | None, passou: bool, falhas: list[str], real: int | None) -> str:
     partes = [f"adiante · days {dias}", "no count of tests run" if contagem is None else f"{contagem} tests"]
-    if not passou:
+    if contagem == 0:
+        partes.append("failed: no test ran")
+    elif not passou:
         partes.append("failed" + (": " + "; ".join(falhas) if falhas else ""))
     elif real is not None and contagem != real:
         partes.append(f"failed: ran {contagem} tests, and the run at the real clock ran {real}")
