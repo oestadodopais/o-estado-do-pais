@@ -482,6 +482,16 @@ def cmd_tudo(a) -> int:
     return 0 if ok1 and ok2 and ok3 else 1
 
 
+def cmd_adiante(a) -> int:
+    """The suite again with the clock moved ahead, so that a test that depends on the day it runs
+    fails today. The runner is the tests' own (tests/adiante.py), started in a process of its own:
+    nothing here moves this process's clock."""
+    import subprocess
+
+    argv = [x for n in (a.dias or []) for x in ("--dias", str(n))]
+    return subprocess.run([sys.executable, "-m", "tests.adiante", *argv], cwd=REPO).returncode
+
+
 def principal(argv=None) -> int:
     # No git command under this one may inherit GIT_DIR, GIT_INDEX_FILE or their kin from a
     # hook or a tool: they would turn `git -C <temporary folder>` onto the real repository.
@@ -545,6 +555,10 @@ def principal(argv=None) -> int:
 
     s = sub.add_parser("tudo")
     s.set_defaults(f=cmd_tudo)
+
+    s = sub.add_parser("adiante", help="the tests at the real clock and with the clock moved N days ahead (default 1 and 400)")
+    s.add_argument("--dias", type=int, action="append", help="days ahead; repeatable")
+    s.set_defaults(f=cmd_adiante)
 
     s = sub.add_parser("leitura", help="a reading: montar, plantar, lancar, pontuar, registar")
     passos = s.add_subparsers(dest="passo", required=True)

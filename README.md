@@ -31,6 +31,7 @@ Python 3.12 or later. `python3 -m pip install -r requirements.txt`, then:
 | `python3 -m oedp construir [--com-rascunhos] [--saida <folder>]` | Builds `.vercel/output/` (or a preview in `.previa/`, never deployed) |
 | `python3 -m oedp no-ar <address>` | Check 10: the live site against the build, file by file |
 | `python3 -m oedp tudo` | `conferir`, `construir` and the tests |
+| `python3 -m oedp adiante [--dias N]…` | The tests at the real clock, then with Python's clock moved N days ahead (1 and 400 by default), each in a process of its own; fails if a run fails or runs a different number of tests |
 
 `OEDP_FONTES` names the private store of source copies, outside this repository's
 tree (the commands refuse a store inside it); copies never enter this repository. `OEDP_OFICINA`
@@ -87,3 +88,6 @@ failing. Three things are outside that line, written down rather than repaired:
 - The test site's records (of the code, and of its own fixed sentences) are invented and
   written at test time into the tree the tests assemble, so that the test piece builds as
   published; the real records are never written by them (see «How the test site is authorized»).
+- `adiante` moves only the clock that Python code reads (`tests/relogio/sitecustomize.py`):
+  `git` and the file system keep the real one, so a test that compares a commit's or a file's
+  date with the day is not moved with it.
