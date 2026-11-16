@@ -90,8 +90,9 @@ class B_ORegistoEscritoAoMontar(unittest.TestCase):
         self.assertFalse(any(x.startswith(RAZAO_DA_IMPRESSAO) for x in julgamento), julgamento)
 
     def test_a_arvore_do_repositorio_nao_constroi_nada_publicado(self):
+        # Whatever the real sentences' record holds, judged or not (ESQ3j, C1): nothing of the tests' model
+        # name counts here, and the tree builds the holding page only.
         ctx, _ = build.contexto(REPO, REPO, [])
-        self.assertTrue(any(x.startswith("textos.toml:") for x in ctx.julgamento), ctx.julgamento)  # the real sentences have no judgment
         self.assertEqual(ctx.ensaio, [])
         c = build.construir(REPO, saida=pasta_temporaria(self, "oedp-saida-") / "s", loja=None)
         self.assertTrue(c.ok, c.mensagens)
