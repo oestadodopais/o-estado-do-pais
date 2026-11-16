@@ -47,27 +47,29 @@ def relogios(env: dict[str, str]) -> dict:
     return json.loads(r.stdout)
 
 
-class C2ORelogioMovido(unittest.TestCase):
-    def assertAdiante(self, lido: dict, quem: str, dias_minimos: int):
-        agora, hoje = time.time(), dt.date.today().toordinal()
-        for chave in ("now", "utcnow", "today", "time"):
-            self.assertGreaterEqual(lido[quem][chave] - agora, dias_minimos * 86400, (quem, chave))
-        self.assertGreaterEqual(lido[quem]["date_today"] - hoje, dias_minimos, (quem, "date_today"))
+def relogio_real() -> dict:
+    """The real clock, read in a child without the shim: the suite itself may be running under a
+    moved clock (`oedp adiante`), so this process's clock is not the reference."""
+    return relogios(adiante.ambiente(None))["filho"]
 
+
+class C2ORelogioMovido(unittest.TestCase):
     def test_quatrocentos_dias_no_filho_e_no_neto(self):
-        lido = relogios(adiante.ambiente(400))
-        self.assertAdiante(lido, "filho", 399)
-        self.assertAdiante(lido, "neto", 399)
+        lido, real = relogios(adiante.ambiente(400)), relogio_real()
+        for quem in ("filho", "neto"):
+            for chave in ("now", "utcnow", "today", "time"):
+                self.assertGreaterEqual(lido[quem][chave] - real[chave], 399 * 86400, (quem, chave))
+            self.assertGreaterEqual(lido[quem]["date_today"] - real["date_today"], 399, (quem, "date_today"))
 
     def test_sem_a_variavel_o_relogio_real(self):
         # The shim's folder on the path, the variable absent: the real clock, in the child and its child.
-        env = {k: v for k, v in os.environ.items() if k != adiante.VARIAVEL}
+        env = adiante.ambiente(None)
         env["PYTHONPATH"] = str(adiante.RELOGIO)
-        lido = relogios(env)
+        lido, real = relogios(env), relogio_real()
         for quem in ("filho", "neto"):
             for chave in ("now", "utcnow", "today", "time"):
-                self.assertLess(abs(lido[quem][chave] - time.time()), 120, (quem, chave))
-            self.assertLessEqual(abs(lido[quem]["date_today"] - dt.date.today().toordinal()), 1, quem)
+                self.assertLess(abs(lido[quem][chave] - real[chave]), 120, (quem, chave))
+            self.assertLessEqual(abs(lido[quem]["date_today"] - real["date_today"]), 1, quem)
 
     def test_a_corrida_ao_relogio_real_nao_tem_o_relogio(self):
         env = adiante.ambiente(None)
@@ -93,7 +95,7 @@ class C2Adiante(unittest.TestCase):
 
     def test_planta_um_teste_que_passa_hoje_e_falha_amanha(self):
         # Twelve hours from now, typed into the test as a date is typed into a fixture.
-        limite = (dt.datetime.now(dt.timezone.utc) + dt.timedelta(hours=12)).strftime("%Y-%m-%dT%H:%M:%SZ")
+        limite = dt.datetime.fromtimestamp(relogio_real()["time"] + 12 * 3600, dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         raiz = arvore_de_rascunho(self, {"test_amanha.py": f"""
             import datetime, unittest
             class Amanha(unittest.TestCase):
@@ -113,13 +115,13 @@ class C2Adiante(unittest.TestCase):
 
     def test_planta_menos_testes_com_o_relogio_movido(self):
         # Under the moved clock a class is not defined, and the run passes with fewer tests.
-        hoje = dt.date.today().toordinal()
+        hoje = relogio_real()["date_today"]
         raiz = arvore_de_rascunho(self, {"test_menos.py": f"""
             import datetime, unittest
             class Sempre(unittest.TestCase):
                 def test_sempre(self):
                     pass
-            if datetime.date.today().toordinal() <= {hoje + 0}:
+            if datetime.date.today().toordinal() <= {hoje}:
                 class SoHoje(unittest.TestCase):
                     def test_so_hoje(self):
                         pass
@@ -187,6 +189,7 @@ class C2Portao(unittest.TestCase):
         tudo, seguinte = passos[i], passos[i + 1]
         self.assertIn("run: python3 -m oedp tudo", tudo)
         self.assertTrue(seguinte.rstrip().endswith("run: python3 -m oedp adiante"), seguinte)
-        ambiente = lambda p: sorted(re.findall(r"^\s+([A-Z_]+): (.+)$", p, re.M))
-        self.assertEqual(ambiente(seguinte), ambiente(tudo))
-        self.assertEqual([n for n, _ in ambiente(tudo)], ["OEDP_FONTES", "PRIVACIDADE_PROIBIDOS"])
+        ambiente = lambda p: dict(re.findall(r"^\s+([A-Z_]+): (.+)$", p, re.M))
+        # The store as the checks have it; the private list stays with the step that runs the checks (check 8).
+        self.assertEqual(ambiente(seguinte), {"OEDP_FONTES": ambiente(tudo)["OEDP_FONTES"]})
+        self.assertIn("PRIVACIDADE_PROIBIDOS", ambiente(tudo))
