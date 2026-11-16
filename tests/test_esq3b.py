@@ -19,10 +19,10 @@ from pathlib import Path
 from unittest import mock
 
 from oedp import __main__ as cli
-from oedp import codigo, custo, datas, divulgacoes, ensaio, fontes, julgados, leituras, numerado, reconferir
+from oedp import codigo, custo, datas, divulgacoes, ensaio, fontes, julgados, leituras, numerado, paginas, reconferir
 from oedp import construir as build
 from oedp.peca import ler
-from tests.apoio import REPO, Plantada, loja_fora_do_repositorio
+from tests.apoio import PECA, REPO, Plantada, loja_fora_do_repositorio
 from tests.test_esq1f import commit, git_temporario
 
 PDF = "3f9a602b9c8e9f75b8fdd9e63aadddfae0a1776aa4a31241b567946b3add3e89"
@@ -390,7 +390,8 @@ class K_ORotuloNaoENumerado(unittest.TestCase):
     def test_a_primeira_linha_diz_o_rotulo_e_o_titulo_e_a_frase_1(self):
         texto = leituras.texto_numerado_da_peca(Plantada([]).peca.read_bytes())
         primeira, resto = texto.split("\n\n", 1)
-        self.assertEqual(primeira, "(Above the title the page prints the label of the kind of piece, «Diário». "
+        rotulo = TEXTOS["tipo_" + ler(PECA).cabeca["tipo"]]  # the sentence the code reads, never a typed copy
+        self.assertEqual(primeira, f"(Above the title the page prints the label of the kind of piece, «{rotulo}». "
                                    "It is not a sentence of the text, and is not numbered.)")
         self.assertTrue(resto.startswith("[1] Peça de ensaio com números inventados"))
         self.assertEqual(numerado.lista(texto)[0][:17], "Peça de ensaio co")
@@ -399,7 +400,15 @@ class K_ORotuloNaoENumerado(unittest.TestCase):
         antiga = numerado.blocos_da_peca
         with mock.patch.object(numerado, "blocos_da_peca", lambda p, c: [c.t("tipo_" + p.cabeca["tipo"])] + antiga(p, c)):
             texto = leituras.texto_numerado_da_peca(Plantada([]).peca.read_bytes())
-        self.assertEqual(numerado.lista(texto)[0], "Diário")
+        self.assertEqual(numerado.lista(texto)[0], TEXTOS["tipo_" + ler(PECA).cabeca["tipo"]])
+
+    def test_a_primeira_linha_segue_a_frase_fixa(self):
+        # The label changed in the sentences the function reads: the first line carries the changed one.
+        mudado = {**TEXTOS, "tipo_" + ler(PECA).cabeca["tipo"]: "Rótulo de ensaio mudado"}
+        with mock.patch.object(leituras, "contexto_de_textos", lambda repo=REPO: paginas.Contexto(textos=mudado)):
+            texto = leituras.texto_numerado_da_peca(Plantada([]).peca.read_bytes())
+        self.assertTrue(texto.startswith("(Above the title the page prints the label of the kind of piece, «Rótulo de ensaio mudado». "),
+                        texto[:160])
 
     def test_as_leituras_acham_as_frases_que_um_achado_nomeia(self):
         antes = leituras.texto_numerado_da_peca(Plantada([]).peca.read_bytes())

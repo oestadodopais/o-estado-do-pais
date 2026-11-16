@@ -213,7 +213,10 @@ class TextoNumerado(Base):
         do_numerado = numerado.limpar(" ".join(numerado.lista(numerado_)))
         self.assertEqual(do_numerado, da_pagina)
         self.assertIn("[7] No trimestre anterior ficara em 102,3 pontos, uma subida de 2,4 pontos.", numerado_)
-        rotulo = re.search(r'<p class="eyebrow">([^<]+)</p>', pagina).group(1)
+        # The page is built with the test site's sentences, the copy with the real ones that
+        # texto_numerado_da_peca reads: the label is the real file's, read, never typed.
+        self.assertRegex(pagina, r'<p class="eyebrow">[^<]+</p>')
+        rotulo = leituras.contexto_de_textos(REPO).t("tipo_" + ler(PECA).cabeca["tipo"])
         self.assertTrue(numerado_.startswith(f"(Above the title the page prints the label of the kind of piece, «{rotulo}». "
                                              "It is not a sentence of the text, and is not numbered.)\n\n[1] Peça de ensaio"))
         self.assertNotIn(f"] {rotulo}\n", numerado_)

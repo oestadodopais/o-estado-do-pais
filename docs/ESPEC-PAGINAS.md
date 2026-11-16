@@ -20,6 +20,8 @@
 
 *Edited 15 November 2026, 14:27 UTC, after the designer read the piece page as the third block built it (`blocos/esq3/LEITURA-DESENHADOR-5.md`: both faults that stopped publication are repaired; eleven new findings, one of them able to make a reader misread a figure, and that one made by this page's own rule). The rule «a space between two digits is not a place to break» turned a table's row into one unbreakable string, which the browser then cut inside the numbers, the receipt's own figure among them: the rule is withdrawn, and what is kept whole is the figure the receipt marks. Also: a calculation's receipt says in full what it measures; on a phone a closed receipt gives what it measures two lines instead of a few characters, and an open one does not repeat it; the mark takes the sign of a negative figure; a negative figure is printed with a true minus sign wherever the page prints it; «p.» stays with its number in every field; the inputs of a calculation look like the other links to receipts.*
 
+*Edited 16 November 2026, 11:00 UTC: the label of a daily piece, `tipo_diario`, is «Notícia e análise» and no longer «Diário». «Diário», alone above the title, was questioned in five ordinary readings of five (a diary, a newspaper, a section, a kind of text). Six candidates went before twelve short readings by synthetic readers, two each (`textos/rotulo-2026-11-16/PAINEL.md` in the direction folder): «Notícia» was the clearest, and both its readers took it to promise a text with no analysis and no opinion, which a daily piece does not keep; of the labels that promise nothing untrue, «Notícia e análise» was the only one understood at once. The key keeps its name. The ordinary readers of the next pieces are the check on this choice.*
+
 ## Rules for every page
 
 - **Computed, never listed.** Every page is built from the piece files (and one small file per desk). No page has a list that a piece must edit.
@@ -99,7 +101,7 @@ A withdrawn piece keeps its address and shows only its title, the sentence `reti
 | `ia_linha` | Texto gerado e editado por inteligência artificial. Nenhuma pessoa o revê antes de ser publicado. |
 | `ia_ligacao` | Como é feito |
 | `nav_inicio`, `nav_metodo`, `nav_correcoes` | Início · Método · Correções |
-| `tipo_diario`, `tipo_artigo`, `tipo_estudo` | Diário · Artigo · Estudo |
+| `tipo_diario`, `tipo_artigo`, `tipo_estudo` | Notícia e análise · Artigo · Estudo |
 | `publicada` | Publicada a {data}, às {hora}. |
 | `temas_titulo` | Temas |
 | `tema_intro` | Tudo o que este projeto publicou sobre este tema, do mais recente para o mais antigo. |
