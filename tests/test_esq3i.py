@@ -179,7 +179,7 @@ class C2NadaEmOedpMoveORelogio(unittest.TestCase):
 
 
 class C2Portao(unittest.TestCase):
-    def test_o_passo_adiante_vem_depois_de_tudo_com_o_mesmo_ambiente(self):
+    def test_o_passo_adiante_vem_depois_de_tudo_com_a_loja_e_sem_a_lista_privada(self):
         texto = (REPO / ".github" / "workflows" / "portao.yml").read_text(encoding="utf-8")
         sem_comentarios = "\n".join(l for l in texto.splitlines() if not l.lstrip().startswith("#"))
         passos = re.split(r"\n      - ", sem_comentarios)
