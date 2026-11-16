@@ -32,4 +32,4 @@ Readers' text is in Portuguese (Acordo Ortográfico), without dashes as punctuat
 
 ## Where things are
 
-The site: this repository. The engine (the stored sources and the ledgers of the three studies, and the few tools worth lifting; it has no single store or re-check for pieces): the sibling private repository. The foundation, the state and the diary: `.claude/direcao/`. The funder's copy of the foundation: his Drive, folder «O Estado do País». The morning watch and its email: outside both repositories, and they keep running.
+The site: this repository. The engine (the stored sources and the ledgers of the three studies, and the few tools worth lifting; it has no single store or re-check for pieces): the sibling private repository. The foundation, the state and the diary: `.claude/direcao/`. The funder's copy of the foundation: his Drive, folder «O Estado do País». The morning watch and its email: outside both repositories. They were switched off, with the trial edition's other scheduled jobs, on the funder's word on 16 November 2026; the state file says how each is switched on again.
