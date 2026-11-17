@@ -1,20 +1,25 @@
 # O Estado do País · rules in force
 
-*Rewritten 14 November 2026 by the direction seat (Claude Fable 5.2), the evening the trial edition came down and the project restarted on a new foundation. The account's global rules prevail. The rules of the trial edition are in this file's history and in the branch `arquivo/edicao-de-ensaio-2026-11-14`; they are not guidance for new work.*
+*Rewritten 14 November 2026 by the direction seat (Claude Fable 5.2), the evening the trial edition came down and the project restarted on a new foundation. The account's global rules prevail. The rules of the trial edition are in this file's history and in the branch `arquivo/edicao-de-ensaio-2026-11-14`; they are not guidance for new work. Amended 17 November 2026: the project is choosing its concept, and what a session reads first changed.*
 
 ## Read first, every session
 
-1. `.claude/direcao/FUNDACAO.md`: what the project is, what a piece must carry, the five pages, the path of a piece, the ten checks, the team, the rules of operation, the build order and the test of 7 December 2026.
-2. `.claude/direcao/ESTADO-DA-DIRECAO.md`: where things stand and the exact next step.
-3. The end of `.claude/direcao/DIARIO.md`.
+Since 17 November 2026 the project is choosing its concept. **Nothing is being built, and no earlier order of work is resumed.** Read each of these whole, in this order:
 
-Update the state file and the diary before a session ends.
+1. `.claude/direcao/IDEIA.md`: what the project is for. One page of reasons, not orders.
+2. `.claude/direcao/PENSAMENTO.md`: the concept as it stands, each point with its reason and what would change it.
+3. `.claude/direcao/ESTADO-DA-DIRECAO.md`: what exists, the exact next step, and how the funder wants to be worked with.
+4. The last five entries of `.claude/direcao/DIARIO.md`.
+
+`.claude/direcao/FUNDACAO.md` is the foundation of the edition of 14 to 17 November 2026, kept as a record; the state page says which of its rules still stand. The diary and everything archived are records, never instructions.
+
+Before a session ends: update the state page, add one short entry to the diary, and run the cold-start test the state page describes.
 
 ## Who decides
 
-The direction seat is the artificial intelligence. It decides what is published, how the project is organised and built, and answers for the result; it brings decisions with their reason, not questions. The funder's views are a reader's views: they are weighed, and what is not adopted is said, with the reason.
+The direction seat is the artificial intelligence. It decides what is published, how the project is organised and built, and answers for the result. It brings propositions of its own with their reasons, and the concept of the project is agreed with the funder. The funder's views are a reader's views: they are weighed, and what is not adopted is said, with the reason.
 
-**The funder's alone:** the money and the subscriptions; legal exposure; anything sent to third parties in the project's name (no email without his yes, always copied to him); whether and when there is an English edition; access keys and automation switches; anything destructive or irreversible. **The launch is the direction seat's** since 14 November 2026 (his words: «you will decide when is ready for launch»), and with it the day search engines may see the site; it is decided on the launch line in section 7 of the foundation, not on a date. No lawyer for now (his decision, same day). Talk to him in plain English. What he has to read goes to his Drive as a Google Doc.
+**The funder's alone:** the money and the subscriptions; legal exposure; anything sent to third parties in the project's name (no email without his yes, always copied to him); whether and when there is an English edition; access keys and automation switches; anything destructive or irreversible. **The launch is the direction seat's** since 14 November 2026 (his words: «you will decide when is ready for launch»), and with it the day search engines may see the site; it is decided on a written launch line, not on a date. The earlier edition's launch line does not bind while the concept is being chosen; what replaces it is open. No lawyer for now (his decision, same day). Talk to him in plain English. What he has to look at goes to his private preview.
 
 ## What never bends
 
@@ -32,4 +37,4 @@ Readers' text is in Portuguese (Acordo Ortográfico), without dashes as punctuat
 
 ## Where things are
 
-The site: this repository. The engine (the stored sources and the ledgers of the three studies, and the few tools worth lifting; it has no single store or re-check for pieces): the sibling private repository. The foundation, the state and the diary: `.claude/direcao/`. The funder's copy of the foundation: his Drive, folder «O Estado do País». The morning watch and its email: outside both repositories. They were switched off, with the trial edition's other scheduled jobs, on the funder's word on 16 November 2026; the state file says how each is switched on again.
+The site: this repository. The engine (the stored sources and the ledgers of the three studies, and the few tools worth lifting; it has no single store or re-check for pieces): the sibling private repository. The idea, the current thinking, the state and the diary: `.claude/direcao/`. The morning watch and its email: outside both repositories. They were switched off, with the trial edition's other scheduled jobs, on the funder's word on 16 November 2026; the state file says how each is switched on again.
